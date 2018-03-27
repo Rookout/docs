@@ -13,7 +13,7 @@ const GridBlock = CompLibrary.GridBlock;
 
 const siteConfig = require(process.cwd() + '/siteConfig.js');
 
-class Help extends React.Component {
+class Faq extends React.Component {
   render() {
     const supportLinks = [
       {
@@ -47,4 +47,4 @@ class Help extends React.Component {
   }
 }
 
-module.exports = Help;
+module.exports = Faq;
