@@ -20,12 +20,12 @@ const siteConfig = {
   tagline: 'On the fly debugging and data extraction',
   url: 'https://rookout.github.io' /* your website url */,
   baseUrl: '/' /* base url for your project */,
-  projectName: 'Rookout',
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: false, label: 'Blog'},
+    {doc: 'getting-started', label: 'Getting Started'},
+    {doc: 'reference-home', label: 'Reference'},
+    {doc: 'integrations-home', label: 'Integrations'},
+    {doc: 'extensions-home', label: 'Extensions'},
+    {page: 'faq', label: 'FAQ'},
   ],
   users,
   /* path to images for header/footer */
@@ -53,8 +53,9 @@ const siteConfig = {
     'Copyright © ' +
     new Date().getFullYear() +
     ' Rookout',
-  // organizationName: 'deltice', // or set an env variable ORGANIZATION_NAME
-  // projectName: 'test-site', // or set an env variable PROJECT_NAME
+  organizationName: 'Rookout', // or set an env variable ORGANIZATION_NAME
+  // change to rookout.github.io when moving to it
+  projectName: 'documentation-new', // or set an env variable PROJECT_NAME
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default',
