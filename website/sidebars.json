@@ -1,10 +1,44 @@
 {
-  "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+  "getting-started": {
+    "Getting Started": [
+      "What is Rookout?",
+      "Demo video",
+      "Quick tutorials",
+      "Advanced features"
+    ]
   },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+  "reference": {
+    "Node": [
+      "doc1"
+    ],
+    "Python": [
+      "doc2"
+    ],
+    "Java": [
+      "doc3"
+    ],
+    "Rookout Agent": [
+      "doc4"
+    ],
+    "Rookout Rules": [
+      "rules2"
+    ]
+  },
+  "integrations": {
+    "Java": ["doc4", "doc5"],
+    "Python": [],
+    "Node": [],
+    "AWS Elastic Beanstalk": [],
+    "Kubernetes": [],
+    "Google App Engine": [],
+    "Django": [],
+    "AWS Elastic Compute Cloud": []
+  },
+  "extensions": {
+    "Output Extensions": [
+      "extension-output-slack",
+      "extension-output-graydog"
+    ],
+    "Input Extensions": []
   }
 }
