@@ -16,7 +16,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Rookout Open Documentation' /* title for your website */,
+  title: 'Rookout Open-Source Documentation' /* title for your website */,
   tagline: 'On the fly debugging and data extraction',
   url: 'https://rookout.github.io' /* your website url */,
   baseUrl: '/' /* base url for your project */,
@@ -38,16 +38,16 @@ const siteConfig = {
     secondaryColor: '#9962FF',
   },
   /* custom fonts for website */
-  /*fonts: {
+  fonts: {
     myFont: [
-      "Times New Roman",
-      "Serif"
+      "Roboto",
+      "sans-serif"
     ],
     myOtherFont: [
       "-apple-system",
       "system-ui"
     ]
-  },*/
+  },
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
   copyright:
     'Copyright © ' +
