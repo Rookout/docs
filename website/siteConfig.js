@@ -21,6 +21,7 @@ const siteConfig = {
   url: 'https://rookout.github.io' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   headerLinks: [
+    {search: true},
     {doc: 'getting-started', label: 'Getting Started'},
     {doc: 'reference-home', label: 'Reference'},
     {doc: 'integrations-home', label: 'Integrations'},
@@ -65,6 +66,10 @@ const siteConfig = {
   repoUrl: 'https://github.com/rookout/rookout.github.io',
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
+  algolia: {
+    apiKey: '',
+    indexName: '',
+  },
 };
 
 module.exports = siteConfig;

@@ -8,20 +8,23 @@
     ]
   },
   "reference": {
+    "": [
+      "reference-home"
+    ],
     "Node": [
-      "doc1"
+      "agent"
     ],
     "Python": [
-      "doc2"
+      "agent"
     ],
     "Java": [
-      "doc3"
+      "agent"
     ],
     "Rookout Agent": [
-      "doc4"
+      "agent"
     ],
     "Rookout Rules": [
-      "rules2"
+      "agent"
     ]
   },
   "integrations": {
