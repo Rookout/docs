@@ -1,9 +1,7 @@
 ---
-permalink: /tutorials/docker
+id: tutorials-docker
 title: Rookout Docker Tutorial
 ---
-
-# {{ page.title}}
 
 In this short tutorial we are going to show you how to setup Rookout a Docker deployment. 
 We'll use the Python app from the [Python Tutorial](/tutorials/python).

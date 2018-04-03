@@ -1,9 +1,7 @@
 ---
-permalink: /rooks/
+permalink: rooks
 title: Rooks Overview
 ---
-
-# {{ page.title}}
 
 Rooks are the component that allows you to collect data directly from a running application.
 

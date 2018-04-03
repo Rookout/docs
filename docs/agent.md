@@ -1,9 +1,7 @@
 ---
-permalink: /agent
+id: agent
 title: Rookout Agent
 ---
-
-# {{ page.title}}
 
 The Rookout agent provides local orchestration of data collection as well as basic ETL functionality.
 It allows loading the data into local targets such as file system and elasticsearch.

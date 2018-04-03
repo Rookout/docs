@@ -1,9 +1,7 @@
 ---
-permalink: /tutorials/python
+id: tutorials-python
 title: Rookout Python Tutorial
 ---
-
-# {{ page.title}}
 
 In this short tutorial we are going to show you how to setup Rookout for an example Python app.   
 

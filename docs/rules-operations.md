@@ -1,9 +1,7 @@
 ---
-permalink: /scripts/operations
+id: rules-operations
 title: Script Operations
 ---
-
-# {{ page.title}}
 
 Rookout *scripts* are a sequence of operations. Below are described the various operations supported.
 

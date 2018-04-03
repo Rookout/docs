@@ -1,9 +1,7 @@
 ---
-permalink: /rooks/java
+id: rooks-java
 title: Java Rook
 ---
-
-# {{ page.title}}
 
 The Java Rook is a java agent that instruments the user's application.  
 This allows us to remotely inspect the state of the process.

@@ -1,9 +1,7 @@
 ---
-permalink: /tutorials/node
+id: tutorials-node
 title: Rookout Node Tutorial
 ---
-
-# {{ page.title}}
 
 In this short tutorial we are going to show you how to setup Rookout for an example Node app.   
 

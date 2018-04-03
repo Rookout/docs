@@ -1,9 +1,8 @@
 ---
-permalink: /scripts/namespaces/frame
+id: rules-namespaces-frame
 title: Frame Namespace
 ---
 
-# {{ page.title}}
 
 The frame namespace allows access to the current scope of execution.
 

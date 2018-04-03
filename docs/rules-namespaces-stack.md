@@ -1,9 +1,7 @@
 ---
-permalink: /scripts/namespaces/stack
+id: rules-namespaces-stack
 title: Stack Namespace
 ---
-
-# {{ page.title}}
 
 The stack namespace allows traversal up to stack to process current context and get variables higher up the stack (Python only).
 

@@ -1,9 +1,9 @@
 ---
-permalink: /scripts/namespaces/container
+id: rules-namespaces-container
 title: Container Namespace
 ---
 
-# {{ page.title}}
+# Container Namespace
 
 Container namespace is simply a dictionary of named values accessed as attributes.
 

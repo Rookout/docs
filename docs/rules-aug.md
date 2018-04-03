@@ -1,9 +1,8 @@
 ---
-permalink: /scripts/aug
+id: rules-aug
 title: Aug Specification
 ---
 
-# {{ page.title}}
 
 Rookout uses a JSON object to define what data to extract from remote applications.
 

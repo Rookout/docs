@@ -1,9 +1,8 @@
 ---
-permalink: /rooks/node
+id: rooks-node
 title: Node Rook
 ---
 
-# {{ page.title}}
 
 The Node Rook is an npm package that runs inside the user's application.  
 This allows us to remotely inspect the state of the process.

@@ -1,9 +1,7 @@
 ---
-permalink: /scripts/namespaces/
+id: rules-namespaces
 title: Namespaces Overview
 ---
-
-# {{ page.title}}
 
 The Rookout scripts run in a sandbox. 
 

@@ -1,9 +1,8 @@
 ---
-permalink: /scripts/namespaces/machine
+id: rules-namespaces-machine
 title: Machine Namespace
 ---
 
-# {{ page.title}}
 
 Machine namespaces represent the current machine.
 

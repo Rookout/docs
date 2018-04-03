@@ -1,9 +1,7 @@
 ---
-permalink: /scripts/namespaces/object
+id: rules-namespaces-object
 title: Object Namespace
 ---
-
-# {{ page.title}}
 
 The object namespace offer access to a native object within the application. 
 

@@ -1,9 +1,7 @@
 ---
-permalink: /tutorials/java
+id: tutorials-java
 title: Rookout Java Tutorial
 ---
-
-# {{ page.title}}
 
 In this short tutorial we are going to show you how to setup Rookout for an example Java app.
 

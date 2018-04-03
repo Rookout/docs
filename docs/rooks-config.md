@@ -1,9 +1,7 @@
 ---
-permalink: /rooks/config
+id: rooks-config
 title: Rook Configuration
 ---
-
-# {{ page.title}}
 
 Rooks can be configured using configuration files and environment variables.
 Configuration values are loaded with the following precedence:

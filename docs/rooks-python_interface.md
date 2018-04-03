@@ -1,6 +1,5 @@
 ---
-permalink: /rooks/python_interface
+id: rooks-python_interface
 title: Python Rook Interface
 ---
 
-# {{ page.title}}

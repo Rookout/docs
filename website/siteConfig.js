@@ -23,9 +23,9 @@ const siteConfig = {
   headerLinks: [
     {search: true},
     {doc: 'getting-started', label: 'Getting Started'},
-    {doc: 'reference-home', label: 'Reference'},
-    {doc: 'integrations-home', label: 'Integrations'},
-    {doc: 'extensions-home', label: 'Extensions'},
+    {doc: 'reference', label: 'Reference'},
+    {doc: 'integrations', label: 'Integrations'},
+    {doc: 'extensions', label: 'Extensions'},
     {page: 'faq', label: 'FAQ'},
   ],
   users,

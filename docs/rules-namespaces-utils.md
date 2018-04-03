@@ -1,9 +1,7 @@
 ---
-permalink: /scripts/namespaces/utils
+id: rules-namespaces-utils
 title: Utils Namespace
 ---
-
-# {{ page.title}}
 
 The utils namespace allows access to various globals in the application state.
 

@@ -1,9 +1,7 @@
 ---
-permalink: /scripts/uses
+id: rules-uses
 title: Script Uses
 ---
-
-# {{ page.title}}
 
 Rookout *scripts* are used in various ways to allow the user maximum control over the system.
 

@@ -1,34 +1,44 @@
 {
   "getting-started": {
     "Getting Started": [
-      "What is Rookout?",
-      "Demo video",
-      "Quick tutorials",
-      "Advanced features"
+      "getting-started",
+      "tutorials-docker",
+      "tutorials-java",
+      "tutorials-node",
+      "tutorials-python"
     ]
   },
   "reference": {
-    "": [
-      "reference-home"
+    "Overview": [
+      "reference"
     ],
-    "Node": [
-      "agent"
+    "Rooks": [
+      "rooks-node",
+      "rooks-python",
+      "rooks-java"
     ],
-    "Python": [
-      "agent"
+    "Agent": [
+      "agent",
+      "agent-docker"
     ],
-    "Java": [
-      "agent"
-    ],
-    "Rookout Agent": [
-      "agent"
-    ],
-    "Rookout Rules": [
-      "agent"
+    "Rules": [
+      "rules",
+      "rules-uses",
+      "rules-paths",
+      "rules-operations",
+      "rules-namespaces",
+      "rules-namespaces-container",
+      "rules-namespaces-object",
+      "rules-namespaces-frame",
+      "rules-namespaces-stack",
+      "rules-namespaces-utils",
+      "rules-namespaces-rook",
+      "rules-namespaces-agent",
+      "rules-namespaces-machine"
     ]
   },
   "integrations": {
-    "Java": ["doc4", "doc5"],
+    "Java": [],
     "Python": [],
     "Node": [],
     "AWS Elastic Beanstalk": [],
@@ -38,10 +48,7 @@
     "AWS Elastic Compute Cloud": []
   },
   "extensions": {
-    "Output Extensions": [
-      "extension-output-slack",
-      "extension-output-graydog"
-    ],
+    "Output Extensions": [],
     "Input Extensions": []
   }
 }

@@ -1,9 +1,8 @@
 ---
-permalink: /scripts/
+id: rules
 title: Scripting Overview
 ---
 
-# {{ page.title}}
 
 Rookout uses a flexible language to specify data collection and processing rules.
 We are constantly working on improving and simplifying the syntax. 

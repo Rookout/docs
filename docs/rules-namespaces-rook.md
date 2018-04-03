@@ -1,9 +1,7 @@
 ---
-permalink: /scripts/namespaces/rook
+id: rules-namespaces-rook
 title: Rook Namespace
 ---
-
-# {{ page.title}}
 
 Rook namespaces represent the Rook being evaluated.
 

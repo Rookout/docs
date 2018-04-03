@@ -1,9 +1,8 @@
 ---
-permalink: /scripts/namespaces/container
+id: rules-namespaces-agent
 title: Agent Namespace
 ---
 
-# {{ page.title}}
 
 Agent namespaces represent the agent information.
 

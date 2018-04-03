@@ -1,3 +1,8 @@
+---
+id: agent-docker
+title: Rookout Agent in Docker
+---
+
 ## Rookout agent
 The Rookout agent provides local orchestration of data collection as well as basic ETL functionality.
 

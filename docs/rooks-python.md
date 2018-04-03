@@ -1,9 +1,8 @@
 ---
-permalink: /rooks/python
+id: rooks-python
 title: Python Rook
 ---
 
-# {{ page.title}}
 
 The Python Rook is a python package that runs inside the user's application.  
 This allows us to remotely inspect the state of the process.

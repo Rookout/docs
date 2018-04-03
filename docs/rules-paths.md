@@ -1,9 +1,7 @@
 ---
-permalink: /scripts/paths
+id: rules-paths
 title: Paths
 ---
-
-# {{ page.title}}
 
 Rookout *paths* are objects pointing to an element inside the *namespaces* (the script's state).
 
