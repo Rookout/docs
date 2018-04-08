@@ -1,5 +1,5 @@
 ---
-permalink: rooks
+id: rooks
 title: Rooks Overview
 ---
 
@@ -11,6 +11,6 @@ Information about the Rook's configuration can be found [here](/rooks/config).
 - [Python](/rooks/python)
 - [JVM](/rooks/java)
 - [NodeJS](/rooks/node)
-- .Net
-- Ruby
-- Go
+- ~~.Net~~
+- ~~Ruby~~
+- ~~Go~~

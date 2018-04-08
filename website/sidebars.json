@@ -13,13 +13,14 @@
       "reference"
     ],
     "Rooks": [
+      "rooks",
       "rooks-node",
       "rooks-python",
-      "rooks-java"
+      "rooks-java",
+      "rooks-config"
     ],
     "Agent": [
-      "agent",
-      "agent-docker"
+      "agent"
     ],
     "Rules": [
       "rules",

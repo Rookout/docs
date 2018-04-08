@@ -68,7 +68,7 @@ class Footer extends React.Component {
           target="_blank"
           className="fbOpenSource">
           <img
-            src={this.props.config.baseUrl + 'img/oss_logo.png'}
+            src={this.props.config.baseUrl + 'img/bird_logo.png'}
             alt="Rookout"
             width="170"
             height="45"

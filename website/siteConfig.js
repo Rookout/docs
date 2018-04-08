@@ -7,12 +7,12 @@
 
 /* List of projects/orgs using your project for the users page */
 const users = [
-  {
-    caption: 'User1',
-    image: '/test-site/img/docusaurus.svg',
-    infoLink: 'https://www.rookout.com',
-    pinned: true,
-  },
+  // {
+  //   caption: 'User1',
+  //   image: '/test-site/img/docusaurus.svg',
+  //   infoLink: 'https://www.rookout.com',
+  //   pinned: true,
+  // },
 ];
 
 const siteConfig = {
@@ -30,9 +30,9 @@ const siteConfig = {
   ],
   users,
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
-  favicon: 'img/favicon.png',
+  headerIcon: 'img/bird_logo.png',
+  footerIcon: 'img/bird_logo.png',
+  favicon: 'img/bird_logo.png',
   /* colors for website */
   colors: {
     primaryColor: '#533C92',
