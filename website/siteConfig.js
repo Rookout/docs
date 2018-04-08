@@ -6,14 +6,7 @@
  */
 
 /* List of projects/orgs using your project for the users page */
-const users = [
-  // {
-  //   caption: 'User1',
-  //   image: '/test-site/img/docusaurus.svg',
-  //   infoLink: 'https://www.rookout.com',
-  //   pinned: true,
-  // },
-];
+const users = []; // DO NOT DELETE - NEEDED FOR DOCUSAURUS
 
 const siteConfig = {
   title: 'Rookout Open-Source Documentation' /* title for your website */,

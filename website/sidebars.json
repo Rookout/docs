@@ -10,17 +10,13 @@
   },
   "installation": {
     "Overview": [
-      "installation",
-      "installation-examples"
+      "installation"
     ],
-    "Java": [],
-    "Python": [],
-    "Node": [],
-    "AWS Elastic Beanstalk": [],
-    "Kubernetes": [],
-    "Google App Engine": [],
-    "Django": [],
-    "AWS Elastic Compute Cloud": []
+    "Installation Examples": [
+      "installation-java",
+      "installation-python",
+      "installation-node"
+    ]
   },
   "extensions": {
     "Overview": ["output-integration"],

@@ -68,7 +68,7 @@ __Pre-requisites:__
 3. Add your source files to the .jar/.war/.ear when building.  
 this can be done manually or through the help of a build tool such as Gradle or Maven.
     
-*For explanation on how to do this using Gradle or Maven head to our [installation examples](installation-examples.md)*
+*For explanation on how to do this using Gradle or Maven head to our [installation examples](installation-java.md)*
 
 All done ! You now need to [install the Rookout Agent.](#rookout-agent-installation)
 
@@ -145,7 +145,7 @@ For more advanced configuration visit our [agent configuration reference](agent.
 ## Finishing up
 
 **I want to deploy a Rook on a specific platform, are there examples?**  
-Yes! Head over to our [Installation Examples](installation-examples.md) to see specifics.
+Yes! Head over to our [Installation Examples](https://github.com/Rookout/deployment-examples) to see specifics.
 
 **I want to be more efficient, what can I add to Rookout?**  
 We have prepared integrations with several well-known tools you could use.  
