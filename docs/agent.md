@@ -29,7 +29,21 @@ $ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=<Your-Token>" rookout/agent
 ### systemd service
 For systemd (Linux) based operating system the agent is available as a service. To install it execute:
 ```bash
-$ curl -fs https://get.rookout.com | sudo -H bash -s agent
+$ curl -fs https://get.rookout.com | bash
+```
+
+```
+Usage: setup.sh [-h] [-dv] [-k=token] [--site=url] [--https-proxy=url]
+
+Installs rookout-agent
+
+Flags:
+-h, --help                    Display this usage prompt
+-v, --verbose                 Verbose mode
+-d, --debug                   Debug mode (echo on)
+-k=token, --token=token       Rookout Token
+--site=url                    Alternative URL for agent
+--https-proxy=url             HTTPS Proxy for agent to use
 ```
 
 #### Supported Operating Systems
@@ -61,7 +75,10 @@ A list of comma separated values (tags) that will be added to the Agent's identi
 Those will be available both for the scripting engine and the frontend.  
 The default value is an empty list.
 
-## Configuration File
+## Configuration Files
 
-For advanced use cases, the agent can be configured by editing (or creating) the JSON 
-configuration file at /etc/rookout/config.json.
+- For advanced use cases, the agent can be configured by editing (or creating) the JSON 
+configuration file at `/etc/rookout/agent-config.json`
+
+- Service environment configuration can be done by editing the file at `/etc/default/rookout-agent`
+    - export https_proxy=https://<span></span>example.proxy:12345

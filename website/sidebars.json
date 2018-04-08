@@ -38,6 +38,7 @@
     ]
   },
   "integrations": {
+    "Overview": ["integrations"],
     "Java": [],
     "Python": [],
     "Node": [],
@@ -48,6 +49,7 @@
     "AWS Elastic Compute Cloud": []
   },
   "extensions": {
+    "Overview": ["extensions"],
     "Output Extensions": [],
     "Input Extensions": []
   }
