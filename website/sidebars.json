@@ -8,6 +8,22 @@
       "tutorials-python"
     ]
   },
+  "installation": {
+    "Overview": ["installation"],
+    "Java": [],
+    "Python": [],
+    "Node": [],
+    "AWS Elastic Beanstalk": [],
+    "Kubernetes": [],
+    "Google App Engine": [],
+    "Django": [],
+    "AWS Elastic Compute Cloud": []
+  },
+  "extensions": {
+    "Overview": ["output-integration"],
+    "Output Extensions": [],
+    "Input Extensions": []
+  },
   "reference": {
     "Overview": [
       "reference"
@@ -38,21 +54,5 @@
       "rules-namespaces-agent",
       "rules-namespaces-machine"
     ]
-  },
-  "integrations": {
-    "Overview": ["integrations"],
-    "Java": [],
-    "Python": [],
-    "Node": [],
-    "AWS Elastic Beanstalk": [],
-    "Kubernetes": [],
-    "Google App Engine": [],
-    "Django": [],
-    "AWS Elastic Compute Cloud": []
-  },
-  "extensions": {
-    "Overview": ["extensions"],
-    "Output Extensions": [],
-    "Input Extensions": []
   }
 }

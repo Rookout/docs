@@ -1,6 +1,6 @@
 ---
-id: integrations
-title: Integrations
+id: installation
+title: Installation Overview
 ---
 
 Full examples for integrating Rookout into your application are [available on our GitHub](https://github.com/Rookout/deployment-examples)

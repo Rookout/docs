@@ -23,10 +23,10 @@ const siteConfig = {
   headerLinks: [
     {search: true},
     {doc: 'getting-started', label: 'Getting Started'},
+    {doc: 'installation', label: 'Installation'},
+    {doc: 'output-integration', label: 'Output Integrations'},
     {doc: 'reference', label: 'Reference'},
-    {doc: 'integrations', label: 'Integrations'},
-    {doc: 'extensions', label: 'Extensions'},
-    {page: 'faq', label: 'FAQ'},
+    {page: 'troubleshooting', label: 'Troubleshooting'},
   ],
   users,
   /* path to images for header/footer */
