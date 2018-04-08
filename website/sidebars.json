@@ -24,6 +24,7 @@
     ],
     "Rules": [
       "rules",
+      "rules-aug",
       "rules-uses",
       "rules-paths",
       "rules-operations",

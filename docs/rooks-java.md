@@ -39,7 +39,7 @@ the jar file has that attribute in it's manifest, use the attribute value.
 
 ## Configuration
 
-Java Rook is configured in the same manner as all other [rooks](/rooks/config).
+Java Rook is configured in the same manner as all other [rooks](rooks-config.md).
 
 ## Known Issues
 

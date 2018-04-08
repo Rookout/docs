@@ -62,7 +62,7 @@ Logging frameworks monitored:
 ## action
 
 Rookout currently only supports the script action. For more information on *scripts* check the [overview](/scripts) page
-or the [uses](/scripts/uses#action) page.
+or the [uses](rules-uses.md#actions) page.
 
 Example:
 ```json

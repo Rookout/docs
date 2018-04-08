@@ -5,7 +5,7 @@ title: Script Operations
 
 Rookout *scripts* are a sequence of operations. Below are described the various operations supported.
 
-For more information on the namespaces check out [uses](/scripts/uses).
+For more information on the namespaces check out [uses](rules-uses.md).
 
 ## Processing Operations
 
@@ -72,7 +72,7 @@ Example:
 
 #### text_file
 
-This operation writes a string from the namespace to a local file. In order to build a string [format](/scripts/operations#format) may be used.
+This operation writes a string from the namespace to a local file. In order to build a string [format](rules-operations.md#format) may be used.
 
 The arguments under path are passed to the python "open" built-in function as is.
 
@@ -108,7 +108,7 @@ Example:
 
 #### slack
 
-This operation writes a string from the namespace to slack. In order to build a string [format](/scripts/operations#format) may be used.
+This operation writes a string from the namespace to slack. In order to build a string [format](rules-operations.md#format) may be used.
 
 Example:
 ```json

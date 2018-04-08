@@ -72,7 +72,7 @@ Example:
 a processing script allows the user to transfom the data and load it into various services
 
 - **Available Paths:** Basic Path, Arithmetic Path
-- **Available Operations:** set, format, return, all [Target Operations](/scripts/operations#Target%20Operations)
+- **Available Operations:** set, format, return, all [Target Operations](rules-operations.md#Target%20Operations)
 - **Available Namespaces:**
     - "store"- items extracted by the rook
     - "message_info"- message meta data

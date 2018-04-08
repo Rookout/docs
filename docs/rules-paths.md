@@ -23,7 +23,7 @@ Example:
 
 Explicit path is a dictionary with the name of the path under "name" and all the relevant arguments within the dictionary.
 
-Availability of different path types depends on the script [uses](/scripts/uses).
+Availability of different path types depends on the script [uses](rules-uses.md).
 
 Example:
 ```json
@@ -67,7 +67,7 @@ Access methods can be chained, for example:
 
 ### Arithmethic Path
 
-a more advanced path, available for most of the agent operations (check out [uses](/scripts/uses)).
+a more advanced path, available for most of the agent operations (check out [uses](rules-uses.md)).
 To select this path type, specify "calc" as the path name.
 
 This path represents an arithmetic exception involving namespace access, constants and arithmetic operators.

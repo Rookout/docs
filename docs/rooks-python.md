@@ -21,7 +21,7 @@ To activate Python Rook within your app, add the following line to your Python c
 from rook import auto_start
 ```
 
-For more control over the Python Rook initialization, check out this [page](/rooks/python_interface).
+For more control over the Python Rook initialization, check out this [page](rooks-python_interface.md).
 
 ## Source Code Version
 
@@ -41,4 +41,4 @@ The resolution takes place in the following steps:
 
 ## Configuration
 
-Python Rook is configured in the same manner as all other [rooks](/rooks/config).
+Python Rook is configured in the same manner as all other [rooks](rooks-config.md).

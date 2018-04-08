@@ -10,7 +10,7 @@ In this short tutorial we are going to show you how to setup Rookout for an exam
 ### Sign Up
 Before starting this tutorial, please make sure you have authentication information for [Rookout](https://app.rookout.com).
 
-You will need both a username/password combination for the UI and a token for the [agent](/agent).
+You will need both a username/password combination for the UI and a token for the [agent](agent.md).
 
 ## Agent Setup
 
@@ -86,7 +86,6 @@ For more information about Docker go [here](https://www.docker.com/).
 ***
 
 For in-depth view check out the following pages:
-- [Agent](/agent)
-- [Server](/server)
-- [Python Rook](/rooks/python)
-- [Rook Points](/scripts)
+- [Agent](agent.md)
+- [Python Rook](rooks-python.md)
+- [Rook Points](rules-index.md)

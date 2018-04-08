@@ -7,14 +7,14 @@ The Rookout scripts run in a sandbox.
 
 They use operations to interact with the namespace which allow them to access the environment and maintain state.
 
-The list of available namespaces for each script is available in [uses](/scripts/uses).
+The list of available namespaces for each script is available in [uses](rules-uses.md).
 
 **The following namespace types exist**:
-1. [Container Namespace](/scripts/namespaces/container)
-1. [Object Namespace](/scripts/namespaces/object)
-1. [Frame Namespace](/scripts/namespaces/frame)
-1. [Stack Namespace](/scripts/namespaces/stack)
-1. [Utils Namespace](/scripts/namespaces/utils)
-1. [Rook Namespace](/scripts/namespaces/rook)
-1. [Agent Namespace](/scripts/namespaces/agent)
-1. [Machine Namespace](/scripts/namespaces/machine)
+1. [Container Namespace](rules-namespaces-container.md)
+1. [Object Namespace](rules-namespaces-object.md)
+1. [Frame Namespace](rules-namespaces-frame.md)
+1. [Stack Namespace](rules-namespaces-stack.md)
+1. [Utils Namespace](rules-namespaces-utils.md)
+1. [Rook Namespace](rules-namespaces-rook.md)
+1. [Agent Namespace](rules-namespaces-agent.md)
+1. [Machine Namespace](rules-namespaces-machine.md)

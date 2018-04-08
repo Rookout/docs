@@ -29,4 +29,4 @@ const rook = require('rookout/auto_start');
 
 ## Configuration
 
-Node Rook is configured in the same manner as all other [rooks](/rooks/config).
+Node Rook is configured in the same manner as all other [rooks](rooks-config.md).
