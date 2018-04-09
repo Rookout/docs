@@ -149,7 +149,7 @@ Yes! Head over to our [Installation Examples](https://github.com/Rookout/deploym
 
 **I want to be more efficient, what can I add to Rookout?**  
 We have prepared integrations with several well-known tools you could use.  
-Check out our [Output Integrations](output-integration-home.md)
+Check out our [Output Integrations](integration-home.md)
 
 **Everything is installed, how do I know it works?**  
 Head to [app.rookout.com](https://app.rookout.com) and start debugging !

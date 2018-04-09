@@ -9,22 +9,23 @@
 const users = []; // DO NOT DELETE - NEEDED FOR DOCUSAURUS
 
 const siteConfig = {
-  title: 'Rookout Open-Source Documentation' /* title for your website */,
-  tagline: 'On the fly debugging and data extraction',
+  title: 'Open-Source Documentation' /* title for your website */,
+  tagline: 'Get data on-demand from your live code just when you need it.',
   url: 'https://rookout.github.io' /* your website url */,
   baseUrl: '/' /* base url for your project */,
+  editUrl: 'https://github.com/Rookout/documentation-new/edit/master/docs/',
   headerLinks: [
-    {search: true},
+    {search: false},
     {doc: 'getting-started', label: 'Getting Started'},
     {doc: 'installation', label: 'Installation'},
-    {doc: 'output-integration', label: 'Output Integrations'},
+    {doc: 'integration', label: 'Integration'},
     {doc: 'reference', label: 'Reference'},
     {page: 'troubleshooting', label: 'Troubleshooting'},
   ],
   users,
   /* path to images for header/footer */
-  headerIcon: 'img/bird_logo.png',
-  footerIcon: 'img/bird_logo.png',
+  headerIcon: 'img/logos/bird_logo_white.svg',
+  footerIcon: 'img/logos/bird_logo.png',
   favicon: 'img/bird_logo.png',
   /* colors for website */
   colors: {
@@ -33,13 +34,9 @@ const siteConfig = {
   },
   /* custom fonts for website */
   fonts: {
-    myFont: [
+    rookoutFont: [
       "Roboto",
       "sans-serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
     ]
   },
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
@@ -59,10 +56,10 @@ const siteConfig = {
   repoUrl: 'https://github.com/rookout/rookout.github.io',
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
-  algolia: {
-    apiKey: '',
-    indexName: '',
-  },
+  // algolia: {
+  //   apiKey: '',
+  //   indexName: '',
+  // },
 };
 
 module.exports = siteConfig;

@@ -7,11 +7,6 @@
 
 const React = require('react');
 
-const CompLibrary = require('../../core/CompLibrary.js');
-const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
-const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
-
 const siteConfig = require(process.cwd() + '/siteConfig.js');
 
 function imgUrl(img) {
@@ -51,14 +46,14 @@ const SplashContainer = props => (
 );
 
 const Logo = props => (
-  <div className="projectLogo">
+  <div className="rook-projectLogo">
     <img src={props.img_src} />
   </div>
 );
 
 const ProjectTitle = props => (
   <h2 className="projectTitle">
-    {siteConfig.title}
+    <Logo img_src={imgUrl('logos/rookout_logo_horizontal.svg')} />
     <small>{siteConfig.tagline}</small>
   </h2>
 );
@@ -71,154 +66,97 @@ const PromoSection = props => (
   </div>
 );
 
-class HomeSplash extends React.Component {
-  render() {
-    let language = this.props.language || '';
-    return (
-      <SplashContainer>
-        <Logo img_src={imgUrl('bird_logo.png')} />
-        <div className="inner">
-          <ProjectTitle />
-          <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
-          </PromoSection>
-        </div>
-      </SplashContainer>
-    );
-  }
-}
+const HomeSplash = () => (
+  <SplashContainer>
+    <div className="inner rook-paddingBottomHalf">
+      <ProjectTitle />
+      <PromoSection>
+        <p>
+            With just a few clicks, you can choose and define various rules to collect any data you want,
+            by setting non-breaking “breakpoints” in the code. You can then send the data anywhere –
+            your analytics, storage or alerting tools or just examine it in our IDE.
+        </p>
+      </PromoSection>
+    </div>
+  </SplashContainer>
+);
 
 const Block = props => (
-  <Container
-    padding={['bottom', 'top']}
-    id={props.id}
-    background={props.background}>
-    <GridBlock align="center" contents={props.children} layout={props.layout} />
-  </Container>
-);
-
-const Categories = props => (
-  <Block layout="fourColumn">
-    {[
-      {
-        content: 'This is the content of my feature',
-        image: imgUrl('bird_logo.png'),
-        imageAlign: 'top',
-        title: 'Feature One',
-      },
-      {
-        content: 'The content of my second feature',
-        image: imgUrl('bird_logo.png'),
-        imageAlign: 'top',
-        title: 'Feature Two',
-      },
-        {
-            content: 'The content of my second feature',
-            image: imgUrl('bird_logo.png'),
-            imageAlign: 'top',
-            title: 'Feature TwoDASDASD',
-        },
-        {
-            content: 'The content of my second feature',
-            image: imgUrl('bird_logo.png'),
-            imageAlign: 'top',
-            title: 'Feature Twdsadso',
-        },
-
-    ]}
-  </Block>
-);
-
-const FeatureCallout = props => (
-  <div
-    className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
-    <h2>Feature Callout</h2>
-    <MarkdownBlock>These are features of this project</MarkdownBlock>
+  <div className="rook-categories rook-paddingBottom rook-paddingTopTwoThird">
+      {props.children.map(child => {
+          return (
+            <div key={child.title}>
+              <div className="blockImage">
+                <a href={child.link}>
+                  <img src={child.image} />
+                </a>
+              </div>
+              <div className="rook-blockContent">
+                <a href={child.link}>
+                  <h2>
+                    {child.title}
+                  </h2>
+                </a>
+              </div>
+            </div>
+          )
+      })}
   </div>
 );
 
-const LearnHow = props => (
-  <Block background="light">
+const Categories = () => (
+  <Block>
     {[
-      {
-        content: 'Talk about learning how to use this',
-        image: imgUrl('bird_logo.png'),
-        imageAlign: 'right',
-        title: 'Learn How',
-      },
+        {
+            link: docUrl('getting-started.html'),
+            image: imgUrl('categories/egg.png'),
+            title: 'Getting Started',
+        },
+        {
+            link: docUrl('installation.html'),
+            image: imgUrl('categories/servers.png'),
+            title: 'Installation',
+        },
+        {
+            link: docUrl('integration.html'),
+            image: imgUrl('categories/puzzle.png'),
+            title: 'Integration',
+        },
+        {
+            link: docUrl('reference.html'),
+            image: imgUrl('categories/doc.png'),
+            title: 'Reference',
+        },
+        {
+            link: pageUrl('troubleshooting.html'),
+            image: imgUrl('categories/troubleshooting.png'),
+            title: 'Troubleshooting',
+        }
     ]}
   </Block>
 );
 
-const TryOut = props => (
-  <Block id="try">
-    {[
-      {
-        content: 'Talk about trying this out',
-        image: imgUrl('bird_logo.png'),
-        imageAlign: 'left',
-        title: 'Try it Out',
-      },
-    ]}
-  </Block>
-);
-
-const Description = props => (
-  <Block background="dark">
-    {[
-      {
-        content: 'This is another description of how this project is useful',
-        image: imgUrl('bird_logo.png'),
-        imageAlign: 'right',
-        title: 'Description',
-      },
-    ]}
-  </Block>
-);
-
-const Showcase = props => {
-  if ((siteConfig.users || []).length === 0) {
-    return null;
-  }
-  const showcase = siteConfig.users
-    .filter(user => {
-      return user.pinned;
-    })
-    .map((user, i) => {
-      return (
-        <a href={user.infoLink} key={i}>
-          <img src={user.image} title={user.caption} />
-        </a>
-      );
-    });
-
-  return (
-    <div className="productShowcaseSection paddingBottom">
-      <h2>{"Who's Using This?"}</h2>
-      <p>This project is used by all these people</p>
-      <div className="logos">{showcase}</div>
-      <div className="more-users">
-        <a className="button" href={pageUrl('users.html', props.language)}>
-          More {siteConfig.title} Users
-        </a>
-      </div>
+const SearchBar = () => (
+  <div className="rook-searchContainer">
+    <div className="rook-searchTitle">
+      <h2>How can we help?</h2>
     </div>
-  );
-};
+    <div className="rook-searchBar">
+      <input type="text" />
+      <img src={imgUrl('icons/search.svg')} />
+    </div>
+  </div>
+);
+
 
 class Index extends React.Component {
   render() {
-    let language = this.props.language || '';
-
     return (
       <div>
-        <HomeSplash language={language} />
-        <div className="mainContainer">
+        <HomeSplash />
+        <div className="rook-homeMainContainer">
+          <SearchBar />
           <Categories />
-
         </div>
       </div>
     );

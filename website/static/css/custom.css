@@ -1,17 +1,131 @@
 /* your custom css */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.footer-logo {
+body {
+    font-family: $rookoutFont;
+}
+
+.rook-footer-logo {
     width: auto !important;
+}
+
+.rook-projectLogo img {
+    height: 75px;
+}
+
+.headerTitle {
+    padding-left: 9px;
+    padding-bottom: 7px;
+    font-weight: bold;
+}
+
+.projectTitle small {
+    margin: 0.7em 0 0.5em;
+}
+
+.homeWrapper {
+    max-width: 650px;
+}
+
+.homeWrapper p {
+    color: #2F3545;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.rook-homeMainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+}
+
+.rook-categoriesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rook-categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 1100px;
+}
+
+.rook-blockContent h2 {
+    text-align: center !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.rook-paddingBottom {
+    padding-bottom: 80px;
+}
+
+.rook-paddingTop {
+    padding-top: 80px;
+}
+
+.rook-paddingBottomHalf {
+    padding-bottom: 40px;
+}
+
+.rook-paddingTopHalf {
+    padding-top: 40px;
+}
+
+.rook-paddingBottomTwoThird {
+    padding-bottom: 60px;
+}
+
+.rook-paddingTopTwoThird {
+    padding-top: 60px;
+}
+
+.rook-searchTitle h2{
+    color: #3F4758;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    margin-bottom: 10px;
+}
+
+.rook-searchBar input {
+    height: 38px;
+    width: 480px;
+    border: 1px solid #3F4758;
+    border-radius: 19px;
+    background-color: #FFFFFF;
+}
+
+.rook-searchBar img {
+    height: 16px;
+    width: 15px;
+
+    position: relative;
+    right: 30px;
+    top: 4px;
 }
 
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
-}
-
-@media only screen and (min-width: 1024px) {
+    .rook-categories {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1024px) {
 }
 
 @media only screen and (min-width: 1400px) {

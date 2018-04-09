@@ -22,7 +22,7 @@ class Footer extends React.Component {
     const currentYear = new Date().getFullYear();
       return <footer className="nav-footer" id="footer">
           <section className="sitemap">
-              <a href={this.props.config.baseUrl} className="nav-home footer-logo">
+              <a href={this.props.config.baseUrl} className="nav-home rook-footer-logo">
                   {this.props.config.footerIcon && (
                       <img
                           src={this.props.config.baseUrl + this.props.config.footerIcon}

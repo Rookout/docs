@@ -22,7 +22,7 @@
     ]
   },
   "extensions": {
-    "Overview": ["output-integration"],
+    "Overview": ["integration"],
     "Output Extensions": [],
     "Input Extensions": []
   },
