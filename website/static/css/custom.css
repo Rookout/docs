@@ -3,10 +3,18 @@
 
 body {
     font-family: $rookoutFont;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.rook-footer-logo {
-    width: auto !important;
+.nav-site li a {
+    color: #FFF !important;
+}
+
+.nav-site li a:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
 }
 
 .rook-projectLogo img {
@@ -113,6 +121,53 @@ body {
     position: relative;
     right: 30px;
     top: 4px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+footer .rook-footer-logo {
+    height: 93px;
+    margin-right: 35px;
+}
+
+footer .sitemap {
+    margin: 0 auto;
+    align-items: center;
+}
+
+footer .sitemapLinksContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .sitemapLinks {
+    display: block;
+    line-height: 12px;
+    color: #FFF;
+}
+
+footer .sitemapLinks a {
+    color: #FFF;
+}
+
+footer .sitemapLinks a:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
+footer .social {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+
+footer .social img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
 }
 
 

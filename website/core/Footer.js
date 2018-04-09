@@ -22,43 +22,41 @@ class Footer extends React.Component {
     const currentYear = new Date().getFullYear();
       return <footer className="nav-footer" id="footer">
           <section className="sitemap">
-              <a href={this.props.config.baseUrl} className="nav-home rook-footer-logo">
+              <a href={this.props.config.baseUrl}>
                   {this.props.config.footerIcon && (
                       <img
+                          className="rook-footer-logo"
                           src={this.props.config.baseUrl + this.props.config.footerIcon}
                           alt={this.props.config.title}
-                          width="170"
-                          height="45"
                       />
                   )}
               </a>
-              <div>
-                  <h5>Documentation</h5>
-                  <a href={this.docUrl('getting-started.html', this.props.language)}>
-                      Getting Started
-                  </a>
-                  <a href={this.docUrl('installation.html', this.props.language)}>
+              <div className="sitemapLinksContainer">
+                  <h5 className="bold">Documentation</h5>
+                  <div className="sitemapLinks">
+                    <a href={this.docUrl('getting-started.html', this.props.language)}>
+                        Getting Started
+                    </a>
+                    <a href={this.docUrl('installation.html', this.props.language)}>
                       Installation
-                  </a>
-                  <a href={this.docUrl('output-integration.html', this.props.language)}>
+                    </a>
+                    <a href={this.docUrl('output-integration.html', this.props.language)}>
                       Output Integrations
-                  </a>
-                  <a href={this.docUrl('reference.html', this.props.language)}>
+                    </a>
+                    <a href={this.docUrl('reference.html', this.props.language)}>
                       Reference
-                  </a>
-                  <a href={this.docUrl('troubleshooting.html', this.props.language)}>
+                    </a>
+                    <a href={this.docUrl('troubleshooting.html', this.props.language)}>
                       Troubleshooting
-                  </a>
+                    </a>
+                  </div>
               </div>
-              <div>
-                  <h5>Community</h5>
+              <div className="social">
                   <a href="https://github.com/Rookout"
                      target="_blank">
                       <img
                           src={this.props.config.baseUrl + "img/social/github.svg"}
                           alt={"GitHub - Rookout"}
-                          width="50"
-                          height="50"
                       />
                   </a>
                   <a
@@ -67,23 +65,23 @@ class Footer extends React.Component {
                       <img
                           src={this.props.config.baseUrl + "img/social/facebook.svg"}
                           alt={"Facebook - Rookout"}
-                          width="50"
-                          height="50"
                       />
+                  </a>
+                  <a href="https://twitter.com/rookoutlabs"
+                     target="_blank">
+                    <img
+                      src={this.props.config.baseUrl + "img/social/twitter.svg"}
+                      alt={"Twitter - Rookout"}
+                    />
                   </a>
                   <a href="https://www.linkedin.com/company/rookout/"
                      target="_blank">
                       <img
                           src={this.props.config.baseUrl + "img/social/linkedin.svg"}
                           alt={"LinkedIn - Rookout"}
-                          width="50"
-                          height="50"
                       />
                   </a>
               </div>
-          </section>
-          <section className="copyright">
-              Copyright &copy; {currentYear} Rookout
           </section>
       </footer>;
   }
