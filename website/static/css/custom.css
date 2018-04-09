@@ -1,8 +1,11 @@
 /* your custom css */
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+    font-family: Roboto;
+    src: url("https://fonts.googleapis.com/css?family=Roboto");
+}
 
 body {
-    font-family: $rookoutFont;
+    font-family: Roboto, sans-serif !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
