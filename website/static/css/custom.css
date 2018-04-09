@@ -106,12 +106,23 @@ body {
     margin-bottom: 10px;
 }
 
+.rook-searchBar input::placeholder {
+    color: #DEE1E8;
+    opacity: 1;
+}
+
 .rook-searchBar input {
     height: 38px;
     width: 480px;
     border: 1px solid #3F4758;
     border-radius: 19px;
     background-color: #FFFFFF;
+
+    padding-left: 20px;
+}
+
+.rook-searchBar input:focus {
+    outline: none;
 }
 
 .rook-searchBar img {
@@ -171,9 +182,41 @@ footer .social img {
 }
 
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+@media only screen and (max-device-width: 736px) {
+    body {
+        display: block;
+    }
+
     .rook-categories {
         flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-site li a {
+        background: #FFF;
+        color: #9962FF !important;
+    }
+
+    .nav-site li a:hover {
+        background: #9962FF;
+        color: #FFF !important;
+
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+    }
+
+    .nav-site li a.siteNavItemActive {
+        background: #9962FF;
+        color: #FFF !important;
+    }
+
+    .rook-searchContainer, .rook-searchBar input {
+        width: 95%;
+    }
+
+    footer .sitemap {
+        flex-direction: row;
+        padding: 0 15px;
     }
 }
 
