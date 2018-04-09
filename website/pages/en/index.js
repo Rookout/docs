@@ -99,7 +99,7 @@ const Block = props => (
   </Container>
 );
 
-const Features = props => (
+const Categories = props => (
   <Block layout="fourColumn">
     {[
       {
@@ -114,6 +114,19 @@ const Features = props => (
         imageAlign: 'top',
         title: 'Feature Two',
       },
+        {
+            content: 'The content of my second feature',
+            image: imgUrl('bird_logo.png'),
+            imageAlign: 'top',
+            title: 'Feature TwoDASDASD',
+        },
+        {
+            content: 'The content of my second feature',
+            image: imgUrl('bird_logo.png'),
+            imageAlign: 'top',
+            title: 'Feature Twdsadso',
+        },
+
     ]}
   </Block>
 );
@@ -204,12 +217,8 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer">
-          <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase language={language} />
+          <Categories />
+
         </div>
       </div>
     );

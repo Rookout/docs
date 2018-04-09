@@ -12,10 +12,13 @@
     "Overview": [
       "installation"
     ],
-    "Installation Examples": [
+    "Rook Examples": [
       "installation-java",
       "installation-python",
       "installation-node"
+    ],
+    "Agent Examples": [
+      "installation-agent-proxy"
     ]
   },
   "extensions": {
