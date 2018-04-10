@@ -11,7 +11,11 @@ const CompLibrary = require('../../core/CompLibrary.js');
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
+const Collapsible = require('Components/Collapsible');
+/* https://alligator.io/css/collapsible/ */
+
 const siteConfig = require(process.cwd() + '/siteConfig.js');
+
 
 class Troubleshooting extends React.Component {
   render() {
@@ -32,17 +36,17 @@ class Troubleshooting extends React.Component {
     ];
 
     return (
-      <div className="docMainWrapper wrapper">
         <Container className="mainContainer documentContainer postContainer">
           <div className="post">
             <header className="postHeader">
               <h2>Need help?</h2>
             </header>
-            <p>This project is maintained by a dedicated group of people.</p>
-            <GridBlock contents={supportLinks} layout="threeColumn" />
+            <p>This project is developed and maintained by Rookout Ltd.</p>
           </div>
+          <Collapsible title="Header Test">
+            Test
+          </Collapsible>
         </Container>
-      </div>
     );
   }
 }
