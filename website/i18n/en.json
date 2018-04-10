@@ -7,6 +7,7 @@
     "agent": "Rookout Agent",
     "getting-started": "Getting Started",
     "installation-agent-proxy": "Installing Rookout Agent with a Proxy",
+    "installation-agent-remote": "Using a Remote Rookout Agent",
     "installation-java": "Java",
     "installation-node": "Node",
     "installation": "Installation Overview",

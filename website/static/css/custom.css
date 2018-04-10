@@ -213,6 +213,10 @@ footer .social img {
         color: #FFF !important;
     }
 
+    .nav-site {
+        border-bottom: 1px solid #533C92;
+    }
+
     .rook-searchContainer, .rook-searchBar input {
         width: 95%;
     }

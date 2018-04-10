@@ -18,7 +18,8 @@
       "installation-node"
     ],
     "Agent Examples": [
-      "installation-agent-proxy"
+      "installation-agent-proxy",
+      "installation-agent-remote"
     ]
   },
   "extensions": {

@@ -56,8 +56,8 @@ const siteConfig = {
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
   // algolia: {
-  //   apiKey: '',
-  //   indexName: '',
+  //   apiKey: '73999324f895c6302845be7877278478',
+  //   indexName: 'rookout-opendocs',
   // },
 };
 
