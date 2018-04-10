@@ -19,9 +19,8 @@ const siteConfig = {
     {doc: 'installation', label: 'Installation'},
     {doc: 'integration', label: 'Integration'},
     {doc: 'reference', label: 'Reference'},
-    {page: 'troubleshooting', label: 'Troubleshooting'},
+    {page: 'troubleshooting', label: 'Troubleshooting'}
   ],
-  users,
   /* path to images for header/footer */
   headerIcon: 'img/logos/bird_logo_white.svg',
   footerIcon: 'img/logos/bird_logo.png',
@@ -58,10 +57,10 @@ const siteConfig = {
   repoUrl: 'https://github.com/rookout/rookout.github.io',
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
-  // algolia: {
-  //   apiKey: '73999324f895c6302845be7877278478',
-  //   indexName: 'rookout-opendocs',
-  // },
+  algolia: {
+    apiKey: '',
+    indexName: '',
+  },
 };
 
 module.exports = siteConfig;

@@ -1,4 +1,10 @@
 window.addEventListener('load', function () {
+  const originalSearchContainer = document.querySelector("ul.nav-site > .navSearchWrapper.reactNavSearchWrapper");
+
+  if (originalSearchContainer !== null) {
+    originalSearchContainer.parentElement.removeChild(originalSearchContainer);
+  }
+
 
   const docNavbarElem = document.querySelector("section.navWrapper.wrapper");
 
@@ -9,7 +15,7 @@ window.addEventListener('load', function () {
     const searchBarInput = document.createElement('input');
     searchBarInput.setAttribute('type', 'text');
     searchBarInput.setAttribute('placeholder', 'Search...');
-    searchBarInput.setAttribute('id', 'rook-searchBar');
+    searchBarInput.setAttribute('id', 'search-input-react');
 
     const searchBarIcon = document.createElement('img');
     searchBarIcon.setAttribute('src', '/img/icons/search.svg');
