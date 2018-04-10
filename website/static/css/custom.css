@@ -285,6 +285,94 @@ footer .social img {
     margin: 0 10px;
 }
 
+/* Troubleshooting Page */
+
+.rook-troubleshootingContainer {
+    padding-bottom: 50px;
+}
+
+.rook-collapsibleContainer {
+    width: 50%;
+}
+
+/* Collapsible Component */
+
+.wrap-collapsible {
+    margin-bottom: 1.2em;
+}
+
+.wrap-collapsible > input[type='checkbox'] {
+    display: none;
+}
+
+.lbl-toggle {
+    display: block;
+
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: left;
+
+    padding: 1rem;
+
+    color: #FFF;
+    background: #9962FF;
+
+    cursor: pointer;
+
+    border-radius: 7px;
+    transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+    color: #3F4758;
+}
+
+.lbl-toggle::before {
+    content: ' ';
+    display: inline-block;
+
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+
+    vertical-align: middle;
+    margin-right: .7rem;
+    transform: translateY(-2px);
+
+    transition: transform .2s ease-out;
+}
+
+.collapsible-content .content-inner {
+    background: rgba(241, 241, 241, .2);
+    border-bottom: 1px solid #533C92;
+
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: .5rem 1rem;
+}
+
+.collapsible-content {
+     max-height: 0;
+     overflow: hidden;
+
+     transition: max-height .25s ease-in-out;
+ }
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+    max-height: initial;
+}
+
+.toggle:checked + .lbl-toggle::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+
+.toggle:checked + .lbl-toggle {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
 
 @media only screen and (max-device-width: 736px) {
     body {
@@ -345,6 +433,10 @@ footer .social img {
 
     .docsNavContainer {
         padding: 0;
+    }
+
+    .rook-collapsibleContainer {
+        width: 100%;
     }
 
     footer .sitemap {
