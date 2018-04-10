@@ -36,6 +36,12 @@ body {
     text-align: center;
 }
 
+.rook-gettingStartedContainer {
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+}
+
 .rook-homeMainContainer {
     display: flex;
     flex-direction: column;
