@@ -11,15 +11,6 @@ body {
     min-height: 100vh;
 }
 
-.nav-site li a {
-    color: #FFF !important;
-}
-
-.nav-site li a:hover {
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-}
-
 .rook-projectLogo img {
     height: 75px;
 }
@@ -208,7 +199,7 @@ footer .social img {
         text-decoration-style: solid;
     }
 
-    .nav-site li a.siteNavItemActive {
+    .nav-site li.siteNavItemActive a {
         background: #9962FF;
         color: #FFF !important;
     }
