@@ -130,6 +130,14 @@ div, span, input, p, h1, h2, h3, h4, h5, h6 {
     width: 1100px;
 }
 
+.hoverable {
+    transition: .5s ease;
+}
+
+.hoverable:hover {
+    opacity: 0.6;
+}
+
 .rook-blockContent h2 {
     text-align: center !important;
     margin-top: 0 !important;
@@ -180,6 +188,7 @@ div, span, input, p, h1, h2, h3, h4, h5, h6 {
 .rook-searchBar input {
     height: 38px;
     width: 480px;
+    font-size: 1.2em;
     border: 1px solid #3F4758;
     border-radius: 19px;
     background-color: #FFFFFF;
@@ -245,7 +254,7 @@ div, span, input, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .post {
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 
@@ -307,6 +316,7 @@ footer .social img {
 
 .wrap-collapsible {
     margin-bottom: 1.2em;
+    font-size: 0.8em;
 }
 
 .wrap-collapsible > input[type='checkbox'] {
@@ -317,11 +327,11 @@ footer .social img {
     display: block;
 
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     text-align: left;
 
-    padding: 1rem;
+    padding: 0.7rem;
 
     color: #FFF;
     background: #9962FF;

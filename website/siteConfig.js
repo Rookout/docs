@@ -17,7 +17,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'getting-started', label: 'Getting Started'},
     {doc: 'installation', label: 'Installation'},
-    {doc: 'integration', label: 'Integration'},
+    {doc: 'integrations', label: 'Integrations'},
     {doc: 'reference', label: 'Reference'},
     {page: 'troubleshooting', label: 'Troubleshooting'}
   ],

@@ -40,8 +40,8 @@ class Footer extends React.Component {
                     <a href={this.docUrl('installation.html')}>
                       Installation
                     </a>
-                    <a href={this.docUrl('integration.html')}>
-                      Output Integrations
+                    <a href={this.docUrl('integrations.html')}>
+                      Integrations
                     </a>
                     <a href={this.docUrl('reference.html')}>
                       Reference
