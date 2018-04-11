@@ -16,12 +16,13 @@ jobs:
       - checkout
       - add_ssh_keys
       - run:
-          name: Deploying to GitHub Pages
+          name: Deploying to Firebase Hosting
           command: |
             cd website
             yarn install
             yarn run lint
-            yarn run publish-gh-pages
+            yarn run build
+            firebase deploy --token=$FIREBASE_TOKEN
 
 workflows:
   version: 2
