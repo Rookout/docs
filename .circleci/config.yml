@@ -19,7 +19,7 @@ jobs:
           command: |
             yarn install
             yarn run lint
-            GIT_USER=$GITHUB_USERNAME yarn run publish-gh-pages
+            yarn run publish-gh-pages
 
 workflows:
   version: 2
