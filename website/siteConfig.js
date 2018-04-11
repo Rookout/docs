@@ -11,9 +11,9 @@ const users = []; // DO NOT DELETE - NEEDED FOR DOCUSAURUS
 const siteConfig = {
   title: 'Open-Source Documentation' /* title for your website */,
   tagline: 'Get data on-demand from your live code just when you need it.',
-  url: 'https://rookout.github.io' /* your website url */,
+  url: 'http://docs.rookout.com' /* your website url */,
   baseUrl: '/' /* base url for your project */,
-  editUrl: 'https://github.com/Rookout/documentation-new/edit/master/docs/',
+  editUrl: 'https://github.com/Rookout/docs/edit/master/docs/',
   headerLinks: [
     {doc: 'getting-started', label: 'Getting Started'},
     {doc: 'installation', label: 'Installation'},
@@ -54,7 +54,7 @@ const siteConfig = {
     '/js/customSearch.js'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
-  repoUrl: 'https://github.com/rookout/rookout.github.io',
+  repoUrl: 'https://github.com/Rookout/docs',
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
   algolia: {
