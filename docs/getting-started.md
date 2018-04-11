@@ -5,13 +5,7 @@ title: Getting Started
 
 ## What is Rookout
 
-Rookout allows you to get data from your live code, as it runs. Extract any piece of data from your code and pipeline
-it anywhere, in realtime,
-even if you’d never thought about it beforehand or created any instrumentation to collect it.
-
-Real-time instrumentation means you don’t need to restart, redeploy or write code to see inside your app.
-
-When you change or add a new vendor to your stack, we can take care of data shipment to that vendor.
+Rookout real-time instrumentation means you don’t need to restart, redeploy or write code to see inside your app.
 
 Our solution supports Python, JVM, and NodeJS on AWS, Azure and Google Cloud or on your bare metal. We provide
 end-to-end security, coupled with a small footprint and a negligible performance impact.
@@ -26,34 +20,27 @@ end-to-end security, coupled with a small footprint and a negligible performance
 ## Tutorial
 ### Pre-requisites
 
-- Docker
-- Rookout account
+- Docker, [available here](https://www.docker.com/community-edition#/download)
 
-If you're missing one of the two, [Docker is available here](https://www.docker.com/community-edition#/download)
-and you can open an account [on our website](https://www.rookout.com/join-our-early-adopters-plan/).
+- Rookout account, [open an account on our website](https://www.rookout.com/join-our-early-adopters-plan/)
 
 
-### What to do?
 
-First, you will need to clone or download our [tutorial github repository](https://github.com/Rookout/tutorial-nodejs).
-
-
-### Running Locally
-
-#### With Docker
-
-1. Insert your agent token in the docker-compose.yml
-1. Run `docker-compose up`
-
-#### Without Docker
-
-1. Insert your agent token in the Makefile
-1. Run `make -j run-prod`
 
 ### Tutorial
 
-1. After running the server go to [https://app.rookout.com/](https://app.rookout.com/)
-    - If you are not logged in yet, log in
+1. First, you will need to clone or download our [tutorial github repository](https://github.com/Rookout/tutorial-nodejs).
+1. Running Locally
+   
+   - **With Docker**
+       1. Insert your agent token in the docker-compose.yml
+       1. Run `docker-compose up`
+   
+   - **Without Docker**
+       1. Insert your agent token in the Makefile
+       1. Run `make -j run-prod`
+
+1. After running the server go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
 1. Add the source code according to the instructions using the left pane **Source View**
 1. Open the file `/src/handlers/homePage.js`
 1. In the right-hand pane **Rules** choose the Rule Type `Log - Rookout`

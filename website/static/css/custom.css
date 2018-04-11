@@ -127,7 +127,8 @@ div, span, input, p, h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     align-items: center;
 
-    width: 1100px;
+    width: 90%;
+    max-width: 1100px;
 }
 
 .hoverable {
@@ -396,14 +397,21 @@ footer .social img {
 
 
 
-@media only screen and (max-device-width: 736px) {
+@media only screen and (max-width: 736px) {
     body {
         display: block;
     }
 
+    .logo {
+        display: block;
+    }
+
+    .headerTitle {
+        font-size: 1.2em;
+    }
+
     .rook-categories {
         flex-direction: column;
-        width: 100%;
     }
 
     .nav-site li a {
@@ -489,7 +497,9 @@ footer .social img {
     }
 }
 
+
 @media only screen and (max-width: 1023px) {
+
 }
 
 @media only screen and (min-width: 1024px) {

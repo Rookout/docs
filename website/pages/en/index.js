@@ -88,7 +88,7 @@ const Block = props => (
   <div className="rook-categories rook-paddingBottom rook-paddingTopTwoThird">
       {props.children.map(child => (
             <div key={child.title} className="hoverable">
-              <div className="blockImage">
+              <div className="rook-blockImage">
                 <a href={child.link}>
                   <img src={child.image} />
                 </a>
