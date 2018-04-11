@@ -116,6 +116,16 @@
     padding: 0!important
 }
 
+@media (max-width: 736px) {
+    .ds-dropdown-menu {
+        width: 100%;
+    }
+
+    .ds-dataset-1 {
+        width: 100%;
+    }
+}
+
 @media (min-width:568px) {
     .aa-dropdown-menu {
         min-width: 400px

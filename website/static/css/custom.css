@@ -432,7 +432,12 @@ footer .social img {
     }
 
     .rook-searchContainer, .rook-searchBar input {
+        width: 95% !important;
+    }
+
+    .algolia-autocomplete {
         width: 95%;
+        text-align: center;
     }
 
     .rook-searchBar.rook-docNav {
