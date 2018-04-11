@@ -1,42 +1,5 @@
-aliases:
-  - &filter-only-master
-    branches:
-      only:
-        - master
-
-  - &restore_yarn_cache
-    name: Restore Yarn Package Cache
-    keys:
-      - yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - yarn-packages-{{ .Branch }}
-      - yarn-packages-master
-      - yarn-packages-
-
-  - &save_yarn_cache
-    name: Save Yarn Package Cache
-    key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
-    paths:
-      - node_modules/
-
 version: 2
 jobs:
-  run-tests:
-    working_directory: ~/website
-    docker:
-      - image: circleci/node:8.9.4
-    steps:
-      - checkout
-      - restore_cache:
-          <<: *restore_yarn_cache
-      - run:
-          name: Installing dependencies
-          command: yarn install
-      - save_cache:
-          <<: *save_yarn_cache
-      - run:
-          name: Running linter
-          command: yarn run lint
-
   deploy-website:
     working_directory: ~/website
     docker:
@@ -49,15 +12,11 @@ jobs:
             git config --global user.email "$GITHUB_USERNAME@users.noreply.github.com"
             git config --global user.name "<YOUR_NAME>"
             echo "machine github.com login $GITHUB_USERNAME password $GITHUB_TOKEN" > ~/.netrc
-            cd website && yarn install && GIT_USER=$GITHUB_USERNAME yarn run publish-gh-pages
+            cd website && yarn install && yarn run lint && GIT_USER=$GITHUB_USERNAME yarn run publish-gh-pages
 
 workflows:
   version: 2
   build_and_deploy:
     jobs:
-      - run-tests:
-          filters: *filter-only-master
       - deploy-website:
           filters: *filter-only-master
-          requires:
-            - run-tests
