@@ -44,7 +44,7 @@ const siteConfig = {
     ' Rookout',
   organizationName: 'Rookout', // or set an env variable ORGANIZATION_NAME
   // change to rookout.github.io when moving to it
-  projectName: 'documentation-new', // or set an env variable PROJECT_NAME
+  projectName: 'docs', // or set an env variable PROJECT_NAME
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default',

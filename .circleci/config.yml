@@ -20,6 +20,7 @@ aliases:
 
 version: 2
 jobs:
+  working_directory: website
   run-tests:
     docker:
       - image: circleci/node:8.9.4
@@ -37,6 +38,7 @@ jobs:
           command: yarn run lint
 
   deploy-website:
+  working_directory: website
     docker:
       - image: circleci/node:8.9.4
     steps:
