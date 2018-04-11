@@ -52,13 +52,14 @@ const siteConfig = {
   scripts: [
     'https://buttons.github.io/buttons.js',
     'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
-    '/js/customSearch.js'
+    '/js/customSearch.js',
+    '/js/googleAnalytics.js'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/Rookout/docs',
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
-  gaTrackingId: "UA-104510371-3",
+  //gaTrackingId: "UA-104510371-3",
   // algolia: {
   //   apiKey: '',
   //   indexName: ''
