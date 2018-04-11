@@ -1,6 +1,6 @@
 ---
-id: integration
-title: Integration
+id: integrations
+title: Integrations
 ---
 
 Full examples for getting Rookout's output to your preferred platform is [available on our GitHub](https://github.com/Rookout/output-integrations)

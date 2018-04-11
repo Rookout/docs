@@ -65,6 +65,10 @@ body {
     min-height: 100vh;
 }
 
+div, span, input, p, h1, h2, h3, h4, h5, h6 {
+    font-family: Roboto, sans-serif !important;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -123,7 +127,16 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    width: 1100px;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.hoverable {
+    transition: .5s ease;
+}
+
+.hoverable:hover {
+    opacity: 0.6;
 }
 
 .rook-blockContent h2 {
@@ -176,6 +189,7 @@ body {
 .rook-searchBar input {
     height: 38px;
     width: 480px;
+    font-size: 1.2em;
     border: 1px solid #3F4758;
     border-radius: 19px;
     background-color: #FFFFFF;
@@ -193,7 +207,7 @@ body {
 
     position: relative;
     right: 30px;
-    top: 4px;
+    top: 27px;
 }
 
 /* Docs Styling */
@@ -238,6 +252,10 @@ body {
 
 .navListItem > a.navItemActive {
     color: #533C92 !important;
+}
+
+.post {
+    font-size: 0.8em;
 }
 
 
@@ -299,6 +317,7 @@ footer .social img {
 
 .wrap-collapsible {
     margin-bottom: 1.2em;
+    font-size: 0.8em;
 }
 
 .wrap-collapsible > input[type='checkbox'] {
@@ -309,11 +328,11 @@ footer .social img {
     display: block;
 
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     text-align: left;
 
-    padding: 1rem;
+    padding: 0.7rem;
 
     color: #FFF;
     background: #9962FF;
@@ -372,16 +391,27 @@ footer .social img {
     border-bottom-left-radius: 0;
 }
 
+.docsNavContainer {
+    overflow-y: visible !important;
+}
 
 
-@media only screen and (max-device-width: 736px) {
+
+@media only screen and (max-width: 736px) {
     body {
         display: block;
     }
 
+    .logo {
+        display: block;
+    }
+
+    .headerTitle {
+        font-size: 1.2em;
+    }
+
     .rook-categories {
         flex-direction: column;
-        width: 100%;
     }
 
     .nav-site li a {
@@ -406,8 +436,26 @@ footer .social img {
         border-bottom: 1px solid #533C92;
     }
 
+    .navBreadcrumb.wrapper {
+        top: 101px;
+        background: #533C92 !important;
+    }
+
+    .navBreadcrumb.wrapper * {
+        color: white !important;
+    }
+
+    .navToggle::before, .navToggle::after {
+        border-color: white !important;
+    }
+
     .rook-searchContainer, .rook-searchBar input {
+        width: 95% !important;
+    }
+
+    .algolia-autocomplete {
         width: 95%;
+        text-align: center;
     }
 
     .rook-searchBar.rook-docNav {
@@ -418,7 +466,7 @@ footer .social img {
         display: block;
         text-align: center;
 
-        margin: 20px 0;
+        margin: 50px 0 0 0;
     }
 
     .rook-searchBar.rook-docNav input {
@@ -439,13 +487,19 @@ footer .social img {
         width: 100%;
     }
 
+    .post {
+        padding: 0 15px;
+    }
+
     footer .sitemap {
         flex-direction: row;
         padding: 0 15px;
     }
 }
 
+
 @media only screen and (max-width: 1023px) {
+
 }
 
 @media only screen and (min-width: 1024px) {

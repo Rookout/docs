@@ -87,8 +87,8 @@ const HomeSplash = () => (
 const Block = props => (
   <div className="rook-categories rook-paddingBottom rook-paddingTopTwoThird">
       {props.children.map(child => (
-            <div key={child.title}>
-              <div className="blockImage">
+            <div key={child.title} className="hoverable">
+              <div className="rook-blockImage">
                 <a href={child.link}>
                   <img src={child.image} />
                 </a>
@@ -119,9 +119,9 @@ const Categories = () => (
             title: 'Installation',
         },
         {
-            link: docUrl('integration.html'),
+            link: docUrl('integrations.html'),
             image: imgUrl('categories/puzzle.png'),
-            title: 'Integration',
+            title: 'Integrations',
         },
         {
             link: docUrl('reference.html'),
@@ -143,7 +143,7 @@ const SearchBar = () => (
       <h2>How can we help?</h2>
     </div>
     <div className="rook-searchBar">
-      <input type="text" placeholder="Search..." id="search-input-react" />
+      <input type="text" placeholder="Search..." id="rookout-search" />
       <img src={imgUrl('icons/search.svg')} />
     </div>
   </div>
