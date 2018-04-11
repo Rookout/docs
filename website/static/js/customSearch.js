@@ -5,7 +5,6 @@ window.addEventListener('load', function () {
     originalSearchContainer.parentElement.removeChild(originalSearchContainer);
   }
 
-
   const docNavbarElem = document.querySelector("section.navWrapper.wrapper");
 
   if (docNavbarElem !== null) {
@@ -15,7 +14,7 @@ window.addEventListener('load', function () {
     const searchBarInput = document.createElement('input');
     searchBarInput.setAttribute('type', 'text');
     searchBarInput.setAttribute('placeholder', 'Search...');
-    searchBarInput.setAttribute('id', 'search-input-react');
+    searchBarInput.setAttribute('id', 'rookout-search');
 
     const searchBarIcon = document.createElement('img');
     searchBarIcon.setAttribute('src', '/img/icons/search.svg');
@@ -25,4 +24,11 @@ window.addEventListener('load', function () {
 
     docNavbarElem.insertBefore(searchContainer, docNavbarElem.children.item(0));
   }
+
+  docsearch({
+    apiKey: 'c4a6a6e1d94fba2757ec2969d13ac547',
+    indexName: 'rookout',
+    inputSelector: '#rookout-search',
+    debug: true
+  });
 });

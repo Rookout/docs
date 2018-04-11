@@ -143,7 +143,7 @@ const SearchBar = () => (
       <h2>How can we help?</h2>
     </div>
     <div className="rook-searchBar">
-      <input type="text" placeholder="Search..." id="search-input-react" />
+      <input type="text" placeholder="Search..." id="rookout-search" />
       <img src={imgUrl('icons/search.svg')} />
     </div>
   </div>

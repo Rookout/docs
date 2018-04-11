@@ -9,8 +9,8 @@
 const users = []; // DO NOT DELETE - NEEDED FOR DOCUSAURUS
 
 const siteConfig = {
-  title: 'Open-Source Documentation' /* title for your website */,
-  tagline: 'Get data on-demand from your live code just when you need it.',
+  title: 'Documentation' /* title for your website */,
+  tagline: 'Rookout - Get data on-demand from your live code just when you need it.',
   url: 'http://docs.rookout.com' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   editUrl: 'https://github.com/Rookout/docs/edit/master/docs/',
@@ -24,7 +24,7 @@ const siteConfig = {
   /* path to images for header/footer */
   headerIcon: 'img/logos/bird_logo_white.svg',
   footerIcon: 'img/logos/bird_logo.png',
-  favicon: 'img/bird_logo.png',
+  favicon: 'img/logos/bird_logo.png',
   /* colors for website */
   colors: {
     primaryColor: '#533C92',
@@ -51,16 +51,17 @@ const siteConfig = {
   },
   scripts: [
     'https://buttons.github.io/buttons.js',
+    'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
     '/js/customSearch.js'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/Rookout/docs',
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
-  algolia: {
-    apiKey: '',
-    indexName: '',
-  },
+  // algolia: {
+  //   apiKey: '',
+  //   indexName: ''
+  // },
 };
 
 module.exports = siteConfig;

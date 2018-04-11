@@ -65,6 +65,10 @@ body {
     min-height: 100vh;
 }
 
+div, span, input, p, h1, h2, h3, h4, h5, h6 {
+    font-family: Roboto, sans-serif !important;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -193,7 +197,7 @@ body {
 
     position: relative;
     right: 30px;
-    top: 4px;
+    top: 27px;
 }
 
 /* Docs Styling */
@@ -238,6 +242,10 @@ body {
 
 .navListItem > a.navItemActive {
     color: #533C92 !important;
+}
+
+.post {
+    font-size: 0.9em;
 }
 
 
@@ -372,6 +380,10 @@ footer .social img {
     border-bottom-left-radius: 0;
 }
 
+.docsNavContainer {
+    overflow-y: visible !important;
+}
+
 
 
 @media only screen and (max-device-width: 736px) {
@@ -406,6 +418,19 @@ footer .social img {
         border-bottom: 1px solid #533C92;
     }
 
+    .navBreadcrumb.wrapper {
+        top: 101px;
+        background: #533C92 !important;
+    }
+
+    .navBreadcrumb.wrapper * {
+        color: white !important;
+    }
+
+    .navToggle::before, .navToggle::after {
+        border-color: white !important;
+    }
+
     .rook-searchContainer, .rook-searchBar input {
         width: 95%;
     }
@@ -418,7 +443,7 @@ footer .social img {
         display: block;
         text-align: center;
 
-        margin: 20px 0;
+        margin: 50px 0 0 0;
     }
 
     .rook-searchBar.rook-docNav input {
@@ -437,6 +462,10 @@ footer .social img {
 
     .rook-collapsibleContainer {
         width: 100%;
+    }
+
+    .post {
+        padding: 0 15px;
     }
 
     footer .sitemap {
