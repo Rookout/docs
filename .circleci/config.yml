@@ -10,16 +10,12 @@ jobs:
     working_directory: ~/docs
     docker:
       - image: circleci/node:8.9.4
-    environment:
-      USE_SSH: true
     steps:
       - checkout
       - add_ssh_keys
       - run:
           name: Deploying to Firebase Hosting
           command: |
-            git config --global user.email "circleci@users.noreply.github.com"
-            git config --global user.name "CircleCI"
             cd website
             yarn install
             yarn run lint
