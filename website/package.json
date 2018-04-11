@@ -6,10 +6,16 @@
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
-    "rename-version": "docusaurus-rename-version"
+    "rename-version": "docusaurus-rename-version",
+    "lint": "./node_modules/.bin/eslint core pages"
   },
   "devDependencies": {
-    "docusaurus": "^1.0.9"
+    "docusaurus": "^1.0.9",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
   },
   "dependencies": {}
 }

@@ -5,20 +5,23 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/* eslint no-unused-vars: 0 */
+
+
 const React = require('react');
 
-const siteConfig = require(process.cwd() + '/siteConfig.js');
+const siteConfig = require(`${process.cwd()}/siteConfig.js`);
 
 function imgUrl(img) {
-  return siteConfig.baseUrl + 'img/' + img;
+  return `${siteConfig.baseUrl}img/${img}`;
 }
 
 function docUrl(doc, language) {
-  return siteConfig.baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
+  return `${siteConfig.baseUrl}docs/${language ? `${language}/` : ''}${doc}`;
 }
 
 function pageUrl(page, language) {
-  return siteConfig.baseUrl + (language ? language + '/' : '') + page;
+  return siteConfig.baseUrl + (language ? `${language}/` : '') + page;
 }
 
 class Button extends React.Component {
@@ -83,8 +86,7 @@ const HomeSplash = () => (
 
 const Block = props => (
   <div className="rook-categories rook-paddingBottom rook-paddingTopTwoThird">
-      {props.children.map(child => {
-          return (
+      {props.children.map(child => (
             <div key={child.title}>
               <div className="blockImage">
                 <a href={child.link}>
@@ -99,8 +101,7 @@ const Block = props => (
                 </a>
               </div>
             </div>
-          )
-      })}
+          ))}
   </div>
 );
 
@@ -131,7 +132,7 @@ const Categories = () => (
             link: pageUrl('troubleshooting.html'),
             image: imgUrl('categories/troubleshooting.png'),
             title: 'Troubleshooting',
-        }
+        },
     ]}
   </Block>
 );

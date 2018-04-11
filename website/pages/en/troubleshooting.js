@@ -5,17 +5,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/* eslint no-unused-vars: 0 */
+
 const React = require('react');
 
-const CompLibrary = require('../../core/CompLibrary.js');
+const CompLibrary = require('../../core/CompLibrary.js'); /* eslint import/no-unresolved: 0 */
+
 const Container = CompLibrary.Container;
 const MarkdownBlock = CompLibrary.MarkdownBlock;
 
-const siteConfig = require(process.cwd() + '/siteConfig.js');
+const siteConfig = require(`${process.cwd()}/siteConfig.js`);
 
-const dehumanizeTitle = value => {
-  return value.replace(' ', '-');
-};
+const dehumanizeTitle = value => value.replace(' ', '-');
 
 const Collapsible = props => (
   <div className="wrap-collapsible">
@@ -60,8 +61,10 @@ const RulesContent = () => (
   - **Future features:** smaller hashes, identify production file based on hash and display
 - Python Bdb failed to find code
   - Two “features”:
-    - In Python there is no “Hoisting” and code objects are only created as their definitions are executed. Today, we are unable to know if this has happened and will assume any loaded module has been fully loaded.
-    - In order to avoid this problem, import rook only after modules has been properly initialized. A common use-case is loaded just before if __name__ == “__main__”
+    - In Python there is no “Hoisting” and code objects are only created as their definitions are executed.
+    Today, we are unable to know if this has happened and will assume any loaded module has been fully loaded.
+    - In order to avoid this problem, import rook only after modules has been properly initialized. A common use-case
+    is loaded just before if __name__ == “__main__”
   - Module scope instrumentation is not supported under CPython
 `}
   </MarkdownBlock>
@@ -148,7 +151,8 @@ class Troubleshooting extends React.Component {
             </header>
             <p>This project is developed and maintained by Rookout Ltd.</p>
             <p>This page contains all the most frequent issues you may encounter.
-              For anything else that you cannot find here you are welcome to contact us at <a href="mailto:support@rookout.com">support@rookout.com</a></p>
+              For anything else that you cannot find here you are welcome to contact us at
+              <a href="mailto:support@rookout.com">support@rookout.com</a></p>
           </div>
           <CollapsibleContainer>
             <Collapsible title="Issues with Rules">
