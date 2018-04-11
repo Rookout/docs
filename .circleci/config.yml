@@ -23,8 +23,6 @@ jobs:
   run-tests:
     docker:
       - image: circleci/node:8.9.4
-    branches:
-      ignore: gh-pages # We do not want to run test as it may fail - everything deployed to the branch is already tested
     steps:
       - checkout
       - restore_cache:
@@ -55,7 +53,8 @@ workflows:
   version: 2
   build_and_deploy:
     jobs:
-      - run-tests
+      - run-tests:
+          filters: *filter-only-master
       - deploy-website:
           filters: *filter-only-master
           requires:
