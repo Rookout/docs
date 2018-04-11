@@ -58,6 +58,7 @@ const siteConfig = {
   repoUrl: 'https://github.com/Rookout/docs',
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
+  gaTrackingId: "UA-104510371-3",
   // algolia: {
   //   apiKey: '',
   //   indexName: ''
