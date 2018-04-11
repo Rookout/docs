@@ -1,1 +1,1 @@
-# [Rookout Documentation](https://rookout.github.io) BADGE
+# [Rookout Documentation](https://rookout.github.io) Badge
