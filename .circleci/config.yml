@@ -20,7 +20,7 @@ jobs:
             yarn install
             yarn run lint
             yarn run build
-            ./node_modules/firebase-tools/firebase deploy --token=$FIREBASE_TOKEN
+            ./node_modules/firebase-tools/bin/firebase deploy --token=$FIREBASE_TOKEN
 
 workflows:
   version: 2
