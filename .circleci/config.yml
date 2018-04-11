@@ -7,16 +7,17 @@ aliases:
 version: 2
 jobs:
   deploy-website:
-    working_directory: ~/website
+    working_directory: ~/docs
     docker:
       - image: circleci/node:8.9.4
     environment:
-      USE_SSH: true    
+      USE_SSH: true
     steps:
       - checkout
       - run:
           name: Deploying to GitHub Pages
           command: |
+            cd website
             yarn install
             yarn run lint
             yarn run publish-gh-pages
