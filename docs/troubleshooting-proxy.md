@@ -59,6 +59,11 @@ set HTTPS_PROXY=https://mypro.xy:1234 && curl -L "https://repository.sonatype.or
 ```
 
 ## Installing and running the Agent
+
+**Remote Agents do not currently work with proxies. If you need to use a proxy you have to install the agent yourself using
+Docker or as a systemd service**
+
+
 If you are installing the Rookout Agent, use this argument when running the setup script: --https-proxy
 ```bash
 setup.sh --token=<Your-Token> --https-proxy=<Your-Proxy>
