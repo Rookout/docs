@@ -332,10 +332,10 @@ footer .social img {
     text-transform: uppercase;
     text-align: left;
 
-    padding: 0.7rem;
+    padding: 0.5rem;
 
-    color: #FFF;
-    background: #9962FF;
+    color: #533C92;
+    border-bottom: 1px solid #9962FF;
 
     cursor: pointer;
 
@@ -364,7 +364,7 @@ footer .social img {
 
 .collapsible-content .content-inner {
     background: rgba(241, 241, 241, .2);
-    border-bottom: 1px solid #533C92;
+    border-bottom: 1px solid #9962FF;
 
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
