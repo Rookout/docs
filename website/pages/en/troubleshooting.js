@@ -74,11 +74,11 @@ export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234 && curl -L "ht
 If you are installing the Rookout Agent, use this argument when running the setup script: --https-proxy
 \`bash setup.sh --token=<Your-Token> --https-proxy=<Your-Proxy>\`
 
-More details are [available here](/docs/installation-agent-proxy.html)
-
 If the agent is already installed, you can edit the configuration file \`/etc/default/rookout-agent\`
 and set the environment variable as explained beforehand: \`export HTTPS_PROXY=...\`. Save the file and restart the agent
 by running: \`systemctl restart rookout-agent\`
+
+More details are [available here](/docs/installation-agent-proxy.html)
 
 ## Using simple-https server
 Using a proxy will not work as the https certificate created is for \`localhost\`
