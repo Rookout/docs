@@ -432,6 +432,10 @@ footer .social img {
         flex-direction: column;
     }
 
+    nav.toc {
+        width: 100%;
+    }
+
     .nav-site li a {
         background: #FFF;
         color: #9962FF !important;
@@ -488,7 +492,7 @@ footer .social img {
     }
 
     .rook-searchBar.rook-docNav input {
-        width: 95% !important;
+        width: 100% !important;
     }
 
     .rook-searchBar.rook-docNav img {
