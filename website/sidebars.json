@@ -56,5 +56,14 @@
       "rules-namespaces-agent",
       "rules-namespaces-machine"
     ]
+  },
+  "troubleshooting": {
+    "Troubleshooting": [
+      "troubleshooting",
+      "troubleshooting-agent",
+      "troubleshooting-rooks",
+      "troubleshooting-proxy",
+      "troubleshooting-rules"
+    ]
   }
 }

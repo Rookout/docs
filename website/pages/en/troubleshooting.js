@@ -98,7 +98,10 @@ export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234 && npm install
 
 
 Using a proxy will not work as the https certificate created is for \`localhost\`
-You can use the \`--no-ssl\` flag for local file serving.
+Make sure you are disabling the \`Use SSL\` option when configuring the file server in our App.
+You can then use the \`--no-ssl\` flag for local file serving.
+
+![simple-https no-ssl option](/img/screenshots/proxy-simplehttps.png)
 `}
   </MarkdownBlock>
 );
