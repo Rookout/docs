@@ -46,7 +46,7 @@ class Footer extends React.Component {
                     <a href={this.docUrl('reference.html')}>
                       Reference
                     </a>
-                    <a href={this.pageUrl('troubleshooting.html')}>
+                    <a href={this.docUrl('troubleshooting.html')}>
                       Troubleshooting
                     </a>
                   </div>

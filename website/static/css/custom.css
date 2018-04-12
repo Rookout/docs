@@ -67,10 +67,28 @@ body {
 
 div, span, input, p, h1, h2, h3, h4, h5, h6 {
     font-family: Roboto, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .bold {
     font-weight: bold;
+}
+
+
+/* Table Styling */
+
+table {
+    border-style: none;
+}
+
+thead {
+    border-bottom: 2px solid #533C92 !important;
+}
+
+tr, th, td {
+    background: #F8F8F8;
+    border-style: none !important;
 }
 
 
@@ -332,10 +350,10 @@ footer .social img {
     text-transform: uppercase;
     text-align: left;
 
-    padding: 0.7rem;
+    padding: 0.5rem;
 
-    color: #FFF;
-    background: #9962FF;
+    color: #533C92;
+    border-bottom: 1px solid #9962FF;
 
     cursor: pointer;
 
@@ -364,7 +382,7 @@ footer .social img {
 
 .collapsible-content .content-inner {
     background: rgba(241, 241, 241, .2);
-    border-bottom: 1px solid #533C92;
+    border-bottom: 1px solid #9962FF;
 
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
@@ -412,6 +430,10 @@ footer .social img {
 
     .rook-categories {
         flex-direction: column;
+    }
+
+    nav.toc {
+        width: 100%;
     }
 
     .nav-site li a {
@@ -470,7 +492,7 @@ footer .social img {
     }
 
     .rook-searchBar.rook-docNav input {
-        width: 95% !important;
+        width: 100% !important;
     }
 
     .rook-searchBar.rook-docNav img {

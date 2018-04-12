@@ -36,6 +36,76 @@ const CollapsibleContainer = props => (
   </div>
 );
 
+const ProxyContent = () => (
+  <MarkdownBlock>
+{`
+### If you are required to use a proxy please read carefully!
+
+## Setting up the proxy for the current environment
+If you are setting your proxy using an environment variable, be sure to do it this way before any command you
+execute that may need it:
+- **UNIX:** \`export HTTPS_PROXY=<[protocol://][user:password@]proxyhost[:port]>\`
+  Example: \`export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234\`
+- **WINDOWS:** \`set HTTPS_PROXY=<[protocol://][user:password@]proxyhost[:port]>\`
+  Example: \`set HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234\`
+
+
+When executing commands as SUDO the proxy environment variable is not kept.
+In order to fix this we need to tell the system to not reset these variables when running as sudo -
+to do this follow these steps:
+- Editing /etc/sudoers by running \`sudo visudo\`. This is a dedicated command that opens your default text editor
+to edit these settings.
+- Find the line \`Defaults env_reset\`
+- After this line, add \`Defaults env_keep="HTTPS_PROXY"\`
+- Save and quit
+
+## Installing a Rook
+To make sure the proxy is used when downloading the rook dependency, execute the command like this:
+\`export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234 && packagemanager rookout\`
+
+__IF USING WINDOWS: REPLACE \`export\` by \`set\`__
+
+### Python:
+\`\`\`bash
+export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234 && pip install rook
+\`\`\`
+
+### Node:
+\`\`\`bash
+export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234 && npm install --save rookout
+\`\`\`
+
+### Java:
+\`\`\`bash
+export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234 && curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+\`\`\`
+
+## Installing and running the Agent
+If you are installing the Rookout Agent, use this argument when running the setup script: --https-proxy
+\`bash setup.sh --token=<Your-Token> --https-proxy=<Your-Proxy>\`
+
+If the agent is already installed, you can edit the configuration file \`/etc/default/rookout-agent\`
+and set the environment variable as explained beforehand: \`export HTTPS_PROXY=...\`. Save the file and restart the agent
+by running: \`systemctl restart rookout-agent\`
+
+More details are [available here](/docs/installation-agent-proxy.html)
+
+## Using simple-https server
+In order to download it from NPM using the proxy run this command with your correct proxy:
+\`\`\`bash
+export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234 && npm install -g simple-https
+\`\`\`
+
+
+Using a proxy will not work as the https certificate created is for \`localhost\`
+Make sure you are disabling the \`Use SSL\` option when configuring the file server in our App.
+You can then use the \`--no-ssl\` flag for local file serving.
+
+![simple-https no-ssl option](/img/screenshots/proxy-simplehttps.png)
+`}
+  </MarkdownBlock>
+);
+
 const RulesContent = () => (
   <MarkdownBlock>
 {`
@@ -155,6 +225,9 @@ class Troubleshooting extends React.Component {
               <a href="mailto:support@rookout.com">support@rookout.com</a></p>
           </div>
           <CollapsibleContainer>
+            <Collapsible title="Using a Proxy">
+              <ProxyContent/>
+            </Collapsible>
             <Collapsible title="Issues with Rules">
               <RulesContent/>
             </Collapsible>

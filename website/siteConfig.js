@@ -19,7 +19,7 @@ const siteConfig = {
     {doc: 'installation', label: 'Installation'},
     {doc: 'integrations', label: 'Integrations'},
     {doc: 'reference', label: 'Reference'},
-    {page: 'troubleshooting', label: 'Troubleshooting'}
+    {doc: 'troubleshooting', label: 'Troubleshooting'}
   ],
   /* path to images for header/footer */
   headerIcon: 'img/logos/bird_logo_white.svg',
