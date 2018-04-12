@@ -49,6 +49,16 @@ execute that may need it:
 - **WINDOWS:** \`set HTTPS_PROXY=<[protocol://][user:password@]proxyhost[:port]>\`
   Example: \`set HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234\`
 
+
+When executing commands as SUDO the proxy environment variable is not kept.
+In order to fix this we need to tell the system to not reset these variables when running as sudo -
+to do this follow these steps:
+1. Editing /etc/sudoers by running \`sudo visudo\`. This is a dedicated command that opens your default text editor
+to edit these settings.
+1. Find the line \`Defaults env_reset\`
+1. After this line, add \`Defaults env_keep="HTTPS_PROXY"\`
+1. Save and quit
+
 ## Installing a Rook
 To make sure the proxy is used when downloading the rook dependency, execute the command like this:
 \`export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234 && packagemanager rookout\`
@@ -81,6 +91,12 @@ by running: \`systemctl restart rookout-agent\`
 More details are [available here](/docs/installation-agent-proxy.html)
 
 ## Using simple-https server
+In order to download it from NPM using the proxy run this command with your correct proxy:
+\`\`\`bash
+export HTTPS_PROXY=https://myuser:password@proxy.rookout.com:1234 && npm install -g simple-https
+\`\`\`
+
+
 Using a proxy will not work as the https certificate created is for \`localhost\`
 You can use the \`--no-ssl\` flag for local file serving.
 `}
