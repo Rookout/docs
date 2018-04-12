@@ -53,11 +53,11 @@ execute that may need it:
 When executing commands as SUDO the proxy environment variable is not kept.
 In order to fix this we need to tell the system to not reset these variables when running as sudo -
 to do this follow these steps:
-1. Editing /etc/sudoers by running \`sudo visudo\`. This is a dedicated command that opens your default text editor
+- Editing /etc/sudoers by running \`sudo visudo\`. This is a dedicated command that opens your default text editor
 to edit these settings.
-1. Find the line \`Defaults env_reset\`
-1. After this line, add \`Defaults env_keep="HTTPS_PROXY"\`
-1. Save and quit
+- Find the line \`Defaults env_reset\`
+- After this line, add \`Defaults env_keep="HTTPS_PROXY"\`
+- Save and quit
 
 ## Installing a Rook
 To make sure the proxy is used when downloading the rook dependency, execute the command like this:
