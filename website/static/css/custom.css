@@ -76,6 +76,22 @@ div, span, input, p, h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Table Styling */
+
+table {
+    border-style: none;
+}
+
+thead {
+    border-bottom: 2px solid #533C92 !important;
+}
+
+tr, th, td {
+    background: #F8F8F8;
+    border-style: none !important;
+}
+
+
 
 /* HomePage Styling */
 
