@@ -6,7 +6,7 @@ title: Java
 ## Java Rook Installation
 
 __Pre-requisites:__  
-- *Oracle Java 7/8 __or__ OpenJDK 1.7/1.8*
+- *Oracle Java 7/8 __or__ OpenJDK 1.7/1.8* ([download here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
 
 1. Download our java agent :  
     ```bash
@@ -19,9 +19,11 @@ __Pre-requisites:__
     ```
     
 3. Add your source files to the .jar/.war/.ear when building.  
-this can be done manually or through the help of a build tool such as Gradle or Maven.
+this can be done manually or through the help of a build tool such as [Gradle](https://gradle.org/) or [Maven](https://maven.apache.org/).
     
 *For explanation on how to do this using Gradle or Maven head to our [installation examples](installation-java.md)*
+
+To check if the rook connects successfully to the agent, see how to in the [Troubleshooting section](troubleshooting-rooks.md)
 
 ### Next steps
 You now need to [install the Rookout Agent.](#rookout-agent-installation)

@@ -6,18 +6,19 @@ title: Node
 ## Node Rook Installation
 
 __Pre-requisites:__  
-- *Node v4.x/v6.x/v8.x*
-
+- *Node v4.x/v6.x/v8.x* ([download here](https://nodejs.org/))
 1. Add our npm package to your package.json :  
     ```bash 
     $ npm install --save rookout
     ```
     
-2. Require the package in your app's entry-point file :  
+1. Require the package in your app's entry-point file :  
     ```javascript
     const rook = require('rookout/auto_start');
     ```
     
+To check if the rook connects successfully to the agent, see how to in the [Troubleshooting section](troubleshooting-rooks.md)
+
     
 ### Next steps
 You now need to [install the Rookout Agent.](#rookout-agent-installation)

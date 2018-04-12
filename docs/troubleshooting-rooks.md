@@ -6,7 +6,9 @@ title: Rooks
 ## Python Rook
 
 - Test connectivity
-  `python -m rook`
+  ```bash
+  $ python -m rook
+  ```
 - Python versions:
     - CPython 2.7 on Linux
     - PYPY (any version) on Linux
@@ -27,7 +29,9 @@ title: Rooks
 ## Java Rook
 
 - Test connectivity
-  `java -jar rook.jar`
+  ```bash
+  $ java -jar rook.jar
+  ```
 - Supported Java versions:
   - Java 7, Java 8
   - Oracle and Open have been tested
@@ -35,6 +39,9 @@ title: Rooks
 ## Node Rook
 
 - Test connectivity
+  ```bash
+  $ node ./node_modules/rookout/check.js
+  ```
 
 - Supported Node versions:
   - 4, 6, 8
