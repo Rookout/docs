@@ -18,7 +18,8 @@ For more information about Rooks see [Rooks Overview](rooks-index.md)
 The Rookout agent provides local orchestration of data collection as well as basic ETL functionality.
 It allows loading the data into local targets such as file system and elasticsearch.
 
-The Agent can be either installed directly onto a systemd compatible OS or as recommended, as a Docker container.
+The Agent can be either installed directly onto a systemd compatible OS, as a Docker container (recommended)
+or as a service hosted by Rookout, connecting to the agent remotely.
 
 For more information about the Agent see [Agent Overview](agent.md)
 
