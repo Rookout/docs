@@ -12,11 +12,9 @@ Our solution supports Python, JVM, and NodeJS on AWS, Azure and Google Cloud or 
 end-to-end security, coupled with a small footprint and a negligible performance impact.
 
 
-#### Watch our demo (click to start)
+#### Watch our demo
 
-<a href="https://www.youtube.com/watch?v=qTdpOC92DBI" target="_blank">
-    <img src="https://img.youtube.com/vi/qTdpOC92DBI/0.jpg" alt="Rookout Demo Video" />
-</a>
+<iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/qTdpOC92DBI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Tutorial
 
