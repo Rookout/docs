@@ -20,26 +20,35 @@ end-to-end security, coupled with a small footprint and a negligible performance
 ## Tutorial
 ### Pre-requisites
 
-- Docker, [available here](https://www.docker.com/community-edition#/download)
+- Docker Compose - [available here](https://docs.docker.com/compose/install/)
 
-- Rookout account, [open an account on our website](https://www.rookout.com/join-our-early-adopters-plan/)
+- Rookout account - [open an account on our website](https://www.rookout.com/join-our-early-adopters-plan/)
 
 
 
 
 ### Tutorial
 
-1. First, you will need to clone or download our [tutorial github repository](https://github.com/Rookout/tutorial-nodejs).
+1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-nodejs) to your local computer.
+    ```bash
+    $ git clone https://github.com/Rookout/tutorial-nodejs.git
+    ```
 2. Running Locally
 
    1. Set your agent token in an env variable 
-     ```bash
-     export ROOKOUT_TOKEN=<Your-Token>
-     ```
+         ```bash
+         export ROOKOUT_TOKEN=<Your-Token>
+         ```
    2. Start agent and app
-        - With Docker `docker-compose up`
-   
-        - Without Docker `make -j run-prod`
+         ```bash
+         $ docker-compose up
+         ```
+         <details>
+         <summary>I don't want to use docker</summary>
+         ```bash
+         $ make -j run-prod
+         ```
+         </details>
 
 3. After running the server go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
 4. Add the source code according to the instructions using the left pane **Source View**
@@ -92,8 +101,8 @@ end-to-end security, coupled with a small footprint and a negligible performance
 8. Refresh, or go the the app page [http://localhost:4000/](http://localhost:4000/) in order to trigger the rule
 9. Check the bottom pane **Messages** and you'll see the dumpframe you just added, as it was triggered by the handler of the web page when you accessed it
 
-
-Go through our [bug hunt](tutorials-bughunt-node.md) and follow instructions to see some basic use cases.
+Great! You're now ready to start debugging, let's start by having some fun with our 
+[bug hunt](tutorials-bughunt-node.md) - follow instructions to try out some basic use cases.
 
 ### Bug Hunt
 
