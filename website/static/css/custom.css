@@ -230,6 +230,10 @@ tr, th, td {
 
 /* Docs Styling */
 
+article p img {
+    margin: 0;
+}
+
 .rook-searchBar.rook-docNav input {
     width: 224px;
 }

@@ -1,7 +1,8 @@
 {
   "getting-started": {
     "Getting Started": [
-      "getting-started"
+      "getting-started",
+      "tutorials-bughunt-node"
     ]
   },
   "installation": {
