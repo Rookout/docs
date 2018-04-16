@@ -58,14 +58,11 @@
 
 /* Common Styling */
 
-body {
-    font-family: Roboto, sans-serif !important;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+/* Sticky Footer */
+/*TODO*/
+/* --Sticky Footer */
 
-div, span, input, p, h1, h2, h3, h4, h5, h6 {
+body, div, span, input, p, h1, h2, h3, h4, h5, h6 {
     font-family: Roboto, sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -91,6 +88,9 @@ tr, th, td {
     border-style: none !important;
 }
 
+.table-integration thead {
+    border-bottom: 0 !important;
+}
 
 
 /* HomePage Styling */
@@ -204,11 +204,16 @@ tr, th, td {
     opacity: 1;
 }
 
+.rook-searchBar input.borderize {
+    border: 1px solid #343B49 !important;
+}
+
 .rook-searchBar input {
     height: 38px;
     width: 480px;
     font-size: 1.2em;
-    border: 1px solid #3F4758;
+    border: none;
+    box-shadow: 0px 0px 0.5px 0.5px rgba(52, 59, 73, 0.15);
     border-radius: 19px;
     background-color: #FFFFFF;
 
@@ -282,6 +287,10 @@ article p img {
 
 
 /* Footer */
+
+footer.nav-footer {
+    box-shadow: none;
+}
 
 footer .rook-footer-logo {
     height: 93px;
@@ -518,11 +527,29 @@ footer .social img {
     }
 
     footer .sitemap {
-        flex-direction: row;
+        flex-direction: column;
         padding: 0 15px;
+    }
+
+    footer .sitemap div {
+        flex: none;
+    }
+
+    footer .social {
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    footer .sitemap > a > img {
+        display: none;
     }
 }
 
+@media only screen and (min-width: 736px) and (max-width: 940px) {
+    header .headerTitle {
+        display: none !important;
+    }
+}
 
 @media only screen and (max-width: 1023px) {
 
