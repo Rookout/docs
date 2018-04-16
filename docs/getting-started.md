@@ -49,23 +49,25 @@ For more information about Rooks see [Rooks Overview](rooks-index.md)
 
 ### Tutorial
 
-1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-nodejs) to your local computer.
+1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-nodejs) to your local computer and run it.
     ```bash
-    $ git clone https://github.com/Rookout/tutorial-nodejs.git
-    ```
-2. Run the tutorial
-    ```bash
-    export ROOKOUT_TOKEN=<Your-Token> && docker-compose up
+    git clone https://github.com/Rookout/tutorial-nodejs
+    export ROOKOUT_TOKEN=<Your-Token>
+    cd tutorial-nodejs
+    docker-compose up
     ```
     <details>
     <summary>_I don't want to use docker_</summary>
     ```bash
-    export ROOKOUT_TOKEN=<Your-Token> && make -j run-prod
+    git clone https://github.com/Rookout/tutorial-nodejs
+    export ROOKOUT_TOKEN=<Your-Token>
+    cd tutorial-nodejs
+    make -j run-prod
     ```
     </details>
 
-3. Go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
-4. Add the source code according to the instructions using the left pane **Source View**
+2. Go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
+3. Add the source code according to the instructions using the left pane **Source View**
     <details>
     <summary>_More details_</summary>
     <p>
@@ -92,7 +94,7 @@ For more information about Rooks see [Rooks Overview](rooks-index.md)
     </details>
     
     
-5. Open the file `src/handlers/homePage.js`
+4. Open the file `src/handlers/homePage.js`
 <details>
     <summary>_View file tree_</summary>
     <p>
@@ -109,14 +111,14 @@ For more information about Rooks see [Rooks Overview](rooks-index.md)
     </p>
 </details>
 
-6. Add a _Dumpframe_ rule next to line number 5 by clicking next the the line number in the file viewer
+5. Add a _Dumpframe_ rule next to line number 5 by clicking next the the line number in the file viewer
 ![Dumpframe Rule](/img/screenshots/getting_started_6.png)
-7. Looking at the right-hand pane **Rules**, you will see the rule you added, on what line you added it and it should be 
+6. Looking at the right-hand pane **Rules**, you will see the rule you added, on what line you added it and it should be 
 <span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
 ![Valid Rule](/img/screenshots/getting_started_7.png)
     - If this is not the case, [click here](troubleshooting-rules.md) to see how to fix that
-8. Go the the app webpage [http://localhost:4000/](http://localhost:4000/) in order to trigger the rule
-9. Check the bottom pane **Messages** and you'll see the dumpframe you just added, as it was triggered by the handler of the web page when you accessed it
+7. Go the the app webpage [http://localhost:4000/](http://localhost:4000/) in order to trigger the rule
+8. Check the bottom pane **Messages** and you'll see the dumpframe you just added, as it was triggered by the handler of the web page when you accessed it
 ![Message pane](/img/screenshots/getting_started_9.png)
 
 ## Bug Hunt
