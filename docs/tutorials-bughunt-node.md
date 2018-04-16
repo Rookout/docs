@@ -6,8 +6,8 @@ sidebar_label: Node Tutorial Bug Hunt
 
 ## What is this?
 
-We prepared for you a few manually introduced bugs in order to learn how to use Rookout.
-The first two will make sure you understand how to create and analyze our most complete rule - the Dump Frame.
+We prepared for you a few manually introduced bugs in order to learn how to use Rookout.  
+The first two will make sure you understand how to create and analyze our default rule - Dump Frame.  
 The third bug will introduce a new rule type - Log. You will be walked through the process of editing the rule in order
 to add custom elements to it.
 

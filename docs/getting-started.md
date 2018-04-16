@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Walk me
+title: First steps with Rookout
 sidebar_label: Rapid production debugging with Rookout
 ---
 
