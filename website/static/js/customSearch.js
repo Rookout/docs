@@ -28,6 +28,7 @@ window.addEventListener('load', function () {
   docsearch({
     apiKey: 'c4a6a6e1d94fba2757ec2969d13ac547',
     indexName: 'rookout',
-    inputSelector: '#rookout-search'
+    inputSelector: '#rookout-search',
+    debug: true
   });
 });
