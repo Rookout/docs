@@ -8,11 +8,11 @@ It allows loading the data into local targets such as file system and elasticsea
 
 ## Installation
 
-The Rookout agent is provided in multiple forms:
+The Rookout agent is distributed in multiple forms:
 1. Docker image
 2. systemd service
 
-Please note that either way the ROOKOUT_TOKEN environment variable must be set for the agent to run.
+Please note that the ROOKOUT_TOKEN environment variable must be set for the agent to run.
 
 ### Docker Image
 

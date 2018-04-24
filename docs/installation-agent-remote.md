@@ -3,19 +3,13 @@ id: installation-agent-remote
 title: Using a Remote Rookout Agent
 ---
 
+## What is agentless ?
 
-## What is our Agentless solution ?
+In certain scenarios it is easier not having to deploy the [Rookout Agent](#agent) as another process on the same cluster or machine.
+This is especially true for [Serverless](https://en.wikipedia.org/wiki/Serverless_computing) and [PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service) based deployment.
 
-We provide remote [Rookout Agents](agent.md) for certain deployment scenarios such as serverless computing
-(e.g. AWS Lambda) or containerized applications which cannot host an Agent as well.
-
-Using our agentless solution in some cases as described above is required or will be more efficient and contribute
-an easier installation process from your end.
-
-Integrating a remote agent in your application is very simple as all it need is 3 environment variables to inform
-the rook to which agent to connect. [More detailed steps below](#configuration-for-remote-agent)
-
-Feel free to [contact us](mailto:support@rookout.com) about our agentless solution.
+Rookout supports this use-case by offering an agentless deployment, providing the agent as part of our SaaS offering.
+To enable this for your Rookout account, please [contact us](mailto:support@rookout.com).
 
 ## Installing the Rook
 
