@@ -40,5 +40,7 @@ set ROOKOUT_AGENT_PORT=443
 set ROOKOUT_TOKEN=YOUR_TOKEN
 ```
 
+Great! Now you can simply run your application with the Rook and it will connect to the correct agent !
+
 
 For more Rook Configuration, see our [Rook Config Reference.](rooks-config.md)
