@@ -33,3 +33,4 @@ You will be able to find detailed procedures for all the following :
 - [On AWS Elastic Container Service](https://github.com/Rookout/deployment-examples/tree/master/aws-ecs)
 - [On AWS Elastic Beanstalk](https://github.com/Rookout/deployment-examples/tree/master/aws-beanstalk/node-elasticbeanstalk)
 - [Using TypeScript](https://github.com/Rookout/deployment-examples/tree/master/node-typescript)
+- [With AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/aws-lambda-node)
