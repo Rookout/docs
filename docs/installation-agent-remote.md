@@ -6,16 +6,16 @@ title: Using a Remote Rookout Agent
 
 ## What is our Agentless solution ?
 
-A [Rookout Agent](agent.md) is the component that takes care of all the connected Rooks and handles the data from them
-to the _web management console_ and the [rules](rules-index.md) you add.
+We provide remote [Rookout Agents](agent.md) for certain deployment scenarios such as serverless computing
+(e.g. AWS Lambda) or containerized applications which cannot host an Agent as well.
 
+Using our agentless solution in some cases as described above is required or will be more efficient and contribute
+an easier installation process from your end.
 
-In case you don't want to install the Agent yourself, we provide Remote Agents hosted in our care that you can simply
-connect to by passing a few environment variables to the Rook, as explained below.
+Integrating a remote agent in your application is very simple as all it need is 3 environment variables to inform
+the rook to which agent to connect. [More detailed steps below](#configuration-for-remote-agent)
 
-
-If you are interested in this method, feel free to [contact us](mailto:support@rookout.com) or
-[register here](https://www.rookout.com/join-our-early-adopters-plan/) if you haven't done so yet !
+Feel free to [contact us](mailto:support@rookout.com) about our agentless solution.
 
 ## Installing the Rook
 

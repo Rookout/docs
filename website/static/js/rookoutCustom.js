@@ -1,3 +1,14 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+if (document.getElementById) document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-3"></script>');
+
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-104510371-3');
+
+
 window.addEventListener('load', function () {
   const originalSearchContainer = document.querySelector("ul.nav-site > .navSearchWrapper.reactNavSearchWrapper");
 
@@ -28,7 +39,6 @@ window.addEventListener('load', function () {
   docsearch({
     apiKey: 'c4a6a6e1d94fba2757ec2969d13ac547',
     indexName: 'rookout',
-    inputSelector: '#rookout-search',
-    debug: true
+    inputSelector: '#rookout-search'
   });
 });
