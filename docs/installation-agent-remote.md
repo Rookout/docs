@@ -3,9 +3,13 @@ id: installation-agent-remote
 title: Using a Remote Rookout Agent
 ---
 
+## What is agentless ?
 
-If we have provided you with a remote Rookout Agent, all you have to do is integrate the appropriate Rook into your
-application and set the relevant environment variables to connect to the Agent.
+In certain scenarios it is easier not having to deploy the [Rookout Agent](#agent) as another process on the same cluster or machine.
+This is especially true for [Serverless](https://en.wikipedia.org/wiki/Serverless_computing) and [PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service) based deployment.
+
+Rookout supports this use-case by offering an agentless deployment, providing the agent as part of our SaaS offering.
+To enable this for your Rookout account, please [contact us](mailto:support@rookout.com).
 
 ## Installing the Rook
 
