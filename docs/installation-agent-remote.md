@@ -4,8 +4,18 @@ title: Using a Remote Rookout Agent
 ---
 
 
-If we have provided you with a remote Rookout Agent, all you have to do is integrate the appropriate Rook into your
-application and set the relevant environment variables to connect to the Agent.
+## What is our Agentless solution ?
+
+A [Rookout Agent](agent.md) is the component that takes care of all the connected Rooks and handles the data from them
+to the _web management console_ and the [rules](rules-index.md) you add.
+
+
+In case you don't want to install the Agent yourself, we provide Remote Agents hosted in our care that you can simply
+connect to by passing a few environment variables to the Rook, as explained below.
+
+
+If you are interested in this method, feel free to [contact us](mailto:support@rookout.com) or
+[register here](https://www.rookout.com/join-our-early-adopters-plan/) if you haven't done so yet !
 
 ## Installing the Rook
 
