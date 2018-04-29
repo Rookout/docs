@@ -21,7 +21,7 @@ To check if the rook connects successfully to the agent, see how to in the [Trou
 
     
 ### Next steps
-You now need to [install the Rookout Agent.](#rookout-agent-installation)
+You now need to [install the Rookout Agent.](installation-agent.md)
 
 ## Examples
 
