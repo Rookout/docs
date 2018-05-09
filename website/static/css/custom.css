@@ -77,6 +77,12 @@ body, div, span, input, p, h1, h2, h3, h4, h5, h6 {
     -moz-osx-font-smoothing: grayscale;
 }
 
+pre code {
+    font-family: Roboto Mono, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .bold {
     font-weight: bold;
 }
