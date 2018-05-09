@@ -17,19 +17,9 @@ Configuration values are loaded with the following precedence:
 Environment variables for the hosting application can be used for on the fly configuration of the Rook.
 Only the most basic configurations can be accessed this way:
 
-###### ROOKOUT_AGENT_HOST
-Host running the Rookout agent to connect to.  
-The default value is LOCALHOST.
-
-*WARNING:* The communication medium between the Rook and the agent is assumed to be secure by nature. Do not communicate over the open internent!
-###### ROOKOUT_AGENT_PORT
-Port number the Rookout agent is listening on.  
-The default value is 7486.
-
-###### ROOKOUT_ROOK_TAGS
-A list of comma separated values (tags) that will be added to the Rook's identity.  
-Those will be available both for the scripting engine and the frontend.  
-The default value is an empty list.
+| ROOKOUT_AGENT_HOST | ROOKOUT_AGENT_PORT | ROOKOUT_TOKEN | ROOKOUT_ROOK_TAGS |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:|:--------------------------------------------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Host running the Rookout agent to connect to.<br/><br/>The default value is LOCALHOST.<br/><br/>**WARNING:** The communication medium between the Rook and the agent is assumed to be secure by nature. Do not communicate over the open internet! | Port number the Rookout agent is listening on.<br/><br/>The default value is 7486. | Auth Token of your organization if using an agentless solution | A list of semicolon `;` separated values (tags) that will be added to the Rook's identity.<br/>Those will be available both for the scripting engine and the frontend.<br/><br/>The default value is an empty list. |
 
 #### 2. Application Specific Configuration File
 
