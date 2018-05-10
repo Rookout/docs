@@ -142,7 +142,7 @@ body, div, span, input, p, h1, h2, h3, h4, h5, h6 {
     -moz-osx-font-smoothing: grayscale;
 }
 
-pre code, pre code > div, span, input, p, h1, h2, h3, h4, h5, h6  {
+pre code, [class*="hljs"]  {
     font-family: Roboto Mono, sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
