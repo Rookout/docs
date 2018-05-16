@@ -152,6 +152,10 @@ pre code, [class*="hljs"]  {
     font-weight: bold;
 }
 
+.nav-site li a {
+    font-weight: normal !important;
+}
+
 
 /* Table Styling */
 
