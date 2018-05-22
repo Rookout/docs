@@ -29,8 +29,8 @@ Full examples for integrating Rookout into your application are [available on ou
 
 You will be able to find detailed procedures for all the following :
 
-- [On Google AppEngine](https://github.com/Rookout/deployment-examples/tree/master/app-engine-flexible)
-- [On AWS Elastic Container Service](https://github.com/Rookout/deployment-examples/tree/master/aws-ecs)
-- [On AWS Elastic Beanstalk](https://github.com/Rookout/deployment-examples/tree/master/aws-beanstalk/node-elasticbeanstalk)
+- [On Google AppEngine](https://github.com/Rookout/deployment-examples/tree/master/node-app-engine-flex)
+- [On AWS Elastic Container Service](https://github.com/Rookout/deployment-examples/tree/master/node-aws-ecs)
+- [On AWS Elastic Beanstalk](https://github.com/Rookout/deployment-examples/tree/master/aws-beanstalk/node-aws-elasticbeanstalk)
 - [Using TypeScript](https://github.com/Rookout/deployment-examples/tree/master/node-typescript)
-- [With AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/aws-lambda-node)
+- [With AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/node-aws-lambda)
