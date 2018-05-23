@@ -21,14 +21,14 @@ __Level: Beginner__
     - **Debug:**  
         1. In the Rookout app, open the file `app.py`  
 
-        ![](../website/static/img/screenshots/python_tutorial_0.png)  
-        
+        ![](/img/screenshots/python_tutorial_0.png)  
+
         2. Using the **Rules** pane on the right, select the *Rule Type* "Dump Frame"
         3. Add this rule to line 45 by clicking left to the line numbering (just like you would have created a breakpoint on an IDE)
-        ![](../website/static/img/screenshots/python_tutorial_1.png)  
+        ![](/img/screenshots/python_tutorial_1.png)  
         4. Try clicking on `Clear completed` again to see the message that pops in the Rookout app
         5. We can now see the whole stacktrace leading to this point and we pinpoint the error to this message :
-        ![](../website/static/img/screenshots/python_tutorial_2.png)  
+        ![](/img/screenshots/python_tutorial_2.png)  
         6. We see the `Locals` object and all we have in is `this`, which has `todos` inside it.
             - it means we need to access todos as `this.todos.filter(...` and not `todos.filter(...`
         7. We can now know what is not working on the server-side and fix it.

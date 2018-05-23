@@ -2,7 +2,8 @@
   "getting-started": {
     "Getting Started": [
       "getting-started",
-      "tutorials-bughunt-node"
+      "tutorials-bughunt-node",
+      "tutorials-bughunt-python"
     ]
   },
   "installation": {
