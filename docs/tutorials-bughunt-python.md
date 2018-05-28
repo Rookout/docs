@@ -16,7 +16,6 @@ For more information about Rule Scripting refer to [our reference](rules-index.m
 ## Bug scenarios
 
 __Level: Beginner__
-<<<<<<< HEAD
 - __The bug: ``Clear Completed`` button does not work. When clicked - completed todos are not cleared.__
     - **Reproduce:** Add a few todos, check one or more as completed using the checkbox on the left of the task and click the ``Clear completed`` button on the bottom right corner.  
 
