@@ -6,12 +6,34 @@ sidebar_label: Python Tutorial
 
 
 1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-python) to your local computer and run it.
+
+<details>
+<summary>Mac/Linux</summary>
+<p>
+
 ```bash
 git clone https://github.com/Rookout/tutorial-python
-export ROOKOUT_TOKEN=<Your-Token> # set if your'e on Windows
+export ROOKOUT_TOKEN=<Your-Token>
 cd tutorial-python
 docker-compose up
 ```
+
+</p>
+</details>
+
+<details>
+<summary>Windows</summary>
+<p>
+
+```batch
+git clone https://github.com/Rookout/tutorial-python
+set ROOKOUT_TOKEN=<Your-Token>
+cd tutorial-python
+docker-compose up
+```
+
+</p>
+</details>
 
 2. Go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
 3. Add the source code according to the instructions using the left pane **Source View**
@@ -33,7 +55,8 @@ docker-compose up
     </details>
     
     
-4. Open the file `app.py`
+4. Open the file `app.py`  
+<img src="/img/screenshots/python_tutorial_0.png" width="400px" height="300px" />  
 
 5. Add a _Dumpframe_ rule next to line number 74 by clicking next the the line number in the file viewer
 ![Dumpframe Rule](/img/screenshots/getting_started_5.png)
