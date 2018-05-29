@@ -109,7 +109,7 @@ const Categories = () => (
   <Block>
     {[
         {
-            link: docUrl('getting-started.html'),
+            link: docUrl('introduction.html'),
             image: imgUrl('categories/egg.png'),
             title: 'Getting Started',
         },
