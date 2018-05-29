@@ -1,6 +1,6 @@
 ---
 id: tutorials-bughunt-node
-title: Bug Hunt
+title: NodeJS Bug Hunt
 sidebar_label: Node Tutorial Bug Hunt
 ---
 

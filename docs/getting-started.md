@@ -54,6 +54,7 @@ Choose your preferred language for the tutorial
 <details>
 <summary>NodeJS Tutorial</summary>
 <p>
+
 1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-nodejs) to your local computer and run it.
     ```bash
     git clone https://github.com/Rookout/tutorial-nodejs
@@ -138,13 +139,14 @@ Great! You're now ready to start debugging, let's start by having some fun with 
 <details>
     <summary>Python Tutorial</summary>
     <p>
-    1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-python) to your local computer and run it.
-    ```bash
-    git clone https://github.com/Rookout/tutorial-python
-    export ROOKOUT_TOKEN=<Your-Token> # set if your'e on Windows
-    cd tutorial-python
-    docker-compose up
-    ```
+
+1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-python) to your local computer and run it.
+```bash
+git clone https://github.com/Rookout/tutorial-python
+export ROOKOUT_TOKEN=<Your-Token> # set if your'e on Windows
+cd tutorial-python
+docker-compose up
+```
 
 2. Go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
 3. Add the source code according to the instructions using the left pane **Source View**
@@ -181,6 +183,6 @@ Great! You're now ready to start debugging, let's start by having some fun with 
 ## Bug Hunt
 
 Great! You're now ready to start debugging, let's start by having some fun with our 
-[bug hunt](tutorials-bughunt-python.md) - follow instructions to try out some basic use cases.
+**[bug hunt](tutorials-bughunt-python.md)** - follow instructions to try out some basic use cases.
     </p>
 </details>
