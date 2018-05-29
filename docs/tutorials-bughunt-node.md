@@ -23,7 +23,7 @@ __Level: Beginner__
         2. Using the **Rules** pane on the right, select the *Rule Type* "Dump Frame"
         3. Add this rule to line 131 and try again to click on `Clear completed` to see the message that pops in the Rookout app
         4. We can now see the whole stacktrace leading to this point and we pinpoint the error to this message :
-        5. We see the `Locals` object and all we have in is `this`, which has `todos` inside it.
+        5. We see the `Locals` object and all we have in is `this`, which has `store.todos` inside it.
             - it means we need to access todos as `this.todos.filter(...` and not `todos.filter(...`
         6. We can now know what is not working on the server-side and fix it.
 

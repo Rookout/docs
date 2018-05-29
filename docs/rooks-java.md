@@ -30,10 +30,10 @@ the jar file has that attribute in it's manifest, use the attribute value.
 
 ## Supported Versions
 
-| Implementation     | Versions |
-| ------------------ | -------- |
-| **Oracle Java**    | 7,8      |
-| **OpenJDK**        | 1.7, 1.8 |
+| Implementation     | Versions      |
+| ------------------ | ------------- |
+| **Oracle Java**    | 7, > 8u60     |
+| **OpenJDK**        | 1.7, 1.8      |
 
 ## Source Code Version
 
