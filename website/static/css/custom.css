@@ -649,3 +649,27 @@ footer .social img {
 
 @media only screen and (min-width: 1500px) {
 }
+
+/* design for tutorial button (originally from https://github.com/facebook/Docusaurus/blob/2c74d937607fcd84677be5d6990ca2a3b4ba8d7a/lib/static/css/main.css#L576) */
+.tutorial-button {
+    margin: 4px;
+    border: 1px solid $primaryColor;
+    border-radius: 3px;
+    color: $primaryColor;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2em;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 0px
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: background 0.3s, color 0.3s;
+}
+
+.tutorial-button:hover {
+    transition: transform .2s;
+    transform: scale(1.1);
+}

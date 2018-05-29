@@ -50,6 +50,12 @@ For more information about Rooks see [Rooks Overview](rooks-index.md)
 ### Tutorial
 
 Choose your preferred language for the tutorial
-
-[NodeJS Tutorial](node-getting-started.md)  
-[Python Tutorial](python-getting-started.md)
+    
+      
+   
+<a class="tutorial-button" href="node-getting-started.html">
+<img src="/img/logos/nodejs.png" width="120px" height="50px"/>
+</a>
+<a class="tutorial-button" href="python-getting-started.html">
+<img src="/img/logos/python.png" width="120px" height="50px" />
+</a>
