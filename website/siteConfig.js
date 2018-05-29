@@ -15,7 +15,7 @@ const siteConfig = {
   baseUrl: '/' /* base url for your project */,
   editUrl: 'https://github.com/Rookout/docs/edit/master/docs/',
   headerLinks: [
-    {doc: 'getting-started', label: 'Getting Started'},
+    {doc: 'introduction', label: 'Getting Started'},
     {doc: 'installation', label: 'Installation'},
     {doc: 'integrations', label: 'Integrations'},
     {doc: 'reference', label: 'Reference'},

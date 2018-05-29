@@ -1,15 +1,15 @@
 {
-  "getting-started": {
+  "introduction": {
     "Getting Started": [
       "introduction"
     ],
-    "Python":[
-      "python-getting-started",
-      "tutorials-bughunt-python"
-    ],
-    "Node": [
+    "Node Tutorial":[
       "node-getting-started",
       "tutorials-bughunt-node"
+    ],
+    "Python Tutorial":[
+      "python-getting-started",
+      "tutorials-bughunt-python"
     ]
   },
   "installation": {
