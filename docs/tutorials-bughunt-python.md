@@ -1,6 +1,6 @@
 ---
 id: tutorials-bughunt-python
-title: Bug Hunt
+title: Python Bug Hunt
 sidebar_label: Python Tutorial Bug Hunt
 ---
 
@@ -18,19 +18,18 @@ For more information about Rule Scripting refer to [our reference](rules-index.m
 __Level: Beginner__
 - __The bug: ``Clear Completed`` button does not work. When clicked - completed todos are not cleared.__
     - **Reproduce:** Add a few todos, check one or more as completed using the checkbox on the left of the task and click the ``Clear completed`` button on the bottom right corner.  
-
-    ![](/img/screenshots/python_tutorial_3.png =400x310)  
+    <img src="/img/screenshots/python_tutorial_3.png" width="400px" height="310px" />  
 
     - **Debug:**  
         1. Load the app's code from github - Press `Add Source` -> `GithHub` -> Repository Owner: `Rookout` -> Repository: `tutorial-python` -> `View Repository`  
-        ![](/img/screenshots/python_tutorial_4.png =285x350)  
+        <img src="/img/screenshots/python_tutorial_4.png" width="285px" height="350px" />  
         2. In the [Rookout app](https://app.rookout.com), open the file `app.py`  
-        ![](/img/screenshots/python_tutorial_0.png =400x300)  
+        <img src="/img/screenshots/python_tutorial_0.png" width="400px" height="300px" />  
         3. Add a rule to line 43 by clicking left to the line numbering (just like you would have created a breakpoint on an IDE)  
         ![](/img/screenshots/python_tutorial_1.png)  
         4. Try clicking on `Clear completed` again to see the message that pops in the Rookout app
         5. We can now see the whole stacktrace leading to this point and the local variables:  
-        ![](/img/screenshots/python_tutorial_2.png =400x332)  
+        <img src="/img/screenshots/python_tutorial_2.png" width="400px" height="332px" />  
         6. Notice how we created a new variable ``todo`` instead of overriding ``todos``
         7. Now we know what the bug is. This example is a very basic example for using Rookout
 
