@@ -13,11 +13,35 @@ sidebar_label: NodeJS Tutorial
     ```
     <details>
     <summary>_I don't want to use docker_</summary>
+    
+    **Will work on Linux only!**  
+    
     ```bash
     git clone https://github.com/Rookout/tutorial-nodejs
     export ROOKOUT_TOKEN=<Your-Token>
     cd tutorial-nodejs
     make -j run-prod
+    ```
+    
+    On MacOS you should do:
+    
+    - make sure you have `xcode` installed (you need this for gRPC).
+    - make sure that you use node version `8.x.x`   
+    
+    Run the agent (you will still have to run it in docker for the agent):
+    
+    ```bash
+    export ROOKOUT_TOKEN=<Your-Token>
+    docker-compose up -d rookout-agent
+    ```
+    
+    Then run the node server:
+    
+    ```bash
+    git clone https://github.com/Rookout/tutorial-nodejs
+    cd tutorial-nodejs
+    make install-dependencies start-web
+    
     ```
     </details>
 
@@ -52,8 +76,7 @@ sidebar_label: NodeJS Tutorial
 4. Open the file `src/handlers/homePage.js`
 <details>
     <summary>_View file tree_</summary>
-    <p>
-    ```
+        
     src/
     ├── handlers
     │   └── homePage.js
@@ -62,8 +85,7 @@ sidebar_label: NodeJS Tutorial
     ├── static
     ├── templates
     └── utils
-    ```
-    </p>
+        
 </details>
 
 5. Add a _Dumpframe_ rule next to line number 5 by clicking next the the line number in the file viewer
