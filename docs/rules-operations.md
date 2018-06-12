@@ -190,6 +190,25 @@ This operation posts a JSON object built from objects in the namespace to loggly
 }
 ```
 
+#### sumologic
+
+This operation posts a JSON object built from objects in the namespace to sumologic
+
+Example:
+```json
+{
+"name": "sumologic",
+  "target": {
+     "url": "https://[SumoEndpoint]/receiver/v1/http/[UniqueHTTPCollectorCode]"
+  },
+  "items": {
+    "function": "store.rookout.frame.function",
+    "filename": "store.rookout.frame.filename",
+    "line": "store.rookout.frame.line"
+  }
+}
+```
+
 ## Unsafe Operations
 
 Rookout also supports some unsafe operations in the Rook and Agent. Using them incorrectly may adversely affect the 
