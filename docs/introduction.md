@@ -46,6 +46,8 @@ For more information about Rooks see [Rooks Overview](rooks-index.md)
 
 - [Rookout account](https://www.rookout.com/join-our-early-adopters-plan/)
 
+- If you own a Mac, you need to install `xcode` command line tools: `sudo xcode-select --install`
+
 
 ### Tutorial
 

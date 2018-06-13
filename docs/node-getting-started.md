@@ -14,7 +14,7 @@ sidebar_label: NodeJS Tutorial
     <details>
     <summary>_I don't want to use docker_</summary>
     
-    **Will work on Linux only!**  
+    For Linux:  
     
     ```bash
     git clone https://github.com/Rookout/tutorial-nodejs
@@ -23,10 +23,10 @@ sidebar_label: NodeJS Tutorial
     make -j run-prod
     ```
     
-    On MacOS you should do:
+    For Mac:
     
     - make sure you have `xcode` installed (you need this for gRPC).
-    - make sure that you use node version `8.x.x`   
+    - make sure that you use node version <= `8.x.x`   
     
     Run the agent (you will still have to run it in docker for the agent):
     
@@ -38,11 +38,9 @@ sidebar_label: NodeJS Tutorial
     Then run the node server:
     
     ```bash
-    git clone https://github.com/Rookout/tutorial-nodejs
-    cd tutorial-nodejs
     make install-dependencies start-web
-    
     ```
+    
     </details>
 
 2. Go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
