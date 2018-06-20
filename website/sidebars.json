@@ -3,13 +3,17 @@
     "Getting Started": [
       "introduction"
     ],
-    "Node Tutorial":[
+    "Node Tutorial": [
       "node-getting-started",
       "tutorials-bughunt-node"
     ],
-    "Python Tutorial":[
+    "Python Tutorial": [
       "python-getting-started",
       "tutorials-bughunt-python"
+    ],
+    "Java Tutorial": [
+      "java-getting-started",
+      "tutorials-bughunt-java"
     ]
   },
   "installation": {
@@ -28,7 +32,9 @@
     ]
   },
   "extensions": {
-    "Overview": ["integrations"],
+    "Overview": [
+      "integrations"
+    ],
     "Output Extensions": [],
     "Input Extensions": []
   },
