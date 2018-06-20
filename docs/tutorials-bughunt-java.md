@@ -53,15 +53,15 @@ __Level: Intermediate__
         3. Add the rule in the duplicateTodo function on the line with `todos.add(newTodoRecord);`
         4. Before triggering the rule, let's edit it so it returns what we want
         5. In the **Rules** pane on the right, click the *Edit Rule* (pen) icon next to the rule you just added. It will open up the Rule configuration as a JSON file
-        6. On line 37 in the `paths` object let's add a property `"store.rookout.locals.dump": "frame.dump()"`
+        6. On line 37 in the `paths` object let's add a property `"store.rookout.locals.dup": "frame.newTodoRecord"`
         7. On line 51 we have `processing.operations` object, let's add a new operation in the array :
         __name: send_rookout - means we are sending the information to the rookout web application__
-        __path: store.rookout.locals.dump - we tell the rule what information to send__
+        __path: store.rookout.locals.dup - we tell the rule what information to send__
 
         ```
         {
             "name": "send_rookout",
-            "path": "store.rookout.locals.dump"
+            "path": "store.rookout.locals.dup"
         }
         ```
         8. Click the save button on the upper pane.
