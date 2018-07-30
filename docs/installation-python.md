@@ -40,3 +40,5 @@ You will be able to find detailed procedures for all the following :
 - [Python - Rookout using Kubernetes](https://github.com/Rookout/deployment-examples/tree/master/python-kubernetes)
 - [Django](https://github.com/Rookout/deployment-examples/tree/master/python-django)
 - [With AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/python-aws-lambda)
+- [With AWS Lambda + Chalice](https://github.com/Rookout/deployment-examples/tree/master/python-aws-chalice)
+- [With AWS Lambda + serverless framework ](https://github.com/Rookout/deployment-examples/tree/master/python-aws-serverlessframework)
