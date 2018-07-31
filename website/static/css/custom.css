@@ -513,6 +513,17 @@ footer .social img {
 }
 
 
+.banner-supported {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.banner-supported span {
+    color: grey;
+}
+
+
 
 @media only screen and (max-width: 736px) {
     body {
@@ -673,3 +684,4 @@ footer .social img {
     transition: transform .2s;
     transform: scale(1.1);
 }
+

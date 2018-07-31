@@ -81,6 +81,7 @@ const HomeSplash = () => (
         </p>
       </PromoSection>
     </div>
+    <SupportedBanner />
   </SplashContainer>
 );
 
@@ -149,6 +150,11 @@ const SearchBar = () => (
   </div>
 );
 
+const SupportedBanner = () => (
+  <div className="banner-supported">
+    <span>Supporting: </span><a href="https://github.com/Rookout/deployment-examples" target="_blank"><img src={imgUrl('logos/banner_supported.png')} /></a>
+  </div>
+);
 
 class Index extends React.Component {
   render() {
