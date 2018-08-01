@@ -34,5 +34,5 @@ You will be able to find detailed procedures for all the following :
 - [On AWS Elastic Beanstalk](https://github.com/Rookout/deployment-examples/tree/master/node-aws-elasticbeanstalk)
 - [Using TypeScript](https://github.com/Rookout/deployment-examples/tree/master/node-typescript)
 - [With AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/node-aws-lambda)
-- [With IBM OpenWhisk Cloud Functions](https://github.com/Rookout/deployment-examples/tree/master/node-ibm-openwhisk)
+- [With IBM Cloud Functions](https://github.com/Rookout/deployment-examples/tree/master/node-ibm-cloud-functions)
 - [Electron](https://github.com/Rookout/deployment-examples/tree/master/node-electron)
