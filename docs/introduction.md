@@ -33,20 +33,24 @@ For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) 
 
 <iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/qTdpOC92DBI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## Tutorial
+## Rookout hands-on Tutorial
 
-### Pre-requisites
+In this tutorial you will be able to debug a simple sandbox application we wrote for you.
+The sandbox application in Node.JS and Python flavors, and can easily be deployed using a provided Docker image.
+Before moving forward, make sure you have a [Rookout account](https://www.rookout.com/trial/)
 
-- [docker-compose](https://docs.docker.com/compose/install/)
+### Prerequisites
 
-- [Rookout account](https://www.rookout.com/join-our-early-adopters-plan/)
+- [Docker Compose](https://docs.docker.com/compose/install/) will allow you to setup the sandbox application with a single command line
 
 - If you own a Mac, you need to install `xcode` command line tools: `sudo xcode-select --install`
 
+- We assume you have either [Node.js](https://nodejs.org/) , [Python](https://www.python.org/) or [Java](http://www.oracle.com/) ready and available
 
-### Tutorial
 
-Choose your preferred language for the tutorial
+### Language selection
+
+Choose your preferred language for the tutorial:
     
       
    
@@ -54,5 +58,8 @@ Choose your preferred language for the tutorial
 <img src="/img/logos/nodejs.png" width="120px" height="50px"/>
 </a>
 <a class="tutorial-button" href="python-getting-started.html">
+<img src="/img/logos/python.png" width="120px" height="50px" />
+</a>
+<a class="tutorial-button" href="java-getting-started.html">
 <img src="/img/logos/python.png" width="120px" height="50px" />
 </a>
