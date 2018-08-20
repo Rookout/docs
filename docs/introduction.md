@@ -15,8 +15,8 @@ All this is done while providing end-to-end security, coupled with a small footp
 ### The Rookout App
 
 Rookout is available at [app.rookout.com](https://app.rookout.com/) and provides a web based IDE for real time debugging.
-Once you have access to the Rookout Service, you'll be able to setup Rooks and Rules in order to debug your application.
-The Rookout service also functions as an ETL component for TBD.
+Once you have access to the Rookout App, you'll be able to setup Rooks and Rules in order to debug your application.
+The Rookout App also functions as an ETL component for TBD.
 
 ### Rooks and Rules
 
@@ -36,7 +36,7 @@ For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) 
 ## Rookout hands-on Tutorial
 
 In this tutorial you will be able to debug a simple sandbox application we wrote for you.
-The sandbox application in Node.JS and Python flavors, and can easily be deployed using a provided Docker image.
+The sandbox application is available in Java, Node.JS and Python flavors, and can easily be deployed using a provided Docker image.
 Before moving forward, make sure you have a [Rookout account](https://www.rookout.com/trial/)
 
 ### Prerequisites
