@@ -3,7 +3,7 @@ id: installation-python
 title: Python
 ---
 
-## Python Rook Installation
+## Adding a Python Rook
 
 __Pre-requisites:__  
 - *Python 2.7 / 3.5* ([download here](https://www.python.org/downloads/))
@@ -26,10 +26,8 @@ __Pre-requisites:__
     from rook import auto_start
     ```
     
-To check if the rook connects successfully to the agent, see how to in the [Troubleshooting section](troubleshooting-rooks.md)
-
-### Next steps
-You now need to [install the Rookout Agent.](installation-agent.md)
+Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
+If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md)
 
 ## Examples
 

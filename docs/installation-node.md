@@ -3,7 +3,7 @@ id: installation-node
 title: Node
 ---
 
-## Node Rook Installation
+## Addong a Node.js Rook
 
 __Pre-requisites:__  
 - *Node v4.x/v6.x/v8.x* ([download here](https://nodejs.org/))
@@ -17,11 +17,8 @@ __Pre-requisites:__
     const rook = require('rookout/auto_start');
     ```
     
-To check if the rook connects successfully to the agent, see how to in the [Troubleshooting section](troubleshooting-rooks.md)
-
-    
-### Next steps
-You now need to [install the Rookout Agent.](installation-agent.md)
+Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
+If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md)
 
 ## Examples
 
