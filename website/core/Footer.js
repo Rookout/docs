@@ -38,7 +38,7 @@ class Footer extends React.Component {
                       Getting Started
                     </a>
                     <a href={this.docUrl('installation.html')}>
-                      Installation
+                      Setting Up
                     </a>
                     <a href={this.docUrl('integrations.html')}>
                       Integrations
