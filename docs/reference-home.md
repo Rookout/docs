@@ -41,4 +41,4 @@ We are constantly working on improving and simplifying the syntax.
 Whenever you place a breakpoint on a line, a rule is created - it has a JSON syntax
 and can be customized for your needs.
 
-For more information about Rules see [Scripting Overview](rules-index.md)
+For more information about Rules see [Rules] Overview](rules-index.md)

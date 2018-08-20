@@ -7,34 +7,29 @@ sidebar_label: Rookout Introduction
 ## What is Rookout
 
 Rookout real-time instrumentation means you don’t need to restart, redeploy or write code to see inside your app.
+It also means you can debug your staging or production environments just easily as debugging on your local machine.
 
-Our solution supports Python, JVM, and NodeJS on AWS, Azure and Google Cloud or on your bare metal. We provide
-end-to-end security, coupled with a small footprint and a negligible performance impact.
+Rookout lets you debug apps written in Python, Java, or NodeJS, whether they are deployed on AWS, Azure, Google Cloud or on your bare metal.
+All this is done while providing end-to-end security, coupled with a small footprint and a negligible performance impact.
 
-<details>
-<summary>_What is a Rookout Agent?_</summary>
-<p>
-The Rookout agent provides local orchestration of data collection as well as basic ETL functionality.
-It allows loading the data into local targets such as file system and elasticsearch.
+### The Rookout Service (APP?)
 
-The Agent can be either installed directly onto a systemd compatible OS, as a Docker container (recommended)
-or as a service hosted by Rookout, connecting to the agent remotely.
+Rookout is available at app.rookout.com and provides a web based IDE for real time debugging.
+Once you have access to the Rookout Service, you'll be able to setup Rooks and Rules in order to debug your application.
+The Rookout service also functions as an ETL component for TBD.
 
-For more information about the Agent see [Agent Overview](agent.md)
-</p>
-</details>
+### Rooks and Rules
 
-<details>
-<summary>_What is a Rook?_</summary>
-<p>
 Rooks are the component that allows you to collect data directly from a running application.  
-A Rook is a dependency that is loaded directly from your application as any other library.  
+A Rook is a dependency that is loaded directly from your application as any other library.
 
-For more information about Rooks see [Rooks Overview](rooks-index.md)
-</p>
-</details>
+Once a Rook is deployed with your application, a Rule can be set to watch a specific line of code.
+A Rule defines what data will be collected, how it should be formatted, and where it should be sent.
 
-#### Watch our demo
+For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) and [Rules Overview](rules-index.md)
+
+
+### Watch our demo
 
 <iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/qTdpOC92DBI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 

@@ -31,7 +31,7 @@
     "rooks-python_interface": "Python Rook Interface",
     "rooks-python": "Python Rook",
     "rules-aug": "Aug Specification",
-    "rules": "Scripting Overview",
+    "rules": "Rules Overview",
     "rules-namespaces-agent": "Agent Namespace",
     "rules-namespaces-container": "Container Namespace",
     "rules-namespaces-frame": "Frame Namespace",

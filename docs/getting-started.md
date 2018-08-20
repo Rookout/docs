@@ -7,6 +7,7 @@ sidebar_label: Rapid production debugging with Rookout
 ## What is Rookout
 
 Rookout real-time instrumentation means you don’t need to restart, redeploy or write code to see inside your app.
+It also means you can debug your staging or production environments just easily as debugging on your local machine.
 
 Our solution supports Python, JVM, and NodeJS on AWS, Azure and Google Cloud or on your bare metal. We provide
 end-to-end security, coupled with a small footprint and a negligible performance impact.
