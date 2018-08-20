@@ -4,7 +4,11 @@ title: Getting started with Rookout and NodeJS
 sidebar_label: NodeJS Tutorial
 ---
 
-1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-nodejs) to your local computer and run it.
+In this tutorial, we will setup and debug a sandbox Node.JS application.
+Before moving forward, make sure you have a [Rookout account](https://www.rookout.com/trial/) and a [Docker Compose](https://docs.docker.com/compose/install/) setup.
+
+1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and run it:
+
     ```bash
     git clone https://github.com/Rookout/tutorial-nodejs
     export ROOKOUT_TOKEN=<Your-Token>
@@ -43,36 +47,40 @@ sidebar_label: NodeJS Tutorial
     
     </details>
 
-2. Go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
-3. Add the source code according to the instructions using the left pane **Source View**
+2. Log in to the Rookout app at [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
+
+If this is your first time using Rookout, close the tutorial and create a workspace.
+
+3. Create a workspace and import the source code into Rookout: **Workspace Creation**
     <details>
     <summary>_More details_</summary>
     <p>
     
     #### Adding source code
+    - From Github 
+        1. Set the Workspace Name to "Node Tutorial"
+        1. Click the + icon near "Sources" and choose GitHub from the drop down lost
+        1. Type "Rookout" in Repository owner
+        1. Type "tutorial-nodejs" in Repository name
+        1. Click Add Repository
+        1. Click Apply
+        1. Click Select Workspace
     
-    - Click on Add source
-    - Choose source control
-        - Github
-            1. Click on Connect
-            1. Authorize O-Auth
-            1. Fill `Repository Owner`
-            1. Click `Repository` and choose from the dropdown menu
-            1. Click Next
-            1. Choose the desired branch
-            1. Click View Repository
-        - Local FileSystem - Server
-            1. Click on Setup Server
-            1. Choose a supported HTTP Server (Node.js)
-            1. Leave the default port `8000` or choose your own
-            1. Run your local server e.g. `simple-https -p 8000` in the right directory
-            1. Click on Connect to Server
+    - From your local machine
+        1. TODO - Explorook
+        
     </p>
+
+    Expect to find the file tree of the imported code on source view, to the left hand side of the Rookout IDE.
+
     </details>
     
     
-4. Open the file `src/handlers/homePage.js`
-<details>
+4. From the source view, open the file `src/handlers/homePage.js`
+
+    Hint: click the search icon or use ctrl+shift+f to search for the file.
+    <details>    
+
     <summary>_View file tree_</summary>
         
     src/

@@ -12,9 +12,9 @@ It also means you can debug your staging or production environments just easily 
 Rookout lets you debug apps written in Python, Java, or NodeJS, whether they are deployed on AWS, Azure, Google Cloud or on your bare metal.
 All this is done while providing end-to-end security, coupled with a small footprint and a negligible performance impact.
 
-### The Rookout Service (APP?)
+### The Rookout App
 
-Rookout is available at app.rookout.com and provides a web based IDE for real time debugging.
+Rookout is available at [app.rookout.com](https://app.rookout.com/) and provides a web based IDE for real time debugging.
 Once you have access to the Rookout Service, you'll be able to setup Rooks and Rules in order to debug your application.
 The Rookout service also functions as an ETL component for TBD.
 
