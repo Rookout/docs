@@ -67,7 +67,7 @@ If this is your first time using Rookout, close the tutorial and create a worksp
         1. Click Select Workspace
     
     - From your local machine
-        1. TODO - Explorook
+        1. TODO - Explorook (only in Setting up)
         
     </p>
 
