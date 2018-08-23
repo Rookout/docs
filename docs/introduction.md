@@ -30,5 +30,5 @@ To start the tutorial, first choose your preferred language for the tutorial:
 <img src="/img/logos/python.png" width="120px" height="50px" />
 </a>
 <a class="tutorial-button" href="java-getting-started.html">
-<img src="/img/logos/python.png" width="120px" height="50px" />
+<img src="/img/logos/java.png" width="120px" height="50px" />
 </a>

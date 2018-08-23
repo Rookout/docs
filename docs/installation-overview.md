@@ -27,9 +27,8 @@ If you have already walked through one of our hands-on tutorials, you should hav
 Setting up Rookout to debug your own code requires the following steps:
 
 1. Add a Rook dependency to your application code
-2. Configure the Rook using environment variables
-3. Define a workspace and load the source code into the Rookout app
-4. Place a rule and trigger your application to get some data.
+2. Load the source code into the Rookout app
+3. Place a rule and trigger your application to get some data.
 
 ### Adding a Rook
 
@@ -41,23 +40,32 @@ To add a basic Node.js, Python or Java Rook, follow the instructions in the matc
 
 To deploy a Rook on a specific platform or framework, check out our [Installation Examples](https://github.com/Rookout/deployment-examples) page.
 
-### Basic Rook Configuration
+Once the Rook is in place, apply the following environment variables to its host:
 
-You can configure any rook using environment variables :  
 `ROOKOUT_TOKEN` - *Your unique identifier, pointing your Rooks to your own account at the Rookout Service.*  
 `ROOKOUT_ROOK_TAGS` - *A list of comma separated values (tags) that will be added to the Rook's identity, default: EMPTY*  
+`ROOKOUT_AGENT_PORT` - *A port that will allow the Rook to access the Rookout app. Set it to 443*
 
-TODO: we also need to configure DNS and PORT here
+In addition, make sure the host has internet access, and that it can access http://cloud.agent.rookout.com/.
 
-For more advanced configuration visit our [rook configuration reference](rooks-config.md)
+For additional configuration options visit our [Rook configuration reference](rooks-config.md)
 
-### Define a workspace
+### Loading the source code
 
-And fetch your source code from GitHub or Explorook
+Create a Workspace, and give it a meaningful name.
+Add a new Source to the Workspace, and choose your Git Repository.
+Choose a branch, and a commit if necessary.
+Switch to the created Workspace to view your source code.
 
-## Setup your first Rule
+If you do not use GitHub, choose Local Filesystem and follow the instructions in the following dialog.
 
-And get some data
+### Placing a Rule
+
+Choose either a Dump Frame or a Log Rule from the Rule Type drop down list in the right-hand side panel.
+Choose a line of code from the source view in the left-hand side panel, and click next to it as if you were adding a breakpoint in an IDE.
+Trigger your application in a way that would hit the selected line of code, and watch the data arriving in the Message Pane.
+
+## What's next?
 
 **I want to be more efficient, what can I add to Rookout?**  
 We have prepared integrations with several well-known tools you could use.  
