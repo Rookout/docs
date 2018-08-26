@@ -69,12 +69,13 @@ Trigger your application in a way that would hit the selected line of code, and 
 
 ## What's next?
 
+**I want Rules to fetch specific data, and to write it in my favorite format. How do I do that?**  
+Rookout provides a robust scripting capability which allows defining advanced Rule behavior.
+For more information about Scripting check out [Script Uses](rules-uses.md).
+
 **I want to be more efficient, what can I add to Rookout?**  
 We have prepared integrations with several well-known tools you could use.  
 Check out our [Output Integrations](integrations-home.md)
-
-**Everything is installed, how do I know it works?**  
-Head to [app.rookout.com](https://app.rookout.com) and start debugging!
 
 **My app is configured in a way that makes Rookout inaccessible to the Rooks. Do I have an alternative?**
 We provide the option to install local Agents to orchestrate local data collection and provide ETL functionality.
