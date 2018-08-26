@@ -5,7 +5,6 @@ sidebar_label: NodeJS Tutorial
 ---
 
 In this tutorial, we will setup and debug a sandbox Node.JS application.
-Before moving forward, make sure you have a [Rookout account](https://www.rookout.com/trial/) and a [Docker Compose](https://docs.docker.com/compose/install/) setup.
 
 1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and run it:
 
@@ -47,27 +46,29 @@ Before moving forward, make sure you have a [Rookout account](https://www.rookou
     
     </details>
 
-2. Log in to the Rookout app at [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
+2. Log in to the Rookout app at [https://app.rookout.com/](https://app.rookout.com/) and **Log In**.
 
-If this is your first time using Rookout, close the tutorial and create a workspace.
-
-3. Create a workspace and import the source code into Rookout: **Workspace Creation**
+3. **Create a workspace** and **import the source code** into Rookout:
     <details>
     <summary>_More details_</summary>
     <p>
-    
-    #### Adding source code
-    - From Github 
+
+    - Create a Workspace
+        1. Click the Gear Wheel icon near the Workout selection menu, to the top left-hand side of the screen
+        1. Click the + icon near the Search Workspace option to create a new Workspace
         1. Set the Workspace Name to "Node Tutorial"
-        1. Click the + icon near "Sources" and choose GitHub from the drop down lost
+        1. Click the + icon near "Sources" and choose either GitHub or Local Filesystem
+
+    - Import source code from Github 
+        1. Choose GitHub from the drop down list
         1. Type "Rookout" in Repository owner
         1. Type "tutorial-nodejs" in Repository name
         1. Click Add Repository
         1. Click Apply
         1. Click Select Workspace
     
-    - From your local machine
-        1. TODO - Explorook (only in Setting up)
+    - Import source code from your local machine
+        1. If you do not use GitHub, choose Local Filesystem and follow the instructions in the following dialog.
         
     </p>
 

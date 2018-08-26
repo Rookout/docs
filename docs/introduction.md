@@ -18,7 +18,7 @@ All this is done while providing end-to-end security, coupled with a small footp
 
 In this tutorial you will be able to debug a simple sandbox application we wrote for you.
 The sandbox application is available in Java, Node.JS and Python flavors, and can easily be deployed using a provided Docker image.
-Before moving forward, make sure you have a [Rookout account](https://www.rookout.com/trial/) and that you have [Docker Compose](https://docs.docker.com/compose/install/) installed.
+Before moving forward, make sure you have a [Rookout account](https://www.rookout.com/trial/) and that you have [Docker Compose](https://docs.docker.com/compose/install/) installed. You should also have your own Rookout Token, which will be used throughout the tutorial.
 
 To start the tutorial, first choose your preferred language for the tutorial:   
       

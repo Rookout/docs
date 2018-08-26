@@ -3,7 +3,7 @@ id: installation-node
 title: Node
 ---
 
-## Addong a Node.js Rook
+## Adding a Node.js Rook
 
 __Pre-requisites:__  
 - *Node v4.x/v6.x/v8.x* ([download here](https://nodejs.org/))

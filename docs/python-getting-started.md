@@ -43,14 +43,23 @@ docker-compose up
     
     #### Adding source code
     
-    - Click on Add source
-    - Choose source control
-        - Github
-            1. Authorize Github Account
-            1. Fill `Repository Owner` with `"Rookout"`
-            1. Fill `Repository` with ``tutorial-python``
-            1. Click Next
-            1. Click View Repository
+    - Create a Workspace
+        1. Click the Gear Wheel icon near the Workout selection menu, to the top left-hand side of the screen
+        1. Click the + icon near the Search Workspace option to create a new Workspace
+        1. Set the Workspace Name to "Python Tutorial"
+        1. Click the + icon near "Sources" and choose either GitHub or Local Filesystem
+
+    - Import source code from Github 
+        1. Choose GitHub from the drop down list
+        1. Type "Rookout" in Repository owner
+        1. Type "tutorial-python" in Repository name
+        1. Click Add Repository
+        1. Click Apply
+        1. Click Select Workspace
+
+    - Import source code from your local machine
+        1. If you do not use GitHub, choose Local Filesystem and follow the instructions in the following dialog.
+
     </p>
     </details>
     
