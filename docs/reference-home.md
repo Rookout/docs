@@ -27,4 +27,5 @@ For more information about Scripting check out [Script Uses](rules-uses.md).
 
 ### A word about Agents
 
-Rooks are the component that allows you to collect data directly from a running application.  
+In some cases, you may choose to set up local Agents to orchestrate local data collection and provide ETL functionality.
+You can read more about this option in our [Agents overview](agent.md) page.

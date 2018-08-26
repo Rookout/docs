@@ -23,8 +23,8 @@ For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) 
 
 ## Setting up Rookout
 
-If you have already walked through one of our hands-on tutorials, you should have access to the Rookout app.
-Setting up Rookout to debug your own code requires the following steps:
+If you have already walked through one of our hands-on tutorials, you should be familiar with the basic flow.
+Setting up Rookout to debug your own code requires only three steps:
 
 1. Add a Rook dependency to your application code
 2. Load the source code into the Rookout app
@@ -43,10 +43,12 @@ To deploy a Rook on a specific platform or framework, check out our [Installatio
 Once the Rook is in place, apply the following environment variables to its host:
 
 `ROOKOUT_TOKEN` - *Your unique identifier, pointing your Rooks to your own account at the Rookout Service.*  
-`ROOKOUT_ROOK_TAGS` - *A list of comma separated values (tags) that will be added to the Rook's identity, default: EMPTY*  
-`ROOKOUT_AGENT_PORT` - *A port that will allow the Rook to access the Rookout app. Set it to 443*
+`ROOKOUT_AGENT_HOST` - *Point the Rook at the Rookout service by setting this value to cloud.agent.rookout.com*  
+`ROOKOUT_AGENT_PORT` - *Point the Rook to the right port by setting this value to 443.*
 
-In addition, make sure the host has internet access, and that it can access http://cloud.agent.rookout.com/.
+You may also use this opportunity to give the Rook one or more Tags, which will help you identify the Rook later on:
+
+`ROOKOUT_ROOK_TAGS` - *A list of comma separated values. Common examples: Production,AppName,BackEnd*  
 
 For additional configuration options visit our [Rook configuration reference](rooks-config.md)
 
@@ -72,11 +74,11 @@ We have prepared integrations with several well-known tools you could use.
 Check out our [Output Integrations](integrations-home.md)
 
 **Everything is installed, how do I know it works?**  
-Head to [app.rookout.com](https://app.rookout.com) and start debugging !
+Head to [app.rookout.com](https://app.rookout.com) and start debugging!
 
 **My app is configured in a way that makes Rookout inaccessible to the Rooks. Do I have an alternative?**
 We provide the option to install local Agents to orchestrate local data collection and provide ETL functionality.
 Learn how to set them up in our [Agents overview](agent.md) page.
 
-
-If you encounter any issue, you can check the [Troubleshooting section](troubleshooting-home.md) or [contact us](emailto:support@rookout.com)
+**I'm stuck. Can you guys help me out here?**  
+Sure thing! Check the [Troubleshooting section](troubleshooting-home.md) or just [shoot us an email](emailto:support@rookout.com).
