@@ -1,58 +1,26 @@
 ---
 id: introduction
-title: First steps with Rookout
+title: Getting Started
 sidebar_label: Rookout Introduction
 ---
 
-## What is Rookout
+## Meet Rookout
 
 Rookout real-time instrumentation means you don’t need to restart, redeploy or write code to see inside your app.
+It also means you can debug your staging or production environments just easily as debugging on your local machine.
 
-Our solution supports Python, JVM, and NodeJS on AWS, Azure and Google Cloud or on your bare metal. We provide
-end-to-end security, coupled with a small footprint and a negligible performance impact.
-
-<details>
-<summary>_What is a Rookout Agent?_</summary>
-<p>
-The Rookout agent provides local orchestration of data collection as well as basic ETL functionality.
-It allows loading the data into local targets such as file system and elasticsearch.
-
-The Agent can be either installed directly onto a systemd compatible OS, as a Docker container (recommended)
-or as a service hosted by Rookout, connecting to the agent remotely.
-
-For more information about the Agent see [Agent Overview](agent.md)
-</p>
-</details>
-
-<details>
-<summary>_What is a Rook?_</summary>
-<p>
-Rooks are the component that allows you to collect data directly from a running application.  
-A Rook is a dependency that is loaded directly from your application as any other library.  
-
-For more information about Rooks see [Rooks Overview](rooks-index.md)
-</p>
-</details>
-
-#### Watch our demo
+Rookout lets you debug apps written in Python, Java, or Node.js, whether they are deployed on AWS, Azure, Google Cloud or on your bare metal.
+All this is done while providing end-to-end security, coupled with a small footprint and a negligible performance impact.
 
 <iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/qTdpOC92DBI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## Tutorial
+## Hands-on Tutorial
 
-### Pre-requisites
+In this tutorial you will be able to debug a simple sandbox application we wrote for you.
+The sandbox application is available in Java, Node.js and Python flavors, and can easily be deployed using a provided Docker image.
+Before moving forward, make sure you have a [Rookout account](https://www.rookout.com/trial/) and that you have [Docker Compose](https://docs.docker.com/compose/install/) installed. You should also have your own Rookout Token, which will be used throughout the tutorial.
 
-- [docker-compose](https://docs.docker.com/compose/install/)
-
-- [Rookout account](https://www.rookout.com/join-our-early-adopters-plan/)
-
-- If you own a Mac, you need to install `xcode` command line tools: `sudo xcode-select --install`
-
-
-### Tutorial
-
-Choose your preferred language for the tutorial
-    
+To start the tutorial, first choose your preferred language for the tutorial:   
       
    
 <a class="tutorial-button" href="node-getting-started.html">
@@ -60,4 +28,7 @@ Choose your preferred language for the tutorial
 </a>
 <a class="tutorial-button" href="python-getting-started.html">
 <img src="/img/logos/python.png" width="120px" height="50px" />
+</a>
+<a class="tutorial-button" href="java-getting-started.html">
+<img src="/img/logos/java.png" width="120px" height="50px" />
 </a>

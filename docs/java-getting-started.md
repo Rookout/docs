@@ -62,26 +62,31 @@ make run-docker
 
 #### Adding source code
 
-1. Click on Add source
-1. Choose source control
-    - Github
-        - Click on Connect
-        - Authorize O-Auth
-        - Fill `Repository Owner`
-        - Click `Repository` and choose from the dropdown menu
-        - Click Next
-        - Choose the desired branch
-        - Click View Repository
-    - Local FileSystem - Server
-        - Click on Setup Server
-        - Choose a supported HTTP Server (Node.js)
-        - Leave the default port `8000` or choose your own
-        - Run your local server e.g. `simple-https -p 8000` in the right directory
-        - Click on Connect to Server
+
+- Create a Workspace
+    1. Click the Gear Wheel icon near the Workout selection menu, to the top left-hand side of the screen
+    1. Click the + icon near the Search Workspace option to create a new Workspace
+    1. Set the Workspace Name to "Java Tutorial"
+    1. Click the + icon near "Sources" and choose either GitHub or Local Filesystem
+
+- Import source code from Github 
+    1. Choose GitHub from the drop down list
+    1. Type "Rookout" in Repository owner
+    1. Type "tutorial-java" in Repository name
+    1. Click Add Repository
+    1. Click Apply
+    1. Click Select Workspace
+
+- Import source code from your local machine
+    1. If you do not use GitHub, choose Local Filesystem and follow the instructions in the following dialog.
+
 </p>
 </details>
 
 - Open the file `src/main/java/com/rookout/tutorial/TodoController.java`
+
+Hint: click the search icon or use ctrl+shift+f to search for the file.
+
 ![TodoController.java](/img/screenshots/java-tutorial_1.png)
 
 - Add a default (Dump Frame) rule to the `addTodo` function by clicking next the the line number in the file viewer

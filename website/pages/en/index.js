@@ -117,7 +117,7 @@ const Categories = () => (
         {
             link: docUrl('installation.html'),
             image: imgUrl('categories/servers.png'),
-            title: 'Installation',
+            title: 'Setting up',
         },
         {
             link: docUrl('integrations.html'),

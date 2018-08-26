@@ -1,12 +1,20 @@
 ---
 id: rules
-title: Scripting Overview
+title: Rules Overview
 ---
 
+Rookout Rules (yea, we couldn't help ourselves...) let you define a set of non-breaking breakpoints anywhere in your application code.
+Each Rule instance determines the following:
+- Breakpoint location (file name and line)
+- The type of data to be fetched when the breakpoint (e.g. stack frame, log line)
+- The formatting to be applied to the fetched data
+- The target to which the fetched data will be sent (e.g. the Rookout IDE, Slack or DataDog)
+
+Rules are usually set from the Rookout IDE, and are later modified by editing their JSON file.
 
 Rookout uses a flexible language to specify data collection and processing rules.
 We are constantly working on improving and simplifying the syntax. 
-Feel free to reach out to [us](emailto:docs@rookout.com) with suggestions!
+Feel free to reach out to us at docs@rookout.com with suggestions!
 
 ## Rule Structure
 

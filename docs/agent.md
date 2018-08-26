@@ -3,8 +3,8 @@ id: agent
 title: Rookout Agent
 ---
 
-The Rookout agent provides local orchestration of data collection as well as basic ETL functionality.
-It allows loading the data into local targets such as file system and elasticsearch.
+Rookout Agents can be installed locally and provide a gateway between Rooks and the Rookout App.
+They allow setting up Rooks in applications that cannot access the Rookout App.
 
 ## Installation
 

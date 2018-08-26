@@ -4,41 +4,28 @@ title: Reference
 ---
 
 
-Rookout is separated into two components - Rook and Agent.
+### The Rookout App
 
-### Rook
+Rookout is available at [app.rookout.com](https://app.rookout.com/) and provides a web based IDE for real time debugging.
+Once you have access to the Rookout App, you'll be able to setup Rooks and Rules in order to debug your application.
+The Rookout App also functions as an ETL component for fetching your logs and sending them to your favorite log and data tools.
+
+### Rooks and Rules
 
 Rooks are the component that allows you to collect data directly from a running application.  
-A Rook is a dependency that is loaded directly from your application as any other library.  
-For more information about Rooks see [Rooks Overview](rooks-index.md)
+A Rook is imported into your app as an SDK, and deployed with each instance of your app.
 
+Once a Rook is deployed with your application, a Rule can be set to watch a specific line of code.
+A Rule defines what data will be collected, how it should be formatted, and where it should be sent.
 
-### Agent
+For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) and [Rules Overview](rules-index.md).
 
-The Rookout agent provides local orchestration of data collection as well as basic ETL functionality.
-It allows loading the data into local targets such as file system and elasticsearch.
+### Scripting
 
-The Agent can be either installed directly onto a systemd compatible OS, as a Docker container (recommended)
-or as a service hosted by Rookout, connecting to the agent remotely.
+Rookout provides a robust scripting capability which allows defining advanced Rule behavior.
+For more information about Scripting check out [Script Uses](rules-uses.md).
 
-For more information about the Agent see [Agent Overview](agent.md)
+### A word about Agents
 
-
-&nbsp;
-
-
----
-
-
-&nbsp;
-
-
-### Rules
-
-Rookout uses a flexible language to specify data collection and processing rules.
-We are constantly working on improving and simplifying the syntax.
-
-Whenever you place a breakpoint on a line, a rule is created - it has a JSON syntax
-and can be customized for your needs.
-
-For more information about Rules see [Scripting Overview](rules-index.md)
+In some cases, you may choose to set up local Agents to orchestrate local data collection and provide ETL functionality.
+You can read more about this option in our [Agents overview](agent.md) page.
