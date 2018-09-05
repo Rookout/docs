@@ -3,6 +3,8 @@ id: rules
 title: Rules Overview
 ---
 
+I found out something interesting about rules.
+
 Rookout Rules (yea, we couldn't help ourselves...) let you define a set of non-breaking breakpoints anywhere in your application code.
 Each Rule instance determines the following:
 - Breakpoint location (file name and line)
