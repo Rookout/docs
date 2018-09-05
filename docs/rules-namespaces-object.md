@@ -28,7 +28,7 @@ The object namespace supports the following access patterns:
 Your code may generate quite resource heavy debug messages. For example, you may be debugging a snippet with a huge string, or a snippet with an infinite reference loop. To make sure performance isn’t impacted when debugging such snippets, we set some limits on how we fetch data.
 You may have encountered these limitations when seeing a truncated variable in the message pane or in the downloaded JSON file.
 
-To better explain how these limits are defined, let’s say we are debugging the following the following snippet, written in pseudo code:
+To better explain how these limits are defined, let’s say we are debugging the following snippet, written in pseudo code:
 
 ```javascript
 Class Person{
@@ -47,21 +47,6 @@ Person newPerson(int newAge, String newName, Person[] newFriendList){
 }
 ```
 Let’s assume we set a Rule at the last line of newPerson(), in which we return the value of p.
-
-In all of the examples below, the code snippets may be applied as the destination path of a set action, for example:
-
-```json
-{
-  "name": "set",
-  "paths": {
-    "store.p": "frame.dump()"
-  }
-}
-```
-
-The limits will only apply to fetching a specific variable in a specific rule.
-
-That is, other variables of similar types, or variables fetched in different rules, will be fetched using the default values listed below.
 
 ### A) Fetching the entire frame dump
 
