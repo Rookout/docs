@@ -30,7 +30,7 @@ You may have encountered these limitations when seeing a truncated variable in t
 
 To better explain how these limits are defined, let’s say we are debugging the following the following snippet, written in pseudo code:
 
-```json
+```javascript
 Class Person{
 	Int age;
     String name;
@@ -46,7 +46,7 @@ Person newPerson(int newAge, String newName, Person[] newFriendList){
     Return p; // << Rule is set here.
 }
 ```
-Let’s assume we set a Rule at the last line of getPerson(), in which we return the value of p.
+Let’s assume we set a Rule at the last line of newPerson(), in which we return the value of p.
 A very common use case is to dump the entire stack frame, as described in case A) below.
 In some cases we are interested in dumping a specific variable, as described in case B).
 
@@ -56,7 +56,7 @@ In all of the examples below, the code snippets may be applied as the destinatio
 {
   "name": "set",
   "paths": {
-    "store.p": "frame.dump()",
+    "store.p": "frame.dump()"
   }
 }
 ```
@@ -73,7 +73,7 @@ If this is the case, the set action may look something like this:
 {
     "name": "set",
     "paths": {
-        "store.s": "frame.dump()",
+        "store.s": "frame.dump()"
     }
 }
 ```
@@ -111,7 +111,7 @@ The set action may look like something like this:
 {
     "name": "set",
     "paths": {
-        "store.p": "frame.p",
+        "store.p": "frame.p"
     }
 }
 ```
@@ -129,3 +129,29 @@ The default limits for dumping a specific variable are summarized in the followi
 | **Collection object depth**  | 2      | 2       | 3    |
 
 ### C) Fetching a specific variable
+
+If we fetch a specific variable of a known type, we can also manually overrule the limits mentioned above.
+We can use **frame.p.type()** to get the type of p, and **frame.p.size()** to get its size.
+
+You may choose to increase those limits in some cases to fetch a truncated debug message; or decrease them if you suspect that fetching large debug messages impacts your application’s performance.
+**WARNING: If you choose to increase limits, note that you may be impacting your own application’s performance.**
+
+If we return a **string** or a **buffer** such as **frame.newName**, we can define the **size** limit by calling the **string()** function:
+```javascript
+"store.p.name": "frame.newName.string(1000000)"
+```
+
+If we return an **object** such as **frame.p**, we can define the **depth** limit by calling the **depth()** function:
+```javascript
+"store.p": "frame.p.depth(10)"
+```
+
+If we return a **collection** such as **frame.newFriendList**, we can define the **width** limit by calling the **width()** function:
+```javascript
+"store.p.friends": "frame.newFriendList.width(100)"
+```
+
+If we return a **collection of objects** such as **frame.newFriendList**, we can also define the **collection depth** by calling the **collection_dump()** function:
+```javascript
+"store.p.friends": "frame.newFriendList.collection_dump(10)"
+```
