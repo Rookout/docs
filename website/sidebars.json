@@ -20,12 +20,12 @@
     "Overview": [
       "installation"
     ],
-    "Rook Examples": [
+    "Rook Setup": [
       "installation-java",
       "installation-python",
       "installation-node"
     ],
-    "Agent Examples": [
+    "Agent Setup": [
       "installation-agent",
       "installation-agent-proxy",
       "installation-agent-remote"
