@@ -3,6 +3,8 @@ id: rules-namespaces-container
 title: Container Namespace
 ---
 
+# Container Namespace
+
 Container namespace is simply a dictionary of named values accessed as attributes.
 
 It's contents are defined by the context of the script execution.
