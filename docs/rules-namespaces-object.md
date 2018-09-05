@@ -22,4 +22,110 @@ The object namespace supports the following access patterns:
         1. *width* - change dump width
         1. *collection_dump* - change the max depth at which collections will be dumped
         1. *string* - change the max size of the string prefix that will be dumped
-    
+
+## Understanding Object Access Limitations
+
+Your code may generate quite resource heavy debug messages. For example, you may be debugging a snippet with a huge string, or a snippet with an infinite reference loop. To make sure performance isn’t impacted when debugging such snippets, we set some limits on how we fetch data.
+You may have encountered these limitations when seeing a truncated variable in the message pane or in the downloaded JSON file.
+
+To better explain how these limits are defined, let’s say we are debugging the following the following snippet, written in pseudo code:
+
+```json
+Class Person{
+	Int age;
+    String name;
+	Person[] friendList;
+}
+
+//basic ctor
+Person newPerson(int newAge, String newName, Person[] newFriendList){
+	Person p = new Person();
+    p.age = newAge;
+    p.name = newName;
+    p.friendList = newFriendList;
+    Return p; // << Rule is set here.
+}
+```
+Let’s assume we set a Rule at the last line of getPerson(), in which we return the value of p.
+A very common use case is to dump the entire stack frame, as described in case A) below.
+In some cases we are interested in dumping a specific variable, as described in case B).
+
+In all of the examples below, the code snippets may be applied as the destination path of a set action, for example:
+
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.p": "frame.dump()",
+  }
+}
+```
+
+The limits will only apply to fetching a specific variable in a specific rule.
+That is, other variables of similar types, or variables fetched in different rules, will be fetched using the default values listed below.
+
+### A) Fetching the entire frame dump
+
+If we don’t know exactly what variable(s) we want to fetch, we can just fetch the entire frame dump at the location of the rule point.
+If this is the case, the set action may look something like this:
+
+```json
+{
+    "name": "set",
+    "paths": {
+        "store.s": "frame.dump()",
+    }
+}
+```
+
+The dump will include the following:
+1. The location from which we dumped (file and line number)
+1. All local variables.
+
+ In the example above, this means dumping the variables sent to the function (newAge, newName and newFriendList), as well as the newly created object p. Note that when sending the object p we are also sending its variables - an integer, a string, and a collection of objects (an array of additional Person objects).
+
+Since each person in the array also has its own friend list, this means we may expand the data message size even further as we dive deeper into the stack.
+And if friendship is a symmetric quality, then we may end up with an infinite loop.
+Therefore, to control the amount of data for each variable type, the default size limitations below will apply:
+
+1. When we return a **string** or a **buffer**, we limit its **size** to 512 bytes.
+1. When we return an **object that contains other objects**, we denote each level of containment as **depth** and limit it to 3 by default (5 for Java).
+1. When we return a **collection** we denote its size as **width** and limit it to 20 by default (50 for Java).
+1. When we return a **collection of objects** that may contain other objects, we denote each level of containment as **collection depth** and limit it to 2 by default (3 for Java).
+
+The default limits for each variable in a frame dump are summarized in the following table:
+
+| Variable type                | Python | Node.JS | Java |
+| ---------------------------- | ------ | ------- | ---- |
+| **String or Buffer size**    | 512B   | 512B    | 512B  |
+| **Collection size**          | 20     | 20      | 20   |
+| **Object depth**             | 3      | 3       | 5    |
+| **Collection object depth**  | 2      | 2       | 2    |
+
+### B) Fetching a specific variable
+
+If we want to fetch a specific variable, we can simply define it by adding it as the rule action.
+The set action may look like something like this:
+
+```json
+{
+    "name": "set",
+    "paths": {
+        "store.p": "frame.p",
+    }
+}
+```
+
+As in the general case, we need to set some limits on fetching a string/buffer, a container or an object to make sure we don’t impact performance in a negative way.
+However, these limits can be more lenient, as we’re only dumping one variable and not the entire frame.
+
+The default limits for dumping a specific variable are summarized in the following table
+
+| Variable type                | Python | Node.JS | Java |
+| ---------------------------- | ------ | ------- | ---- |
+| **String or Buffer size**    | 64K    | 64K     | 64K  |
+| **Collection size**          | 20     | 20      | 50   |
+| **Object depth**             | 5      | 3       | 5    |
+| **Collection object depth**  | 2      | 2       | 3    |
+
+### C) Fetching a specific variable
