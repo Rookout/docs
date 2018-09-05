@@ -47,8 +47,6 @@ Person newPerson(int newAge, String newName, Person[] newFriendList){
 }
 ```
 Let’s assume we set a Rule at the last line of newPerson(), in which we return the value of p.
-A very common use case is to dump the entire stack frame, as described in case A) below.
-In some cases we are interested in dumping a specific variable, as described in case B).
 
 In all of the examples below, the code snippets may be applied as the destination path of a set action, for example:
 
@@ -62,6 +60,7 @@ In all of the examples below, the code snippets may be applied as the destinatio
 ```
 
 The limits will only apply to fetching a specific variable in a specific rule.
+
 That is, other variables of similar types, or variables fetched in different rules, will be fetched using the default values listed below.
 
 ### A) Fetching the entire frame dump
@@ -132,6 +131,10 @@ The default limits for dumping a specific variable are summarized in the followi
 
 If we fetch a specific variable of a known type, we can also manually overrule the limits mentioned above.
 We can use **frame.p.type()** to get the type of p, and **frame.p.size()** to get its size.
+```javascript
+"store.p.type": "frame.p.type()"
+"store.p.size": "frame.p.size()"
+```
 
 You may choose to increase those limits in some cases to fetch a truncated debug message; or decrease them if you suspect that fetching large debug messages impacts your application’s performance.
 **WARNING: If you choose to increase limits, note that you may be impacting your own application’s performance.**
