@@ -1,9 +1,10 @@
 ---
 id: troubleshooting-rules
-title: Rules Troubleshooting
+title: Troubleshooting Rules
 ---
 
 As you create, modify or trigger a rule, it may change its status once or more.
+
 As rules are created, they are in Pending status (Grey).
 In this state, Rookout will try and connect the Rule to the Rooks it applies to.
 
@@ -16,22 +17,32 @@ Note that in this case the Rule will maintain the Warning status. You may remove
 
 In other cases, the Rook may face an issue preventing it from working as expected, and the Rule will change its status to Error (Red).
 In such cases the Rule is not expected to send messages, and you are advised to click the Rule status indicator and follow the instructions below to resolve the warning.
-Note that in this case the Rule will maintain the Rttot status. You may remove it and add it again to make sure it turns Active.
+Note that in this case the Rule will maintain the Error status. You may remove it and add it again to make sure it turns Active.
 
 ## Rule is in Pending status - Grey
-- Rule is not being applied because of selectors
-- Rule is not being applied because there are no agents
-- Rule is not being applied because there are no Rooks
-- Rule is not being applied because the appropriate Rooks are not connected
-- Rule is not being applied because paths differ (Python/Node)
-- Rule is not being applied because source maps are missing (Node)
+The most likely reason for a Rule remaining in Pending status is that it cannot connect to the relevant Rooks.
+Make sure the relevant App Instances are available in the Rookout application -> App Instances & Agents page.
+If the relevant App Instances are missing, it may indicate one or more of the following:
+- The application you are trying to debug is down (Which means the Rooks are inactive). Follow the instructions in the [Troubleshooting Rooks](troubleshooting-rooks.md) page.
+- The application is up, but the Rooks are not accessible (That is, the Rookout service cannot access the Rooks). Follow the instructions in the [Troubleshooting Rooks](troubleshooting-rooks.md) page.
 - In serverless frameworks such as Lambda, the application itself isn't up until the serverless function is triggered.
 In such cases, the Rule will only become Active after the first function trigger.
 
-## Rule is in Warning status - Orange
-- Error in script
-- Source missing (Java)
+If you are using *selectors* in your script, make sure they correctly apply to the relevant Rules.
 
+If you are debugging a Python or Node application, make sure the paths are defined correctly.
+
+If you are debugging a Node application, make sure the source maps are available.
+
+If you are using local Rook Agents, make sure they are up and running, and they are accessible from the application you are trying to debug.
+Make sure the relevant Rook Agents are available in the Rookout application -> App Instances & Agents page -> Agents tab.
+If the relevant Agents are missing, follow the instructions in the [Agent Troubleshooting](troubleshooting-agent.md) page.
+
+## Rule is in Warning status - Orange
+
+The most likely reason for a Rule switching to Warning status is an error in the Rule script.
+
+If you are debugging a Java applicatin, make sure the source files are not missing.
 
 ## Rule is in Error status - Red
 - JSON is invalid
