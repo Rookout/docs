@@ -42,8 +42,8 @@ If the relevant Agents are missing, follow the instructions in the [Agent Troubl
 
 The most likely reason for a Rule switching to Warning status is an error in the Rule script.
 Click the Rule status indocator to open the notifications page, and expand the relevant notification(s).
-For example, an *Attribute not found* notification may hint that a variable you are trying to fetch in a Set action is missing.
-Check your script and make sure the relevant path(s) are defined correctly.
+- If you see any of the following notifications, check your script and make sure the relevant variable(s) are defined correctly.
+*Attribute not found*; *Key not found*; *Method not found*; *Write attribute not supported*; *Operation is read only*
 
 If you are debugging a Java applicatin, make sure the source files are not missing.
 
@@ -51,9 +51,13 @@ If you are debugging a Java applicatin, make sure the source files are not missi
 
 The most likely reason for a Rule switching to Error status is a malformed or mismatched Rule script.
 Click the Rule status indocator to open the notifications page, and expand the relevant notification(s).
-- If you see a malformed JSON file error, make sure the Rule JSON file matches the JSON format, or try to create a new Rule from a template to get a fresh start.
-- If you see a hash mismatch error, make sure the code version in your source view matches the code version in the deployed application.
+- If you see a *Hash mismatch* error, make sure the code version in your source view matches the code version in the deployed application.
+- If you see any of the following error messages, make sure the JSON file is correctly formatted:
+*Invalid configuration path*; *Invalid Configuration Key*; *Object Name Missing in configuration*; *Configuration specifies an unknown object name*; *Object configuration is invalid*
+- If you see a *Send to Rookout is disabled message*, change the Rule target so it doesn't send data to Rookout, or contact your administrator.
+- If you see an *Invalid rule position* message, make sure the Rule is applied at the correct code location.
+- If you see a *Rule was disabled due to rate-limiting* message, it means that Rookout has disabled the Rule after it saw too frequent messages.
 
 If you are debugging a Python application, make sure to import the Rookout SDK after other modules have been properly initialized.
-In some cases, adding the `from rook import auto_start` line just after the `__name__ == “__main__”`line may cause the Rook to fail initialization.
+In some cases, adding the `from rook import auto_start` line just after the `__name__ == “__main__”` line may cause the Rook to fail initialization.
 If you are debugging a CPython application, Rookout may not work as expected.
