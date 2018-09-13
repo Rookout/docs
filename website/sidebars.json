@@ -72,10 +72,11 @@
   "troubleshooting": {
     "Troubleshooting": [
       "troubleshooting",
-      "troubleshooting-agent",
+      "troubleshooting-rules",
       "troubleshooting-rooks",
-      "troubleshooting-proxy",
-      "troubleshooting-rules"
+      "troubleshooting-agent",      
+      "troubleshooting-proxy"
+      
     ]
   }
 }
