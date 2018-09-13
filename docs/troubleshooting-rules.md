@@ -19,7 +19,7 @@ In other cases, the Rook may face an issue preventing it from working as expecte
 In such cases the Rule is not expected to send messages, and you are advised to click the Rule status indicator and follow the instructions below to resolve the warning.
 Note that in this case the Rule will maintain the Error status. You may remove it and add it again to make sure it turns Active.
 
-## Rule is in Pending status - Grey
+## Rule remains in Pending status - Grey
 The most likely reason for a Rule remaining in Pending status is that it cannot connect to the relevant Rooks.
 Make sure the relevant App Instances are available in the Rookout application -> App Instances & Agents page.
 If the relevant App Instances are missing, it may indicate one or more of the following:
@@ -41,13 +41,20 @@ If the relevant Agents are missing, follow the instructions in the [Agent Troubl
 ## Rule is in Warning status - Orange
 
 The most likely reason for a Rule switching to Warning status is an error in the Rule script.
+Click the Rule status indocator to open the notifications page, and expand the relevant notification(s).
+For example, an *Attribute not found* notification may hint that a variable you are trying to fetch in a Set action is missing.
+Check your script and make sure the relevant path(s) are defined correctly.
 
 If you are debugging a Java applicatin, make sure the source files are not missing.
 
 ## Rule is in Error status - Red
-- JSON is invalid
-  - JSON has failed loading/processing
-  - Check your JSON against documentation and templates
+
+The most likely reason for a Rule switching to Error status is a malformed or mismatched Rule script.
+Click the Rule status indocator to open the notifications page, and expand the relevant notification(s).
+- If you see a malformed JSON file error, mMake sure the Rule JSON file matches the JSON format, or try to create a new Rule from a template to get a fresh start.
+- If you see a hash mismatch error, make sure the code version in your source view matches the code version in the deployed application.
+
+
 - Hash mismatch
   - Source file differs between configuration and production
   - **Future features:** smaller hashes, identify production file based on hash and display
