@@ -51,17 +51,9 @@ If you are debugging a Java applicatin, make sure the source files are not missi
 
 The most likely reason for a Rule switching to Error status is a malformed or mismatched Rule script.
 Click the Rule status indocator to open the notifications page, and expand the relevant notification(s).
-- If you see a malformed JSON file error, mMake sure the Rule JSON file matches the JSON format, or try to create a new Rule from a template to get a fresh start.
+- If you see a malformed JSON file error, make sure the Rule JSON file matches the JSON format, or try to create a new Rule from a template to get a fresh start.
 - If you see a hash mismatch error, make sure the code version in your source view matches the code version in the deployed application.
 
-
-- Hash mismatch
-  - Source file differs between configuration and production
-  - **Future features:** smaller hashes, identify production file based on hash and display
-- Python Bdb failed to find code
-  - Two “features”:
-    - In Python there is no “Hoisting” and code objects are only created as their definitions are executed.
-    Today, we are unable to know if this has happened and will assume any loaded module has been fully loaded.
-    - In order to avoid this problem, import rook only after modules has been properly initialized. A common use-case
-    is loaded just before if `__name__ == “__main__”`
-  - Module scope instrumentation is not supported under CPython
+If you are debugging a Python application, make sure to import the Rookout SDK after other modules have been properly initialized.
+In some cases, adding the `from rook import auto_start` line just after the `__name__ == “__main__”`line may cause the Rook to fail initialization.
+If you are debugging a CPython application, Rookout may not work as expected.
