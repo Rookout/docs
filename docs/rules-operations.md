@@ -3,7 +3,7 @@ id: rules-operations
 title: Script Operations
 ---
 
-Rookout *scripts* are a sequence of operations. Below are described the various operations supported.
+This document specifies the list of supported script operations.
 
 For more information on the namespaces check out [uses](rules-uses.md).
 

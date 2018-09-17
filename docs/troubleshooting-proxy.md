@@ -1,6 +1,6 @@
 ---
 id: troubleshooting-proxy
-title: Proxy
+title: Troubleshooting Proxy
 ---
 
 
