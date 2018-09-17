@@ -26,3 +26,13 @@ You will be able to find detailed procedures for all the following :
 | Visualize your events with Honeycomb.io | Send your data directly to Loggly | Gather any data into your Elasticsearch | Monitor your exceptions with Sentry
 
 </div>
+
+<div class="table-integration">
+
+| <a href="https://www.fluentd.org/" target="_blank"><img src="/img/vendor_icons/fluentd.png" style="width: 50px; height: 50px;" /></a> 
+|:------------:|
+| Fluentd Integration |
+| <a href="https://github.com/Rookout/output-integrations/tree/master/fluentd" target="_blank">Our Tutorial</a> |
+| Send your data directly to Fluentd
+
+</div>
