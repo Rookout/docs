@@ -27,7 +27,15 @@ Note that in this case the Rule will maintain the Error status. You may remove i
 
 ![Rule has an Error](/img/screenshots/rule_status_red.png)
 
+
+For each Rule status, extend the relevant section below to learn how to troubleshoot:
+
+<details>
+<summary>Troubleshoting a rule in Pending status</summary>
+<p>
+
 ## Rule remains in Pending status - Grey
+
 The most likely reason for a Rule remaining in Pending status is that it cannot connect to the relevant Rooks.
 Make sure the relevant App Instances are available in the Rookout application -> App Instances & Agents page.
 If the relevant App Instances are missing, it may indicate one or more of the following:
@@ -46,10 +54,17 @@ If you are using local Rook Agents, make sure they are up and running, and they 
 Make sure the relevant Rook Agents are available in the Rookout application -> App Instances & Agents page -> Agents tab.
 If the relevant Agents are missing, follow the instructions in the [Agent Troubleshooting](troubleshooting-agent.md) page.
 
+</p>
+</details>
+
+<details>
+<summary>Troubleshoting a rule in Warning status</summary>
+<p>
+
 ## Rule is in Warning status - Orange
 
 The most likely reason for a Rule switching to Warning status is an error in the Rule script.
-Click the Rule status indocator to open the notifications page, and expand the relevant notification(s).
+Click the Rule status indicator to open the notifications page, and expand the relevant notification(s).
 
 ![Rule Warning Example](/img/screenshots/rule_warning_notification.png)
 
@@ -58,10 +73,18 @@ Click the Rule status indocator to open the notifications page, and expand the r
 
 If you are debugging a Java applicatin, make sure the source files are included in the JAR viewed by Rookout.
 
+</p>
+</details>
+</p>
+</details>
+<details>
+<summary>Troubleshoting a rule in Error status</summary>
+<p>
+
 ## Rule is in Error status - Red
 
 The most likely reason for a Rule switching to Error status is a malformed or mismatched Rule script.
-Click the Rule status indocator to open the notifications page, and expand the relevant notification(s).
+Click the Rule status indicator to open the notifications page, and expand the relevant notification(s).
 
 ![Rule Error Example](/img/screenshots/rule_error_notification.png)
 
@@ -76,3 +99,6 @@ For example, make sure the Rule is not positioned at an empty line, or at a func
 
 If you are debugging a Python application, make sure to import the Rookout SDK after other modules have been properly initialized.
 In some cases, adding the `from rook import auto_start` line just after the `__name__ == “__main__”` line may cause the Rook to fail initialization.
+
+</p>
+</details>
