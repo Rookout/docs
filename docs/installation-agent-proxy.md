@@ -31,24 +31,78 @@ $ systemctl restart rookout-agent
 
 If you want to know more about configuring the agent, head over to the [Agent Documentation](/agent)
 
-### Installing the rook
 
-#### Java Rook Installation
+**If you are required to use a proxy please read carefully!**
 
-__Pre-requisites:__  
-- *Oracle Java 7/8 __or__ OpenJDK 1.7/1.8*
+## Setting up the proxy for the current environment
+If you are setting your proxy using an environment variable, be sure to do it this way before any command you
+execute that may need it:  
+   
+```bash
+Proxy structure :
+<[protocol://][user:password@]proxyhost[:port]>
+```
+Unix example:
+```bash 
+export HTTPS_PROXY=https://mypro.xy:1234
+```
+Windows example: 
+```bash
+set HTTPS_PROXY=https://mypro.xy:1234
+```
 
-1. Download our java agent :  
-    ```bash
-    $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-    ```
 
-2. Set your JVM to use the rook as a java agent :  
-    ```bash
-    $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
-    ```
-    
-3. Add your source files to the .jar/.war/.ear when building.  
-this can be done manually or through the help of a build tool such as Gradle or Maven.
-    
-*For explanation on how to do this using Gradle or Maven head to our [installation examples](https://github.com/Rookout/deployment-examples)*
+
+## Installing a Rook
+To make sure the proxy is used when downloading the rook dependency, execute the command like this:
+
+### Python
+Unix:
+```bash
+export HTTPS_PROXY=https://mypro.xy:1234 && pip install rook
+```
+Windows:
+```bash
+set HTTPS_PROXY=https://mypro.xy:1234 && pip install rook
+```
+
+### Node
+Unix:
+```bash
+export HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
+```
+Windows:
+```bash
+set HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
+```
+
+### Java
+Unix:
+```bash
+export HTTPS_PROXY=https://mypro.xy:1234 && curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+```
+Windows:
+```bash
+set HTTPS_PROXY=https://mypro.xy:1234 && curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+```
+
+## Installing and running the Agent
+
+**Remote Agents do not currently work with proxies. If you need to use a proxy you have to install the agent yourself using
+Docker or as a systemd service**
+
+
+If you are installing the Rookout Agent, use this argument when running the setup script: --https-proxy
+```bash
+setup.sh --token=<Your-Token> --https-proxy=<Your-Proxy>
+```
+
+If the agent is already installed, you can edit the configuration file `/etc/default/rookout-agent`
+and set the environment variable as explained beforehand: 
+```bash
+export HTTPS_PROXY=https://mypro.xy:1234
+```
+Save the file and restart the agent by running: 
+```bash
+systemctl restart rookout-agent
+```
