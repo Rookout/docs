@@ -6,7 +6,7 @@ title: Rules Overview
 Rookout Rules (yea, we couldn't help ourselves...) let you define a set of non-breaking breakpoints anywhere in your application code.
 Each Rule instance determines the following:
 - Breakpoint location (file name and line)
-- The type of data to be fetched when the breakpoint (e.g. stack frame, log line)
+- The type of data to be fetched when the breakpoint is reached (e.g. stack frame, log line)
 - The formatting to be applied to the fetched data
 - The target to which the fetched data will be sent (e.g. the Rookout IDE, Slack, DataDog and others)
 
