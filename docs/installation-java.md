@@ -26,6 +26,16 @@ this can be done manually or through the help of a build tool such as [Gradle](h
 Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
 If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md)
 
+### Rook setup using a proxy
+Unix:
+```bash
+export HTTPS_PROXY=https://mypro.xy:1234 && curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+```
+Windows:
+```bash
+set HTTPS_PROXY=https://mypro.xy:1234 && curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+```
+
 ## Examples
 
 Full examples for integrating Rookout into your application are [available on our GitHub](https://github.com/Rookout/deployment-examples)
