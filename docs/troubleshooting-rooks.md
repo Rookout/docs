@@ -10,8 +10,8 @@ title: Troubleshooting Rooks
   $ python -m rook
   ```
 - Python versions:
-    - CPython 2.7, 3.5, 3.6, 3.7 on Linux
-    - PYPY (any version) on Linux
+    - CPython 2.7, 3.5, 3.6, 3.7
+    - PYPY 6.0.0
 - Installation
   - Python rook needs to be installed within the application's virtualenv
   - Old installation tools can cause issues. Attempt to upgrade pip and remove distribute (deprecated, only if exists):
