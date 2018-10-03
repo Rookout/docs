@@ -10,7 +10,7 @@ title: Troubleshooting Rooks
   $ python -m rook
   ```
 - Python versions:
-    - CPython 2.7 on Linux
+    - CPython 2.7, 3.5, 3.6, 3.7 on Linux
     - PYPY (any version) on Linux
 - Installation
   - Python rook needs to be installed within the application's virtualenv
@@ -44,4 +44,4 @@ title: Troubleshooting Rooks
   ```
 
 - Supported Node versions:
-  - 4, 6, 8
+  - 4.3, 6, 8, 10

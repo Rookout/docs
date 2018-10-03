@@ -33,11 +33,11 @@ The resolution takes place in the following steps:
 
 ## Supported Versions
 
-| Implementation     | Language   | Versions |
-| ------------------ | ---------- | -------- |
-| **CPython**        | 2          | 2.7      |
-| **CPython**        | 3          | 3.5      |
-| **PyPy**           | 2          | 5.6.0, 5.8.0    |
+| Implementation     | Language   | Versions           |
+| ------------------ | ---------- | ------------------ |
+| **CPython**        | 2          | 2.7                |
+| **CPython**        | 3          | 3.5, 3.5, 3.6, 3.7 |
+| **PyPy**           | 2          | 5.6.0, 5.8.0       |
 
 ## Configuration
 
