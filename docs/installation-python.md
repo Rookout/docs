@@ -25,8 +25,9 @@ __Pre-requisites:__
     ```python
     from rook import auto_start
     ```
-    
-### Installing the Rookout pypi package using a proxy
+
+<details>
+<summary>_Installing the Rookout pypi package using a proxy_</summary>
 Unix:
 ```bash
 export HTTPS_PROXY=https://mypro.xy:1234 && pip install rook
@@ -35,6 +36,7 @@ Windows:
 ```bash
 set HTTPS_PROXY=https://mypro.xy:1234 && pip install rook
 ```
+</details>
 
 Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
 If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md)

@@ -17,7 +17,9 @@ __Pre-requisites:__
     const rook = require('rookout/auto_start');
     ```
 
-### installing the npm package using a proxy
+<details>
+<summary>_Installing the npm package using a proxy_</summary>
+
 Unix:
 ```bash
 export HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
@@ -26,6 +28,8 @@ Windows:
 ```bash
 set HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
 ```
+
+</details>
     
 Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
 If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md)
