@@ -25,7 +25,7 @@ const rook = require('rookout/auto_start');
 
 | Implementation     | Versions       |
 | ------------------ | -------------- |
-| **Node**           | 4.3, 6, 8, 10  |
+| **Node**           | 4.3+, 6, 8, 10  |
 
 ## Configuration
 

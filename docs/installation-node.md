@@ -6,7 +6,7 @@ title: Node
 ## Adding a Node.js Rook
 
 __Pre-requisites:__  
-- *Node v4.3/v6.x/v8.x/v10.x* ([download here](https://nodejs.org/))
+- *Node v4.3+/v6.x/v8.x/v10.x* ([download here](https://nodejs.org/))
 1. Add our npm package to your package.json :  
     ```bash 
     $ npm install --save rookout

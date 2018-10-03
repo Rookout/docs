@@ -44,4 +44,4 @@ title: Troubleshooting Rooks
   ```
 
 - Supported Node versions:
-  - 4.3, 6, 8, 10
+  - 4.3+, 6, 8, 10

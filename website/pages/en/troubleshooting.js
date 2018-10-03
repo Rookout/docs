@@ -206,7 +206,7 @@ const NodeRookContent = () => (
 - Test connectivity
 
 - Supported Node versions:
-  - 4.3, 6, 8, 10
+  - 4.3+, 6, 8, 10
 `}
   </MarkdownBlock>
 );
