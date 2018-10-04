@@ -9,9 +9,9 @@ They allow setting up Rooks in applications that cannot access the Rookout App.
 For basic installation visit our [agent installation guide](installation-agent.md).
 
 1. [Installation flags](#installation-flags)
-2. [Supported operating systems](#os-support)
-3. [Configuration Variables](#config-vars)
-4. [Configuration Files](#config-files)
+2. [Supported operating systems](#supported-operating-systems)
+3. [Configuration variables](#configuration-variables)
+4. [Configuration files](#configuration-files)
 
 #### Installation flags
 
@@ -29,18 +29,14 @@ Flags:
 --https-proxy=url             HTTPS Proxy for agent to use
 ```
 
-#### Supported Operating Systems
+#### Supported operating systems
 
 | Operating System   | Version    |
 | ------------------ | ---------- |
-| Debian             | None       |
-| Ubuntu             | 16         |
-| CentOS             | 7          |
-
-Debian GNU/Linux 9 (stretch)
-CentOS 6, 7
-Ubuntu 14.04 LTS , 16.04 LTS
-Red Hat Enterprise Linux 6, 7
+| Debian             | GNU/Linux 9 (strech)       |
+| Ubuntu             | 14.04 LTS, 16.04 LTS         |
+| CentOS             | 6,7          |
+| Red Hat Enterprise | Linux 6, 7|
 
 #### Configuration Variables
 
