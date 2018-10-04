@@ -14,4 +14,3 @@ For anything else that you cannot find here you are welcome to contact us at
 ## [Troubleshooting Rules](troubleshooting-rules.md)
 ## [Troubleshooting Rooks](troubleshooting-rooks.md)
 ## [Troubleshooting Agents](troubleshooting-agent.md)
-## [Troubleshooting Proxy](troubleshooting-proxy.md)

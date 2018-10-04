@@ -27,8 +27,7 @@
     ],
     "Agent Setup": [
       "installation-agent",
-      "installation-agent-proxy",
-      "installation-agent-remote"
+      "installation-agent-proxy"
     ]
   },
   "extensions": {
@@ -74,9 +73,7 @@
       "troubleshooting",
       "troubleshooting-rules",
       "troubleshooting-rooks",
-      "troubleshooting-agent",      
-      "troubleshooting-proxy"
-      
+      "troubleshooting-agent"      
     ]
   }
 }
