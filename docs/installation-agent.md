@@ -32,11 +32,6 @@ To install it execute:
 setup.sh --token=<Your-Token>
 ```
 
-Debian GNU/Linux 9 (stretch)
-CentOS 6, 7
-Ubuntu 14.04 LTS , 16.04 LTS
-Red Hat Enterprise Linux 6, 7
-
 ### Using systemd
 
 For systemd (Linux) based operating system the agent is available as a service. 
@@ -58,4 +53,4 @@ You can configure the Agent using environment variables :
                         Those will be available both for the scripting engine and the frontend.
                         The default value is an empty list.*
 
-For more advanced configuration visit our [agent configuration reference](agent.md)
+For advanced configuration options check out the [Advanced Agent Configuration](agent.md) section.
