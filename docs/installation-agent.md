@@ -7,7 +7,7 @@ title: Basic Installation
 There are three ways to install the Agent -  
 1. [Using Docker](#using-docker)
 2. [systemd service](#systemd-service)
-3. [Remote Agent](installation-agent-remote.md)
+3. [Remote Agent](installation-agent-proxy.md)
 
 [Basic Agent Configuration](#basic-agent-configuration)
 
