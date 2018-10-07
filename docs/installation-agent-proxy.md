@@ -38,4 +38,4 @@ Windows example:
 set HTTPS_PROXY=https://mypro.xy:1234
 ```
 
-If you want to know more about configuring the agent, head over to the [Agent Documentation](/agent)
+If you want to know more about configuring the agent, head over to the [Agent Documentation](agent.md)
