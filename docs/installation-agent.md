@@ -1,6 +1,6 @@
 ---
 id: installation-agent
-title: Basic Installation
+title: Agent Installation
 ---
 
 

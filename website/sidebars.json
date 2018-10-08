@@ -1,57 +1,37 @@
 {
   "introduction": {
     "Getting Started": [
-      "introduction"
-    ],
-    "Node Tutorial": [
-      "node-getting-started",
-      "tutorials-bughunt-node"
-    ],
-    "Python Tutorial": [
-      "python-getting-started",
-      "tutorials-bughunt-python"
-    ],
-    "Java Tutorial": [
-      "java-getting-started",
-      "tutorials-bughunt-java"
-    ]
-  },
-  "installation": {
-    "Overview": [
-      "installation"
-    ],
-    "Rook Setup": [
+      "introduction",
+      "installation",
       "installation-java",
       "installation-python",
       "installation-node"
     ],
-    "Agent Setup": [
+    "Sandbox Tutorials": [
+      "python-getting-started",
+      "node-getting-started",
+      "java-getting-started"
+    ],
+    "Advanced Setup": [
+      "integrations",
       "installation-agent",
       "installation-agent-proxy"
-    ]
-  },
-  "extensions": {
-    "Overview": [
-      "integrations"
     ],
-    "Output Extensions": [],
-    "Input Extensions": []
-  },
-  "reference": {
-    "Overview": [
-      "reference"
+    "Troubleshooting": [
+      "troubleshooting-rules",
+      "troubleshooting-rooks",
+      "troubleshooting-agent"
     ],
-    "Rooks": [
+    "Concepts":[
+      "reference",
       "rooks",
       "rooks-node",
       "rooks-python",
       "rooks-java",
-      "rooks-config"
-    ],
-    "Agent": [
+      "rooks-config",
       "agent"
     ],
-    "Rules": [
+    "Reference": [
       "rules",
       "rules-aug",
       "rules-uses",
@@ -66,14 +46,6 @@
       "rules-namespaces-rook",
       "rules-namespaces-agent",
       "rules-namespaces-machine"
-    ]
-  },
-  "troubleshooting": {
-    "Troubleshooting": [
-      "troubleshooting",
-      "troubleshooting-rules",
-      "troubleshooting-rooks",
-      "troubleshooting-agent"      
     ]
   }
 }

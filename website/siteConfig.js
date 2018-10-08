@@ -15,11 +15,7 @@ const siteConfig = {
   baseUrl: '/' /* base url for your project */,
   editUrl: 'https://github.com/Rookout/docs/edit/master/docs/',
   headerLinks: [
-    {doc: 'introduction', label: 'Welcome to Rookout'},
-    {doc: 'installation', label: 'Getting Started'},
-    {doc: 'integrations', label: 'Integrations'},
-    {doc: 'reference', label: 'Reference'},
-    {doc: 'troubleshooting', label: 'Troubleshooting'}
+    {doc: 'introduction', label: 'Getting Started'}
   ],
   /* path to images for header/footer */
   headerIcon: 'img/logos/bird_logo_white.svg',

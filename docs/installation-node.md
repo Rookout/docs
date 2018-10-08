@@ -1,6 +1,6 @@
 ---
 id: installation-node
-title: Node
+title: Node Rook
 ---
 
 ## Adding a Node.js Rook
@@ -15,6 +15,14 @@ __Pre-requisites:__
 1. Require the package in your app's entry-point file :  
     ```javascript
     const rook = require('rookout/auto_start');
+    ```
+
+1. Configure the required environment variables:
+
+    ```bash
+    $ export ROOKOUT_TOKEN=<Your Rookout Token>
+    $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+    $ export ROOKOUT_AGENT_PORT=443
     ```
 
 <details>

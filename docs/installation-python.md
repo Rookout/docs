@@ -1,6 +1,6 @@
 ---
 id: installation-python
-title: Python
+title: Python Rook
 ---
 
 ## Adding a Python Rook
@@ -24,6 +24,14 @@ __Pre-requisites:__
 1. Import the package in your app's entry-point file :  
     ```python
     from rook import auto_start
+    ```
+
+1. Configure the required environment variables:
+
+    ```bash
+    $ export ROOKOUT_TOKEN=<Your Rookout Token>
+    $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+    $ export ROOKOUT_AGENT_PORT=443
     ```
 
 <details>
