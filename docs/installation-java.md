@@ -13,7 +13,7 @@ __Pre-requisites:__
     $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
     ```
 
-2. Set your JVM to use the rook as a java agent :  
+2. Set your JVM to use the rook as a java agent:  
     ```bash
     $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
     ```
@@ -21,7 +21,15 @@ __Pre-requisites:__
 3. Add your source files to the .jar/.war/.ear when building.  
 this can be done manually or through the help of a build tool such as [Gradle](https://gradle.org/) or [Maven](https://maven.apache.org/).
     
-*For explanation on how to do this using Gradle or Maven head to our [installation examples](installation-java.md)*
+    *For explanation on how to do this using Gradle or Maven head to our [installation examples](installation-java.md)*.
+
+4. Configure the required environment variables:
+
+    ```bash
+    $ export ROOKOUT_TOKEN=<Your Rookout Token>
+    $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+    $ export ROOKOUT_AGENT_PORT=443
+    ```
 
 Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
 If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md)

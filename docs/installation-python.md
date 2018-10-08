@@ -26,6 +26,14 @@ __Pre-requisites:__
     from rook import auto_start
     ```
 
+1. Configure the required environment variables:
+
+    ```bash
+    $ export ROOKOUT_TOKEN=<Your Rookout Token>
+    $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+    $ export ROOKOUT_AGENT_PORT=443
+    ```
+
 <details>
 <summary>_Installing the Rookout pypi package using a proxy_</summary>
 Unix:
