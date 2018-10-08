@@ -15,11 +15,39 @@ Getting started with Rookout to debug your own code requires only three steps:
 
 ### Adding a Rook
 
-To add a basic Node.js, Python or Java Rook, follow the instructions in the matching page:
+Rooks are SDK dependancies that let Rookout add and remove log lines in real time.
 
-- [Adding a Node.js Rook](installation-node.md)
-- [Adding a Python Rook](installation-python.md)
-- [Adding a Java Rook](installation-java.md)
+<details>
+<summary>_Adding a Python Rook_</summary>
+    
+    Install the Rookout pypi package :  
+    $ pip install rook
+
+    Import the package in your app's entry-point file :  
+    from rook import auto_start
+</details>
+
+<details>
+<summary>_Adding a Node.js Rook_</summary>
+    
+    Install the npm package:
+    $ npm install --save rookout
+
+    Require the package in your app's entry-point file:
+    const rook = require('rookout/auto_start');
+</details>
+
+<details>
+<summary>_Adding a Java Rook_</summary>
+    
+    Download our java agent :  
+    $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+
+    Set your JVM to use the rook as a java agent :  
+    $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
+</details>
+
+For more details, visit our language specific Rook Setup pages: [Node.js](installation-node.md), [Python](installation-python.md), [Java](installation-java.md).
 
 To deploy a Rook on a specific platform or framework, check out our [Installation Examples](https://github.com/Rookout/deployment-examples) page.
 
