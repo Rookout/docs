@@ -1,7 +1,7 @@
 ---
 id: introduction
-title: Getting Started
-sidebar_label: Rookout Introduction
+title: Rookout Documentation
+sidebar_label: Welcome to Rookout
 ---
 
 Rookout real-time instrumentation means you don’t need to restart, redeploy or write code to see inside your app.
@@ -20,6 +20,6 @@ Choose your language and quickly run through one of our sandbox tutorials:
 <img src="/img/logos/java.png" width="120px" height="50px" />
 </a>
 
-Or visit our [Getting Started page](installation.md).
+Or visit our [Getting Started page](installation-overview.md).
 
 If you don't have an account yet, sign up at our <a href="http://www.rookout.com/trial">Sign Up page</a>
