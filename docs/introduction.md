@@ -82,8 +82,14 @@ $ export ROOKOUT_TOKEN=<Your Rookout Token>
 
 3. Run your app, add a Rookout Rule, and start getting debug messages.
 
-You can also check out our sandbox examples: [Python](python-getting-started.md), [Node.js](node-getting-started.md), [Java](java-getting-started.md).
+#### What's next?
 
-Or find your specific deployment in our <a href="https://github.com/Rookout/deployment-examples">Deployment Examples page</a>.
+- Check out our sandbox tutorials: [Python](python-getting-started.md), [Node.js](node-getting-started.md), [Java](java-getting-started.md).
 
-Or reach out to us if anything is unclear: support@rookout.com
+- Find your specific deployment in our <a href="https://github.com/Rookout/deployment-examples">Deployment Examples page</a>.
+
+- Lean more about [Rookout Rules](rules-index.md).
+
+- Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
+
+- Reach out to us if anything is unclear: support@rookout.com
