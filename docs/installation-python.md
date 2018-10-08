@@ -6,7 +6,7 @@ title: Python
 ## Adding a Python Rook
 
 __Pre-requisites:__  
-- *Python 2.7 / 3.5* ([download here](https://www.python.org/downloads/))
+- *Python 2.7 / 3.5 / 3.6 / 3.7* ([download here](https://www.python.org/downloads/))
 - *pip* ([download here](https://pip.pypa.io/en/stable/installing/))
 - *virtualenv* ([documentation](https://virtualenv.pypa.io/en/stable/installation/))
 
