@@ -35,9 +35,6 @@ class Footer extends React.Component {
                   <h5 className="bold">Documentation</h5>
                   <div className="sitemapLinks">
                     <a href={this.docUrl('getting-started.html')}>
-                      Welcome to Rookout
-                    </a>
-                    <a href={this.docUrl('installation.html')}>
                       Getting Started
                     </a>
                     <a href={this.docUrl('integrations.html')}>

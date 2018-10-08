@@ -1,14 +1,15 @@
 ---
 id: introduction
-title: Welcome to Rookout
-sidebar_label: Welcome to Rookout
+title: Quick Start
+sidebar_label: Quick Start
 ---
 
-Rookout real-time instrumentation means you don’t need to restart, redeploy or write code to see inside your app.
-Easily fetch data from any environment - cloud or local, dev or production;
-And automatically send your data to your analytics, storage or alerting tools.
+Rookout is a robust, real time debugging tool. See for yourself:
 
-Getting started with Rookout is quite straight forward:
+<iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/iYetj3TQbEc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<br/>
+Getting started with Rookout is quite straightforward:
 
 1. Sign up at our <a href="http://www.rookout.com/trial">sign up page</a> and get a Rookout Token
 
@@ -19,10 +20,6 @@ Getting started with Rookout is quite straight forward:
 
 Create and activate a new virtual environment :
 
-```bash
-$ virtualenv virtualenv
-$ source virtualenv/bin/activate
-```
 
 Install the Rookout pypi package :  
 ```bash
@@ -37,6 +34,8 @@ from rook import auto_start
 Export your token as an environment variable:
 ```bash
 $ export ROOKOUT_TOKEN=<Your Rookout Token>
+$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+$ export ROOKOUT_AGENT_PORT=443
 ```
 
 </details>
@@ -56,6 +55,8 @@ const rook = require('rookout/auto_start');
 Export your token as an environment variable:
 ```bash
 $ export ROOKOUT_TOKEN=<Your Rookout Token>
+$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+$ export ROOKOUT_AGENT_PORT=443
 ```
 
 </details>
@@ -76,11 +77,13 @@ $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
 Export your token as an environment variable:
 ```bash
 $ export ROOKOUT_TOKEN=<Your Rookout Token>
+$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+$ export ROOKOUT_AGENT_PORT=443
 ```
 
 </details>
 
-3. Run your app, add a Rookout Rule, and start getting debug messages.
+3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
 
 #### What's next?
 

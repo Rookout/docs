@@ -1,6 +1,6 @@
 ---
 id: installation-python
-title: Python
+title: Python Rook
 ---
 
 ## Adding a Python Rook

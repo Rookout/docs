@@ -1,6 +1,6 @@
 ---
 id: installation-node
-title: Node
+title: Node Rook
 ---
 
 ## Adding a Node.js Rook

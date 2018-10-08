@@ -1,6 +1,6 @@
 ---
 id: installation-agent-proxy
-title: Installing Rookout Agent with a Proxy
+title: Agent Proxy Setup
 ---
 
 ## Using a command line argument

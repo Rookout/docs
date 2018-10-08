@@ -1,6 +1,6 @@
 ---
 id: installation-java
-title: Java
+title: Java Rook
 ---
 
 ## Adding a Java Rook

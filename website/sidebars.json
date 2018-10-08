@@ -3,29 +3,18 @@
     "Getting Started": [
       "introduction"
     ],
-    "Node Tutorial": [
+    "Sandbox Tutorials": [
       "node-getting-started",
-      "tutorials-bughunt-node"
-    ],
-    "Python Tutorial": [
+      "tutorials-bughunt-node",
       "python-getting-started",
-      "tutorials-bughunt-python"
-    ],
-    "Java Tutorial": [
+      "tutorials-bughunt-python",
       "java-getting-started",
       "tutorials-bughunt-java"
-    ]
-  },
-  "installation": {
-    "Overview": [
-      "installation"
     ],
-    "Rook Setup": [
+    "Advanced Setup": [
       "installation-java",
       "installation-python",
-      "installation-node"
-    ],
-    "Agent Setup": [
+      "installation-node",
       "installation-agent",
       "installation-agent-proxy"
     ]
