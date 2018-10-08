@@ -1,7 +1,11 @@
 {
   "introduction": {
     "Getting Started": [
-      "introduction"
+      "introduction",
+      "installation",
+      "installation-java",
+      "installation-python",
+      "installation-node"
     ],
     "Sandbox Tutorials": [
       "node-getting-started",
@@ -12,9 +16,6 @@
       "tutorials-bughunt-java"
     ],
     "Advanced Setup": [
-      "installation-java",
-      "installation-python",
-      "installation-node",
       "installation-agent",
       "installation-agent-proxy"
     ]

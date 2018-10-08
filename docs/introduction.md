@@ -1,7 +1,7 @@
 ---
 id: introduction
-title: Quick Start
-sidebar_label: Quick Start
+title: Getting Started
+sidebar_label: Getting Started
 ---
 
 Rookout is a robust, real time debugging tool. See for yourself:
@@ -9,90 +9,15 @@ Rookout is a robust, real time debugging tool. See for yourself:
 <iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/iYetj3TQbEc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <br/>
-Getting started with Rookout is quite straightforward:
+Getting started with Rookout is quite straightforward.
+<br/>
+Just check out our [Quick Start guide](installation-overview.md).
 
-1. Sign up at our <a href="http://www.rookout.com/trial">sign up page</a> and get a Rookout Token
-
-2. Install a Rook by importing our SDK:
-
-<details>
-<summary>_Python Quick Start_</summary>
-
-Create and activate a new virtual environment :
-
-
-Install the Rookout pypi package :  
-```bash
-$ pip install rook
-```
-
-Import the package in your app's entry-point file :  
-```javascript
-from rook import auto_start
-```
-
-Export your token as an environment variable:
-```bash
-$ export ROOKOUT_TOKEN=<Your Rookout Token>
-$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-$ export ROOKOUT_AGENT_PORT=443
-```
-
-</details>
-
-<details>
-<summary>_Node.js Quick Start_</summary> 
-
-Install the npm package:
-```bash
-$ npm install --save rookout
-```
-Require the package in your app's entry-point file:
-```javascript
-const rook = require('rookout/auto_start');
-```
-
-Export your token as an environment variable:
-```bash
-$ export ROOKOUT_TOKEN=<Your Rookout Token>
-$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-$ export ROOKOUT_AGENT_PORT=443
-```
-
-</details>
-
-<details>
-<summary>_Java Quick Start_</summary>    
-
-Download our java agent :
-```bash
-$ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-```
-
-Set your JVM to use the rook as a java agent :  
-```bash
-$ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
-```
-
-Export your token as an environment variable:
-```bash
-$ export ROOKOUT_TOKEN=<Your Rookout Token>
-$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-$ export ROOKOUT_AGENT_PORT=443
-```
-
-</details>
-
-3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
-
-#### What's next?
+<br/>
+You can also try the following:
 
 - Check out our sandbox tutorials: [Python](python-getting-started.md), [Node.js](node-getting-started.md), [Java](java-getting-started.md).
 
 - Find your specific deployment in our <a href="https://github.com/Rookout/deployment-examples">Deployment Examples page</a>.
-
-- Lean more about [Rookout Rules](rules-index.md).
-
-- Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
 
 - Reach out to us if anything is unclear: support@rookout.com
