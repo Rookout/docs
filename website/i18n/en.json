@@ -8,7 +8,6 @@
     "getting-started": "First steps with Rookout",
     "Rapid production debugging with Rookout": "Rapid production debugging with Rookout",
     "installation-agent-proxy": "Installing Rookout Agent with a Proxy",
-    "installation-agent-remote": "Using a Remote Rookout Agent",
     "installation-agent": "Basic Installation",
     "installation-java": "Java",
     "installation-node": "Node",
