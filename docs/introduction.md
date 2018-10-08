@@ -1,7 +1,7 @@
 ---
 id: introduction
-title: Getting Started
-sidebar_label: Getting Started
+title: Rookout
+sidebar_label: Rookout
 ---
 
 Rookout is a robust, real time debugging tool. See for yourself:
@@ -9,7 +9,7 @@ Rookout is a robust, real time debugging tool. See for yourself:
 <iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/iYetj3TQbEc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <br/>
-Getting started with Rookout is quite straightforward.
+Can't wait to get started? 
 <br/>
 Just check out our [Quick Start guide](installation-overview.md).
 

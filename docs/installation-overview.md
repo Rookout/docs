@@ -3,6 +3,8 @@ id: installation
 title: Quick Start
 ---
 
+Getting started with Rookout is quite straightforward:
+
 1. Sign up at our <a href="http://www.rookout.com/trial">sign up page</a> and get a Rookout Token
 
 2. Install a Rook by importing our SDK:
