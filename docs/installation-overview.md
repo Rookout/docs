@@ -1,44 +1,67 @@
 ---
 id: installation
-title: Setting up
+title: Getting Started
 ---
 
-## The Basics
-
-### The Rookout App
-
-Rookout is available at [app.rookout.com](https://app.rookout.com/) and provides a web based IDE for real time debugging.
-Once you have access to the Rookout App, you'll be able to setup Rooks and Rules in order to debug your application.
-The Rookout App also functions as an ETL component for fetching your logs and sending them to your favorite log and data tools.
-
-### Rooks and Rules
-
-Rooks are the component that allows you to collect data directly from a running application.  
-A Rook is imported into your app as an SDK, and deployed with each instance of your app.
-
-Once a Rook is deployed with your application, a Rule can be set to watch a specific line of code.
-A Rule defines what data will be collected, how it should be formatted, and where it should be sent.
-
-For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) and [Rules Overview](rules-index.md)
+For an overview of what Rookout does, visit our [Reference Section](reference-home.md).
 
 ## Setting up Rookout
 
-If you have already walked through one of our hands-on tutorials, you should be familiar with the basic flow.
-Setting up Rookout to debug your own code requires only three steps:
+Getting started with Rookout to debug your own code requires only three steps:
 
-1. Add a Rook dependency to your application code
-2. Load the source code into the Rookout app
-3. Place a rule and trigger your application to get some data.
+1. [Adding a Rook](#adding-a-rook) (an SDK dependancy) to your application code
+2. [Configuring environment variables](#configuring-environment-variables)
+2. [Loading your source code](#loading-your-source-code) into the Rookout app
 
 ### Adding a Rook
 
-To add a basic Node.js, Python or Java Rook, follow the instructions in the matching page:
+Rooks are SDK dependancies that let Rookout add and remove log lines in real time.
 
-- [Adding a Node.js Rook](installation-node.md)
-- [Adding a Python Rook](installation-python.md)
-- [Adding a Java Rook](installation-java.md)
+<details>
+<summary>_Adding a Python Rook_</summary>
+
+Install the Rookout pypi package :  
+```bash
+$ pip install rook
+```
+Import the package in your app's entry-point file :  
+```javascript
+from rook import auto_start
+```
+</details>
+
+<details>
+<summary>_Adding a Node.js Rook_</summary> 
+
+Install the npm package:
+```bash
+$ npm install --save rookout
+```
+Require the package in your app's entry-point file:
+```javascript
+const rook = require('rookout/auto_start');
+```
+</details>
+
+<details>
+<summary>_Adding a Java Rook_</summary>    
+
+Download our java agent :
+```bash
+$ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+```
+
+Set your JVM to use the rook as a java agent :  
+```bash
+$ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
+```
+</details>
+
+For more details, visit our language specific Rook Setup pages: [Node.js](installation-node.md), [Python](installation-python.md), [Java](installation-java.md).
 
 To deploy a Rook on a specific platform or framework, check out our [Installation Examples](https://github.com/Rookout/deployment-examples) page.
+
+### Configuring environment variables
 
 Once the Rook is in place, apply the following environment variables to its host:
 
@@ -52,7 +75,7 @@ You may also use this opportunity to give the Rook one or more Tags, which will 
 
 For additional configuration options visit our [Rook configuration reference](rooks-config.md)
 
-### Loading the source code
+### Loading your source code
 
 Create a Workspace, and give it a meaningful name.
 Add a new Source to the Workspace, and choose your Git Repository.
@@ -61,13 +84,10 @@ Switch to the created Workspace to view your source code.
 
 If you do not use GitHub, choose Local Filesystem and follow the instructions in the following dialog.
 
-### Placing a Rule
-
-Choose either a Dump Frame or a Log Rule from the Rule Type drop down list in the right-hand side panel.
-Choose a line of code from the source view in the left-hand side panel, and click next to it as if you were adding a breakpoint in an IDE.
-Trigger your application in a way that would hit the selected line of code, and watch the data arriving in the Message Pane.
-
 ## What's next?
+
+Now that you've got Rookout set up, you can add rules and trigger your code to get some real time data.
+To take your next steps with Rookout, explore the following links:
 
 **I want Rules to fetch specific data, and to write it in my favorite format. How do I do that?**  
 Rookout provides a robust scripting capability which allows defining advanced Rule behavior.
