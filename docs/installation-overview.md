@@ -1,33 +1,16 @@
 ---
 id: installation
-title: Setting up
+title: Getting Started
 ---
 
-## The Basics
-
-### The Rookout App
-
-Rookout is available at [app.rookout.com](https://app.rookout.com/) and provides a web based IDE for real time debugging.
-Once you have access to the Rookout App, you'll be able to setup Rooks and Rules in order to debug your application.
-The Rookout App also functions as an ETL component for fetching your logs and sending them to your favorite log and data tools.
-
-### Rooks and Rules
-
-Rooks are the component that allows you to collect data directly from a running application.  
-A Rook is imported into your app as an SDK, and deployed with each instance of your app.
-
-Once a Rook is deployed with your application, a Rule can be set to watch a specific line of code.
-A Rule defines what data will be collected, how it should be formatted, and where it should be sent.
-
-For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) and [Rules Overview](rules-index.md)
+For an overview of what Rookout does, visit our [Reference Section](reference-home.md).
 
 ## Setting up Rookout
 
-If you have already walked through one of our hands-on tutorials, you should be familiar with the basic flow.
-Setting up Rookout to debug your own code requires only three steps:
+Getting started with Rookout to debug your own code requires only three steps:
 
-1. Add a Rook dependency to your application code
-2. Load the source code into the Rookout app
+1. Add a Rook dependency (an SDK) to your application code
+2. Load your source code into the Rookout app
 3. Place a rule and trigger your application to get some data.
 
 ### Adding a Rook
