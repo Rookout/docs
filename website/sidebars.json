@@ -8,40 +8,30 @@
       "installation-node"
     ],
     "Sandbox Tutorials": [
-      "node-getting-started",
-      "tutorials-bughunt-node",
       "python-getting-started",
-      "tutorials-bughunt-python",
-      "java-getting-started",
-      "tutorials-bughunt-java"
+      "node-getting-started",
+      "java-getting-started"
     ],
     "Advanced Setup": [
+      "integrations",
       "installation-agent",
       "installation-agent-proxy"
-    ]
-  },
-  "extensions": {
-    "Overview": [
-      "integrations"
     ],
-    "Output Extensions": [],
-    "Input Extensions": []
-  },
-  "reference": {
-    "Overview": [
-      "reference"
+    "Troubleshooting": [
+      "troubleshooting-rules",
+      "troubleshooting-rooks",
+      "troubleshooting-agent"
     ],
-    "Rooks": [
+    "Concepts":[
+      "reference",
       "rooks",
       "rooks-node",
       "rooks-python",
       "rooks-java",
-      "rooks-config"
-    ],
-    "Agent": [
+      "rooks-config",
       "agent"
     ],
-    "Rules": [
+    "Reference": [
       "rules",
       "rules-aug",
       "rules-uses",
@@ -56,14 +46,6 @@
       "rules-namespaces-rook",
       "rules-namespaces-agent",
       "rules-namespaces-machine"
-    ]
-  },
-  "troubleshooting": {
-    "Troubleshooting": [
-      "troubleshooting",
-      "troubleshooting-rules",
-      "troubleshooting-rooks",
-      "troubleshooting-agent"      
     ]
   }
 }
