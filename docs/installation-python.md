@@ -3,10 +3,21 @@ id: installation-python
 title: Python Rook Setup
 ---
 
+The Python Rook is a python package that runs inside the user's application.  
+This allows Rookout to remotely inspect the state of the process.
+
 ### Pre-requisites
-- *Python 2.7 / 3.5 / 3.6 / 3.7* ([download here](https://www.python.org/downloads/))
+- *Python* ([download here](https://www.python.org/downloads/))
 - *pip* ([download here](https://pip.pypa.io/en/stable/installing/))
 - *virtualenv* ([documentation](https://virtualenv.pypa.io/en/stable/installation/))
+
+### Supported Python versions
+
+| Implementation     | Language   | Versions           |
+| ------------------ | ---------- | ------------------ |
+| **CPython**        | 2          | 2.7                |
+| **CPython**        | 3          | 3.5, 3.5, 3.6, 3.7 |
+| **PyPy**           | 2          | 6.0.0       |
 
 ### Setup guide
 
@@ -47,6 +58,9 @@ title: Python Rook Setup
     ```
     </details>
 
+    Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
+    If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
+
 ### Additional info
 
 - The Python Rook needs to be installed within the application's virtualenv.
@@ -61,9 +75,15 @@ title: Python Rook Setup
     - `$ yum install -qy gcc-c++ python-devel`
   - apk
 
+For more control over the Python Rook initialization, check out this [page](rooks-python_interface.md).
 
-Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
-If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
+### Source Code Version
+
+Python Rook will attempt to determine the current Git commit the application is based off, and will report it.
+The resolution takes place in the following steps:
+1. If there's an environment variable named 'ROOKOUT_COMMIT' use it.
+1. If there's an environment variable named 'ROOKOUT_GIT' get the current Git head from that path.
+1. If the application is running from a Git repo, get the current Git head for that repo.   
 
 ## Examples
 
