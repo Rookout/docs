@@ -9,8 +9,13 @@ Getting started with Rookout is quite straightforward:
 
 2. Install a Rook by importing our SDK:
 
-<details>
-<summary>_Python Quick Start_</summary>
+    - [Python](#python)
+    - [Node](#node)
+    - [Java](#java)
+
+3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
+
+### Python
 
 Create and activate a new virtual environment :
 
@@ -32,10 +37,7 @@ $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com
 $ export ROOKOUT_AGENT_PORT=443
 ```
 
-</details>
-
-<details>
-<summary>_Node.js Quick Start_</summary> 
+### Node
 
 Install the npm package:
 ```bash
@@ -53,10 +55,7 @@ $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com
 $ export ROOKOUT_AGENT_PORT=443
 ```
 
-</details>
-
-<details>
-<summary>_Java Quick Start_</summary>    
+### Java
 
 Download our java agent :
 ```bash
@@ -74,10 +73,6 @@ $ export ROOKOUT_TOKEN=<Your Rookout Token>
 $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
 $ export ROOKOUT_AGENT_PORT=443
 ```
-
-</details>
-
-3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
 
 #### What's next?
 
