@@ -25,6 +25,9 @@ title: Rooks
   $ java -jar rook.jar
   ```
 
+  
+- When using enterprise web servers such as *Oracle WebLogic* the JVM Rook will not be able to find the source files and report the rule with a warning. The rule is still  working as intended but it will not be able to make sure the source file used is matching the live one running.
+
 ## Node Rook
 
 - Supported Node versions:

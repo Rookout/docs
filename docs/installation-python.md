@@ -79,7 +79,7 @@ For more control over the Python Rook initialization, check out this [page](rook
 
 ### Source Code Version
 
-Python Rook will attempt to determine the current Git commit the application is based off, and will report it.
+The Python Rook will attempt to determine the current Git commit the application is based off, and will report it.
 The resolution takes place in the following steps:
 1. If there's an environment variable named 'ROOKOUT_COMMIT' use it.
 1. If there's an environment variable named 'ROOKOUT_GIT' get the current Git head from that path.

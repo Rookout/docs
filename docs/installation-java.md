@@ -3,13 +3,18 @@ id: installation-java
 title: Java Rook Setup
 ---
 
+The Java Rook is a java agent that instruments the user's application.  
+This allows Rookout to remotely inspect the state of the process.
+
 ### Pre-requisites:
 - *Java* ([download here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
 
-###Supported versions
-| Implementation     | Versions       |
-| ------------------ | -------------- |
-| **Node**           | 4.3+, 6, 8, 10  |
+### Supported Versions
+
+| Implementation     | Versions      |
+| ------------------ | ------------- |
+| **Oracle Java**    | 7, > 8u60     |
+| **OpenJDK**        | 1.7, 1.8      |
 
 ### Setup guide
 
@@ -49,8 +54,16 @@ this can be done manually or through the help of a build tool such as [Gradle](h
     ```
     </details>
 
-Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
-If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
+    Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
+    If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
+
+## Source Code Version
+
+The Java Rook will attempt to determine the current Git commit the application is based off, and will report it.
+The resolution takes place in the following steps:
+1. If there's an environment variable named 'ROOKOUT_COMMIT' use it.
+1. If there's an environment variable named 'ROOKOUT_MANIFEST_COMMIT', the application is running from a .jar file, and
+the jar file has that attribute in it's manifest, use the attribute value.
 
 ## Examples
 
