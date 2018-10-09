@@ -17,3 +17,24 @@ You can also try the following:
 - Check out our sandbox tutorials: [Python](python-getting-started.md), [Node.js](node-getting-started.md), [Java](java-getting-started.md).
 - Find your specific deployment in our <a href="https://github.com/Rookout/deployment-examples">Deployment Examples page</a>.
 - Reach out to us if anything is unclear: support@rookout.com
+
+
+
+<div class="tab-container">
+<input id="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<label for="tab1" class="tab-title">Python</label>
+<input id="tab2" type="radio" name="tabs" class="tab-button" />
+<label for="tab2" class="tab-title">NodeJS</label>
+<input id="tab3" type="radio" name="tabs" class="tab-button" />
+<label for="tab3" class="tab-title">JVM</label>
+<div id="content1" class="tab-content">
+Python Tab
+</MarkdownBlock>
+</div>
+<div id="content2" class="tab-content">
+Test NodeJS
+</div>
+<div id="content3" class="tab-content">
+Test JVM
+</div>
+</div>

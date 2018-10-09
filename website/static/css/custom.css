@@ -137,9 +137,8 @@ unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20C
 div.tab-container {
     min-width: 50%;
     max-width: 100%;
-    padding: 50px;
+    padding: 50px 0px;
     margin: 0 auto;
-    background: inherit;
 }
 
 div.tab-content {
@@ -162,12 +161,6 @@ label.tab-title {
     border: 1px solid transparent;
 }
 
-label.tab-title:before {
-    font-family: fontawesome;
-    font-weight: normal;
-    margin-right: 10px;
-}
-
 label:hover {
     color: #888;
     cursor: pointer;
@@ -176,7 +169,7 @@ label:hover {
 input:checked + label {
     color: #555;
     border: 1px solid #ddd;
-    border-top: 2px solid orange;
+    border-top: 2px solid #533C92;
     border-bottom: 1px solid #fff;
 }
 
