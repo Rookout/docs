@@ -5,26 +5,14 @@ title: Rooks
 
 ## Python Rook
 
-- Test connectivity
+- Supported Python versions:
+    - CPython 2.7, 3.5, 3.6, 3.7
+    - PYPY 6.0.0
+
+- In case of connectivity issues, run this command to test connectivity:
   ```bash
   $ python -m rook
   ```
-- Python versions:
-    - CPython 2.7, 3.5, 3.6, 3.7
-    - PYPY 6.0.0
-- Installation
-  - Python rook needs to be installed within the application's virtualenv
-  - Old installation tools can cause issues. Attempt to upgrade pip and remove distribute (deprecated, only if exists):
-    - `pip install -U pip`
-    - `pip uninstall distribute`
-- Installation requires compiling some Python extensions on the fly, this requires the following packages:
-  - apt
-    - `$ apt-get update -q`
-    - `$ apt-get install -qy g++ python-dev`
-  - yum
-    - `$ yum install -qy gcc-c++ python-devel`
-  - apk
-
 
 ## Java Rook
 
