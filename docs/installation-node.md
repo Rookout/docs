@@ -1,12 +1,12 @@
 ---
 id: installation-node
-title: Node
+title: Node Rook
 ---
 
 ## Adding a Node.js Rook
 
 __Pre-requisites:__  
-- *Node v4.x/v6.x/v8.x* ([download here](https://nodejs.org/))
+- *Node v4.3+/v6.x/v8.x/v10.x* ([download here](https://nodejs.org/))
 1. Add our npm package to your package.json :  
     ```bash 
     $ npm install --save rookout
@@ -15,6 +15,14 @@ __Pre-requisites:__
 1. Require the package in your app's entry-point file :  
     ```javascript
     const rook = require('rookout/auto_start');
+    ```
+
+1. Configure the required environment variables:
+
+    ```bash
+    $ export ROOKOUT_TOKEN=<Your Rookout Token>
+    $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+    $ export ROOKOUT_AGENT_PORT=443
     ```
 
 <details>

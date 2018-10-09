@@ -1,34 +1,23 @@
 ---
 id: introduction
-title: Getting Started
-sidebar_label: Rookout Introduction
+title: Rookout
+sidebar_label: Rookout
 ---
 
-## Meet Rookout
+Rookout is a robust, real time debugging tool. See for yourself:
 
-Rookout real-time instrumentation means you don’t need to restart, redeploy or write code to see inside your app.
-It also means you can debug your staging or production environments just easily as debugging on your local machine.
+<iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/iYetj3TQbEc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Rookout lets you debug apps written in Python, Java, or Node.js, whether they are deployed on AWS, Azure, Google Cloud or on your bare metal.
-All this is done while providing end-to-end security, coupled with a small footprint and a negligible performance impact.
+<br/>
+Can't wait to get started? 
+<br/>
+Just check out our [Quick Start guide](installation-overview.md).
 
-<iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/qTdpOC92DBI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br/>
+You can also try the following:
 
-## Hands-on Tutorial
+- Check out our sandbox tutorials: [Python](python-getting-started.md), [Node.js](node-getting-started.md), [Java](java-getting-started.md).
 
-In this tutorial you will be able to debug a simple sandbox application we wrote for you.
-The sandbox application is available in Java, Node.js and Python flavors, and can easily be deployed using a provided Docker image.
-Before moving forward, make sure you have a [Rookout account](https://www.rookout.com/trial/) and that you have [Docker Compose](https://docs.docker.com/compose/install/) installed. You should also have your own Rookout Token, which will be used throughout the tutorial.
+- Find your specific deployment in our <a href="https://github.com/Rookout/deployment-examples">Deployment Examples page</a>.
 
-To start the tutorial, first choose your preferred language for the tutorial:   
-      
-   
-<a class="tutorial-button" href="node-getting-started.html">
-<img src="/img/logos/nodejs.png" width="120px" height="50px"/>
-</a>
-<a class="tutorial-button" href="python-getting-started.html">
-<img src="/img/logos/python.png" width="120px" height="50px" />
-</a>
-<a class="tutorial-button" href="java-getting-started.html">
-<img src="/img/logos/java.png" width="120px" height="50px" />
-</a>
+- Reach out to us if anything is unclear: support@rookout.com

@@ -1,85 +1,88 @@
 ---
 id: installation
-title: Setting up
+title: Quick Start
 ---
 
-## The Basics
+Getting started with Rookout is quite straightforward:
 
-### The Rookout App
+1. Sign up at our <a href="http://www.rookout.com/trial">sign up page</a> and get a Rookout Token
 
-Rookout is available at [app.rookout.com](https://app.rookout.com/) and provides a web based IDE for real time debugging.
-Once you have access to the Rookout App, you'll be able to setup Rooks and Rules in order to debug your application.
-The Rookout App also functions as an ETL component for fetching your logs and sending them to your favorite log and data tools.
+2. Install a Rook by importing our SDK:
 
-### Rooks and Rules
+<details>
+<summary>_Python Quick Start_</summary>
 
-Rooks are the component that allows you to collect data directly from a running application.  
-A Rook is imported into your app as an SDK, and deployed with each instance of your app.
+Create and activate a new virtual environment :
 
-Once a Rook is deployed with your application, a Rule can be set to watch a specific line of code.
-A Rule defines what data will be collected, how it should be formatted, and where it should be sent.
 
-For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) and [Rules Overview](rules-index.md)
+Install the Rookout pypi package :  
+```bash
+$ pip install rook
+```
 
-## Setting up Rookout
+Import the package in your app's entry-point file :  
+```javascript
+from rook import auto_start
+```
 
-If you have already walked through one of our hands-on tutorials, you should be familiar with the basic flow.
-Setting up Rookout to debug your own code requires only three steps:
+Export your token as an environment variable:
+```bash
+$ export ROOKOUT_TOKEN=<Your Rookout Token>
+$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+$ export ROOKOUT_AGENT_PORT=443
+```
 
-1. Add a Rook dependency to your application code
-2. Load the source code into the Rookout app
-3. Place a rule and trigger your application to get some data.
+</details>
 
-### Adding a Rook
+<details>
+<summary>_Node.js Quick Start_</summary> 
 
-To add a basic Node.js, Python or Java Rook, follow the instructions in the matching page:
+Install the npm package:
+```bash
+$ npm install --save rookout
+```
+Require the package in your app's entry-point file:
+```javascript
+const rook = require('rookout/auto_start');
+```
 
-- [Adding a Node.js Rook](installation-node.md)
-- [Adding a Python Rook](installation-python.md)
-- [Adding a Java Rook](installation-java.md)
+Export your token as an environment variable:
+```bash
+$ export ROOKOUT_TOKEN=<Your Rookout Token>
+$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+$ export ROOKOUT_AGENT_PORT=443
+```
 
-To deploy a Rook on a specific platform or framework, check out our [Installation Examples](https://github.com/Rookout/deployment-examples) page.
+</details>
 
-Once the Rook is in place, apply the following environment variables to its host:
+<details>
+<summary>_Java Quick Start_</summary>    
 
-`ROOKOUT_TOKEN` - *Your unique identifier, pointing your Rooks to your own account at the Rookout Service.*  
-`ROOKOUT_AGENT_HOST` - *Point the Rook at the Rookout service by setting this value to cloud.agent.rookout.com*  
-`ROOKOUT_AGENT_PORT` - *Point the Rook to the right port by setting this value to 443.*
+Download our java agent :
+```bash
+$ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+```
 
-You may also use this opportunity to give the Rook one or more Tags, which will help you identify the Rook later on:
+Set your JVM to use the rook as a java agent :  
+```bash
+$ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
+```
 
-`ROOKOUT_ROOK_TAGS` - *A list of comma separated values. Common examples: Production,AppName,BackEnd*  
+Export your token as an environment variable:
+```bash
+$ export ROOKOUT_TOKEN=<Your Rookout Token>
+$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
+$ export ROOKOUT_AGENT_PORT=443
+```
 
-For additional configuration options visit our [Rook configuration reference](rooks-config.md)
+</details>
 
-### Loading the source code
+3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
 
-Create a Workspace, and give it a meaningful name.
-Add a new Source to the Workspace, and choose your Git Repository.
-Choose a branch, and a commit if necessary.
-Switch to the created Workspace to view your source code.
+#### What's next?
 
-If you do not use GitHub, choose Local Filesystem and follow the instructions in the following dialog.
+- Lean more about [Rookout Rules](rules-index.md).
 
-### Placing a Rule
+- Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
 
-Choose either a Dump Frame or a Log Rule from the Rule Type drop down list in the right-hand side panel.
-Choose a line of code from the source view in the left-hand side panel, and click next to it as if you were adding a breakpoint in an IDE.
-Trigger your application in a way that would hit the selected line of code, and watch the data arriving in the Message Pane.
-
-## What's next?
-
-**I want Rules to fetch specific data, and to write it in my favorite format. How do I do that?**  
-Rookout provides a robust scripting capability which allows defining advanced Rule behavior.
-For more information about Scripting check out [Script Uses](rules-uses.md).
-
-**I want to be more efficient, what can I add to Rookout?**  
-We have prepared integrations with several well-known tools you could use.  
-Check out our [Output Integrations](integrations-home.md)
-
-**My app is configured in a way that makes Rookout inaccessible to the Rooks. Do I have an alternative?**
-We provide the option to install local Agents to orchestrate local data collection and provide ETL functionality.
-Learn how to set them up in our [Agents overview](agent.md) page.
-
-**I'm stuck. Can you guys help me out here?**  
-Sure thing! Check the [Troubleshooting section](troubleshooting-home.md) or just [shoot us an email](emailto:support@rookout.com).
+- Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-home.md).

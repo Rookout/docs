@@ -6,7 +6,7 @@ title: Rules Overview
 Rookout Rules (yea, we couldn't help ourselves...) let you define a set of non-breaking breakpoints anywhere in your application code.
 Each Rule instance determines the following:
 - Breakpoint location (file name and line)
-- The type of data to be fetched when the breakpoint (e.g. stack frame, log line)
+- The type of data to be fetched when the breakpoint is reached (e.g. stack frame, log line)
 - The formatting to be applied to the fetched data
 - The target to which the fetched data will be sent (e.g. the Rookout IDE, Slack, DataDog and others)
 
@@ -31,7 +31,7 @@ True/False for each Rook.
 It is in the form of a *script*.
 1. **server_processing** - this section allows configuring data processing as a service using the Rookout Cloud. Coming Soon!
 1. **aug** - this section defines the way the data is extracted from the application. It is comprised of multiple 
-sub-sectinos, more about them can be read [here](rules-aug.md). A quick overview:
+sub-sections, more about them can be read [here](rules-aug.md). A quick overview:
     1. **location** - this section defines the event this aug applies to.
     2. **condition** - this section defines any additional limitations on when to execute the aug.
     3. **extractor** - this section defines any additional information to extract from the application before runnig the 

@@ -1,6 +1,6 @@
 ---
 id: troubleshooting-agent
-title: Troubleshooting Agents
+title: Agents
 ---
 
 ## Docker Agent
