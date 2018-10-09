@@ -80,4 +80,4 @@ $ export ROOKOUT_ROOK_TAGS=<List of semicolon ; separated values to identify thi
 
 - Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
 
-- Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-home.md).
+- Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-rules.md).

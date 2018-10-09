@@ -1,6 +1,6 @@
 ---
 id: troubleshooting-rooks
-title: Rooks
+title: Rook Troubleshooting
 ---
 
 ## Python Rook
