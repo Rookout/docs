@@ -16,7 +16,8 @@
       "rooks-config",
       "integrations",
       "installation-agent",
-      "installation-agent-proxy"
+      "installation-agent-proxy",
+      "agent"
     ],
     "Troubleshooting": [
       "troubleshooting-rules",
@@ -25,8 +26,7 @@
     ],
     "Concepts":[
       "reference",
-      "rooks",
-      "agent"
+      "rooks"
     ],
     "Reference": [
       "rules",
