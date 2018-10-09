@@ -17,61 +17,41 @@ Getting started with Rookout is quite straightforward:
 
 ### Python
 
-Install the Rookout pypi package :  
-```bash
-$ pip install rook
-```
-
-Import the package in your app's entry-point file :  
 ```javascript
-from rook import auto_start
-```
+//Install the Rookout pypi package :  
+$ pip install rook
 
-Export your token as an environment variable:
-```bash
-$ export ROOKOUT_TOKEN=<Your Rookout Token>
-$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-$ export ROOKOUT_AGENT_PORT=443
-$ export ROOKOUT_ROOK_TAGS=<List of semicolon ; separated values to identify this app instance>
+//Import the package in your app's entry-point file :  
+from rook import auto_start
+
+//Export your token as an environment variable:
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
 
 ### Node
 
-Install the npm package:
-```bash
-$ npm install --save rookout
-```
-Require the package in your app's entry-point file:
 ```javascript
-const rook = require('rookout/auto_start');
-```
+//Install the npm package:
+$ npm install --save rookout
 
-Export your token as an environment variable:
-```bash
-$ export ROOKOUT_TOKEN=<Your Rookout Token>
-$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-$ export ROOKOUT_AGENT_PORT=443
-$ export ROOKOUT_ROOK_TAGS=<List of semicolon ; separated values to identify this app instance>
+//Require the package in your app's entry-point file:
+const rook = require('rookout/auto_start');
+
+//Export your token as an environment variable:
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
 
 ### Java
 
-Download our java agent :
-```bash
+```javascript
+//Download our java agent :
 $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-```
 
-Set your JVM to use the rook as a java agent :  
-```bash
+//Set your JVM to use the rook as a java agent :  
 $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
-```
 
-Export your token as an environment variable:
-```bash
-$ export ROOKOUT_TOKEN=<Your Rookout Token>
-$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-$ export ROOKOUT_AGENT_PORT=443
-$ export ROOKOUT_ROOK_TAGS=<List of semicolon ; separated values to identify this app instance>
+//Export your token as an environment variable:
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
 
 #### What's next?

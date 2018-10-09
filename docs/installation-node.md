@@ -31,8 +31,6 @@ This allows Rookout to remotely inspect the state of the process.
 
     ```bash
     $ export ROOKOUT_TOKEN=<Your Rookout Token>
-    $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-    $ export ROOKOUT_AGENT_PORT=443
     $ export ROOKOUT_ROOK_TAGS=<List of semicolon ; separated values to identify this app instance>
     ```
 
