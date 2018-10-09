@@ -33,7 +33,11 @@ class CodeSnippet extends React.Component {
             <label htmlFor="tab3" className="tab-title">JVM</label>
 
             <div id="content1" className="tab-content">
-              Test Python
+              <MarkdownBlock>
+                {`
+                # Python Tab
+                `}
+              </MarkdownBlock>
             </div>
             <div id="content2" className="tab-content">
               Test NodeJS
