@@ -329,6 +329,27 @@ article p img {
     margin: 0;
 }
 
+article  h1 {
+    font-size: 30px !important;
+    margin-top: 10px !important;
+}
+
+article  h2 {
+    font-size: 20px !important;
+}
+
+article  h3 {
+    font-size: 20px !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+article  h4 {
+    font-size: 14px !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
 .rook-searchBar.rook-docNav input {
     width: 224px;
 }
