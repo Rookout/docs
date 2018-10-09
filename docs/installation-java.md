@@ -55,6 +55,7 @@ this can be done manually or through the help of a build tool such as [Gradle](h
     </details>
 
     Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
+    For advanced Rook configuration, check out the [Rook Configuration page](rooks-config.md).<br/>
     If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
 
 ## Source Code Version

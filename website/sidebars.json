@@ -13,6 +13,7 @@
       "java-getting-started"
     ],
     "Advanced Setup": [
+      "rooks-config",
       "integrations",
       "installation-agent",
       "installation-agent-proxy"
@@ -25,7 +26,6 @@
     "Concepts":[
       "reference",
       "rooks",
-      "rooks-config",
       "agent"
     ],
     "Reference": [

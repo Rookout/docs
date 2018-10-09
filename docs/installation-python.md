@@ -59,6 +59,7 @@ This allows Rookout to remotely inspect the state of the process.
     </details>
 
     Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
+    For advanced Rook configuration, check out the [Rook Configuration page](rooks-config.md).<br/>
     If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
 
 ### Additional info

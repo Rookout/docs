@@ -3,7 +3,7 @@ id: rooks-config
 title: Rook Configuration
 ---
 
-Rooks can be configured using configuration files and environment variables.
+Rooks can be configured using configuration files and environment variables.<br/>
 Configuration values are loaded with the following precedence:
 1. Environment Variables
 1. Application Specific Configuration File
