@@ -3,9 +3,9 @@
     "Getting Started": [
       "introduction",
       "installation",
-      "installation-java",
       "installation-python",
-      "installation-node"
+      "installation-node",
+      "installation-java"      
     ],
     "Sandbox Tutorials": [
       "python-getting-started",

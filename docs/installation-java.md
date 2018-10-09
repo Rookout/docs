@@ -29,6 +29,7 @@ this can be done manually or through the help of a build tool such as [Gradle](h
     $ export ROOKOUT_TOKEN=<Your Rookout Token>
     $ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
     $ export ROOKOUT_AGENT_PORT=443
+    $ export ROOKOUT_ROOK_TAGS=<List of semicolon ; separated values to identify this app instance>
     ```
 
 Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
