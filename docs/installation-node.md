@@ -3,17 +3,26 @@ id: installation-node
 title: Node Rook Setup
 ---
 
+The Node.js Rook is an npm package that runs inside the user's application.  
+This allows Rookout to remotely inspect the state of the process.
+
 ### Pre-requisites:
-- *Node v4.3+/v6.x/v8.x/v10.x* ([download here](https://nodejs.org/))
+- *Node.js* ([download here](https://nodejs.org/))
+
+## Supported Versions
+
+| Implementation     | Versions       |
+| ------------------ | -------------- |
+| **Node**           | 4.3+, 6, 8, 10  |
 
 ### Setup guide
 
-1. Add our npm package to your package.json :  
+1. Add our npm package to your package.json:  
     ```bash 
     $ npm install --save rookout
     ```
     
-1. Require the package in your app's entry-point file :  
+1. Require the package in your app's entry-point file:
     ```javascript
     const rook = require('rookout/auto_start');
     ```

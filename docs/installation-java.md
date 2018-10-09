@@ -4,7 +4,12 @@ title: Java Rook Setup
 ---
 
 ### Pre-requisites:
-- *Oracle Java 7/8 __or__ OpenJDK 1.7/1.8* ([download here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
+- *Java* ([download here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
+
+###Supported versions
+| Implementation     | Versions       |
+| ------------------ | -------------- |
+| **Node**           | 4.3+, 6, 8, 10  |
 
 ### Setup guide
 
