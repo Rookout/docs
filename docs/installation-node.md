@@ -42,11 +42,11 @@ title: Node Rook Setup
     </details>
     
 Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
-If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md)
+If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
 
 ## Examples
 
-Checkout the following deployment examples:
+Check out the following deployment examples:
 
 - [Google AppEngine](https://github.com/Rookout/deployment-examples/tree/master/node-app-engine-flex)
 - [AWS Elastic Container Service](https://github.com/Rookout/deployment-examples/tree/master/node-aws-ecs)

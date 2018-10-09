@@ -63,11 +63,11 @@ title: Python Rook Setup
 
 
 Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
-If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md)
+If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
 
 ## Examples
 
-Checkout the following deployment examples:
+Check out the following deployment examples:
 
 - [Django](https://github.com/Rookout/deployment-examples/tree/master/python-django)
 - [Kubernetes](https://github.com/Rookout/deployment-examples/tree/master/python-kubernetes)
