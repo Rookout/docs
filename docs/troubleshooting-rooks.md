@@ -16,20 +16,21 @@ title: Rooks
 
 ## Java Rook
 
-- Test connectivity
-  ```bash
-  $ java -jar rook.jar
-  ```
 - Supported Java versions:
   - Java 7, Java 8
   - Oracle and Open have been tested
 
-## Node Rook
-
-- Test connectivity
+- In case of connectivity issues, run this command to test connectivity:
   ```bash
-  $ node ./node_modules/rookout/check.js
+  $ java -jar rook.jar
   ```
+
+## Node Rook
 
 - Supported Node versions:
   - 4.3+, 6, 8, 10
+
+- In case of connectivity issues, run this command to test connectivity:
+  ```bash
+  $ node ./node_modules/rookout/check.js
+  ```

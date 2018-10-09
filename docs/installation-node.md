@@ -1,12 +1,13 @@
 ---
 id: installation-node
-title: Node Rook
+title: Node Rook Setup
 ---
 
-## Adding a Node.js Rook
-
-__Pre-requisites:__  
+### Pre-requisites:
 - *Node v4.3+/v6.x/v8.x/v10.x* ([download here](https://nodejs.org/))
+
+### Setup guide
+
 1. Add our npm package to your package.json :  
     ```bash 
     $ npm install --save rookout
@@ -26,33 +27,33 @@ __Pre-requisites:__
     $ export ROOKOUT_ROOK_TAGS=<List of semicolon ; separated values to identify this app instance>
     ```
 
-<details>
-<summary>_Installing the npm package using a proxy_</summary>
+    <details>
+    <summary>_Installing the npm package using a proxy_</summary>
 
-Unix:
-```bash
-export HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
-```
-Windows:
-```bash
-set HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
-```
+    Unix:
+    ```bash
+    export HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
+    ```
+    Windows:
+    ```bash
+    set HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
+    ```
 
-</details>
+    </details>
     
 Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
 If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md)
 
 ## Examples
 
-Full examples for integrating Rookout into your application are [available on our GitHub](https://github.com/Rookout/deployment-examples)
+Checkout the following deployment examples:
 
-You will be able to find detailed procedures for all the following :
-
-- [On Google AppEngine](https://github.com/Rookout/deployment-examples/tree/master/node-app-engine-flex)
-- [On AWS Elastic Container Service](https://github.com/Rookout/deployment-examples/tree/master/node-aws-ecs)
-- [On AWS Elastic Beanstalk](https://github.com/Rookout/deployment-examples/tree/master/node-aws-elasticbeanstalk)
+- [Google AppEngine](https://github.com/Rookout/deployment-examples/tree/master/node-app-engine-flex)
+- [AWS Elastic Container Service](https://github.com/Rookout/deployment-examples/tree/master/node-aws-ecs)
+- [AWS Elastic Beanstalk](https://github.com/Rookout/deployment-examples/tree/master/node-aws-elasticbeanstalk)
 - [Using TypeScript](https://github.com/Rookout/deployment-examples/tree/master/node-typescript)
-- [With AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/node-aws-lambda)
-- [With IBM Cloud Functions](https://github.com/Rookout/deployment-examples/tree/master/node-ibm-cloud-functions)
+- [AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/node-aws-lambda)
+- [IBM Cloud Functions](https://github.com/Rookout/deployment-examples/tree/master/node-ibm-cloud-functions)
 - [Electron](https://github.com/Rookout/deployment-examples/tree/master/node-electron)
+
+Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more.

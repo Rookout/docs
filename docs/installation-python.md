@@ -67,8 +67,6 @@ If you encounter any issues, check out our [Troubleshooting section](troubleshoo
 
 ## Examples
 
-Full examples for integrating Rookout into your application are available on [our GitHub repository](https://github.com/Rookout/deployment-examples).
-
 Checkout the following deployment examples:
 
 - [Django](https://github.com/Rookout/deployment-examples/tree/master/python-django)
@@ -76,3 +74,5 @@ Checkout the following deployment examples:
 - [AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/python-aws-lambda)
 - [AWS Lambda + Chalice](https://github.com/Rookout/deployment-examples/tree/master/python-aws-chalice)
 - [AWS Lambda + serverless framework ](https://github.com/Rookout/deployment-examples/tree/master/python-aws-serverlessframework)
+
+Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more.
