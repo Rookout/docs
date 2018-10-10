@@ -17,6 +17,7 @@ Getting started with Rookout is quite straightforward:
 <input id="tab3" type="radio" name="tabs" class="tab-button" />
 <label for="tab3" class="tab-title">JVM</label>
 <div id="content1" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy tutorial-button">Copy</button>
 
     # Install the Rookout pypi package
     $ pip install rook
@@ -31,6 +32,7 @@ Getting started with Rookout is quite straightforward:
 
 </div>
 <div id="content2" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy tutorial-button">Copy</button>
 
     // Install the npm package
     $ npm install --save rookout
@@ -43,6 +45,7 @@ Getting started with Rookout is quite straightforward:
 
 </div>
 <div id="content3" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy tutorial-button">Copy</button>
 
     // Download our java agent
     $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar

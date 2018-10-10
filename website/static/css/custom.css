@@ -143,8 +143,12 @@ div.tab-container {
 
 div.tab-content {
     display: none;
-    padding: 20px 0 0;
+    padding: 0;
     border-top: 1px solid #ddd;
+}
+
+div.tab-content .hljs {
+    margin: 0;
 }
 
 input.tab-button {
@@ -182,6 +186,13 @@ input:checked + label {
 #tab7:checked ~ #content7,
 #tab8:checked ~ #content8{
     display: block;
+}
+
+button.tab-copy {
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+    margin-top: 5px;
 }
 
 @media screen and (max-width: 650px) {
@@ -785,6 +796,10 @@ footer .social img {
     text-transform: uppercase;
     text-decoration: none !important;
     transition: background 0.3s, color 0.3s;
+}
+
+.tutorial-button:focus {
+    outline: 0;
 }
 
 .tutorial-button:hover {
