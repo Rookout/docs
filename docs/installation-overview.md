@@ -15,7 +15,7 @@ Getting started with Rookout is quite straightforward:
 
 3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
 
-### Python
+## Python
 
 ```javascript
 //Install the Rookout pypi package :  
@@ -28,7 +28,7 @@ from rook import auto_start
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
 
-### Node
+## Node
 
 ```javascript
 //Install the npm package:
@@ -41,7 +41,7 @@ const rook = require('rookout/auto_start');
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
 
-### Java
+## Java
 
 ```javascript
 //Download our java agent :
@@ -54,7 +54,7 @@ $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
 
-#### What's next?
+## What's next?
 
 - Lean more about [Rookout Rules](rules-index.md).
 
