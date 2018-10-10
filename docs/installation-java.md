@@ -6,17 +6,17 @@ title: Java Rook Setup
 The Java Rook is a java agent that instruments the user's application.  
 This allows Rookout to remotely inspect the state of the process.
 
-### Pre-requisites:
+## Pre-requisites:
 - *Java* ([download here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
 
-### Supported Versions
+## Supported Versions
 
 | Implementation     | Versions      |
 | ------------------ | ------------- |
 | **Oracle Java**    | 7, > 8u60     |
 | **OpenJDK**        | 1.7, 1.8      |
 
-### Setup guide
+## Setup guide
 
 1. Download our java agent :  
     ```bash

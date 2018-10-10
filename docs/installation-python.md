@@ -6,12 +6,12 @@ title: Python Rook Setup
 The Python Rook is a python package that runs inside the user's application.  
 This allows Rookout to remotely inspect the state of the process.
 
-### Pre-requisites
+## Pre-requisites
 - *Python* ([download here](https://www.python.org/downloads/))
 - *pip* ([download here](https://pip.pypa.io/en/stable/installing/))
 - *virtualenv* ([documentation](https://virtualenv.pypa.io/en/stable/installation/))
 
-### Supported Python versions
+## Supported Python versions
 
 | Implementation     | Language   | Versions           |
 | ------------------ | ---------- | ------------------ |
@@ -19,7 +19,7 @@ This allows Rookout to remotely inspect the state of the process.
 | **CPython**        | 3          | 3.5, 3.5, 3.6, 3.7 |
 | **PyPy**           | 2          | 6.0.0       |
 
-### Setup guide
+## Setup guide
 
 1. Create and activate a new virtual environment :
     ```bash
@@ -60,7 +60,7 @@ This allows Rookout to remotely inspect the state of the process.
     For advanced Rook configuration, check out the [Rook Configuration page](rooks-config.md).<br/>
     If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
 
-### Additional info
+## Additional info
 
 - The Python Rook needs to be installed within the application's virtualenv.
 - Old installation tools may cause issues. Attempt to upgrade pip and remove distribute (deprecated, only if exists):
@@ -76,7 +76,7 @@ This allows Rookout to remotely inspect the state of the process.
 
 For more control over the Python Rook initialization, check out this [page](rooks-python_interface.md).
 
-### Source Code Version
+## Source Code Version
 
 The Python Rook will attempt to determine the current Git commit the application is based off, and will report it.
 The resolution takes place in the following steps:
