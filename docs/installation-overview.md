@@ -61,7 +61,7 @@ Getting started with Rookout is quite straightforward:
 
 3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
 
-#### What's next?
+## What's next?
 
 - Lean more about [Rookout Rules](rules-index.md).
 

@@ -145,7 +145,6 @@ div.tab-content {
     display: none;
     padding: 0;
     border-top: 1px solid #ddd;
-    overflow-y: auto;
 }
 
 div.tab-content .hljs {
@@ -265,9 +264,13 @@ tr, th, td {
     height: 75px;
 }
 
+.headerWrapper {
+    padding-left: 175px;
+}
+
 .headerTitle {
-    padding-left: 9px;
-    padding-bottom: 7px;
+    padding-left: 30px;
+    padding-bottom: 0px;
     font-weight: bold;
 }
 
@@ -405,12 +408,34 @@ article p img {
     margin: 0;
 }
 
+article  h1 {
+    font-size: 30px !important;
+    margin-top: 10px !important;
+}
+
+article  h2 {
+    font-size: 20px !important;
+}
+
+article  h3 {
+    font-size: 16px !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+article  h4 {
+    font-size: 14px !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
 .rook-searchBar.rook-docNav input {
     width: 224px;
 }
 
 .rook-searchBar.rook-docNav {
-    margin-bottom: 44px;
+    margin-bottom: 30px;
+    margin-top: 0px;
 }
 
 .docMainWrapper {
@@ -427,7 +452,7 @@ article p img {
     margin-top: 0 !important;
     background: #F1F1F1;
 
-    padding: 40px 40px;
+    padding: 30px 30px;
     flex: 0 0 330px !important;
 }
 
@@ -435,16 +460,29 @@ article p img {
     background: #F1F1F1 !important;
 }
 
+.postHeader > h1 {
+    font-size: 30px !important;
+    margin-top: 10px !important;
+}
+
 .navGroup > h3 {
     color: #3F4758 !important;
 }
 
+.navGroup > ul {
+    padding-top: 4px !important;
+}
+
 .navListItem > a.navItem {
     color: #7C8390 !important;
+    font-size: 14px !important;
+    padding-top: 6x !important;
 }
 
 .navListItem > a.navItemActive {
     color: #533C92 !important;
+    font-size: 14px !important;
+    padding-top: 5px !important;
 }
 
 .post {
