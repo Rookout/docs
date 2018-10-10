@@ -18,38 +18,40 @@ Getting started with Rookout is quite straightforward:
 <label for="tab3" class="tab-title">JVM</label>
 <div id="content1" class="tab-content hljs">
 
-    //Install the Rookout pypi package :  
+    # Install the Rookout pypi package
     $ pip install rook
 
-    //Import the package in your app's entry-point file :  
-    from rook import auto_start
-
-    //Export your token as an environment variable:
+    # Export your token as an environment variable
     $ export ROOKOUT_TOKEN=[Your Rookout Token]
+
+    # Import the package in your app's entry-point file, just before it starts
+    from rook import auto_start
+    if __name__ == "__main__":
+        # Your program starts here :)
 
 </div>
 <div id="content2" class="tab-content hljs">
 
-    //Install the npm package:
+    // Install the npm package
     $ npm install --save rookout
 
-    //Require the package in your app's entry-point file:
-    const rook = require('rookout/auto_start');
-
-    //Export your token as an environment variable:
+    // Export your token as an environment variable
     $ export ROOKOUT_TOKEN=[Your Rookout Token]
+
+    // Require the package in your app's entry-point file
+    const rook = require('rookout/auto_start');
 
 </div>
 <div id="content3" class="tab-content hljs">
 
-    //Download our java agent :
+    // Download our java agent
     $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 
-    //Set your JVM to use the rook as a java agent :  
-    $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
-
-    //Export your token as an environment variable:
+    // Export your token as an environment variable:
     $ export ROOKOUT_TOKEN=[Your Rookout Token]
+
+    // Set your JVM to use the rook as a java agent :  
+    $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 
 </div>
 </div>
