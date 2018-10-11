@@ -3,11 +3,17 @@ id: installation
 title: Quick Start
 ---
 
-Getting started with Rookout is quite straightforward:
+To set up Rookout in your environment, follow the following steps:
 
-1. Sign up at our <a href="http://www.rookout.com/trial">sign up page</a> and get a Rookout Token
+### 1. Sign Up
 
-2. Install a Rook by importing our SDK:
+Sign up to Rookout at our <a href="http://www.rookout.com/trial">sign up page</a> and get your Rookout Token.
+
+### 2. Install the SDK
+
+Rooks are instrumentation components that dynamically add and remove log lines for you in real time.
+
+Install a Rook by importing our SDK:
 
 <div class="tab-container">
 <input id="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
@@ -59,7 +65,29 @@ Getting started with Rookout is quite straightforward:
 </div>
 </div>
 
-3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
+### 3. Create a Workspace
+
+Create a new Workspace and give it a meaningful name.
+
+Load your Source Code into the Rookout IDE from either Github or from your local file system.
+
+![Add Source](/img/screenshots/quick_start_3.png)
+
+### 4. Add a Rule Point
+
+Add a Rule Point at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.
+
+Run your app and trigger the code you are trying to debug.
+
+![Add Rule](/img/screenshots/quick_start_4.png)
+
+### 5. Watch the Debug Message
+
+Watch the Debug Message in the Rookout IDE.
+
+And that's it, you're done :)
+
+![Debug Message](/img/screenshots/quick_start_5.png)
 
 ## What's next?
 
