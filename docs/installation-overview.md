@@ -63,8 +63,10 @@ Getting started with Rookout is quite straightforward:
 
 ## What's next?
 
-- Lean more about [Rookout Rules](rules-index.md).
+- Get a taste of real time debuggin with our [Basic Debugging](rules-index.md) guide.
 
 - Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
 
 - Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-rules.md).
+
+- Dig deeper into [Rule scripting](rules-index.md).
