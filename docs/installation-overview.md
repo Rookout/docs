@@ -91,7 +91,7 @@ And that's it, you're done :)
 
 ## What's next?
 
-- Get a taste of real time debuggin with our [Basic Debugging](rules-index.md) guide.
+- Get a taste of real time debugging with our [Basic Debugging](rules-index.md) guide.
 
 - Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
 
