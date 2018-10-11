@@ -65,27 +65,23 @@ Install a Rook by importing our SDK:
 </div>
 </div>
 
-### 3. Create Workspace
+### 3. Create a Workspace
 
 Create a new Workspace and give it a meaningful name.
-
-### 4. Load your Source Code
 
 Load your Source Code into the Rookout IDE from either Github or from your local file system.
 
 ![Add Source](/img/screenshots/quick_start_3.png)
 
-### 5. Add a Rule Point
+### 4. Add a Rule Point
 
 Add a Rule Point at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.
 
-![Add Rule](/img/screenshots/quick_start_4.png)
-
-### 6. Run your App
-
 Run your app and trigger the code you are trying to debug.
 
-### 7. Watch the Debug Message
+![Add Rule](/img/screenshots/quick_start_4.png)
+
+### 5. Watch the Debug Message
 
 Watch the Debug Message in the Rookout IDE.
 
