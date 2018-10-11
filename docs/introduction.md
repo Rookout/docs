@@ -1,7 +1,7 @@
 ---
 id: introduction
-title: Rookout
-sidebar_label: Rookout
+title: Welcome
+sidebar_label: Welcome
 ---
 
 Rookout gives full visibility into your app without the need to restart, redeploy or write code.<br/>

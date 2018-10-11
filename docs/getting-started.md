@@ -1,189 +1,95 @@
 ---
 id: getting-started
-title: First steps with Rookout
-sidebar_label: Rapid production debugging with Rookout
+title: Basic Debugging
+sidebar_label: Basic Debugging
 ---
 
-## What is Rookout
+Now that you had your first taste of Rookout Debugging, it's time to see some of the cool stuff we can do.
 
-Rookout real-time instrumentation means you don’t need to restart, redeploy or write code to see inside your app.
-It also means you can debug your staging or production environments just easily as debugging on your local machine.
+### 1. Add a Dump Rule
 
-Our solution supports Python, JVM, and NodeJS on AWS, Azure and Google Cloud or on your bare metal. We provide
-end-to-end security, coupled with a small footprint and a negligible performance impact.
+Open the Rule type drop down list and choose a Dump Frame Rule.
 
-<details>
-<summary>_What is a Rookout Agent?_</summary>
-<p>
-The Rookout agent provides local orchestration of data collection as well as basic ETL functionality.
-It allows loading the data into local targets such as file system and elasticsearch.
+![Rule Type](/img/screenshots/basic_debug_1.png)
 
-The Agent can be either installed directly onto a systemd compatible OS, as a Docker container (recommended)
-or as a service hosted by Rookout, connecting to the agent remotely.
+As you have seen during the Quick Start Tutorial, Frame Dump Rules send every single variable in the active frame.
 
-For more information about the Agent see [Agent Overview](agent.md)
-</p>
-</details>
+To make debugging easier, let's try and fetch a specific variable.
 
-<details>
-<summary>_What is a Rook?_</summary>
-<p>
-Rooks are the component that allows you to collect data directly from a running application.  
-A Rook is a dependency that is loaded directly from your application as any other library.  
+### 2. Fetch a specific variable
 
-For more information about Rooks see [Rooks Overview](rooks-index.md)
-</p>
-</details>
+Add a Rule Point and trigger your app, just as you did during the Quick Start tutorial.
 
-#### Watch our demo
+Right click an interesting variable, and choose Copy path.
 
-<iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/qTdpOC92DBI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+![Rule Type](/img/screenshots/basic_debug_2.png)
 
-## Tutorial
+Click Edit Rule, and locate the Set section.
 
-### Pre-requisites
+The Set section tells Rookout which variables to fetch when a Rule point is hit.
 
-- [docker-compose](https://docs.docker.com/compose/install/)
+It should look something like this:
 
-- [Rookout account](https://www.rookout.com/join-our-early-adopters-plan/)
+![Set Section](/img/screenshots/basic_debug_3.png)
 
+Replace the content of the Paths section with the following snippet:
 
-### Tutorial
-
-Choose your preferred language for the tutorial
-
-<details>
-<summary>NodeJS Tutorial</summary>
-<p>
-
-1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-nodejs) to your local computer and run it.
-    ```bash
-    git clone https://github.com/Rookout/tutorial-nodejs
-    export ROOKOUT_TOKEN=<Your-Token>
-    cd tutorial-nodejs
-    docker-compose up
-    ```
-    <details>
-    <summary>_I don't want to use docker_</summary>
-    ```bash
-    git clone https://github.com/Rookout/tutorial-nodejs
-    export ROOKOUT_TOKEN=<Your-Token>
-    cd tutorial-nodejs
-    make -j run-prod
-    ```
-    </details>
-
-2. Go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
-3. Add the source code according to the instructions using the left pane **Source View**
-    <details>
-    <summary>_More details_</summary>
-    <p>
-    
-    #### Adding source code
-    
-    - Click on Add source
-    - Choose source control
-        - Github
-            1. Click on Connect
-            1. Authorize O-Auth
-            1. Fill `Repository Owner`
-            1. Click `Repository` and choose from the dropdown menu
-            1. Click Next
-            1. Choose the desired branch
-            1. Click View Repository
-        - Local FileSystem - Server
-            1. Click on Setup Server
-            1. Choose a supported HTTP Server (Node.js)
-            1. Leave the default port `8000` or choose your own
-            1. Run your local server e.g. `simple-https -p 8000` in the right directory
-            1. Click on Connect to Server
-    </p>
-    </details>
-    
-    
-4. Open the file `src/handlers/homePage.js`
-<details>
-    <summary>_View file tree_</summary>
-    <p>
-    ```
-    src/
-    ├── handlers
-    │   └── homePage.js
-    ├── routes
-    ├── services
-    ├── static
-    ├── templates
-    └── utils
-    ```
-    </p>
-</details>
-
-5. Add a _Dumpframe_ rule next to line number 5 by clicking next the the line number in the file viewer
-![Dumpframe Rule](/img/screenshots/getting_started_6.png)
-6. Looking at the right-hand pane **Rules**, you will see the rule you added, on what line you added it and it should be 
-<span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
-![Valid Rule](/img/screenshots/getting_started_7.png)
-    - If this is not the case, [click here](troubleshooting-rules.md) to see how to fix that
-7. Go the the app webpage [http://localhost:4000/](http://localhost:4000/) in order to trigger the rule
-8. Check the bottom pane **Messages** and you'll see the dumpframe you just added, as it was triggered by the handler of the web page when you accessed it
-![Message pane](/img/screenshots/getting_started_9.png)
-
-## Bug Hunt
-
-Great! You're now ready to start debugging, let's start by having some fun with our 
-[bug hunt](tutorials-bughunt-node.md) - follow instructions to try out some basic use cases.
-
-</p>
-</details>
-
-
-<details>
-    <summary>Python Tutorial</summary>
-    <p>
-
-1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-python) to your local computer and run it.
-```bash
-git clone https://github.com/Rookout/tutorial-python
-export ROOKOUT_TOKEN=<Your-Token> # set if your'e on Windows
-cd tutorial-python
-docker-compose up
+```javascript
+    "store.variable": "[paste the copied variable path here]"
 ```
 
-2. Go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
-3. Add the source code according to the instructions using the left pane **Source View**
-    <details>
-    <summary>_More details_</summary>
-    <p>
-    
-    #### Adding source code
-    
-    - Click on Add source
-    - Choose source control
-        - Github
-            1. Authorize Github Account
-            1. Fill `Repository Owner` with `"Rookout"`
-            1. Fill `Repository` with ``tutorial-python``
-            1. Click Next
-            1. Click View Repository
-    </p>
-    </details>
-    
-    
-4. Open the file `app.py`
+The Rule should now look like this:
 
-5. Add a _Dumpframe_ rule next to line number 74 by clicking next the the line number in the file viewer
-![Dumpframe Rule](/img/screenshots/getting_started_5.png)
-6. Looking at the right-hand pane **Rules**, you will see the rule you added, on what line you added it and it should be 
-<span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
-![Valid Rule](/img/screenshots/getting_started_4.png)
-    - If this is not the case, [click here](troubleshooting-rules.md) to see how to fix that
-7. Go the the app webpage [http://localhost:5000/](http://localhost:5000/) and add a todo in order to trigger the rule
-8. Check the bottom pane **Messages** and you'll see the dumpframe you just added, as it was triggered by the handler of the web api when you added a todo
-![Message pane](/img/screenshots/getting_started_3.png)
+![Modified Set Section](/img/screenshots/basic_debug_4.png)
 
-## Bug Hunt
+Trigger your app again.
 
-Great! You're now ready to start debugging, let's start by having some fun with our 
-**[bug hunt](tutorials-bughunt-python.md)** - follow instructions to try out some basic use cases.
-    </p>
-</details>
+Instead of the entire frame dump, you should now see only the variable you fetched.
+
+Now let's try and format the debug message, just as we do in traditional printf() debugging.
+
+### 3. Format a Debug Message
+
+Click Edit Rule, and locate the Processing section.
+
+It should look something like this:
+
+![Modified Set Section](/img/screenshots/basic_debug_5.png)
+
+The Processing section tells Rookout what to do with the fetched data.
+
+For example, you could tell rookout to format the debug message as a string.
+
+Replace the content of the Operations section with the following snippet:
+
+```javascript
+    {
+        "name": "format",
+        "path": "temp.message",
+        "format": "@@@ here { [paste the copied variable path here] @@@}"
+      },
+      {
+        "name": "send_rookout",
+        "path": "temp.message"
+      }
+```
+
+The Rule should now look like this:
+
+![Modified Set Section](/img/screenshots/basic_debug_6.png)
+
+Trigger your app again.
+
+You should now see your debug message formatted as a string, including the fetched variable.
+
+That wasn't so bad, was it? :)
+
+Rookout Rules are quite robust, and if you dig deeper into our documentation you can learn how to use them.
+
+## What's next?
+
+- Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
+
+- Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-rules.md).
+
+- Dig deeper into [Rule scripting](rules-index.md).
