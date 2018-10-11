@@ -3,9 +3,9 @@ id: installation
 title: Quick Start
 ---
 
-Getting started with Rookout is quite straightforward:
+To set up Rookout in your environment, follow the following steps:
 
-1. Sign up at our <a href="http://www.rookout.com/trial">sign up page</a> and get a Rookout Token
+1. Sign up at our <a href="http://www.rookout.com/trial">sign up page</a> and get a Rookout Token.
 
 2. Install a Rook by importing our SDK:
 
@@ -17,7 +17,7 @@ Getting started with Rookout is quite straightforward:
 <input id="tab3" type="radio" name="tabs" class="tab-button" />
 <label for="tab3" class="tab-title">JVM</label>
 <div id="content1" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy tutorial-button">Copy</button>
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
     # Install the Rookout pypi package
     $ pip install rook
@@ -32,7 +32,7 @@ Getting started with Rookout is quite straightforward:
 
 </div>
 <div id="content2" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy tutorial-button">Copy</button>
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
     // Install the npm package
     $ npm install --save rookout
@@ -45,7 +45,7 @@ Getting started with Rookout is quite straightforward:
 
 </div>
 <div id="content3" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy tutorial-button">Copy</button>
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
     // Download our java agent
     $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
@@ -59,7 +59,21 @@ Getting started with Rookout is quite straightforward:
 </div>
 </div>
 
-3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
+3. Create a new Workspace and give it a meaningful name.
+
+4. Load your Source Code into the Rookout IDE from either Github or from your local file system.
+
+![Add Source](/img/screenshots/quick_start_3.png)
+
+5. Add a Rule Point at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.
+
+![Add Rule](/img/screenshots/quick_start_4.png)
+
+6. Run your app and trigger the code you are trying to debug.
+
+7. Watch the Debug Message in the Rookout IDE.
+
+![Debug Message](/img/screenshots/quick_start_5.png)
 
 ## What's next?
 

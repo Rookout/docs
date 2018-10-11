@@ -9,8 +9,7 @@ Rookout makes it easy debug any app deployment - cloud or local, dev or producti
 
 <iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/iYetj3TQbEc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-<br/>
-Can't wait to get started? Just check out our [Quick Start guide](installation-overview.md).
+### Can't wait to get started? Just check out our [Quick Start guide](installation-overview.md).
 
 
 You can also try the following:
