@@ -3,6 +3,17 @@ id: installation-agent
 title: Agent Installation
 ---
 
+Rookout Agents can be installed locally and provide a gateway between Rooks and the Rookout App. They allow setting up Rooks in applications that cannot access the Rookout App.
+
+### Supported Operating Systems
+
+| Operating System   | Version    |
+| ------------------ | ---------- |
+| Debian             | None       |
+| Ubuntu             | 16         |
+| CentOS             | 7          |
+
+### Agent Setup
 
 There are three ways to install the Agent -  
 1. [Using Docker](#using-docker)
@@ -11,9 +22,9 @@ There are three ways to install the Agent -
 
 Once the Agent has been istalled, check out the [Basic Agent Configuration](#basic-agent-configuration) section.
 
-### Using Docker
+#### Using Docker
 
-Installing the Rookout Agent using Docker is very straight forward.  
+Installing the Rookout Agent using Docker is very straightforward.  
 It is available as a public Docker [image](https://hub.docker.com/r/rookout/agent/) based on Alpine Linux
 
 To get an agent up and running in a container execute this commands in a terminal:
@@ -43,9 +54,9 @@ $ export ROOKOUT_TOKEN=<Your-Token>
 $ curl -fs https://get.rookout.com | bash
 ```
 
-### Basic Agent Configuration
+### Basic Configuration
 
-You can configure the Agent using environment variables :  
+The most common way to configure the agent is using environment variables:
 `ROOKOUT_TOKEN` - *This configuration supplies the agent with a secure method to authenticate with the Rookout server.
                    It must be set for the agent to run.*  
 `ROOKOUT_LISTEN_ALL` - *Configuring the agent to listen on all addresses instead of only localhost.*  
@@ -53,4 +64,5 @@ You can configure the Agent using environment variables :
                         Those will be available both for the scripting engine and the frontend.
                         The default value is an empty list.*
 
-For advanced configuration options check out the [Advanced Agent Configuration](agent.md) section.
+Other configuration methods can be found [here](agent.md).
+

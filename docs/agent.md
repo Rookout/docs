@@ -1,22 +1,30 @@
 ---
 id: agent
-title: Rookout Agent
+title: Agent Configuration
 ---
-
-Rookout Agents can be installed locally and provide a gateway between Rooks and the Rookout App.
-They allow setting up Rooks in applications that cannot access the Rookout App.
 
 For basic installation visit our [agent installation guide](installation-agent.md).
 
-1. [Installation flags](#installation-flags)
-2. [Supported operating systems](#supported-operating-systems)
+1. [Supported operating systems](#supported-operating-systems)
+2. [Installation script](#installation-script)
 3. [Configuration variables](#configuration-variables)
 4. [Configuration files](#configuration-files)
 
-#### Installation flags
+#### Supported operating systems
+
+| Operating System   | Version    |
+| ------------------ | ---------- |
+| Debian             | GNU/Linux 9 (strech)       |
+| Ubuntu             | 14.04 LTS, 16.04 LTS         |
+| CentOS             | 6,7          |
+| Red Hat Enterprise | Linux 6, 7|
+
+#### Using the installation script
 
 ```bash
-setup.sh [-h] [-dv] [-k=token] [--site=url] [--https-proxy=url]
+$ curl -fs https://get.rookout.com | bash
+
+Usage: setup.sh [-h] [-dv] [-k=token] [--site=url] [--https-proxy=url]
 
 Installs rookout-agent
 
@@ -29,16 +37,7 @@ Flags:
 --https-proxy=url             HTTPS Proxy for agent to use
 ```
 
-#### Supported operating systems
-
-| Operating System   | Version    |
-| ------------------ | ---------- |
-| Debian             | GNU/Linux 9 (strech)       |
-| Ubuntu             | 14.04 LTS, 16.04 LTS         |
-| CentOS             | 6,7          |
-| Red Hat Enterprise | Linux 6, 7|
-
-#### Configuration Variables
+### Using environment variables
 
 Rookout Agent can easily be configured using the following environment variables:
 
@@ -46,7 +45,7 @@ Rookout Agent can easily be configured using the following environment variables
 |:----------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | This configuration supplies the agent with a secure method to authenticate with the Rookout server.<br/><br/>It must be set for the agent to run. | Configuring the agent to listen on all addresses instead of only localhost.,The default value of this setting differs:- In the systemd service this value is set to False.- In the Docker image this value is set to True.<br/><br/>*WARNING:* It is not recommended to expose the agent port to the internet. | A list of semicolon `;` separated values (tags) that will be added to the Agent's identity.<br/>Those will be available both for the scripting engine and the frontend.<br/><br/>The default value is an empty list. |
 
-#### Configuration Files
+### Using config files
 
 - For advanced use cases, the agent can be configured by editing (or creating) the JSON 
 configuration file at `/etc/rookout/agent-config.json`

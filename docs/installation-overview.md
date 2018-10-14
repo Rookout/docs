@@ -3,86 +3,98 @@ id: installation
 title: Quick Start
 ---
 
-Getting started with Rookout is quite straightforward:
+To set up Rookout in your environment, follow the following steps:
 
-1. Sign up at our <a href="http://www.rookout.com/trial">sign up page</a> and get a Rookout Token
+### 1. Sign Up
 
-2. Install a Rook by importing our SDK:
+Sign up to Rookout at our <a href="http://www.rookout.com/trial">sign up page</a> and get your Rookout Token.
 
-<details>
-<summary>_Python Quick Start_</summary>
+### 2. Install the SDK
 
-Create and activate a new virtual environment :
+Rooks are instrumentation components that dynamically add and remove log lines for you in real time.
 
+Install a Rook by importing our SDK:
 
-Install the Rookout pypi package :  
-```bash
-$ pip install rook
-```
+<div class="tab-container">
+<input id="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<label for="tab1" class="tab-title">Python</label>
+<input id="tab2" type="radio" name="tabs" class="tab-button" />
+<label for="tab2" class="tab-title">Node.JS</label>
+<input id="tab3" type="radio" name="tabs" class="tab-button" />
+<label for="tab3" class="tab-title">JVM</label>
+<div id="content1" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-Import the package in your app's entry-point file :  
-```javascript
-from rook import auto_start
-```
+    # Install the Rookout pypi package
+    $ pip install rook
 
-Export your token as an environment variable:
-```bash
-$ export ROOKOUT_TOKEN=<Your Rookout Token>
-$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-$ export ROOKOUT_AGENT_PORT=443
-```
+    # Export your token as an environment variable
+    $ export ROOKOUT_TOKEN=[Your Rookout Token]
 
-</details>
+    # Import the package in your app's entry-point file, just before it starts
+    from rook import auto_start
+    if __name__ == "__main__":
+        # Your program starts here :)
 
-<details>
-<summary>_Node.js Quick Start_</summary> 
+</div>
+<div id="content2" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-Install the npm package:
-```bash
-$ npm install --save rookout
-```
-Require the package in your app's entry-point file:
-```javascript
-const rook = require('rookout/auto_start');
-```
+    // Install the npm package
+    $ npm install --save rookout
 
-Export your token as an environment variable:
-```bash
-$ export ROOKOUT_TOKEN=<Your Rookout Token>
-$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-$ export ROOKOUT_AGENT_PORT=443
-```
+    // Export your token as an environment variable
+    $ export ROOKOUT_TOKEN=[Your Rookout Token]
 
-</details>
+    // Require the package in your app's entry-point file
+    const rook = require('rookout/auto_start');
 
-<details>
-<summary>_Java Quick Start_</summary>    
+</div>
+<div id="content3" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-Download our java agent :
-```bash
-$ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-```
+    // Download our java agent
+    $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 
-Set your JVM to use the rook as a java agent :  
-```bash
-$ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
-```
+    // Export your token as an environment variable:
+    $ export ROOKOUT_TOKEN=[Your Rookout Token]
 
-Export your token as an environment variable:
-```bash
-$ export ROOKOUT_TOKEN=<Your Rookout Token>
-$ export ROOKOUT_AGENT_HOST=cloud.agent.rookout.com 
-$ export ROOKOUT_AGENT_PORT=443
-```
+    // Set your JVM to use the rook as a java agent :  
+    $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 
-</details>
+</div>
+</div>
 
-3. Run your app, add a [Rookout Rule](rules-index.md), and start getting debug messages.
+### 3. Create a Workspace
 
-#### What's next?
+Create a new Workspace and give it a meaningful name.
 
-- Lean more about [Rookout Rules](rules-index.md).
+Load your Source Code into the Rookout IDE from either Github or from your local file system.
+
+![Add Source](/img/screenshots/quick_start_3.png)
+
+### 4. Add a Rule Point
+
+Add a Rule Point at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.
+
+Run your app and trigger the code you are trying to debug.
+
+![Add Rule](/img/screenshots/quick_start_4.png)
+
+### 5. Watch the Debug Message
+
+Watch the Debug Message in the Rookout IDE.
+
+And that's it, you're done :)
+
+![Debug Message](/img/screenshots/quick_start_5.png)
+
+## What's next?
+
+- Get a taste of real time debugging with our [Basic Debugging](rules-index.md) guide.
 
 - Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
 
-- Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-home.md).
+- Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-rules.md).
+
+- Dig deeper into [Rule scripting](rules-index.md).

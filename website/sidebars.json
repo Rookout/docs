@@ -3,9 +3,10 @@
     "Getting Started": [
       "introduction",
       "installation",
-      "installation-java",
+      "getting-started",
       "installation-python",
-      "installation-node"
+      "installation-node",
+      "installation-java"      
     ],
     "Sandbox Tutorials": [
       "python-getting-started",
@@ -13,9 +14,11 @@
       "java-getting-started"
     ],
     "Advanced Setup": [
+      "rooks-config",
       "integrations",
       "installation-agent",
-      "installation-agent-proxy"
+      "installation-agent-proxy",
+      "agent"
     ],
     "Troubleshooting": [
       "troubleshooting-rules",
@@ -24,12 +27,7 @@
     ],
     "Concepts":[
       "reference",
-      "rooks",
-      "rooks-node",
-      "rooks-python",
-      "rooks-java",
-      "rooks-config",
-      "agent"
+      "rooks"
     ],
     "Reference": [
       "rules",
