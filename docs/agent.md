@@ -6,9 +6,9 @@ title: Agent Configuration
 For basic installation visit our [agent installation guide](installation-agent.md).
 
 1. [Supported operating systems](#supported-operating-systems)
-2. [Installation script](#installation-script)
-3. [Configuration variables](#configuration-variables)
-4. [Configuration files](#configuration-files)
+2. [Using the installation script](#using-the-installation-script)
+3. [Using environment variables](#using-environment-variables)
+4. [Using configuration files](#using-configuration-files)
 
 #### Supported operating systems
 
@@ -45,7 +45,7 @@ Rookout Agent can easily be configured using the following environment variables
 |:----------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | This configuration supplies the agent with a secure method to authenticate with the Rookout server.<br/><br/>It must be set for the agent to run. | Configuring the agent to listen on all addresses instead of only localhost.,The default value of this setting differs:- In the systemd service this value is set to False.- In the Docker image this value is set to True.<br/><br/>*WARNING:* It is not recommended to expose the agent port to the internet. | A list of semicolon `;` separated values (tags) that will be added to the Agent's identity.<br/>Those will be available both for the scripting engine and the frontend.<br/><br/>The default value is an empty list. |
 
-### Using config files
+### Using configuration files
 
 - For advanced use cases, the agent can be configured by editing (or creating) the JSON 
 configuration file at `/etc/rookout/agent-config.json`
