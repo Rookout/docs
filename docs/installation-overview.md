@@ -67,7 +67,7 @@ Install a Rook by importing our SDK:
 
 ### 3. Create a Workspace
 
-Create a new Workspace and give it a meaningful name.
+Log in to the Rookout IDE and create a new Workspace. Give it a meaningful name.
 
 Load your Source Code into the Rookout IDE from either Github or from your local file system.
 
