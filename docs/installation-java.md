@@ -29,7 +29,7 @@ This allows Rookout to remotely inspect the state of the process.
     ```
     
 3. Add your source files to the .jar/.war/.ear when building.  
-this can be done manually or through the help of a build tool such as [Gradle](https://gradle.org/) or [Maven](https://maven.apache.org/).
+This can be done manually or through the help of a build tool such as [Gradle](https://gradle.org/) or [Maven](https://maven.apache.org/).
     
     *For explanation on how to do this using Gradle or Maven head to our [installation examples](installation-java.md)*.
 
