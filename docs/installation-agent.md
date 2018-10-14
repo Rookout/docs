@@ -9,9 +9,10 @@ Rookout Agents can be installed locally and provide a gateway between Rooks and 
 
 | Operating System   | Version    |
 | ------------------ | ---------- |
-| Debian             | None       |
-| Ubuntu             | 16         |
-| CentOS             | 7          |
+| Debian             | GNU/Linux 9 (strech)       |
+| Ubuntu             | 14.04 LTS, 16.04 LTS         |
+| CentOS             | 6,7          |
+| Red Hat Enterprise | Linux 6, 7|
 
 ### Agent Setup
 
@@ -37,7 +38,7 @@ All done ! If you still don't have a Rook installed, [follow these instructions.
 
 ### Using initd
 
-For the following operating systems, the agent is available as a direct installation [in the following link](https://get.rookout.com/setup.sh)
+The Rookout Agent is available as a direct installation [in the following link](https://get.rookout.com/setup.sh)
 To install it execute:
 ```bash
 setup.sh --token=<Your-Token>
@@ -45,7 +46,7 @@ setup.sh --token=<Your-Token>
 
 ### Using systemd
 
-For systemd (Linux) based operating system the agent is available as a service. 
+For systemd (Linux) based operating system the Rookout Agent is available as a service. 
 
 All that is needed is setting the Token as an environment variable and running the installation script.  
 To install it execute:
