@@ -3,13 +3,27 @@ id: agent
 title: Agent Configuration
 ---
 
-### Using the installation script
+For basic installation visit our [agent installation guide](installation-agent.md).
+
+1. [Supported operating systems](#supported-operating-systems)
+2. [Installation script](#installation-script)
+3. [Configuration variables](#configuration-variables)
+4. [Configuration files](#configuration-files)
+
+#### Supported operating systems
+
+| Operating System   | Version    |
+| ------------------ | ---------- |
+| Debian             | GNU/Linux 9 (strech)       |
+| Ubuntu             | 14.04 LTS, 16.04 LTS         |
+| CentOS             | 6,7          |
+| Red Hat Enterprise | Linux 6, 7|
+
+#### Using the installation script
 
 ```bash
 $ curl -fs https://get.rookout.com | bash
-```
 
-```
 Usage: setup.sh [-h] [-dv] [-k=token] [--site=url] [--https-proxy=url]
 
 Installs rookout-agent

@@ -17,8 +17,10 @@ Rookout Agents can be installed locally and provide a gateway between Rooks and 
 
 There are three ways to install the Agent -  
 1. [Using Docker](#using-docker)
-2. [systemd service](#systemd-service)
-3. [Remote Agent](installation-agent-proxy.md)
+2. [Using initd](#using-initd)
+3. [Using systemd](#using-systemd)
+
+Once the Agent has been istalled, check out the [Basic Agent Configuration](#basic-agent-configuration) section.
 
 #### Using Docker
 
@@ -33,9 +35,15 @@ $ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=<Your-Token>" rookout/agent
 
 All done ! If you still don't have a Rook installed, [follow these instructions.](#installing-a-rook)
 
-**Note:** For production deployment it is recommended to set the auto restart policy of Docker or the management platform.
+### Using initd
 
-#### systemd service
+For the following operating systems, the agent is available as a direct installation [in the following link](https://get.rookout.com/setup.sh)
+To install it execute:
+```bash
+setup.sh --token=<Your-Token>
+```
+
+### Using systemd
 
 For systemd (Linux) based operating system the agent is available as a service. 
 
@@ -57,3 +65,4 @@ The most common way to configure the agent is using environment variables:
                         The default value is an empty list.*
 
 Other configuration methods can be found [here](agent.md).
+
