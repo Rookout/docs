@@ -79,7 +79,8 @@ Run your app and trigger the code you are trying to debug.
 
 ### 5. Watch the Debug Message
 
-Watch the Debug Message in the [Rookout IDE](https://app.rookout.com).<br/>
+Watch the Debug Message in the [Rookout IDE](https://app.rookout.com).
+
 And that's it, you're done :)
 
 ![Debug Message](/img/screenshots/quick_start_5.png)
