@@ -11,7 +11,8 @@ Sign up to Rookout at our <a href="http://www.rookout.com/trial">sign up page</a
 
 ### 2. Install the SDK
 
-Rooks are instrumentation components that dynamically add and remove log lines for you in real time.
+Rooks allow you to collect the data you need directly from a running application, wherever it is deployed.
+A Rook is imported into your app as an SDK, and deployed with each instance of your app.
 
 Install a Rook by importing our SDK:
 
@@ -83,7 +84,7 @@ Run your app and trigger the code you are trying to debug.
 
 ### 5. Watch the Debug Message
 
-Watch the Debug Message in the Rookout IDE.
+Watch the Debug Message in the [Rookout IDE](https://app.rookout.com).
 
 And that's it, you're done :)
 
@@ -91,7 +92,7 @@ And that's it, you're done :)
 
 ## What's next?
 
-- Get a taste of real time debugging with our [Basic Debugging](rules-index.md) guide.
+- __Get a taste of real time debugging with our [Basic Debugging](rules-index.md) guide.__
 
 - Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
 
