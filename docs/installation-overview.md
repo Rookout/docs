@@ -11,9 +11,7 @@ Sign up to Rookout at our <a href="http://www.rookout.com/trial">sign up page</a
 
 ### 2. Install the SDK
 
-Rooks are instrumentation components that dynamically add and remove log lines for you in real time.
-
-Install a Rook by importing our SDK:
+Install the Rookout SDK (aka 'Rook') by following these steps:
 
 <div class="tab-container">
 <input id="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
@@ -67,31 +65,30 @@ Install a Rook by importing our SDK:
 
 ### 3. Create a Workspace
 
-Log in to the Rookout IDE and create a new Workspace. Give it a meaningful name.
-
+Log in to the Rookout IDE and create a new Workspace. Give it a meaningful name.<br/>
 Load your Source Code into the Rookout IDE from either Github or from your local file system.
 
 ![Add Source](/img/screenshots/quick_start_3.png)
 
 ### 4. Add a Rule Point
 
-Add a Rule Point at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.
-
+Add a Rule Point at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.<br/>
 Run your app and trigger the code you are trying to debug.
 
 ![Add Rule](/img/screenshots/quick_start_4.png)
 
 ### 5. Watch the Debug Message
 
-Watch the Debug Message in the Rookout IDE.
-
+Watch the Debug Message in the [Rookout IDE](https://app.rookout.com).<br/>
 And that's it, you're done :)
 
 ![Debug Message](/img/screenshots/quick_start_5.png)
 
-## What's next?
+## Next step
 
-- Get a taste of real time debugging with our [Basic Debugging](rules-index.md) guide.
+- __Get a taste of real time debugging with our [Basic Debugging](rules-index.md) guide.__
+
+## Additional information
 
 - Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
 
