@@ -86,7 +86,11 @@ That wasn't so bad, was it? :)
 
 Rookout Rules are quite robust, and if you dig deeper into our documentation you can learn how to use them.
 
-## What's next?
+## Next step
+
+- __Integrate your debug messages into your data pipeline with our [Basic Integrations](integrations-overview.md) guide.__
+
+## Additional information
 
 - Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
 
