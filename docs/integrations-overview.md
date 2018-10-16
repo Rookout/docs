@@ -35,7 +35,7 @@ The Rule should now look something like this:
 ![Web Hook](/img/screenshots/basic_integration_2.png)
 
 Trigger your app again.<br/>
-Instead of seeing the debug message in the Rookout IDE, the data was now sent to the specified URL.<br/>
+Instead of seeing the debug message in the Rookout IDE, the data was now sent to the specified URL as a JSON object.<br/>
 You may also fetch additional variables and add them to the 'items' list.
 
 ### 3. Send data to your logging or monitoring tool
