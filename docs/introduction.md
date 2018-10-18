@@ -11,7 +11,6 @@ Rookout makes it easy debug any app deployment - cloud or local, dev or producti
 
 ### Can't wait to get started? Just check out our [Quick Start guide](installation-overview.md).
 
-
 You can also try the following:
 - Check out our sandbox tutorials: [Python](python-getting-started.md), [Node.js](node-getting-started.md), [Java](java-getting-started.md).
 - Find your specific deployment in our <a href="https://github.com/Rookout/deployment-examples">Deployment Examples page</a>.
