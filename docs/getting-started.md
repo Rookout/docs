@@ -74,7 +74,11 @@ You should now see your debug message formatted as a string, including the fetch
 That wasn't so bad, was it? :)<br/>
 Rookout Rules are quite robust, and if you dig deeper into our documentation you can learn how to use them.
 
-## What's next?
+## Next step
+
+- __Integrate your debug messages into your data pipeline with our [Basic Integrations](integrations-overview.md) guide.__
+
+## Additional information
 
 - If you faced any issues, please let us know: support@rookout.com
 
