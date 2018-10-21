@@ -3,11 +3,12 @@ id: installation
 title: Quick Start
 ---
 
-To set up Rookout in your environment, follow the following steps:
+To set up Rookout in your environment, follow these steps:
 
 ### 1. Sign Up
 
-Sign up to Rookout at our <a href="http://www.rookout.com/trial">sign up page</a> and get your Rookout Token.
+Sign up to Rookout at our <a href="http://www.rookout.com/trial">sign up page</a> and get your Rookout Token.<br/>
+Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
 ### 2. Install the SDK
 
