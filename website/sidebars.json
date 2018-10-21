@@ -1,58 +1,36 @@
 {
   "introduction": {
     "Getting Started": [
-      "introduction"
-    ],
-    "Node Tutorial": [
-      "node-getting-started",
-      "tutorials-bughunt-node"
-    ],
-    "Python Tutorial": [
-      "python-getting-started",
-      "tutorials-bughunt-python"
-    ],
-    "Java Tutorial": [
-      "java-getting-started",
-      "tutorials-bughunt-java"
-    ]
-  },
-  "installation": {
-    "Overview": [
-      "installation"
-    ],
-    "Rook Setup": [
-      "installation-java",
+      "introduction",
+      "installation",
+      "getting-started",
+      "integrations-overview",
       "installation-python",
-      "installation-node"
+      "installation-node",
+      "installation-java"      
     ],
-    "Agent Setup": [
+    "Sandbox Tutorials": [
+      "python-getting-started",
+      "node-getting-started",
+      "java-getting-started"
+    ],
+    "Advanced Setup": [
+      "rooks-config",
+      "integrations",
       "installation-agent",
       "installation-agent-proxy",
-      "installation-agent-remote"
-    ]
-  },
-  "extensions": {
-    "Overview": [
-      "integrations"
-    ],
-    "Output Extensions": [],
-    "Input Extensions": []
-  },
-  "reference": {
-    "Overview": [
-      "reference"
-    ],
-    "Rooks": [
-      "rooks",
-      "rooks-node",
-      "rooks-python",
-      "rooks-java",
-      "rooks-config"
-    ],
-    "Agent": [
       "agent"
     ],
-    "Rules": [
+    "Troubleshooting": [
+      "troubleshooting-rules",
+      "troubleshooting-rooks",
+      "troubleshooting-agent"
+    ],
+    "Concepts":[
+      "reference",
+      "rooks"
+    ],
+    "Reference": [
       "rules",
       "rules-aug",
       "rules-uses",
@@ -67,16 +45,6 @@
       "rules-namespaces-rook",
       "rules-namespaces-agent",
       "rules-namespaces-machine"
-    ]
-  },
-  "troubleshooting": {
-    "Troubleshooting": [
-      "troubleshooting",
-      "troubleshooting-rules",
-      "troubleshooting-rooks",
-      "troubleshooting-agent",      
-      "troubleshooting-proxy"
-      
     ]
   }
 }

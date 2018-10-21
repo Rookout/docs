@@ -1,85 +1,100 @@
 ---
 id: installation
-title: Setting up
+title: Quick Start
 ---
 
-## The Basics
+To set up Rookout in your environment, follow the following steps:
 
-### The Rookout App
+### 1. Sign Up
 
-Rookout is available at [app.rookout.com](https://app.rookout.com/) and provides a web based IDE for real time debugging.
-Once you have access to the Rookout App, you'll be able to setup Rooks and Rules in order to debug your application.
-The Rookout App also functions as an ETL component for fetching your logs and sending them to your favorite log and data tools.
+Sign up to Rookout at our <a href="http://www.rookout.com/trial">sign up page</a> and get your Rookout Token.
 
-### Rooks and Rules
+### 2. Install the SDK
 
-Rooks are the component that allows you to collect data directly from a running application.  
-A Rook is imported into your app as an SDK, and deployed with each instance of your app.
+Install the Rookout SDK (aka 'Rook') by following these steps:
 
-Once a Rook is deployed with your application, a Rule can be set to watch a specific line of code.
-A Rule defines what data will be collected, how it should be formatted, and where it should be sent.
+<div class="tab-container">
+<input id="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<label for="tab1" class="tab-title">Python</label>
+<input id="tab2" type="radio" name="tabs" class="tab-button" />
+<label for="tab2" class="tab-title">Node.JS</label>
+<input id="tab3" type="radio" name="tabs" class="tab-button" />
+<label for="tab3" class="tab-title">JVM</label>
+<div id="content1" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) and [Rules Overview](rules-index.md)
+    # Install the Rookout pypi package
+    $ pip install rook
 
-## Setting up Rookout
+    # Export your token as an environment variable
+    $ export ROOKOUT_TOKEN=[Your Rookout Token]
 
-If you have already walked through one of our hands-on tutorials, you should be familiar with the basic flow.
-Setting up Rookout to debug your own code requires only three steps:
+    # Import the package in your app's entry-point file, just before it starts
+    from rook import auto_start
+    if __name__ == "__main__":
+        # Your program starts here :)
 
-1. Add a Rook dependency to your application code
-2. Load the source code into the Rookout app
-3. Place a rule and trigger your application to get some data.
+</div>
+<div id="content2" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-### Adding a Rook
+    // Install the npm package
+    $ npm install --save rookout
 
-To add a basic Node.js, Python or Java Rook, follow the instructions in the matching page:
+    // Export your token as an environment variable
+    $ export ROOKOUT_TOKEN=[Your Rookout Token]
 
-- [Adding a Node.js Rook](installation-node.md)
-- [Adding a Python Rook](installation-python.md)
-- [Adding a Java Rook](installation-java.md)
+    // Require the package in your app's entry-point file
+    const rook = require('rookout/auto_start');
 
-To deploy a Rook on a specific platform or framework, check out our [Installation Examples](https://github.com/Rookout/deployment-examples) page.
+</div>
+<div id="content3" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-Once the Rook is in place, apply the following environment variables to its host:
+    // Download our java agent
+    $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 
-`ROOKOUT_TOKEN` - *Your unique identifier, pointing your Rooks to your own account at the Rookout Service.*  
-`ROOKOUT_AGENT_HOST` - *Point the Rook at the Rookout service by setting this value to cloud.agent.rookout.com*  
-`ROOKOUT_AGENT_PORT` - *Point the Rook to the right port by setting this value to 443.*
+    // Export your token as an environment variable:
+    $ export ROOKOUT_TOKEN=[Your Rookout Token]
 
-You may also use this opportunity to give the Rook one or more Tags, which will help you identify the Rook later on:
+    // Set your JVM to use the rook as a java agent :  
+    $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 
-`ROOKOUT_ROOK_TAGS` - *A list of comma separated values. Common examples: Production,AppName,BackEnd*  
+</div>
+</div>
 
-For additional configuration options visit our [Rook configuration reference](rooks-config.md)
+### 3. Create a Workspace
 
-### Loading the source code
+Log in to the Rookout IDE and create a new Workspace. Give it a meaningful name.<br/>
+Load your Source Code into the Rookout IDE from either Github or from your local file system.
 
-Create a Workspace, and give it a meaningful name.
-Add a new Source to the Workspace, and choose your Git Repository.
-Choose a branch, and a commit if necessary.
-Switch to the created Workspace to view your source code.
+![Add Source](/img/screenshots/quick_start_3.png)
 
-If you do not use GitHub, choose Local Filesystem and follow the instructions in the following dialog.
+### 4. Add a Rule Point
 
-### Placing a Rule
+Add a Rule Point at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.<br/>
+Run your app and trigger the code you are trying to debug.
 
-Choose either a Dump Frame or a Log Rule from the Rule Type drop down list in the right-hand side panel.
-Choose a line of code from the source view in the left-hand side panel, and click next to it as if you were adding a breakpoint in an IDE.
-Trigger your application in a way that would hit the selected line of code, and watch the data arriving in the Message Pane.
+![Add Rule](/img/screenshots/quick_start_4.png)
 
-## What's next?
+### 5. Watch the Debug Message
 
-**I want Rules to fetch specific data, and to write it in my favorite format. How do I do that?**  
-Rookout provides a robust scripting capability which allows defining advanced Rule behavior.
-For more information about Scripting check out [Script Uses](rules-uses.md).
+Watch the Debug Message in the [Rookout IDE](https://app.rookout.com).
 
-**I want to be more efficient, what can I add to Rookout?**  
-We have prepared integrations with several well-known tools you could use.  
-Check out our [Output Integrations](integrations-home.md)
+And that's it, you're done :)
 
-**My app is configured in a way that makes Rookout inaccessible to the Rooks. Do I have an alternative?**
-We provide the option to install local Agents to orchestrate local data collection and provide ETL functionality.
-Learn how to set them up in our [Agents overview](agent.md) page.
+![Debug Message](/img/screenshots/quick_start_5.png)
 
-**I'm stuck. Can you guys help me out here?**  
-Sure thing! Check the [Troubleshooting section](troubleshooting-home.md) or just [shoot us an email](emailto:support@rookout.com).
+## Next step
+
+- __Get a taste of real time debugging with our [Basic Debugging](rules-index.md) guide.__
+
+## Additional information
+
+- If you faced any issues, please let us know: support@rookout.com
+
+- Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
+
+- Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-rules.md).
+
+- Dig deeper into [Rule scripting](rules-index.md).

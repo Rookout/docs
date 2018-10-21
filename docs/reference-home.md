@@ -1,8 +1,7 @@
 ---
 id: reference
-title: Reference
+title: Overview
 ---
-
 
 ### The Rookout App
 
@@ -18,7 +17,7 @@ A Rook is imported into your app as an SDK, and deployed with each instance of y
 Once a Rook is deployed with your application, a Rule can be set to watch a specific line of code.
 A Rule defines what data will be collected, how it should be formatted, and where it should be sent.
 
-For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) and [Rules Overview](rules-index.md).
+For more information about Rooks and Rules see [Rooks Overview](rooks-index.md) and [Rules Overview](rules-index.md)
 
 ### Scripting
 

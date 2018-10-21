@@ -34,20 +34,23 @@ class Footer extends React.Component {
               <div className="sitemapLinksContainer">
                   <h5 className="bold">Documentation</h5>
                   <div className="sitemapLinks">
-                    <a href={this.docUrl('getting-started.html')}>
+                    <a href={this.docUrl('introduction.html')}>
                       Getting Started
                     </a>
-                    <a href={this.docUrl('installation.html')}>
-                      Setting Up
+                    <a href={this.docUrl('python-getting-started.html')}>
+                      Sandbox Tutorials
                     </a>
-                    <a href={this.docUrl('integrations.html')}>
-                      Integrations
+                    <a href={this.docUrl('rooks-config.html')}>
+                      Advanced Setup
+                    </a>
+                    <a href={this.docUrl('troubleshooting-rules.html')}>
+                      Troubleshooting
                     </a>
                     <a href={this.docUrl('reference.html')}>
-                      Reference
+                      Concepts
                     </a>
-                    <a href={this.docUrl('troubleshooting.html')}>
-                      Troubleshooting
+                    <a href={this.docUrl('rules.html')}>
+                      Reference
                     </a>
                   </div>
               </div>

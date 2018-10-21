@@ -1,6 +1,6 @@
 ---
 id: troubleshooting-rules
-title: Troubleshooting Rules
+title: Rule Troubleshooting
 ---
 
 As you create, modify or trigger a rule, it may change its status once or more.

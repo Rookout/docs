@@ -1,47 +1,39 @@
 ---
 id: troubleshooting-rooks
-title: Troubleshooting Rooks
+title: Rook Troubleshooting
 ---
 
 ## Python Rook
 
-- Test connectivity
+- Supported Python versions:
+    - CPython 2.7, 3.5, 3.6, 3.7
+    - PYPY 6.0.0
+
+- In case of connectivity issues, run this command to test connectivity:
   ```bash
   $ python -m rook
   ```
-- Python versions:
-    - CPython 2.7 on Linux
-    - PYPY (any version) on Linux
-- Installation
-  - Python rook needs to be installed within the application's virtualenv
-  - Old installation tools can cause issues. Attempt to upgrade pip and remove distribute (deprecated, only if exists):
-    - `pip install -U pip`
-    - `pip uninstall distribute`
-- Installation requires compiling some Python extensions on the fly, this requires the following packages:
-  - apt
-    - `$ apt-get update -q`
-    - `$ apt-get install -qy g++ python-dev`
-  - yum
-    - `$ yum install -qy gcc-c++ python-devel`
-  - apk
-
 
 ## Java Rook
 
-- Test connectivity
-  ```bash
-  $ java -jar rook.jar
-  ```
 - Supported Java versions:
   - Java 7, Java 8
   - Oracle and Open have been tested
 
+- In case of connectivity issues, run this command to test connectivity:
+  ```bash
+  $ java -jar rook.jar
+  ```
+
+  
+- When using enterprise web servers such as *Oracle WebLogic* the JVM Rook will not be able to find the source files and report the rule with a warning. The rule is still  working as intended but it will not be able to make sure the source file used is matching the live one running.
+
 ## Node Rook
 
-- Test connectivity
+- Supported Node versions:
+  - 4.3+, 6, 8, 10
+
+- In case of connectivity issues, run this command to test connectivity:
   ```bash
   $ node ./node_modules/rookout/check.js
   ```
-
-- Supported Node versions:
-  - 4, 6, 8
