@@ -6,6 +6,12 @@ sidebar_label: NodeJS
 
 In this tutorial, we will setup and debug a sandbox Node.JS application.
 
+## Prerequisites
+
+1. Docker - https://www.docker.com/get-docker
+
+## Installation
+
 1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and run it:
 
     ```bash
@@ -46,12 +52,11 @@ In this tutorial, we will setup and debug a sandbox Node.JS application.
     
     </details>
 
-2. Log in to the Rookout app at [https://app.rookout.com/](https://app.rookout.com/) and **Log In**.
+## Usage
 
-3. **Create a workspace** and **import the source code** into Rookout:
-    <details>
-    <summary>_More details_</summary>
-    <p>
+2. Log in to the Rookout app at [your Rookout IDE](https://app.rookout.com/) and **Log In**.
+
+3. Add the source code by following the instructions below:
 
     - Create a Workspace
         1. Click the Gear Wheel icon near the Workout selection menu, to the top left-hand side of the screen
@@ -67,15 +72,8 @@ In this tutorial, we will setup and debug a sandbox Node.JS application.
         1. Click Apply
         1. Click Select Workspace
     
-    - Import source code from your local machine
-        1. If you do not use GitHub, choose Local Filesystem and follow the instructions in the following dialog.
-        
-    </p>
-
-    Expect to find the file tree of the imported code on source view, to the left hand side of the Rookout IDE.
-
-    </details>
-    
+    - If you don't use Github, import the source code from your local machine
+        1. Choose Local Filesystem and follow the instructions in the following dialog.
     
 4. From the source view, open the file `src/handlers/homePage.js`
 
