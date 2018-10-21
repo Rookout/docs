@@ -6,13 +6,15 @@ sidebar_label: NodeJS
 
 In this tutorial, we will setup and debug a sandbox Node.JS application.
 
+
 ## Prerequisites
 
 1. Docker - https://www.docker.com/get-docker
 
 ## Installation
 
-1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and run it:
+1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and run it:<br/>
+Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
     ```bash
     git clone https://github.com/Rookout/tutorial-nodejs
@@ -20,6 +22,7 @@ In this tutorial, we will setup and debug a sandbox Node.JS application.
     cd tutorial-nodejs
     docker-compose up
     ```
+
     <details>
     <summary>_I don't want to use docker_</summary>
     

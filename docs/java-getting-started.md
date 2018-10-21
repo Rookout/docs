@@ -19,7 +19,8 @@ git clone https://github.com/Rookout/tutorial-java.git
 cd tutorial-java
 ``` 
 
-2. Set your agent token in an ENV variable 
+2. Set your Rookout Token as an environment variable <br/>
+Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
 ```bash
 export ROOKOUT_TOKEN=YOUR_TOKEN_IN_HERE

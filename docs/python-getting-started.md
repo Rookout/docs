@@ -5,13 +5,15 @@ sidebar_label: Python
 ---
 
 
+
 ## Prerequisites
 
 1. Docker - https://www.docker.com/get-docker
 
 ## Installation
 
-1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-python) to your local computer and run it.
+1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-python) to your local computer and run it.<br/>
+Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
 <details>
 <summary>Mac/Linux</summary>
@@ -23,7 +25,6 @@ export ROOKOUT_TOKEN=<Your-Token>
 cd tutorial-python
 docker-compose up
 ```
-
 </p>
 </details>
 
