@@ -4,7 +4,16 @@ title: Node.js sandbox tutorial
 sidebar_label: NodeJS
 ---
 
-In this tutorial, we will setup and debug a sandbox Node.JS application.
+In this tutorial, we will setup and debug a sample Node.JS application.
+
+## Prerequisites
+
+1. Node.js version 8.* - https://nodejs.org/en/download/
+2. NPM - https://docs.npmjs.com/cli/install
+3. XCode (Mac only) - https://developer.apple.com/xcode/
+4. Docker (optional) - https://www.docker.com/get-docker (In case you want to skip installing Node.js and NPM)
+
+## Setup
 
 
 ## Prerequisites
@@ -16,44 +25,45 @@ In this tutorial, we will setup and debug a sandbox Node.JS application.
 1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and run it:<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
-    ```bash
-    git clone https://github.com/Rookout/tutorial-nodejs
-    export ROOKOUT_TOKEN=<Your-Token>
-    cd tutorial-nodejs
-    docker-compose up
-    ```
+<div class="tab-container">
+<input id="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<label for="tab1" class="tab-title">Linux/Mac</label>
+<input id="tab2" type="radio" name="tabs" class="tab-button" />
+<label for="tab2" class="tab-title">Windows</label>
+<input id="tab3" type="radio" name="tabs" class="tab-button" />
+<label for="tab3" class="tab-title">Docker</label>
+<div id="content1" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    <details>
-    <summary>_I don't want to use docker_</summary>
+    git clone https://github.com/Rookout/tutorial-nodejs
+    export ROOKOUT_TOKEN=<Your-Rookout-Token>
+    cd tutorial-nodejs
+    npm install
+    node ./index.js
+
+</div>
+<div id="content2" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
+
+    git clone https://github.com/Rookout/tutorial-nodejs
+    set ROOKOUT_TOKEN=<Your-Rookout-Token>
+    cd tutorial-nodejs
+    npm run tutorial
     
-    For Linux:  
+
+</div>
+<div id="content3" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
+
     
-    ```bash
     git clone https://github.com/Rookout/tutorial-nodejs
     export ROOKOUT_TOKEN=<Your-Token>
     cd tutorial-nodejs
-    make -j run-prod
-    ```
-    
-    For Mac:
-    
-    - make sure you have `xcode` installed (you need this for gRPC).
-    - make sure that you use node version <= `8.x.x`   
-    
-    Run the agent (you will still have to run it in docker for the agent):
-    
-    ```bash
-    export ROOKOUT_TOKEN=<Your-Token>
-    docker-compose up -d rookout-agent
-    ```
-    
-    Then run the node server:
-    
-    ```bash
-    make install-dependencies start-web
-    ```
-    
-    </details>
+    docker build . -t tutorial-nodejs
+    docker run -p 4000:4000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-nodejs
+
+</div>
+</div>
 
 ## Usage
 
