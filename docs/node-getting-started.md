@@ -41,8 +41,7 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
     git clone https://github.com/Rookout/tutorial-nodejs
     set ROOKOUT_TOKEN=<Your-Rookout-Token>
     cd tutorial-nodejs
-    npm install
-    node ./index.js
+    npm run tutorial
     
 
 </div>
