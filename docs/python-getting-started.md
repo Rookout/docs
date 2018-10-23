@@ -5,6 +5,13 @@ sidebar_label: Python
 ---
 
 
+
+## Prerequisites
+
+1. Docker - https://www.docker.com/get-docker
+
+## Installation
+
 1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-python) to your local computer and run it.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
@@ -35,13 +42,10 @@ docker-compose up
 </p>
 </details>
 
-2. Go to [https://app.rookout.com/](https://app.rookout.com/) and **Log In**
-3. Add the source code according to the instructions using the left pane **Source View**
-    <details>
-    <summary>_More details_</summary>
-    <p>
-    
-    #### Adding source code
+## Usage
+
+2. Go to [your Rookout IDE](https://app.rookout.com/) and **Log In**
+3. Add the source code by following the instructions below:
     
     - Create a Workspace
         1. Click the Gear Wheel icon near the Workout selection menu, to the top left-hand side of the screen
@@ -57,11 +61,8 @@ docker-compose up
         1. Click Apply
         1. Click Select Workspace
 
-    - Import source code from your local machine
-        1. If you do not use GitHub, choose Local Filesystem and follow the instructions in the following dialog.
-
-    </p>
-    </details>
+    - If you don't use Github, import the source code from your local machine
+        1. Choose Local Filesystem and follow the instructions in the following dialog.
     
     
 4. Open the file `app.py`  
