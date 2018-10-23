@@ -41,7 +41,46 @@ window.addEventListener('load', function () {
     indexName: 'rookout',
     inputSelector: '#rookout-search'
   });
+
+  loadRookoutToken();
 });
+
+
+function loadRookoutToken() {
+  const ROOKOUT_CURRENT_USER_URL = 'https://app.rookout.com/apiv1/current_user';
+  const ROOKOUT_TOKEN_URL = 'https://app.rookout.com/apiv1/:org/token';
+
+  // TODO: CHECK IF IS ADMIN OF ORG, IF TRUE USE /:org
+
+  $.get({
+    url: ROOKOUT_CURRENT_USER_URL,
+    type: "GET",
+    crossDomain: true,
+    headers: {
+      "accept": "application/json",
+      "Access-Control-Allow-Origin":"*"
+    }
+  }, (data) => {
+        console.log('first');
+        console.log(data);
+    })
+    .done((data) => {
+      console.log('done');
+      console.log(data);
+
+      setRookoutTokenInPage(data.token)
+    })
+    .fail((err) => {
+      console.log('err');
+      console.log(err);
+    });
+}
+
+
+function setRookoutTokenInPage(token) {
+  const tokenBoxes = $(".rookout-token");
+  tokenBoxes.innerHTML = token ? token : '[Your Rookout Token]';
+}
 
 
 function copyToClipboard(element) {
