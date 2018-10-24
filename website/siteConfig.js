@@ -49,6 +49,7 @@ const siteConfig = {
     'https://buttons.github.io/buttons.js',
     'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
     'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js',
     '/js/rookoutCustom.js'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
