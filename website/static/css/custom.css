@@ -270,8 +270,9 @@ tr, th, td {
     height: 75px;
 }
 
-.headerWrapper {
-    padding-left: 175px;
+.headerWrapper.wrapper {
+    padding-left: 330px;
+    margin: 0;
 }
 
 .headerTitle {
@@ -647,11 +648,20 @@ footer .social img {
     color: grey;
 }
 
+.fixedHeaderContainer a {
+    flex-flow: row wrap;
+}
+
 
 
 @media only screen and (max-width: 736px) {
     body {
         display: block;
+    }
+
+    .headerWrapper.wrapper {
+        padding-left: 5px;
+        margin: 0 auto;
     }
 
     .logo {
