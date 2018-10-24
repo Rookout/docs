@@ -49,7 +49,13 @@ window.addEventListener('load', function () {
 function loadRookoutToken() {
   const ROOKOUT_TOKEN_URL = 'https://app.rookout.com/rest/v1/org/token';
 
-  $.get(ROOKOUT_TOKEN_URL, (data) => {
+  $.get({
+    url: ROOKOUT_TOKEN_URL,
+    method: 'GET',
+    xhrFields: {
+      withCredentials: true
+   }
+  }, (data) => {
     const token = data['token'];
     setRookoutTokenInPage(token);
   })
