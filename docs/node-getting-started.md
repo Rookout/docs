@@ -15,13 +15,6 @@ In this tutorial, we will setup and debug a sample Node.JS application.
 
 ## Setup
 
-
-## Prerequisites
-
-1. Docker - https://www.docker.com/get-docker
-
-## Installation
-
 1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and run it:<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
@@ -38,8 +31,7 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
     git clone https://github.com/Rookout/tutorial-nodejs
     export ROOKOUT_TOKEN=<Your-Rookout-Token>
     cd tutorial-nodejs
-    npm install
-    node ./index.js
+    npm run tutorial
 
 </div>
 <div id="content2" class="tab-content hljs">
@@ -64,8 +56,6 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 
 </div>
 </div>
-
-## Usage
 
 2. Log in to the Rookout app at [your Rookout IDE](https://app.rookout.com/) and **Log In**.
 
