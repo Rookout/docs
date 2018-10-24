@@ -66,7 +66,7 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
 
 ### 3. Create a Workspace
 
-Log in to the Rookout IDE and create a new Workspace. Give it a meaningful name.<br/>
+Log in to the [Rookout IDE](https://app.rookout.com) and create a new Workspace. Give it a meaningful name.<br/>
 Load your Source Code into the Rookout IDE from either Github or from your local file system.
 
 ![Add Source](/img/screenshots/quick_start_3.png)
