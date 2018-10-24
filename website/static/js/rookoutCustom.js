@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-104510371-3');
 
 
-window.addEventListener('load', function () {
+window.addEventListener('load', async function () {
   const originalSearchContainer = document.querySelector("ul.nav-site > .navSearchWrapper.reactNavSearchWrapper");
 
   if (originalSearchContainer !== null) {
@@ -41,7 +41,69 @@ window.addEventListener('load', function () {
     indexName: 'rookout',
     inputSelector: '#rookout-search'
   });
+
+  await loadRookoutToken();
 });
+
+
+async function loadRookoutToken() {
+  let isAdmin = false;
+
+  const user = await getCurrentUser();
+  console.log(user);
+
+  if (user && user.orgs && user.orgs.length() > 0) {
+    isAdmin = user.orgs[0].isAdmin;
+  } else {
+    return;
+  }
+
+  const orgId =  user.orgs[0].id;
+  const orgToken = await getOrgToken(orgId, isAdmin);
+
+  setRookoutTokenInPage(orgToken);
+}
+
+
+async function getCurrentUser() {
+  const ROOKOUT_CURRENT_USER_URL = 'https://app.rookout.com/apiv1/current_user';
+  let isAdmin = false;
+
+  try {
+    return await axios.get(ROOKOUT_CURRENT_USER_URL);
+  } catch (err) {
+    console.warn('Cannot extract organization token - not currently connected to app.rookout.com');
+    return null;
+  }
+}
+
+
+async function getOrgToken(orgId, isAdmin) {
+  const ROOKOUT_TOKEN_URL_USER = 'https://app.rookout.com/apiv1/:org/token';
+  const ROOKOUT_TOKEN_URL_ADMIN = 'https://app.rookout.com/apiv1/:org';
+
+  let ROOKOUT_TOKEN_URL = isAdmin ? ROOKOUT_TOKEN_URL_ADMIN : ROOKOUT_TOKEN_URL_USER;
+  ROOKOUT_TOKEN_URL = ROOKOUT_TOKEN_URL.replace(':org', orgId);
+
+  try {
+    const res = await axios.get(ROOKOUT_TOKEN_URL);
+    if (!res) {
+      return null;
+    }
+
+    return isAdmin ? res['agent_token'] : res['token'];
+  } catch(err) {
+    return null;
+  }
+}
+
+
+function setRookoutTokenInPage(token) {
+  const body = $('body');
+  if (token) {
+    body.innerHTML = body.innerHTML.replace('[Your Rookout Token]', token);
+  }
+}
 
 
 function copyToClipboard(element) {
