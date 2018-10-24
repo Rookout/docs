@@ -31,7 +31,7 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
     git clone https://github.com/Rookout/tutorial-nodejs
     export ROOKOUT_TOKEN=<Your-Rookout-Token>
     cd tutorial-nodejs
-    npm run tutorial
+    npm start
 
 </div>
 <div id="content2" class="tab-content hljs">
@@ -40,7 +40,7 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
     git clone https://github.com/Rookout/tutorial-nodejs
     set ROOKOUT_TOKEN=<Your-Rookout-Token>
     cd tutorial-nodejs
-    npm run tutorial
+    npm start
     
 
 </div>
