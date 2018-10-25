@@ -41,9 +41,9 @@ Flags:
 
 Rookout Agent can easily be configured using the following environment variables:
 
-| ROOKOUT_TOKEN | ROOKOUT_LISTEN_ALL | ROOKOUT_AGENT_TAGS |
-|:----------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| This configuration supplies the agent with a secure method to authenticate with the Rookout server.<br/><br/>It must be set for the agent to run. | Configuring the agent to listen on all addresses instead of only localhost.,The default value of this setting differs:- In the systemd service this value is set to False.- In the Docker image this value is set to True.<br/><br/>*WARNING:* It is not recommended to expose the agent port to the internet. | A list of semicolon `;` separated values (tags) that will be added to the Agent's identity.<br/>Those will be available both for the scripting engine and the frontend.<br/><br/>The default value is an empty list. |
+| ROOKOUT_TOKEN | ROOKOUT_LISTEN_ALL | ROOKOUT_AGENT_TAGS | ROOKOUT_SEND_DATA |
+|:-------------:|:------------------:|:------------------:|:-----------------:|
+| This configuration supplies the agent with a secure method to authenticate with the Rookout server.<br/><br/>It must be set for the agent to run.|Configuring the agent to listen on all addresses instead of only localhost.,The default value of this setting differs:- In the systemd service this value is set to False.- In the Docker image this value is set to True.<br/><br/>*WARNING:* It is not recommended to expose the agent port to the internet. | A list of semicolon `;` separated values (tags) that will be added to the Agent's identity.<br/>Those will be available both for the scripting engine and the frontend.<br/><br/>The default value is an empty list. | Set this value to False to prevent the Agent from sending data to the Rookout IDE. |
 
 ### Using configuration files
 
