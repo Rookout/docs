@@ -43,6 +43,17 @@ If the relevant App Instances are missing, it may indicate one or more of the fo
 - The application is up, but the Rooks are not accessible (That is, the Rookout service cannot access the Rooks). Follow the instructions in the [Troubleshooting Rooks](troubleshooting-rooks.md) page.
 - In serverless frameworks such as Lambda, the application itself isn't up until the serverless function is triggered.
 In such cases, the Rule will only become Active after the first function trigger.
+- You are trying to debug a file that has one path in your development environment and another path in your debugging environment.
+In such cases, you can try the following:
+
+    Say the file (or a subtree of your code) in your development environment is at <source_prefix_path>\file.name  
+    And the the same file (or a subset of your code) in your debugging environment is at <target_prefix_path>\file.name  
+
+    1. Add a file named ".rookout" at the root of your source code.  
+    2. For each file or path where <source_prefix> is different from <target_prefix>, add a line to ".rookout" in the following format:  
+    <source_prefix> <target_prefix>  
+    *If your path has spaces, be sure to use parenthesis:  
+    "<source_prefix>" "<target_prefix>"  
 
 If you are using [selectors](rules-uses.md#selector) in your script, make sure they correctly apply to the relevant Rules.
 
