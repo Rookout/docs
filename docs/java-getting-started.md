@@ -23,7 +23,7 @@ cd tutorial-java
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
 ```bash
-export ROOKOUT_TOKEN=YOUR_TOKEN_IN_HERE
+export ROOKOUT_TOKEN=[Your Rookout Token]
  ```
 
 3. Build the app then run the agent & app
