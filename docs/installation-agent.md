@@ -31,7 +31,7 @@ It is available as a public Docker [image](https://hub.docker.com/r/rookout/agen
 To get an agent up and running in a container execute this commands in a terminal:
 ```bash
 $ docker pull rookout/agent
-$ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=<Your-Token>" rookout/agent
+$ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/agent
 ```
 
 All done ! If you still don't have a Rook installed, [follow these instructions.](#installing-a-rook)
@@ -41,7 +41,7 @@ All done ! If you still don't have a Rook installed, [follow these instructions.
 The Rookout Agent is available as a direct installation [in the following link](https://get.rookout.com/setup.sh)
 To install it execute:
 ```bash
-setup.sh --token=<Your-Token>
+setup.sh --token=[Your Rookout Token]
 ```
 
 ### Using systemd
@@ -51,7 +51,7 @@ For systemd (Linux) based operating system the Rookout Agent is available as a s
 All that is needed is setting the Token as an environment variable and running the installation script.  
 To install it execute:
 ```bash
-$ export ROOKOUT_TOKEN=<Your-Token>
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
 $ curl -fs https://get.rookout.com | bash
 ```
 

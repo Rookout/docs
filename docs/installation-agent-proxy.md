@@ -7,7 +7,7 @@ title: Agent Proxy Setup
 
 Run the Agent setup script with the --https-proxy argument:
 ```bash
-setup.sh --token=<Your-Token> --https-proxy=<Your-Proxy>
+setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
 ```
 
 ## Using the configuration file

@@ -29,7 +29,7 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
     git clone https://github.com/Rookout/tutorial-nodejs
-    export ROOKOUT_TOKEN=<Your-Rookout-Token>
+    export ROOKOUT_TOKEN=[Your Rookout Token]
     cd tutorial-nodejs
     npm start
 
@@ -38,7 +38,7 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
     git clone https://github.com/Rookout/tutorial-nodejs
-    set ROOKOUT_TOKEN=<Your-Rookout-Token>
+    set ROOKOUT_TOKEN=[Your Rookout Token]
     cd tutorial-nodejs
     npm start
     
@@ -49,7 +49,7 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 
     
     git clone https://github.com/Rookout/tutorial-nodejs
-    export ROOKOUT_TOKEN=<Your-Token>
+    export ROOKOUT_TOKEN=[Your Rookout Token]
     cd tutorial-nodejs
     docker build . -t tutorial-nodejs
     docker run -p 4000:4000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-nodejs
