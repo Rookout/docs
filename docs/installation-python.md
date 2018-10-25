@@ -40,8 +40,8 @@ This allows Rookout to remotely inspect the state of the process.
 1. Configure the required environment variables:
 
     ```bash
-    $ export ROOKOUT_TOKEN=<Your Rookout Token>
-    $ export ROOKOUT_ROOK_TAGS=<List of semicolon ; separated values to identify this app instance>
+    $ export ROOKOUT_TOKEN=[Your Rookout Token]
+    $ export ROOKOUT_ROOK_TAGS=[List of semicolon ; separated values to identify this app instance]
     ```
 
     <details>

@@ -21,7 +21,7 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 
 ```bash
 git clone https://github.com/Rookout/tutorial-python
-export ROOKOUT_TOKEN=<Your-Token>
+export ROOKOUT_TOKEN=[Your Rookout Token]
 cd tutorial-python
 docker-compose up
 ```
@@ -34,7 +34,7 @@ docker-compose up
 
 ```batch
 git clone https://github.com/Rookout/tutorial-python
-set ROOKOUT_TOKEN=<Your-Token>
+set ROOKOUT_TOKEN=[Your Rookout Token]
 cd tutorial-python
 docker-compose up
 ```

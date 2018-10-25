@@ -36,8 +36,8 @@ This can be done manually or through the help of a build tool such as [Gradle](h
 4. Configure the required environment variables:
 
     ```bash
-    $ export ROOKOUT_TOKEN=<Your Rookout Token>
-    $ export ROOKOUT_ROOK_TAGS=<List of semicolon ; separated values to identify this app instance>
+    $ export ROOKOUT_TOKEN=[Your Rookout Token]
+    $ export ROOKOUT_ROOK_TAGS=[List of semicolon ; separated values to identify this app instance]
     ```
 
     <details>
