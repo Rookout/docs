@@ -35,7 +35,7 @@ __Level: Beginner__
         2. At lines 14 and 73 we see that the title passes the function `utils.cleanString(...)` - Let's add a `Dump Frame` to the end of the function in file `/src/services/utils.js`.
         3. Try to add a task with some of these characters to get the frame.
         4. We can see that after using this function, on line 3 these characters are being found and replaced by regex. We found the source of the issue.
-        ```
+        ```javascript
         regex = ...
         this = ...
         str = "Test < > &&"
@@ -57,7 +57,7 @@ __Level: Intermediate__
         __name: send_rookout - means we are sending the information to the rookout web application__
         __path: store.rookout.locals.todo - we tell the rule what information to send__
 
-        ```
+        ```json
         {
             "name": "send_rookout",
             "path": "store.rookout.locals.todo"

@@ -30,7 +30,7 @@ It should look something like this:
 
 Replace the content of the Paths section with the following snippet:
 
-```javascript
+```json
     "store.variable": "[paste the copied variable path here]"
 ```
 
@@ -53,7 +53,7 @@ The Processing section tells Rookout what to do with the fetched data.<br/>
 For example, you could tell rookout to format the debug message as a string.<br/>
 Replace the content of the Operations section with the following snippet:
 
-```javascript
+```json
     {
         "name": "format",
         "path": "temp.message",

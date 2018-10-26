@@ -41,7 +41,7 @@ __Level: Beginner__
         2. In line 66 we see that the todo title is being filtered by `cleanStr` - Let's add a `Dump Frame` to line 67
         3. Try to add a todo with some special characters (e.g: `do <> this`)
         4. We can clearly see both `req['title']` and `todoStr` - which is the cleaned title.
-        ```
+        ```python
         todos = [ {...len:3},{...len:3} len:2]
         req = {... len:1 }
             title = "do <> this"
@@ -63,7 +63,7 @@ __Level: Intermediate__
         __name: send_rookout - means we are sending the information to the rookout web application__
         __path: store.rookout.locals.dup - we tell the rule what information to send__
 
-        ```
+        ```json
         {
             "name": "send_rookout",
             "path": "store.rookout.locals.dup"
