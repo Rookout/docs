@@ -4,43 +4,54 @@ title: Python sandbox tutorial
 sidebar_label: Python
 ---
 
-
-
 ## Prerequisites
 
-1. Docker - https://www.docker.com/get-docker
+1. [Python](https://www.python.org/downloads/) 2.7.14 or newer
+2. [pip](https://pip.pypa.io/en/stable/installing/)
+3. [Docker](https://www.docker.com/get-docker) (optional)
 
-## Installation
+## Setup
 
-1. Clone our [GitHub repo](https://github.com/Rookout/tutorial-python) to your local computer and run it.<br/>
+1. Clone the [python tutorial](https://github.com/Rookout/tutorial-python) to your local machine and run it:<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
-<details>
-<summary>Mac/Linux</summary>
-<p>
+<div class="tab-container">
+<input id="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<label for="tab1" class="tab-title">Linux/Mac</label>
+<input id="tab2" type="radio" name="tabs" class="tab-button" />
+<label for="tab2" class="tab-title">Windows</label>
+<input id="tab3" type="radio" name="tabs" class="tab-button" />
+<label for="tab3" class="tab-title">Docker</label>
+<div id="content1" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-```bash
-git clone https://github.com/Rookout/tutorial-python
-export ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-python
-docker-compose up
-```
-</p>
-</details>
+    git clone https://github.com/Rookout/tutorial-python
+    export ROOKOUT_TOKEN=[Your Rookout Token]
+    cd tutorial-python
+    pip install -r requirements.txt
+    python app.py
 
-<details>
-<summary>Windows</summary>
-<p>
+</div>
+<div id="content2" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-```batch
-git clone https://github.com/Rookout/tutorial-python
-set ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-python
-docker-compose up
-```
+    git clone https://github.com/Rookout/tutorial-python
+    set ROOKOUT_TOKEN=[Your Rookout Token]
+    cd tutorial-python
+    pip install -r requirements.txt
+    python app.py
 
-</p>
-</details>
+</div>
+<div id="content3" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
+
+    git clone https://github.com/Rookout/tutorial-python
+    export ROOKOUT_TOKEN=[Your Rookout Token]
+    cd tutorial-python
+    docker-compose up
+
+</div>
+</div>
 
 ## Usage
 

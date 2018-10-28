@@ -8,7 +8,7 @@ In this tutorial, we will setup and debug a sample Node.JS application.
 
 ## Prerequisites
 
-1. Node.js version 10 - https://nodejs.org/en/download/
+1. Node.js version 10 - https://nodejs.org/en/download/ 
 2. NPM - https://docs.npmjs.com/cli/install
 3. XCode (Mac only) - https://developer.apple.com/xcode/
 4. Docker (optional) - https://www.docker.com/get-docker (In case you want to skip installing Node.js and NPM)
