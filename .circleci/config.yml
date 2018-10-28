@@ -20,7 +20,7 @@ jobs:
             yarn install
             yarn run lint
             yarn run build
-            yarn run firebase-deploy
+            yarn run deploy-firebase
 
 workflows:
   version: 2
