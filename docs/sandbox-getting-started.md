@@ -35,30 +35,36 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 <div data-tab-content="content1" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    git clone https://github.com/Rookout/tutorial-python
-    export ROOKOUT_TOKEN=[Your Rookout Token]
-    cd tutorial-python
-    pip install -r requirements.txt
-    python app.py
+```bash
+git clone https://github.com/Rookout/tutorial-python
+export ROOKOUT_TOKEN=[Your Rookout Token]
+cd tutorial-python
+pip install -r requirements.txt
+python app.py
+```
 
 </div>
 <div data-tab-content="content2" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    git clone https://github.com/Rookout/tutorial-python
-    set ROOKOUT_TOKEN=[Your Rookout Token]
-    cd tutorial-python
-    pip install -r requirements.txt
-    python app.py
+```bash
+git clone https://github.com/Rookout/tutorial-python
+set ROOKOUT_TOKEN=[Your Rookout Token]
+cd tutorial-python
+pip install -r requirements.txt
+python app.py
+```
 
 </div>
 <div data-tab-content="content3" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    git clone https://github.com/Rookout/tutorial-python
-    export ROOKOUT_TOKEN=[Your Rookout Token]
-    cd tutorial-python
-    docker-compose up
+```bash
+git clone https://github.com/Rookout/tutorial-python
+export ROOKOUT_TOKEN=[Your Rookout Token]
+cd tutorial-python
+docker-compose up
+```
 
 </div>
 </div>
@@ -198,31 +204,35 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 <div data-tab-content="content1" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    git clone https://github.com/Rookout/tutorial-nodejs
-    export ROOKOUT_TOKEN=[Your Rookout Token]
-    cd tutorial-nodejs
-    npm start
+```bash
+git clone https://github.com/Rookout/tutorial-nodejs
+export ROOKOUT_TOKEN=[Your Rookout Token]
+cd tutorial-nodejs
+npm start
+```
 
 </div>
 <div data-tab-content="content2" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    git clone https://github.com/Rookout/tutorial-nodejs
-    set ROOKOUT_TOKEN=[Your Rookout Token]
-    cd tutorial-nodejs
-    npm start
-    
+```bash
+git clone https://github.com/Rookout/tutorial-nodejs
+set ROOKOUT_TOKEN=[Your Rookout Token]
+cd tutorial-nodejs
+npm start
+```    
 
 </div>
 <div data-tab-content="content3" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    
-    git clone https://github.com/Rookout/tutorial-nodejs
-    export ROOKOUT_TOKEN=[Your Rookout Token]
-    cd tutorial-nodejs
-    docker build . -t tutorial-nodejs
-    docker run -p 4000:4000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-nodejs
+```bash
+git clone https://github.com/Rookout/tutorial-nodejs
+export ROOKOUT_TOKEN=[Your Rookout Token]
+cd tutorial-nodejs
+docker build . -t tutorial-nodejs
+docker run -p 4000:4000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-nodejs
+```
 
 </div>
 </div>
@@ -369,31 +379,37 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 <div data-tab-content="content1" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    git clone https://github.com/Rookout/tutorial-java.git
-    export ROOKOUT_TOKEN=[Your Rookout Token]
-    cd tutorial-java
-    make build-jar-local run-local
+```bash
+git clone https://github.com/Rookout/tutorial-java.git
+export ROOKOUT_TOKEN=[Your Rookout Token]
+cd tutorial-java
+make build-jar-local run-local
+```
 
 </div>
 <div data-tab-content="content2" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    git clone https://github.com/Rookout/tutorial-java.git
-    set ROOKOUT_TOKEN=[Your Rookout Token]
-    cd tutorial-java
-    gradle -i clean
-    gradle -i bootJar
-    curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-    java  -javaagent:rook.jar -jar build/libs/tutorial-1.0.0.jar
+```bash
+git clone https://github.com/Rookout/tutorial-java.git
+set ROOKOUT_TOKEN=[Your Rookout Token]
+cd tutorial-java
+gradle -i clean
+gradle -i bootJar
+curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+java  -javaagent:rook.jar -jar build/libs/tutorial-1.0.0.jar
+```
 
 </div>
 <div data-tab-content="content3" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    git clone https://github.com/Rookout/tutorial-java.git
-    export ROOKOUT_TOKEN=[Your Rookout Token]
-    cd tutorial-java
-    make build-jar-with-docker run-docker    
+```bash
+git clone https://github.com/Rookout/tutorial-java.git
+export ROOKOUT_TOKEN=[Your Rookout Token]
+cd tutorial-java
+make build-jar-with-docker run-docker
+```
 
 </div>
 </div>
