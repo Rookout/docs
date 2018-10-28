@@ -41,9 +41,10 @@ $(function () {
     indexName: 'rookout',
     inputSelector: '#rookout-search'
   });
-  
-  loadTabsForOS();
+
   loadRookoutToken();
+
+  setTimeout(loadTabsForOS, 1000);
 });
 
 
