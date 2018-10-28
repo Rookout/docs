@@ -7,12 +7,10 @@
       "integrations-overview",
       "installation-python",
       "installation-node",
-      "installation-java"      
+      "installation-java"
     ],
     "Sandbox Tutorials": [
-      "python-getting-started",
-      "node-getting-started",
-      "java-getting-started"
+      "sandbox-getting-started"
     ],
     "Advanced Setup": [
       "rooks-config",
