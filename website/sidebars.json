@@ -7,9 +7,7 @@
       "integrations-overview",
       "installation-python",
       "installation-node",
-      "installation-java"
-    ],
-    "Sandbox Tutorials": [
+      "installation-java",
       "sandbox-getting-started"
     ],
     "Advanced Setup": [
