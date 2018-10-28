@@ -43,6 +43,7 @@ window.addEventListener('load', function () {
   });
 
   loadRookoutToken();
+  loadFirstTab();
 });
 
 
@@ -130,4 +131,13 @@ function copyToClipboard(element) {
   }
 
   document.body.removeChild(textArea);
+}
+
+
+function loadFirstTab() {
+  const page_tabs = $('[id^="page-tab"]');
+  page_tabs.on("change", function(e) {
+    const lang = $(e.target).data('lang');
+    $(`[id="${lang}-tab1"]`).prop('checked', true); // Checks radio button to load the right tab
+  });
 }
