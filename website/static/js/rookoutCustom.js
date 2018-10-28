@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
   });
 
   loadRookoutToken();
-  loadFirstTab();
+  loadTabsForOS();
 });
 
 
@@ -134,10 +134,31 @@ function copyToClipboard(element) {
 }
 
 
-function loadFirstTab() {
+function loadTabsForOS() {
   const page_tabs = $('[id^="page-tab"]');
-  page_tabs.on("change", function(e) {
-    const lang = $(e.target).data('lang');
-    $(`[id="${lang}-tab1"]`).prop('checked', true); // Checks radio button to load the right tab
-  });
+  page_tabs.on("load", loadSnippetTab);
+  page_tabs.on("change", loadSnippetTab);
+}
+
+function loadSnippetTab(e) {
+  const osToTab = {
+    'default': '1',
+    'linux': '1',
+    'osx': '1',
+    'windows': '2'
+  };
+
+  const lang = $(e.target).data('lang');
+  const userAgent = navigator.userAgent.toLowerCase();
+
+  let os = 'default';
+  if (userAgent.includes('win')) {
+    os = 'windows';
+  } else if (userAgent.includes('mac os x')) {
+    os = 'osx';
+  } else if (userAgent.includes('linux')) {
+    os = 'linux';
+  }
+
+  $(`[id="${lang}-tab${osToTab[os]}"]`).prop('checked', true); // Checks radio button to load the right tab
 }
