@@ -12,7 +12,7 @@ sidebar_label: Python
 
 ## Setup
 
-1. Clone the [python tutorial](https://github.com/Rookout/tutorial-python) to your local machine and run it:<br/>
+1. Clone the [python tutorial](https://github.com/Rookout/tutorial-python) to your local machine and deploy it by running the commands below.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
 <div class="tab-container">
