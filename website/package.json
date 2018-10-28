@@ -7,7 +7,8 @@
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version",
-    "lint": "./node_modules/.bin/eslint core pages"
+    "lint": "./node_modules/.bin/eslint core pages",
+    "deploy-firebase": "firebase deploy"
   },
   "devDependencies": {
     "docusaurus": "^1.0.9",
