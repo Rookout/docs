@@ -3,62 +3,46 @@ id: installation-python
 title: Python Rook Setup
 ---
 
-The Python Rook is a python package that runs inside the user's application.  
-This allows Rookout to remotely inspect the state of the process.
+## Introduction
 
-## Pre-requisites
-- *Python* ([download here](https://www.python.org/downloads/))
-- *pip* ([download here](https://pip.pypa.io/en/stable/installing/))
-- *virtualenv* ([documentation](https://virtualenv.pypa.io/en/stable/installation/))
+The Python Rook provides the ability to fetch debug data from a running application in real time.
+It is deployed by deploying the [Rook SDK](https://pypi.org/project/rook/).
+It can easily be installed by running the following command:
+```bash
+    $ pip install rook
+```
+
+## Basic setup
+
+Setup the Rookout token in your environment:
+```javascript
+# Export your token as an environment variable
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
+```
+
+Tag your environment:
+```javascript
+# Export your token as an environment variable
+$ export ROOKOUT_TAGS=[;;;]
+```
+
+Import the Rook within your application:
+```javascript
+# Import the package in your app's entry-point file, just before it starts
+from rook import auto_start
+if __name__ == "__main__":
+    # Your program starts here :)
+```
+
+The Rook should be imported as late as possible within the application.
+The reason for this is that it’s impossible to know in Python if a module is fully loaded and if all classes within it have been defined. Unlike JS and it’s hoisting concept, classes in Python are created when the interpreter first executes them. If we’ll see a partially loaded module and failed to set a breakpoint in it (because the class has not been defined yet) setting the breakpoint will fail and the user will receive an error.
 
 ## Supported Python versions
 
-| Implementation     | Language   | Versions           |
-| ------------------ | ---------- | ------------------ |
-| **CPython**        | 2          | 2.7                |
-| **CPython**        | 3          | 3.5, 3.5, 3.6, 3.7 |
-| **PyPy**           | 2          | 6.0.0       |
-
-## Setup guide
-
-1. Create and activate a new virtual environment :
-    ```bash
-    $ virtualenv virtualenv
-    $ source virtualenv/bin/activate
-    ```
-
-1. Install the Rookout pypi package :  
-    ```bash
-    $ pip install rook
-    ```
-
-1. Import the package in your app's entry-point file :  
-    ```python
-    from rook import auto_start
-    ```
-
-1. Configure the required environment variables:
-
-    ```bash
-    $ export ROOKOUT_TOKEN=[Your Rookout Token]
-    $ export ROOKOUT_ROOK_TAGS=[List of semicolon ; separated values to identify this app instance]
-    ```
-
-    <details>
-    <summary>_Installing the Rookout pypi package using a proxy_</summary>
-    Unix:
-    ```bash
-    export HTTPS_PROXY=https://mypro.xy:1234 && pip install rook
-    ```
-    Windows:
-    ```bash
-    set HTTPS_PROXY=https://mypro.xy:1234 && pip install rook
-    ```
-    </details>
-
-    Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
-    For advanced Rook configuration, check out the [Rook Configuration page](rooks-config.md).<br/>
-    If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
+| Implementation     | Versions           |
+| ------------------ | ------------------ |
+| **CPython**        | 2.7, 3.5, 3.6, 3.7 |
+| **PyPy**           | 6.0.0              |
 
 ## Additional info
 
