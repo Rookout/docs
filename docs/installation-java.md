@@ -3,66 +3,95 @@ id: installation-java
 title: Java Rook Setup
 ---
 
-The Java Rook is a java agent that instruments the user's application.  
-This allows Rookout to remotely inspect the state of the process.
+## Introduction
 
-## Pre-requisites:
-- *Java* ([download here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
+The Node.js Rook provides the ability to fetch debug data from a running application in real time.
+It is deployed by deploying the [Rook SDK](https://mvnrepository.com/artifact/com.rookout/rook).
+
+It can be download directly to the target system by running the following command:
+```bash
+$ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+```
+It can also be installed by adding the dependency in Rookout in JVM build systems such as Maven or Gradle.
+
+For Gradle:
+
+```javascript
+dependencies {
+   runtime group: 'com.rookout', name: 'rook', version:'0.1.31'
+}
+```
+
+## Basic Setup
+
+Setup the Rookout token in your environment:
+```javascript
+// Export your token as an environment variable
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
+```
+
+Tag your environment:
+```javascript
+// Use a set of semicolon separated values to identify specific deployments and configurations
+$ export ROOKOUT_TAGS=[;;;]
+```
+
+Add the Java agent to your application:
+```javascript
+$ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
+```
 
 ## Supported Versions
 
 | Implementation     | Versions      |
 | ------------------ | ------------- |
-| **Oracle Java**    | 7, > 8u60     |
+| **Oracle Java**    | 7u111, 8u91   |
 | **OpenJDK**        | 1.7, 1.8      |
 
-## Setup guide
+The following languages are officially jupported: Java, Scala, Kotlin, Groovy, ColdFusion.
+**Note:** Alpine Linux is currently not supported.
 
-1. Download our java agent :  
-    ```bash
-    $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-    ```
+If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: support@rookout.com .
 
-2. Set your JVM to use the rook as a java agent:  
-    ```bash
-    $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
-    ```
-    
-3. Add your source files to the .jar/.war/.ear when building.  
-This can be done manually or through the help of a build tool such as [Gradle](https://gradle.org/) or [Maven](https://maven.apache.org/).
-    
-    *For explanation on how to do this using Gradle or Maven head to our [installation examples](installation-java.md)*.
+## Packaging Sources
 
-4. Configure the required environment variables:
+Unlike Node and Python applications, most JVM applications do not include their source code within the library distribution. This prevents Rookout from verifying the source files have not changed between what the user sees and the production and will trigger a warning.
 
-    ```bash
-    $ export ROOKOUT_TOKEN=[Your Rookout Token]
-    $ export ROOKOUT_ROOK_TAGS=[List of semicolon ; separated values to identify this app instance]
-    ```
+In order to shut off the warning and gain the value of source verification, you should include your source files within your JAR/WAR/EAR library.
 
-    <details>
-    <summary>_Rook setup using a proxy_</summary>
-    Unix:
-    ```bash
-    export HTTPS_PROXY=https://mypro.xy:1234 && curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-    ```
-    Windows:
-    ```bash
-    set HTTPS_PROXY=https://mypro.xy:1234 && curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-    ```
-    </details>
+For Gradle, use the following snippet:
+```javascript
+jar {
+   from sourceSets.main.allSource
+}
+```
 
-    Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
-    For advanced Rook configuration, check out the [Rook Configuration page](rooks-config.md).<br/>
-    If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
+For Maven, use the following snippet:
+```xml
+    <resources>
+        <resource>
+            <directory>${basedir}/src/main/java</directory>
+        </resource>
+    </resources>
+```
 
-## Source Code Version
+## Source Commit Detection
 
-The Java Rook will attempt to determine the current Git commit the application is based off, and will report it.
-The resolution takes place in the following steps:
-1. If there's an environment variable named 'ROOKOUT_COMMIT' use it.
-1. If there's an environment variable named 'ROOKOUT_MANIFEST_COMMIT', the application is running from a .jar file, and
-the jar file has that attribute in it's manifest, use the attribute value.
+The Java Rook supports detecting the existing source code commit in the following methods, in descending order of priority:
+1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
+2. If the Java main application is jar/war/ear and it’s manifest includes the value “ROOKOUT_MANIFEST_COMMIT”, use it.
+
+## Dependencies
+
+None.
+
+## Serverkess and PaaS
+
+For using Java under a Serverless/PaaS environment, the following must be taken into account:
+- Include the Java Agent in your application package.
+- In many cloud platforms, passing JVM command line arguments are not supported. If so, be sure to use the Rookout API described above.
+- For Serverless applications, you must call the Rookout API on every endpoint and flush at your discretion.
+- In some Serverless environments, the tools.jar library is missing and must be included within your package as well.
 
 ## Examples
 
@@ -76,4 +105,4 @@ Check out the following deployment examples:
 - [Oracle WebLogic](https://github.com/Rookout/deployment-examples/tree/master/java-weblogic)
 - [JBoss WildFly](https://github.com/Rookout/deployment-examples/tree/master/java-wildfly-docker-agentless)
 
-Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more.
+Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more deployment examples.
