@@ -8,14 +8,14 @@ In this tutorial, we will setup and debug a sample Node.JS application.
 
 ## Prerequisites
 
-1. Node.js version 10 - https://nodejs.org/en/download/
+1. Node.js version 10 - https://nodejs.org/en/download/ 
 2. NPM - https://docs.npmjs.com/cli/install
 3. XCode (Mac only) - https://developer.apple.com/xcode/
 4. Docker (optional) - https://www.docker.com/get-docker (In case you want to skip installing Node.js and NPM)
 
 ## Setup
 
-1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and run it:<br/>
+1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and deploy it by running the commands below.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
 <div class="tab-container">
