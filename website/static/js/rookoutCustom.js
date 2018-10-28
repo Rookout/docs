@@ -68,7 +68,7 @@ function loadRookoutToken() {
 function setRookoutTokenInPage(token) {
   const body = $('body');
   if (token) {
-    body.html(body.html().replaceAll('[Your Rookout Token]', token));
+    body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
   }
 }
 
