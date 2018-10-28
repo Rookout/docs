@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-104510371-3');
 
 
-window.addEventListener('load', function () {
+$(function () {
   const originalSearchContainer = document.querySelector("ul.nav-site > .navSearchWrapper.reactNavSearchWrapper");
 
   if (originalSearchContainer !== null) {
