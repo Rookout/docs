@@ -136,29 +136,26 @@ function copyToClipboard(element) {
 
 function loadTabsForOS() {
   const page_tabs = $('[id^="page-tab"]');
-  page_tabs.on("load", function(e) {loadSnippetTab(e)});
-  page_tabs.on("change", function(e) {loadSnippetTab(e)});
-}
+  page_tabs.on("load", "change", function(e) {
+    const osToTab = {
+      'default': '1',
+      'linux': '1',
+      'osx': '1',
+      'windows': '2'
+    };
 
-function loadSnippetTab(e) {
-  const osToTab = {
-    'default': '1',
-    'linux': '1',
-    'osx': '1',
-    'windows': '2'
-  };
+    const lang = $(e.target).data('lang');
+    const userAgent = navigator.userAgent.toLowerCase();
 
-  const lang = $(e.target).data('lang');
-  const userAgent = navigator.userAgent.toLowerCase();
+    let os = 'default';
+    if (userAgent.includes('win')) {
+      os = 'windows';
+    } else if (userAgent.includes('mac os x')) {
+      os = 'osx';
+    } else if (userAgent.includes('linux')) {
+      os = 'linux';
+    }
 
-  let os = 'default';
-  if (userAgent.includes('win')) {
-    os = 'windows';
-  } else if (userAgent.includes('mac os x')) {
-    os = 'osx';
-  } else if (userAgent.includes('linux')) {
-    os = 'linux';
-  }
-
-  $(`[id="${lang}-tab${osToTab[os]}"]`).prop('checked', true); // Checks radio button to load the right tab
+    $(`[id="${lang}-tab${osToTab[os]}"]`).prop('checked', true); // Checks radio button to load the right tab
+  });
 }
