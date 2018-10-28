@@ -6,45 +6,54 @@ sidebar_label: Java
 
 ## Prerequisites
 
-1. Docker - https://www.docker.com/get-docker
-2. java 8
-3. gradle - https://gradle.org/install/ (you can skip it and use only docker)
+1. Java 8
+2. [Gradle](https://gradle.org/install/)
+3. [curl](https://curl.haxx.se/download.html) (Windows only)
+4. [Docker](https://www.docker.com/get-docker) (optional)
 
-## Installation
+## Setup
 
-1. Clone the tutorial repository
-
-```bash
-git clone https://github.com/Rookout/tutorial-java.git
-cd tutorial-java
-``` 
-
-2. Set your Rookout Token as an environment variable <br/>
+1. Clone the [java tutorial](https://github.com/Rookout/tutorial-java) to your local machine and deploying it by running the commands below.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
-```bash
-export ROOKOUT_TOKEN=[Your Rookout Token]
- ```
+<div class="tab-container">
+<input id="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<label for="tab1" class="tab-title">Linux/Mac</label>
+<input id="tab2" type="radio" name="tabs" class="tab-button" />
+<label for="tab2" class="tab-title">Windows</label>
+<input id="tab3" type="radio" name="tabs" class="tab-button" />
+<label for="tab3" class="tab-title">Docker</label>
+<div id="content1" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-3. Build the app then run the agent & app
+    git clone https://github.com/Rookout/tutorial-java.git
+    export ROOKOUT_TOKEN=[Your Rookout Token]
+    cd tutorial-java
+    make build-jar-local run-local
 
-- Options 1 - Building the app without installing gradle:
+</div>
+<div id="content2" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-```bash
-make build-jar-with-docker
-```
+    git clone https://github.com/Rookout/tutorial-java.git
+    set ROOKOUT_TOKEN=[Your Rookout Token]
+    cd tutorial-java
+    gradle -i clean
+    gradle -i bootJar
+    curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+    java  -javaagent:rook.jar -jar build/libs/tutorial-1.0.0.jar
 
-- Options 2 - Building the app with gradle:
+</div>
+<div id="content3" class="tab-content hljs">
+<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-```bash
-make build-jar-local
-```
+    git clone https://github.com/Rookout/tutorial-java.git
+    export ROOKOUT_TOKEN=[Your Rookout Token]
+    cd tutorial-java
+    make build-jar-with-docker run-docker    
 
-- Running the app with docker:
-
-```bash
-make run-docker
-```
+</div>
+</div>
 
 ## Usage
 
