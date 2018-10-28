@@ -58,7 +58,7 @@ __Level: Intermediate__
         __name: send_rookout - means we are sending the information to the rookout web application__
         __path: store.rookout.locals.dup - we tell the rule what information to send__
 
-        ```
+        ```json
         {
             "name": "send_rookout",
             "path": "store.rookout.locals.dup"
