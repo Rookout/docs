@@ -44,29 +44,53 @@ The reason for this is that it’s impossible to know in Python if a module is f
 | **CPython**        | 2.7, 3.5, 3.6, 3.7 |
 | **PyPy**           | 6.0.0              |
 
-## Additional info
+## Source Commit Detection
 
-- The Python Rook needs to be installed within the application's virtualenv.
-- Old installation tools may cause issues. Attempt to upgrade pip and remove distribute (deprecated, only if exists):
-    - `pip install -U pip`
-    - `pip uninstall distribute`
-- Installation requires compiling some Python extensions on the fly. The following packages are required:
-  - apt
-    - `$ apt-get update -q`
-    - `$ apt-get install -qy g++ python-dev`
-  - yum
-    - `$ yum install -qy gcc-c++ python-devel`
-  - apk
+The Python Rook supports detecting the existing source code commit in the following methods, in descending order of priority:
+1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
+2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
+3. If the main application is running from within a Git repository, use its head. 
 
-For more control over the Python Rook initialization, check out this [page](rooks-python_interface.md).
+## Dependancies
 
-## Source Code Version
+The Rookout Python SDK contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
 
-The Python Rook will attempt to determine the current Git commit the application is based off, and will report it.
-The resolution takes place in the following steps:
-1. If there's an environment variable named 'ROOKOUT_COMMIT' use it.
-1. If there's an environment variable named 'ROOKOUT_GIT' get the current Git head from that path.
-1. If the application is running from a Git repo, get the current Git head for that repo.   
+If you encounter an error similar to the following example, be sure to install the environment specific build tools specified below:
+
+```bash
+    Could not find <Python.h>. This could mean the following:
+      * You're on Ubuntu and haven't run `apt-get install python-dev`.
+      * You're on RHEL/Fedora and haven't run `yum install python-devel` or
+        `dnf install python-devel` (make sure you also have redhat-rpm-config
+        installed)
+      * You're on Mac OS X and the usual Python framework was somehow corrupted
+        (check your environment variables or try re-installing?)
+      * You're on Windows and your Python installation was somehow corrupted
+        (check your environment variables or try re-installing?)
+```
+1. Mac
+    - $ xcode-select --install
+2. Debian based
+    - $ apt-get update -q && apt-get install -qy g++ python-dev
+3. Fedora based
+    - $ yum install -qy gcc-c++ python-devel
+4. Alpine
+    - $ apk update && apk add g++ python-dev
+
+## Serverless and PaaS deployments
+
+If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
+If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
+
+Many Serverless frameworks (such as AWS sam) have built-in support for it and will work out of the box.
+
+If you need to set up your own build, we recommend using Docker, with a command line such as:
+```bash
+    $ docker run -it -v `pwd`:`pwd` -w `pwd` python:2.7 pip install -t lib
+```
+
+For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
+
 
 ## Examples
 
@@ -78,4 +102,4 @@ Check out the following deployment examples:
 - [AWS Lambda + Chalice](https://github.com/Rookout/deployment-examples/tree/master/python-aws-chalice)
 - [AWS Lambda + serverless framework ](https://github.com/Rookout/deployment-examples/tree/master/python-aws-serverlessframework)
 
-Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more.
+Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more deployment examples.
