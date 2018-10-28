@@ -22,7 +22,7 @@ $ export ROOKOUT_TOKEN=[Your Rookout Token]
 
 Tag your environment:
 ```javascript
-# Export your token as an environment variable
+# Use a set of semicolon separated values to identify specific deployments and configurations
 $ export ROOKOUT_TAGS=[;;;]
 ```
 
@@ -43,6 +43,8 @@ The reason for this is that it’s impossible to know in Python if a module is f
 | ------------------ | ------------------ |
 | **CPython**        | 2.7, 3.5, 3.6, 3.7 |
 | **PyPy**           | 6.0.0              |
+
+***Note:*** We recommend avoiding production deployment for Windows based apps.
 
 ## Source Commit Detection
 

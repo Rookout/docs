@@ -3,11 +3,33 @@ id: installation-node
 title: Node Rook Setup
 ---
 
-The Node.js Rook is an npm package that runs inside the user's application.  
-This allows Rookout to remotely inspect the state of the process.
+## Introduction
 
-## Pre-requisites:
-- *Node.js* ([download here](https://nodejs.org/))
+The Node.js Rook provides the ability to fetch debug data from a running application in real time.
+It is deployed by deploying the [Rook SDK](https://www.npmjs.com/package/rookout).
+It can easily be installed by running the following command:
+```bash
+$ npm install --save rookout
+```
+
+## Basic setup
+
+Setup the Rookout token in your environment:
+```javascript
+// Export your token as an environment variable
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
+```
+
+Tag your environment:
+```javascript
+// Use a set of semicolon separated values to identify specific deployments and configurations
+$ export ROOKOUT_TAGS=[;;;]
+```
+
+Import the Rook within your application:
+```javascript
+const rook = require('rookout/auto_start');
+```
 
 ## Supported Versions
 
@@ -15,42 +37,39 @@ This allows Rookout to remotely inspect the state of the process.
 | ------------------ | -------------- |
 | **Node**           | 4.3+, 6, 8, 10  |
 
-## Setup guide
+**Note:** Rookout only supports LTS (Long Time Support) versions of Node.js.
 
-1. Add our npm package to your package.json:  
-    ```bash 
-    $ npm install --save rookout
-    ```
-    
-1. Require the package in your app's entry-point file:
-    ```javascript
-    const rook = require('rookout/auto_start');
-    ```
+## Source Code Detection
+Source detection functionality is currently not supported for Node.js.
 
-1. Configure the required environment variables:
+## Dependencies 
 
-    ```bash
-    $ export ROOKOUT_TOKEN=[Your Rookout Token]
-    $ export ROOKOUT_ROOK_TAGS=[List of semicolon ; separated values to identify this app instance]
-    ```
+Rookout SDK contains third-party native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
 
-    <details>
-    <summary>_Installing the npm package using a proxy_</summary>
+Please install the appropriate build tools for your environment:
 
-    Unix:
-    ```bash
-    export HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
-    ```
-    Windows:
-    ```bash
-    set HTTPS_PROXY=https://mypro.xy:1234 && npm install --save rookout
-    ```
+1. Mac
+    - $ xcode-select --install
+2. Debian based
+    - $ apt-get update -q && apt-get install -qy
+3. Fedora based
+    - $ yum install -qy
+4. Alpine
+    - $ apk update && apk add
 
-    </details>
-    
-Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
-For advanced Rook configuration, check out the [Rook Configuration page](rooks-config.md).<br/>
-If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
+## Serverless and PaaS
+If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
+If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
+
+Many Serverless frameworks (such as AWS sam) has built-in support for it and will work out of the box.
+
+If you need to set up your own build, we recommend using Docker, with a command line such as:
+
+```bash
+$ docker run -it -v `pwd`:`pwd` -w `pwd` node:8 pip install -t lib
+```
+
+For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
 ## Examples
 
@@ -64,4 +83,4 @@ Check out the following deployment examples:
 - [IBM Cloud Functions](https://github.com/Rookout/deployment-examples/tree/master/node-ibm-cloud-functions)
 - [Electron](https://github.com/Rookout/deployment-examples/tree/master/node-electron)
 
-Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more.
+Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more deployment examples.
