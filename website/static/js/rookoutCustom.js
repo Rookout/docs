@@ -136,8 +136,8 @@ function copyToClipboard(element) {
 
 function loadTabsForOS() {
   const page_tabs = $('[id^="page-tab"]');
-  page_tabs.on("load", loadSnippetTab);
-  page_tabs.on("change", loadSnippetTab);
+  page_tabs.on("load", function(e) {loadSnippetTab(e)});
+  page_tabs.on("change", function(e) {loadSnippetTab(e)});
 }
 
 function loadSnippetTab(e) {
