@@ -3,95 +3,94 @@ id: installation-python
 title: Python Rook Setup
 ---
 
-The Python Rook is a python package that runs inside the user's application.  
-This allows Rookout to remotely inspect the state of the process.
+## Introduction
 
-## Pre-requisites
-- *Python* ([download here](https://www.python.org/downloads/))
-- *pip* ([download here](https://pip.pypa.io/en/stable/installing/))
-- *virtualenv* ([documentation](https://virtualenv.pypa.io/en/stable/installation/))
+The Python Rook provides the ability to fetch debug data from a running application in real time.
+It is deployed by deploying the [Rook SDK](https://pypi.org/project/rook/).
+It can easily be installed by running the following command:
+```bash
+    $ pip install rook
+```
+
+## Basic setup
+
+Setup the Rookout token in your environment:
+```bash
+# Export your token as an environment variable
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
+```
+
+Tag your environment:
+```bash
+# Use a set of semicolon separated values to identify specific deployments and configurations
+$ export ROOKOUT_TAGS=[;;;]
+```
+
+Import the Rook within your application:
+```python
+# Import the package in your app's entry-point file, just before it starts
+from rook import auto_start
+if __name__ == "__main__":
+    # Your program starts here :)
+```
+
+The Rook should be imported as late as possible within the application.
+The reason for this is that it’s impossible to know in Python if a module is fully loaded and if all classes within it have been defined. Unlike JS and it’s hoisting concept, classes in Python are created when the interpreter first executes them. If we’ll see a partially loaded module and failed to set a breakpoint in it (because the class has not been defined yet) setting the breakpoint will fail and the user will receive an error.
 
 ## Supported Python versions
 
-| Implementation     | Language   | Versions           |
-| ------------------ | ---------- | ------------------ |
-| **CPython**        | 2          | 2.7                |
-| **CPython**        | 3          | 3.5, 3.5, 3.6, 3.7 |
-| **PyPy**           | 2          | 6.0.0       |
+| Implementation     | Versions           |
+| ------------------ | ------------------ |
+| **CPython**        | 2.7, 3.5, 3.6, 3.7 |
+| **PyPy**           | 6.0.0              |
 
-## Setup guide
+***Note:*** We recommend avoiding production deployment for Windows based apps.
 
-1. Create and activate a new virtual environment :
-    ```bash
-    $ virtualenv virtualenv
-    $ source virtualenv/bin/activate
-    ```
+## Source Commit Detection
 
-1. Install the Rookout pypi package :  
-    ```bash
-    $ pip install rook
-    ```
+The Python Rook supports detecting the existing source code commit in the following methods, in descending order of priority:
+1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
+2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
+3. If the main application is running from within a Git repository, use its head. 
 
-1. Import the package in your app's entry-point file :  
-    ```python
-    from rook import auto_start
-    ```
+## Dependancies
 
-1. Configure the required environment variables:
+The Rookout Python SDK contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
 
-    ```bash
-    $ export ROOKOUT_TOKEN=[Your Rookout Token]
-    $ export ROOKOUT_ROOK_TAGS=[List of semicolon ; separated values to identify this app instance]
-    ```
+If you encounter an error similar to the following example, be sure to install the environment specific build tools specified below:
 
-    <details>
-    <summary>_Installing the Rookout pypi package using a proxy_</summary>
-    Unix:
-    ```bash
-    export HTTPS_PROXY=https://mypro.xy:1234 && pip install rook
-    ```
-    Windows:
-    ```bash
-    set HTTPS_PROXY=https://mypro.xy:1234 && pip install rook
-    ```
-    </details>
+```bash
+    Could not find <Python.h>. This could mean the following:
+      * You're on Ubuntu and haven't run `apt-get install python-dev`.
+      * You're on RHEL/Fedora and haven't run `yum install python-devel` or
+        `dnf install python-devel` (make sure you also have redhat-rpm-config
+        installed)
+      * You're on Mac OS X and the usual Python framework was somehow corrupted
+        (check your environment variables or try re-installing?)
+      * You're on Windows and your Python installation was somehow corrupted
+        (check your environment variables or try re-installing?)
+```
+1. Mac
+    - $ xcode-select --install
+2. Debian based
+    - $ apt-get update -q && apt-get install -qy g++ python-dev
+3. Fedora based
+    - $ yum install -qy gcc-c++ python-devel
+4. Alpine
+    - $ apk update && apk add g++ python-dev
 
-    Once your application is deployed, navigate to the Rookout App Instances page to make sure it is available for debugging.
-    For advanced Rook configuration, check out the [Rook Configuration page](rooks-config.md).<br/>
-    If you encounter any issues, check out our [Troubleshooting section](troubleshooting-rooks.md).
+## Serverless and PaaS deployments
 
-## Additional info
+If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
+If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
 
-- The Python Rook needs to be installed within the application's virtualenv.
-- Old installation tools may cause issues. Attempt to upgrade pip and remove distribute (deprecated, only if exists):
-    - `pip install -U pip`
-    - `pip uninstall distribute`
-- Installation requires compiling some Python extensions on the fly. The following packages are required:
-  - apt
-    - `$ apt-get update -q`
-    - `$ apt-get install -qy g++ python-dev`
-  - yum
-    - `$ yum install -qy gcc-c++ python-devel`
-  - apk
+Many Serverless frameworks (such as AWS sam) have built-in support for it and will work out of the box.
 
-For more control over the Python Rook initialization, check out this [page](rooks-python_interface.md).
+If you need to set up your own build, we recommend using Docker, with a command line such as:
+```bash
+    $ docker run -it -v `pwd`:`pwd` -w `pwd` python:2.7 pip install -t lib
+```
 
-## Source Code Version
+For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
-The Python Rook will attempt to determine the current Git commit the application is based off, and will report it.
-The resolution takes place in the following steps:
-1. If there's an environment variable named 'ROOKOUT_COMMIT' use it.
-1. If there's an environment variable named 'ROOKOUT_GIT' get the current Git head from that path.
-1. If the application is running from a Git repo, get the current Git head for that repo.   
-
-## Examples
-
-Check out the following deployment examples:
-
-- [Django](https://github.com/Rookout/deployment-examples/tree/master/python-django)
-- [Kubernetes](https://github.com/Rookout/deployment-examples/tree/master/python-kubernetes)
-- [AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/python-aws-lambda)
-- [AWS Lambda + Chalice](https://github.com/Rookout/deployment-examples/tree/master/python-aws-chalice)
-- [AWS Lambda + serverless framework ](https://github.com/Rookout/deployment-examples/tree/master/python-aws-serverlessframework)
-
-Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more.
+For additional environments, check out our [deployment examples page](https://github.com/Rookout/deployment-examples).
