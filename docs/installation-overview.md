@@ -25,42 +25,50 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
 <div data-tab-content="content1" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    # Install the Rookout pypi package
-    $ pip install rook
+```bash
+# Install the Rookout pypi package
+$ pip install rook
 
-    # Export your token as an environment variable
-    $ export ROOKOUT_TOKEN=[Your Rookout Token]
-
-    # Import the package in your app's entry-point file, just before it starts
-    from rook import auto_start
-    if __name__ == "__main__":
-        # Your program starts here :)
+# Export your token as an environment variable
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
+```
+```python
+# Import the package in your app's entry-point file, just before it starts
+from rook import auto_start
+if __name__ == "__main__":
+    # Your program starts here :)
+```
 
 </div>
 <div data-tab-content="content2" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    // Install the npm package
-    $ npm install --save rookout
+```bash
+// Install the npm package
+$ npm install --save rookout
 
-    // Export your token as an environment variable
-    $ export ROOKOUT_TOKEN=[Your Rookout Token]
-
-    // Require the package in your app's entry-point file
-    const rook = require('rookout/auto_start');
+// Export your token as an environment variable
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
+```
+```node
+// Require the package in your app's entry-point file
+const rook = require('rookout/auto_start');
+```
 
 </div>
 <div data-tab-content="content3" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
-    // Download our java agent
-    $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+```bash
+// Download our java agent
+$ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 
-    // Export your token as an environment variable:
-    $ export ROOKOUT_TOKEN=[Your Rookout Token]
+// Export your token as an environment variable:
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
 
-    // Set your JVM to use the rook as a java agent :  
-    $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
+// Set your JVM to use the rook as a java agent :  
+$ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
+```
 
 </div>
 </div>
