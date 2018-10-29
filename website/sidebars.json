@@ -5,9 +5,7 @@
       "installation",
       "getting-started",
       "integrations-overview",
-      "installation-python",
-      "installation-node",
-      "installation-java",
+      "rooks-setup",
       "sandbox-getting-started"
     ],
     "Advanced Setup": [
