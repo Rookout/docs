@@ -1,7 +1,7 @@
 ---
 id: sandbox-getting-started
-title: Sandbox tutorials
-sidebar_label: Sandbox Tutorials
+title: Sample app Tutorials
+sidebar_label: Sample app Tutorials
 ---
 
 <section class="page-tab-container">
@@ -13,18 +13,18 @@ sidebar_label: Sandbox Tutorials
 <label for="page-tab3" class="page-tab-title">JVM</label>
 <div id="page-content1" class="page-tab-content">
 
-## Python Sandbox Tutorial
-## Prerequisites
+## Python
+
+#### Prerequisites
 
 1. [Python](https://www.python.org/downloads/) 2.7.14 or newer
 2. [pip](https://pip.pypa.io/en/stable/installing/)
 3. [Docker](https://www.docker.com/get-docker) (optional)
 
-## Setup
+#### Setup
 
 1. Clone the [python tutorial](https://github.com/Rookout/tutorial-python) to your local machine and deploy it by running the commands below.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
-<br/><span class="rookout-org-info"></span>
 
 <div class="tab-container">
 <input id="python-tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
@@ -70,7 +70,7 @@ docker-compose up
 </div>
 </div>
 
-## Usage
+#### Usage
 
 2. Go to [your Rookout IDE](https://app.rookout.com/) and **Log In**
 3. Add the source code by following the instructions below:
@@ -106,7 +106,7 @@ docker-compose up
 8. Check the bottom pane **Messages** and you'll see the dumpframe you just added, as it was triggered by the handler of the web api when you added a todo
 ![Message pane](/img/screenshots/getting_started_3.png)
 
-## Bug Hunt
+#### Bug Hunt
 
 We prepared for you a few manually introduced bugs in order to learn how to use Rookout.  
 The first two will make sure you understand how to create and analyze our default rule - Dump Frame.  
@@ -115,7 +115,7 @@ to add custom elements to it.
 
 For more information about Rule Scripting refer to [our reference](rules-index.md)
 
-## Bug scenarios
+#### Bug scenarios
 
 __Level: Beginner__
 - __The bug: ``Clear Completed`` button does not work. When clicked - completed todos are not cleared.__
@@ -175,26 +175,26 @@ __Level: Intermediate__
         7. Add and duplicate a todo in order to see the output, and now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
 
 
-## What's next?
+#### What's next?
 
 Head over to [our reference](reference-home.md) to understand all the Rookout components.   
 See [our installation guides](installation-overview.md) for platform-specific installation examples.
 </div>
 <div id="page-content2" class="page-tab-content">
 
-## Node.JS Sandbox Tutorial
-## Prerequisites
+## Node.JS
+
+#### Prerequisites
 
 1. Node.js version 10 - https://nodejs.org/en/download/ 
 2. NPM - https://docs.npmjs.com/cli/install
 3. XCode (Mac only) - https://developer.apple.com/xcode/
 4. Docker (optional) - https://www.docker.com/get-docker (In case you want to skip installing Node.js and NPM)
 
-## Setup
+#### Setup
 
 1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and deploy it by running the commands below.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
-<br/><span class="rookout-org-info"></span>
 
 <div class="tab-container">
 <input id="node-tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" />
@@ -239,6 +239,7 @@ docker run -p 4000:4000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-nodejs
 </div>
 </div>
 
+#### Usage
 
 2. Log in to the Rookout app at [your Rookout IDE](https://app.rookout.com/) and **Log In**.
 
@@ -289,7 +290,7 @@ docker run -p 4000:4000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-nodejs
 8. Check the bottom pane **Messages** and you'll see the dumpframe you just added, as it was triggered by the handler of the web page when you accessed it
 ![Message pane](/img/screenshots/getting_started_9.png)
 
-## Bug Hunt
+#### Bug Hunt
 
 We prepared for you a few manually introduced bugs in order to learn how to use Rookout.  
 The first two will make sure you understand how to create and analyze our default rule - Dump Frame.  
@@ -298,7 +299,7 @@ to add custom elements to it.
 
 For more information about Rule Scripting refer to [our reference](rules-index.md)
 
-## Bug scenarios
+#### Bug scenarios
 
 __Level: Beginner__
 - __The bug: Clear Completed button hangs, does not do what is intended - nothing is cleared.__
@@ -352,26 +353,25 @@ __Level: Intermediate__
         7. Add and duplicate a todo in order to see the output, and now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
 
 
-## What's next?
+#### What's next?
 
 Head over to [our reference](reference-home.md) to understand all the Rookout components.   
 See [our installation guides](installation-overview.md) for platform-specific installation examples.
 </div>
 <div id="page-content3" class="page-tab-content">
 
-## JVM Sandbox Tutorial
-## Prerequisites
+## JVM
+#### Prerequisites
 
 1. Java 8
 2. [Gradle](https://gradle.org/install/)
 3. [curl](https://curl.haxx.se/download.html) (Windows only)
 4. [Docker](https://www.docker.com/get-docker) (optional)
 
-## Setup
+#### Setup
 
 1. Clone the [java tutorial](https://github.com/Rookout/tutorial-java) to your local machine and deploying it by running the commands below.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
-<br/><span class="rookout-org-info"></span>
 
 <div class="tab-container">
 <input id="jvm-tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" />
@@ -418,7 +418,7 @@ make build-jar-with-docker run-docker
 </div>
 </div>
 
-## Usage
+#### Usage
 
 4.  After running the app & agent go to [your Rookout IDE](https://app.rookout.com/) and **Log In**
 5.  Add the source code by following the instructions below:
@@ -461,7 +461,7 @@ make build-jar-with-docker run-docker
 
 ![Message pane](/img/screenshots/java-tutorial_5.png)
 
-## Bug Hunt
+#### Bug Hunt
 
 We prepared for you a few manually introduced bugs in order to learn how to use Rookout.  
 The first two will make sure you understand how to create and analyze our default rule - Dump Frame.  
@@ -470,7 +470,7 @@ to add custom elements to it.
 
 For more information about Rule Scripting refer to [our reference](rules-index.md)
 
-## Bug scenarios
+#### Bug scenarios
 
 __Level: Beginner__
 - __The bug: ``Clear Completed`` button does not work. When clicked - completed todos are not cleared.__
@@ -527,7 +527,7 @@ __Level: Intermediate__
         
 
 
-## What's next?
+#### What's next?
 
 Head over to [our reference](reference-home.md) to understand all the Rookout components.   
 See [our installation guides](installation-overview.md) for platform-specific installation examples.
