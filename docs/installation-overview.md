@@ -15,13 +15,13 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 Install the Rookout SDK (aka 'Rook') by following these steps:
 
 <div class="tab-container">
-<input id="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
 <label for="tab1" class="tab-title">Python</label>
-<input id="tab2" type="radio" name="tabs" class="tab-button" />
+<input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
 <label for="tab2" class="tab-title">Node.JS</label>
-<input id="tab3" type="radio" name="tabs" class="tab-button" />
+<input id="tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
 <label for="tab3" class="tab-title">JVM</label>
-<div id="content1" class="tab-content hljs">
+<div data-tab-content="content1" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
     # Install the Rookout pypi package
@@ -36,7 +36,7 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
         # Your program starts here :)
 
 </div>
-<div id="content2" class="tab-content hljs">
+<div data-tab-content="content2" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
     // Install the npm package
@@ -49,7 +49,7 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
     const rook = require('rookout/auto_start');
 
 </div>
-<div id="content3" class="tab-content hljs">
+<div data-tab-content="content3" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
     // Download our java agent
