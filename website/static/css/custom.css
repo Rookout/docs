@@ -156,6 +156,7 @@ label.page-tab-title {
     text-align: center;
     color: #bbb;
     float: right;
+    border-bottom: 2px solid #533C92;
 }
 
 label:hover {
