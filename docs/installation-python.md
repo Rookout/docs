@@ -53,7 +53,7 @@ The Python Rook supports detecting the existing source code commit in the follow
 2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
 3. If the main application is running from within a Git repository, use its head. 
 
-## Dependancies
+## Dependencies
 
 The Rookout Python SDK contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
 
