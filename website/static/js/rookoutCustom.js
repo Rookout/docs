@@ -68,16 +68,15 @@ function loadRookoutToken() {
 
 function setRookoutTokenInPage(data) {
   const body = $('body');
-  const org_info = $('.rookout-org-info');
   let error = false;
 
   if (data) {
     const token = data['token'];
-    const org_name = data['org_name'] || '';
+    const org_name = data['org_name'] || 'unknown';
 
     if (token) {
       body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
-      org_info.html(`You are currently logged in to <b>${org_name}</b> organization. Do NOT share your private token.`)
+      $('.rookout-org-info').html(`You are currently logged in to <b>${org_name}</b> organization. Do NOT share your private token.`);
     } else {
       error = true;
     }
@@ -86,7 +85,7 @@ function setRookoutTokenInPage(data) {
   }
 
   if (error) {
-    org_info.html('Login to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token')
+    $('.rookout-org-info').html('Login to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token')
   }
 }
 
