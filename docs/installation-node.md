@@ -15,13 +15,13 @@ $ npm install --save rookout
 ## Basic setup
 
 Setup the Rookout token in your environment:
-```javascript
+```bash
 // Export your token as an environment variable
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
 
 Tag your environment:
-```javascript
+```bash
 // Use a set of semicolon separated values to identify specific deployments and configurations
 $ export ROOKOUT_TAGS=[;;;]
 ```
@@ -39,23 +39,8 @@ const rook = require('rookout/auto_start');
 
 **Note:** Rookout only supports LTS (Long Time Support) versions of Node.js.
 
-## Source Code Detection
-Source detection functionality is currently not supported for Node.js.
-
-## Dependencies 
-
-Rookout SDK contains third-party native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
-
-Please install the appropriate build tools for your environment:
-
-1. Mac
-    - $ xcode-select --install
-2. Debian based
-    - $ apt-get update -q && apt-get install -qy
-3. Fedora based
-    - $ yum install -qy
-4. Alpine
-    - $ apk update && apk add
+## Source Commit Detection
+Source commit detection functionality is currently not supported for Node.js.
 
 ## Serverless and PaaS
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
@@ -65,22 +50,8 @@ Many Serverless frameworks (such as AWS sam) has built-in support for it and wil
 
 If you need to set up your own build, we recommend using Docker, with a command line such as:
 
-```bash
-$ docker run -it -v `pwd`:`pwd` -w `pwd` node:8 pip install -t lib
-```
+docker run -it -v `pwd`:`pwd` -w `pwd` node:8 pip install -t lib
 
 For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
-## Examples
-
-Check out the following deployment examples:
-
-- [Google AppEngine](https://github.com/Rookout/deployment-examples/tree/master/node-app-engine-flex)
-- [AWS Elastic Container Service](https://github.com/Rookout/deployment-examples/tree/master/node-aws-ecs)
-- [AWS Elastic Beanstalk](https://github.com/Rookout/deployment-examples/tree/master/node-aws-elasticbeanstalk)
-- [Using TypeScript](https://github.com/Rookout/deployment-examples/tree/master/node-typescript)
-- [AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/node-aws-lambda)
-- [IBM Cloud Functions](https://github.com/Rookout/deployment-examples/tree/master/node-ibm-cloud-functions)
-- [Electron](https://github.com/Rookout/deployment-examples/tree/master/node-electron)
-
-Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more deployment examples.
+For additional environments, check out our [deployment examples page](https://github.com/Rookout/deployment-examples).

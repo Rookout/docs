@@ -15,19 +15,19 @@ It can easily be installed by running the following command:
 ## Basic setup
 
 Setup the Rookout token in your environment:
-```javascript
+```bash
 # Export your token as an environment variable
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
 
 Tag your environment:
-```javascript
+```bash
 # Use a set of semicolon separated values to identify specific deployments and configurations
 $ export ROOKOUT_TAGS=[;;;]
 ```
 
 Import the Rook within your application:
-```javascript
+```python
 # Import the package in your app's entry-point file, just before it starts
 from rook import auto_start
 if __name__ == "__main__":
@@ -93,15 +93,4 @@ If you need to set up your own build, we recommend using Docker, with a command 
 
 For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
-
-## Examples
-
-Check out the following deployment examples:
-
-- [Django](https://github.com/Rookout/deployment-examples/tree/master/python-django)
-- [Kubernetes](https://github.com/Rookout/deployment-examples/tree/master/python-kubernetes)
-- [AWS Lambda](https://github.com/Rookout/deployment-examples/tree/master/python-aws-lambda)
-- [AWS Lambda + Chalice](https://github.com/Rookout/deployment-examples/tree/master/python-aws-chalice)
-- [AWS Lambda + serverless framework ](https://github.com/Rookout/deployment-examples/tree/master/python-aws-serverlessframework)
-
-Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more deployment examples.
+For additional environments, check out our [deployment examples page](https://github.com/Rookout/deployment-examples).

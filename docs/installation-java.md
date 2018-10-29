@@ -5,7 +5,7 @@ title: Java Rook Setup
 
 ## Introduction
 
-The Node.js Rook provides the ability to fetch debug data from a running application in real time.
+The Java Rook provides the ability to fetch debug data from a running application in real time.
 It is deployed by deploying the [Rook SDK](https://mvnrepository.com/artifact/com.rookout/rook).
 
 It can be download directly to the target system by running the following command:
@@ -25,19 +25,19 @@ dependencies {
 ## Basic Setup
 
 Setup the Rookout token in your environment:
-```javascript
+```bash
 // Export your token as an environment variable
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
 
 Tag your environment:
-```javascript
+```bash
 // Use a set of semicolon separated values to identify specific deployments and configurations
 $ export ROOKOUT_TAGS=[;;;]
 ```
 
 Add the Java agent to your application:
-```javascript
+```bash
 $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 ```
 
@@ -60,7 +60,7 @@ Unlike Node and Python applications, most JVM applications do not include their 
 In order to shut off the warning and gain the value of source verification, you should include your source files within your JAR/WAR/EAR library.
 
 For Gradle, use the following snippet:
-```javascript
+```java
 jar {
    from sourceSets.main.allSource
 }
@@ -93,16 +93,4 @@ For using Java under a Serverless/PaaS environment, the following must be taken 
 - For Serverless applications, you must call the Rookout API on every endpoint and flush at your discretion.
 - In some Serverless environments, the tools.jar library is missing and must be included within your package as well.
 
-## Examples
-
-Check out the following deployment examples:
-
-- [Using Docker-Compose](https://github.com/Rookout/deployment-examples/tree/master/java-docker-compose)
-- [Using Gradle](https://github.com/Rookout/deployment-examples/tree/master/java-gradle)
-- [Using Maven](https://github.com/Rookout/deployment-examples/tree/master/java-maven)
-- [AWS Elastic Beanstalk](https://github.com/Rookout/deployment-examples/tree/master/java-aws-elasticbeanstalk)
-- [Tomcat on AWS Elastic Beanstalk](https://github.com/Rookout/deployment-examples/tree/master/java-tomcat-aws-elasticbeanstalk)
-- [Oracle WebLogic](https://github.com/Rookout/deployment-examples/tree/master/java-weblogic)
-- [JBoss WildFly](https://github.com/Rookout/deployment-examples/tree/master/java-wildfly-docker-agentless)
-
-Or visit [our GitHub repository](https://github.com/Rookout/deployment-examples) for more deployment examples.
+For additional environments, check out our [deployment examples page](https://github.com/Rookout/deployment-examples).
