@@ -24,6 +24,7 @@ sidebar_label: Sandbox Tutorials
 
 1. Clone the [python tutorial](https://github.com/Rookout/tutorial-python) to your local machine and deploy it by running the commands below.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
+<br/><span class="rookout-org-info"></span>
 
 <div class="tab-container">
 <input id="python-tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
@@ -193,6 +194,7 @@ See [our installation guides](installation-overview.md) for platform-specific in
 
 1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and deploy it by running the commands below.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
+<br/><span class="rookout-org-info"></span>
 
 <div class="tab-container">
 <input id="node-tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" />
@@ -236,6 +238,7 @@ docker run -p 4000:4000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-nodejs
 
 </div>
 </div>
+
 
 2. Log in to the Rookout app at [your Rookout IDE](https://app.rookout.com/) and **Log In**.
 
@@ -368,6 +371,7 @@ See [our installation guides](installation-overview.md) for platform-specific in
 
 1. Clone the [java tutorial](https://github.com/Rookout/tutorial-java) to your local machine and deploying it by running the commands below.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
+<br/><span class="rookout-org-info"></span>
 
 <div class="tab-container">
 <input id="jvm-tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" />

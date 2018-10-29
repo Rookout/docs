@@ -58,19 +58,28 @@ function loadRookoutToken() {
       withCredentials: true
    }
   }, (data) => {
-    const token = data['token'];
-    setRookoutTokenInPage(token);
+    setRookoutTokenInPage(data);
   })
   .fail(() => {
-    console.warn('Could not fetch organization token - you are probably not connected to app.rookout.com');
+    setRookoutTokenInPage(null);
   });
 }
 
 
-function setRookoutTokenInPage(token) {
+function setRookoutTokenInPage(data) {
   const body = $('body');
-  if (token) {
-    body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
+  const org_info = $('.rookout-org-info');
+
+  if (data) {
+    const token = data['token'];
+    const org_name = data['org_name'];
+
+    if (token) {
+      body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
+      org_info.html(`You are currently logged in to <b>${org_name}</b> organization. Do NOT share your private token.`)
+    }
+  } else {
+    org_info.html('Login to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token')
   }
 }
 
