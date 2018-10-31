@@ -76,7 +76,7 @@ function setRookoutTokenInPage(data) {
 
     if (token) {
       body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
-      $('.rookout-org-info').html(`You are currently logged in to <b>${org_name}</b> organization. Do NOT share your private token.`);
+      $('.rookout-org-info').html(`Showing configuration for <b>${org_name}</b>. Do NOT share your private token.`);
     } else {
       error = true;
     }
