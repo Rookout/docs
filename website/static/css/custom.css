@@ -200,6 +200,7 @@ input:checked + label {
 #page-tab7:checked ~ #page-content7,
 #page-tab8:checked ~ #page-content8{
     display: block;
+    padding-top: 50px;
 }
 
 
@@ -277,6 +278,10 @@ div.tab-content:hover button.tab-copy {
     label:before {
         margin: 0;
         font-size: 18px;
+    }
+    .tab-container label,
+    .page-tab-container label{
+        font-size: initial;
     }
 }
 

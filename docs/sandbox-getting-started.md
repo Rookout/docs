@@ -34,7 +34,7 @@ Your Rookout Token may be copied from the walkthrough tutorial, or from the Orga
 <input id="python-tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
 <label for="python-tab2" class="tab-title snippet">Windows</label>
 <input id="python-tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
-<label for="python-tab3" class="tab-title">Docker</label>
+<label for="python-tab3" class="tab-title snippet">Docker</label>
 <div data-tab-content="content1" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 

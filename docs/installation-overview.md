@@ -17,11 +17,11 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
 
 <div class="tab-container">
 <input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
-<label for="tab1" class="tab-title">Python</label>
+<label for="tab1" class="tab-title snippet">Python</label>
 <input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
-<label for="tab2" class="tab-title">Node.JS</label>
+<label for="tab2" class="tab-title snippet">Node.JS</label>
 <input id="tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
-<label for="tab3" class="tab-title">JVM</label>
+<label for="tab3" class="tab-title snippet">JVM</label>
 <div data-tab-content="content1" class="tab-content hljs">
 <button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
