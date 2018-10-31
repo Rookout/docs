@@ -93,6 +93,25 @@ If you encounter an error similar to the following example, be sure to install t
 4. Alpine
     - $ apk update && apk add g++ python-dev
 
+#### uWSGI deployment
+
+If you are running your application in a [uWSGI deployment](https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html), you will need to enable threading in order to debug it with Rookout.
+
+1. When starting uWSGI, enable the __--enable-threads__ option when starting the server. Alternatively, set __enable-threads = true__ in the uWSGI ini file.
+
+2. When running the Rook SDK within your code, use the following snippet to make sure the Rook runs in a separate worker thread:
+
+```python
+try:
+    from uwsgidecorators import postfork
+
+    @postfork
+    def run_rookout():
+        from rook import auto_start
+except ImportError:
+    from rook import auto_start
+```
+
 #### Serverless and PaaS deployments
 
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
