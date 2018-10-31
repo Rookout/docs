@@ -200,6 +200,7 @@ input:checked + label {
 #page-tab7:checked ~ #page-content7,
 #page-tab8:checked ~ #page-content8{
     display: block;
+    padding-top: 50px;
 }
 
 
@@ -277,6 +278,10 @@ div.tab-content:hover button.tab-copy {
     label:before {
         margin: 0;
         font-size: 18px;
+    }
+    .tab-container label,
+    .page-tab-container label{
+        font-size: initial;
     }
 }
 
@@ -728,6 +733,12 @@ footer .social img {
         display: block;
     }
 
+    .navGroups {
+        padding-top: 10px !important;
+        overflow-y: auto;
+        max-height: 100%;
+    }
+
     .headerWrapper.wrapper {
         padding-left: 5px;
         margin: 0 auto;
@@ -780,8 +791,21 @@ footer .social img {
         color: white !important;
     }
 
+    nav.toc .toggleNav .navToggle {
+        height: 18px !important;
+    }
+
     .navToggle::before, .navToggle::after {
         border-color: white !important;
+        border-width: 8px 0 !important;
+    }
+    nav.toc .toggleNav .navToggle i::before,
+    nav.toc .toggleNav .navToggle i::after {
+        border-style: none !important;
+    }
+
+    nav.toc .toggleNav .navBreadcrumb h2 {
+        font-size: 16px;
     }
 
     .rook-searchContainer, .rook-searchBar input {
@@ -790,7 +814,7 @@ footer .social img {
 
     .algolia-autocomplete {
         width: 95%;
-        text-align: center;
+        text-align: left;
     }
 
     .rook-searchBar.rook-docNav {
