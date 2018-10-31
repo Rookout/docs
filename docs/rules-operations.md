@@ -88,6 +88,25 @@ Example:
 }
 ```
 
+#### json_file
+
+This operation writes a JSON formatted dump frame from the namespace to a local file.
+The arguments under path are passed to the python "open" built-in function as is.
+
+Example:
+```json
+{
+  "name": "json_file",
+  "target": {
+    "path": "dump.json",
+  },
+  "items": {
+    "item1": "store.variable1",
+    "item2": "store.variable2"
+  }
+}
+```
+
 #### web_hook
 
 This operation posts a JSON object built from objects in the namespace to an HTTP(S) server.
