@@ -29,10 +29,13 @@ Installing the Rookout Agent using Docker is very straightforward.
 It is available as a public Docker [image](https://hub.docker.com/r/rookout/agent/) based on Alpine Linux
 
 To get an agent up and running in a container execute this commands in a terminal:
+
 ```bash
 $ docker pull rookout/agent
 $ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/agent
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
+
 
 All done ! If you still don't have a Rook installed, [follow these instructions.](#installing-a-rook)
 
