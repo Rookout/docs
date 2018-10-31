@@ -9,7 +9,7 @@ To set up Rookout in your environment, follow these steps:
 
 Sign up to Rookout at our <a href="http://www.rookout.com/trial">sign up page</a> and get your Rookout Token.<br/>
 Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
-<br/><span class="rookout-org-info"></span>
+
 
 ### 2. Install the SDK
 
@@ -72,6 +72,7 @@ $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 
 </div>
 </div>
+<div class="rookout-org-info"></div>
 
 ### 3. Create a Workspace
 
