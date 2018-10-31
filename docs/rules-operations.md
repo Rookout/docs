@@ -74,7 +74,9 @@ Example:
 
 This operation writes a string from the namespace to a local file. In order to build a string [format](rules-operations.md#format) may be used.
 
-The arguments under path are passed to the python "open" built-in function as is.
+The **path** argument will be passed unchanged to a Python "open" built-in function for creating or opening the log file.
+
+**Note:** this operation is only supported when using a [local Agent](agent.md).
 
 Example:
 ```json
@@ -91,7 +93,9 @@ Example:
 #### json_file
 
 This operation writes a JSON formatted dump frame from the namespace to a local file.
-The arguments under path are passed to the python "open" built-in function as is.
+The **path** argument will be passed unchanged to a Python "open" built-in function for creating or opening the log file.
+
+**Note:** this operation is only supported when using a [local Agent](agent.md).
 
 Example:
 ```json
