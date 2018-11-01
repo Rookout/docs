@@ -9,7 +9,7 @@ For more information on the namespaces check out [uses](rules-uses.md).
 
 ## Processing Operations
 
-This operations allow transforming the data and controlling the script flow.
+These operations allow transforming the data and controlling the script flow.
 
 #### set
 
@@ -30,7 +30,7 @@ Example:
 
 #### format
 
-This operation formats a string using the Python [format](https://docs.python.org/2/library/string.html#format-string-syntax).
+This operation formats data into a string.
 
 Example:
 ```json
@@ -58,9 +58,15 @@ Example:
 
 ## Target Operations
 
+These operations send data to a target destination.
+
+### Rookout Service Targets
+
+These operations send data to the Rookout Service.
+
 #### send_rookout
 
-This operation sends an object from the namespace to the Rookout Cloud.
+This operation sends an object from the namespace to the Rookout Service.
 
 Example:
 ```json
@@ -70,42 +76,9 @@ Example:
 }
 ```
 
-#### text_file
+### Network Targets
 
-This operation writes a string from the namespace to a local file. In order to build a string [format](rules-operations.md#format) may be used.
-
-The arguments under path are passed to the python "open" built-in function as is.
-
-Example:
-```json
-{
-  "name": "text_file",
-  "target": {
-    "path": "log.txt",
-    "buffering": 0
-  },
-  "message": "temp.message"
-}
-```
-
-#### json_file
-
-This operation writes a JSON formatted dump frame from the namespace to a local file.
-The arguments under path are passed to the python "open" built-in function as is.
-
-Example:
-```json
-{
-  "name": "json_file",
-  "target": {
-    "path": "dump.json",
-  },
-  "items": {
-    "item1": "store.variable1",
-    "item2": "store.variable2"
-  }
-}
-```
+These operations send data over the network.
 
 #### web_hook
 
@@ -224,6 +197,48 @@ Example:
     "function": "store.rookout.frame.function",
     "filename": "store.rookout.frame.filename",
     "line": "store.rookout.frame.line"
+  }
+}
+```
+
+### Local File System Targets
+
+These operations send data to the local file system.
+
+#### text_file
+
+This operation writes a string from the namespace to a local file. In order to build a string [format](rules-operations.md#format) may be used.
+
+**Note:** this operation is only supported when using a [local Agent](agent.md).
+
+Example:
+```json
+{
+  "name": "text_file",
+  "target": {
+    "path": "log.txt",
+    "buffering": 0
+  },
+  "message": "temp.message"
+}
+```
+
+#### json_file
+
+This operation writes a JSON formatted dump frame from the namespace to a local file.
+
+**Note:** this operation is only supported when using a [local Agent](agent.md).
+
+Example:
+```json
+{
+  "name": "json_file",
+  "target": {
+    "path": "dump.json",
+  },
+  "items": {
+    "item1": "store.variable1",
+    "item2": "store.variable2"
   }
 }
 ```
