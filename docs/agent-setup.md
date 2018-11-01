@@ -64,4 +64,20 @@ The easiest way to do that is to set the LISTEN_ALL environment variable in the 
     | Red Hat Enterprise | Linux 6, 7|
 
 
-## Configuration
+## Data Processing
+
+### Disable Sending Data
+
+The agent connects to the Rookout Service to receive commands and report telemetry information.
+Data collected from within the application may be sent to Rookout for interactive debugging sessions.
+To prevent sending data to the Rookout Service due to security restrictions, set the environment variable ROOKOUT_SEND_DATA to false.
+
+### Local Rule Targets
+
+As the Agent runs within your network, it allows you to direct the collected data into data sinks.
+For example, debug message can be sent to Elasticsearch or Splunk clusters.
+
+### Data Redaction
+
+All data received by the agent undergoes a data redaction process based on the configuration set by the user.
+
