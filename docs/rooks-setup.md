@@ -101,11 +101,11 @@ If you encounter an error similar to the following example, be sure to install t
 
 #### uWSGI deployment
 
-If you are running your application in a [uWSGI deployment](https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html), you will need to enable threading in order to debug it with Rookout.
+If you are running your application in a [uWSGI server](https://uwsgi-docs.readthedocs.io/en/latest/), you will need to take a couple of extra steps when using Rookout.
 
-1. When starting uWSGI, enable the __--enable-threads__ option when starting the server. Alternatively, set __enable-threads = true__ in the uWSGI ini file.
+1. When starting uWSGI, add the __--enable-threads__ option when starting the server. Alternatively, set __enable-threads = true__ in the uWSGI ini file.
 
-2. When running the Rook SDK within your code, use the following snippet to make sure the Rook runs in a separate worker thread:
+2. When running the Rook SDK within your code, use the following snippet to make sure the Rook is loaded in all worker processes.
 
 ```python
 try:
