@@ -184,19 +184,21 @@ data is stored in the namespace according to the Rookout convention.
 }
 ```
 
-#### loggly
+#### sumologic
 
-This operation posts a JSON object built from objects in the namespace to loggly.
+This operation posts a JSON object built from objects in the namespace to sumologic
 
+Example:
 ```json
 {
-  "name": "loggly",
+"name": "sumologic",
   "target": {
-    "token": "<loggly-token>"
+     "url": "https://[SumoEndpoint]/receiver/v1/http/[UniqueHTTPCollectorCode]"
   },
   "items": {
-    "value1": "store.frame",
-    "value2": "rook.id"
+    "function": "store.rookout.frame.function",
+    "filename": "store.rookout.frame.filename",
+    "line": "store.rookout.frame.line"
   }
 }
 ```
