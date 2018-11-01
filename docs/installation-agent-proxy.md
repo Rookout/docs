@@ -9,6 +9,7 @@ Run the Agent setup script with the --https-proxy argument:
 ```bash
 setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
 
 ## Using the configuration file
 

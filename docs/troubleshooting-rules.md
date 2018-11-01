@@ -5,7 +5,7 @@ title: Rule Troubleshooting
 
 As you create, modify or trigger a rule, it may change its status once or more.
 
-As rules are created, they are in Pending status (Grey).
+As rules are created, they are in [Pending status (Grey)](#pending-rule).
 In this state, Rookout will try and connect the Rule to the Rooks it applies to.
 
 ![Rule is Pending](/img/screenshots/rule_status_grey.png)
@@ -15,13 +15,13 @@ If the rule does not turn green in a few seconds, check out the cases below to t
 
 ![Rule is Active](/img/screenshots/rule_status_green.png)
 
-In some cases, the Rook may face a temporary limitation preventing it from applying the Rule, and the Rule will change its status to Warning (Orange).
+In some cases, the Rook may face a temporary limitation preventing it from applying the Rule, and the Rule will change its status to [Warning (Orange)](#rule-warning).
 In such cases the Rule *may* send messages, but you are advised to click the Rule status indicator and follow the instructions below to resolve the warning.
 Note that in this case the Rule will maintain the Warning status. You may remove it and add it again to make sure it turns Active.
 
 ![Rule has a Warning](/img/screenshots/rule_status_orange.png)
 
-In other cases, the Rook may face an issue preventing it from working as expected, and the Rule will change its status to Error (Red).
+In other cases, the Rook may face an issue preventing it from working as expected, and the Rule will change its status to [Error (Red)](#rule-error).
 In such cases the Rule is not expected to send messages, and you are advised to click the Rule status indicator and follow the instructions below to resolve the warning.
 Note that in this case the Rule will maintain the Error status. You may remove it and add it again to make sure it turns Active.
 
@@ -30,11 +30,7 @@ Note that in this case the Rule will maintain the Error status. You may remove i
 
 For each Rule status, extend the relevant section below to learn how to troubleshoot:
 
-<details>
-<summary>Troubleshoting a rule in Pending status</summary>
-<p>
-
-## Rule remains in Pending status - Grey
+## Pending Rule
 
 The most likely reason for a Rule remaining in Pending status is that it cannot connect to the relevant Rooks.
 Make sure the relevant App Instances are available in the Rookout application -> App Instances & Agents page.
@@ -65,14 +61,7 @@ If you are using local Rook Agents, make sure they are up and running, and they 
 Make sure the relevant Rook Agents are available in the Rookout application -> App Instances & Agents page -> Agents tab.
 If the relevant Agents are missing, follow the instructions in the [Agent Troubleshooting](troubleshooting-agent.md) page.
 
-</p>
-</details>
-
-<details>
-<summary>Troubleshoting a rule in Warning status</summary>
-<p>
-
-## Rule is in Warning status - Orange
+## Rule Warning
 
 The most likely reason for a Rule switching to Warning status is an error in the Rule script.
 Click the Rule status indicator to open the notifications page, and expand the relevant notification(s).
@@ -84,15 +73,7 @@ Click the Rule status indicator to open the notifications page, and expand the r
 
 If you are debugging a Java applicatin, make sure the source files are included in the JAR viewed by Rookout.
 
-</p>
-</details>
-</p>
-</details>
-<details>
-<summary>Troubleshoting a rule in Error status</summary>
-<p>
-
-## Rule is in Error status - Red
+## Rule Error
 
 The most likely reason for a Rule switching to Error status is a malformed or mismatched Rule script.
 Click the Rule status indicator to open the notifications page, and expand the relevant notification(s).
@@ -110,6 +91,3 @@ For example, make sure the Rule is not positioned at an empty line, or at a func
 
 If you are debugging a Python application, make sure to import the Rookout SDK after other modules have been properly initialized.
 In some cases, adding the `from rook import auto_start` line just after the `__name__ == “__main__”` line may cause the Rook to fail initialization.
-
-</p>
-</details>

@@ -1,6 +1,6 @@
 ---
 id: integrations-overview
-title: Basic Integrations
+title: Integration Setup
 ---
 
 Now that we fetched the variable we wanted, let's pipeline it into our data flow.

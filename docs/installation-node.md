@@ -19,6 +19,8 @@ Setup the Rookout token in your environment:
 // Export your token as an environment variable
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
+
 
 Tag your environment:
 ```bash
