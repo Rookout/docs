@@ -165,23 +165,6 @@ data is stored in the namespace according to the Rookout convention.
 }
 ```
 
-#### loggly
-
-This operation posts a JSON object built from objects in the namespace to loggly.
-
-```json
-{
-  "name": "loggly",
-  "target": {
-    "token": "<loggly-token>"
-  },
-  "items": {
-    "value1": "store.frame",
-    "value2": "rook.id"
-  }
-}
-```
-
 #### sumologic
 
 This operation posts a JSON object built from objects in the namespace to sumologic
