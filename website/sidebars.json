@@ -8,7 +8,8 @@
     ],
     "Basic Setup": [
       "rooks-setup",
-      "integrations-overview"
+      "integrations-overview",
+      "agent-setup"
     ],
     "Advanced Setup": [
       "rooks-config",
