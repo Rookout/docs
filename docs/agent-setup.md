@@ -81,3 +81,14 @@ For example, debug message can be sent to Elasticsearch or Splunk clusters.
 
 All data received by the agent undergoes a data redaction process based on the configuration set by the user.
 
+## Proxy Support 
+
+The Rookout agent has HTTPS proxy support for advanced network configurations.  
+As most production systems do have automated means for proxy detection, you should configure it statically.  
+
+This can be done in the Agent’s installation:
+```bash
+$ setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
+```
+
+Or by setting the environment variable HTTPS_PROXY.
