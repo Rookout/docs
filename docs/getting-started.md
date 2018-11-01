@@ -1,7 +1,7 @@
 ---
 id: getting-started
-title: Basic Debugging
-sidebar_label: Basic Debugging
+title: Basic Usage
+sidebar_label: Basic Usage
 ---
 
 Now that you had your first taste of Rookout Debugging, it's time to see some of the cool stuff we can do.

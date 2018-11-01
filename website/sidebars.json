@@ -3,22 +3,20 @@
     "Getting Started": [
       "introduction",
       "installation",
-      "getting-started",
-      "integrations-overview",
-      "rooks-setup",
+      "getting-started",     
       "sandbox-getting-started"
+    ],
+    "Basic Setup": [
+      "rooks-setup",
+      "integrations-overview"
     ],
     "Advanced Setup": [
       "rooks-config",
       "integrations",
+      "troubleshooting-rules",
       "installation-agent",
       "installation-agent-proxy",
       "agent"
-    ],
-    "Troubleshooting": [
-      "troubleshooting-rules",
-      "troubleshooting-rooks",
-      "troubleshooting-agent"
     ],
     "Concepts":[
       "reference",
