@@ -186,11 +186,11 @@ $ ./node_modules/.bin/rookout_check
 If you are transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging should work out of the box.
 
 If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source map files (usually `app.map.js`) in your deployment in order to debug it with Rookout.
-Rookout also support inline source maps.
+Rookout also supports inline source maps.
 
-To make sure Rookout can validate the source file matches the file you are tryring to debug (hash comparison), we recommend building your source map with the full source code.
+To make sure Rookout can validate the source file matches the file you are tryring to debug using hash comparison, we recommend building your source map with the full source code.
 
-For [Weback](https://webpack.js.org/) we recommend the `source-map` and `inline-source-map` options. for [devtool](https://webpack.js.org/configuration/devtool/).  
+For [Weback](https://webpack.js.org/) we recommend the `source-map` and `inline-source-map` options for [devtool](https://webpack.js.org/configuration/devtool/).  
 For [babel-cli](https://babeljs.io/docs/en/babel-cli) we recommend the `--source-maps` or `--source-maps inline` flags.
 
 #### Source Commit Detection
