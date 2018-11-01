@@ -58,11 +58,11 @@ Example:
 
 ## Target Operations
 
-These operations send data to a target service.
+These operations send data to a target destination.
 
 ### Service Targets
 
-These operations send data to the Rookout Service.
+These operations send data to a target service.
 
 #### send_rookout
 
