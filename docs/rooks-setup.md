@@ -17,8 +17,6 @@ sidebar_label: Rook Setup
 
 ## Python
 
-#### Introduction
-
 The Python Rook provides the ability to fetch debug data from a running application in real time.
 It is deployed by deploying the [Rook SDK](https://pypi.org/project/rook/).
 It can easily be installed by running the following command:
@@ -26,7 +24,7 @@ It can easily be installed by running the following command:
     $ pip install rook
 ```
 
-#### Basic setup
+## Basic setup
 
 Setup the Rookout token in your environment:
 ```bash
@@ -57,7 +55,7 @@ To make sure the Rook was correctly installed and can reach the Rookout Service,
 $ python -m rook
 ```
 
-#### Supported Python versions
+## Supported Python versions
 
 | Implementation     | Versions           |
 | ------------------ | ------------------ |
@@ -66,14 +64,14 @@ $ python -m rook
 
 ***Note:*** We recommend avoiding production deployment for Windows based apps.
 
-#### Source Commit Detection
+## Source Commit Detection
 
 The Python Rook supports detecting the existing source code commit in the following methods, in descending order of priority:
 1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
 2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
 3. If the main application is running from within a Git repository, use its head. 
 
-#### Dependencies
+## Dependencies
 
 The Rookout Python SDK contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
 
@@ -99,7 +97,7 @@ If you encounter an error similar to the following example, be sure to install t
 4. Alpine
     - $ apk update && apk add g++ python-dev
 
-#### uWSGI deployment
+## uWSGI deployment
 
 If you are running your application in a [uWSGI server](https://uwsgi-docs.readthedocs.io/en/latest/), you will need to take a couple of extra steps when using Rookout.
 
@@ -118,7 +116,7 @@ except ImportError:
     from rook import auto_start
 ```
 
-#### Serverless and PaaS deployments
+## Serverless and PaaS deployments
 
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
 If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
@@ -138,9 +136,7 @@ For additional environments, check out our [deployment examples page](https://gi
 
 <div id="page-content2" class="page-tab-content">
 
-## Node
-
-#### Introduction
+## Node.js
 
 The Node.js Rook provides the ability to fetch debug data from a running application in real time.
 It is deployed by deploying the [Rook SDK](https://www.npmjs.com/package/rookout).
@@ -149,7 +145,7 @@ It can easily be installed by running the following command:
 $ npm install --save rookout
 ```
 
-#### Basic setup
+## Basic setup
 
 Setup the Rookout token in your environment:
 ```bash
@@ -175,7 +171,7 @@ To make sure the Rook was correctly installed and can reach the Rookout Service,
 $ ./node_modules/.bin/rookout_check
 ```
 
-#### Supported Versions
+## Supported Versions
 
 | Implementation     | Versions       |
 | ------------------ | -------------- |
@@ -183,10 +179,10 @@ $ ./node_modules/.bin/rookout_check
 
 **Note:** Rookout only supports LTS (Long Time Support) versions of Node.js.
 
-#### Source Commit Detection
+## Source Commit Detection
 Source commit detection functionality is currently not supported for Node.js.
 
-#### Serverless and PaaS
+## Serverless and PaaS
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
 If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
 
@@ -204,11 +200,9 @@ For additional environments, check out our [deployment examples page](https://gi
 
 <div id="page-content3" class="page-tab-content">
 
-## Java
+## JVM
 
-#### Introduction
-
-The Java Rook provides the ability to fetch debug data from a running application in real time.
+The JVM Rook provides the ability to fetch debug data from a running application in real time.
 It is deployed by deploying the [Rook SDK](https://mvnrepository.com/artifact/com.rookout/rook).
 
 It can be download directly to the target system by running the following command:
@@ -225,7 +219,7 @@ dependencies {
 }
 ```
 
-#### Basic Setup
+## Basic Setup
 
 Setup the Rookout token in your environment:
 ```bash
@@ -251,7 +245,7 @@ To make sure the Rook was correctly installed and can reach the Rookout Service,
 $ java -jar rook.jar
 ```
 
-#### Supported Versions
+## Supported Versions
 
 | Implementation     | Versions      |
 | ------------------ | ------------- |
@@ -263,7 +257,7 @@ The following languages are officially jupported: Java, Scala, Kotlin, Groovy, C
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: support@rookout.com .
 
-#### Packaging Sources
+## Packaging Sources
 
 Unlike Node and Python applications, most JVM applications do not include their source code within the library distribution. This prevents Rookout from verifying the source files have not changed between what the user sees and the production and will trigger a warning.
 
@@ -285,17 +279,17 @@ For Maven, use the following snippet:
     </resources>
 ```
 
-#### Source Commit Detection
+## Source Commit Detection
 
 The Java Rook supports detecting the existing source code commit in the following methods, in descending order of priority:
 1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
 2. If the Java main application is jar/war/ear and it’s manifest includes the value “ROOKOUT_MANIFEST_COMMIT”, use it.
 
-#### Dependencies
+## Dependencies
 
 None.
 
-#### Serverkess and PaaS
+## Serverkess and PaaS
 
 For using Java under a Serverless/PaaS environment, the following must be taken into account:
 - Include the Java Agent in your application package.
