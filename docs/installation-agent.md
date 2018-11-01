@@ -46,6 +46,8 @@ To install it execute:
 ```bash
 setup.sh --token=[Your Rookout Token]
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
+
 
 ### Using systemd
 
@@ -57,6 +59,8 @@ To install it execute:
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 $ curl -fs https://get.rookout.com | bash
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
+
 
 ### Basic Configuration
 
