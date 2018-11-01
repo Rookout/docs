@@ -60,9 +60,9 @@ Example:
 
 These operations send data to a target destination.
 
-### Rookout Service Targets
+### Service Targets
 
-These operations send data to the Rookout Service.
+These operations send data to a target service.
 
 #### send_rookout
 
@@ -73,6 +73,41 @@ Example:
 {
   "name": "send_rookout",
   "path": "store"
+}
+```
+
+#### slack
+
+This operation writes a string from the namespace to slack. In order to build a string [format](rules-operations.md#format) may be used.
+
+Example:
+```json
+{
+  "name": "slack",
+  "target": {
+    "token": "<slack-token>"
+  },
+  "channel": "monitoring",
+  "message": "temp.message"
+}
+```
+
+#### sumologic
+
+This operation posts a JSON object built from objects in the namespace to sumologic
+
+Example:
+```json
+{
+"name": "sumologic",
+  "target": {
+     "url": "https://[SumoEndpoint]/receiver/v1/http/[UniqueHTTPCollectorCode]"
+  },
+  "items": {
+    "function": "store.rookout.frame.function",
+    "filename": "store.rookout.frame.filename",
+    "line": "store.rookout.frame.line"
+  }
 }
 ```
 
@@ -95,22 +130,6 @@ Example:
     "value1": "store.frame",
     "value2": "rook.id"
   }
-}
-```
-
-#### slack
-
-This operation writes a string from the namespace to slack. In order to build a string [format](rules-operations.md#format) may be used.
-
-Example:
-```json
-{
-  "name": "slack",
-  "target": {
-    "token": "<slack-token>"
-  },
-  "channel": "monitoring",
-  "message": "temp.message"
 }
 ```
 
