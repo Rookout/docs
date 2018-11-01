@@ -44,3 +44,24 @@ And run it using the following commands:
 ```bash
 $ setup.sh --token=[Your Rookout Token]
 ```
+
+#### Linux Daemon configuration
+
+- Linux Daemon configuration is easily accessible through environment variables.    
+The easiest way to work with it is to add export statements in this file:
+/etc/default/rookout-agent
+
+- By default, the Agent listens only on localhost when running in daemon mode.  
+The easiest way to do that is to set the LISTEN_ALL environment variable in the env configuration file.
+
+- Linux Daemon is supported in the following operating systems:
+
+    | Operating System   | Version    |
+    | ------------------ | ---------- |
+    | Debian             | GNU/Linux 9 (strech)       |
+    | Ubuntu             | 14.04 LTS, 16.04 LTS         |
+    | CentOS             | 6,7          |
+    | Red Hat Enterprise | Linux 6, 7|
+
+
+## Configuration
