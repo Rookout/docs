@@ -58,11 +58,11 @@ Example:
 
 #### filter
 
-This operation performs data redaction on TBD.
-Operation **type** may be "name" or "value".
-TBD - path to which the filter will be applied to.
-TBD - value to be passed as regexp?
-TBD - expected behavior (resulting string will be replaced with "[REDACTED]"?)
+This operation performs data redaction on the target string.
+
+**note** - redaction is done by the Rookout Agent.
+If you are using the Rookout Cloud deployment, data will be fully sent to the Rookout service, and redaction will happen there.
+If you are using the Rookout Agent deployment, data will be reduced by the Agent before sending it to the wanted target.
 
 Exmaple: 
 
@@ -70,10 +70,18 @@ Exmaple:
 {
   "name": "filter",
   "type": "name",
-  "path": "temp.message",
-  "format": "LOG: {machine.ip}: {store.rookout.frame.filename}@{store.rookout.frame.line}-{store.rookout.frame.function}"
+  
 }
 ```
+
+Operation **type** may be "name" or "value".
+If type Name is used, the entire value will be removed.
+For example, "secretKey":"12345" will be replaced with "secretKey":"[Redacted]".
+If type Value is used, a part of the value that matches the regular expression will be removed.
+For example, "nameAndPassword":"name-12345" will be replaced with "nameAndPassword":"name-****".
+
+TBD - path to which the filter will be applied to.
+TBD - value to be passed as regexp?
 
 ## Target Operations
 
