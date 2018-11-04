@@ -60,9 +60,9 @@ Example:
 
 This operation performs data redaction on the destination paths, before they are sent to their Targets.
 
-**note** - redaction is done by the Rookout Agent.
-If you are using the Rookout Cloud deployment, data will be fully sent to the Rookout Service, and redaction will happen there.
-If you are using the Rookout Agent deployment, data will be reduced by the Agent before sending it to the wanted target.
+**Note** - redaction is usually done by the Rookout Agent.  
+If you are using the Rookout Agent deployment, data will be reduced by the Agent before sending it to the wanted target.  
+If you are using the Rookout Cloud deployment, data will be fully sent to the Rookout Service, and redaction will happen there.  
 
 Exmaple: 
 
@@ -82,11 +82,11 @@ Exmaple:
 }
 ```
 
-The operation **pattern** may be a string or a regular expression.
-If type **Name** is used, the entire value will be removed.
-For example, "secretKey":"12345" will be replaced with "secretKey":"[Redacted]".
-If type **Value** is used, a part of the value that matches the regular expression will be removed.
-For example, "nameAndPassword":"name-12345" will be replaced with "nameAndPassword":"name-****".
+The operation **pattern** may be a string or a regular expression.  
+If type **Name** is used, the entire value will be removed.  
+For example, "secretKey":"12345" will be replaced with "secretKey":"[REDACTED]".  
+If type **Value** is used, a part of the value that matches the regular expression will be removed.  
+For example, "nameAndPassword":"LordHelmet-12345" will be replaced with "nameAndPassword":"LordHelmet-****".  
 
 ## Target Operations
 
