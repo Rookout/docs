@@ -42,6 +42,7 @@ $ curl -fs https://get.rookout.com | bash
 Alternatively, you can download the script directly from the following link: https://get.rookout.com  
 And run it using the following commands:
 ```bash
+$ curl -fs https://get.rookout.com
 $ setup.sh --token=[Your Rookout Token]
 ```
 
@@ -75,7 +76,7 @@ To prevent sending data to the Rookout Service due to security restrictions, set
 ### Local Rule Targets
 
 As the Agent runs within your network, it allows you to direct the collected data into data sinks.
-For example, debug message can be sent to Elasticsearch or Splunk clusters.
+For example, debug messages can be sent to Elasticsearch or Splunk clusters.
 
 ### Data Redaction
 
@@ -91,4 +92,7 @@ This can be done in the Agent’s installation:
 $ setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
 ```
 
-Or by setting the environment variable HTTPS_PROXY.
+Or by setting the environment variable HTTPS_PROXY:
+```bash
+$ export HTTPS_PROXY=[Your Proxy Server]
+```
