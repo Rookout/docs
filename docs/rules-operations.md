@@ -56,6 +56,25 @@ Example:
 }
 ```
 
+#### filter
+
+This operation performs data redaction on TBD.
+Operation **type** may be "name" or "value".
+TBD - path to which the filter will be applied to.
+TBD - value to be passed as regexp?
+TBD - expected behavior (resulting string will be replaced with "[REDACTED]"?)
+
+Exmaple: 
+
+```json
+{
+  "name": "filter",
+  "type": "name",
+  "path": "temp.message",
+  "format": "LOG: {machine.ip}: {store.rookout.frame.filename}@{store.rookout.frame.line}-{store.rookout.frame.function}"
+}
+```
+
 ## Target Operations
 
 These operations send data to a target destination.
