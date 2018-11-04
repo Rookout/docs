@@ -26,7 +26,7 @@ If you are running on Kubernetes, we recommend using our provided helm chart ava
 To use it, run the following command:
 
 ```bash
-$ helm install --name [Your release name] stable/rookout --set token=[Your Rookout Token]
+$ helm install --name rookout stable/rookout --set token=[Your Rookout Token]
 ```
 
 ### 3. Linux Daemon
@@ -42,8 +42,8 @@ $ curl -fs https://get.rookout.com | bash
 Alternatively, you can download the script directly from the following link: https://get.rookout.com  
 And run it using the following commands:
 ```bash
-$ curl -fs https://get.rookout.com
-$ setup.sh --token=[Your Rookout Token]
+$ curl -fs https://get.rookout.com > setup.sh
+$ bash setup.sh --token=[Your Rookout Token]
 ```
 
 #### Linux Daemon configuration
