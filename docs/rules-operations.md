@@ -58,10 +58,10 @@ Example:
 
 #### filter
 
-This operation performs data redaction on the target string.
+This operation performs data redaction on the destination paths, before they are sent to their Targets.
 
 **note** - redaction is done by the Rookout Agent.
-If you are using the Rookout Cloud deployment, data will be fully sent to the Rookout service, and redaction will happen there.
+If you are using the Rookout Cloud deployment, data will be fully sent to the Rookout Service, and redaction will happen there.
 If you are using the Rookout Agent deployment, data will be reduced by the Agent before sending it to the wanted target.
 
 Exmaple: 
@@ -69,19 +69,24 @@ Exmaple:
 ```json
 {
   "name": "filter",
-  "type": "name",
-  
+  "filters": [
+    {
+      "filter_type": "name",
+      "pattern": "secretKey"
+    },
+    {
+      "filter_type": "value",
+      "pattern": "[0-9]+"
+    }
+  ]
 }
 ```
 
-Operation **type** may be "name" or "value".
-If type Name is used, the entire value will be removed.
+The operation **pattern** may be a string or a regular expression.
+If type **Name** is used, the entire value will be removed.
 For example, "secretKey":"12345" will be replaced with "secretKey":"[Redacted]".
-If type Value is used, a part of the value that matches the regular expression will be removed.
+If type **Value** is used, a part of the value that matches the regular expression will be removed.
 For example, "nameAndPassword":"name-12345" will be replaced with "nameAndPassword":"name-****".
-
-TBD - path to which the filter will be applied to.
-TBD - value to be passed as regexp?
 
 ## Target Operations
 
