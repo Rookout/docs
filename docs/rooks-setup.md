@@ -50,6 +50,8 @@ if __name__ == "__main__":
 The Rook should be imported as late as possible within the application.
 The reason for this is that it’s impossible to know in Python if a module is fully loaded and if all classes within it have been defined. Unlike JS and it’s hoisting concept, classes in Python are created when the interpreter first executes them. If we’ll see a partially loaded module and failed to set a breakpoint in it (because the class has not been defined yet) setting the breakpoint will fail and the user will receive an error.
 
+## Test connectivity
+
 To make sure the Rook was correctly installed and can reach the Rookout Service, run the following command:
 ```bash
 $ python -m rook
@@ -166,6 +168,8 @@ Import the Rook within your application:
 const rook = require('rookout/auto_start');
 ```
 
+## Test connectivity
+
 To make sure the Rook was correctly installed and can reach the Rookout Service, run the following command:
 ```bash
 $ ./node_modules/.bin/rookout_check
@@ -239,6 +243,8 @@ Add the Java agent to your application:
 ```bash
 $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 ```
+
+## Test connectivity
 
 To make sure the Rook was correctly installed and can reach the Rookout Service, run the following command:
 ```bash
