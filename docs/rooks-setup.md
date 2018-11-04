@@ -154,8 +154,6 @@ Setup the Rookout token in your environment:
 // Export your token as an environment variable
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
-<div class="rookout-org-info org-info-normal-snippet"></div>
-
 
 Tag your environment:
 ```bash
@@ -183,7 +181,21 @@ $ ./node_modules/.bin/rookout_check
 
 **Note:** Rookout only supports LTS (Long Time Support) versions of Node.js.
 
+
+## Transpiling and Source Maps
+
+If you are transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging should work out of the box.
+
+If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source map files (usually `app.map.js`) in your deployment in order to debug it with Rookout.
+Rookout also supports inline source maps.
+
+To make sure Rookout can validate the source file matches the file you are tryring to debug using hash comparison, we recommend building your source map with the full source code.
+
+For [Weback](https://webpack.js.org/) we recommend the `source-map` and `inline-source-map` options for [devtool](https://webpack.js.org/configuration/devtool/).  
+For [babel-cli](https://babeljs.io/docs/en/babel-cli) we recommend the `--source-maps` or `--source-maps inline` flags.
+
 ## Source Commit Detection
+
 Source commit detection functionality is currently not supported for Node.js.
 
 ## Serverless and PaaS
@@ -194,7 +206,9 @@ Many Serverless frameworks (such as AWS sam) has built-in support for it and wil
 
 If you need to set up your own build, we recommend using Docker, with a command line such as:
 
-docker run -it -v `pwd`:`pwd` -w `pwd` node:8 pip install -t lib
+```bash
+    docker run -it -v `pwd`:`pwd` -w `pwd` node:8 pip install -t lib
+```
 
 For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
@@ -230,8 +244,6 @@ Setup the Rookout token in your environment:
 // Export your token as an environment variable
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
-<div class="rookout-org-info org-info-normal-snippet"></div>
-
 
 Tag your environment:
 ```bash
