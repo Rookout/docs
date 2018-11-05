@@ -252,6 +252,30 @@ dependencies {
 }
 ```
 
+For Maven:
+
+1. Add your sources to the project jar (pom.xml) -
+
+```xml
+    <resources>
+        <resource>
+            <directory>${basedir}/src/main/java</directory>
+        </resource>
+    </resources>
+```
+
+2. Download the Rookout Java Agent available on [Mave Central](https://mvnrepository.com/artifact/com.rookout/rook):
+
+```bash
+$ wget "http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST"  -O rook.jar
+```
+
+3. Add the Rookout Java Agent to your command line when running your app:
+
+```bash
+$ java  -javaagent:rook.jar -jar target/rookoutDemo-1.0.0.jar 
+```
+
 ## Basic Setup
 
 Setup the Rookout token in your environment:
