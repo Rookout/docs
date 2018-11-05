@@ -58,13 +58,14 @@ Logging frameworks monitored:
 ### Include External Files
 
 This **optional** configuration may be used to specify if debug information should be collected from packages included as external libraries.
+Currently supported for Python and Node.js debugging.
 
 Example:
 ```json
 "location": {
   "name": "file_line",
-  "filename": "solutions/src/main/scala/org/scalalabs/advanced/lab04/Movie.scala",
-  "lineno": 35,
+  "filename": "src/services/todos.js",
+  "lineno": 127,
   "sha256": "bbec4a3545532de69156a609069d7960c775974da7bf206075eba2b4b954ea27",
   "includeExternals": true
 }
