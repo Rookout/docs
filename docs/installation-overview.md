@@ -28,13 +28,14 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
 ```bash
 # Install the Rookout pypi package
 $ pip install rook
-
-# Export your token as an environment variable
-$ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
+
 ```python
 # Import the package in your app's entry-point file, just before it starts
-from rook import auto_start
+from rook.interface import Rook
+r = Rook()
+r.start(token='[Your_Rookout_Token]')  
+
 if __name__ == "__main__":
     # Your program starts here :)
 ```
@@ -46,13 +47,15 @@ if __name__ == "__main__":
 ```bash
 // Install the npm package
 $ npm install --save rookout
-
-// Export your token as an environment variable
-$ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
-```node
+
+```javascript
 // Require the package in your app's entry-point file
-const rook = require('rookout/auto_start');
+const rook = require('rookout');
+
+rookout.start({
+    token: '[Your Rookout Token]'
+})
 ```
 
 </div>
