@@ -35,8 +35,8 @@ For each Rule status, extend the relevant section below to learn how to troubles
 The most likely reason for a Rule remaining in Pending status is that it cannot connect to the relevant Rooks.
 Make sure the relevant App Instances are available in the Rookout application -> App Instances & Agents page.
 If the relevant App Instances are missing, it may indicate one or more of the following:
-- The application you are trying to debug is down (Which means the Rooks are inactive). Follow the instructions in the [Troubleshooting Rooks](troubleshooting-rooks.md) page.
-- The application is up, but the Rooks are not accessible (That is, the Rookout service cannot access the Rooks). Follow the instructions in the [Troubleshooting Rooks](troubleshooting-rooks.md) page.
+- The application you are trying to debug is down (Which means the Rooks are inactive). 
+- The application is up, but the Rooks are not accessible (That is, the Rookout service cannot access the Rooks). 
 - In serverless frameworks such as Lambda, the application itself isn't up until the serverless function is triggered.
 In such cases, the Rule will only become Active after the first function trigger.
 - You are trying to debug a file that has one path in your development environment and another path in your debugging environment.
