@@ -25,8 +25,6 @@ sidebar_label: Sample app Tutorials
 #### Setup
 
 1. Clone the [python tutorial](https://github.com/Rookout/tutorial-python) to your local machine and deploy it by running the commands below.<br/>
-Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
-
 
 <div class="tab-container">
 <input id="python-tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
@@ -197,7 +195,6 @@ See [our installation guides](installation-overview.md) for platform-specific in
 #### Setup
 
 1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and deploy it by running the commands below.<br/>
-Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
 
 <div class="tab-container">
 <input id="node-tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" />
@@ -375,8 +372,6 @@ See [our installation guides](installation-overview.md) for platform-specific in
 #### Setup
 
 1. Clone the [java tutorial](https://github.com/Rookout/tutorial-java) to your local machine and deploying it by running the commands below.<br/>
-Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
-
 
 <div class="tab-container">
 <input id="jvm-tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" />

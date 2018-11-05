@@ -7,8 +7,7 @@ To set up Rookout in your environment, follow these steps:
 
 ### 1. Sign Up
 
-Sign up to Rookout at our <a href="http://www.rookout.com/trial">sign up page</a> and get your Rookout Token.<br/>
-Your Rookout Token may be copied from the walkthrough tutorial, or from the Organization Settings page.
+Sign up to [Rookout](https://app.rookout.com).
 
 
 ### 2. Install the SDK
