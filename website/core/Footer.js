@@ -34,7 +34,7 @@ class Footer extends React.Component {
               <div className="sitemapLinksContainer">
                   <h5 className="bold">Documentation</h5>
                   <div className="sitemapLinks">
-                    <a href={this.docUrl('introduction.html')}>
+                    <a href={this.docUrl('welcome.html')}>
                       Getting Started
                     </a>
                     <a href={this.docUrl('sandbox-getting-started.html')}>

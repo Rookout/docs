@@ -1,8 +1,8 @@
 {
   "introduction": {
     "Getting Started": [
-      "introduction",
-      "installation",
+      "welcome",
+      "quick-start",
       "getting-started",     
       "sandbox-getting-started"
     ],
