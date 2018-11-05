@@ -10,32 +10,34 @@ The Rookout Agent is an ETL component that can be installed within your network.
 
 Using the Rookout agent you may perform all related data processing inside your own netowrk.
 
-## Installation
+## Run as Container
 
-### 1. Using Docker
+The easiest way to deploy the agent is a Docker container available [here](https://hub.docker.com/r/rookout/agent/).
+The agent can be configured to your needs using environment variables. 
 
-The easiest way to deploy the agent is a Docker container available [here](https://hub.docker.com/r/rookout/agent/).  
-To use it, run the following command:
+### 1. Docker
+
+To run as Docker container, simply execute:
 
 ```bash
 $ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/agent
 ```
 <div class="rookout-org-info org-info-normal-snippet"></div>
 
-### 2. Using Kubernetes and Helm
+### 2. Kubernetes and Helm
 
 If you are running on Kubernetes, we recommend using our provided helm chart available [here](https://github.com/helm/charts/tree/master/stable/rookout).
 
-To use it, run the following command:
+Simply execute:
 
 ```bash
 $ helm install --name rookout stable/rookout --set token=[Your Rookout Token]
 ```
 <div class="rookout-org-info org-info-normal-snippet"></div>
 
-### 3. Linux Daemon
+## Run as Daemon
 
-The Rookout Agent is available as a Linux Daemon.
+The Rookout Agent is also available as a Linux Daemon.
 To install it using a setup script, run the following commands:
 
 ```bash
@@ -44,14 +46,14 @@ $ curl -fs https://get.rookout.com | bash
 ```
 <div class="rookout-org-info org-info-normal-snippet"></div>
 
-Alternatively, you can download the script to disk and execute it with command line arguments:
+Alternatively, you can download the script to disk and execute it with command line arguments (see more options below):
 ```bash
 $ curl -fs https://get.rookout.com > setup.sh
 $ bash setup.sh --token=[Your Rookout Token]
 ```
 <div class="rookout-org-info org-info-normal-snippet"></div>
 
-#### Linux Daemon Configuration
+### Linux Daemon Configuration
 
 - The enviorments variables for the Linux daemon are accessible by editing the `/etc/default/rookout-agent` file.
 
@@ -60,7 +62,7 @@ $ bash setup.sh --token=[Your Rookout Token]
 export LISTEN_ALL=TRUE
 ```
 
-#### Linux Daemon OS Support
+### Linux Daemon OS Support
 
 The Linux daemon is supported in the following operating systems:
 
