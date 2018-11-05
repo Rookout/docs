@@ -45,16 +45,16 @@ This is due to the fact that in Python, there's no clean way to identify a modul
 The Rookout SDK API offers the following methods
 
 ```python
-def start(self,
-            token=None,
-            host=None,
-            port=None,
-            debug=None,
-            silence_errors=None,
-            log_file=None,
-            log_level=None,
-            log_to_stderr=None,
-            **kwargs):
+start(self,
+    token=None,
+    host=None,
+    port=None,
+    debug=None,
+    silence_errors=None,
+    log_file=None,
+    log_level=None,
+    log_to_stderr=None,
+    **kwargs)
 ```
 
 The `start` method is used to initialize the Rookout SDK in the background and accepts the following arguments:
@@ -69,7 +69,7 @@ The `start` method is used to initialize the Rookout SDK in the background and a
 1. `log_to_stderr` - Set to `True` to have the SDK log to stderr. May also be set using the environment variable `ROOKOUT_LOG_TO_STDERR`.
 
 ```python
-def flush(self):
+flush(self)
 ```
 
 The `flush` method allows explicitly flushing the Rookout logs and messages.
