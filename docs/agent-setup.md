@@ -64,12 +64,12 @@ export LISTEN_ALL=TRUE
 
 The Linux daemon is supported in the following operating systems:
 
-    | Operating System   | Version    |
-    | ------------------ | ---------- |
-    | Debian             | GNU/Linux 9 (strech)       |
-    | Ubuntu             | 14.04 LTS, 16.04 LTS         |
-    | CentOS             | 6,7          |
-    | Red Hat Enterprise | Linux 6, 7|
+| Operating System   | Version    |
+| ------------------ | ---------- |
+| Debian             | GNU/Linux 9 (strech)       |
+| Ubuntu             | 14.04 LTS, 16.04 LTS         |
+| CentOS             | 6,7          |
+| Red Hat Enterprise | Linux 6, 7|
 
 
 ## Data Processing
