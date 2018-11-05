@@ -60,9 +60,7 @@ Example:
 
 This operation performs data redaction on the destination paths, before they are sent to their Targets.
 
-**Note** - redaction is usually done by the Rookout Agent.  
-If you are using the Rookout Agent deployment, data will be reduced by the Agent before sending it to the wanted target.  
-If you are using the Rookout Cloud deployment, data will be fully sent to the Rookout Service, and redaction will happen there.  
+**Note** - redaction is done by the Rookout Agent, before being sent to the defined target.
 
 Exmaple: 
 
