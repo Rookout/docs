@@ -24,13 +24,16 @@ It can easily be installed by running the following command:
 $ pip install rook
 ```
 
-## Basic setup
+## Setup
 
 Import the Rook within your application:
 ```python
 from rook.interface import Rook
 r = Rook()
 r.start(token='[Your Rookout Token]')
+
+if __name__ == "__main__":
+    # Your program starts here :)
 ```
 <div class="rookout-org-info org-info-normal-snippet"></div>
 
@@ -54,6 +57,8 @@ def start(self,
             **kwargs):
 ```
 
+The `start` method is used to initialize the Rookout SDK in the background and accepts the following arguments:
+
 1. `token` - The Rookout Token for your organization. May also be set using the environment variable `ROOKOUT_TOKEN`. *Note*: this should left as None if you are using the Rookout Agent.
 1. `host` - If you are using a Rookout agent, this is the hostname for it. May also be set using the environment variable `ROOKOUT_AGENT_HOST`.
 1. `port` - If you are using a Rookout agent, this is the port for it. May also be set using the environment variable `ROOKOUT_AGENT_PORT`.
@@ -63,9 +68,15 @@ def start(self,
 1. `log_level` - Control the SDK logging verbosity. May also be set using the environment variable `ROOKOUT_LOG_LEVEL`.
 1. `log_to_stderr` - Set to `True` to have the SDK log to stderr. May also be set using the environment variable `ROOKOUT_LOG_TO_STDERR`.
 
+```python
+def flush(self):
+```
+
+The `flush` method allows explicitly flushing the Rookout logs and messages.
+
 ## Test connectivity
 
-To make sure the SDK was properly installed into your Python (virtual) enviorment, and test your configuration (environment variables only), run the following command:
+To make sure the SDK was properly installed in your Python (virtual) enviorment, and test your configuration (environment variables only), run the following command:
 ```bash
 $ python -m rook
 ```
@@ -92,7 +103,7 @@ The Rookout Python SDK contains native extensions. For most common interpreter a
 
 If you encounter an error similar to the following example, be sure to install the environment specific build tools specified below:
 
-```
+```json
     Could not find <Python.h>. This could mean the following:
       * You're on Ubuntu and haven't run `apt-get install python-dev`.
       * You're on RHEL/Fedora and haven't run `yum install python-devel` or
@@ -103,14 +114,24 @@ If you encounter an error similar to the following example, be sure to install t
       * You're on Windows and your Python installation was somehow corrupted
         (check your environment variables or try re-installing?)
 ```
-1. Mac
-    - $ xcode-select --install
-2. Debian based
-    - $ apt-get update -q && apt-get install -qy g++ python-dev
-3. Fedora based
-    - $ yum install -qy gcc-c++ python-devel
-4. Alpine
-    - $ apk update && apk add g++ python-dev
+
+Here are the commands for installing the build enviorments for some common OS:
+### OS X
+```bash
+$ xcode-select --install
+```
+### Debian
+```bash
+$ apt-get update -q && apt-get install -qy g++ python-dev
+```
+### Fedora
+```bash
+$ yum install -qy gcc-c++ python-devel
+```
+### Alpine
+```bash
+$ apk update && apk add g++ python-dev
+```
 
 ## uWSGI deployment
 
