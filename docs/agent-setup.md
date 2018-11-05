@@ -20,6 +20,7 @@ To use it, run the following command:
 ```bash
 $ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/agent
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
 
 ### 2. Using Kubernetes and Helm
 
@@ -30,6 +31,7 @@ To use it, run the following command:
 ```bash
 $ helm install --name rookout stable/rookout --set token=[Your Rookout Token]
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
 
 ### 3. Linux Daemon
 
@@ -40,12 +42,14 @@ To install it using a setup script, run the following commands:
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 $ curl -fs https://get.rookout.com | bash
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
 
 Alternatively, you can download the script to disk and execute it with command line arguments:
 ```bash
 $ curl -fs https://get.rookout.com > setup.sh
 $ bash setup.sh --token=[Your Rookout Token]
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
 
 #### Linux Daemon Configuration
 
@@ -98,6 +102,7 @@ This can be done in the Agent’s installation:
 ```bash
 $ setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
 ```
+<div class="rookout-org-info org-info-normal-snippet"></div>
 
 Or by setting the environment variable HTTPS_PROXY:
 ```bash
