@@ -26,13 +26,6 @@ It can easily be installed by running the following command:
 
 ## Basic setup
 
-Setup the Rookout token in your environment:
-```bash
-# Export your token as an environment variable
-$ export ROOKOUT_TOKEN=[Your Rookout Token]
-```
-<div class="rookout-org-info org-info-normal-snippet"></div>
-
 Tag your environment:
 ```bash
 # Use a set of semicolon separated values to identify specific deployments and configurations
@@ -40,6 +33,23 @@ $ export ROOKOUT_TAGS=[;;;]
 ```
 
 Import the Rook within your application:
+```python
+from rook.interface import Rook
+r = Rook()
+r.start(token='[Your_Rookout_Token]')
+```
+<div class="rookout-org-info org-info-normal-snippet"></div>
+
+**Optional:** You may also pass the token as an environment variable:  
+
+1. Setup the Rookout token in your environment:
+```bash
+# Export your token as an environment variable
+$ export ROOKOUT_TOKEN=[Your Rookout Token]
+```
+<div class="rookout-org-info org-info-normal-snippet"></div>
+
+2. Import the Rook within your application using auto_start:
 ```python
 # Import the package in your app's entry-point file, just before it starts
 from rook import auto_start
@@ -98,6 +108,22 @@ If you encounter an error similar to the following example, be sure to install t
     - $ yum install -qy gcc-c++ python-devel
 4. Alpine
     - $ apk update && apk add g++ python-dev
+
+## Rook API
+
+The following parameters may be passed when calling the rook.start() API.
+Alternatively, they may be passed as environment variables when using the auto_start option.
+
+| Variable       | Environment Variable  | Default Value           | Description              |
+| -------------- | --------------------- | ----------------------- | -----------              |
+| token          | ROOKOUT_TOKEN         | N/A                     | Customer specific token. |
+| host           | ROOKOUT_AGENT_HOST    | cloud.agent.rookout.com | Agent URL.               |
+| port           | ROOKOUT_AGENT_PORT    | 443                     | Agent port.              |
+| debug          | ROOKOUT_DEBUG         | FALSE                   | Set log level to DEBUG |
+| silence_errors | N/A                   | TRUE                    | Do not pass errors to calling application |
+| log_to_stderr  | ROOKOUT_LOG_TO_STDERR | FALSE                   | Print logs to STDERR |
+| log_file       | ROOKOUT_LOG_FILE      | N/A                     | Absolute path to log file |
+| log_level      | ROOKOUT_LOG_LEVEL     | INFO                    | Set log level |
 
 ## uWSGI deployment
 
