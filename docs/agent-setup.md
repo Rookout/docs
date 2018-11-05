@@ -8,7 +8,7 @@ sidebar_label: Agent Setup
 
 The Rookout Agent is an ETL component that can be installed within your network. It collects debugging data from the from your application instances, performs aggregation and data redaction, and sends the results to your target data collection application. 
 
-Using the Rookout agent you may perform all related data processing inside your own netowrk.ions.
+Using the Rookout agent you may perform all related data processing inside your own netowrk.
 
 ## Installation
 
