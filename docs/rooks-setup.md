@@ -30,7 +30,7 @@ Import the Rook within your application:
 ```python
 from rook.interface import Rook
 r = Rook()
-r.start(token='[Your_Rookout_Token]')
+r.start(token='[Your Rookout Token]')
 ```
 <div class="rookout-org-info org-info-normal-snippet"></div>
 
