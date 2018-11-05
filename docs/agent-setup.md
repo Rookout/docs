@@ -6,7 +6,9 @@ sidebar_label: Agent Setup
 
 ## Introduction
 
-The Rookout Agent is an ETL component that can be installed within your network. It collects debugging data from the from your application instances, performs aggregation and data redaction, and sends the results to your target data collection application. This allows you to guarantee that sensitive debug data does not make it to unwanted destinations.
+The Rookout Agent is an ETL component that can be installed within your network. It collects debugging data from the from your application instances, performs aggregation and data redaction, and sends the results to your target data collection application. 
+
+Using the Rookout agent you may perform all related data processing inside your own netowrk.ions.
 
 ## Installation
 
@@ -39,23 +41,24 @@ $ export ROOKOUT_TOKEN=[Your Rookout Token]
 $ curl -fs https://get.rookout.com | bash
 ```
 
-Alternatively, you can download the script directly from the following link: https://get.rookout.com  
-And run it using the following commands:
+Alternatively, you can download the script to disk and execute it with command line arguments:
 ```bash
 $ curl -fs https://get.rookout.com > setup.sh
 $ bash setup.sh --token=[Your Rookout Token]
 ```
 
-#### Linux Daemon configuration
+#### Linux Daemon Configuration
 
-- Linux Daemon configuration is easily accessible through environment variables.    
-The easiest way to work with it is to add export statements in this file:
-/etc/default/rookout-agent
+- The enviorments variables for the Linux daemon are accessible by editing the `/etc/default/rookout-agent` file.
 
-- By default, the Agent listens only on localhost when running in daemon mode.  
-The easiest way to do that is to set the LISTEN_ALL environment variable in the env configuration file.
+- By default, the Agent listens only on localhost when running in daemon mode. This can easily be changed by adding the following line to the configuration file:
+```bash
+export LISTEN_ALL=TRUE
+```
 
-- Linux Daemon is supported in the following operating systems:
+#### Linux Daemon OS Support
+
+The Linux daemon is supported in the following operating systems:
 
     | Operating System   | Version    |
     | ------------------ | ---------- |
@@ -71,7 +74,11 @@ The easiest way to do that is to set the LISTEN_ALL environment variable in the 
 
 The agent connects to the Rookout Service to receive commands and report telemetry information.
 Data collected from within the application may be sent to Rookout for interactive debugging sessions.
-To prevent sending data to the Rookout Service due to security restrictions, set the environment variable ROOKOUT_SEND_DATA to false.
+
+You may configure a local policy preventing the Agent from sending application data to Rookout using the following environment variable:
+```bash
+export ROOKOUT_SEND_DATA=FALSE
+```
 
 ### Local Rule Targets
 
