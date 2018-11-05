@@ -198,6 +198,21 @@ For [babel-cli](https://babeljs.io/docs/en/babel-cli) we recommend the `--source
 
 Source commit detection functionality is currently not supported for Node.js.
 
+## Dependencies
+
+The Rookout Node.js SDK contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
+
+If you encounter an error during installation, be sure to install the environment specific build tools specified below:
+
+1. Mac
+    - $ xcode-select --install
+2. Debian based
+    - $ apt-get update -q && apt-get install -qy g++
+3. Fedora based
+    - $ yum install -qy gcc-c++
+4. Alpine
+    - $ apk update && apk add g++
+
 ## Serverless and PaaS
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
 If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
