@@ -21,16 +21,10 @@ The Python Rook provides the ability to fetch debug data from a running applicat
 It is deployed by deploying the [Rook SDK](https://pypi.org/project/rook/).
 It can easily be installed by running the following command:
 ```bash
-    $ pip install rook
+$ pip install rook
 ```
 
 ## Basic setup
-
-Tag your environment:
-```bash
-# Use a set of semicolon separated values to identify specific deployments and configurations
-$ export ROOKOUT_TAGS=[;;;]
-```
 
 Import the Rook within your application:
 ```python
@@ -40,29 +34,38 @@ r.start(token='[Your_Rookout_Token]')
 ```
 <div class="rookout-org-info org-info-normal-snippet"></div>
 
-**Optional:** You may also pass the token as an environment variable:  
-
-1. Setup the Rookout token in your environment:
-```bash
-# Export your token as an environment variable
-$ export ROOKOUT_TOKEN=[Your Rookout Token]
-```
-<div class="rookout-org-info org-info-normal-snippet"></div>
-
-2. Import the Rook within your application using auto_start:
-```python
-# Import the package in your app's entry-point file, just before it starts
-from rook import auto_start
-if __name__ == "__main__":
-    # Your program starts here :)
-```
-
 The Rook should be imported as late as possible within the application.
-The reason for this is that it’s impossible to know in Python if a module is fully loaded and if all classes within it have been defined. Unlike JS and it’s hoisting concept, classes in Python are created when the interpreter first executes them. If we’ll see a partially loaded module and failed to set a breakpoint in it (because the class has not been defined yet) setting the breakpoint will fail and the user will receive an error.
+This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
+
+## Rookout SDK API
+
+The Rookout SDK API offers the following methods
+
+```python
+def start(self,
+            token=None,
+            host=None,
+            port=None,
+            debug=None,
+            silence_errors=None,
+            log_file=None,
+            log_level=None,
+            log_to_stderr=None,
+            **kwargs):
+```
+
+1. `token` - The Rookout Token for your organization. May also be set using the environment variable `ROOKOUT_TOKEN`. *Note*: this should left as None if you are using the Rookout Agent.
+1. `host` - If you are using a Rookout agent, this is the hostname for it. May also be set using the environment variable `ROOKOUT_AGENT_HOST`.
+1. `port` - If you are using a Rookout agent, this is the port for it. May also be set using the environment variable `ROOKOUT_AGENT_PORT`.
+1. `debug` - Set to `True` to increase log level to debug. May also be set using the environment variable `ROOKOUT_DEBUG`.
+1. `silence_errors` - Set to `True` to have start throw on errors.
+1. `log_file` - Path to file to use for the SDK logs (default is `/var/log/rookout/python-rook.log`). May also be set using the environment variable `ROOKOUT_LOG_FILE`.
+1. `log_level` - Control the SDK logging verbosity. May also be set using the environment variable `ROOKOUT_LOG_LEVEL`.
+1. `log_to_stderr` - Set to `True` to have the SDK log to stderr. May also be set using the environment variable `ROOKOUT_LOG_TO_STDERR`.
 
 ## Test connectivity
 
-To make sure the Rook was correctly installed and can reach the Rookout Service, run the following command:
+To make sure the SDK was properly installed into your Python (virtual) enviorment, and test your configuration (environment variables only), run the following command:
 ```bash
 $ python -m rook
 ```
@@ -74,7 +77,7 @@ $ python -m rook
 | **CPython**        | 2.7, 3.5, 3.6, 3.7 |
 | **PyPy**           | 6.0.0              |
 
-***Note:*** We recommend avoiding production deployment for Windows based apps.
+***Note:*** We recommend avoiding production deployments of Rookout on Windows OS.
 
 ## Source Commit Detection
 
@@ -89,7 +92,7 @@ The Rookout Python SDK contains native extensions. For most common interpreter a
 
 If you encounter an error similar to the following example, be sure to install the environment specific build tools specified below:
 
-```bash
+```
     Could not find <Python.h>. This could mean the following:
       * You're on Ubuntu and haven't run `apt-get install python-dev`.
       * You're on RHEL/Fedora and haven't run `yum install python-devel` or
@@ -108,22 +111,6 @@ If you encounter an error similar to the following example, be sure to install t
     - $ yum install -qy gcc-c++ python-devel
 4. Alpine
     - $ apk update && apk add g++ python-dev
-
-## Rook API
-
-The following parameters may be passed when calling the rook.start() API.
-Alternatively, they may be passed as environment variables when using the auto_start option.
-
-| Variable       | Environment Variable  | Default Value           | Description              |
-| -------------- | --------------------- | ----------------------- | -----------              |
-| token          | ROOKOUT_TOKEN         | N/A                     | Customer specific token. |
-| host           | ROOKOUT_AGENT_HOST    | cloud.agent.rookout.com | Agent URL.               |
-| port           | ROOKOUT_AGENT_PORT    | 443                     | Agent port.              |
-| debug          | ROOKOUT_DEBUG         | FALSE                   | Set log level to DEBUG |
-| silence_errors | N/A                   | TRUE                    | Do not pass errors to calling application |
-| log_to_stderr  | ROOKOUT_LOG_TO_STDERR | FALSE                   | Print logs to STDERR |
-| log_file       | ROOKOUT_LOG_FILE      | N/A                     | Absolute path to log file |
-| log_level      | ROOKOUT_LOG_LEVEL     | INFO                    | Set log level |
 
 ## uWSGI deployment
 
@@ -153,7 +140,7 @@ Many Serverless frameworks (such as AWS sam) have built-in support for it and wi
 
 If you need to set up your own build, we recommend using Docker, with a command line such as:
 ```bash
-    docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-python2.7 pip install -r requirements.txt
+docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-python2.7 pip install -r requirements.txt
 ```
 
 For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
