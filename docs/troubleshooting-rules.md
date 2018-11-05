@@ -59,7 +59,6 @@ If you are debugging a Node application, make sure the source maps are available
 
 If you are using local Rook Agents, make sure they are up and running, and they are accessible from the application you are trying to debug.
 Make sure the relevant Rook Agents are available in the Rookout application -> App Instances & Agents page -> Agents tab.
-If the relevant Agents are missing, follow the instructions in the [Agent Troubleshooting](troubleshooting-agent.md) page.
 
 ## Rule Warning
 

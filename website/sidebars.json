@@ -14,10 +14,7 @@
     "Advanced Setup": [
       "rooks-config",
       "integrations",
-      "troubleshooting-rules",
-      "installation-agent",
-      "installation-agent-proxy",
-      "agent"
+      "troubleshooting-rules"
     ],
     "Concepts":[
       "reference"

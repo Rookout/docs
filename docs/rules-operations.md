@@ -211,7 +211,7 @@ These operations send data to the local file system.
 
 This operation writes a string from the namespace to a local file. In order to build a string [format](rules-operations.md#format) may be used.
 
-**Note:** this operation is only supported when using a [local Agent](agent.md).
+**Note:** this operation is only supported when using a local Agent.
 
 Example:
 ```json
@@ -229,7 +229,7 @@ Example:
 
 This operation writes a JSON formatted dump frame from the namespace to a local file.
 
-**Note:** this operation is only supported when using a [local Agent](agent.md).
+**Note:** this operation is only supported when using a local Agent.
 
 Example:
 ```json
