@@ -6,8 +6,8 @@
     "tagline": "Rookout - Get data on-demand from your live code just when you need it.",
     "agent-setup": "Agent Setup",
     "Agent Setup": "Agent Setup",
-    "getting-started": "Basic Usage",
-    "Basic Usage": "Basic Usage",
+    "getting-started": "Adding Rules",
+    "Adding Rules": "Adding Rules",
     "integrations": "Integrations",
     "integrations-overview": "Integration Setup",
     "welcome": "Welcome",
@@ -36,9 +36,9 @@
     "troubleshooting": "Overview",
     "troubleshooting-rules": "Rule Troubleshooting",
     "Getting Started": "Getting Started",
-    "Basic Setup": "Basic Setup",
+    "Rules": "Rules",
     "Advanced Setup": "Advanced Setup",
-    "Concepts": "Concepts",
+    "How To": "How To",
     "Reference": "Reference"
   },
   "pages-strings": {

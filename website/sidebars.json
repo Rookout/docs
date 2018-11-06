@@ -3,23 +3,23 @@
     "Getting Started": [
       "welcome",
       "quick-start",
-      "getting-started",     
+      "rooks-setup",
+      "agent-setup",
       "sandbox-getting-started"
     ],
-    "Basic Setup": [
-      "rooks-setup",
-      "integrations-overview",
-      "agent-setup"
+    "Rules":[
+      "troubleshooting-rules"
     ],
     "Advanced Setup": [
       "rooks-config",
-      "integrations",
-      "troubleshooting-rules"
+      "integrations"
     ],
-    "Concepts":[
-      "reference"
+    "How To": [
+      "getting-started",     
+      "integrations-overview"      
     ],
     "Reference": [
+      "reference",
       "rules",
       "rules-aug",
       "rules-uses",
