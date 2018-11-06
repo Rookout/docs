@@ -45,7 +45,7 @@ function customizeSearchInput() {
     docNavbarElem.prepend(searchContainer);
   }
 
-  activateAlgoliaDocSearch();
+  setTimeout(activateAlgoliaDocSearch, 500);
 }
 
 
