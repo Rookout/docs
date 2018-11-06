@@ -8,7 +8,10 @@
       "sandbox-getting-started"
     ],
     "Rules":[
-      "troubleshooting-rules"
+      "rules-intro-basics",
+      "rules-intro-capabilities",
+      "rules-intro-troubleshooting",
+      "rules-intro-concepts"
     ],
     "Advanced Setup": [
       "rooks-config",
@@ -16,7 +19,8 @@
     ],
     "How To": [
       "getting-started",     
-      "integrations-overview"      
+      "integrations-overview",
+      "troubleshooting-rules"
     ],
     "Reference": [
       "reference",
