@@ -28,7 +28,27 @@ TODO - in the future we’ll add this feature to .rookout file
 
 ## Data Redaction
 
-TODO - copy here once the original PR has been approved.
+The [filter operation](rules-operations.md) may be used to perform data redaction on the data fetched by a Rule before sending it to its destination.  
+
+For example, adding the following snippet to the Rule Operations section:
+```json
+{
+  "name": "filter",
+  "filters": [
+    {
+      "filter_type": "name",
+      "pattern": "secretKey"
+    },
+    {
+      "filter_type": "value",
+      "pattern": "[0-9]+"
+    }
+  ]
+}
+```
+
+Will replace an instance of "secretKey":"12345" with "secretKey":"[REDACTED]", and an instance of "nameAndPassword":"LordHelmet-12345" with "nameAndPassword":"LordHelmet-****".
+
 
 ## Rate Limiting
 
