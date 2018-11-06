@@ -178,8 +178,7 @@ __Level: Intermediate__
 
 #### What's next?
 
-Head over to [our reference](reference-home.md) to understand all the Rookout components.   
-See [our installation guides](installation-overview.md) for platform-specific installation examples.
+Check out our [Quick Start guide](rooks-setup.md) to start debugging your own code.
 </div>
 <div id="page-content2" class="page-tab-content">
 
@@ -356,8 +355,7 @@ __Level: Intermediate__
 
 #### What's next?
 
-Head over to [our reference](reference-home.md) to understand all the Rookout components.   
-See [our installation guides](installation-overview.md) for platform-specific installation examples.
+Check out our [Quick Start guide](rooks-setup.md) to start debugging your own code.
 </div>
 <div id="page-content3" class="page-tab-content">
 
@@ -530,8 +528,7 @@ __Level: Intermediate__
 
 #### What's next?
 
-Head over to [our reference](reference-home.md) to understand all the Rookout components.   
-See [our installation guides](installation-overview.md) for platform-specific installation examples.
+Check out our [Quick Start guide](rooks-setup.md) to start debugging your own code.
 </div>
 </section>
 
