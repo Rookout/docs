@@ -20,7 +20,13 @@ This usually defines data manipulation actions (such as data redaction), as well
 
 ## Setting Rules
 
-Happy flow?
+Before setting a rule, you may want to make sure the following is in place:
+1. You have imported the Rookout SDK into your code, and the application instance you wish to debug has been identified by the Rookout Service.
+2. You have loaded your source code into the Rookout IDE.
+
+After setting a Rule just as if you were adding a breakpoint in your own IDE, expect the Rule Status to become Active (Green).
+Upon hitting the expected code line in your application, expect to see a debug message in the Rookout IDE Message Pane.
+If you fail to see a debug message, or if the rule you set failed to become Active, check out the [Rule Troubleshooting Section](rules-intro-troubleshooting.md).
 
 ## Rule Templates
 
@@ -30,3 +36,7 @@ You may want to to create your own rule templates, defining the following:
 1. A commonly used log line format
 2. Custom destination integrations
 3. Organization specific data redaction capabilities.
+
+## What next?
+
+TBD
