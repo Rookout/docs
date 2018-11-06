@@ -38,6 +38,8 @@ function customizeSearchInput() {
 
     const searchBarIcon = $(document.createElement('img'));
     searchBarIcon.attr('src', '/img/icons/search.svg');
+    searchBarIcon.attr('id', 'rookout-search-icon')
+    searchBarIcon.toggle();
 
     searchContainer.append(searchBarInput);
     searchContainer.append(searchBarIcon);
@@ -45,7 +47,7 @@ function customizeSearchInput() {
     docNavbarElem.prepend(searchContainer);
   }
 
-  setTimeout(activateAlgoliaDocSearch, 500);
+  setTimeout(activateAlgoliaDocSearch, 1000);
 }
 
 
@@ -55,6 +57,8 @@ function activateAlgoliaDocSearch() {
     indexName: 'rookout',
     inputSelector: '#rookout-search'
   });
+
+  $('#rookout-search-icon').toggle();
 }
 
 
