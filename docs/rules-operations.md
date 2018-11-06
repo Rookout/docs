@@ -56,6 +56,36 @@ Example:
 }
 ```
 
+#### filter
+
+This operation performs data redaction on the destination paths, before they are sent to their Targets.
+
+**Note** - redaction is done by the Rookout Agent, before being sent to the defined target.
+
+Exmaple: 
+
+```json
+{
+  "name": "filter",
+  "filters": [
+    {
+      "filter_type": "name",
+      "pattern": "secretKey"
+    },
+    {
+      "filter_type": "value",
+      "pattern": "[0-9]+"
+    }
+  ]
+}
+```
+
+The operation **pattern** may be a string or a regular expression.  
+If type **Name** is used, the entire value will be removed.  
+For example, "secretKey":"12345" will be replaced with "secretKey":"[REDACTED]".  
+If type **Value** is used, a part of the value that matches the regular expression will be removed.  
+For example, "nameAndPassword":"LordHelmet-12345" will be replaced with "nameAndPassword":"LordHelmet-****".  
+
 ## Target Operations
 
 These operations send data to a target destination.
