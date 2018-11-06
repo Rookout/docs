@@ -166,8 +166,6 @@ docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-python2.7 pip insta
 
 For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
-For additional environments, check out our [deployment examples page](https://github.com/Rookout/deployment-examples).
-
 </div>
 
 <div id="page-content2" class="page-tab-content">
@@ -275,8 +273,6 @@ If you need to set up your own build, we recommend using Docker, with a command 
 
 For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
-For additional environments, check out our [deployment examples page](https://github.com/Rookout/deployment-examples).
-
 </div>
 
 <div id="page-content3" class="page-tab-content">
@@ -377,8 +373,6 @@ For using Java under a Serverless/PaaS environment, the following must be taken 
 - In many cloud platforms, passing JVM command line arguments are not supported. If so, be sure to use the Rookout API described above.
 - For Serverless applications, you must call the Rookout API on every endpoint and flush at your discretion.
 - In some Serverless environments, the tools.jar library is missing and must be included within your package as well.
-
-For additional environments, check out our [deployment examples page](https://github.com/Rookout/deployment-examples).
 
 </div>
 
