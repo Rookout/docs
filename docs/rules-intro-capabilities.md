@@ -4,25 +4,37 @@ title: Rule Capabilities
 sidebar_label: Rule Capabilities
 ---
 
-## Templates
+## Repository configuration
 
-Users can create new templates or edit existing ones.
-When editing a template, be sure to edit the following:
-1. Rule Destination
-2. Data Redaction
+### Path Mapping
 
-## Repo
+For Python and Node, Rookout uses relative file paths for searching files based on the repository’s root folder. (For Explorook, the root folder is the one you share).
 
-Repo
+If file layout for production is different, paths will not match.
+
+As a simple test, you can go into the JSON and edit the filePath under location.
+
+To handle this use-case, add a “.rookout” file at the root of your repository and map your paths:
+
+TODO - add an explanation of the feature
+
+### Include Externals
+
+If you are installing your application in Python using pip install (to the site-packages directory) or your Node application using npm install (to the node_modules directory) you need to let Rookout know to the breakpoint in those files as well.
+
+As a simple test, you can go into the JSON and add the includeExternals under location.
+
+TODO - in the future we’ll add this feature to .rookout file
 
 ## Data Redaction
 
-Repo
+TODO - copy here once the original PR has been approved.
 
 ## Rate Limiting
 
-Repo
+TODO - document the capability here
 
 ## Integrations
 
-Repo
+TODO - a basic description of integrations here.
+Point to the full integrations page.
