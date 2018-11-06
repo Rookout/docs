@@ -3,9 +3,9 @@
     "Getting Started": [
       "welcome",
       "quick-start",
+      "sandbox-getting-started",
       "rooks-setup",
-      "agent-setup",
-      "sandbox-getting-started"
+      "agent-setup"      
     ],
     "Rookout Rules":[
       "rules-intro-basics",
@@ -13,7 +13,8 @@
       "rules-intro-troubleshooting",
       "rules-intro-concepts"
     ],
-    "Advanced Setup": [
+    "Additional Info": [
+      "rooks-info",      
       "rooks-config",
       "integrations"
     ],
