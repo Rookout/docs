@@ -380,7 +380,7 @@ See [our installation guides](installation-overview.md) for platform-specific in
 git clone https://github.com/Rookout/tutorial-java.git
 export ROOKOUT_TOKEN=[Your Rookout Token]
 cd tutorial-java
-make build-jar-local run-local
+gradle bootJar run
 ```
 
 </div>
@@ -390,10 +390,7 @@ make build-jar-local run-local
 git clone https://github.com/Rookout/tutorial-java.git
 set ROOKOUT_TOKEN=[Your Rookout Token]
 cd tutorial-java
-gradle -i clean
-gradle -i bootJar
-curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-java  -javaagent:rook.jar -jar build/libs/tutorial-1.0.0.jar
+gradle bootJar run
 ```
 
 </div>
@@ -403,7 +400,9 @@ java  -javaagent:rook.jar -jar build/libs/tutorial-1.0.0.jar
 git clone https://github.com/Rookout/tutorial-java.git
 export ROOKOUT_TOKEN=[Your Rookout Token]
 cd tutorial-java
-make build-jar-with-docker run-docker
+docker run --rm -v "$(shell pwd)":/home/gradle/project -w /home/gradle/project gradle:4.8.0-jdk8-alpine gradle -i bootJar
+docker build . -t tutorial-java
+docker run -p 8080:8080 -e "ROOKOUT_TOKEN=[Your Rookout Token]" tutorial-java
 ```
 
 </div>
