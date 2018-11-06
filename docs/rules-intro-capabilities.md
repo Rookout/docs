@@ -12,23 +12,29 @@ to make sure your code can succesfully be debugged, Rookout offers the following
 
 ### Path Mapping
 
-For Python and Node, Rookout uses relative file paths for searching files based on the repository’s root folder. (For Explorook, the root folder is the one you share).
+For Python and Node.js, Rookout uses relative file paths for searching files based on the repository’s root folder. (For Explorook, the root folder is the one you share).  
+If file layout for production is different, paths will not match.  
 
-If file layout for production is different, paths will not match.
+For a single Rule, you may edit the filePath variable in the rule Location section.
 
-As a simple test, you can go into the JSON and edit the filePath under location.
+To handle the genral case, add a “.rookout” file at the root of your repository and map your paths:  
 
-To handle this use-case, add a “.rookout” file at the root of your repository and map your paths:
+  For each file or path where <source_prefix> is different from <target_prefix>, add a line to ".rookout" in the following format:  
+  <source_prefix> <target_prefix>  
+  *If your path has spaces, be sure to use parenthesis:  
+  "<source_prefix>" "<target_prefix>" 
 
-TODO - add an explanation of the feature
 
 ### Include Externals
 
-If you are installing your application in Python using pip install (to the site-packages directory) or your Node application using npm install (to the node_modules directory) you need to let Rookout know to the breakpoint in those files as well.
+If you are installing your application in Python using pip install (to the site-packages directory) or your Node application using npm install (to the node_modules directory) you need to let Rookout know to set the rule in those files as well.
 
-As a simple test, you can go into the JSON and add the includeExternals under location.
+For a single Rule, you may edit the includeExternals variable in the rule Location section.
 
-TODO - in the future we’ll add this feature to .rookout file
+To handle the genral case, add a “.rookout” file at the root of your repository and add a line to it with the following text:
+```python 
+#package
+```
 
 ## Data Redaction
 
