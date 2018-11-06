@@ -61,7 +61,8 @@ python app.py
 git clone https://github.com/Rookout/tutorial-python
 export ROOKOUT_TOKEN=[Your Rookout Token]
 cd tutorial-python
-docker-compose up
+docker build . -t tutorial-python
+docker run -p 5000:5000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-python
 ```
 
 </div>
