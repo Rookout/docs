@@ -37,3 +37,9 @@ Follow the instructions in the warning message.
 
 Follow the instructions in the error message.
 
+## What's next?
+
+To learn more about Rule capabilities, try the following pages:
+- [Related Concepts](rules-intro-related.md)
+
+To review the full Rule API check out the [Reference Section](rules-index.md).

@@ -38,3 +38,11 @@ TODO - document the capability here
 
 TODO - a basic description of integrations here.
 Point to the full integrations page.
+
+## What's next?
+
+To learn more about Rule capabilities, try the following pages:
+- [Rule Troubleshooting](rules-intro-troubleshooting.md)
+- [Related Concepts](rules-intro-related.md)
+
+To review the full Rule API check out the [Reference Section](rules-index.md).
