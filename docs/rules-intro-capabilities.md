@@ -6,6 +6,10 @@ sidebar_label: Rule Capabilities
 
 ## Repository configuration
 
+Rookout Rules try to apply to your code as it is run in debug or production modes.
+In some cases, the repository in debug or production has a different structure.
+to make sure your code can succesfully be debugged, Rookout offers the following capabilities:
+
 ### Path Mapping
 
 For Python and Node, Rookout uses relative file paths for searching files based on the repository’s root folder. (For Explorook, the root folder is the one you share).
@@ -58,11 +62,6 @@ To change this configuration for a specific rule, add the following variable to 
 ```json
 "minTimeBetweenHits":500
 ```
-
-## Integrations
-
-TODO - a basic description of integrations here.
-Point to the full integrations page.
 
 ## What's next?
 
