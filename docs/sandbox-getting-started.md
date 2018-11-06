@@ -34,7 +34,6 @@ sidebar_label: Sample app Tutorials
 <input id="python-tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
 <label for="python-tab3" class="tab-title snippet">Docker</label>
 <div data-tab-content="content1" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 git clone https://github.com/Rookout/tutorial-python
@@ -46,7 +45,6 @@ python app.py
 
 </div>
 <div data-tab-content="content2" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 git clone https://github.com/Rookout/tutorial-python
@@ -58,7 +56,6 @@ python app.py
 
 </div>
 <div data-tab-content="content3" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 git clone https://github.com/Rookout/tutorial-python
@@ -204,7 +201,6 @@ See [our installation guides](installation-overview.md) for platform-specific in
 <input id="node-tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
 <label for="node-tab3" class="tab-title snippet">Docker</label>
 <div data-tab-content="content1" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 git clone https://github.com/Rookout/tutorial-nodejs
@@ -215,7 +211,6 @@ npm start
 
 </div>
 <div data-tab-content="content2" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 git clone https://github.com/Rookout/tutorial-nodejs
@@ -226,7 +221,6 @@ npm start
 
 </div>
 <div data-tab-content="content3" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 git clone https://github.com/Rookout/tutorial-nodejs
@@ -381,7 +375,6 @@ See [our installation guides](installation-overview.md) for platform-specific in
 <input id="jvm-tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
 <label for="jvm-tab3" class="tab-title snippet">Docker</label>
 <div data-tab-content="content1" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 git clone https://github.com/Rookout/tutorial-java.git
@@ -392,7 +385,6 @@ make build-jar-local run-local
 
 </div>
 <div data-tab-content="content2" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 git clone https://github.com/Rookout/tutorial-java.git
@@ -406,7 +398,6 @@ java  -javaagent:rook.jar -jar build/libs/tutorial-1.0.0.jar
 
 </div>
 <div data-tab-content="content3" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 git clone https://github.com/Rookout/tutorial-java.git

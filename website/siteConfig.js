@@ -46,10 +46,16 @@ const siteConfig = {
     theme: 'default',
   },
   scripts: [
-    'https://buttons.github.io/buttons.js',
-    'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
     'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
-    '/js/rookoutCustom.js'
+    'https://buttons.github.io/buttons.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+    'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
+    '/js/rookoutCustom.js',
+    '/js/code-blocks-buttons.js'
+  ],
+  stylesheets: [
+    '/css/docsearch.css',
+    '/css/code-blocks-buttons.css'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/Rookout/docs',
