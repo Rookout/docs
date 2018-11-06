@@ -115,23 +115,46 @@ If you encounter an error similar to the following example, be sure to install t
         (check your environment variables or try re-installing?)
 ```
 
-Here are the commands for installing the build enviorments for some common OS:
-### OS X
+Here are the commands for installing the build environments for some common OS:
+<div class="tab-container">
+<input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<label for="tab1" class="tab-title snippet">OS X</label>
+<input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
+<label for="tab2" class="tab-title snippet">Debian</label>
+<input id="tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
+<label for="tab3" class="tab-title snippet">Fedora</label>
+<input id="tab4" data-tab="tab4" type="radio" name="tabs" class="tab-button" />
+<label for="tab4" class="tab-title snippet">Alpine</label>
+<div data-tab-content="content1" class="tab-content hljs">
+
 ```bash
 $ xcode-select --install
 ```
-### Debian
+
+</div>
+<div data-tab-content="content2" class="tab-content hljs">
+
 ```bash
 $ apt-get update -q && apt-get install -qy g++ python-dev
 ```
-### Fedora
+
+</div>
+<div data-tab-content="content3" class="tab-content hljs">
+
 ```bash
 $ yum install -qy gcc-c++ python-devel
 ```
-### Alpine
+
+</div>
+<div data-tab-content="content4" class="tab-content hljs">
+
 ```bash
 $ apk update && apk add g++ python-dev
 ```
+
+</div>
+</div>
+
 
 ## uWSGI deployment
 

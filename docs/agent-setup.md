@@ -107,6 +107,25 @@ $ setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
 <div class="rookout-org-info org-info-normal-snippet"></div>
 
 Or by setting the environment variable HTTPS_PROXY:
+
+<div class="tab-container">
+<input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<label for="tab1" class="tab-title snippet">Linux/OS X</label>
+<input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
+<label for="tab2" class="tab-title snippet">Windows</label>
+<div data-tab-content="content1" class="tab-content hljs">
+
 ```bash
 $ export HTTPS_PROXY=[Your Proxy Server]
 ```
+
+</div>
+<div data-tab-content="content2" class="tab-content hljs">
+
+```bash
+$ set HTTPS_PROXY=[Your Proxy Server]
+```
+
+</div>
+</div>
+
