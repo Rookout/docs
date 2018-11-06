@@ -263,18 +263,6 @@ input:checked + label.snippet {
     display: block;
 }
 
-button.tab-copy {
-    position: absolute;
-    right: 0;
-    margin-right: 15px;
-    margin-top: 5px;
-
-    display: none;
-}
-
-div.tab-content:hover button.tab-copy {
-    display: block;
-}
 
 @media screen and (max-width: 650px) {
     label {

@@ -22,14 +22,11 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
 <input id="tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
 <label for="tab3" class="tab-title snippet">JVM</label>
 <div data-tab-content="content1" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
-
-```bash
-# Install the Rookout pypi package
-$ pip install rook
-```
 
 ```python
+# Install the Rookout pypi package
+$ pip install rook
+
 # Import the package in your app's entry-point file, just before it starts
 from rook.interface import Rook
 r = Rook()
@@ -41,14 +38,11 @@ if __name__ == "__main__":
 
 </div>
 <div data-tab-content="content2" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
-
-```bash
-// Install the npm package
-$ npm install --save rookout
-```
 
 ```javascript
+// Install the npm package
+$ npm install --save rookout
+
 // Require the package in your app's entry-point file
 const rook = require('rookout');
 
@@ -59,7 +53,6 @@ rookout.start({
 
 </div>
 <div data-tab-content="content3" class="tab-content hljs">
-<button onclick="copyToClipboard(this)" class="tab-copy button">Copy</button>
 
 ```bash
 // Download our java agent
