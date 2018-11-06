@@ -66,7 +66,7 @@ To change this configuration for a specific rule, add the following variable to 
 ## What's next?
 
 To learn more about Rule capabilities, try the following pages:
-- [Rule Troubleshooting](rules-intro-troubleshooting.md)
+- [Rule Status](rules-intro-status.md)
 - [Related Concepts](rules-intro-related.md)
 
 To review the full Rule API check out the [Reference Section](rules-index.md).

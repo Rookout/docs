@@ -41,7 +41,7 @@ You may want to to create your own rule templates, defining the following:
 
 To learn more about Rule capabilities, try the following pages:
 - [Rule Capabilities](rules-intro-capabilities.md)
-- [Rule Troubleshooting](rules-intro-troubleshooting.md)
+- [Rule Status](rules-intro-status.md)
 - [Related Concepts](rules-intro-related.md)
 
 To review the full Rule API check out the [Reference Section](rules-index.md).

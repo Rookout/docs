@@ -1,12 +1,8 @@
 ---
-id: rules-intro-troubleshooting
-title: Rule Troubleshooting
-sidebar_label: Rule Troubleshooting
+id: rules-intro-status
+title: Rule Status
+sidebar_label: Rule Status
 ---
-
-## Common Pitfalls
-
-TBD
 
 ## Understanding Rule Status
 
