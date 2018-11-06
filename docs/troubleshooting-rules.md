@@ -51,6 +51,11 @@ In such cases, you can try the following:
     *If your path has spaces, be sure to use parenthesis:  
     "<source_prefix>" "<target_prefix>"  
 
+- You are trying to debug a file that is part of an external library.
+In such case, try one of the following:
+    1. Add the [includeExternals](rules-aug.md#include-external-files) setting to the rule location section.
+    2. Add a file named ".rookout" at the root of your source code, and add a line to it with the following text: #packages.
+
 If you are using [selectors](rules-uses.md#selector) in your script, make sure they correctly apply to the relevant Rules.
 
 If you are debugging a Python or Node application, make sure the file path in your application matches the file path in the Rookout source view.
