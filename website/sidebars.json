@@ -7,7 +7,7 @@
       "agent-setup",
       "sandbox-getting-started"
     ],
-    "Rules":[
+    "Rookout Rules":[
       "rules-intro-basics",
       "rules-intro-capabilities",
       "rules-intro-troubleshooting",
@@ -22,7 +22,7 @@
       "integrations-overview",
       "troubleshooting-rules"
     ],
-    "Reference": [
+    "Scripting Reference": [
       "rules",
       "rules-aug",
       "rules-uses",
