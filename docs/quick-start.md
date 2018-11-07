@@ -28,9 +28,8 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
 $ pip install rook
 
 # Import the package in your app's entry-point file, just before it starts
-from rook.interface import Rook
-r = Rook()
-r.start(token='[Your Rookout Token]')  
+import rook
+rook.start(token='[Your Rookout Token]')  
 
 if __name__ == "__main__":
     # Your program starts here :)

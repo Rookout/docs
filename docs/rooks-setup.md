@@ -28,9 +28,8 @@ $ pip install rook
 
 Import the Rook within your application:
 ```python
-from rook.interface import Rook
-r = Rook()
-r.start(token='[Your Rookout Token]')
+import rook
+rook.start(token='[Your Rookout Token]')
 
 if __name__ == "__main__":
     # Your program starts here :)
@@ -45,8 +44,7 @@ This is due to the fact that in Python, there's no clean way to identify a modul
 The Rookout SDK API offers the following methods
 
 ```python
-start(self,
-    token=None,
+start(token=None,
     host=None,
     port=None,
     debug=None,
@@ -69,7 +67,7 @@ The `start` method is used to initialize the Rookout SDK in the background and a
 1. `log_to_stderr` - Set to `True` to have the SDK log to stderr. May also be set using the environment variable `ROOKOUT_LOG_TO_STDERR`.
 
 ```python
-flush(self)
+flush()
 ```
 
 The `flush` method allows explicitly flushing the Rookout logs and messages.
