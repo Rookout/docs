@@ -1,7 +1,9 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
-if (document.getElementById) document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-3"></script>');
-
-
+if (document.getElementById) {
+  document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-3"></script>' /
+  '<script src="https://cdn.logrocket.io/LogRocket.min.js" crossorigin="anonymous"></script>' /
+  '<script>window.LogRocket && window.LogRocket.init("fzkqiz/rookout");</script>');
+}
 
 
 $(function () {
