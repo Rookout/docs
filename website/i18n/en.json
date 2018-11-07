@@ -26,16 +26,6 @@
     "Related Concepts": "Related Concepts",
     "rules-intro-status": "Rule Status",
     "Rule Status": "Rule Status",
-    "rules-namespaces-agent": "Agent Namespace",
-    "rules-namespaces-container": "Container Namespace",
-    "rules-namespaces-frame": "Frame Namespace",
-    "rules-namespaces": "Namespaces Overview",
-    "rules-namespaces-machine": "Machine Namespace",
-    "rules-namespaces-object": "Object Namespace",
-    "rules-namespaces-rook": "Rook Namespace",
-    "rules-namespaces-stack": "Stack Namespace",
-    "rules-namespaces-utils": "Utils Namespace",
-    "rules-operations": "Script Operations",
     "sandbox-getting-started": "Sample app Tutorials",
     "Sample app Tutorials": "Sample app Tutorials",
     "troubleshooting": "Overview",
@@ -43,8 +33,7 @@
     "Getting Started": "Getting Started",
     "Rookout Rules": "Rookout Rules",
     "Additional Info": "Additional Info",
-    "How To": "How To",
-    "Scripting Reference": "Scripting Reference"
+    "How To": "How To"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",

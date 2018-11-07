@@ -23,16 +23,6 @@
       "getting-started",     
       "integrations-overview",
       "troubleshooting-rules"
-    ],
-    "Scripting Reference": [
-      "rules-namespaces-container",
-      "rules-namespaces-object",
-      "rules-namespaces-frame",
-      "rules-namespaces-stack",
-      "rules-namespaces-utils",
-      "rules-namespaces-rook",
-      "rules-namespaces-agent",
-      "rules-namespaces-machine"
     ]
   }
 }
