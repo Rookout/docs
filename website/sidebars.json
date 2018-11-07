@@ -11,7 +11,9 @@
       "rules-intro-basics",
       "rules-intro-capabilities",
       "rules-intro-status",
-      "rules-intro-concepts"
+      "rules-intro-concepts",
+      "rules",
+      "rules-aug"
     ],
     "Additional Info": [
       "rooks-config",
@@ -21,22 +23,6 @@
       "getting-started",     
       "integrations-overview",
       "troubleshooting-rules"
-    ],
-    "Scripting Reference": [
-      "rules",
-      "rules-aug",
-      "rules-uses",
-      "rules-paths",
-      "rules-operations",
-      "rules-namespaces",
-      "rules-namespaces-container",
-      "rules-namespaces-object",
-      "rules-namespaces-frame",
-      "rules-namespaces-stack",
-      "rules-namespaces-utils",
-      "rules-namespaces-rook",
-      "rules-namespaces-agent",
-      "rules-namespaces-machine"
     ]
   }
 }
