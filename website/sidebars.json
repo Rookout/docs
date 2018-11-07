@@ -25,11 +25,6 @@
       "troubleshooting-rules"
     ],
     "Scripting Reference": [
-
-      "rules-uses",
-      "rules-paths",
-      "rules-operations",
-      "rules-namespaces",
       "rules-namespaces-container",
       "rules-namespaces-object",
       "rules-namespaces-frame",
