@@ -58,11 +58,7 @@ python app.py
 <div data-tab-content="content3" class="tab-content hljs">
 
 ```bash
-git clone https://github.com/Rookout/tutorial-python
-export ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-python
-docker build . -t tutorial-python
-docker run -p 5000:5000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-python
+docker run -p 5000:5000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial-python
 ```
 
 </div>
@@ -223,11 +219,7 @@ npm start
 <div data-tab-content="content3" class="tab-content hljs">
 
 ```bash
-git clone https://github.com/Rookout/tutorial-nodejs
-export ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-nodejs
-docker build . -t tutorial-nodejs
-docker run -p 4000:4000 -e ROOKOUT_TOKEN=$ROOKOUT_TOKEN tutorial-nodejs
+docker run -p 4000:4000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial-nodejs
 ```
 
 </div>
@@ -396,12 +388,7 @@ gradle bootJar run
 <div data-tab-content="content3" class="tab-content hljs">
 
 ```bash
-git clone https://github.com/Rookout/tutorial-java.git
-export ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-java
-docker run --rm -v "$(shell pwd)":/home/gradle/project -w /home/gradle/project gradle:4.8.0-jdk8-alpine gradle -i bootJar
-docker build . -t tutorial-java
-docker run -p 8080:8080 -e "ROOKOUT_TOKEN=[Your Rookout Token]" tutorial-java
+docker run -p 8080:8080 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial-java
 ```
 
 </div>
