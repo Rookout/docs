@@ -1,7 +1,7 @@
 ---
-id: rules-intro-concepts
-title: Related Concepts
-sidebar_label: Related Concepts
+id: rules-intro-workspaces
+title: Workspaces
+sidebar_label: Workspaces
 ---
 
 ## Workspaces
