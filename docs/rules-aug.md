@@ -730,9 +730,271 @@ If we return a **collection of objects** such as **frame.newFriendList**, we can
 
 ### Frame Namespace
 
+The frame namespace allows access to the current scope of execution.
+
+It supports the following access patterns:
+
+#### Attribute Access
+Will provide the value of the given attribute within the current context (i.e. local or global variable).
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.a": "frame.a"
+  }
+}
+``` 
+
+#### filename
+Get the currently executing file name.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.filename": "frame.filename()"
+  }
+}
+``` 
+
+#### line
+Get the currently executing line number.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.line": "frame.line()"
+  }
+}
+``` 
+
+#### function
+Get the currently executing function/method name.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.function": "frame.function()"
+  }
+}
+``` 
+
+#### module
+Get the currently executing module/class name.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.module": "frame.module()"
+  }
+}
+``` 
+
+#### locals
+Get the all locals within the current scope.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.locals": "frame.locals()"
+  }
+}
+``` 
+
+#### dump
+Builds a namespace with the following values: locals, module, filename, line, function.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.dump": "frame.dump()"
+  }
+}
+```
+
 ### Stack Namespace
 
+The stack namespace allows traversal up to stack to process current context and get variables higher up the stack (Python only).
+
+It supports the following access patterns:
+
+#### Key Access
+Using a numeric key access, a specific frame up the stack can be accessed (the returned object is a [Frame Namspace](/scripts/namespaces/frame)).
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.frame5_a": "stack[5].a"
+  }
+}
+```
+
+#### traceback
+This method call extracts the full traceback to the given depth (by default 1000).
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.traceback": "stack.traceback(50)"
+  }
+}
+``` 
+
+#### frames
+This method preforms a full frame dump to all frames in the stack up to the given depth (by default 100).
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.framse": "stack.frames(50)"
+  }
+}
+```
+
 ### Utils Namespace
+
+The utils namespace allows access to various globals in the application state.
+
+It contains the following methods:
+
+#### exception
+Get current exception.
+Supported on Python only.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.exception": "utils.exception()"  
+  }
+}
+```
+
+#### exception_string
+Get current exception as string.
+Supported on Python only.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.exception": "utils.exception_string()"
+  }
+}
+```
+
+#### exception_type
+Get current exception type.
+Supported on Python only.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.exception": "utils.exception_type()"
+  }
+}
+```
+
+#### module
+Get a reference to *Python module*/*Java class* by name.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.os": "utils.module(os)"
+  }
+}
+```
+
+#### thread_id
+Get current thread id.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.thread_id": "utils.thread_id()"
+  }
+}
+```
+
+#### thread_name
+Get current thread name.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.thread_name": "utils.thread_name()"
+  }
+}
+```
+
+#### threads
+Get a list of all running threads.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.threads": "utils.threads()"
+  }
+}
+```
+
+#### threads_tracebacks
+Get a list of all running threads with their tracebacks.
+
+Example:
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.thread_tracebacks": "utils.thread_tracebacks()"
+  }
+}
+```
+
+#### env
+Get the value of an environment variable
+
+Example
+```json
+{
+  "name": "set",
+  "paths": {
+    "store.path": "utils.env(PATH)"
+  }
+}
+```
 
 ### Rook Namespace
 
