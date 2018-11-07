@@ -20,9 +20,4 @@ If you fail to see a debug message, or if the rule you set failed to become Acti
 
 ## What next?
 
-To learn more about Rule capabilities, try the following pages:
-- [Rule Capabilities](rules-intro-capabilities.md)
-- [Rule Status](rules-intro-status.md)
-- [Related Concepts](rules-intro-related.md)
-
 To review the full Rule API check out the [Reference Section](rules-index.md).
