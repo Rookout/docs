@@ -3,23 +3,26 @@
     "Getting Started": [
       "welcome",
       "quick-start",
-      "getting-started",     
-      "sandbox-getting-started"
-    ],
-    "Basic Setup": [
+      "sandbox-getting-started",
       "rooks-setup",
-      "integrations-overview",
-      "agent-setup"
+      "agent-setup"      
     ],
-    "Advanced Setup": [
+    "Rookout Rules":[
+      "rules-intro-basics",
+      "rules-intro-capabilities",
+      "rules-intro-status",
+      "rules-intro-concepts"
+    ],
+    "Additional Info": [
       "rooks-config",
-      "integrations",
+      "integrations"
+    ],
+    "How To": [
+      "getting-started",     
+      "integrations-overview",
       "troubleshooting-rules"
     ],
-    "Concepts":[
-      "reference"
-    ],
-    "Reference": [
+    "Scripting Reference": [
       "rules",
       "rules-aug",
       "rules-uses",
