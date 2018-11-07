@@ -1,6 +1,6 @@
 ---
 id: rules-aug
-title: Aug Specification
+title: Scripting Reference
 ---
 
 

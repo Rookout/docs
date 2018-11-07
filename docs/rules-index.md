@@ -1,6 +1,6 @@
 ---
 id: rules
-title: Rules Overview
+title: Scripting Overview
 ---
 
 Rookout Rules (yea, we couldn't help ourselves...) let you define a set of non-breaking breakpoints anywhere in your application code.

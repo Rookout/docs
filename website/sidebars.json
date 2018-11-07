@@ -11,7 +11,9 @@
       "rules-intro-basics",
       "rules-intro-capabilities",
       "rules-intro-status",
-      "rules-intro-concepts"
+      "rules-intro-concepts",
+      "rules",
+      "rules-aug"
     ],
     "Additional Info": [
       "rooks-config",
@@ -23,8 +25,7 @@
       "troubleshooting-rules"
     ],
     "Scripting Reference": [
-      "rules",
-      "rules-aug",
+
       "rules-uses",
       "rules-paths",
       "rules-operations",
