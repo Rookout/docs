@@ -212,7 +212,7 @@ Import the Rookout SDK within your application:
 ```javascript
 const rook = require('rookout');
 
-rookout.start({
+rook.start({
     token: '[Your Rookout Token]'
 })
 ```

@@ -45,7 +45,7 @@ $ npm install --save rookout
 // Require the package in your app's entry-point file
 const rook = require('rookout');
 
-rookout.start({
+rook.start({
     token: '[Your Rookout Token]'
 })
 ```
