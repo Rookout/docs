@@ -257,9 +257,9 @@ Rookout also supports inline source maps.
 
 To make sure Rookout can validate the source file matches the file you are tryring to debug using hash comparison, we recommend building your source map with the full source code.
 
-For [**Weback**](https://webpack.js.org/) we recommend the `source-map` and `inline-source-map` options for [devtool](https://webpack.js.org/configuration/devtool/).  
-For [**babel-cli**](https://babeljs.io/docs/en/babel-cli) we recommend the `--source-maps` or `--source-maps inline` flags.  
-For [**Typescript**](https://www.typescriptlang.org/) we recommend the `--inlineSources` flags.  
+- [**Weback**](https://webpack.js.org/) requires the `source-map` and `inline-source-map` options for [devtool](https://webpack.js.org/configuration/devtool/).  
+- [**babel-cli**](https://babeljs.io/docs/en/babel-cli) requires the `--source-maps` or `--source-maps inline` flags.  
+- [**Typescript**](https://www.typescriptlang.org/) requires the `--inlineSources` flag.  
 
 ## Source Commit Detection
 
