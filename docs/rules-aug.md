@@ -77,8 +77,7 @@ Example:
 
 ## action
 
-Rookout currently only supports the script action. For more information on *scripts* check the [overview](/scripts) page
-or the [uses](rules-uses.md#actions) page.
+Rookout currently only supports the script action:
 
 Example:
 ```json

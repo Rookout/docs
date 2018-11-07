@@ -30,8 +30,8 @@ True/False for each Rook.
 1. **processing** - this section defines the data processing in the agent and sending the data to various targets. 
 It is in the form of a *script*.
 1. **server_processing** - this section allows configuring data processing as a service using the Rookout Cloud. Coming Soon!
-1. **aug** - this section defines the way the data is extracted from the application. It is comprised of multiple 
-sub-sections, more about them can be read [here](rules-aug.md). A quick overview:
+1. **aug** - short for "augmentation", this section defines the way the data is extracted from the application. It is comprised of multiple 
+sub-sections:
     1. **location** - this section defines the event this aug applies to.
     2. **condition** - this section defines any additional limitations on when to execute the aug.
     3. **extractor** - this section defines any additional information to extract from the application before runnig the 
@@ -70,5 +70,6 @@ This script is simply a sequence of two operations:
 1. The format operation used to construct the "Hello World" string and store it in the "temp" namespace.
 1. The send_rookout operation used to read the message from the namespace and send it to the Rookout Cloud.
 
- For more information check out the [uses](rules-uses.md) of scripts in Rookout and the available 
- [operations](rules-operations.md) and [paths](rules-paths.md).
+## What's next?
+
+ For detailed scripting guidance checkout the [Rule Scripting Reference](rules-aug.md) section.
