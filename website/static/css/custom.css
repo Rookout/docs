@@ -300,6 +300,7 @@ pre code, [class*="hljs"]  {
     font-family: Roboto Mono, sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 25px;
 }
 
 .bold {
