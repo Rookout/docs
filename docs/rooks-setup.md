@@ -155,14 +155,21 @@ $ apk update && apk add g++ python-dev
 </div>
 </div>
 
+## Pre-forking servers
 
-## uWSGI deployment
+Several popular application servers load the application code during startup and then `fork()` the process multiple times to worker processes. This speeds up application loading (because the code is loaded only once), reduces memory usage (because the operating system provides memory copy-on-write, so regions of memory that are not written to are not duplicated) and provides fast creation of new worker process throughout the application's lifetime. Unfortuneately, this approach has some drawbacks, mainly that background threads are not cloned to the new process. `fork()` only clones that thread that called it (for more information, see [Threads and fork(): think twice before mixing them](http://www.linuxprogrammingblog.com/threads-and-fork-think-twice-before-using-them)).
 
-If you are running your application in a [uWSGI server](https://uwsgi-docs.readthedocs.io/en/latest/), you will need to take a couple of extra steps when using Rookout.
+Rookout uses background thread to communicate with the Router, to receive rules and transmit status updates and data. Due to this, the Rook cannot be initialized before the worker processes are created. Instead, Rooks must be started after the worker process has started. Every application server provides its own mechanism for this, see below for examples for popular servers.
 
-1. When starting uWSGI, add the __--enable-threads__ option when starting the server. Alternatively, set __enable-threads = true__ in the uWSGI ini file.
-
-2. When running the Rook SDK within your code, use the following snippet to make sure the Rook is loaded in all worker processes.
+<div class="tab-container">
+<input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
+<label for="tab1" class="tab-title snippet">uWSGI</label>
+<input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
+<label for="tab2" class="tab-title snippet">Gunicorn</label>
+<input id="tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
+<label for="tab3" class="tab-title snippet">Celery</label>
+<div data-tab-content="content1" class="tab-content hljs">
+Use this snippet to run code after uWSGI forks:
 
 ```python
 try:
@@ -174,6 +181,34 @@ try:
 except ImportError:
     from rook import auto_start
 ```
+
+In addition, threads in uWSGI are disabled by default. To enable, add the __--enable-threads__ option when starting the server. Alternatively, set __enable-threads = true__ in the uWSGI ini file
+
+</div>
+<div data-tab-content="content2" class="tab-content hljs">
+Gunicorn by default does not preload applications, so this is not usually necessary. If you start Gunicorn with `--preload`, you will need to load Rookout with a post-fork hook.
+Post-fork hooks in Gunicorn go in a separate config file:
+
+```python
+# gunicorn_config.py
+def post_fork(server, worker):
+    from rook import auto_start
+```
+
+This file is loaded via the `-c` flag to Gunicorn: `gunicorn -c python:gunicorn_config server:app`.
+
+</div>
+<div data-tab-content="content3" class="tab-content hljs">
+Use the `worker_process_init` signal to load Rookout on worker start:
+
+```python
+from celery.signals import worker_process_init
+@worker_process_init.connect
+def start_rook(*args, **kwargs):
+    from rook import auto_start
+```
+</div>
+</div>
 
 ## Serverless and PaaS deployments
 
