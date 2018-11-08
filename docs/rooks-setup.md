@@ -45,6 +45,7 @@ The Rookout SDK API offers the following methods
 
 ```python
 start(token=None,
+    tags=None,
     host=None,
     port=None,
     debug=None,
@@ -58,6 +59,7 @@ start(token=None,
 The `start` method is used to initialize the Rookout SDK in the background and accepts the following arguments:
 
 1. `token` - The Rookout Token for your organization. May also be set using the environment variable `ROOKOUT_TOKEN`. *Note*: this should left as None if you are using the Rookout Agent.
+1. `tags` - Set to a list of strings you want for this application instance. May also be set using the environment variable `ROOKOUT_ROOK_TAGS` (use *;* as a seperator).
 1. `host` - If you are using a Rookout agent, this is the hostname for it. May also be set using the environment variable `ROOKOUT_AGENT_HOST`.
 1. `port` - If you are using a Rookout agent, this is the port for it. May also be set using the environment variable `ROOKOUT_AGENT_PORT`.
 1. `debug` - Set to `True` to increase log level to debug. May also be set using the environment variable `ROOKOUT_DEBUG`.
