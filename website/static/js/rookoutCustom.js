@@ -102,9 +102,6 @@ function setRookoutTokenInPage(data) {
     const token = data['token'];
     const org_name = data['org_name'] || 'unknown';
     let current_user = data['current_user'] || null;
-    if (current_user) {
-      current_user = JSON.parse(current_user);
-    }
 
     if (token) {
       body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
