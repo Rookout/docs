@@ -4,21 +4,16 @@ title: Tagging
 sidebar_label: Tagging
 ---
 
-A Rookout Rule is defined in the context of a Workspace.  
-A Workspace lets you define the source code to which the Rule is applied to, and offers filtering capabilities (using tags).  
-A Workspace allows multiple users to debug the same environment, setting Rules and viewing debug messages online.  
-Alternatively, a Workspace can be used to segment environments so each user can debug his own application instances.  
+A Rookout Rule is defined in the context of a Workspace, and may be used to debug one or more instances of the same application.
+Tags may be applied to an application instance when the Rookout SDK is loaded, and later used as filters when creating a Workspace.
 
-### Workspace creation
+## Tagging your App Instance
 
-- When creating a Workspace, you may define one or more source repositories that may be debugged in the context of the Workspace.
+Passing tags to your Rooks.
+Common use cases, including diagrams.
 
-- You may also define a set of tags which correspond to tags applied to specific application instances when loading the Rookout SDK.  
-For example, by setting a Dev/Staging/Production tag when loading the SDK, you can create separate Workspaces for debugging the Dev, Staging or Production version of the same application.  
-Another common use for tags and worksapces is to debug multiple instances of the same app, where each instance is deployed in another customer's environment, or in another cloud location.
+## Filtering your Workspace
 
-### Adding Rules
-
-When a Rule is added, the selected Workspace is automatically added to the underlying Rule definition.
-The Rule and Debug Messages related to it will only be visible in the Rookout IDE to users who have selected the same workspace.
+Once your application instances have been tagged, you may apply the same tags as filters in your Workspaces.
+For example, you could create separate workspaces for debugging different instances of the same application, or to debug the same application in different environments (dev/staging/prod, local/aws/gcp, etc.).
 
