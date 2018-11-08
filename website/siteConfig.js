@@ -46,6 +46,7 @@ const siteConfig = {
     theme: 'default',
   },
   scripts: [
+    'https://cdn.logrocket.io/LogRocket.min.js',
     'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
     'https://buttons.github.io/buttons.js',
     'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
