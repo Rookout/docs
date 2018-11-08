@@ -142,7 +142,7 @@ code {
     background-color: #533C92;
     color: white;
     padding: 5px 10px;
-    margin: -10px 10px 0 10px;
+    margin: 0 -2px 0 0;
     border-radius: 0 0 5px 5px;
 }
 
@@ -171,7 +171,6 @@ section.page-tab-container {
 }
 
 div.page-tab-content {
-    display: none;
     padding: 0;
     margin: 0;
 }
@@ -211,6 +210,41 @@ input:checked + label {
 
 /* Tabs Component */
 
+ul.nav-tabs {
+    margin-top: 1em;
+    padding: 0 !important;
+}
+
+ul.nav-tabs li {
+    list-style: none;
+    margin: 0 !important;
+}
+
+.nav-tabs .nav-link {
+    color: #bbb;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: transparent !important;
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid #533C92;
+    border-bottom: 1px solid #fff;
+}
+
+.nav-tabs .nav-link:hover {
+    text-decoration: none !important;
+    color: #555 !important;
+}
+
+.nav-tabs .nav-link:focus {
+    text-decoration: none !important;
+}
+
 div.tab-container {
     min-width: 50%;
     max-width: 100%;
@@ -219,7 +253,6 @@ div.tab-container {
 }
 
 div.tab-content {
-    display: none;
     padding: 0;
     border-top: 1px solid #ddd;
 }
@@ -228,9 +261,6 @@ div.tab-content .hljs {
     margin: 0;
 }
 
-input.tab-button {
-    display: none;
-}
 
 label.tab-title {
     display: inline-block;
@@ -238,7 +268,6 @@ label.tab-title {
     padding: 15px 25px;
     font-weight: 600;
     text-align: center;
-    color: #bbb;
     border: 1px solid transparent;
 }
 
@@ -305,6 +334,7 @@ pre code, [class*="hljs"]  {
 
 
 pre {
+    overflow: initial !important;
     white-space: pre-wrap;       /* css-3 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */

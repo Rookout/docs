@@ -14,14 +14,21 @@ Sign up to [Rookout](https://app.rookout.com).
 
 Install the Rookout SDK (aka 'Rook') by following these steps:
 
-<div class="tab-container">
-<input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
-<label for="tab1" class="tab-title snippet">Python</label>
-<input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
-<label for="tab2" class="tab-title snippet">Node.JS</label>
-<input id="tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
-<label for="tab3" class="tab-title snippet">JVM</label>
-<div data-tab-content="content1" class="tab-content hljs">
+
+<ul class="nav nav-tabs" id="quick-start" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="home" aria-selected="true">Python</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="profile" aria-selected="false">Node.JS</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="contact" aria-selected="false">JVM</a>
+</li>
+</ul>
+
+<div class="tab-content" id="quick-start">
+<div class="tab-pane fade show active" id="python" role="tabpanel">
 
 ```python
 # Install the Rookout pypi package
@@ -36,7 +43,7 @@ if __name__ == "__main__":
 ```
 
 </div>
-<div data-tab-content="content2" class="tab-content hljs">
+<div class="tab-pane fade" id="node" role="tabpanel">
 
 ```javascript
 // Install the npm package
@@ -51,7 +58,7 @@ rook.start({
 ```
 
 </div>
-<div data-tab-content="content3" class="tab-content hljs">
+<div class="tab-pane fade" id="jvm" role="tabpanel">
 
 ```bash
 // Download our java agent
