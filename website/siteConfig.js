@@ -54,10 +54,12 @@ const siteConfig = {
     '/js/rookoutCustom.js',
     '/js/code-blocks-buttons.js'
   ],
+  /* It takes all the CSS into main.css anyway
   stylesheets: [
     '/css/docsearch.css',
     '/css/code-blocks-buttons.css'
   ],
+  */
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/Rookout/docs',
   /* On page navigation for the current documentation page */
