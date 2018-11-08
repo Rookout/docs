@@ -8,9 +8,15 @@ $(function () {
   initGA();
   initLogRocket();
   customizeSearchInput();
+  changeLogoLink();
   loadRookoutToken();
   setTimeout(loadTabsForOS, 1000);
 });
+
+
+function changeLogoLink() {
+  $('header a[href="/"]').attr('href', 'https://www.rookout.com');
+}
 
 
 function initLogRocket() {
