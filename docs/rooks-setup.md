@@ -5,7 +5,7 @@ sidebar_label: Rook Setup
 ---
 
 
-<ul class="nav nav-tabs page-tabs" id="sample-apps" role="tablist">
+<ul class="nav nav-tabs page-tabs" id="rooks-setup" role="tablist">
 <li class="nav-item">
 <a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="true">Python</a>
 </li>
@@ -17,7 +17,7 @@ sidebar_label: Rook Setup
 </li>
 </ul>
 
-<div class="tab-content page-tabs-content" id="quick-start">
+<div class="tab-content page-tabs-content" id="rooks-setup">
 <div class="tab-pane fade show active" id="python" role="tabpanel">
 
 ## Python

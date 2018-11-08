@@ -282,6 +282,7 @@ pre {
 
 code.hljs {
     padding-right: 90px !important;
+    margin-bottom: 0;
 }
 
 .bold {
