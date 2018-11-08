@@ -5,15 +5,20 @@ sidebar_label: Rook Setup
 ---
 
 
-<section class="page-tab-container">
-<input id="page-tab1" data-lang="python" type="radio" name="page-tabs" class="tab-button" checked="true" />
-<label for="page-tab1" class="page-tab-title">Python</label>
-<input id="page-tab2" data-lang="node" type="radio" name="page-tabs" class="tab-button" />
-<label for="page-tab2" class="page-tab-title">Node.JS</label>
-<input id="page-tab3" data-lang="jvm" type="radio" name="page-tabs" class="tab-button" />
-<label for="page-tab3" class="page-tab-title">JVM</label>
+<ul class="nav nav-tabs page-tabs" id="rooks-setup" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="true">Python</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="node" aria-selected="false">Node.JS</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="jvm" aria-selected="false">JVM</a>
+</li>
+</ul>
 
-<div id="page-content1" class="page-tab-content">
+<div class="tab-content page-tabs-content" id="rooks-setup">
+<div class="tab-pane fade show active" id="python" role="tabpanel">
 
 ## Python
 
@@ -34,7 +39,7 @@ rook.start(token='[Your Rookout Token]')
 if __name__ == "__main__":
     # Your program starts here :)
 ```
-<div class="rookout-org-info org-info-normal-snippet"></div>
+<div class="rookout-org-info"></div>
 
 The Rook should be imported as late as possible within the application.
 This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
@@ -116,37 +121,45 @@ If you encounter an error similar to the following example, be sure to install t
 ```
 
 Here are the commands for installing the build environments for some common OS:
-<div class="tab-container">
-<input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
-<label for="tab1" class="tab-title snippet">OS X</label>
-<input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
-<label for="tab2" class="tab-title snippet">Debian</label>
-<input id="tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
-<label for="tab3" class="tab-title snippet">Fedora</label>
-<input id="tab4" data-tab="tab4" type="radio" name="tabs" class="tab-button" />
-<label for="tab4" class="tab-title snippet">Alpine</label>
-<div data-tab-content="content1" class="tab-content hljs">
+
+<ul class="nav nav-tabs" id="build-envs" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="osx-tab" data-toggle="tab" href="#osx" role="tab" aria-controls="osx" aria-selected="true">OS X</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="debian-tab" data-toggle="tab" href="#debian" role="tab" aria-controls="debian" aria-selected="false">Debian</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="fedora-tab" data-toggle="tab" href="#fedora" role="tab" aria-controls="fedora" aria-selected="false">Fedora</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="alpine-tab" data-toggle="tab" href="#alpine" role="tab" aria-controls="alpine" aria-selected="false">Alpine</a>
+</li>
+</ul>
+
+<div class="tab-content" id="build-envs">
+<div class="tab-pane fade show active" id="osx" role="tabpanel">
 
 ```bash
 $ xcode-select --install
 ```
 
 </div>
-<div data-tab-content="content2" class="tab-content hljs">
+<div class="tab-pane fade" id="debian" role="tabpanel">
 
 ```bash
 $ apt-get update -q && apt-get install -qy g++ python-dev
 ```
 
 </div>
-<div data-tab-content="content3" class="tab-content hljs">
+<div class="tab-pane fade" id="fedora" role="tabpanel">
 
 ```bash
 $ yum install -qy gcc-c++ python-devel
 ```
 
 </div>
-<div data-tab-content="content4" class="tab-content hljs">
+<div class="tab-pane fade" id="alpine" role="tabpanel">
 
 ```bash
 $ apk update && apk add g++ python-dev
@@ -191,7 +204,7 @@ For more information check out this blog post: https://www.rookout.com/3_min_hac
 
 </div>
 
-<div id="page-content2" class="page-tab-content">
+<div class="tab-pane fade" id="node" role="tabpanel">
 
 ## Node.js
 
@@ -218,7 +231,7 @@ rook.start({
     token: '[Your Rookout Token]'
 })
 ```
-<div class="rookout-org-info org-info-normal-snippet"></div>
+<div class="rookout-org-info"></div>
 
 **Optional:** You may also set your token as an environment variable:
 
@@ -227,7 +240,7 @@ rook.start({
 // Export your token as an environment variable
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
 ```
-<div class="rookout-org-info org-info-normal-snippet"></div>
+<div class="rookout-org-info"></div>
 
 2. Import the Rook within your application using auto_start:
 ```javascript
@@ -301,7 +314,7 @@ For more information check out this blog post: https://www.rookout.com/3_min_hac
 
 </div>
 
-<div id="page-content3" class="page-tab-content">
+<div class="tab-pane fade" id="jvm" role="tabpanel">
 
 ## JVM
 
@@ -401,5 +414,3 @@ For using Java under a Serverless/PaaS environment, the following must be taken 
 - In some Serverless environments, the tools.jar library is missing and must be included within your package as well.
 
 </div>
-
-</section>
