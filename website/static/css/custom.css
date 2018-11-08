@@ -156,55 +156,19 @@ code {
 }
 
 
-.org-info-normal-snippet {
-    margin: -20px 0 0 0;
-}
-
 /* Page Tab Component */
 
 
-section.page-tab-container {
-    min-width: 100%;
-    max-width: 100%;
-    padding: 10px 10px;
-    margin: 0 auto;
-}
-
-div.page-tab-content {
-    padding: 0;
-    margin: 0;
-}
-
-label.page-tab-title {
-    display: inline-block;
-    margin: 0 0 -1px;
-    padding: 15px 25px;
-    font-weight: 600;
-    text-align: center;
-    color: #bbb;
+.page-tabs {
     float: right;
     border-bottom: 2px solid #533C92;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
-label:hover {
-    color: #888;
-    cursor: pointer;
-}
-
-input:checked + label {
-    color: #555;
-}
-
-#page-tab1:checked ~ #page-content1,
-#page-tab2:checked ~ #page-content2,
-#page-tab3:checked ~ #page-content3,
-#page-tab4:checked ~ #page-content4,
-#page-tab5:checked ~ #page-content5,
-#page-tab6:checked ~ #page-content6,
-#page-tab7:checked ~ #page-content7,
-#page-tab8:checked ~ #page-content8{
-    display: block;
-    padding-top: 50px;
+.page-tabs-content {
+    padding-top: 50px !important;
 }
 
 
@@ -254,43 +218,16 @@ div.tab-container {
 
 div.tab-content {
     padding: 0;
-    border-top: 1px solid #ddd;
 }
 
 div.tab-content .hljs {
     margin: 0;
 }
 
-
-label.tab-title {
-    display: inline-block;
-    margin: 0 0 -1px;
-    padding: 15px 25px;
-    font-weight: 600;
-    text-align: center;
-    border: 1px solid transparent;
+input.tab-button {
+    display: none;
 }
 
-label:hover {
-    color: #888;
-    cursor: pointer;
-}
-
-input:checked + label.snippet {
-    color: #555;
-    border: 1px solid #ddd;
-    border-top: 2px solid #533C92;
-    border-bottom: 1px solid #fff;
-}
-
-[data-tab="tab1"]:checked ~ [data-tab-content="content1"],
-[data-tab="tab2"]:checked ~ [data-tab-content="content2"],
-[data-tab="tab3"]:checked ~ [data-tab-content="content3"],
-[data-tab="tab4"]:checked ~ [data-tab-content="content4"],
-[data-tab="tab5"]:checked ~ [data-tab-content="content5"],
-[data-tab="tab6"]:checked ~ [data-tab-content="content6"] {
-    display: block;
-}
 
 
 @media screen and (max-width: 650px) {
@@ -329,7 +266,7 @@ pre code, [class*="hljs"]  {
     font-family: Roboto Mono, sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height: 25px;
+    min-height: 38px;
 }
 
 
@@ -343,7 +280,7 @@ pre {
 }
 
 
-code {
+code.hljs {
     padding-right: 90px !important;
 }
 
