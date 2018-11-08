@@ -1,15 +1,21 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-if (document.getElementById) document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-3"></script>');
-
-
+/* Global site tag (gtag.js) - Google Analytics */
+if (document.getElementById) {
+  document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-3"></script>');
+}
 
 
 $(function () {
   initGA();
+  initLogRocket();
   customizeSearchInput();
   loadRookoutToken();
   setTimeout(loadTabsForOS, 1000);
 });
+
+
+function initLogRocket() {
+  window.LogRocket && window.LogRocket.init("fzkqiz/rookout");
+}
 
 
 function initGA() {
@@ -89,10 +95,20 @@ function setRookoutTokenInPage(data) {
   if (data) {
     const token = data['token'];
     const org_name = data['org_name'] || 'unknown';
+    let current_user = data['current_user'] || null;
+    if (current_user) {
+      current_user = JSON.parse(current_user);
+    }
 
     if (token) {
       body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
       $('.rookout-org-info').html(`Showing token for <b>${org_name}</b>. Keep your token private.`);
+      if (current_user) {
+        window.LogRocket.identify(current_user.email, {
+          name: current_user.name,
+          email: current_user.email
+        });
+      }
     } else {
       error = true;
     }
