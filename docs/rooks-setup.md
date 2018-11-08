@@ -76,7 +76,7 @@ The `flush` method allows explicitly flushing the Rookout logs and messages.
 
 ## Test connectivity
 
-To make sure the SDK was properly installed in your Python (virtual) enviorment, and test your configuration (environment variables only), run the following command:
+To make sure the SDK was properly installed in your Python (virtual) environment, and test your configuration (environment variables only), run the following command:
 ```bash
 $ python -m rook
 ```
