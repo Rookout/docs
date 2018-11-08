@@ -1,30 +1,20 @@
 ---
-id: rules-intro-workspaces
-title: Workspaces and Sources
-sidebar_label: Workspaces and Sources
+id: source-repos
+title: Source Repositories
+sidebar_label: Source Repositories
 ---
 
-## Workspaces
+A Rookout Rule is set to debug your source code.
+The source code must first be fetched from a remote repository (usually GitHub) or from the local filesystem (using the Explorook local file server).
 
-A Rookout Rule is defined in the context of a Workspace.  
-A Workspace lets you define the source code to which the Rule is applied to, and offers filtering capabilities (using tags).  
-A Workspace allows multiple users to debug the same environment, setting Rules and viewing debug messages online.  
-Alternatively, a Workspace can be used to segment environments so each user can debug his own application instances.  
+## GitHub
 
-### Workspace creation
+## File system
 
-- When creating a Workspace, you may define one or more source repositories that may be debugged in the context of the Workspace.
+Rookout provides a local file server that allows your browser (using the Rookout client) to load your source files into the Rookout IDE.
+To download and install it, add a Source to your Workspace and choose the Local Filesyste option, and follow the instructions in the setup wizard.
 
-- You may also define a set of tags which correspond to tags applied to specific application instances when loading the Rookout SDK.  
-For example, by setting a Dev/Staging/Production tag when loading the SDK, you can create separate Workspaces for debugging the Dev, Staging or Production version of the same application.  
-Another common use for tags and worksapces is to debug multiple instances of the same app, where each instance is deployed in another customer's environment, or in another cloud location.
-
-### Adding Rules
-
-When a Rule is added, the selected Workspace is automatically added to the underlying Rule definition.
-The Rule and Debug Messages related to it will only be visible in the Rookout IDE to users who have selected the same workspace.
-
-## Source Repositories
+## Repository manipulation
 
 In a simple, "vanilla" deployment, the source files and line numbers in development can easily be traced by Rookout to the corresponding files and line numbers in debugging, staging or production environments.  
 In some cases, additional steps are required to make sure Rookout can succesfully debug your code.
