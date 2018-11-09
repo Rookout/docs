@@ -8,9 +8,22 @@ $(function () {
   initGA();
   initLogRocket();
   customizeSearchInput();
+  changeLogoLink();
   loadRookoutToken();
+  enableTabs();
   setTimeout(loadTabsForOS, 1000);
 });
+
+function enableTabs() {
+  $('.nav-tabs a').on('click', function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+}
+
+function changeLogoLink() {
+  $('header a[href="/"]').attr('href', 'https://www.rookout.com');
+}
 
 
 function initLogRocket() {
@@ -96,9 +109,6 @@ function setRookoutTokenInPage(data) {
     const token = data['token'];
     const org_name = data['org_name'] || 'unknown';
     let current_user = data['current_user'] || null;
-    if (current_user) {
-      current_user = JSON.parse(current_user);
-    }
 
     if (token) {
       body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
@@ -121,7 +131,7 @@ function setRookoutTokenInPage(data) {
   }
 }
 
-
+// TODO: FIX
 function loadTabsForOS() {
   const page_tabs = $('[id^="page-tab"]');
   page_tabs.on("load change", function(e) {
@@ -147,3 +157,4 @@ function loadTabsForOS() {
     $(`[id="${lang}-tab${osToTab[os]}"]`).prop('checked', true); // Checks radio button to load the right tab
   });
 }
+

@@ -166,7 +166,6 @@ A processing script allows the user to transfom the data and load it into variou
 - **Available Namespaces:**
     - "store"- items extracted by the rook
     - "message_info"- message meta data
-    - "machine"- machine information
     - "agent"- agent information
     - "rook"- Rook information
     - "temp"- scratch space
@@ -339,7 +338,7 @@ Example:
 {
   "name": "format",
   "path": "temp.message",
-  "format": "LOG: {machine.ip}: {store.rookout.frame.filename}@{store.rookout.frame.line}-{store.rookout.frame.function}"
+  "format": "LOG: {agent.ip}: {store.rookout.frame.filename}@{store.rookout.frame.line}-{store.rookout.frame.function}"
 }
 ```
 
@@ -1005,16 +1004,22 @@ They have the following attributes:
 | Name | Type | Description|
 | ---- | ---- | ---------- |
 |**id**|string|The rook's id|
-|**version**|string|The rook's version number|
-|**commit**|string|The rook's commit identifier|
-|**platform**|string|The platform running the application|
-|**platform_type**|string|The sub-platform running the application|
-|**platform_version**|string|The platform version|
 |**executable**|string|The application being run|
 |**command_arguments**|list|The full command line|
 |**tags**|list|The rook's tags|
+|**platform**|string|The platform running the application|
+|**platform_type**|string|The sub-platform running the application|
+|**platform_version**|string|The platform version|
+|**os**|string|OS platform|
+|**os_release**|string|OS major version|
+|**os_version**|string|OS full version identifier|
+|**os_string**|string|OS Full information|
+|**ip**|string|The rook's ip as seen within the machine|
+|**external_ip**|string|The rook's ip as seen from outside the machine|
 |**user_commit**|string|The application's git commit identifier|
 |**pid**|int|The application process id|
+|**version**|string|The rook's version number|
+|**commit**|string|The rook's commit identifier|
 
 ### Agent Namespace
 
@@ -1025,28 +1030,10 @@ They have the following attributes:
 | Name | Type | Description|
 | ---- | ---- | ---------- |
 |**id**|string|The agent's id|
-|**machine_id**|string|The agent's machine id|
+|**tags**|list|The agent's tags|
+|**hostname**|string|The agent's host's name|
+|**ip**|string|The agent's ip|
+|**machine_type**|string|The machine CPU architecture|
+|**platform**|string|The agent's platform|
 |**version**|string|The agent's version|
 |**commit**|string|The agent's commit identifier|
-|**tags**|list|The agent's tags|
-
-### Machine Namespace
-
- Machine namespaces represent the current machine.
-
-**NOTE**: this currently means the machine the agent is running on. 
-In a docker deployment it will provide information from within the agent's docker.
-
-They have the following attributes:
-
-| Name | Type | Description|
-| ---- | ---- | ---------- |
-|**id**|string|The machine's id|
-|**hostname**|string|The machine's hostname|
-|**ip**|string|The machine's main IP address|
-|**machine_type**|string|The machine CPU architecture|
-|**network**|string|The network this machine resides on|
-|**os**|string|OS platform|
-|**os_release**|string|OS major version|
-|**os_version**|string|OS full version identifier|
-|**os_string**|string|OS Full information|

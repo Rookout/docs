@@ -14,26 +14,32 @@ Additional source tracing capabilities are described below.
 
 As described in the [Rook Setup](rooks-setup.md) page, the Rookout SDK supports detecting the existing source code commit in the following cases:
 
-<div class="tab-container">
-<input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
-<label for="tab1" class="tab-title snippet">Python</label>
-<input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
-<label for="tab2" class="tab-title snippet">Node.JS</label>
-<input id="tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
-<label for="tab3" class="tab-title snippet">JVM</label>
-<div data-tab-content="content1" class="tab-content">
+<ul class="nav nav-tabs" id="source-mapping" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="true">Python</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="node" aria-selected="false">Node.JS</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="jvm" aria-selected="false">JVM</a>
+</li>
+</ul>
+
+<div class="tab-content" id="source-mapping">
+<div class="tab-pane fade show active" id="python" role="tabpanel">
 
     1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
     2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
     3. If the main application is running from within a Git repository, use its head.
 
 </div>
-<div data-tab-content="content2" class="tab-content">
+<div class="tab-pane fade" id="node" role="tabpanel">
 
     Source commit detection functionality is currently not supported for Node.js.
 
 </div>
-<div data-tab-content="content3" class="tab-content">
+<div class="tab-pane fade" id="jvm" role="tabpanel">
 
     1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
     2. If the Java main application is jar/war/ear and it’s manifest includes the value “ROOKOUT_MANIFEST_COMMIT”, use it.
