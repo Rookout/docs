@@ -84,20 +84,29 @@ The Agent configuration will be saved during the update process.
 
 ### Linux Daemon Restart
 
-When modifying the configuration its important to restart the agent
-```bash
+When modifying the configuration its important to restart the agent, use one of the following:
+
+<ul class="nav nav-tabs" id="agent-restart" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="initd-tab" data-toggle="tab" href="#initd" role="tab" aria-selected="true">init.d</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="systemd-tab" data-toggle="tab" href="#systemd" role="tab" aria-selected="false">systemd</a>
+</li>
+</ul>
+
+<div class="tab-content" id="agent-restart">
+<div class="tab-pane fade show active" id="initd" role="tabpanel">
+
 $ /etc/init.d/rookout-agent restart
-```
 
-Or with systemctl command (if init.d is not supported)
-```bash
+</div>
+<div class="tab-pane fade" id="systemd" role="tabpanel">
+
 $ systemctl restart rookout-agent
-```
 
-But you can simply re-run the setup.sh with no parameters
-```bash
-$ curl -fs https://get.rookout.com | bash
-```
+</div>
+</div>
 
 ### Linux Daemon Uninstall
 
