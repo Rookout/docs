@@ -147,6 +147,10 @@
 }
 
 @media (min-width:768px) {
+    .docsNavContainer {
+        position: static;
+    }
+
     .aa-dropdown-menu {
         min-width: 600px;
     }
