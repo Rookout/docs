@@ -12,8 +12,7 @@
       "workspaces-tagging"
     ],
     "Source Repositories": [
-      "source-repos",
-      "source-mapping"
+      "source-repos"
     ],
     "Rookout Rules":[
       "rules-intro-basics",
