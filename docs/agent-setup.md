@@ -73,6 +73,37 @@ The Linux daemon is supported in the following operating systems:
 | CentOS             | 6,7          |
 | Red Hat Enterprise | Linux 6, 7|
 
+### Linux Daemon Update
+
+The linux deamon can be updated to the latest version using the following command:
+```bash
+$ curl -fs https://get.rookout.com > setup.sh
+$ bash setup.sh --update
+```
+The Agent configuration will be saved during the update process.
+
+### Linux Daemon Restart
+
+When modifying the configuration its important to restart the agent
+```bash
+$ /etc/init.d/rookout-agent restart
+```
+
+Or with systemctl command (if init.d is not supported)
+```bash
+$ systemctl restart rookout-agent
+```
+
+But you can simply re-run the setup.sh with no parameters
+```bash
+$ curl -fs https://get.rookout.com | bash
+```
+
+### Linux Daemon Uninstall
+
+```bash
+$ curl -fs https://get.rookout.com/remove_agent.sh | bash
+```
 
 ## Data Processing
 
