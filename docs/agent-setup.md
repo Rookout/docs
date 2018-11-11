@@ -98,12 +98,16 @@ When modifying the configuration its important to restart the agent, use one of 
 <div class="tab-content" id="agent-restart">
 <div class="tab-pane fade show active" id="initd" role="tabpanel">
 
+```bash
 $ /etc/init.d/rookout-agent restart
+```
 
 </div>
 <div class="tab-pane fade" id="systemd" role="tabpanel">
 
+```bash
 $ systemctl restart rookout-agent
+```
 
 </div>
 </div>
