@@ -7,11 +7,17 @@
       "rooks-setup",
       "agent-setup"      
     ],
+    "Workspaces": [
+      "workspaces",
+      "workspaces-tagging"
+    ],
+    "Source Repositories": [
+      "source-repos"
+    ],
     "Rookout Rules":[
       "rules-intro-basics",
       "rules-intro-capabilities",
       "rules-intro-status",
-      "rules-intro-workspaces",
       "rules",
       "rules-aug"
     ],
