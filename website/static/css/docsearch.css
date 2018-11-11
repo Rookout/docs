@@ -22,7 +22,7 @@
     font-size: 16px;
     margin: 6px 0 0;
     padding: 4px;
-    text-align: left
+    text-align: left;
 }
 
 .algolia-docsearch-suggestion {
@@ -46,7 +46,7 @@
 }
 
 .algolia-docsearch-suggestion__main .algolia-docsearch-suggestion--category-header {
-    display: block
+    display: block;
 }
 
 .algolia-docsearch-suggestion--highlight {
@@ -65,7 +65,7 @@
 }
 
 .aa-cursor .algolia-docsearch-suggestion {
-    background: #e7edf3
+    background: #e7edf3;
 }
 
 .algolia-docsearch-suggestion--subcategory-column {
@@ -74,7 +74,7 @@
 }
 
 .algolia-docsearch-suggestion--text {
-    display: none
+    display: none;
 }
 
 .algolia-docsearch-suggestion--content {
@@ -83,16 +83,16 @@
 
 .algolia-docsearch-suggestion__main .algolia-docsearch-suggestion--content,
 .algolia-docsearch-suggestion__secondary .algolia-docsearch-suggestion--content {
-    border-top: 0
+    border-top: 0;
 }
 
 .algolia-docsearch-suggestion--subcategory-inline {
     display: inline-block;
-    font-weight: 400
+    font-weight: 400;
 }
 
 .algolia-docsearch-suggestion--subcategory-inline:after {
-    content: " › "
+    content: " › ";
 }
 
 .algolia-docsearch-suggestion--title {
@@ -122,7 +122,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: middle;
-    padding: 0!important
+    padding: 0!important;
 }
 
 @media (max-width: 736px) {
@@ -137,22 +137,22 @@
 
 @media (min-width:568px) {
     .aa-dropdown-menu {
-        min-width: 400px
+        min-width: 400px;
     }
     .algolia-docsearch-suggestion--text {
         display: block;
         font-size: .9em;
-        padding: 2px 0
+        padding: 2px 0;
     }
 }
 
 @media (min-width:768px) {
     .aa-dropdown-menu {
-        min-width: 600px
+        min-width: 600px;
     }
     .algolia-docsearch-suggestion {
         display: table;
-        width: 100%
+        width: 100%;
     }
 
 
@@ -171,16 +171,16 @@
         min-width: 135px
     }
     .algolia-docsearch-suggestion--subcategory-column-text {
-        display: none
+        display: none;
     }
     .algolia-docsearch-suggestion__secondary .algolia-docsearch-suggestion--subcategory-column-text {
-        display: block
+        display: block;
     }
     .algolia-docsearch-suggestion--content {
         display: table-cell;
     }
     .algolia-docsearch-suggestion--subcategory-inline {
-        display: none
+        display: none;
     }
     .algolia-docsearch-suggestion--title {
         font-weight: 400;
@@ -188,6 +188,6 @@
     .algolia-docsearch-suggestion--text {
         display: block;
         font-weight: 400;
-        padding: 2px
+        padding: 2px;
     }
 }
