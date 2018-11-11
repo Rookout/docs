@@ -12,6 +12,6 @@ Rookout makes it easy debug any app deployment - cloud or local, dev or producti
 ### Can't wait to get started? Just check out our [Quick Start guide](quick-start.md).
 
 You can also try the following:
-- Check out our [Sandbox Tutorials](sandbox-getting-started.md)
+- Check out our [Sample Applications](/docs/sample-applications)
 - Find your specific deployment in our <a href="https://github.com/Rookout/deployment-examples">Deployment Examples page</a>.
 - Reach out to us if anything is unclear: support@rookout.com

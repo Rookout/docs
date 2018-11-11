@@ -1,8 +1,11 @@
 ---
-id: sandbox-getting-started
-title: Sample app Tutorials
-sidebar_label: Sample app Tutorials
+id: sample-applications
+title: Sample Applications
+sidebar_label: Sample Applications
 ---
+
+Below you will find a few sample apps with Rookout pre-installed.  
+If you prefer to set up Rookout in your own projects go over [here](/docs/quick-start).
 
 <ul class="nav nav-tabs page-tabs" id="sample-apps" role="tablist">
 <li class="nav-item">

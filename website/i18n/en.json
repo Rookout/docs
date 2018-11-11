@@ -48,9 +48,9 @@
         "title": "Rule Status",
         "sidebar_label": "Rule Status"
       },
-      "sandbox-getting-started": {
-        "title": "Sample app Tutorials",
-        "sidebar_label": "Sample app Tutorials"
+      "sample-applications": {
+        "title": "Sample Applications",
+        "sidebar_label": "Sample Applications"
       },
       "source-repos": {
         "title": "Source Repositories",

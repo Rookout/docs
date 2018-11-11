@@ -3,7 +3,8 @@ id: quick-start
 title: Quick Start
 ---
 
-To set up Rookout in your environment, follow these steps:
+To install the Rookout SDK and start debugging your project, follow this quick start guide.  
+You can also check out our pre-configured example projects over [here](sample-applications.md).
 
 ### 1. Sign Up
 
