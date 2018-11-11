@@ -174,14 +174,23 @@ Several popular application servers load the application code during startup and
 
 Rookout uses background thread to communicate with the Router, to receive rules and transmit status updates and data. Due to this, the Rook cannot be initialized before the worker processes are created. Instead, Rooks must be started after the worker process has started. Every application server provides its own mechanism for this, see below for examples for popular servers.
 
-<div class="tab-container">
-<input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
-<label for="tab1" class="tab-title snippet">uWSGI</label>
-<input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
-<label for="tab2" class="tab-title snippet">Gunicorn</label>
-<input id="tab3" data-tab="tab3" type="radio" name="tabs" class="tab-button" />
-<label for="tab3" class="tab-title snippet">Celery</label>
-<div data-tab-content="content1" class="tab-content hljs">
+
+<ul class="nav nav-tabs" id="preforking" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="uwsgi-tab" data-toggle="tab" href="#uwsgi" role="tab" aria-controls="uWSGI" aria-selected="true">uWSGI</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="gunicorn-tab" data-toggle="tab" href="#gunicorn" role="tab" aria-controls="Gunicorn" aria-selected="false">Gunicorn</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="celery-tab" data-toggle="tab" href="#celery" role="tab" aria-controls="Celery" aria-selected="false">Celery</a>
+</li>
+</ul>
+
+
+<div class="tab-content" id="preforking-content">
+<div class="tab-pane fade show active" id="uwsgi" role="tabpanel">
+
 Use this snippet to run code after uWSGI forks:
 
 ```python
@@ -198,7 +207,7 @@ except ImportError:
 In addition, threads in uWSGI are disabled by default. To enable, add the __--enable-threads__ option when starting the server. Alternatively, set __enable-threads = true__ in the uWSGI ini file
 
 </div>
-<div data-tab-content="content2" class="tab-content hljs">
+<div class="tab-pane fade" id="gunicorn" role="tabpanel">
 Gunicorn by default does not preload applications, so this is not usually necessary. If you start Gunicorn with `--preload`, you will need to load Rookout with a post-fork hook.
 Post-fork hooks in Gunicorn go in a separate config file:
 
@@ -211,7 +220,7 @@ def post_fork(server, worker):
 This file is loaded via the `-c` flag to Gunicorn: `gunicorn -c python:gunicorn_config server:app`.
 
 </div>
-<div data-tab-content="content3" class="tab-content hljs">
+<div class="tab-pane fade" id="celery" role="tabpanel">
 Use the `worker_process_init` signal to load Rookout on worker start:
 
 ```python
