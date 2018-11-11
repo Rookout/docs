@@ -11,7 +11,7 @@
     "deploy-firebase": "firebase deploy"
   },
   "devDependencies": {
-    "docusaurus": "^1.0.9",
+    "docusaurus": "1.5.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.10.0",

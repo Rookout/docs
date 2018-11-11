@@ -14,9 +14,7 @@ const siteConfig = {
   url: 'http://docs.rookout.com' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   editUrl: 'https://github.com/Rookout/docs/edit/master/docs/',
-  headerLinks: [
-    {doc: 'welcome', label: ''}
-  ],
+  headerLinks: [],
   /* path to images for header/footer */
   headerIcon: 'img/logos/bird_logo_white.svg',
   footerIcon: 'img/logos/bird_logo.png',
