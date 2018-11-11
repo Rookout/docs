@@ -127,7 +127,7 @@
 
 @media (max-width: 736px) {
     .ds-dropdown-menu {
-        width: 85%;
+        width: 100%;
     }
 
     .ds-dataset-1 {

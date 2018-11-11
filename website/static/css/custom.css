@@ -132,6 +132,16 @@ unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20C
 
 /* Common Styling */
 
+body {
+    background-color: #f9f9f9;
+    font-size: 1.1em !important;
+}
+
+.postHeaderTitle {
+    color: #533C92;
+    font-weight: 300;
+}
+
 /* Org Info */
 
 code {
@@ -229,6 +239,10 @@ input.tab-button {
 }
 
 
+button {
+    border: none !important;
+}
+
 
 @media screen and (max-width: 650px) {
     label {
@@ -277,6 +291,7 @@ pre {
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    margin-bottom: 0;
 }
 
 
@@ -456,7 +471,7 @@ tr, th, td {
 
     position: relative;
     right: 30px;
-    top: 27px;
+    top: 10px;
 }
 
 /* Docs Styling */
@@ -505,6 +520,7 @@ article  h4 {
     padding-bottom: 50px;
 }
 
+
 .docsNavContainer {
     margin-top: 0 !important;
     background: #F1F1F1;
@@ -530,6 +546,10 @@ article  h4 {
     padding-top: 4px !important;
 }
 
+.navGroupCategoryTitle {
+    font-weight: 400 !important;
+}
+
 .navListItem > a.navItem {
     color: #7C8390 !important;
     font-size: 14px !important;
@@ -543,7 +563,7 @@ article  h4 {
 }
 
 .post {
-    font-size: 0.8em;
+    font-size: 0.8em !important;
 }
 
 
@@ -551,6 +571,7 @@ article  h4 {
 
 footer.nav-footer {
     box-shadow: none;
+    background: #808080;
 }
 
 footer .rook-footer-logo {
@@ -609,7 +630,7 @@ footer .social img {
 
 .wrap-collapsible {
     margin-bottom: 1.2em;
-    font-size: 0.8em;
+    font-size: 0.8em !important;
 }
 
 .wrap-collapsible > input[type='checkbox'] {
@@ -620,7 +641,7 @@ footer .social img {
     display: block;
 
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
     text-transform: uppercase;
     text-align: left;
 
@@ -703,6 +724,17 @@ footer .social img {
 }
 
 
+.navPusher {
+    padding-top: 50px;
+}
+
+
+@media only screen and (min-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
 
 @media only screen and (max-width: 736px) {
     body {
@@ -725,7 +757,7 @@ footer .social img {
     }
 
     .headerTitle {
-        font-size: 1.2em;
+        font-size: 1.2em !important;
     }
 
     .rook-categories {
@@ -734,6 +766,12 @@ footer .social img {
 
     nav.toc {
         width: 100%;
+    }
+
+    .navBreadcrumb.wrapper {
+        top: 50px;
+        width: 100%;
+        background: #533C92 !important;
     }
 
     .nav-site li a {
@@ -758,17 +796,14 @@ footer .social img {
         border-bottom: 1px solid #533C92;
     }
 
-    .navBreadcrumb.wrapper {
-        top: 101px;
-        background: #533C92 !important;
-    }
-
     .navBreadcrumb.wrapper * {
         color: white !important;
     }
 
     nav.toc .toggleNav .navToggle {
         height: 18px !important;
+        top: 6px;
+        left: 10px;
     }
 
     .navToggle::before, .navToggle::after {
@@ -781,7 +816,7 @@ footer .social img {
     }
 
     nav.toc .toggleNav .navBreadcrumb h2 {
-        font-size: 16px;
+        font-size: 16px !important;
     }
 
     .rook-searchContainer, .rook-searchBar input {
@@ -801,7 +836,7 @@ footer .social img {
         display: block;
         text-align: center;
 
-        margin: 50px 0 0 0;
+        margin: 70px 0 10px 0;
     }
 
     .rook-searchBar.rook-docNav input {
@@ -845,17 +880,56 @@ footer .social img {
     }
 }
 
-@media only screen and (min-width: 736px) and (max-width: 940px) {
+@media only screen and (min-width: 736px) and (max-width: 1023px) {
     header .headerTitle {
         display: none !important;
     }
-}
 
-@media only screen and (max-width: 1023px) {
+    .docMainWrapper {
+        display: flex;
+        flex-flow: row nowrap;
+    }
 
+    .docsNavContainer {
+        position: initial;
+        padding: 10px;
+        max-width: 300px;
+    }
+
+    .docsNavContainer .toc .navBreadcrumb {
+        display: none;
+    }
+
+    .toc section .navGroups {
+        display: block;
+    }
+
+    .navGroups {
+        padding-top: 0 !important;
+    }
+
+    .rook-searchBar input {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .rook-searchBar img {
+        top: 30px;
+    }
+
+    .mainContainer {
+        padding: 20px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
+    .toc {
+        padding: 0;
+    }
+
+    .docsNavContainer {
+        height: 100vh;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
@@ -871,7 +945,7 @@ footer .social img {
     border-radius: 3px;
     color: $primaryColor;
     display: inline-block;
-    font-size: 14px;
+    font-size: 14px !important;
     font-weight: 400;
     line-height: 1.2em;
     padding-top: 0px;
