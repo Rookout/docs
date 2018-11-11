@@ -4,9 +4,9 @@ title: Workspaces
 sidebar_label: Workspaces
 ---
 
-A Rookout Rule is defined in the context of a Workspace.  
-A Workspace lets you define the source code to which the Rule is applied to, and offers filtering capabilities (using tags).  
-A Workspace allows multiple users to debug the same environment, setting Rules and viewing debug messages online.  
+A Workspace allows you to define the context applicable to a set of Rookout Rules.
+It lets you define the source code to which the Rules are applied to, and offers filtering capabilities (using tags).  
+A Workspace allows multiple users to debug the defined context, setting Rules and viewing debug messages online.  
 Alternatively, a Workspace can be used to segment environments so each user can debug his own application instances.  
 
 ## Workspace creation
