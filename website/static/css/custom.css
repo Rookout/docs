@@ -741,11 +741,6 @@ footer .social img {
     border-bottom-left-radius: 0;
 }
 
-.docsNavContainer {
-    overflow-y: visible !important;
-}
-
-
 .banner-supported {
     width: 100%;
     display: flex;
@@ -776,6 +771,10 @@ footer .social img {
 @media only screen and (max-width: 736px) {
     body {
         display: block;
+    }
+
+    .integrations-item { 
+        max-width: 50%;
     }
 
     .navGroups {
