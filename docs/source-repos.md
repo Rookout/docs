@@ -42,7 +42,7 @@ To convert `microservice1/app.py` to `app.py` use:
 /microservice1 /
 ```
 
-#### Replace a Path
+#### Replacing a Path
 
 To convert `microservice1/app.py` to `app/app.py` use:
 ```bash

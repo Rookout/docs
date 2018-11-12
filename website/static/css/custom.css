@@ -134,12 +134,16 @@
 
 body {
     background-color: #f9f9f9;
-    font-size: 1.1em !important;
+    font-size: 1.2em !important;
 }
 
 .postHeaderTitle {
     color: #533C92;
     font-weight: 300;
+}
+
+p {
+    margin-top: 15px;
 }
 
 /* Org Info */
@@ -152,7 +156,6 @@ code {
     background-color: #533C92;
     color: white;
     padding: 5px 10px;
-    margin: 0 -2px 0 0;
     border-radius: 0 0 5px 5px;
 }
 
@@ -170,15 +173,15 @@ code {
 
 
 .page-tabs {
-    float: right;
+    border: none;
+}
+
+.page-tabs li {
     border-bottom: 2px solid #533C92;
-    border-top: none;
-    border-left: none;
-    border-right: none;
 }
 
 .page-tabs-content {
-    padding-top: 50px !important;
+    padding-top: 25px !important;
 }
 
 
@@ -237,7 +240,6 @@ div.tab-content .hljs {
 input.tab-button {
     display: none;
 }
-
 
 button {
     border: none !important;
@@ -326,6 +328,37 @@ tr, th, td {
 
 .table-integration thead {
     border-bottom: 0 !important;
+}
+
+
+/* Integrations Styling */
+
+.integrations-table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.integrations-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 25%;
+    margin: 20px 0;
+}
+
+.integrations-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.integrations-item > div {
+    margin: 3px 0;
+}
+
+.integrations-description {
+    text-align: center;
+    padding: 5px;
 }
 
 
@@ -556,6 +589,10 @@ article  h4 {
     padding-top: 6px !important;
 }
 
+.navListItem > a.navItem:hover {
+    color: #3F4758 !important;
+}
+
 .navListItem > a.navItemActive {
     color: #533C92 !important;
     font-size: 14px !important;
@@ -704,11 +741,6 @@ footer .social img {
     border-bottom-left-radius: 0;
 }
 
-.docsNavContainer {
-    overflow-y: visible !important;
-}
-
-
 .banner-supported {
     width: 100%;
     display: flex;
@@ -739,6 +771,10 @@ footer .social img {
 @media only screen and (max-width: 736px) {
     body {
         display: block;
+    }
+
+    .integrations-item { 
+        max-width: 50%;
     }
 
     .navGroups {
@@ -922,13 +958,25 @@ footer .social img {
     }
 }
 
+@media only screen and (min-width: 768px) {
+    .docsNavContainer {
+        position: sticky !important;
+        overflow-y: scroll !important;
+    }
+
+    .docsNavContainer::-webkit-scrollbar {
+        background: inherit;
+        width: 2px;
+    }
+
+    .docsNavContainer::-webkit-scrollbar-thumb {
+        background: #D3D3D3;
+    }
+}
+
 @media only screen and (min-width: 1024px) {
     .toc {
         padding: 0;
-    }
-
-    .docsNavContainer {
-        height: 100vh;
     }
 }
 
