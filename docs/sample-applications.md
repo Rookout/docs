@@ -488,10 +488,10 @@ __Level: Beginner__
     - **Reproduce:** Add a todo with special characters. All of these characters should disappear.
     - **Debug:**
         1. In the Rookout app, open the file `src/main/java/com/rookout/tutorial/TodoController.java`
-        2. In the addTodo function you will we see that the todo title is being filtered by `replaceAll` with a regex - Let's add a `Dump Frame` to the line after it
+        2. In the addTodo function you will we see that the todo title is being filtered by `replaceAll` with a regex - Let's add a `Dump Frame` to the line after it  
         ![newTodoRecord](/img/screenshots/java_bughunt_3.png)
         3. Try to add a todo with some special characters (e.g: `do <> this`)
-        4. We can clearly see both `newTodoRecord.title` and `todoTitle` - which is the cleaned title.
+        4. We can clearly see both `newTodoRecord.title` and `todoTitle` - which is the cleaned title.  
         ![newTodoRecord](/img/screenshots/java_bughunt_4.png)
         
 
@@ -516,7 +516,7 @@ __Level: Intermediate__
         }
         ```
         8. Click the save button on the upper pane.
-        9. Add and duplicate a todo in order to see the output, now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
+        9. Add and duplicate a todo in order to see the output, now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).  
         ![Invalid Duplicate Todo Record](/img/screenshots/java_bughunt_5.png)
         
 
