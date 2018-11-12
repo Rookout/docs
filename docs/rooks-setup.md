@@ -4,6 +4,8 @@ title: Rook Setup
 sidebar_label: Rook Setup
 ---
 
+This page will dive into the nitty gritty details on installing Rookout under various configurations.  
+If you are encountering any difficulties with deploying Rookout, this is the place to look.
 
 <ul class="nav nav-tabs page-tabs" id="rooks-setup" role="tablist">
 <li class="nav-item">
@@ -22,8 +24,7 @@ sidebar_label: Rook Setup
 
 ## Python
 
-The Python Rook provides the ability to fetch debug data from a running application in real time.
-It is deployed by deploying the [Rook SDK](https://pypi.org/project/rook/).
+The Python [Rook](https://pypi.org/project/rook/) provides the ability to fetch debug data from a running application in real time.  
 It can easily be installed by running the following command:
 ```bash
 $ pip install rook
@@ -170,10 +171,10 @@ $ apk update && apk add g++ python-dev
 
 ## Pre-forking servers
 
-Several popular application servers load the application code during startup and then `fork()` the process multiple times to worker processes. This speeds up application loading (because the code is loaded only once), reduces memory usage (because the operating system provides memory copy-on-write, so regions of memory that are not written to are not duplicated) and provides fast creation of new worker process throughout the application's lifetime. Unfortuneately, this approach has some drawbacks, mainly that background threads are not cloned to the new process. `fork()` only clones that thread that called it (for more information, see [Threads and fork(): think twice before mixing them](http://www.linuxprogrammingblog.com/threads-and-fork-think-twice-before-using-them)).
+Several popular application servers for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
-Rookout uses background thread to communicate with the Router, to receive rules and transmit status updates and data. Due to this, the Rook cannot be initialized before the worker processes are created. Instead, Rooks must be started after the worker process has started. Every application server provides its own mechanism for this, see below for examples for popular servers.
-
+If you are using one of those servers, Rookout must be initialized in each of the workers processes.  
+We have included sample snippets for a few common options:
 
 <ul class="nav nav-tabs" id="preforking" role="tablist">
 <li class="nav-item">
@@ -191,40 +192,40 @@ Rookout uses background thread to communicate with the Router, to receive rules 
 <div class="tab-content" id="preforking-content">
 <div class="tab-pane fade show active" id="uwsgi" role="tabpanel">
 
-Use this snippet to run code after uWSGI forks:
-
 ```python
 try:
     from uwsgidecorators import postfork
 
+    # Run Rookout after the fork
     @postfork
     def run_rookout():
         from rook import auto_start
 except ImportError:
+    # If there's no uWSGI, run Rookout normally
     from rook import auto_start
 ```
-
-In addition, threads in uWSGI are disabled by default. To enable, add the __--enable-threads__ option when starting the server. Alternatively, set __enable-threads = true__ in the uWSGI ini file
+You must also enable theads by adding __--enable-threads__ to the command line or __enable-threads = true__ in the uWSGI ini file. Read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
 
 </div>
 <div class="tab-pane fade" id="gunicorn" role="tabpanel">
-Gunicorn by default does not preload applications, so this is not usually necessary. If you start Gunicorn with `--preload`, you will need to load Rookout with a post-fork hook.
-Post-fork hooks in Gunicorn go in a separate config file:
 
 ```python
-# gunicorn_config.py
+# Gunicorn does not preload applications by default
+# Under some configurations (such as --preload) you will need to create gunicorn_config.py file.
+
+# Load the file using the -c flag: 'gunicorn -c python:gunicorn_config server:app'
+
 def post_fork(server, worker):
     from rook import auto_start
 ```
 
-This file is loaded via the `-c` flag to Gunicorn: `gunicorn -c python:gunicorn_config server:app`.
-
 </div>
 <div class="tab-pane fade" id="celery" role="tabpanel">
-Use the `worker_process_init` signal to load Rookout on worker start:
 
 ```python
 from celery.signals import worker_process_init
+
+# Use the `worker_process_init` signal to load Rookout on worker start:
 @worker_process_init.connect
 def start_rook(*args, **kwargs):
     from rook import auto_start
