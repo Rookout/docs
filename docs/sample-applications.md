@@ -50,9 +50,8 @@ If you prefer to set up Rookout in your own projects go over [here](/docs/quick-
 <div class="tab-pane fade show active" id="python-linux" role="tabpanel">
 
 ```bash
-git clone https://github.com/Rookout/tutorial-python
+git clone https://github.com/Rookout/tutorial-python && cd tutorial-python
 export ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-python
 pip install -r requirements.txt
 python app.py
 ```
@@ -61,9 +60,8 @@ python app.py
 <div class="tab-pane fade" id="python-windows" role="tabpanel">
 
 ```bash
-git clone https://github.com/Rookout/tutorial-python
+git clone https://github.com/Rookout/tutorial-python && cd tutorial-python
 set ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-python
 pip install -r requirements.txt
 python app.py
 ```
@@ -219,9 +217,8 @@ Check out our [Quick Start guide](rooks-setup.md) to start debugging your own co
 <div class="tab-pane fade show active" id="node-linux" role="tabpanel">
 
 ```bash
-git clone https://github.com/Rookout/tutorial-nodejs
+git clone https://github.com/Rookout/tutorial-nodejs && cd tutorial-nodejs
 export ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-nodejs
 npm start
 ```
 
@@ -229,9 +226,8 @@ npm start
 <div class="tab-pane fade" id="node-windows" role="tabpanel">
 
 ```bash
-git clone https://github.com/Rookout/tutorial-nodejs
+git clone https://github.com/Rookout/tutorial-nodejs && cd tutorial-nodejs
 set ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-nodejs
 npm start
 ```    
 
@@ -394,9 +390,8 @@ Check out our [Quick Start guide](rooks-setup.md) to start debugging your own co
 <div class="tab-pane fade show active" id="jvm-linux" role="tabpanel">
 
 ```bash
-git clone https://github.com/Rookout/tutorial-java.git
+git clone https://github.com/Rookout/tutorial-java.git && cd tutorial-java
 export ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-java
 gradle bootJar run
 ```
 
@@ -404,9 +399,8 @@ gradle bootJar run
 <div class="tab-pane fade" id="jvm-windows" role="tabpanel">
 
 ```bash
-git clone https://github.com/Rookout/tutorial-java.git
+git clone https://github.com/Rookout/tutorial-java.git && cd tutorial-java
 set ROOKOUT_TOKEN=[Your Rookout Token]
-cd tutorial-java
 gradle bootJar run
 ```
 
