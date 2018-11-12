@@ -26,7 +26,7 @@ If you prefer to set up Rookout in your own projects go over [here](/docs/quick-
 
 #### Prerequisites
 
-1. [Python](https://www.python.org/downloads/) 2.7 or 3.5/3.6
+1. [Python](https://www.python.org/downloads/) 2.7 or 3.5+
 2. [pip](https://pip.pypa.io/en/stable/installing/)
 3. [Docker](https://www.docker.com/get-docker) (alternative)
 
