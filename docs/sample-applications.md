@@ -366,8 +366,7 @@ Check out our [Quick Start guide](rooks-setup.md) to start debugging your own co
 #### Prerequisites
 
 1. Java 8
-2. [Gradle](https://gradle.org/install/)
-4. [Docker](https://www.docker.com/get-docker) (alternative)
+2. [Docker](https://www.docker.com/get-docker) (alternative)
 
 #### Setup
 
@@ -391,7 +390,7 @@ Check out our [Quick Start guide](rooks-setup.md) to start debugging your own co
 ```bash
 git clone https://github.com/Rookout/tutorial-java.git && cd tutorial-java
 export ROOKOUT_TOKEN=[Your Rookout Token]
-gradle bootJar run
+./gradlew bootJar run
 ```
 
 </div>
@@ -400,7 +399,7 @@ gradle bootJar run
 ```bash
 git clone https://github.com/Rookout/tutorial-java.git && cd tutorial-java
 set ROOKOUT_TOKEN=[Your Rookout Token]
-gradle bootJar run
+./gradlew bootJar run
 ```
 
 </div>
