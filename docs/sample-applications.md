@@ -194,8 +194,7 @@ Check out our [Quick Start guide](rooks-setup.md) to start debugging your own co
 
 1. Node.js version 10 - https://nodejs.org/en/download/ 
 2. NPM - https://docs.npmjs.com/cli/install
-3. XCode (Mac only) - https://developer.apple.com/xcode/
-4. Docker - https://www.docker.com/get-docker (alternative)
+3. Docker - https://www.docker.com/get-docker (alternative)
 
 #### Setup
 
