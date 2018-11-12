@@ -9,10 +9,8 @@
     ],
     "Workspaces": [
       "workspaces",
+      "source-repos",
       "workspaces-tagging"
-    ],
-    "Source Repositories": [
-      "source-repos"
     ],
     "Rookout Rules":[
       "rules-intro-basics",
