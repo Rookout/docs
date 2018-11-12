@@ -26,9 +26,9 @@ If you prefer to set up Rookout in your own projects go over [here](/docs/quick-
 
 #### Prerequisites
 
-1. [Python](https://www.python.org/downloads/) 2.7.14 or newer
+1. [Python](https://www.python.org/downloads/) 2.7 or 3.5/3.6
 2. [pip](https://pip.pypa.io/en/stable/installing/)
-3. [Docker](https://www.docker.com/get-docker) (optional)
+3. [Docker](https://www.docker.com/get-docker) (alternative)
 
 #### Setup
 
@@ -195,7 +195,7 @@ Check out our [Quick Start guide](rooks-setup.md) to start debugging your own co
 1. Node.js version 10 - https://nodejs.org/en/download/ 
 2. NPM - https://docs.npmjs.com/cli/install
 3. XCode (Mac only) - https://developer.apple.com/xcode/
-4. Docker (optional) - https://www.docker.com/get-docker (In case you want to skip installing Node.js and NPM)
+4. Docker - https://www.docker.com/get-docker (alternative)
 
 #### Setup
 
@@ -367,8 +367,7 @@ Check out our [Quick Start guide](rooks-setup.md) to start debugging your own co
 
 1. Java 8
 2. [Gradle](https://gradle.org/install/)
-3. [curl](https://curl.haxx.se/download.html) (Windows only)
-4. [Docker](https://www.docker.com/get-docker) (optional)
+4. [Docker](https://www.docker.com/get-docker) (alternative)
 
 #### Setup
 
