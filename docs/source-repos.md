@@ -12,7 +12,8 @@ Rookout allows you to easily load sources from your local file system or your gi
 
 If you are deploying your software in some non-trival ways, Rookout offers the option of customizing the way breakpoints are set directly from your source repository.
 
-Simply create a file named `.rookout` at the root of your repository and add to it any of the configurations below.
+Simply create a file named `.rookout` at the root of your repository and add to it any of the configurations below.  
+Feel free to add comments to the file in the form of lines starting with '#'.
 
 ### Debugging Packages
 
