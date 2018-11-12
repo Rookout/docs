@@ -192,9 +192,8 @@ Check out our [Quick Start guide](rooks-setup.md) to start debugging your own co
 
 #### Prerequisites
 
-1. Node.js version 10 - https://nodejs.org/en/download/ 
-2. NPM - https://docs.npmjs.com/cli/install
-3. Docker - https://www.docker.com/get-docker (alternative)
+1. [Node.js](https://nodejs.org/en/download/) version 8/10
+3. [Docker](https://www.docker.com/get-docker) (alternative)
 
 #### Setup
 
