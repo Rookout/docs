@@ -253,20 +253,13 @@ For more information check out this blog post: https://www.rookout.com/3_min_hac
 
 ## Node.js
 
-The Node.js Rook provides the ability to fetch debug data from a running application in real time.
-It is deployed by deploying the [Rook SDK](https://www.npmjs.com/package/rookout).
+The NodeJS [Rook](https://www.npmjs.com/package/rookout) provides the ability to fetch debug data from a running application in real time.  
 It can easily be installed by running the following command:
 ```bash
 $ npm install --save rookout
 ```
 
-## Basic setup
-
-Tag your environment:
-```bash
-// Use a set of semicolon separated values to identify specific deployments and configurations
-$ export ROOKOUT_TAGS=[;;;]
-```
+## Setup
 
 Import the Rookout SDK within your application:
 ```javascript
@@ -278,19 +271,39 @@ rook.start({
 ```
 <div class="rookout-org-info"></div>
 
-**Optional:** You may also set your token as an environment variable:
+## Rookout SDK API
 
-1. Setup the Rookout token in your environment:
-```bash
-// Export your token as an environment variable
-$ export ROOKOUT_TOKEN=[Your Rookout Token]
-```
-<div class="rookout-org-info"></div>
+The Rookout SDK API offers the following methods
 
-2. Import the Rook within your application using auto_start:
-```javascript
-const rook = require('rookout/auto_start');
+```js
+start(opts)
 ```
+
+The `start` method is used to initialize the Rookout SDK in the background and recieves configuration using an `opts` object:
+
+1. `token` - The Rookout Token for your organization. May also be set using the environment variable `ROOKOUT_TOKEN`. *Note*: this should left as None if you are using the Rookout Agent.
+1. `tags` - Set to a list of strings you want for this application instance. May also be set using the environment variable `ROOKOUT_ROOK_TAGS` (use *;* as a seperator).
+1. `host` - If you are using a Rookout agent, this is the hostname for it. May also be set using the environment variable `ROOKOUT_AGENT_HOST`.
+1. `port` - If you are using a Rookout agent, this is the port for it. May also be set using the environment variable `ROOKOUT_AGENT_PORT`.
+1. `debug` - Set to `True` to increase log level to debug. May also be set using the environment variable `ROOKOUT_DEBUG`.
+1. `silence_errors` - Set to `True` to have start throw on errors.
+1. `log_file` - Path to file to use for the SDK logs (default is `/var/log/rookout/node-rook.log`). May also be set using the environment variable `ROOKOUT_LOG_FILE`.
+1. `log_level` - Control the SDK logging verbosity. May also be set using the environment variable `ROOKOUT_LOG_LEVEL`.
+1. `log_to_stderr` - Set to `True` to have the SDK log to stderr. May also be set using the environment variable `ROOKOUT_LOG_TO_STDERR`.
+
+```js
+stop()
+```
+
+The `stop` method is used to shutdown the Rookout SDK.  
+As Rookout is listening to a network connection, the Node process will not terminate as long as Rookout is running in the background.
+
+```js
+flush(cb)
+```
+
+The `flush` method allows explicitly flushing the Rookout logs and messages.  
+The callback is executed when the method finishes.
 
 ## Test connectivity
 
@@ -303,7 +316,7 @@ $ ./node_modules/.bin/rookout_check
 
 | Implementation     | Versions       |
 | ------------------ | -------------- |
-| **Node**           | 4.3+, 6, 8, 10  |
+| **Node**           | 4.3+, 6, 8, 10 |
 
 **Note:** Rookout only supports LTS (Long Time Support) versions of Node.js.
 
@@ -326,22 +339,6 @@ To make sure Rookout can validate the source file matches the file you are tryri
 ## Source Commit Detection
 
 Source commit detection functionality is currently not supported for Node.js.
-
-## Rook API
-
-The following variables may be passed when creating the rookout object.
-Alternatively, they may be passed as environment variables when using the auto_start option.
-
-| Variable       | Environment Variable  | Default Value           | Description              |
-| -------------- | --------------------- | ----------------------- | -----------              |
-| token          | ROOKOUT_TOKEN         | N/A                     | Customer specific token. |
-| host           | ROOKOUT_AGENT_HOST    | cloud.agent.rookout.com | Agent URL.               |
-| port           | ROOKOUT_AGENT_PORT    | 443                     | Agent port.              |
-| debug          | ROOKOUT_DEBUG         | FALSE                   | Set log level to DEBUG |
-| silence_errors | N/A                   | TRUE                    | Do not pass errors to calling application |
-| log_to_stderr  | ROOKOUT_LOG_TO_STDERR | FALSE                   | Print logs to STDERR |
-| log_file       | ROOKOUT_LOG_FILE      | N/A                     | Absolute path to log file |
-| log_level      | ROOKOUT_LOG_LEVEL     | INFO                    | Set log level |
 
 ## Serverless and PaaS
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
