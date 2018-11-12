@@ -4,78 +4,37 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "Rookout - Get data on-demand from your live code just when you need it.",
-    "docs": {
-      "agent-setup": {
-        "title": "Agent Setup",
-        "sidebar_label": "Agent Setup"
-      },
-      "getting-started": {
-        "title": "Adding Rules",
-        "sidebar_label": "Adding Rules"
-      },
-      "integrations": {
-        "title": "Integrations"
-      },
-      "integrations-overview": {
-        "title": "Integration Setup"
-      },
-      "welcome": {
-        "title": "Welcome",
-        "sidebar_label": "Welcome"
-      },
-      "quick-start": {
-        "title": "Quick Start"
-      },
-      "rooks-setup": {
-        "title": "Rook Setup",
-        "sidebar_label": "Rook Setup"
-      },
-      "rules-aug": {
-        "title": "Scripting Reference"
-      },
-      "rules": {
-        "title": "Scripting Overview"
-      },
-      "rules-intro-basics": {
-        "title": "Rule Basics",
-        "sidebar_label": "Rule Basics"
-      },
-      "rules-intro-capabilities": {
-        "title": "Rule Capabilities",
-        "sidebar_label": "Rule Capabilities"
-      },
-      "rules-intro-status": {
-        "title": "Rule Status",
-        "sidebar_label": "Rule Status"
-      },
-      "sample-applications": {
-        "title": "Sample Applications",
-        "sidebar_label": "Sample Applications"
-      },
-      "source-repos": {
-        "title": "Source Repositories",
-        "sidebar_label": "Source Repositories"
-      },
-      "troubleshooting-rules": {
-        "title": "Rule Troubleshooting"
-      },
-      "workspaces-tagging": {
-        "title": "Tagging",
-        "sidebar_label": "Tagging"
-      },
-      "workspaces": {
-        "title": "Workspaces",
-        "sidebar_label": "Workspaces"
-      }
-    },
-    "links": {},
-    "categories": {
-      "Getting Started": "Getting Started",
-      "Workspaces": "Workspaces",
-      "Source Repositories": "Source Repositories",
-      "Rookout Rules": "Rookout Rules",
-      "How To": "How To"
-    }
+    "agent-setup": "Agent Setup",
+    "Agent Setup": "Agent Setup",
+    "getting-started": "Adding Rules",
+    "Adding Rules": "Adding Rules",
+    "integrations": "Integrations",
+    "integrations-overview": "Integration Setup",
+    "welcome": "Welcome",
+    "Welcome": "Welcome",
+    "quick-start": "Quick Start",
+    "rooks-setup": "Rook Setup",
+    "Rook Setup": "Rook Setup",
+    "rules-aug": "Scripting Reference",
+    "rules": "Scripting Overview",
+    "rules-intro-basics": "Rule Basics",
+    "Rule Basics": "Rule Basics",
+    "rules-intro-capabilities": "Rule Capabilities",
+    "Rule Capabilities": "Rule Capabilities",
+    "rules-intro-status": "Rule Status",
+    "Rule Status": "Rule Status",
+    "sample-applications": "Sample Applications",
+    "Sample Applications": "Sample Applications",
+    "source-repos": "Source Repositories",
+    "Source Repositories": "Source Repositories",
+    "troubleshooting-rules": "Rule Troubleshooting",
+    "workspaces-tagging": "Tagging",
+    "Tagging": "Tagging",
+    "workspaces": "Workspaces",
+    "Workspaces": "Workspaces",
+    "Getting Started": "Getting Started",
+    "Rookout Rules": "Rookout Rules",
+    "How To": "How To"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
