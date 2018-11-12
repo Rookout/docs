@@ -4,38 +4,61 @@ title: Source Repositories
 sidebar_label: Source Repositories
 ---
 
-A Rookout Rule is set to debug your source code.  
-The source code must first be fetched from GitHub, or from your local file system.  
-Addingtional sources will be added in the future, be sure to reach out and let us know which ones youre missing: support@rookout.com .  
+Each workspace contains the source code the proejcts you wish to debug.
 
-## GitHub
+Rookout allows you to easily load sources from your local file system or your git provider.  This is preformed directly in our Web based IDE.
 
-Rookout provides an integration with GitHub.  
-To load your source files from GitHub add a Source to your Workspace and choose the GitHub option.  
-Log in to GitHub and enter your repository owner name, then choose a repository from the repository list.
-You may also choose a specific branch or commit.
+## Repository Settings
 
-## File system
+If you are deploying your software in some non-trival ways, Rookout offers the option of customizing the way breakpoints are set directly from your source repository.
 
-Rookout provides a local file server that allows your browser (using the Rookout client) to load your source files into the Rookout IDE.
-To download and install it add a Source to your Workspace and choose the Local Filesystem option, and follow the instructions in the setup wizard.
+Simply create a file named `.rookout` at the root of your repository and add to it any of the configurations below.
 
-## Source Path Matching
+### Debugging Packages
 
-If you are trying to debug a file that has one path in your development environment and another path in your debugging environment, try the following:
+By default, Rookout ignores your projet's dependencies.  
+This includes the `node_modules` directory for NodeJS applications and the `site-packages` directory for Python applications.
 
-Say the file (or a subtree of your code) in your development environment is at <source_prefix_path>\file.name  
-And the the same file (or a subset of your code) in your debugging environment is at <target_prefix_path>\file.name  
+If you are debugging a project installed as a package, add the following snippet to your `.rookout` file:
 
-Add a file named ".rookout" at the root of your source code.  
-For each file or path where <source_prefix> is different from <target_prefix>, add a line to ".rookout" in the following format:
-<source_prefix> <target_prefix>  
-*If your path has spaces, be sure to use parenthesis:  
-"<source_prefix>" "<target_prefix>"
+```python
+#package
+```
 
-## Include Externals
+### Source Path Matching
 
-If you are trying to debug a file that is part of an external library, try one of the following:
+By default Rookout uses the repository relative path of the source file you are debugging to find it.
 
-Add the includeExternals setting to the rule location section.
-Add a file named ".rookout" at the root of your source code, and add a line to it with the following text: #package
+You may have to change it in a couple of cases:
+- You are removing a part of the path when deploying your code.
+- The path is too short or generic, and you want to make it more specific to avoid path collisions.
+
+This is done through simple path substition instructions:
+
+#### Shortening a Path
+
+To convert `microservice1/app.py` to `app.py` use:
+```
+/microservice1 /
+```
+
+#### Replace a Path
+
+To convert `microservice1/app.py` to `app/app.py` use:
+```
+/microservice1 /app
+```
+
+#### Lengthening a Path
+
+To convert `app.py` to `microservice1/app.py` use:
+```
+/ /microservice1
+```
+
+#### Manipulating a Path with Spaces
+
+To convert `my app/app.py` to `app.py` use:
+```
+"my app" /
+```
