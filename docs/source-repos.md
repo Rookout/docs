@@ -38,27 +38,27 @@ This is done through simple path substition instructions:
 #### Shortening a Path
 
 To convert `microservice1/app.py` to `app.py` use:
-```
+```bash
 /microservice1 /
 ```
 
 #### Replace a Path
 
 To convert `microservice1/app.py` to `app/app.py` use:
-```
+```bash
 /microservice1 /app
 ```
 
 #### Lengthening a Path
 
 To convert `app.py` to `microservice1/app.py` use:
-```
+```bash
 / /microservice1
 ```
 
 #### Manipulating a Path with Spaces
 
 To convert `my app/app.py` to `app.py` use:
-```
+```bash
 "my app" /
 ```
