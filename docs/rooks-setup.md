@@ -64,15 +64,17 @@ start(token=None,
 
 The `start` method is used to initialize the Rookout SDK in the background and accepts the following arguments:
 
-1. `token` - The Rookout Token for your organization. May also be set using the environment variable `ROOKOUT_TOKEN`. *Note*: this should left as None if you are using the Rookout Agent.
-1. `tags` - Set to a list of strings you want for this application instance. May also be set using the environment variable `ROOKOUT_ROOK_TAGS` (use *;* as a seperator).
-1. `host` - If you are using a Rookout agent, this is the hostname for it. May also be set using the environment variable `ROOKOUT_AGENT_HOST`.
-1. `port` - If you are using a Rookout agent, this is the port for it. May also be set using the environment variable `ROOKOUT_AGENT_PORT`.
-1. `debug` - Set to `True` to increase log level to debug. May also be set using the environment variable `ROOKOUT_DEBUG`.
-1. `silence_errors` - Set to `True` to have start throw on errors.
-1. `log_file` - Path to file to use for the SDK logs (default is `/var/log/rookout/python-rook.log`). May also be set using the environment variable `ROOKOUT_LOG_FILE`.
-1. `log_level` - Control the SDK logging verbosity. May also be set using the environment variable `ROOKOUT_LOG_LEVEL`.
-1. `log_to_stderr` - Set to `True` to have the SDK log to stderr. May also be set using the environment variable `ROOKOUT_LOG_TO_STDERR`.
+| Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
+| ------------ | ----------------------- | ------------- | ----------- |
+| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout Agent |
+| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a seperator for enviroment variables |
+| `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout agent, this is the hostname for it |
+| `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout agent, this is the port for it |
+| `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
+| `silence_errors` | None | False | Set to `True` to throw if `start` fails |
+| `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/python-rook.log`) |
+| `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
+| `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 
 ```python
 flush()
@@ -281,15 +283,17 @@ start(opts)
 
 The `start` method is used to initialize the Rookout SDK in the background and recieves configuration using an `opts` object:
 
-1. `token` - The Rookout Token for your organization. May also be set using the environment variable `ROOKOUT_TOKEN`. *Note*: this should left as None if you are using the Rookout Agent.
-1. `tags` - Set to a list of strings you want for this application instance. May also be set using the environment variable `ROOKOUT_ROOK_TAGS` (use *;* as a seperator).
-1. `host` - If you are using a Rookout agent, this is the hostname for it. May also be set using the environment variable `ROOKOUT_AGENT_HOST`.
-1. `port` - If you are using a Rookout agent, this is the port for it. May also be set using the environment variable `ROOKOUT_AGENT_PORT`.
-1. `debug` - Set to `True` to increase log level to debug. May also be set using the environment variable `ROOKOUT_DEBUG`.
-1. `silence_errors` - Set to `True` to have start throw on errors.
-1. `log_file` - Path to file to use for the SDK logs (default is `/var/log/rookout/node-rook.log`). May also be set using the environment variable `ROOKOUT_LOG_FILE`.
-1. `log_level` - Control the SDK logging verbosity. May also be set using the environment variable `ROOKOUT_LOG_LEVEL`.
-1. `log_to_stderr` - Set to `True` to have the SDK log to stderr. May also be set using the environment variable `ROOKOUT_LOG_TO_STDERR`.
+| Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
+| ------------ | ----------------------- | ------------- | ----------- |
+| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout Agent |
+| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a seperator for enviroment variables |
+| `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout agent, this is the hostname for it |
+| `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout agent, this is the port for it |
+| `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
+| `silence_errors` | None | False | Set to `True` to throw if `start` fails |
+| `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/node-rook.log`) |
+| `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
+| `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 
 ```js
 stop()
@@ -360,8 +364,8 @@ For more information check out this blog post: https://www.rookout.com/3_min_hac
 
 ## JVM
 
-The JVM Rook provides the ability to fetch debug data from a running application in real time.
-It is deployed by deploying the [Rook SDK](https://mvnrepository.com/artifact/com.rookout/rook).
+The JVM [Rook](https://mvnrepository.com/artifact/com.rookout/rook/latest) provides the ability to fetch debug data from a running application in real time.  
+It can easily be downloaded by running the following command:
 
 It can be download directly to the target system by running the following command:
 ```bash
@@ -371,30 +375,61 @@ It can also be installed by adding the dependency in Rookout in JVM build system
 
 For Gradle:
 
-```javascript
+```groovy
 dependencies {
    runtime group: 'com.rookout', name: 'rook', version:'0.1.31'
 }
 ```
 
-## Basic Setup
+## Setup
+
+### Command Line
 
 Setup the Rookout token in your environment:
 ```bash
-// Export your token as an environment variable
+# Export your token as an environment variable
 $ export ROOKOUT_TOKEN=[Your Rookout Token]
-```
 
-Tag your environment:
-```bash
-// Use a set of semicolon separated values to identify specific deployments and configurations
-$ export ROOKOUT_TAGS=[;;;]
-```
-
-Add the Java agent to your application:
-```bash
+# Add the Java Agent to your application
 $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 ```
+
+### API
+
+You may also use the following API:
+
+```java
+
+```
+
+## Rookout SDK API
+
+The Rookout SDK API offers the following methods
+
+```java
+public static void start(RookOptions opts);
+```
+
+The `start` method is used to initialize the Rookout SDK in the background and recieves configuration using an `opts` object:
+
+| Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
+| ------------ | ----------------------- | ------------- | ----------- |
+| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout Agent |
+| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a seperator for enviroment variables |
+| `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout agent, this is the hostname for it |
+| `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout agent, this is the port for it |
+| `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
+| `silence_errors` | None | False | Set to `True` to throw if `start` fails |
+| `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/node-rook.log`) |
+| `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
+| `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
+
+```js
+public static void Flush();
+```
+
+The `flush` method allows explicitly flushing the Rookout logs and messages.  
+The callback is executed when the method finishes.
 
 ## Test connectivity
 
