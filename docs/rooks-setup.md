@@ -420,7 +420,7 @@ The `start` method is used to initialize the Rookout SDK in the background and r
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `silence_errors` | None | False | Set to `True` to throw if `start` fails |
-| `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/node-rook.log`) |
+| `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/java-rook.log`) |
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 
