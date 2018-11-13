@@ -311,7 +311,7 @@ The callback is executed when the method finishes.
 
 ## Test connectivity
 
-To make sure the Rook was correctly installed and can reach the Rookout Service, run the following command:
+To make sure the SDK was properly installed and test your configuration (environment variables only), run the following command:
 ```bash
 $ ./node_modules/.bin/rookout_check
 ```
@@ -433,7 +433,7 @@ The callback is executed when the method finishes.
 
 ## Test connectivity
 
-To make sure the Rook was correctly installed and can reach the Rookout Service, run the following command:
+To make sure the SDK was properly installed and test your configuration (environment variables only), run the following command:
 ```bash
 $ java -jar rook.jar
 ```
