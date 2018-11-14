@@ -104,7 +104,7 @@ docker run -p 5000:5000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 <img src="/img/screenshots/python_tutorial_0.png" width="400px" height="300px" />  
 
 5. Add a _Dumpframe_ rule next to line number 95 by clicking next the the line number in the file viewer
-![Dumpframe Rule](/img/screenshots/getting_started_5.png)
+<img src="/img/screenshots/getting_started_5.png" width="400px" height="300px" />  
 6. Looking at the right-hand pane **Rules**, you will see the rule you added, on what line you added it and it should be 
 <span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
 ![Valid Rule](/img/screenshots/getting_started_4.png)
