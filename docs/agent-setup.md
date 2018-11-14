@@ -6,18 +6,19 @@ sidebar_label: Agent Setup
 
 ## Introduction
 
-The Rookout Agent is an ETL component that can be installed within your network. It collects debugging data from the from your application instances, performs aggregation and data redaction, and sends the results to your target data collection application. 
+The Rookout Agent is an ETL component that can be installed within your network.  
+It collects debugging data from the from your application instances, performs aggregation and data redaction, and sends the results to your target data collection application. 
 
-Using the Rookout agent you may perform all related data processing inside your own netowrk.
+Using the Rookout Agent you may perform all related data processing inside your own network.
 
 ## Run as Container
 
-The easiest way to deploy the agent is a Docker container available [here](https://hub.docker.com/r/rookout/agent/).
+The easiest way to deploy the agent is as a Docker container [available here](https://hub.docker.com/r/rookout/agent/).  
 The agent can be configured to your needs using environment variables. 
 
 ### 1. Docker
 
-To run as Docker container, simply execute:
+To run as a Docker container, simply execute:
 
 ```bash
 $ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/agent
@@ -26,7 +27,7 @@ $ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/agent
 
 ### 2. Kubernetes and Helm
 
-If you are running on Kubernetes, we recommend using our provided helm chart available [here](https://github.com/helm/charts/tree/master/stable/rookout).
+If you are running on Kubernetes, we recommend using our provided helm chart [available here](https://github.com/helm/charts/tree/master/stable/rookout).
 
 Simply execute:
 
@@ -37,7 +38,7 @@ $ helm install --name rookout stable/rookout --set token=[Your Rookout Token]
 
 ## Run as Daemon
 
-The Rookout Agent is also available as a Linux Daemon.
+The Rookout Agent is also available as a Linux Daemon.  
 To install it using a setup script, run the following commands:
 
 ```bash
@@ -47,6 +48,7 @@ $ curl -fs https://get.rookout.com | bash
 <div class="rookout-org-info"></div>
 
 Alternatively, you can download the script to disk and execute it with command line arguments (see more options below):
+
 ```bash
 $ curl -fs https://get.rookout.com > setup.sh
 $ bash setup.sh --token=[Your Rookout Token]
@@ -57,7 +59,8 @@ $ bash setup.sh --token=[Your Rookout Token]
 
 - The enviorments variables for the Linux daemon are accessible by editing the `/etc/default/rookout-agent` file.
 
-- By default, the Agent listens only on localhost when running in daemon mode. This can easily be changed by adding the following line to the configuration file:
+- By default, the Agent listens only on localhost when running in daemon mode.  
+This can easily be changed by adding the following line to the configuration file:
 ```bash
 export LISTEN_ALL=TRUE
 ```
@@ -84,7 +87,7 @@ The Agent configuration will be saved during the update process.
 
 ### Linux Daemon Restart
 
-When modifying the configuration its important to restart the agent, use one of the following:
+When modifying the configuration it is important to restart the agent using one of the following options:
 
 <ul class="nav nav-tabs" id="agent-restart" role="tablist">
 <li class="nav-item">
@@ -114,6 +117,8 @@ $ systemctl restart rookout-agent
 
 ### Linux Daemon Uninstall
 
+To uninstall the linux daemon run the following command:
+
 ```bash
 $ curl -fs https://get.rookout.com/remove_agent.sh | bash
 ```
@@ -122,17 +127,18 @@ $ curl -fs https://get.rookout.com/remove_agent.sh | bash
 
 ### Disable Sending Data
 
-The agent connects to the Rookout Service to receive commands and report telemetry information.
+The agent connects to the Rookout Service to receive commands and report telemetry information.  
 Data collected from within the application may be sent to Rookout for interactive debugging sessions.
 
-You may configure a local policy preventing the Agent from sending application data to Rookout using the following environment variable:
+You may configure a local policy preventing the Agent from sending application data to Rookout by adding the following line to the configuration file at `/etc/default/rookout-agent` .
+
 ```bash
 export ROOKOUT_SEND_DATA=FALSE
 ```
 
 ### Local Rule Targets
 
-As the Agent runs within your network, it allows you to direct the collected data into data sinks.
+As the Agent runs within your network, it allows you to direct the collected data into data sinks.  
 For example, debug messages can be sent to Elasticsearch or Splunk clusters.
 
 ### Data Redaction
@@ -144,32 +150,16 @@ All data received by the agent undergoes a data redaction process based on the c
 The Rookout agent has HTTPS proxy support for advanced network configurations.  
 As most production systems do have automated means for proxy detection, you should configure it statically.  
 
-This can be done in the Agent’s installation:
+This can be done when installing the Agent:
 ```bash
 $ setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
 ```
 <div class="rookout-org-info"></div>
 
-Or by setting the environment variable HTTPS_PROXY:
-
-<div class="tab-container">
-<input id="tab1" data-tab="tab1" type="radio" name="tabs" class="tab-button" checked="true" />
-<label for="tab1" class="tab-title snippet">Linux/OS X</label>
-<input id="tab2" data-tab="tab2" type="radio" name="tabs" class="tab-button" />
-<label for="tab2" class="tab-title snippet">Windows</label>
-<div data-tab-content="content1" class="tab-content hljs">
+Or by adding the HTTPS_PROXY configuration to the Agent configuration file at `/etc/default/rookout-agent` :
 
 ```bash
-$ export HTTPS_PROXY=[Your Proxy Server]
+export HTTPS_PROXY=[Your Proxy Server]
 ```
 
-</div>
-<div data-tab-content="content2" class="tab-content hljs">
-
-```bash
-$ set HTTPS_PROXY=[Your Proxy Server]
-```
-
-</div>
-</div>
 
