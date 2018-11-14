@@ -393,7 +393,7 @@ dependencies {
 </div>
 <div class="tab-pane fade" id="maven" role="tabpanel">
 
-```groovy
+```xml
 <dependency>
     <groupId>com.rookout</groupId>
     <artifactId>rook</artifactId>
