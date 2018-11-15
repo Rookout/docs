@@ -42,8 +42,20 @@ if __name__ == "__main__":
 ```
 <div class="rookout-org-info"></div>
 
-The Rook should be imported as late as possible within the application.
+The Rook should be imported as late as possible within the application.  
 This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
+
+### Alternative Import
+
+If you prefer to configure the Rook purely using enviorment variables (see configuration options below) you may also use the following snippet:
+
+```python
+from rook import auto_start
+
+if __name__ == "__main__":
+    # Your program starts here :)
+```
+<div class="rookout-org-info"></div>
 
 ## Rookout SDK API
 
@@ -270,6 +282,15 @@ const rook = require('rookout');
 rook.start({
     token: '[Your Rookout Token]'
 })
+```
+<div class="rookout-org-info"></div>
+
+### Alternative Import
+
+If you prefer to configure the Rook purely using enviorment variables (see configuration options below) you may also use the following snippet:
+
+```js
+require('rookout/auto_start');
 ```
 <div class="rookout-org-info"></div>
 
