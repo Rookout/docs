@@ -445,8 +445,19 @@ $ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 You may also use the following API:
 
 ```java
+import com.rookout.rook.API;
 
+public class Program {
+    public static void main(String[] args) {
+        RookOptions opts = new RookOptions();
+        opts.token = "[Your Rookout Token]";
+        API.start(opts);
+
+        // ...
+    }
+}
 ```
+<div class="rookout-org-info"></div>
 
 ## Rookout SDK API
 
@@ -471,7 +482,7 @@ The `start` method is used to initialize the Rookout SDK in the background and r
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 
 ```js
-public static void Flush();
+public static void flush();
 ```
 
 The `flush` method allows explicitly flushing the Rookout logs and messages.  
