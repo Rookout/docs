@@ -386,21 +386,44 @@ For more information check out this blog post: https://www.rookout.com/3_min_hac
 ## JVM
 
 The JVM [Rook](https://mvnrepository.com/artifact/com.rookout/rook/latest) provides the ability to fetch debug data from a running application in real time.  
-It can easily be downloaded by running the following command:
-
 It can be download directly to the target system by running the following command:
 ```bash
 $ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 ```
-It can also be installed by adding the dependency in Rookout in JVM build systems such as Maven or Gradle.
+It can also easily be installed by adding the dependency in JVM build systems such as Maven or Gradle:
 
-For Gradle:
+<ul class="nav nav-tabs" id="jvm-deps" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="gradle-tab" data-toggle="tab" href="#gradle" role="tab" aria-controls="gradle" aria-selected="true">Gradle</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="maven-tab" data-toggle="tab" href="#maven" role="tab" aria-controls="maven" aria-selected="false">Maven</a>
+</li>
+</li>
+</ul>
+
+<div class="tab-content" id="jvm-deps">
+<div class="tab-pane fade show active" id="gradle" role="tabpanel">
 
 ```groovy
 dependencies {
-   runtime group: 'com.rookout', name: 'rook', version:'0.1.31'
+   runtime group: 'com.rookout', name: 'rook', version:'0.1.36'
 }
 ```
+
+</div>
+<div class="tab-pane fade" id="maven" role="tabpanel">
+
+```xml
+<dependency>
+    <groupId>com.rookout</groupId>
+    <artifactId>rook</artifactId>
+    <version>0.1.36</version>
+</dependency>
+```
+
+</div>
+</div>
 
 ## Setup
 
