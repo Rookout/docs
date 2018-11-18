@@ -157,7 +157,7 @@ Here are the commands for installing the build environments for some common OS:
 
 ```bash
 $ xcode-select --install
-# If installing on PyPy on macOS, installing pkg-config is also required:
+# If installing for PyPy on macOS, installing pkg-config is also required:
 $ brew install pkg-config
 ```
 
