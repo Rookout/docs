@@ -103,8 +103,8 @@ docker run -p 5000:5000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 4. Open the file `app.py`  
 <img src="/img/screenshots/python_tutorial_0.png" width="400px" height="300px" />  
 
-5. Add a _Dumpframe_ rule next to line number 74 by clicking next the the line number in the file viewer
-![Dumpframe Rule](/img/screenshots/getting_started_5.png)
+5. Add a _Dumpframe_ rule next to line number 95 by clicking next the the line number in the file viewer
+<img src="/img/screenshots/getting_started_5.png" width="400px" height="300px" />  
 6. Looking at the right-hand pane **Rules**, you will see the rule you added, on what line you added it and it should be 
 <span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
 ![Valid Rule](/img/screenshots/getting_started_4.png)
@@ -134,7 +134,7 @@ __Level: Beginner__
         <img src="/img/screenshots/python_tutorial_4.png" width="285px" height="350px" />  
         2. In the [Rookout app](https://app.rookout.com), open the file `app.py`  
         <img src="/img/screenshots/python_tutorial_0.png" width="400px" height="300px" />  
-        3. Add a rule to line 43 by clicking left to the line numbering (just like you would have created a breakpoint on an IDE)  
+        3. Add a rule to line 64 by clicking left to the line numbering (just like you would have created a breakpoint on an IDE)  
         ![](/img/screenshots/python_tutorial_1.png)  
         4. Try clicking on `Clear completed` again to see the message that pops in the Rookout app
         5. We can now see the whole stacktrace leading to this point and the local variables:  
@@ -163,7 +163,7 @@ __Level: Intermediate__
     - **Debug:**
         1. In the Rookout app, open the file `app.py`
         2. Using the **Rules** pane on the right, select the *Rule Type* "Log"
-        3. Add this rule to line 92
+        3. Add this rule to line 113
         4. Before triggering the rule, let's edit it so it returns what we want
         5. In the **Rules** pane on the right, click the *Edit Rule* (pen) icon next to the rule you just added. It will open up the Rule configuration as a JSON file
         6. On line 37 in the `paths` object let's add a property `"store.rookout.locals.dup": "frame.dup"`
