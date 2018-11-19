@@ -37,9 +37,9 @@ $ pip install rook
 
 # Import the package in your app's entry-point file, just before it starts
 import rook
-rook.start(token='[Your Rookout Token]')  
 
 if __name__ == "__main__":
+    rook.start(token='[Your Rookout Token]')  
     # Your program starts here :)
 ```
 

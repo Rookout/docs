@@ -35,14 +35,14 @@ $ pip install rook
 Import the Rook within your application:
 ```python
 import rook
-rook.start(token='[Your Rookout Token]')
 
 if __name__ == "__main__":
+    rook.start(token='[Your Rookout Token]')
     # Your program starts here :)
 ```
 <div class="rookout-org-info"></div>
 
-The Rook should be imported as late as possible within the application.  
+The Rook should be imported just before the application begins executing.  
 This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
 
 ### Alternative Import
@@ -50,9 +50,8 @@ This is due to the fact that in Python, there's no clean way to identify a modul
 If you prefer to configure the Rook purely using enviorment variables (see configuration options below) you may also use the following snippet:
 
 ```python
-from rook import auto_start
-
 if __name__ == "__main__":
+    from rook import auto_start
     # Your program starts here :)
 ```
 <div class="rookout-org-info"></div>
