@@ -528,6 +528,15 @@ For Maven, use the following snippet:
     </resources>
 ```
 
+## Application Detection
+
+Rookout uses the semi-documented `sun.java.command` system property to identify your application and display it for within the Web Application.  
+Some Java based runtimes such as [Jsvc](https://commons.apache.org/proper/commons-daemon/jsvc.html) don't set it as expected. If missing, you may set it manually:
+```bash
+jsvc -Dsun.java.command=my.main.class
+```
+
+
 ## Source Commit Detection
 
 The Java Rook supports detecting the existing source code commit in the following methods, in descending order of priority:
