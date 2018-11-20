@@ -669,6 +669,16 @@ The default limits for each variable in a frame dump are summarized in the follo
 | **Object depth**             | 3      | 3       | 5    |
 | **Collection object depth**  | 2      | 2       | 2    |
 
+If you have reached the object **depth** limit you should expect to see the following message in the message pane:  
+`Max depth has been reached`
+
+![Max Depth](/img/screenshots/max_depth.png)
+
+If you have reached the object **collection depth** limit you should expect to see the following message in the message pane:  
+`Max collection depth has been reached`
+
+![Max Collection Depth](/img/screenshots/max_collection_depth.png)
+
 B) Fetching a specific variable
 
 If we want to fetch a specific variable, we can simply define it by adding it as the rule action.
