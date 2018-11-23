@@ -42,9 +42,7 @@ const buildMarkdown = (data) => {
 id: deployment-examples
 title: Deployment Examples
 sidebar_label: Deployment Examples
----`;
-
-  md += `\n\n# Rookout Deployment Examples\n\n`;
+---\n\n`;
 
   for (let language in data) {
     md += `### ${ucFirstAllWords(language)}\n\n`;
