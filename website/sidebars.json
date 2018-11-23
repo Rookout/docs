@@ -5,7 +5,8 @@
       "quick-start",
       "sample-applications",
       "rooks-setup",
-      "agent-setup"      
+      "agent-setup",
+      "deployment-examples"
     ],
     "Workspaces": [
       "workspaces",
@@ -20,7 +21,7 @@
       "rules-aug"
     ],
     "How To": [
-      "getting-started",     
+      "getting-started",
       "integrations-overview",
       "integrations",
       "troubleshooting-rules"
