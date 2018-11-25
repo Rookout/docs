@@ -217,11 +217,14 @@ try:
     # Run Rookout after the fork
     @postfork
     def run_rookout():
-        from rook import auto_start
+        import rook
+        rook.start(token='[Your Rookout Token]')
 except ImportError:
     # If there's no uWSGI, run Rookout normally
-    from rook import auto_start
+    import rook
+    rook.start(token='[Your Rookout Token]')
 ```
+<div class="rookout-org-info"></div>
 You must also enable theads by adding __--enable-threads__ to the command line or __enable-threads = true__ in the uWSGI ini file. Read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
 
 </div>
@@ -234,8 +237,10 @@ You must also enable theads by adding __--enable-threads__ to the command line o
 # Load the file using the -c flag: 'gunicorn -c python:gunicorn_config server:app'
 
 def post_fork(server, worker):
-    from rook import auto_start
+    import rook
+    rook.start(token='[Your Rookout Token]')
 ```
+<div class="rookout-org-info"></div>
 
 </div>
 <div class="tab-pane fade" id="celery" role="tabpanel">
@@ -246,8 +251,11 @@ from celery.signals import worker_process_init
 # Use the `worker_process_init` signal to load Rookout on worker start:
 @worker_process_init.connect
 def start_rook(*args, **kwargs):
-    from rook import auto_start
+    import rook
+    rook.start(token='[Your Rookout Token]')
 ```
+<div class="rookout-org-info"></div>
+
 </div>
 </div>
 
