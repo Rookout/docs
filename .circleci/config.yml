@@ -19,6 +19,7 @@ jobs:
             cd website
             yarn install
             yarn run lint
+            yarn run generate-examples
             yarn run build
             yarn run deploy-firebase
 
