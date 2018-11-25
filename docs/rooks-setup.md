@@ -45,6 +45,9 @@ if __name__ == "__main__":
 The Rook should be imported just before the application begins executing.  
 This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
 
+**Note: forking while debugging a Python application using Rookout is considered an unsafe operation.**  
+Check out the [Pre-forking servers](#pre-forking-servers) section for more details.  
+
 ### Alternative Import
 
 If you prefer to configure the Rook purely using enviorment variables (see configuration options below) you may also use the following snippet:
