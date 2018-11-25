@@ -26,6 +26,8 @@ If you are debugging a project installed as a package, add the following snippet
 #package
 ```
 
+**Note:** Rookout does not map common NPM packages and does not allow setting breakpoints inside them.
+
 ### Source Path Matching
 
 By default Rookout uses the repository relative path of the source file you are debugging to find it.
