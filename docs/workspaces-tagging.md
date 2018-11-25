@@ -24,7 +24,7 @@ tag:Staging
 ### Multiple Instances
 
 The same source code is used multiple instances of the same application.  
-For example, each instance is deployed with another customer site; or each instance is deployed in another geographical location.
+For example, each instance is deployed with another customer site; or each instance is deployed in another geographical location.  
 To filter and focus on a specific instance, try the following:
 1. When installing the Rookout SDK into your code, provide the instance name as a tag to the Rookout SDK.  
 For example, when using the Rookout SDK start() API, pass the following variable:
@@ -38,7 +38,7 @@ tag:CustomerA, tag:LocationB
 
 ### Multiple Configuration Versions
 
-Multiple instances of your application are deployed, each with a unique configuration.
+Multiple instances of your application are deployed, each with a unique configuration.  
 To filter and focus on a specific configuration, try the following:
 1. When installing the Rookout SDK into your code, provide the configuration name as a tag to the Rookout SDK.  
 For example, when using the Rookout SDK start() API, pass the following variable:
