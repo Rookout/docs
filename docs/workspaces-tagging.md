@@ -4,11 +4,49 @@ title: Tagging
 sidebar_label: Tagging
 ---
 
-A Rookout Rule is defined in the context of a Workspace, and may be used to debug one or more instances of the same application.
-Tags may be applied to an application instance when the Rookout SDK is loaded, and later used as filters when creating a Workspace.
+The following are common use cases for using Tags to define Workspace Filters:
 
-## Filtering your Workspace
+### Dev / Test / Staging / Prod
 
-Once your application instances have been tagged, you may apply the same tags as filters in your Workspaces.
-For example, you could create separate workspaces for debugging different instances of the same application, or to debug the same application in different environments (dev/staging/prod, local/aws/gcp, etc.).
+The same source code is used to debug the application in your local development environment, in a remote Test or Staging environment, and in a Production environment.
+Without applying filters to your Workspace, Rookout will fetch debug message from all instances of your application in these environments.
+To filter and focus on a specific environment, try the following:
+1. When installing the Rookout SDK into your code, provide the environment name as a tag to the Rookout SDK.  
+For example, when using the Rookout SDK start() API, pass the following variable:
+```python
+rook.start(token=[Your Rookout Token], tags=["Staging"])
+```
+2. When creating your Rookout Workspace, use the following tag:
+```python
+tag:Staging
+```
+
+### Multiple Instances
+
+The same source code is used multiple instances of the same application.  
+For example, each instance is deployed with another customer site; or each instance is deployed in another geographical location.  
+To filter and focus on a specific instance, try the following:
+1. When installing the Rookout SDK into your code, provide the instance name as a tag to the Rookout SDK.  
+For example, when using the Rookout SDK start() API, pass the following variable:
+```python
+rook.start(token=[Your Rookout Token], tags=["CustomerA","LocationB"])
+```
+2. When creating your Rookout Workspace, use the following tag:
+```python
+tag:CustomerA, tag:LocationB
+```
+
+### Multiple Configuration Versions
+
+Multiple instances of your application are deployed, each with a unique configuration.  
+To filter and focus on a specific configuration, try the following:
+1. When installing the Rookout SDK into your code, provide the configuration name as a tag to the Rookout SDK.  
+For example, when using the Rookout SDK start() API, pass the following variable:
+```python
+rook.start(token=[Your Rookout Token], tags=["ConfigurationA"])
+```
+2. When creating your Rookout Workspace, use the following tag:
+```python
+tag:ConfigurationA
+```
 
