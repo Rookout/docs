@@ -80,12 +80,12 @@ workflows:
   build_and_deploy:
     jobs:
       - up-version:
-          <<: *filter-master
+          <<: *filter_master
       - deploy-website:
           requires:
             - up-version
-          <<: *filter-master
+          <<: *filter_master
       - release-notes:
           requires:
             - deploy-website
-          <<: *filter-master
+          <<: *filter_master
