@@ -51,7 +51,7 @@ sidebar_label: Deployment Examples
       exampleName = exampleName.split('-');
       exampleName.shift();
       exampleName = ucFirstAllWords(exampleName.join(' '));
-      md += `[${exampleName}](${example.html_url})\n\n`;
+      md += `<a href="${example.html_url}" target="_blank">${exampleName}</a>\n\n`;
     }
   }
 
