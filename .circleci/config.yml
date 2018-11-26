@@ -33,6 +33,7 @@ jobs:
       - checkout
       - add_ssh_keys
       - *setup_build_tools
+      - run: mkdir -p ~/docs/workspace
       - run:
           name: Creating new git tag
           command: python ~/docs/build_tools/rbt.py version get-next > ~/docs/workspace/VERSION
