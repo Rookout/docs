@@ -9,7 +9,7 @@ references:
      name: Install Rookout Build Tools
      command: |
        mkdir -p ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-       sudo apt-get install python-setuptools python-dev build-essential
+       sudo apt-get install python-setuptools python-dev build-essential -qy
        sudo easy_install pip
        git clone git@github.com:Rookout/build_tools.git
        python build_tools/setup.py install --user
@@ -28,7 +28,7 @@ jobs:
   up-version:
     working_directory: ~/docs
     docker:
-      - image: circleci/node:8.9.4
+      - image: circleci/python:2.7
     steps:
       - checkout
       - add_ssh_keys
