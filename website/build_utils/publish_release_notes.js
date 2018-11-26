@@ -17,7 +17,7 @@ const release_data = {
 };
 
 const options = {
-  url: 'https://github-enforcer.rookout.com/release/dry_run',
+  url: 'https://github-enforcer.rookout.com/release',
   method: 'POST',
   headers: {
     'User-Agent': 'RookoutDocs/1.0',
