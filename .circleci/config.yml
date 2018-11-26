@@ -1,28 +1,27 @@
-aliases:
-  - &filter-only-master
-    branches:
-      only:
-        - master
-
 references:
-setup_build_tools: &setup_build_tools
-  run:
-   name: Install Rookout Build Tools
-   command: |
-     mkdir -p ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-     sudo apt-get install python-setuptools python-dev build-essential
-     sudo easy_install pip
-     git clone git@github.com:Rookout/build_tools.git
-     python build_tools/setup.py install --user
+  filter_master: &filter_master
+      filters:
+        branches:
+          only: master
+
+  setup_build_tools: &setup_build_tools
+    run:
+     name: Install Rookout Build Tools
+     command: |
+       mkdir -p ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+       sudo apt-get install python-setuptools python-dev build-essential
+       sudo easy_install pip
+       git clone git@github.com:Rookout/build_tools.git
+       python build_tools/setup.py install --user
 
   setup_env_var: &setup_env_var
     run:
       command: |
         cat ~/docs/workspace/VERSION >> $BASH_ENV
 
-setup_workspace: &setup_workspace
-  attach_workspace:
-    at: ~/demo
+  setup_workspace: &setup_workspace
+    attach_workspace:
+      at: ~/demo
 
 version: 2
 jobs:
@@ -81,12 +80,12 @@ workflows:
   build_and_deploy:
     jobs:
       - up-version:
-          filters: *filter-only-master
+          <<: *filter-master
       - deploy-website:
           requires:
             - up-version
-          filters: *filter-only-master
+          <<: *filter-master
       - release-notes:
           requires:
             - deploy-website
-          filters: *filter-only-master
+          <<: *filter-master
