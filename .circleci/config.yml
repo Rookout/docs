@@ -21,7 +21,7 @@ references:
 
   setup_workspace: &setup_workspace
     attach_workspace:
-      at: ~/demo
+      at: ~/docs
 
 version: 2
 jobs:
