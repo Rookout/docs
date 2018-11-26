@@ -9,7 +9,8 @@
     "rename-version": "docusaurus-rename-version",
     "lint": "./node_modules/.bin/eslint core pages",
     "deploy-firebase": "firebase deploy",
-    "generate-examples": "node build_utils/deployment_examples_generator.js"
+    "generate-examples": "node build_utils/deployment_examples_generator.js",
+    "publish-release-notes": "node build_utils/publish_release_notes.js"
   },
   "devDependencies": {
     "docusaurus": "1.5.1",
