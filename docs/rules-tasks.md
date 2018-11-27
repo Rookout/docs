@@ -28,12 +28,13 @@ Will replace an instance of "secretKey":"12345" with "secretKey":"[REDACTED]", a
 
 ## Rate Limiting
 
-Rookout sets a default threshold on the rate of rule hits in order to prevent performance impact on the application being debugged.
-By default, the threshold is set to 500ms, which means if the application code is hit more than once in 0.5s, the threshold will be invoked and the Rule will change its [Status to Error](rules-intro-troubleshooting.md).
+Rookout set a threshold on the rate rules are invoked within a single application instance to ensure there's no perfomance degradation when accidentally setting breakpoints on hot code path.
 
-To change this configuration for a specific rule, add the following variable to the Aug section (time is in ms)
+If rule is invoked twice within the limit (set by default to *100ms*) the rule will be disabled for that application instance and it's status will be set to `Error`.
+
+To change this configuration for a specific rule, change the value of `minTimeBetweenHits` to the desired number in miliseconds:
 ```json
-"minTimeBetweenHits":500
+"minTimeBetweenHits":10
 ```
 
 ## What's next?
