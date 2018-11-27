@@ -1,5 +1,5 @@
 ---
-id: rules-aug
+id: rules-reference
 title: Scripting Reference
 ---
 

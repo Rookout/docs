@@ -1,5 +1,5 @@
 ---
-id: rules-intro-status
+id: rules-status
 title: Rule Status
 sidebar_label: Rule Status
 ---

@@ -14,11 +14,11 @@
       "workspaces-tagging"
     ],
     "Rookout Rules":[
-      "rules-intro-basics",
-      "rules-intro-capabilities",
-      "rules-intro-status",
       "rules",
-      "rules-aug"
+      "rules-status",
+      "rules-tasks",
+      "rules-scripting",
+      "rules-reference"
     ],
     "How To": [
       "getting-started",

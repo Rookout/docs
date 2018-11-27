@@ -1,5 +1,5 @@
 ---
-id: rules
+id: rules-scripting
 title: Scripting Overview
 ---
 

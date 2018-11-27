@@ -1,7 +1,6 @@
 ---
-id: rules-intro-capabilities
-title: Rule Capabilities
-sidebar_label: Rule Capabilities
+id: rules-tasks
+title: Rule Tasks
 ---
 
 ## Repository configuration
