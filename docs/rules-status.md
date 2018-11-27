@@ -16,13 +16,13 @@ Whenever you edit the rule, it's status is reset.
 
 **These are the available statuses**:
 
-- `Pending` - the rule has yet to be applied by any of your applications and no errors have been reported.
-- `Active` - the rule has been applied by one or more of your applications has applied the rule and no errors have been reported.
-- `Error` - one or more of your applications has reported an error in processing, applying or executing the rule.
+- `Pending` (gray) - the rule has yet to be applied by any of your applications and no errors have been reported.
+- `Active` (green) - the rule has been applied by one or more of your applications has applied the rule and no errors have been reported.
+- `Error` (red) - one or more of your applications has reported an error in processing, applying or executing the rule.
 
-- `Warning` - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the rule.
+- `Warning` (sign) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the rule.
 
-## Pending
+## Pending (Gray)
 
 `Pending` status occurs when none of your applications have yet to apply the rule and no errors have been reported.
 
@@ -35,7 +35,7 @@ This can be caused by any of the following reasons:
 - `Python`/`Node` you are debugging a package deployed as a depedency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
 - `Python`/`Node` file paths are changed between source repository and deployment. This requires setting up your source repository [accordingly](source-repos.md#source-path-matching).
 
-## Active Rule
+## Active Rule (Green)
 
 `Active` status occurs when one of or more of your applications has applied the rule and no errors have been reported.  
 In most cases, once the rule has transitioned to active, you will see messages collected the next time the line is executed.
@@ -46,7 +46,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 - You are using a custom rule that send the message to another [data-sink](integrations.md).
 - `Python` you are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](rook-setup.md#pre-forking-servers).
 
-## Error
+## Error (Red)
 
 `Error` status occurs when one of or more of your applications has reported an error in processing, applying or executing the rule.
 
@@ -55,7 +55,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 `Error` messages are clearly documented within the IDE, but here are some of the common ones:
 - Hash mismatch - Rookout verifies that the source file you are seeing in our IDE is the file you deploying in your application. If the file version is wrong (detected using an Hash calculation) the rule will not be set. If you use [source commit detection](http://localhost:3000/docs/rooks-setup.html#source-commit-detection) you will see the correct git commit to use on the [App instances page](https://app.rookout.com/app/connectivity/rooks).
 
-## Warning
+## Warning (Sign)
 
 `Warning` status occurs when one of or more of your applications has reported a warning in processing, applying or executing the rule.
 
