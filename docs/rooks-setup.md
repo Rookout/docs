@@ -386,7 +386,7 @@ Many Serverless frameworks (such as AWS sam) has built-in support for it and wil
 If you need to set up your own build, we recommend using Docker, with a command line such as:
 
 ```bash
-docker run -v pwd:pwd -w pwd -i -t lambci/lambda:build-nodejs8.10 npm install
+docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-nodejs8.10 npm install
 ```
 
 For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
