@@ -86,4 +86,4 @@ Rookout Rules are quite robust, and if you dig deeper into our documentation you
 
 - Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-rules.md).
 
-- Dig deeper into [Rule scripting](rules-index.md).
+- Dig deeper into [Rule scripting](rules.md).

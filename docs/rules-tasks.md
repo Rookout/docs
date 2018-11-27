@@ -5,7 +5,7 @@ title: Rule Tasks
 
 ## Data Redaction
 
-The [filter operation](rules-operations.md) may be used to perform data redaction on the data fetched by a Rule before sending it to its destination.  
+The [filter operation](rules-reference.md#filter) may be used to perform data redaction on the data fetched by a Rule before sending it to its destination.  
 
 For example, adding the following snippet to the Rule Operations section:
 ```json
@@ -39,4 +39,4 @@ To change this configuration for a specific rule, change the value of `minTimeBe
 
 ## What's next?
 
-To review the full Rule API check out the [Reference Section](rules-index.md).
+To review the full Rule API check out the [Reference Section](rules-reference.md).
