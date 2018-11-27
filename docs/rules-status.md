@@ -52,7 +52,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 
 `Error` indicates at least some of your application instances will fail to collect the data requested, but other application instances may be able to collect the data successfully.
 
-Error messages are clearly documented within the IDE, but here are some of the common ones:
+`Error` messages are clearly documented within the IDE, but here are some of the common ones:
 - Hash mismatch - Rookout verifies that the source file you are seeing in our IDE is the file you deploying in your application. If the file version is wrong (detected using an Hash calculation) the rule will not be set. If you use [source commit detection](http://localhost:3000/docs/rooks-setup.html#source-commit-detection) you will see the correct git commit to use on the [App instances page](https://app.rookout.com/app/connectivity/rooks).
 
 ## Warning
@@ -60,7 +60,7 @@ Error messages are clearly documented within the IDE, but here are some of the c
 `Warning` status occurs when one of or more of your applications has reported a warning in processing, applying or executing the rule.
 
 `Warning` indicates some problems have occured with the rule, and Rookout is trying it's best to deliver the you requested. This may result in the rule being executed with full success, partial success, or with no success.  
-Rookout recommends you fix warning whent they appear.
+Rookout recommends you fix `Warning` whent they appear.
 
-Warning messages are clearly documented within the IDE, but here are some of the common ones:
+`Warning` messages are clearly documented within the IDE, but here are some of the common ones:
 - `JVM` Source file not found - Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. In JVM based languages, you need to include your source within your Jar/War/Ear archives- read more about it on our [setup page](rooks-setup.md).
