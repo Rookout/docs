@@ -3,8 +3,6 @@ id: rules
 title: Rules
 ---
 
-## Intro
-
 Rules are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.  
 
 ## Setting Rules
@@ -14,7 +12,8 @@ Before setting a rule you must create a [workspace](workspaces.md) and install t
 You set the rules within the [Rookout IDE](https://app.rookout.com) by left-clicking on the gutter, just like your own IDE.  
 
 ## Rule Status
-Once you have set the rule, it will appear on the right pane with it's status - `Pending`, `Active`, or `Error` and an optional `Warning`. You can read more about it [here](rules-status.md).  
+Once you have set the rule, it will appear on the right pane with it's status - `Pending`, `Active`, or `Error` and an optional `Warning`.  
+For more information you can click on the rule status indicator in the IDE or read more about it on this [page](rules-status.md).  
 
 ## Data Collecction
 

@@ -4,35 +4,63 @@ title: Rule Status
 sidebar_label: Rule Status
 ---
 
-## Understanding Rule Status
+Rule status is a simple visual indicator designed to give you quick feedback if your rule is behvaing as expected.  
 
-If your Rule is stuck in Pending state, it means that the Rookout SDK has not successfully applied the rule (yet), but no Error was reported.
-Active - At least one SDK has some time in the past successfully applied the rule
-Error - something reported an error about the rule
-Warning - irrespective of Active or Error, some component did not manage to work with the rule exactly as expected. The system attempts to finish it “Best Effort”.
+Rule status appears as a lightbulb or a warnning sign next to the rule on the right pane of the screen.  
+For more information on a rule status, you may click it or read more below.
 
-## Active Rule
+## Rule Statuses
 
-If your Rule is Active but you fail to see debug messages, first make sure you are invoking the correct application instance.  
+To provide quick feedback, rule statuses are *aggregated* accross all *historic* data reported on the rule.  
+Whenever you edit the rule, it's status is reset.
 
-You may also be running in an environment that heavily customizes the runtime. This is especially common for Python with hosting servers such as uWSGI or Google App Engine. Please contact us at support@rookout.com .
+**These are the available statuses**:
+
+- `Pending` - the rule has yet to be applied by any of your applications and no errors have been reported.
+- `Active` - the rule has been applied by one or more of your applications has applied the rule and no errors have been reported.
+- `Error` - one or more of your applications has reported an error in processing, applying or executing the rule.
+
+- `Warning` - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the rule.
 
 ## Pending
 
-Make sure there are Rooks connected and active in your Workspace (top left corner of the screen, auto-refreshes if you have less than 25 Rooks).
-Make sure you have installed Rookout on the correct application.
-Node/Python - include externals
-Node - make sure you have source maps if transpiling
-Python - uWSGI workaround (We want to have that in the code in the future)
+`Pending` status occurs when none of your applications have yet to apply the rule and no errors have been reported.
 
-## Warning
+This can be caused by any of the following reasons:
 
-Follow the instructions in the warning message.
+- You have no applications connected to the current [workspace](workspaces.md). This is common for Serverless and batch applications which are invoked on demand.
+- The source file you used the set the breakpoint is not loaded in any of the applications in the current [workspace](workspaces.md).
+- `JVM` you have set the breakpoint on a line that has no executable code associated with it.
+- `Node` you are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map). Rookout has strong source map [support](rooks-setup.md).
+- `Python`/`Node` you are debugging a package deployed as a depedency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
+- `Python`/`Node` file paths are changed between source repository and deployment. This requires setting up your source repository [accordingly](source-repos.md#source-path-matching).
+
+## Active Rule
+
+`Active` status occurs when one of or more of your applications has applied the rule and no errors have been reported.  
+In most cases, once the rule has transitioned to active, you will see messages collected the next time the line is executed.
+
+If you fail to see any messages arriving, this may be caused by any of the following reasons:
+
+- You are not invoking the *correct* line of code in the correct *application instance*.
+- You are using a custom rule that send the message to another [data-sink](integrations.md).
+- `Python` you are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](rook-setup.md#pre-forking-servers).
 
 ## Error
 
-Follow the instructions in the error message.
+`Error` status occurs when one of or more of your applications has reported an error in processing, applying or executing the rule.
 
-## What's next?
+`Error` indicates at least some of your application instances will fail to collect the data requested, but other application instances may be able to collect the data successfully.
 
-To review the full Rule API check out the [Reference Section](rules-index.md).
+Error messages are clearly documented within the IDE, but here are some of the common ones:
+- Hash mismatch - Rookout verifies that the source file you are seeing in our IDE is the file you deploying in your application. If the file version is wrong (detected using an Hash calculation) the rule will not be set. If you use [source commit detection](http://localhost:3000/docs/rooks-setup.html#source-commit-detection) you will see the correct git commit to use on the [App instances page](https://app.rookout.com/app/connectivity/rooks).
+
+## Warning
+
+`Warning` status occurs when one of or more of your applications has reported a warning in processing, applying or executing the rule.
+
+`Warning` indicates some problems have occured with the rule, and Rookout is trying it's best to deliver the you requested. This may result in the rule being executed with full success, partial success, or with no success.  
+Rookout recommends you fix warning whent they appear.
+
+Warning messages are clearly documented within the IDE, but here are some of the common ones:
+- `JVM` Source file not found - Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. In JVM based languages, you need to include your source within your Jar/War/Ear archives- read more about it on our [setup page](rooks-setup.md).
