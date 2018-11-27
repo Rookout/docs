@@ -64,7 +64,8 @@ Here's quick overview of the structure:
           }
         }
       ]
-    }
+    },
+    "minTimeBetweenHits": 100 // Sets the minium time between rule invocations
   },
   "processing": { // Defines the ETL process collected data will go through
     "operations": [
