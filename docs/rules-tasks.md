@@ -3,38 +3,6 @@ id: rules-tasks
 title: Rule Tasks
 ---
 
-## Repository configuration
-
-Rookout Rules try to apply to your code as it is run in debug or production modes.
-In some cases, the repository in debug or production has a different structure.
-to make sure your code can succesfully be debugged, Rookout offers the following capabilities:
-
-### Path Mapping
-
-For Python and Node.js, Rookout uses relative file paths for searching files based on the repository’s root folder. (For Explorook, the root folder is the one you share).  
-If file layout for production is different, paths will not match.  
-
-For a single Rule, you may edit the filePath variable in the rule Location section.
-
-To handle the genral case, add a “.rookout” file at the root of your repository and map your paths:  
-
-  For each file or path where <source_prefix> is different from <target_prefix>, add a line to ".rookout" in the following format:  
-  <source_prefix> <target_prefix>  
-  *If your path has spaces, be sure to use parenthesis:  
-  "<source_prefix>" "<target_prefix>" 
-
-
-### Include Externals
-
-If you are installing your application in Python using pip install (to the site-packages directory) or your Node application using npm install (to the node_modules directory) you need to let Rookout know to set the rule in those files as well.
-
-For a single Rule, you may edit the includeExternals variable in the rule Location section.
-
-To handle the genral case, add a “.rookout” file at the root of your repository and add a line to it with the following text:
-```python 
-#package
-```
-
 ## Data Redaction
 
 The [filter operation](rules-operations.md) may be used to perform data redaction on the data fetched by a Rule before sending it to its destination.  

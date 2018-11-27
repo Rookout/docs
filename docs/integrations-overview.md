@@ -48,7 +48,7 @@ Edit the variables relevant to the chosen tool (token, URL, specific variables e
 Trigger your app again.<br/>
 Instead of seeing the debug message in the Rookout IDE, the data was now sent the chosen tool.
 
-You can also find some integration examples in our [Data Integrations page](integrations-home.md) and in our [Output Integrations Git repository](https://github.com/Rookout/deployment-examples).
+You can also find some integration examples in our [Data Integrations page](rules-integrations.md) and in our [Output Integrations Git repository](https://github.com/Rookout/deployment-examples).
 
 ## What's next?
 

@@ -18,4 +18,4 @@ For more information you can click on the rule status indicator in the IDE or re
 ## Data Collecction
 
 The next time the code you have set the breakpoint on will be invoked, Rookout will collect parts of the application state and send it to Rookout or other data sinks of your choosing.  
-You can read more about customizing in this [overview](rules-scripting.md) or in this [guide](rules-tasks.md).
+You can read more abotu the [rule structure](rules-structure.md) and how to preform [common changes](rules-tasks.md) to it.

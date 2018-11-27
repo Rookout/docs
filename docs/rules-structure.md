@@ -1,6 +1,6 @@
 ---
-id: rules-scripting
-title: Rules Structure
+id: rules-structure
+title: Rule Structure
 ---
 
 Rules are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.  
@@ -112,4 +112,4 @@ This script is simply a sequence of two operations:
 
 - Check out [common tasks](rules-tasks.md) with rules.
 - Check out [examples](rules-integrations.md) for custom ETL pipelines.
-- Check out the detailed the [Rule Scripting Reference](rules-structure.md).
+- Check out the detailed the [Rule Scripting Reference](rules-reference.md).

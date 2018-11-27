@@ -16,15 +16,14 @@
     "Rookout Rules":[
       "rules",
       "rules-status",
+      "rules-structure",
       "rules-tasks",
-      "rules-scripting",
+      "integrations",
       "rules-reference"
     ],
     "How To": [
       "getting-started",
-      "integrations-overview",
-      "integrations",
-      "troubleshooting-rules"
+      "integrations-overview"
     ]
   }
 }

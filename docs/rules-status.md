@@ -43,8 +43,8 @@ In most cases, once the rule has transitioned to active, you will see messages c
 If you fail to see any messages arriving, this may be caused by any of the following reasons:
 
 - You are not invoking the *correct* line of code in the correct *application instance*.
-- You are using a custom rule that send the message to another [data-sink](integrations.md).
-- `Python` you are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](rook-setup.md#pre-forking-servers).
+- You are using a custom rule that send the message to another [data-sink](rules-integrations.md).
+- `Python` you are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](rooks-setup.md#pre-forking-servers).
 
 ## Error (Red)
 

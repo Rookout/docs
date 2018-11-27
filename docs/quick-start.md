@@ -106,8 +106,8 @@ And that's it, you're done :)
 
 - If you faced any issues, please let us know: support@rookout.com
 
-- Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
+- Learn more about installing customizing Rookout using our detailed [Setup Guides](rooks-setup.md).
 
-- Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-rules.md).
+- Dig deeper into [Rookout Rules](rules.md).
 
-- Dig deeper into [Rule scripting](rules-index.md).
+- Hook Rookout into your data pipeline using one of our [Data Integrations](rules-integrations.md).

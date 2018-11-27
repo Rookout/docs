@@ -82,7 +82,7 @@ Rookout Rules are quite robust, and if you dig deeper into our documentation you
 
 - If you faced any issues, please let us know: support@rookout.com
 
-- Hook Rookout into your data pipeline using one of our [Data Integrations](integrations-home.md).
+- Hook Rookout into your data pipeline using one of our [Data Integrations](rules-integrations.md).
 
 - Troubleshoot your Rookout deployment using our [Troubleshooting guide](troubleshooting-rules.md).
 
