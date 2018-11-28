@@ -621,6 +621,11 @@ footer .sitemap {
     align-items: center;
 }
 
+footer .sitemapCategoryContainer {
+    display: flex;
+    flex-direction: row;
+}
+
 footer .sitemapLinksContainer {
     display: flex;
     flex-direction: column;
@@ -773,7 +778,7 @@ footer .social img {
         display: block;
     }
 
-    .integrations-item { 
+    .integrations-item {
         max-width: 50%;
     }
 

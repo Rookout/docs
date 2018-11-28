@@ -6,6 +6,34 @@
  */
 
 const React = require('react');
+const sidebars = require('../sidebars.json').introduction;
+
+const ucFirstAllWords = (str) => {
+  const pieces = str.split(" ");
+  for (let i = 0; i < pieces.length; i++)
+  {
+    const j = pieces[i].charAt(0).toUpperCase();
+    pieces[i] = j + pieces[i].substr(1).toLowerCase();
+  }
+  return pieces.join(" ");
+};
+
+const parseSitemapCategories = () => {
+  let categories = [];
+  for (let [key, value] of Object.entries(sidebars)) {
+    categories.push(key);
+  }
+  return categories;
+};
+
+const parseSitemapCategory = (category) => {
+  let sitemap = [];
+  for (let page = 0; page < sidebars[category].length; page++) {
+    sitemap.push(sidebars[category][page]);
+  }
+  return sitemap;
+};
+
 
 class Footer extends React.Component {
   docUrl(doc, language) {
@@ -16,6 +44,30 @@ class Footer extends React.Component {
   pageUrl(doc, language) {
     const baseUrl = this.props.config.baseUrl;
     return baseUrl + (language ? `${language}/` : '') + doc;
+  }
+
+
+
+  renderSitemap() {
+    const categories = parseSitemapCategories();
+    return categories.map(category => {
+      let pages = parseSitemapCategory(category);
+      return (
+          <div className="sitemapLinks" key={category}>
+            <h5 className="bold">{category}</h5>
+            <br></br>
+            {
+              pages.map(page => {
+                return (
+                  <a href={this.docUrl(`${page}.html`)} key={page}>
+                    {ucFirstAllWords(page.replace(/-/g, ' '))}
+                  </a>
+                )
+              })
+            }
+          </div>
+      );
+    });
   }
 
   render() {
@@ -32,26 +84,8 @@ class Footer extends React.Component {
                   )}
               </a>
               <div className="sitemapLinksContainer">
-                  <h5 className="bold">Documentation</h5>
-                  <div className="sitemapLinks">
-                    <a href={this.docUrl('welcome.html')}>
-                      Getting Started
-                    </a>
-                    <a href={this.docUrl('sandbox-getting-started.html')}>
-                      Sandbox Tutorials
-                    </a>
-                    <a href={this.docUrl('rooks-config.html')}>
-                      Advanced Setup
-                    </a>
-                    <a href={this.docUrl('troubleshooting-rules.html')}>
-                      Troubleshooting
-                    </a>
-                    <a href={this.docUrl('reference.html')}>
-                      Concepts
-                    </a>
-                    <a href={this.docUrl('rules.html')}>
-                      Reference
-                    </a>
+                  <div className="sitemapCategoryContainer">
+                    { this.renderSitemap() }
                   </div>
               </div>
               <div className="social">
