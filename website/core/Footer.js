@@ -10,8 +10,7 @@ const sidebars = require('../sidebars.json').introduction;
 
 const ucFirstAllWords = (str) => {
   const pieces = str.split(" ");
-  for (let i = 0; i < pieces.length; i++)
-  {
+  for (let i = 0; i < pieces.length; i += 1) {
     const j = pieces[i].charAt(0).toUpperCase();
     pieces[i] = j + pieces[i].substr(1).toLowerCase();
   }
@@ -19,16 +18,16 @@ const ucFirstAllWords = (str) => {
 };
 
 const parseSitemapCategories = () => {
-  let categories = [];
-  for (let [key, value] of Object.entries(sidebars)) {
+  const categories = [];
+  for (const [key, value] of Object.entries(sidebars)) { // eslint-disable-line no-restricted-syntax
     categories.push(key);
   }
   return categories;
 };
 
 const parseSitemapCategory = (category) => {
-  let sitemap = [];
-  for (let page = 0; page < sidebars[category].length; page++) {
+  const sitemap = [];
+  for (let page = 0; page < sidebars[category].length; page += 1) {
     sitemap.push(sidebars[category][page]);
   }
   return sitemap;
@@ -47,23 +46,20 @@ class Footer extends React.Component {
   }
 
 
-
   renderSitemap() {
     const categories = parseSitemapCategories();
-    return categories.map(category => {
-      let pages = parseSitemapCategory(category);
+    return categories.map((category) => {
+      const pages = parseSitemapCategory(category);
       return (
           <div className="sitemapLinks" key={category}>
             <h5 className="bold">{category}</h5>
             <br></br>
             {
-              pages.map(page => {
-                return (
+              pages.map(page => (
                   <a href={this.docUrl(`${page}.html`)} key={page}>
                     {ucFirstAllWords(page.replace(/-/g, ' '))}
                   </a>
-                )
-              })
+                ))
             }
           </div>
       );
