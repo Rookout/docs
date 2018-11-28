@@ -45,6 +45,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 - You are not invoking the *correct* line of code in the correct *application instance*.
 - You are using a custom rule that send the message to another [data-sink](rules-integrations.md).
 - `Python` you are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](rooks-setup.md#pre-forking-servers).
+- `Python/JVM` you have placed a breakpoint on a long rununing function. In this runtime, breakpoints are only applied for function calls performed after the rule was created.
 
 ## Error (Red)
 
