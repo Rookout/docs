@@ -377,7 +377,10 @@ To make sure Rookout can validate the source file matches the file you are tryri
 
 ## Source Commit Detection
 
-Source commit detection functionality is currently not supported for Node.js.
+The Node Rook supports detecting the existing source code commit in the following methods, in descending order of priority:
+1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
+2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
+3. If the main application is running from within a Git repository, use its head. 
 
 ## Serverless and PaaS
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
