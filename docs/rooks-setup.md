@@ -110,6 +110,8 @@ $ python -m rook
 | **CPython**        | 2.7, 3.5, 3.6, 3.7 |
 | **PyPy**           | 6.0.0              |
 
+Rookout was tested on `pip` versions 9+.
+
 ***Note:*** We recommend avoiding production deployments of Rookout on Windows OS.
 
 ## Source Commit Detection
