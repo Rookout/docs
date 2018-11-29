@@ -12,7 +12,7 @@ The following tags may be passed as parameters when loading the Rookout SDK into
 `hostname` -   the host name of a specific application instance.  
 `ip` - the ip address of a specific application instance.  
 `platform` - the operating system and version on which one or more application instances are deployed.  
-`processname` - the process name of one ore more application instances.  
+`processname` - the process name (executable) of one ore more application instances.  
 `tag` - a logical name for an application, an environment, a deployment, or anything that would help you identify a subest of instances (see examples below).  
 
 ## Commonly used examples
@@ -78,6 +78,5 @@ To further refine the filter, you may use hostname:[instance host name], ip:[ins
 When creating your Rookout Workspace, use one or more of the following filters:
 
 `hostname:[instance host name], ip:[instance ip], processname:[instance process name], platform:[instance platform].`
-
 
 <img src="/img/screenshots/tagging_6.png" />
