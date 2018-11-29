@@ -4,19 +4,6 @@ title: Tagging
 sidebar_label: Tagging
 ---
 
-## Introduction
-
-Rookout Workspaces allow you to debug specific application instances, or a subset of instances matching a defined filter.
-The following tags may be passed as parameters when loading the Rookout SDK into your code:
-
-`hostname` -   the host name of a specific application instance.  
-`ip` - the ip address of a specific application instance.  
-`platform` - the operating system and version on which one or more application instances are deployed.  
-`processname` - the process name (executable) of one ore more application instances.  
-`tag` - a logical name for an application, an environment, a deployment, or anything that would help you identify a subest of instances (see examples below).  
-
-## Commonly used examples
-
 The following are common use cases for using Tags to define Workspace Filters.  
 Let's assume these are some instances of your application:
 
@@ -33,50 +20,56 @@ rook.start(token=[Your Rookout Token], tags=["Customer1","ServiceA","Production"
 
 ### Debug all instances of Service A
 
-You may use tag:ServiceA to debug all instances of Service A (both Production and Staging).
+When creating your Rookout Workspace, use tag:ServiceA to debug all instances of Service A (both Production and Staging).
 
-1. When creating your Rookout Workspace, add the following filter: `tag:ServiceA`
+1. Add the following filter: `tag:ServiceA`
 
-2. When creating your Rookout Workspace, import the source code for Service A.
+2. Import the source code for Service A.
 
 <img src="/img/screenshots/tagging_2.png" />
 
 ### Debug all Production instances
 
-You may use tag:Production to debug all production instances (both Service A and Service B).
+When creating your Rookout Workspace, use tag:Production to debug all production instances (both Service A and Service B).
 
-1. When creating your Rookout Workspace, add the following filter: `tag:Production`
+1. Add the following filter: `tag:Production`
 
-2. When creating your Rookout Workspace, import the source code for both Service A and Service B.
+2. Import the source code for both Service A and Service B.
 
 <img src="/img/screenshots/tagging_4.png" />
 
 ### Debug only Production instances of Service A
 
-To refine the filter, you may use both tag:ServiceA and tag:Production to debug only customer instances of Service A.
+To refine the filter, you may use tag:ProductionServiceA to debug only customer instances of Service A.
 
-1. When creating your Rookout Workspace, add the following filters: `tag:ServiceA,tag:Production`
+1. Add the following filters: `tag:ProductionServiceA`
 
-2. When creating your Rookout Workspace, import the source code for Service A.
+2. Import the source code for Service A.
 
 <img src="/img/screenshots/tagging_3.png" />
 
 ### Debug all instances deployed for Customer 1
 
-You may use tag:Customer1 to debug all Customer 1 instances (both Service A and Service B).
+Use tag:Customer1 to debug all Customer 1 instances (both Service A and Service B).
 
-1. When creating your Rookout Workspace, add the following filter: `tag:Customer1`
+1. dd the following filter: `tag:Customer1`
 
-2. When creating your Rookout Workspace, import the source code for both Service A and Service B.
+2. Import the source code for both Service A and Service B.
 
 <img src="/img/screenshots/tagging_5.png" />
 
 ### Debug a specific instance
 
-To further refine the filter, you may use hostname:[instance host name], ip:[instance ip], processname:[instance process name] or platform:[instance platform].
+In addition to Tags, you may filter using system configuration identified by the Rookout SDK:  
 
-When creating your Rookout Workspace, use one or more of the following filters:
+hostname -   the host name of an application instance.  
+For example: `hostname:demo-deployment`  
 
-`hostname:[instance host name], ip:[instance ip], processname:[instance process name], platform:[instance platform].`
+ip - the ip address of an application instance.  
+For example: `ip:25.218.30.111`  
 
-<img src="/img/screenshots/tagging_6.png" />
+platform - the platform used an application instance.  
+For example: `platform:python`  
+
+processname - the process name (executable) of an application instance.  
+For example: `processname:demo/app.py`  
