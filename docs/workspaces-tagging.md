@@ -14,7 +14,8 @@ Let's assume these are some instances of your application:
 When installing the Rookout SDK, you may provide the service name, environment name and customer as tags.  
 For example, the Customer 1 instance of Service A in Production may be configured using the following:
 ```python
-rook.start(token=[Your Rookout Token], tags=["Customer1","ServiceA","Production"])
+rook.start(token='[Your Rookout Token]',
+           tags=["Customer1","ServiceA","Production"])
 ```
 <div class="rookout-org-info"></div>
 
@@ -52,7 +53,7 @@ To refine the filter, you may use tag:ProductionServiceA to debug only customer 
 
 Use tag:Customer1 to debug all Customer 1 instances (both Service A and Service B).
 
-1. dd the following filter: `tag:Customer1`
+1. Add the following filter: `tag:Customer1`
 
 2. Import the source code for both Service A and Service B.
 
@@ -60,8 +61,8 @@ Use tag:Customer1 to debug all Customer 1 instances (both Service A and Service 
 
 ### Debug a specific instance
 
-In addition to Tags, you may filter using system configuration identified by the Rookout SDK.
-You may find the values for your deployments in the Rookout Application Instances page.
+In addition to Tags, you may filter using system configuration identified by the Rookout SDK.  
+You may find the values for your deployments in the Rookout App Instances page.
 
 hostname -   the host name of an application instance.  
 For example: `hostname:demo-deployment`  
