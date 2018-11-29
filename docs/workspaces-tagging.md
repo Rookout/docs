@@ -4,49 +4,73 @@ title: Tagging
 sidebar_label: Tagging
 ---
 
-The following are common use cases for using Tags to define Workspace Filters:
+The following are common use cases for using Tags to define Workspace Filters.  
+Let's assume these are some instances of your application:
 
-### Dev / Test / Staging / Prod
+<img src="/img/screenshots/tagging_1.png" />  
 
-The same source code is used to debug the application in your local development environment, in a remote Test or Staging environment, and in a Production environment.
-Without applying filters to your Workspace, Rookout will fetch debug message from all instances of your application in these environments.
-To filter and focus on a specific environment, try the following:
-1. When installing the Rookout SDK into your code, provide the environment name as a tag to the Rookout SDK.  
-For example, when using the Rookout SDK start() API, pass the following variable:
+### Setting up your Rookout deployment
+
+When installing the Rookout SDK, you may provide the service name, environment name and customer as tags.  
+For example, the Customer 1 instance of Service A in Production may be configured using the following:
 ```python
-rook.start(token=[Your Rookout Token], tags=["Staging"])
+rook.start(token=[Your Rookout Token], tags=["Customer1","ServiceA","Production"])
 ```
-2. When creating your Rookout Workspace, use the following tag:
-```python
-tag:Staging
-```
+<div class="rookout-org-info"></div>
 
-### Multiple Instances
+### Debug all instances of Service A
 
-The same source code is used multiple instances of the same application.  
-For example, each instance is deployed with another customer site; or each instance is deployed in another geographical location.  
-To filter and focus on a specific instance, try the following:
-1. When installing the Rookout SDK into your code, provide the instance name as a tag to the Rookout SDK.  
-For example, when using the Rookout SDK start() API, pass the following variable:
-```python
-rook.start(token=[Your Rookout Token], tags=["CustomerA","LocationB"])
-```
-2. When creating your Rookout Workspace, use the following tag:
-```python
-tag:CustomerA, tag:LocationB
-```
+When creating your Rookout Workspace, use tag:ServiceA to debug all instances of Service A (both Production and Staging).
 
-### Multiple Configuration Versions
+1. Add the following filter: `tag:ServiceA`
 
-Multiple instances of your application are deployed, each with a unique configuration.  
-To filter and focus on a specific configuration, try the following:
-1. When installing the Rookout SDK into your code, provide the configuration name as a tag to the Rookout SDK.  
-For example, when using the Rookout SDK start() API, pass the following variable:
-```python
-rook.start(token=[Your Rookout Token], tags=["ConfigurationA"])
-```
-2. When creating your Rookout Workspace, use the following tag:
-```python
-tag:ConfigurationA
-```
+2. Import the source code for Service A.
 
+<img src="/img/screenshots/tagging_2.png" />
+
+### Debug all Production instances
+
+When creating your Rookout Workspace, use tag:Production to debug all production instances (both Service A and Service B).
+
+1. Add the following filter: `tag:Production`
+
+2. Import the source code for both Service A and Service B.
+
+<img src="/img/screenshots/tagging_4.png" />
+
+### Debug only Production instances of Service A
+
+To refine the filter, you may use tag:ProductionServiceA to debug only customer instances of Service A.
+
+1. Add the following filters: `tag:ProductionServiceA`
+
+2. Import the source code for Service A.
+
+<img src="/img/screenshots/tagging_3.png" />
+
+### Debug all instances deployed for Customer 1
+
+Use tag:Customer1 to debug all Customer 1 instances (both Service A and Service B).
+
+1. dd the following filter: `tag:Customer1`
+
+2. Import the source code for both Service A and Service B.
+
+<img src="/img/screenshots/tagging_5.png" />
+
+### Debug a specific instance
+
+In addition to Tags, you may filter using system configuration identified by the Rookout SDK.
+You may find the values for your deployments in the Rookout Application Instances page.
+
+hostname -   the host name of an application instance.  
+For example: `hostname:demo-deployment`  
+
+ip - the ip address of an application instance.  
+For example: `ip:25.218.30.111`  
+
+platform - the platform used in an application instance.  
+Supported platforms: `platform:python`, `platform:java`, `platform:node`  
+
+processname - the process name (executable) of an application instance.  
+For example: `processname:demo/app.py`  
