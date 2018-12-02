@@ -21,7 +21,7 @@ The agent can be configured to your needs using environment variables.
 To run as a Docker container, simply execute:
 
 ```bash
-$ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/agent
+docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/agent
 ```
 <div class="rookout-org-info"></div>
 
@@ -32,7 +32,7 @@ If you are running on Kubernetes, we recommend using our provided helm chart [av
 Simply execute:
 
 ```bash
-$ helm install --name rookout stable/rookout --set token=[Your Rookout Token]
+helm install --name rookout stable/rookout --set token=[Your Rookout Token]
 ```
 <div class="rookout-org-info"></div>
 
@@ -42,16 +42,16 @@ The Rookout Agent is also available as a Linux Daemon.
 To install it using a setup script, run the following commands:
 
 ```bash
-$ export ROOKOUT_TOKEN=[Your Rookout Token]
-$ curl -fs https://get.rookout.com | bash
+export ROOKOUT_TOKEN=[Your Rookout Token]
+curl -fs https://get.rookout.com | bash
 ```
 <div class="rookout-org-info"></div>
 
 Alternatively, you can download the script to disk and execute it with command line arguments (see more options below):
 
 ```bash
-$ curl -fs https://get.rookout.com > setup.sh
-$ bash setup.sh --token=[Your Rookout Token]
+curl -fs https://get.rookout.com > setup.sh
+bash setup.sh --token=[Your Rookout Token]
 ```
 <div class="rookout-org-info"></div>
 
@@ -80,8 +80,8 @@ The Linux daemon is supported in the following operating systems:
 
 The linux deamon can be updated to the latest version using the following command:
 ```bash
-$ curl -fs https://get.rookout.com > setup.sh
-$ bash setup.sh --update
+curl -fs https://get.rookout.com > setup.sh
+bash setup.sh --update
 ```
 The Agent configuration will be saved during the update process.
 
@@ -102,14 +102,14 @@ When modifying the configuration it is important to restart the agent using one 
 <div class="tab-pane fade show active" id="initd" role="tabpanel">
 
 ```bash
-$ /etc/init.d/rookout-agent restart
+/etc/init.d/rookout-agent restart
 ```
 
 </div>
 <div class="tab-pane fade" id="systemd" role="tabpanel">
 
 ```bash
-$ systemctl restart rookout-agent
+systemctl restart rookout-agent
 ```
 
 </div>
@@ -120,7 +120,7 @@ $ systemctl restart rookout-agent
 To uninstall the linux daemon run the following command:
 
 ```bash
-$ curl -fs https://get.rookout.com/remove_agent.sh | bash
+curl -fs https://get.rookout.com/remove_agent.sh | bash
 ```
 
 ## Data Processing
@@ -152,7 +152,7 @@ As most production systems do have automated means for proxy detection, you shou
 
 This can be done when installing the Agent:
 ```bash
-$ setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
+setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
 ```
 <div class="rookout-org-info"></div>
 
