@@ -27,7 +27,7 @@ If you are encountering any difficulties with deploying Rookout, this is the pla
 The Python [Rook](https://pypi.org/project/rook/) provides the ability to fetch debug data from a running application in real time.  
 It can easily be installed by running the following command:
 ```bash
-$ pip install rook
+pip install rook
 ```
 
 ## Setup
@@ -100,7 +100,7 @@ The `flush` method allows explicitly flushing the Rookout logs and messages.
 
 To make sure the SDK was properly installed in your Python (virtual) environment, and test your configuration (environment variables only), run the following command:
 ```bash
-$ python -m rook
+python -m rook
 ```
 
 ## Supported Python versions
@@ -160,30 +160,30 @@ Here are the commands for installing the build environments for some common OS:
 <div class="tab-pane fade show active" id="osx" role="tabpanel">
 
 ```bash
-$ xcode-select --install
+xcode-select --install
 # If installing for PyPy on macOS, installing pkg-config is also required:
-$ brew install pkg-config
+brew install pkg-config
 ```
 
 </div>
 <div class="tab-pane fade" id="debian" role="tabpanel">
 
 ```bash
-$ apt-get update -q && apt-get install -qy g++ python-dev
+apt-get update -q && apt-get install -qy g++ python-dev
 ```
 
 </div>
 <div class="tab-pane fade" id="fedora" role="tabpanel">
 
 ```bash
-$ yum install -qy gcc-c++ python-devel
+yum install -qy gcc-c++ python-devel
 ```
 
 </div>
 <div class="tab-pane fade" id="alpine" role="tabpanel">
 
 ```bash
-$ apk update && apk add g++ python-dev
+apk update && apk add g++ python-dev
 ```
 
 </div>
@@ -284,7 +284,7 @@ For more information check out this blog post: https://www.rookout.com/3_min_hac
 The NodeJS [Rook](https://www.npmjs.com/package/rookout) provides the ability to fetch debug data from a running application in real time.  
 It can easily be installed by running the following command:
 ```bash
-$ npm install --save rookout
+npm install --save rookout
 ```
 
 ## Setup
@@ -348,7 +348,7 @@ The callback is executed when the method finishes.
 
 To make sure the SDK was properly installed and test your configuration (environment variables only), run the following command:
 ```bash
-$ ./node_modules/.bin/rookout_check
+./node_modules/.bin/rookout_check
 ```
 
 ## Supported Versions
@@ -405,7 +405,7 @@ For more information check out this blog post: https://www.rookout.com/3_min_hac
 The JVM [Rook](https://mvnrepository.com/artifact/com.rookout/rook/latest) provides the ability to fetch debug data from a running application in real time.  
 It can be download directly to the target system by running the following command:
 ```bash
-$ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 ```
 It can also easily be installed by adding the dependency in JVM build systems such as Maven or Gradle:
 
@@ -449,10 +449,10 @@ dependencies {
 Setup the Rookout token in your environment:
 ```bash
 # Export your token as an environment variable
-$ export ROOKOUT_TOKEN=[Your Rookout Token]
+export ROOKOUT_TOKEN=[Your Rookout Token]
 
 # Add the Java Agent to your application
-$ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
+export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 ```
 
 ### API
@@ -507,7 +507,7 @@ The callback is executed when the method finishes.
 
 To make sure the SDK was properly installed and test your configuration (environment variables only), run the following command:
 ```bash
-$ java -jar rook.jar
+java -jar rook.jar
 ```
 
 ## Supported Versions

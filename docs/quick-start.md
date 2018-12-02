@@ -33,7 +33,7 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
 
 ```python
 # Install the Rookout pypi package
-$ pip install rook
+pip install rook
 
 # Import the package in your app's entry-point file, just before it starts
 import rook
@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
 ```javascript
 // Install the npm package
-$ npm install --save rookout
+npm install --save rookout
 
 // Require the package in your app's entry-point file
 const rook = require('rookout');
@@ -63,13 +63,13 @@ rook.start({
 
 ```bash
 # Download our java agent
-$ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 
 # Export your token as an environment variable:
-$ export ROOKOUT_TOKEN=[Your Rookout Token]
+export ROOKOUT_TOKEN=[Your Rookout Token]
 
 # Set your JVM to use the rook as a java agent :  
-$ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
+export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 ```
 
 </div>
