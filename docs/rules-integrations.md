@@ -120,4 +120,18 @@ You will be able to find detailed procedures for all the following :
             Monitor your exceptions with Sentry
         </div>
     </div>
+    <div class="integrations-item">
+        <div class="integrations-logo">
+            <a href="#" target="_blank"><img src="/img/vendor_icons/textfile.svg"/></a>
+        </div>
+        <div class="integrations-title">
+            Write to File
+        </div>
+        <div class="integrations-link">
+            <a href="https://github.com/Rookout/output-integrations/tree/master/textfile" target="_blank">Our Tutorial</a>
+        </div>
+        <div class="integrations-description">
+            Send messages to a log file on the filesystem
+        </div>
+    </div>
 </div>
