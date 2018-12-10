@@ -87,22 +87,18 @@ function activateAlgoliaDocSearch() {
 function loadRookoutToken() {
   const ROOKOUT_TOKEN_URL = 'https://app.rookout.com/rest/v1/org/token';
 
-  if (rookoutCookieExists()) {
-    $.get({
-      url: ROOKOUT_TOKEN_URL,
-      method: 'GET',
-      xhrFields: {
-        withCredentials: true
-      }
-    }, (data) => {
-      setRookoutTokenInPage(data);
-    })
-      .fail(() => {
-        setRookoutTokenInPage(null);
-      });
-  } else {
+  $.get({
+    url: ROOKOUT_TOKEN_URL,
+    method: 'GET',
+    xhrFields: {
+      withCredentials: true
+   }
+  }, (data) => {
+    setRookoutTokenInPage(data);
+  })
+  .fail(() => {
     setRookoutTokenInPage(null);
-  }
+  });
 }
 
 
@@ -134,11 +130,6 @@ function setRookoutTokenInPage(data) {
   if (error) {
     $('.rookout-org-info').html('Login to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token')
   }
-}
-
-function rookoutCookieExists() {
-  // Uses https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js
-  return Cookies.get('rookout_session') !== undefined;
 }
 
 // TODO: FIX
