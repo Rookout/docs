@@ -1,7 +1,7 @@
 ---
 id: rooks-setup
-title: Rookout SDK Setup
-sidebar_label: Rookout SDK Setup
+title: SDK Setup
+sidebar_label: SDK Setup
 ---
 
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
@@ -24,7 +24,7 @@ If you are encountering any difficulties with deploying Rookout, this is the pla
 
 ## Python
 
-The [Rookout Python SDK](https://pypi.org/project/rook/) provides the ability to fetch debug data from a running application in real time.  
+The [Python SDK](https://pypi.org/project/rook/) provides the ability to fetch debug data from a running application in real time.  
 It can easily be installed by running the following command:
 ```bash
 pip install rook
@@ -32,7 +32,7 @@ pip install rook
 
 ## Setup
 
-Import the Rookout SDK within your application:
+Import the SDK within your application:
 ```python
 import rook
 
@@ -42,7 +42,7 @@ if __name__ == "__main__":
 ```
 <div class="rookout-org-info"></div>
 
-The Rookout SDK should be imported just before the application begins executing.  
+The SDK should be imported just before the application begins executing.  
 This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
 
 **Note: Loading Rookout into a forking application is an unsafe operation.**  
@@ -50,7 +50,7 @@ Check out the [Pre-forking servers](#pre-forking-servers) section for more detai
 
 ### Alternative Import
 
-If you prefer to configure the Rookout SDK purely using enviorment variables (see configuration options below) you may also use the following snippet:
+If you prefer to configure the SDK purely using enviorment variables (see configuration options below) you may also use the following snippet:
 
 ```python
 if __name__ == "__main__":
@@ -59,9 +59,9 @@ if __name__ == "__main__":
 ```
 <div class="rookout-org-info"></div>
 
-## Rookout SDK API
+## SDK API
 
-The Rookout SDK API offers the following methods
+The SDK API offers the following methods
 
 ```python
 start(token=None,
@@ -76,7 +76,7 @@ start(token=None,
     **kwargs)
 ```
 
-The `start` method is used to initialize the Rookout SDK in the background and accepts the following arguments:
+The `start` method is used to initialize the SDK in the background and accepts the following arguments:
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
@@ -116,14 +116,14 @@ Rookout was tested on `pip` versions 9+.
 
 ## Source Commit Detection
 
-The Rookout Python SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
+The Python SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
 1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
 2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
 3. If the main application is running from within a Git repository, use its head. 
 
 ## Dependencies
 
-The Rookout Python SDK contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
+The Python SDK contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
 
 If you encounter an error similar to the following example, be sure to install the environment specific build tools specified below:
 
@@ -282,7 +282,7 @@ For more information check out this blog post: https://www.rookout.com/3_min_hac
 
 ## Node.js
 
-The [Rookout NodeJS SDK](https://www.npmjs.com/package/rookout) provides the ability to fetch debug data from a running application in real time.  
+The [NodeJS SDK](https://www.npmjs.com/package/rookout) provides the ability to fetch debug data from a running application in real time.  
 It can easily be installed by running the following command:
 ```bash
 npm install --save rookout
@@ -290,7 +290,7 @@ npm install --save rookout
 
 ## Setup
 
-Import the Rookout SDK within your application:
+Import the SDK within your application:
 ```javascript
 const rook = require('rookout');
 
@@ -302,22 +302,22 @@ rook.start({
 
 ### Alternative Import
 
-If you prefer to configure the Rookout SDK purely using enviorment variables (see configuration options below) you may also use the following snippet:
+If you prefer to configure the SDK purely using enviorment variables (see configuration options below) you may also use the following snippet:
 
 ```js
 require('rookout/auto_start');
 ```
 <div class="rookout-org-info"></div>
 
-## Rookout SDK API
+## SDK API
 
-The Rookout SDK API offers the following methods
+The SDK API offers the following methods
 
 ```js
 start(opts)
 ```
 
-The `start` method is used to initialize the Rookout SDK in the background and recieves configuration using an `opts` object:
+The `start` method is used to initialize the SDK in the background and recieves configuration using an `opts` object:
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
@@ -335,7 +335,7 @@ The `start` method is used to initialize the Rookout SDK in the background and r
 stop()
 ```
 
-The `stop` method is used to shutdown the Rookout SDK.  
+The `stop` method is used to shutdown the SDK.  
 As Rookout is listening to a network connection, the Node process will not terminate as long as Rookout is running in the background.
 
 ```js
@@ -378,7 +378,7 @@ To make sure Rookout can validate the source file matches the file you are tryri
 
 ## Source Commit Detection
 
-The Rookout NodeJS SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
+The NodeJS SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
 1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
 2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
 3. If the main application is running from within a Git repository, use its head. 
@@ -403,7 +403,7 @@ For more information check out this blog post: https://www.rookout.com/3_min_hac
 
 ## JVM
 
-The [Rookout JVM SDK](https://mvnrepository.com/artifact/com.rookout/rook/latest) provides the ability to fetch debug data from a running application in real time.  
+The [JVM SDK](https://mvnrepository.com/artifact/com.rookout/rook/latest) provides the ability to fetch debug data from a running application in real time.  
 It can be download directly to the target system by running the following command:
 ```bash
 curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
@@ -475,15 +475,15 @@ public class Program {
 ```
 <div class="rookout-org-info"></div>
 
-## Rookout SDK API
+## SDK API
 
-The Rookout SDK API offers the following methods
+The SDK API offers the following methods
 
 ```java
 public static void start(RookOptions opts);
 ```
 
-The `start` method is used to initialize the Rookout SDK in the background and recieves configuration using an `opts` object:
+The `start` method is used to initialize the SDK in the background and recieves configuration using an `opts` object:
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
@@ -556,7 +556,7 @@ jsvc -Dsun.java.command=my.main.class
 
 ## Source Commit Detection
 
-The Rookout Java SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
+The Java SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
 1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
 2. If the Java main application is jar/war/ear and it’s manifest includes the value “ROOKOUT_MANIFEST_COMMIT”, use it.
 

@@ -99,7 +99,7 @@ Example:
 
 ### Selector script
 
-A selector script allows the user to define for which Rookout SDK instances (aka "Rooks") the rule applies.
+A selector script allows the user to define for which SDK instances (aka "Rooks") the rule applies.
 
 - **Available Paths:** Basic Path, Arithmetic Path
 - **Available Operations:** set, format, return
@@ -164,7 +164,7 @@ A processing script allows the user to transfom the data and load it into variou
 - **Available Paths:** Basic Path, Arithmetic Path
 - **Available Operations:** set, format, return, all [Target Operations](rules-operations.md#Target%20Operations)
 - **Available Namespaces:**
-    - "store"- items extracted by the Rookout SDK instance (aka "Rook")
+    - "store"- items extracted by the SDK instance (aka "Rook")
     - "message_info"- message meta data
     - "agent"- agent information
     - "rook"- Rook information
@@ -1007,7 +1007,7 @@ Example
 
 ### Rook Namespace
 
-Rook namespaces represents the Rookout SDK instance (aka "Rook") being evaluated.
+Rook namespaces represents the SDK instance (aka "Rook") being evaluated.
 
 They have the following attributes:
 
