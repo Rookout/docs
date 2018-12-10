@@ -50,7 +50,6 @@ const siteConfig = {
     'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
     'https://buttons.github.io/buttons.js',
     'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
-    'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js',
     'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
     '/js/rookoutCustom.js',
     '/js/code-blocks-buttons.js'
