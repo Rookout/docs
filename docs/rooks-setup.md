@@ -1,7 +1,7 @@
 ---
 id: rooks-setup
-title: Rook Setup
-sidebar_label: Rook Setup
+title: Rookout SDK Setup
+sidebar_label: Rookout SDK Setup
 ---
 
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
@@ -227,7 +227,8 @@ except ImportError:
     rook.start(token='[Your Rookout Token]')
 ```
 <div class="rookout-org-info"></div>
-You must also enable theads by adding __--enable-threads__ to the command line or __enable-threads = true__ in the uWSGI ini file. Read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
+You must also enable theads by adding __--enable-threads__ to the command line or __enable-threads = true__ in the uWSGI ini file. Read more about it
+[here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
 
 </div>
 <div class="tab-pane fade" id="gunicorn" role="tabpanel">
