@@ -6,15 +6,15 @@ sidebar_label: Agent Setup
 
 ## Introduction
 
-The Rookout Agent is an ETL component that can be installed within your network.  
+The Rookout ETL Agent is a component that can be installed within your network.  
 It collects debugging data from the from your application instances, performs aggregation and data redaction, and sends the results to your target data collection application. 
 
-Using the Rookout Agent you may perform all related data processing inside your own network.
+Using the Rookout ETL Agent you may perform all related data processing inside your own network.
 
 ## Run as Container
 
-The easiest way to deploy the agent is as a Docker container [available here](https://hub.docker.com/r/rookout/agent/).  
-The agent can be configured to your needs using environment variables. 
+The easiest way to deploy the ETL Agent is as a Docker container [available here](https://hub.docker.com/r/rookout/agent/).  
+The ETL Agent can be configured to your needs using environment variables. 
 
 ### 1. Docker
 
@@ -38,7 +38,7 @@ helm install --name rookout stable/rookout --set token=[Your Rookout Token]
 
 ## Run as Daemon
 
-The Rookout Agent is also available as a Linux Daemon.  
+The Rookout ETL Agent is also available as a Linux Daemon.  
 To install it using a setup script, run the following commands:
 
 ```bash
@@ -59,7 +59,7 @@ bash setup.sh --token=[Your Rookout Token]
 
 - The enviorments variables for the Linux daemon are accessible by editing the `/etc/default/rookout-agent` file.
 
-- By default, the Agent listens only on localhost when running in daemon mode.  
+- By default, the ETL Agent listens only on localhost when running in daemon mode.  
 This can easily be changed by adding the following line to the configuration file:
 ```bash
 export LISTEN_ALL=TRUE
@@ -83,11 +83,11 @@ The linux deamon can be updated to the latest version using the following comman
 curl -fs https://get.rookout.com > setup.sh
 bash setup.sh --update
 ```
-The Agent configuration will be saved during the update process.
+The ETL Agent configuration will be saved during the update process.
 
 ### Linux Daemon Restart
 
-When modifying the configuration it is important to restart the agent using one of the following options:
+When modifying the configuration it is important to restart the ETL Agent using one of the following options:
 
 <ul class="nav nav-tabs" id="agent-restart" role="tablist">
 <li class="nav-item">
@@ -127,10 +127,10 @@ curl -fs https://get.rookout.com/remove_agent.sh | bash
 
 ### Disable Sending Data
 
-The agent connects to the Rookout Service to receive commands and report telemetry information.  
+The ETL Agent connects to the Rookout Service to receive commands and report telemetry information.  
 Data collected from within the application may be sent to Rookout for interactive debugging sessions.
 
-You may configure a local policy preventing the Agent from sending application data to Rookout by adding the following line to the configuration file at `/etc/default/rookout-agent` .
+You may configure a local policy preventing the ETL Agent from sending application data to Rookout by adding the following line to the configuration file at `/etc/default/rookout-agent` .
 
 ```bash
 export ROOKOUT_SEND_DATA=FALSE
@@ -138,25 +138,25 @@ export ROOKOUT_SEND_DATA=FALSE
 
 ### Local Rule Targets
 
-As the Agent runs within your network, it allows you to direct the collected data into data sinks.  
+As the ETL Agent runs within your network, it allows you to direct the collected data into data sinks.  
 For example, debug messages can be sent to Elasticsearch or Splunk clusters.
 
 ### Data Redaction
 
-All data received by the agent undergoes a data redaction process based on the configuration set by the user.
+All data received by the ETL gent undergoes a data redaction process based on the configuration set by the user.
 
 ## Proxy Support 
 
-The Rookout agent has HTTPS proxy support for advanced network configurations.  
+The Rookout ETL Agent has HTTPS proxy support for advanced network configurations.  
 As most production systems do have automated means for proxy detection, you should configure it statically.  
 
-This can be done when installing the Agent:
+This can be done when installing the ETL Agent:
 ```bash
 setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
 ```
 <div class="rookout-org-info"></div>
 
-Or by adding the HTTPS_PROXY configuration to the Agent configuration file at `/etc/default/rookout-agent` :
+Or by adding the HTTPS_PROXY configuration to the ETL Agent configuration file at `/etc/default/rookout-agent` :
 
 ```bash
 export HTTPS_PROXY=[Your Proxy Server]
