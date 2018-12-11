@@ -104,8 +104,8 @@ A selector script allows the user to define for which SDK instances (aka "Rooks"
 - **Available Paths:** Basic Path, Arithmetic Path
 - **Available Operations:** set, format, return
 - **Available Namespaces:**
-    - "machine"- machine information
-    - "agent"- agent information
+    - "machine"- Machine information
+    - "agent"- ETL Agent information
     - "rook"- Rook information
     - "temp"- scratch space
 
@@ -166,7 +166,7 @@ A processing script allows the user to transfom the data and load it into variou
 - **Available Namespaces:**
     - "store"- items extracted by the SDK instance (aka "Rook")
     - "message_info"- message meta data
-    - "agent"- agent information
+    - "agent"- ETL Agent information
     - "rook"- Rook information
     - "temp"- scratch space
 
@@ -248,7 +248,7 @@ Access methods can be chained, for example:
 
 ### Arithmethic Path
 
-a more advanced path, available for most of the agent operations (check out [uses](rules-uses.md)).
+A more advanced path, available for most of the ETL Agent operations (check out [uses](rules-uses.md)).
 To select this path type, specify "calc" as the path name.
 
 This path represents an arithmetic exception involving namespace access, constants and arithmetic operators.
@@ -542,7 +542,7 @@ These operations send data to the local file system.
 
 This operation writes a string from the namespace to a local file. In order to build a string [format](rules-operations.md#format) may be used.
 
-**Note:** this operation is only supported when using a local Agent.
+**Note:** this operation is only supported when using a local ETL Agent.
 
 Example:
 ```json
@@ -560,7 +560,7 @@ Example:
 
 This operation writes a JSON formatted dump frame from the namespace to a local file.
 
-**Note:** this operation is only supported when using a local Agent.
+**Note:** this operation is only supported when using a local ETL Agent.
 
 Example:
 ```json
@@ -1033,7 +1033,7 @@ They have the following attributes:
 
 ### Agent Namespace
 
-Agent namespaces represent the agent information.
+Agent namespaces represent the ETL Agent information.
 
 They have the following attributes:
 
