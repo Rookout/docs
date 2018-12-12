@@ -7,7 +7,7 @@ Rules are “non-breaking breakpoints” that let the Rookout SDK deployed in yo
 
 ## Setting Rules
 
-Before setting a rule you must create a [workspace](workspaces.md) and install the [Rookout SDK](rooks-setup.md) in your application.
+Before setting a rule you must create a [project](projects.md) and install the [Rookout SDK](rooks-setup.md) in your application.
 
 You set the rules within the [Rookout IDE](https://app.rookout.com) by left-clicking on the gutter, just like your own IDE.  
 

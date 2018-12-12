@@ -76,9 +76,9 @@ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
 </div>
 <div class="rookout-org-info"></div>
 
-### 3. Create a Workspace
+### 3. Create a Project
 
-Log in to the [Rookout IDE](https://app.rookout.com) and create a new Workspace. Give it a meaningful name.<br/>
+Log in to the [Rookout IDE](https://app.rookout.com) and create a new Project. Give it a meaningful name.<br/>
 Load your Source Code into the Rookout IDE from either Github or from your local file system.
 
 ![Add Source](/img/screenshots/quick_start_3.png)

@@ -28,8 +28,8 @@ Whenever you edit the rule, it's status is reset.
 
 This can be caused by any of the following reasons:
 
-- You have no applications connected to the current [workspace](workspaces.md). This is common for Serverless and batch applications which are invoked on demand.
-- The source file you used the set the breakpoint is not loaded in any of the applications in the current [workspace](workspaces.md).
+- You have no applications connected to the current [project](projects.md). This is common for Serverless and batch applications which are invoked on demand.
+- The source file you used the set the breakpoint is not loaded in any of the applications in the current [project](projects.md).
 - `JVM` you have set the breakpoint on a line that has no executable code associated with it.
 - `JVM` you have compiled your classes without debug information. `Gradle` compiles with debug information by default but `ant` and `javac` do not.
 - `Node` you are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map). Rookout has strong source map [support](rooks-setup.md).

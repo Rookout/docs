@@ -1,5 +1,5 @@
 ---
-id: workspaces-tagging
+id: projects-tagging
 title: Tagging
 sidebar_label: Tagging
 ---
