@@ -1,13 +1,13 @@
 ---
 id: rules-tasks
-title: Rule Tasks
+title: Breakpoint Tasks
 ---
 
 ## Data Redaction
 
-The [filter operation](rules-reference.md#filter) may be used to perform data redaction on the data fetched by a Rule before sending it to its destination.  
+The [filter operation](rules-reference.md#filter) may be used to perform data redaction on the data fetched by a Breakpoint before sending it to its destination.  
 
-For example, adding the following snippet to the Rule Operations section:
+For example, adding the following snippet to the Breakpoint Operations section:
 ```json
 {
   "name": "filter",
@@ -28,15 +28,15 @@ Will replace an instance of "secretKey":"12345" with "secretKey":"[REDACTED]", a
 
 ## Rate Limiting
 
-Rookout set a threshold on the rate rules are invoked within a single application instance to ensure there's no perfomance degradation when accidentally setting breakpoints on hot code path.
+Rookout set a threshold on the rate Breakpoints are invoked within a single application instance to ensure there's no perfomance degradation when accidentally setting breakpoints on hot code path.
 
-If rule is invoked twice within the limit (set by default to *100ms*) the rule will be disabled for that application instance and it's status will be set to `Error`.
+If a Breakpoint is invoked twice within the limit (set by default to *100ms*) the Breakpoint will be disabled for that application instance and it's status will be set to `Error`.
 
-To change this configuration for a specific rule, change the value of `minTimeBetweenHits` to the desired number in miliseconds:
+To change this configuration for a specific Breakpoint, change the value of `minTimeBetweenHits` to the desired number in miliseconds:
 ```json
 "minTimeBetweenHits":10
 ```
 
 ## What's next?
 
-To review the full Rule API check out the [Reference Section](rules-reference.md).
+To review the full Breakpoint API check out the [Reference Section](rules-reference.md).

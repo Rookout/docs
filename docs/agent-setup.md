@@ -136,7 +136,7 @@ You may configure a local policy preventing the ETL Agent from sending applicati
 export ROOKOUT_SEND_DATA=FALSE
 ```
 
-### Local Rule Targets
+### Local Breakpoint Targets
 
 As the ETL Agent runs within your network, it allows you to direct the collected data into data sinks.  
 For example, debug messages can be sent to Elasticsearch or Splunk clusters.
