@@ -8,10 +8,10 @@
       "agent-setup",
       "deployment-examples"
     ],
-    "Workspaces": [
-      "workspaces",
+    "Projects": [
+      "projects",
       "source-repos",
-      "workspaces-tagging"
+      "projects-tagging"
     ],
     "Breakpoints":[
       "rules",

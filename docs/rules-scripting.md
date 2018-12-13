@@ -30,7 +30,7 @@ Here's quick overview of the structure:
     "icon": "fa fa-upload  fa-flip-vertical",
     "title": "Dump Frame" // Sets the breakpoint name in the IDE
   },
-  "selector": { // Defines on which application instances to apply the breakpoint - derived from the Workspace
+  "selector": { // Defines on which application instances to apply the breakpoint - derived from the Project
     "operations": [
       {
         "name": "return",
@@ -41,7 +41,7 @@ Here's quick overview of the structure:
       }
     ]
   },
-  "workspace": "6f341506a6cb45bc872e4374c5d21011", // Sets the workspace 
+  "workspace": "6f341506a6cb45bc872e4374c5d21011", // Sets the Project 
   "aug": { // Defines how to collect data from the application
     "id": "5ef428c70daf4bbf91d4f0c18c311ffb",
     "location": { // Defines where to set the Rookout breakpoint
