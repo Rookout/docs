@@ -19,10 +19,10 @@ Rookout supports two location type and the location type used is chosen by the "
 This location indicates collecting the information whenever execution reaches the specified code line.
 
 This location has the following attributes:
-1. **filename** - the file name of the source file to place the rule.
-1. **lineno** - the line number in the source file to place the ruel.
+1. **filename** - the file name of the source file to place the breakpoint.
+1. **lineno** - the line number in the source file to place the breakpoint.
 1. **sha256** - the expected sha256 of the source file. If this attribute exists and is diffrenet from expected, 
-the rule will be reject and an exception will be thrown.
+the breakpoint will be rejected and an exception will be thrown.
 
 Example:
 ```json
@@ -99,13 +99,12 @@ Example:
 
 ### Selector script
 
-A selector script allows the user to define for which SDK instances (aka "Rooks") the rule applies.
+A selector script allows the user to define to which SDK instances (aka "Rooks") the breakpoint applies.
 
 - **Available Paths:** Basic Path, Arithmetic Path
 - **Available Operations:** set, format, return
 - **Available Namespaces:**
-    - "machine"- machine information
-    - "agent"- agent information
+    - "agent"- ETL Agent information
     - "rook"- Rook information
     - "temp"- scratch space
 
@@ -166,7 +165,7 @@ A processing script allows the user to transfom the data and load it into variou
 - **Available Namespaces:**
     - "store"- items extracted by the SDK instance (aka "Rook")
     - "message_info"- message meta data
-    - "agent"- agent information
+    - "agent"- ETL Agent information
     - "rook"- Rook information
     - "temp"- scratch space
 
@@ -248,7 +247,7 @@ Access methods can be chained, for example:
 
 ### Arithmethic Path
 
-a more advanced path, available for most of the agent operations (check out [uses](rules-uses.md)).
+A more advanced path, available for most of the ETL Agent operations (check out [uses](rules-uses.md)).
 To select this path type, specify "calc" as the path name.
 
 This path represents an arithmetic exception involving namespace access, constants and arithmetic operators.
@@ -500,7 +499,7 @@ Example:
 }
 ```
 
-This operation relies on the fact exception information exists (that is, rule was run inside an except block) and that 
+This operation relies on the fact exception information exists (that is, the breakpoint was set in an exception block) and that 
 data is stored in the namespace according to the Rookout convention.
 ```json
 {
@@ -542,7 +541,7 @@ These operations send data to the local file system.
 
 This operation writes a string from the namespace to a local file. In order to build a string [format](rules-operations.md#format) may be used.
 
-**Note:** this operation is only supported when using a local Agent.
+**Note:** this operation is only supported when using a local ETL Agent.
 
 Example:
 ```json
@@ -560,7 +559,7 @@ Example:
 
 This operation writes a JSON formatted dump frame from the namespace to a local file.
 
-**Note:** this operation is only supported when using a local Agent.
+**Note:** this operation is only supported when using a local ETL Agent.
 
 Example:
 ```json
@@ -626,14 +625,14 @@ Person newPerson(int newAge, String newName, Person[] newFriendList){
     p.age = newAge;
     p.name = newName;
     p.friendList = newFriendList;
-    Return p; // << Rule is set here.
+    Return p; // << Breakpoint is set here.
 }
 ```
-Let’s assume we set a Rule at the last line of newPerson(), in which we return the value of p.
+Let’s assume we set a Breakpoint at the last line of newPerson(), in which we return the value of p.
 
 A) Fetching the entire frame dump
 
-If we don’t know exactly what variable(s) we want to fetch, we can just fetch the entire frame dump at the location of the rule point.
+If we don’t know exactly what variable(s) we want to fetch, we can just fetch the entire frame dump at the location of the Breakpoint.
 If this is the case, the set action may look something like this:
 
 ```json
@@ -681,7 +680,7 @@ If you have reached the object **collection depth** limit you should expect to s
 
 B) Fetching a specific variable
 
-If we want to fetch a specific variable, we can simply define it by adding it as the rule action.
+If we want to fetch a specific variable, we can simply define it by adding it as the Breakpoint action.
 The set action may look like something like this:
 
 ```json
@@ -1033,7 +1032,7 @@ They have the following attributes:
 
 ### Agent Namespace
 
-Agent namespaces represent the agent information.
+Agent namespaces represent the ETL Agent information.
 
 They have the following attributes:
 

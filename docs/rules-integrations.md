@@ -19,7 +19,7 @@ You will be able to find detailed procedures for all the following :
             <a href="https://github.com/Rookout/output-integrations/tree/master/slack" target="_blank">Our Tutorial</a>
         </div>
         <div class="integrations-description">
-            Send your messages directly to a monitoring channel when rules triggers
+            Send your messages directly to a monitoring channel when Breakpoints trigger
         </div>
     </div>
     <div class="integrations-item">

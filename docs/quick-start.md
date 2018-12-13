@@ -83,12 +83,12 @@ Load your Source Code into the Rookout IDE from either Github or from your local
 
 ![Add Source](/img/screenshots/quick_start_3.png)
 
-### 4. Add a Rule Point
+### 4. Add a Breakpoint
 
-Add a Rule Point at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.<br/>
+Add a Breakpoint at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.<br/>
 Run your app and trigger the code you are trying to debug.
 
-![Add Rule](/img/screenshots/quick_start_4.png)
+![Add Breakpoint](/img/screenshots/quick_start_4.png)
 
 ### 5. Watch the Debug Message
 
@@ -108,6 +108,6 @@ And that's it, you're done :)
 
 - Learn more about installing customizing Rookout using our detailed [Setup Guides](rooks-setup.md).
 
-- Dig deeper into [Rookout Rules](rules.md).
+- Dig deeper into [Rookout Breakpoints](rules.md).
 
 - Hook Rookout into your data pipeline using one of our [Data Integrations](rules-integrations.md).
