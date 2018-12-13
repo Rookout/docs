@@ -1,36 +1,36 @@
 ---
 id: rules-structure
-title: Rule Structure
+title: Breakpoint Structure
 ---
 
-Rules are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.  
+Breakpoint are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.  
 
-The Rookout IDE offers an ever expanding set of features to customize the rules' behaviours to meet your needs.  
-In this section, we'll beyond the UI into the rule object itself to better understand what can be achieved by customizing it by code.
+The Rookout IDE offers an ever expanding set of features to customize the Breakpoints' behaviours to meet your needs.  
+In this section, we'll beyond the UI into the Breakpoint object itself to better understand what can be achieved by customizing it by code.
 
-## Rule Function
+## Breakpoint Function
 
-Each Rule object determines the following:
+Each Breakpoint object determines the following:
 - Breakpoint location (file name and line)
 - The type of data to be fetched when the breakpoint is reached (e.g. stack frame, log line)
 - The formatting to be applied to the fetched data
 - The target to which the fetched data will be sent (e.g. the Rookout IDE, Slack, DataDog and others)
 
-## Rule Deep Dive
+## Breakpoint Deep Dive
 
-Rules are self-contained JSON objects that include all the information Rookout needs to Extract, Transform and Load the data.  
+Breakpoints are self-contained JSON objects that include all the information Rookout needs to Extract, Transform and Load the data.  
 Here's quick overview of the structure:
 
 ```js
 {
-  "id": "5ef428c70daf4bbf91d4f0c18c311ffb", // Sets the rule id
+  "id": "5ef428c70daf4bbf91d4f0c18c311ffb", // Sets the breakpoint id
   "template_id": "DUMP_FRAME",
-  "appearance": { // Sets the rule's apperance in the IDE
+  "appearance": { // Sets the breakpoint's apperance in the IDE
     "color": "#6CE3C9",
     "icon": "fa fa-upload  fa-flip-vertical",
-    "title": "Dump Frame" // Sets the rule name in the IDE
+    "title": "Dump Frame" // Sets the breakpoint name in the IDE
   },
-  "selector": { // Defines on which application instances to apply the rule - derived from the Workspace
+  "selector": { // Defines on which application instances to apply the breakpoint - derived from the Workspace
     "operations": [
       {
         "name": "return",
@@ -44,8 +44,8 @@ Here's quick overview of the structure:
   "workspace": "6f341506a6cb45bc872e4374c5d21011", // Sets the workspace 
   "aug": { // Defines how to collect data from the application
     "id": "5ef428c70daf4bbf91d4f0c18c311ffb",
-    "location": { // Defines where to set the Rookout rule
-      "name": "file_line", // Sets the rule to be a local rule - like a breakpoint
+    "location": { // Defines where to set the Rookout breakpoint
+      "name": "file_line", // Define a local breakpoint, targeting a specific code line
       "filename": "machina/apps/forum/views.py", // Source file to set the breakpoint at
       "sourcePath": "machina/apps/forum/views.py",
       "sourceRepo": "github-ellmetha-django-machina",
@@ -110,6 +110,6 @@ This script is simply a sequence of two operations:
 
 ## What's next?
 
-- Check out [common tasks](rules-tasks.md) with rules.
+- Check out [common tasks](rules-tasks.md) with Breakpoints.
 - Check out [examples](rules-integrations.md) for custom ETL pipelines.
-- Check out the detailed the [Rule Scripting Reference](rules-reference.md).
+- Check out the detailed the [Breakpoint Scripting Reference](rules-reference.md).
