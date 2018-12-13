@@ -19,10 +19,10 @@ Rookout supports two location type and the location type used is chosen by the "
 This location indicates collecting the information whenever execution reaches the specified code line.
 
 This location has the following attributes:
-1. **filename** - the file name of the source file to place the rule.
-1. **lineno** - the line number in the source file to place the ruel.
+1. **filename** - the file name of the source file to place the breakpoint.
+1. **lineno** - the line number in the source file to place the breakpoint.
 1. **sha256** - the expected sha256 of the source file. If this attribute exists and is diffrenet from expected, 
-the rule will be reject and an exception will be thrown.
+the breakpoint will be rejected and an exception will be thrown.
 
 Example:
 ```json
@@ -99,7 +99,7 @@ Example:
 
 ### Selector script
 
-A selector script allows the user to define for which SDK instances (aka "Rooks") the rule applies.
+A selector script allows the user to define to which SDK instances (aka "Rooks") the breakpoint applies.
 
 - **Available Paths:** Basic Path, Arithmetic Path
 - **Available Operations:** set, format, return
@@ -500,7 +500,7 @@ Example:
 }
 ```
 
-This operation relies on the fact exception information exists (that is, rule was run inside an except block) and that 
+This operation relies on the fact exception information exists (that is, the breakpoint was set in an exception block) and that 
 data is stored in the namespace according to the Rookout convention.
 ```json
 {
@@ -626,14 +626,14 @@ Person newPerson(int newAge, String newName, Person[] newFriendList){
     p.age = newAge;
     p.name = newName;
     p.friendList = newFriendList;
-    Return p; // << Rule is set here.
+    Return p; // << Breakpoint is set here.
 }
 ```
-Let’s assume we set a Rule at the last line of newPerson(), in which we return the value of p.
+Let’s assume we set a Breakpoint at the last line of newPerson(), in which we return the value of p.
 
 A) Fetching the entire frame dump
 
-If we don’t know exactly what variable(s) we want to fetch, we can just fetch the entire frame dump at the location of the rule point.
+If we don’t know exactly what variable(s) we want to fetch, we can just fetch the entire frame dump at the location of the Breakpoint.
 If this is the case, the set action may look something like this:
 
 ```json
@@ -681,7 +681,7 @@ If you have reached the object **collection depth** limit you should expect to s
 
 B) Fetching a specific variable
 
-If we want to fetch a specific variable, we can simply define it by adding it as the rule action.
+If we want to fetch a specific variable, we can simply define it by adding it as the Breakpoint action.
 The set action may look like something like this:
 
 ```json

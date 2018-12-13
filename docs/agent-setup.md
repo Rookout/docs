@@ -136,7 +136,7 @@ You may configure a local policy preventing the Agent from sending application d
 export ROOKOUT_SEND_DATA=FALSE
 ```
 
-### Local Rule Targets
+### Local Breakpoint Targets
 
 As the Agent runs within your network, it allows you to direct the collected data into data sinks.  
 For example, debug messages can be sent to Elasticsearch or Splunk clusters.
