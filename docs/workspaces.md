@@ -8,7 +8,7 @@ A Rookout Workspace allows you to define the context for a debugging session or 
 You may think of Workspaces as an IDE Project or Workspace, as it defines the following:
 1. The source code of the application to be debugged.
 2. The application instance (or instances) being debugged, filtered using [Rookout Tags](workspaces-tagging.md).
-3. A set of Breakpoints (in Rookout - Rule Points, or non-breaking breakpoints) identifying code areas you wish to debug.
+3. A set of Breakpoints (in Rookout - Breakpoint Points, or non-breaking breakpoints) identifying code areas you wish to debug.
 
 ## Workspace creation
 
