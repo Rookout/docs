@@ -104,7 +104,6 @@ A selector script allows the user to define for which SDK instances (aka "Rooks"
 - **Available Paths:** Basic Path, Arithmetic Path
 - **Available Operations:** set, format, return
 - **Available Namespaces:**
-    - "machine"- Machine information
     - "agent"- ETL Agent information
     - "rook"- Rook information
     - "temp"- scratch space
