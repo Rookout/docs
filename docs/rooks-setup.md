@@ -512,39 +512,44 @@ To make sure the SDK was properly installed and test your configuration (environ
 java -jar rook.jar
 ```
 
-## Supported Versions
-
-| Implementation     | Versions      |
-| ------------------ | ------------- |
-| **Oracle Java**    | 7u111, 8u91   |
-| **OpenJDK**        | 1.7, 1.8      |
-
-The following languages are officially jupported: Java, Scala, Kotlin, Groovy, ColdFusion.
-**Note:** Alpine Linux is currently not supported.
-
-If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: support@rookout.com .
-
 ## Packaging Sources
 
 Unlike Node and Python applications, most JVM applications do not include their source code within the library distribution. This prevents Rookout from verifying the source files have not changed between what the user sees and the production and will trigger a warning.
 
 In order to shut off the warning and gain the value of source verification, you should include your source files within your JAR/WAR/EAR library.
 
-For Gradle, use the following snippet:
-```java
+<ul class="nav nav-tabs" id="jvm-sources" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="gradle-sources-tab" data-toggle="tab" href="#gradle-sources" role="tab" aria-controls="gradle-sources" aria-selected="true">Gradle</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="maven-sources-tab" data-toggle="tab" href="#maven-sources" role="tab" aria-controls="maven-sources" aria-selected="false">Maven</a>
+</li>
+</li>
+</ul>
+
+<div class="tab-content" id="jvm-sources">
+<div class="tab-pane fade show active" id="gradle-sources" role="tabpanel">
+
+```groovy
 jar {
    from sourceSets.main.allSource
 }
 ```
 
-For Maven, use the following snippet:
+</div>
+<div class="tab-pane fade" id="maven-sources" role="tabpanel">
+
 ```xml
-    <resources>
-        <resource>
-            <directory>${basedir}/src/main/java</directory>
-        </resource>
-    </resources>
+<resources>
+    <resource>
+        <directory>${basedir}/src/main/java</directory>
+    </resource>
+</resources>
 ```
+
+</div>
+</div>
 
 ## Application Detection
 
@@ -554,6 +559,16 @@ Some Java based runtimes such as [Jsvc](https://commons.apache.org/proper/common
 jsvc -Dsun.java.command=my.main.class
 ```
 
+## Supported Versions
+
+| Implementation     | Versions      |
+| ------------------ | ------------- |
+| **Oracle Java**    | 7u111, 8u91   |
+| **OpenJDK**        | 1.7, 1.8      |
+
+The following languages are officially jupported: Java, Scala, Kotlin, Groovy, ColdFusion.
+
+If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: support@rookout.com .
 
 ## Source Commit Detection
 
