@@ -38,7 +38,39 @@ The source file you used the set the breakpoint is not loaded in any of the appl
 You have set the breakpoint on a line that has no executable code associated with it.
 
 #### (JVM) No Debug Information
-You have compiled your classes without debug information. `Gradle` compiles with debug information by default but `ant` and `javac` do not.
+You have compiled your classes without debug information.  
+`Gradle` and `Maven` compiles with debug information by default but [`Ant`](https://ant.apache.org/manual/Tasks/javac.html) and [`javac`](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/javac.html) do not.  
+
+Here a few examples on how to configure them:
+
+<ul class="nav nav-tabs" id="java-debug" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="ant-debug-tab" data-toggle="tab" href="#ant-debug" role="tab" aria-controls="ant-debug" aria-selected="true">Ant</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="javac-debug-tab" data-toggle="tab" href="#javac-debug" role="tab" aria-controls="javac-debug" aria-selected="false">javac</a>
+</li>
+</ul>
+
+<div class="tab-content" id="java-debug-content">
+<div class="tab-pane fade show active" id="ant-debug" role="tabpanel">
+
+```xml
+<javac srcdir="${source-directory}"
+        destdir="${classes-directory}"
+        classpath="${lib-directory}"
+        debug="true"
+/>
+```
+
+</div>
+<div class="tab-pane fade" id="javac-debug" role="tabpanel">
+
+```bash
+javac -g MyClass.java
+```
+
+</div>
 
 #### (Node) No Source Maps
 You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map). Rookout has strong source map [support](rooks-setup.md).
