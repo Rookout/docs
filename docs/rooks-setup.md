@@ -57,7 +57,6 @@ if __name__ == "__main__":
     from rook import auto_start
     # Your program starts here :)
 ```
-<div class="rookout-org-info"></div>
 
 ## SDK API
 
@@ -307,7 +306,6 @@ If you prefer to configure the SDK purely using enviorment variables (see config
 ```js
 require('rookout/auto_start');
 ```
-<div class="rookout-org-info"></div>
 
 ## SDK API
 
