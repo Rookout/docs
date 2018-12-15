@@ -365,7 +365,7 @@ If you are transpiling your JavaScript/TypeScript on the fly (using [babel-node]
 
 If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as seperate files (usually `app.map.js`) in your deployment.
 
-To make sure Rookout can validate the source file matches the file you are tryring to debug using hash comparison, we recommend building your source map with the full source code.
+To make sure Rookout can validate the source file matches the file you are tryring to debug using hash comparison, we recommend deploying the original source files side-by-side with the transpiled ones or building your source map with the full source code.
 
 ### Configuration for Common Tools
 
