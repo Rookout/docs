@@ -452,8 +452,11 @@ Setup the Rookout token in your environment:
 # Export your token as an environment variable
 export ROOKOUT_TOKEN=[Your Rookout Token]
 
-# Add the Java Agent to your application
-export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
+# Add the Java Agent to your application using an environment variable
+export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
+
+# (Or) Add the Java Agent to your application using command line
+java -javaagent:(pwd)/rook.jar MyClass
 ```
 
 ### API

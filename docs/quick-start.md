@@ -65,11 +65,11 @@ rook.start({
 # Download our java agent
 curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 
-# Export your token as an environment variable:
+# Export your token as an environment variable
 export ROOKOUT_TOKEN=[Your Rookout Token]
 
-# Set your JVM to use the rook as a java agent :  
-export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:(pwd)/rook.jar"
+# Set your JVM to use the rook as a java agent
+export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
 ```
 
 </div>
