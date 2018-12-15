@@ -28,13 +28,26 @@ Whenever you edit the Breakpoint, it's status is reset.
 
 This can be caused by any of the following reasons:
 
-- You have no applications connected to the current [project](projects.md). This is common for Serverless and batch applications which are invoked on demand.
-- The source file you used the set the breakpoint is not loaded in any of the applications in the current [project](projects.md).
-- `JVM` you have set the breakpoint on a line that has no executable code associated with it.
-- `JVM` you have compiled your classes without debug information. `Gradle` compiles with debug information by default but `ant` and `javac` do not.
-- `Node` you are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map). Rookout has strong source map [support](rooks-setup.md).
-- `Python`/`Node` you are debugging a package deployed as a depedency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
-- `Python`/`Node` file paths are changed between source repository and deployment. This requires setting up your source repository [accordingly](source-repos.md#source-path-matching).
+#### No Applications
+You have no applications connected to the current [project](projects.md). This is common for Serverless and batch applications which are invoked on demand.
+
+#### Wrong Source File
+The source file you used the set the breakpoint is not loaded in any of the applications in the current [project](projects.md).
+
+#### (JVM) No Code
+You have set the breakpoint on a line that has no executable code associated with it.
+
+#### (JVM) No Debug Information
+You have compiled your classes without debug information. `Gradle` compiles with debug information by default but `ant` and `javac` do not.
+
+#### (Node) No Source Maps
+You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map). Rookout has strong source map [support](rooks-setup.md).
+
+#### (Python/Node) Code is in a Dependency
+You are debugging a package deployed as a depedency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
+
+#### (Python/Node) Different File Layout
+File paths are changed between source repository and deployment. This requires setting up your source repository [accordingly](source-repos.md#source-path-matching).
 
 ## Active Breakpoint (Green)
 
@@ -43,10 +56,17 @@ In most cases, once the Breakpoint has transitioned to active, you will see mess
 
 If you fail to see any messages arriving, this may be caused by any of the following reasons:
 
-- You are not invoking the *correct* line of code in the correct *application instance*.
-- You are using a custom Breakpoint that send the message to another [data-sink](rules-integrations.md).
-- `Python` you are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](rooks-setup.md#pre-forking-servers).
-- `Python/JVM` you have placed a breakpoint on a long rununing function. In this runtime, breakpoints are only applied for function calls performed after the Breakpoint was created.
+#### Incorrect Application
+You are not invoking the *correct* line of code in the correct *application instance*.
+
+#### Output to Integration
+You are using a custom Breakpoint that send the message to another [data-sink](rules-integrations.md).
+
+#### (Python) Preforking
+You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](rooks-setup.md#pre-forking-servers).
+
+#### (Python/JVM) Long Running Function
+You have placed a breakpoint on a long rununing function. In this runtime, breakpoints are only applied for function calls performed after the Breakpoint was created.
 
 ## Error (Red)
 
@@ -55,8 +75,12 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 `Error` indicates at least some of your application instances will fail to collect the data requested, but other application instances may be able to collect the data successfully.
 
 `Error` messages are clearly documented within the IDE, but here are some of the common ones:
-- **Source file has changed** - Rookout verifies that the source file you are seeing in our IDE is the file you deploying in your application. If the file version is wrong (detected using an Hash calculation) the Breakpoint will not be set. If you use [source commit detection](http://localhost:3000/docs/rooks-setup.html#source-commit-detection) you will see the correct git commit to use on the [App instances page](https://app.rookout.com/app/connectivity/rooks).
-- `Python` **Invalid Breakpoint position** - the breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](rooks-setup.md)).
+
+#### Source file has changed 
+Rookout verifies that the source file you are seeing in our IDE is the file you deploying in your application. If the file version is wrong (detected using an Hash calculation) the Breakpoint will not be set. If you use [source commit detection](http://localhost:3000/docs/rooks-setup.html#source-commit-detection) you will see the correct git commit to use on the [App instances page](https://app.rookout.com/app/connectivity/rooks).
+
+#### Invalid Breakpoint position
+The breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](rooks-setup.md)).
 
 ## Warning (Sign)
 
@@ -66,4 +90,6 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 Rookout recommends you fix `Warning` whent they appear.
 
 `Warning` messages are clearly documented within the IDE, but here are some of the common ones:
-- `JVM` **Source file not found** - Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. In JVM based languages, you need to include your source within your Jar/War/Ear archives- read more about it on our [setup page](rooks-setup.md).
+
+#### (JVM) Source file not found 
+Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. In JVM based languages, you need to include your source within your Jar/War/Ear archives- read more about it on our [setup page](rooks-setup.md).
