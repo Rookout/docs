@@ -120,7 +120,7 @@ The first two will make sure you understand how to create and analyze our defaul
 The third bug will introduce a new Breakpoint type - Log. You will be walked through the process of editing the Breakpoint in order
 to add custom elements to it.
 
-For more information about Breakpoint Scripting refer to [our reference](rules.md)
+For more information about Breakpoint Scripting refer to [our reference](rules.md).
 
 #### Bug scenarios
 
@@ -298,7 +298,7 @@ The first two will make sure you understand how to create and analyze our defaul
 The third bug will introduce a new Breakpoint type - Log. You will be walked through the process of editing the Breakpoint in order
 to add custom elements to it.
 
-For more information about Breakpoint Scripting refer to [our reference](rules.md)
+For more information about Breakpoint Scripting refer to [our reference](rules.md).
 
 #### Bug scenarios
 
@@ -461,7 +461,7 @@ The first two will make sure you understand how to create and analyze our defaul
 The third bug will introduce a new Breakpoint type - Log. You will be walked through the process of editing the Breakpoint in order
 to add custom elements to it.
 
-For more information about Breakpoint Scripting refer to [our reference](rules.md)
+For more information about Breakpoint Scripting refer to [our reference](rules.md).
 
 #### Bug scenarios
 
