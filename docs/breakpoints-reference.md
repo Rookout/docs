@@ -1,5 +1,5 @@
 ---
-id: rules-reference
+id: breakpoints-reference
 title: Scripting Reference
 ---
 

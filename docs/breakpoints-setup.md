@@ -1,5 +1,5 @@
 ---
-id: rooks-setup
+id: breakpoints-setup
 title: SDK Setup
 sidebar_label: SDK Setup
 ---

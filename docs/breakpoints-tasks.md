@@ -1,11 +1,11 @@
 ---
-id: rules-tasks
+id: breakpoints-tasks
 title: Breakpoint Tasks
 ---
 
 ## Data Redaction
 
-The [filter operation](rules-reference.md#filter) may be used to perform data redaction on the data fetched by a Breakpoint before sending it to its destination.  
+The [filter operation](breakpoints-reference.md#filter) may be used to perform data redaction on the data fetched by a Breakpoint before sending it to its destination.  
 
 For example, adding the following snippet to the Breakpoint Operations section:
 ```json
@@ -39,4 +39,4 @@ To change this configuration for a specific Breakpoint, change the value of `min
 
 ## What's next?
 
-To review the full Breakpoint API check out the [Reference Section](rules-reference.md).
+To review the full Breakpoint API check out the [Reference Section](breakpoints-reference.md).

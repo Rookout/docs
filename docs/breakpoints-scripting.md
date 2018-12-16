@@ -1,5 +1,5 @@
 ---
-id: rules-scripting
+id: breakpoints-scripting
 title: Breakpoint Structure
 ---
 
@@ -111,6 +111,6 @@ This script is simply a sequence of two operations:
 
 ## What's next?
 
-- Check out [common tasks](rules-tasks.md) with breakpoints.
-- Check out [examples](rules-integrations.md) for custom ETL pipelines.
-- Check out the detailed the [Breakpoint Scripting Reference](rules-structure.md).
+- Check out [common tasks](breakpoints-tasks.md) with breakpoints.
+- Check out [examples](breakpoints-integrations.md) for custom ETL pipelines.
+- Check out the detailed the [Breakpoint Scripting Reference](breakpoints-structure.md).

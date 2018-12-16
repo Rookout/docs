@@ -14,12 +14,12 @@
       "projects-tagging"
     ],
     "Breakpoints":[
-      "rules",
-      "rules-status",
-      "rules-structure",
-      "rules-tasks",
+      "breakpoints",
+      "breakpoints-status",
+      "breakpoints-structure",
+      "breakpoints-tasks",
       "integrations",
-      "rules-reference"
+      "breakpoints-reference"
     ]
   }
 }

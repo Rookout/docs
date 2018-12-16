@@ -1,5 +1,5 @@
 ---
-id: rules-status
+id: breakpoints-status
 title: Breakpoint Status
 sidebar_label: Breakpoint Status
 ---
@@ -73,7 +73,7 @@ javac -g MyClass.java
 </div>
 
 #### (Node) No Source Maps
-You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map). Rookout has strong source map [support](rooks-setup.md).
+You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map). Rookout has strong source map [support](breakpoints-setup.md).
 
 #### (Python/Node) Code is in a Dependency
 You are debugging a package deployed as a depedency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
@@ -92,10 +92,10 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 You are not invoking the *correct* line of code in the correct *application instance*.
 
 #### Output to Integration
-You are using a custom Breakpoint that send the message to another [data-sink](rules-integrations.md).
+You are using a custom Breakpoint that send the message to another [data-sink](breakpoints-integrations.md).
 
 #### (Python) Preforking
-You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](rooks-setup.md#pre-forking-servers).
+You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](breakpoints-setup.md#pre-forking-servers).
 
 #### (Python/JVM) Long Running Function
 You have placed a breakpoint on a long rununing function. In this runtime, breakpoints are only applied for function calls performed after the Breakpoint was created.
@@ -112,10 +112,10 @@ You have placed a breakpoint on a long rununing function. In this runtime, break
 Rookout verifies that the source file you are seeing in our IDE is the file you deploying in your application. If the file version is wrong (detected using an Hash calculation) the Breakpoint will not be set. If you use [source commit detection](http://localhost:3000/docs/rooks-setup.html#source-commit-detection) you will see the correct git commit to use on the [App instances page](https://app.rookout.com/app/connectivity/rooks).
 
 #### (Python) Invalid Breakpoint position
-The breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](rooks-setup.md)).
+The breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](breakpoints-setup.md)).
 
 #### Invalid Path in Breakpoint Configuration
-The breakpoint contains a invalid path argument.  Check out the [Breakpoint Tasks](rules-tasks.md) and the [Breakpoint Reference](rules-reference.md) for more information on how to properly configure breakpoints.
+The breakpoint contains a invalid path argument.  Check out the [Breakpoint Tasks](breakpoints-tasks.md) and the [Breakpoint Reference](breakpoints-reference.md) for more information on how to properly configure breakpoints.
 
 **Note:** If Rookout deems the invalid configuration to be non-critical, this might show up as a warning instead.
 
@@ -125,7 +125,7 @@ Please choose another data sink for your breakpoint.
 
 #### Breakpoint was Disabled due to Rate-Limiting
 Rookout employs a built-in rate-limiting mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the rate limit has been hit and the breakpoint has been disabled in the offending application instance.  
-Read more about configuring rate-limiting [here](rules-tasks.md#rate-limiting).
+Read more about configuring rate-limiting [here](breakpoints-tasks.md#rate-limiting).
 
 ## Warning (Sign)
 
@@ -138,8 +138,8 @@ Rookout recommends you fix `Warning` whent they appear.
 
 #### (JVM) Source file not found 
 Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. In most JVM based languages, please include your source within your Jar/War/Ear archives.  
-Read more about it on our [setup page](rooks-setup.md).
+Read more about it on our [setup page](breakpoints-setup.md).
 
 #### (Node) Original Source Files are Missing
 Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. For transpiled JS/TS/CS, please deploy your original sources side-by-side with the transpiled ones or include sources within the source map.  
-Read more about it on our [setup page](rooks-setup.md).
+Read more about it on our [setup page](breakpoints-setup.md).

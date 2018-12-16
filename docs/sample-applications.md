@@ -120,7 +120,7 @@ The first two will make sure you understand how to create and analyze our defaul
 The third bug will introduce a new Breakpoint type - Log. You will be walked through the process of editing the Breakpoint in order
 to add custom elements to it.
 
-For more information about Breakpoint Scripting refer to [our reference](rules.md)
+For more information about Breakpoint Scripting refer to [our reference](breakpoints.md)
 
 #### Bug scenarios
 
@@ -184,7 +184,7 @@ __Level: Intermediate__
 
 #### What's next?
 
-Check out our [Quick Start guide](rooks-setup.md) to start debugging your own code.
+Check out our [Quick Start guide](breakpoints-setup.md) to start debugging your own code.
 </div>
 <div class="tab-pane fade" id="node" role="tabpanel">
 
@@ -298,7 +298,7 @@ The first two will make sure you understand how to create and analyze our defaul
 The third bug will introduce a new Breakpoint type - Log. You will be walked through the process of editing the Breakpoint in order
 to add custom elements to it.
 
-For more information about Breakpoint Scripting refer to [our reference](rules.md)
+For more information about Breakpoint Scripting refer to [our reference](breakpoints.md)
 
 #### Bug scenarios
 
@@ -356,7 +356,7 @@ __Level: Intermediate__
 
 #### What's next?
 
-Check out our [Quick Start guide](rooks-setup.md) to start debugging your own code.
+Check out our [Quick Start guide](breakpoints-setup.md) to start debugging your own code.
 </div>
 <div class="tab-pane fade" id="jvm" role="tabpanel">
 
@@ -461,7 +461,7 @@ The first two will make sure you understand how to create and analyze our defaul
 The third bug will introduce a new Breakpoint type - Log. You will be walked through the process of editing the Breakpoint in order
 to add custom elements to it.
 
-For more information about Breakpoint Scripting refer to [our reference](rules.md)
+For more information about Breakpoint Scripting refer to [our reference](breakpoints.md)
 
 #### Bug scenarios
 
@@ -522,6 +522,6 @@ __Level: Intermediate__
 
 #### What's next?
 
-Check out our [Quick Start guide](rooks-setup.md) to start debugging your own code.
+Check out our [Quick Start guide](breakpoints-setup.md) to start debugging your own code.
 </div>
 
