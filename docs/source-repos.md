@@ -4,7 +4,7 @@ title: Source Repositories
 sidebar_label: Source Repositories
 ---
 
-Each workspace contains the source code the proejcts you wish to debug.
+Each Project contains the source code you wish to debug.
 
 Rookout allows you to easily load sources from your local file system or your git provider.  This is preformed directly in our Web based IDE.
 

@@ -82,10 +82,10 @@ docker run -p 5000:5000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 2. Go to [your Rookout IDE](https://app.rookout.com/) and **Log In**
 3. Add the source code by following the instructions below:
     
-    - Create a Workspace
+    - Create a Project
         1. Click the Gear Wheel icon near the Workout selection menu, to the top left-hand side of the screen
-        1. Click the + icon near the Search Workspace option to create a new Workspace
-        1. Set the Workspace Name to "Python Tutorial"
+        1. Click the + icon near the Search Project option to create a new Project
+        1. Set the Project Name to "Python Tutorial"
         1. Click the + icon near "Sources" and choose either GitHub or Local Filesystem
 
     - Import source code from Github 
@@ -94,7 +94,7 @@ docker run -p 5000:5000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
         1. Type "tutorial-python" in Repository name
         1. Click Add Repository
         1. Click Apply
-        1. Click Select Workspace
+        1. Click Select Project
 
     - If you don't use Github, import the source code from your local machine
         1. Choose Local Filesystem and follow the instructions in the following dialog.
@@ -246,10 +246,10 @@ docker run -p 4000:4000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 
 3. Add the source code by following the instructions below:
 
-    - Create a Workspace
+    - Create a Project
         1. Click the Gear Wheel icon near the Workout selection menu, to the top left-hand side of the screen
-        1. Click the + icon near the Search Workspace option to create a new Workspace
-        1. Set the Workspace Name to "Node Tutorial"
+        1. Click the + icon near the Search Project option to create a new Project
+        1. Set the Project Name to "Node Tutorial"
         1. Click the + icon near "Sources" and choose either GitHub or Local Filesystem
 
     - Import source code from Github 
@@ -258,7 +258,7 @@ docker run -p 4000:4000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
         1. Type "tutorial-nodejs" in Repository name
         1. Click Add Repository
         1. Click Apply
-        1. Click Select Workspace
+        1. Click Select Project
     
     - If you don't use Github, import the source code from your local machine
         1. Choose Local Filesystem and follow the instructions in the following dialog.
@@ -416,10 +416,10 @@ docker run -p 8080:8080 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 4.  After running the app & agent go to [your Rookout IDE](https://app.rookout.com/) and **Log In**
 5.  Add the source code by following the instructions below:
 
-    - Create a Workspace
+    - Create a Project
         1. Click the Gear Wheel icon near the Workout selection menu, to the top left-hand side of the screen
-        1. Click the + icon near the Search Workspace option to create a new Workspace
-        1. Set the Workspace Name to "Java Tutorial"
+        1. Click the + icon near the Search Project option to create a new Project
+        1. Set the Project Name to "Java Tutorial"
         1. Click the + icon near "Sources" and choose either GitHub or Local Filesystem
 
     - Import source code from Github 
@@ -428,7 +428,7 @@ docker run -p 8080:8080 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
         1. Type "tutorial-java" in Repository name
         1. Click Add Repository
         1. Click Apply
-        1. Click Select Workspace
+        1. Click Select Project
 
     - If you don't use Github, import the source code from your local machine
         1. Choose Local Filesystem and follow the instructions in the following dialog.
