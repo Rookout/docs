@@ -415,6 +415,8 @@ It can also easily be installed by adding the dependency in JVM build systems su
 <li class="nav-item">
 <a class="nav-link" id="maven-tab" data-toggle="tab" href="#maven" role="tab" aria-controls="maven" aria-selected="false">Maven</a>
 </li>
+<li class="nav-item">
+<a class="nav-link" id="ant-tab" data-toggle="tab" href="#ant" role="tab" aria-controls="ant" aria-selected="false">Ant</a>
 </li>
 </ul>
 
@@ -423,7 +425,7 @@ It can also easily be installed by adding the dependency in JVM build systems su
 
 ```groovy
 dependencies {
-   runtime group: 'com.rookout', name: 'rook', version:'0.1.36'
+   runtime group: 'com.rookout', name: 'rook', version:'0.1.40'
 }
 ```
 
@@ -434,8 +436,16 @@ dependencies {
 <dependency>
     <groupId>com.rookout</groupId>
     <artifactId>rook</artifactId>
-    <version>0.1.36</version>
+    <version>0.1.40</version>
 </dependency>
+```
+
+</div>
+<div class="tab-pane fade" id="ant" role="tabpanel">
+
+Using [Ivy (Dependency Management for Ant)](http://ant.apache.org/ivy/)
+```xml
+<dependency org="com.rookout" name="rook" rev="0.1.40"/>
 ```
 
 </div>
@@ -525,6 +535,8 @@ In order to shut off the warning and gain the value of source verification, you 
 <li class="nav-item">
 <a class="nav-link" id="maven-sources-tab" data-toggle="tab" href="#maven-sources" role="tab" aria-controls="maven-sources" aria-selected="false">Maven</a>
 </li>
+<li class="nav-item">
+<a class="nav-link" id="ant-sources-tab" data-toggle="tab" href="#ant-sources" role="tab" aria-controls="ant-sources" aria-selected="false">Ant</a>
 </li>
 </ul>
 
@@ -546,6 +558,18 @@ jar {
         <directory>${basedir}/src/main/java</directory>
     </resource>
 </resources>
+```
+
+</div>
+<div class="tab-pane fade" id="ant-sources" role="tabpanel">
+
+Setting debug to `true` indicates that source should be compiled with debug information
+```xml
+<javac srcdir="${source-directory}"
+       destdir="${classes-directory}"
+       classpath="${lib-directory}"
+       debug="true"
+/>
 ```
 
 </div>
