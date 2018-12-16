@@ -4,7 +4,7 @@ title: Tagging
 sidebar_label: Tagging
 ---
 
-The following are common use cases for using Tags to define Workspace Filters.  
+The following are common use cases for using Tags to define Project Filters.  
 Let's assume these are some instances of your application:
 
 <img src="/img/screenshots/tagging_1.png" />  
@@ -21,7 +21,7 @@ rook.start(token='[Your Rookout Token]',
 
 ### Debug all instances of Service A
 
-When creating your Rookout Workspace, use tag:ServiceA to debug all instances of Service A (both Production and Staging).
+When creating your Rookout Project, use tag:ServiceA to debug all instances of Service A (both Production and Staging).
 
 1. Add the following filter: `tag:ServiceA`
 
@@ -31,7 +31,7 @@ When creating your Rookout Workspace, use tag:ServiceA to debug all instances of
 
 ### Debug all Production instances
 
-When creating your Rookout Workspace, use tag:Production to debug all production instances (both Service A and Service B).
+When creating your Rookout Project, use tag:Production to debug all production instances (both Service A and Service B).
 
 1. Add the following filter: `tag:Production`
 

@@ -5,7 +5,7 @@ sidebar_label: Projects
 ---
 
 A Rookout Project allows you to define the context for a debugging session or for a fixed debugging configuration.  
-You may think of Projects as an IDE Project or Workspace, as it defines the following:
+It defines the following:
 1. The source code of the application to be debugged.
 2. The application instance (or instances) being debugged, filtered using [Rookout Tags](projetcs-tagging.md).
 3. A set of Breakpoints (in Rookout - Rule Points, or non-breaking breakpoints) identifying code areas you wish to debug.
