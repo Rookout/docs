@@ -580,7 +580,7 @@ The Java SDK supports detecting the existing source code commit in the following
 
 None.
 
-## Serverkess and PaaS
+## Serverless and PaaS
 
 For using Java under a Serverless/PaaS environment, the following must be taken into account:
 - Include the Java Agent in your application package.
