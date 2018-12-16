@@ -1,5 +1,5 @@
 ---
-id: breakpoints-setup
+id: sdk-setup
 title: SDK Setup
 sidebar_label: SDK Setup
 ---

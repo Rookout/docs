@@ -184,7 +184,7 @@ __Level: Intermediate__
 
 #### What's next?
 
-Check out our [Quick Start guide](breakpoints-setup.md) to start debugging your own code.
+Check out our [Quick Start guide](sdk-setup.md) to start debugging your own code.
 </div>
 <div class="tab-pane fade" id="node" role="tabpanel">
 
@@ -356,7 +356,7 @@ __Level: Intermediate__
 
 #### What's next?
 
-Check out our [Quick Start guide](breakpoints-setup.md) to start debugging your own code.
+Check out our [Quick Start guide](sdk-setup.md) to start debugging your own code.
 </div>
 <div class="tab-pane fade" id="jvm" role="tabpanel">
 
@@ -522,6 +522,6 @@ __Level: Intermediate__
 
 #### What's next?
 
-Check out our [Quick Start guide](breakpoints-setup.md) to start debugging your own code.
+Check out our [Quick Start guide](sdk-setup.md) to start debugging your own code.
 </div>
 

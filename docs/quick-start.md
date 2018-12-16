@@ -102,7 +102,7 @@ And that's it, you're done :)
 
 - If you faced any issues, please let us know: support@rookout.com
 
-- Learn more about installing customizing Rookout using our detailed [Setup Guides](breakpoints-setup.md).
+- Learn more about installing customizing Rookout using our detailed [Setup Guides](sdk-setup.md).
 
 - Dig deeper into [Rookout Breakpoints](breakpoints.md).
 
