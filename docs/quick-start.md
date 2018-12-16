@@ -98,11 +98,7 @@ And that's it, you're done :)
 
 ![Debug Message](/img/screenshots/quick_start_5.png)
 
-## Next step
-
-- __Get a taste of real time debugging with our [Basic Debugging](rules-index.md) guide.__
-
-## Additional information
+## Next steps
 
 - If you faced any issues, please let us know: support@rookout.com
 
