@@ -71,10 +71,6 @@ Example:
 }
 ```  
 
-## Condition
-
-## Extractor
-
 ## Action
 
 Rookout currently only supports the script action:
@@ -941,6 +937,7 @@ Example:
 
 #### thread_id
 Get current thread id.
+Supported on Python and JVM only.
 
 Example:
 ```json
@@ -954,6 +951,7 @@ Example:
 
 #### thread_name
 Get current thread name.
+Supported on Python and JVM only.
 
 Example:
 ```json
@@ -967,6 +965,7 @@ Example:
 
 #### threads
 Get a list of all running threads.
+Supported on Python and JVM only.
 
 Example:
 ```json
@@ -980,6 +979,7 @@ Example:
 
 #### threads_tracebacks
 Get a list of all running threads with their tracebacks.
+Supported on Python and JVM only.
 
 Example:
 ```json
