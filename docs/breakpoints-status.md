@@ -114,11 +114,6 @@ Rookout verifies that the source file you are seeing in our IDE is the file you 
 #### (Python) Invalid Breakpoint position
 The breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](sdk-setup.md)).
 
-#### Invalid Path in Breakpoint Configuration
-The breakpoint contains a invalid path argument.  Check out the [Breakpoint Tasks](breakpoints-tasks.md) and the [Breakpoint Reference](breakpoints-reference.md) for more information on how to properly configure breakpoints.
-
-**Note:** If Rookout deems the invalid configuration to be non-critical, this might show up as a warning instead.
-
 #### Sending to Rookout is Disabled
 The system administrator has disabled sending application data to the Rookout service for security reasons (read more about this configuration [here](agent-setup.md#disable-sending-data)).  
 Please choose another data sink for your breakpoint.
@@ -126,6 +121,23 @@ Please choose another data sink for your breakpoint.
 #### Breakpoint was Disabled due to Rate-Limiting
 Rookout employs a built-in rate-limiting mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the rate limit has been hit and the breakpoint has been disabled in the offending application instance.  
 Read more about configuring rate-limiting [here](breakpoints-tasks.md#rate-limiting).
+
+#### Invalid JSON Key
+The object under the specified JSON key is invalid. Check out the [Breakpoint Tasks](breakpoints-tasks.md) and the [Breakpoint Reference](breakpoints-reference.md) for more information on how to properly configure breakpoints.
+
+#### Object Name Missing
+The specified sub-configuration is missing the key `name` which specifies the object name. Check out the [Breakpoint Tasks](breakpoints-tasks.md) and the [Breakpoint Reference](breakpoints-reference.md) for more information on how to properly configure breakpoints.
+
+#### Object Name Unknown
+The specified object `name` is unknown. Check out the [Breakpoint Tasks](breakpoints-tasks.md) and the [Breakpoint Reference](breakpoints-reference.md) for more information on how to properly configure breakpoints.
+
+#### Object Configuration is Invalid
+The specified JSON sub-configuration is invalid. Check out the [Breakpoint Tasks](breakpoints-tasks.md) and the [Breakpoint Reference](breakpoints-reference.md) for more information on how to properly configure breakpoints.
+
+#### Invalid Path in Breakpoint Configuration
+The breakpoint contains a invalid path argument. Check out the [Breakpoint Tasks](breakpoints-tasks.md) and the [Breakpoint Reference](breakpoints-reference.md) for more information on how to properly configure breakpoints.
+
+**Note:** If Rookout deems the invalid configuration to be non-critical, this might show up as a warning instead.
 
 ## Warning (Sign)
 
