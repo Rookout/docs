@@ -92,7 +92,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 You are not invoking the *correct* line of code in the correct *application instance*.
 
 #### Output to Integration
-You are using a custom Breakpoint that send the message to another [data-sink](breakpoints-integrations.md).
+You are using a custom Breakpoint that send the message to another [data-sink](integrations.md).
 
 #### (Python) Preforking
 You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](sdk-setup.md#pre-forking-servers).
