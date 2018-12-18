@@ -1,15 +1,17 @@
 const request = require('request-promise-native');
 const fs = require('fs');
 const path = require('path');
+const process = require('process');
 
-const options = {
-  url: 'https://api.github.com/repos/Rookout/output-integrations/contents/',
-  headers: {
-    'User-Agent': 'RookoutDocs/1.0'
-  }
+const headers = {
+  'User-Agent': 'RookoutDocs/1.0'
 };
 
-request(options, async function (error, response, body) {
+if (process.env.GITHUB_TOKEN) {
+  headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
+}
+
+request({url: 'https://api.github.com/repos/Rookout/output-integrations/contents/', headers: headers}, async function (error, response, body) {
   if (error) {
     console.error('error:', error);
     throw error;
@@ -25,14 +27,10 @@ const filterData = (data) => {
 };
 
 const getMetadata = async (integration) => {
-  const options = {
+  const res = await request({
     url: `https://raw.githubusercontent.com/Rookout/output-integrations/master/${integration.name}/docs_metadata/metadata.json`,
-    headers: {
-      'User-Agent': 'RookoutDocs/1.0'
-    }
-  };
-
-  const res = await request(options);
+    headers: headers
+  });
   return JSON.parse(res);
 };
 
