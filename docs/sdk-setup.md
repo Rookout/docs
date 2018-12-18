@@ -406,50 +406,8 @@ It can be download directly to the target system by running the following comman
 ```bash
 curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 ```
-It can also easily be installed by adding the dependency in JVM build systems such as Maven or Gradle:
-
-<ul class="nav nav-tabs" id="jvm-deps" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="gradle-tab" data-toggle="tab" href="#gradle" role="tab" aria-controls="gradle" aria-selected="true">Gradle</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="maven-tab" data-toggle="tab" href="#maven" role="tab" aria-controls="maven" aria-selected="false">Maven</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="ant-tab" data-toggle="tab" href="#ant" role="tab" aria-controls="ant" aria-selected="false">Ant</a>
-</li>
-</ul>
-
-<div class="tab-content" id="jvm-deps">
-<div class="tab-pane fade show active" id="gradle" role="tabpanel">
-
-```groovy
-dependencies {
-   runtime group: 'com.rookout', name: 'rook', version:'0.1.40'
-}
-```
-
-</div>
-<div class="tab-pane fade" id="maven" role="tabpanel">
-
-```xml
-<dependency>
-    <groupId>com.rookout</groupId>
-    <artifactId>rook</artifactId>
-    <version>0.1.40</version>
-</dependency>
-```
-
-</div>
-<div class="tab-pane fade" id="ant" role="tabpanel">
-
-Using [Ivy (Dependency Management for Ant)](http://ant.apache.org/ivy/)
-```xml
-<dependency org="com.rookout" name="rook" rev="0.1.40"/>
-```
-
-</div>
-</div>
+It can also easily be installed by adding the dependency in JVM build systems such as Maven or Gradle.  
+The package is available on [mvn repository](https://mvnrepository.com/artifact/com.rookout/rook)
 
 ## Setup
 
