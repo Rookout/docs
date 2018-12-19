@@ -103,21 +103,21 @@ docker run -p 5000:5000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 4. Open the file `app.py`  
 <img src="/img/screenshots/python_tutorial_0.png" width="400px" height="300px" />  
 
-5. Add a _Dumpframe_ Breakpoint next to line number 95 by clicking next the the line number in the file viewer
+5. Add a _Snapshot_ Breakpoint next to line number 95 by clicking next the the line number in the file viewer
 <img src="/img/screenshots/getting_started_5.png" width="400px" height="300px" />  
 6. Looking at the right-hand pane **Breakpoint**, you will see the Breakpoint you added, on what line you added it and it should be 
 <span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
 ![Valid Breakpoint](/img/screenshots/getting_started_4.png)
     - If this is not the case, [click here](troubleshooting-rules.md) to see how to fix that
 7. Go the the app webpage [http://localhost:5000/](http://localhost:5000/) and add a todo in order to trigger the Breakpoint
-8. Check the bottom pane **Messages** and you'll see the dumpframe you just added, as it was triggered by the handler of the web api when you added a todo
+8. Check the bottom pane **Messages** and you'll see the snapshot you just added, as it was triggered by the handler of the web api when you added a todo
 ![Message pane](/img/screenshots/getting_started_3.png)
 
 #### Bug Hunt
 
 We prepared for you a few manually introduced bugs in order to learn how to use Rookout.  
-The first two will make sure you understand how to create and analyze our default Breakpoint - Dump Frame.  
-The third bug will introduce a new Breakpoint type - Log. You will be walked through the process of editing the Breakpoint in order
+The first two will make sure you understand how to create and analyze our default Breakpoint - Snapshot.  
+The third bug will introduce a new Breakpoint type - Log Line. You will be walked through the process of editing the Breakpoint in order
 to add custom elements to it.
 
 For more information about Breakpoint Scripting refer to [our reference](breakpoints.md)
@@ -147,7 +147,7 @@ __Level: Beginner__
     - **Reproduce:** Add a todo with special characters. All of these characters should disappear.
     - **Debug:**
         1. In the Rookout app, open the file `app.py`
-        2. In line 66 we see that the todo title is being filtered by `cleanStr` - Let's add a `Dump Frame` to line 67
+        2. In line 66 we see that the todo title is being filtered by `cleanStr` - Let's add a `Snapshot` to line 67
         3. Try to add a todo with some special characters (e.g: `do <> this`)
         4. We can clearly see both `req['title']` and `todoStr` - which is the cleaned title.
         ```python
@@ -162,7 +162,7 @@ __Level: Intermediate__
     - **Reproduce:** Add a task and when hovering on the text, on the right side you have the **&** symbol. Click on it to duplicate the task.
     - **Debug:**
         1. In the Rookout app, open the file `app.py`
-        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log"
+        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log Line"
         3. Add this Breakpoint to line 113
         4. Before triggering the Breakpoint, let's edit it so it returns what we want
         5. In the **Breakpoint** pane on the right, click the *Edit Breakpoint* (pen) icon next to the Breakpoint you just added. It will open up the Breakpoint configuration as a JSON file
@@ -281,21 +281,21 @@ docker run -p 4000:4000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
         
 </details>
 
-5. Add a _Dumpframe_ Breakpoint next to line number 5 by clicking next the the line number in the file viewer
-![Dumpframe Breakpoint](/img/screenshots/getting_started_6.png)
+5. Add a _Snapshot_ Breakpoint next to line number 5 by clicking next the the line number in the file viewer
+![Snapshot Breakpoint](/img/screenshots/getting_started_6.png)
 6. Looking at the right-hand pane **Breakpoint**, you will see the Breakpoint you added, on what line you added it and it should be 
 <span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
 ![Valid Breakpoint](/img/screenshots/getting_started_7.png)
     - If this is not the case, [click here](troubleshooting-rules.md) to see how to fix that
 7. Go the the app webpage [http://localhost:4000/](http://localhost:4000/) in order to trigger the Breakpoint
-8. Check the bottom pane **Messages** and you'll see the dumpframe you just added, as it was triggered by the handler of the web page when you accessed it
+8. Check the bottom pane **Messages** and you'll see the snapshot you just added, as it was triggered by the handler of the web page when you accessed it
 ![Message pane](/img/screenshots/getting_started_9.png)
 
 #### Bug Hunt
 
 We prepared for you a few manually introduced bugs in order to learn how to use Rookout.  
-The first two will make sure you understand how to create and analyze our default Breakpoint - Dump Frame.  
-The third bug will introduce a new Breakpoint type - Log. You will be walked through the process of editing the Breakpoint in order
+The first two will make sure you understand how to create and analyze our default Breakpoint - Snapshot.  
+The third bug will introduce a new Breakpoint type - Log Line. You will be walked through the process of editing the Breakpoint in order
 to add custom elements to it.
 
 For more information about Breakpoint Scripting refer to [our reference](breakpoints.md)
@@ -307,7 +307,7 @@ __Level: Beginner__
     - **Reproduce:** Add a few tasks, check one or more as completed using the checkbox on the left of the task and click the `Clear completed` button on the bottom right corner.
     - **Debug:**  
         1. In the Rookout app, open the file `/src/utils/store.js`
-        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Dump Frame"
+        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Snapshot"
         3. Add this Breakpoint to line 131 and try again to click on `Clear completed` to see the message that pops in the Rookout app
         4. We can now see the whole stacktrace leading to this point and we pinpoint the error to this message :
         5. We see the `Locals` object and all we have in is `this`, which has `store.todos` inside it.
@@ -319,7 +319,7 @@ __Level: Beginner__
     - **Reproduce:** Add a task with special characters. All these characters should not be saved.
     - **Debug:**
         1. In the Rookout app, open the file `/src/services/todos.js`
-        2. At lines 14 and 73 we see that the title passes the function `utils.cleanString(...)` - Let's add a `Dump Frame` to the end of the function in file `/src/services/utils.js`.
+        2. At lines 14 and 73 we see that the title passes the function `utils.cleanString(...)` - Let's add a `Snapshot` to the end of the function in file `/src/services/utils.js`.
         3. Try to add a task with some of these characters to get the frame.
         4. We can see that after using this function, on line 3 these characters are being found and replaced by regex. We found the source of the issue.
         ```javascript
@@ -334,7 +334,7 @@ __Level: Intermediate__
     - **Reproduce:** Add a task and when hovering on the text, on the right side you have the **&** symbol. Click on it to duplicate the task.
     - **Debug:**
         1. In the Rookout app, open the file `/src/services/todos.js`
-        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log"
+        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log Line"
         3. Add this Breakpoint to line 104
         4. Before triggering the Breakpoint, let's edit it so it returns what we want
         5. In the **Breakpoint** pane on the right, click the *Edit Breakpoint* (pen) icon next to the Breakpoint you just added. It will open up the Breakpoint configuration as a JSON file
@@ -439,8 +439,8 @@ docker run -p 8080:8080 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 
     ![TodoController.java](/img/screenshots/java-tutorial_1.png)
 
-7.  Add a default (Dump Frame) Breakpoint to the `addTodo` function by clicking next the the line number in the file viewer
-![Dumpframe Breakpoint](/img/screenshots/java-tutorial_2.png)
+7.  Add a default (Snapshot) Breakpoint to the `addTodo` function by clicking next the the line number in the file viewer
+![Snapshot](/img/screenshots/java-tutorial_2.png)
 
 8. Looking at the right-hand pane **Breakpoint**, you will see the Breakpoint and the line number where you added it - it should be <span style="color: #73CD1F;">**GREEN**</span>   
     ![Valid Breakpoint](/img/screenshots/java-tutorial_3.png)
@@ -450,15 +450,15 @@ docker run -p 8080:8080 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 
 ![Add Task](/img/screenshots/java-tutorial_4.png)
 
-10. Check the bottom pane **Messages** and you'll see the dumpframe you just added - it was triggered by the handler of the web page when you accessed it!
+10. Check the bottom pane **Messages** and you'll see the snapshot you just added - it was triggered by the handler of the web page when you accessed it!
 
 ![Message pane](/img/screenshots/java-tutorial_5.png)
 
 #### Bug Hunt
 
 We prepared for you a few manually introduced bugs in order to learn how to use Rookout.  
-The first two will make sure you understand how to create and analyze our default Breakpoint - Dump Frame.  
-The third bug will introduce a new Breakpoint type - Log. You will be walked through the process of editing the Breakpoint in order
+The first two will make sure you understand how to create and analyze our default Breakpoint - Snapshot.  
+The third bug will introduce a new Breakpoint type - Log Line. You will be walked through the process of editing the Breakpoint in order
 to add custom elements to it.
 
 For more information about Breakpoint Scripting refer to [our reference](breakpoints.md)
@@ -474,7 +474,7 @@ __Level: Beginner__
         1. Load the app's code from github / local - as explained [in here](java-getting-started.md#usage) 
         2. In the [Rookout app](https://app.rookout.com), open the file `src/main/java/com/rookout/tutorial/TodoController.java`  
         ![TodoController.java](/img/screenshots/java-tutorial_1.png)
-        3. Add a `dumpframe` Breakpoint on the `return` of the `clearCompleted` function by clicking left to the line numbering (just like you would have created a breakpoint on an IDE)  
+        3. Add a `snapshot` Breakpoint on the `return` of the `clearCompleted` function by clicking left to the line numbering (just like you would have created a breakpoint on an IDE)  
          ![Clear Completed](/img/screenshots/java_bughunt_1.png)
         4. Try clicking on `Clear completed` again to see the message that pops in the Rookout app
         5. We can now see the whole stacktrace leading to this point and the local variables:  
@@ -487,7 +487,7 @@ __Level: Beginner__
     - **Reproduce:** Add a todo with special characters. All of these characters should disappear.
     - **Debug:**
         1. In the Rookout app, open the file `src/main/java/com/rookout/tutorial/TodoController.java`
-        2. In the addTodo function you will we see that the todo title is being filtered by `replaceAll` with a regex - Let's add a `Dump Frame` to the line after it  
+        2. In the addTodo function you will we see that the todo title is being filtered by `replaceAll` with a regex - Let's add a `Snapshot` to the line after it  
         ![newTodoRecord](/img/screenshots/java_bughunt_3.png)
         3. Try to add a todo with some special characters (e.g: `do <> this`)
         4. We can clearly see both `newTodoRecord.title` and `todoTitle` - which is the cleaned title.  
@@ -499,7 +499,7 @@ __Level: Intermediate__
     - **Reproduce:** Add a task and when hovering on the text, on the right side you have the **&** symbol. Click on it to duplicate the task.
     - **Debug:**
         1. In the Rookout app, open the file `src/main/java/com/rookout/tutorial/TodoController.java`
-        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log"
+        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log Line"
         3. Add the Breakpoint in the duplicateTodo function on the line with `todos.add(newTodoRecord);`
         4. Before triggering the Breakpoint, let's edit it so it returns what we want
         5. In the **Breakpoint** pane on the right, click the *Edit Breakpoint* (pen) icon next to the Breakpoint you just added. It will open up the Breakpoint configuration as a JSON file
