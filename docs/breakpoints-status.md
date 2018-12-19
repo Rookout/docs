@@ -155,3 +155,19 @@ Read more about it on our [setup page](sdk-setup.md).
 #### (Node) Original Source Files are Missing
 Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. For transpiled JS/TS/CS, please deploy your original sources side-by-side with the transpiled ones or include sources within the source map.  
 Read more about it on our [setup page](sdk-setup.md).
+
+#### Attribute Not Found
+The specified attribute does not exist on the given namespace.
+
+#### Key Not Found
+The specified key does not exist on the given namespace.
+
+#### Method Not Found
+The specified method does not exist on the given namespace.
+
+#### Write Not Supported
+The specified namespace does not support writing attributes and may only exist on the right side of `Set` operations.
+
+#### Path Read Only
+The specified path (usuaully a method call or key lookup) oes not support writing and may only exist on the right side of `Set` operations.
+
