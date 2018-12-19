@@ -106,4 +106,4 @@ And that's it, you're done :)
 
 - Dig deeper into [Rookout Breakpoints](breakpoints.md).
 
-- Hook Rookout into your data pipeline using one of our [Data Integrations](breakpoints-integrations.md).
+- Hook Rookout into your data pipeline using one of our [Data Integrations](integrations.md).
