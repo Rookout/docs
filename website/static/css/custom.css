@@ -348,7 +348,7 @@ tr, th, td {
 }
 
 .integrations-item img {
-    width: 50px;
+    max-width: 100px;
     height: 50px;
 }
 
