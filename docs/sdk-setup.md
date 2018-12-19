@@ -68,7 +68,7 @@ start(token=None,
     host=None,
     port=None,
     debug=None,
-    silence_errors=None,
+    throw_errors=None,
     log_file=None,
     log_level=None,
     log_to_stderr=None,
@@ -79,12 +79,12 @@ The `start` method is used to initialize the SDK in the background and accepts t
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
-| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Agent |
+| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization |
 | `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a seperator for enviroment variables |
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `silence_errors` | None | False | Set to `True` to throw if `start` fails |
+| `throw_errors` | None | False | Set to `True` to throw if `start` fails |
 | `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/python-rook.log`) |
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
@@ -319,12 +319,12 @@ The `start` method is used to initialize the SDK in the background and recieves 
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
-| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Agent |
+| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization |
 | `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a seperator for enviroment variables |
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `silence_errors` | None | False | Set to `True` to throw if `start` fails |
+| `throw_errors` | None | False | Set to `True` to throw if `start` fails |
 | `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/node-rook.log`) |
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
@@ -482,19 +482,20 @@ public class Program {
 The SDK API offers the following methods
 
 ```java
-public static void start(RookOptions opts);
+public static void start(RookOptions opts)
+public static void startWithExceptions(RookOptions opts) throws Exception
 ```
 
 The `start` method is used to initialize the SDK in the background and recieves configuration using an `opts` object:
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
-| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Agent |
+| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization |
 | `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a seperator for enviroment variables |
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `silence_errors` | None | False | Set to `True` to throw if `start` fails |
+| `throw_errors` | None | False | Set to `True` to throw if `startWithExceptions` fails |
 | `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/java-rook.log`) |
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
