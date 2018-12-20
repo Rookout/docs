@@ -406,8 +406,7 @@ It can be download directly to the target system by running the following comman
 ```bash
 curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 ```
-It can also easily be installed by adding the dependency in JVM build systems such as Maven or Gradle.  
-The package is available on [mvn repository](https://mvnrepository.com/artifact/com.rookout/rook)
+
 
 ## Setup
 
