@@ -28,8 +28,8 @@ Whenever you edit the Breakpoint, it's status is reset.
 
 This can be caused by any of the following reasons:
 
-#### No Applications
-You have no applications connected to the current [project](projects.md). This is common for Serverless and batch applications which are invoked on demand.
+#### No Application instances
+You have no application instances connected to the current [project](projects.md). This is common for Serverless and batch applications which are invoked on demand.
 
 #### Wrong Source File
 The source file you used the set the breakpoint is not loaded in any of the applications in the current [project](projects.md).
@@ -73,10 +73,11 @@ javac -g MyClass.java
 </div>
 
 #### (Node) No Source Maps
-You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map). Rookout has strong source map [support](sdk-setup.md).
+You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).  
+Check out the Rookout [source map support section](sdk-setup.md#transpiling-and-source-maps).
 
 #### (Python/Node) Code is in a Dependency
-You are debugging a package deployed as a depedency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
+You are debugging a package deployed as a dependency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
 
 #### (Python/Node) Different File Layout
 File paths are changed between source repository and deployment. This requires setting up your source repository [accordingly](source-repos.md#source-path-matching).
@@ -98,7 +99,7 @@ You are using a custom Breakpoint that send the message to another [data-sink](i
 You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](sdk-setup.md#pre-forking-servers).
 
 #### (Python/JVM) Long Running Function
-You have placed a breakpoint on a long rununing function. In this runtime, breakpoints are only applied for function calls performed after the Breakpoint was created.
+You have placed a breakpoint on a long running function. In this runtime, breakpoints are only applied for function calls performed after the Breakpoint was created.
 
 ## Error (Red)
 
