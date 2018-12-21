@@ -528,6 +528,13 @@ Setting debug to `true` indicates that source should be compiled with debug info
        debug="true"
 />
 ```
+Customize the package to include sources in the .jar
+```xml
+<jar destfile="${target.dir}/my-app.jar">
+    <fileset dir="${target.dir}/classes" />
+    <fileset dir="${source-directory}" includes="**/*.java"/>
+</jar>
+```
 
 </div>
 </div>
