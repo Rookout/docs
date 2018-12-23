@@ -84,7 +84,7 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `throw_errors` | None | False | Set to `True` to throw if `start` fails |
+| `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
 | `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/python-rook.log`) |
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
@@ -324,7 +324,7 @@ The `start` method is used to initialize the SDK in the background and recieves 
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `throw_errors` | None | False | Set to `True` to throw if `start` fails |
+| `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
 | `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/node-rook.log`) |
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
@@ -487,7 +487,7 @@ public static void startWithExceptions(RookOptions opts) throws Exception
 ```
 
 The `start` method is used to initialize the SDK in the background and recieves configuration using an `opts` object:
-The `startWithExceptions` method has the same functionality but throws exception upon failure.
+The `startWithExceptions` method has the same functionality but throws exception upon failure and won't print to console errors.
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
