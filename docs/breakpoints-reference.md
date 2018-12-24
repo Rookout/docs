@@ -562,7 +562,7 @@ Example:
 {
   "name": "json_file",
   "target": {
-    "path": "dump.json",
+    "path": "dump.json"
   },
   "items": {
     "item1": "store.variable1",
