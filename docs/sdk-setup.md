@@ -410,7 +410,7 @@ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r
 
 ## Setup
 
-### Command Line
+### Java Agent
 
 Simply add the Rookout SDK as a Java Agent to your environment:
 ```bash
