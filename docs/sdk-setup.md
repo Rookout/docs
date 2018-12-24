@@ -482,6 +482,41 @@ To make sure the SDK was properly installed and test your configuration (environ
 java -jar rook.jar
 ```
 
+## Debug Information
+
+Rookout requires your application to be built with debug information. While most modern Java build tools such as `Gradle` and `Maven` do so by default, some such as [`Ant`](https://ant.apache.org/manual/Tasks/javac.html) and [`javac`](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/javac.html) do not.  
+
+Here a few examples on how to configure them:
+
+<ul class="nav nav-tabs" id="java-debug" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="ant-debug-tab" data-toggle="tab" href="#ant-debug" role="tab" aria-controls="ant-debug" aria-selected="true">Ant</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="javac-debug-tab" data-toggle="tab" href="#javac-debug" role="tab" aria-controls="javac-debug" aria-selected="false">javac</a>
+</li>
+</ul>
+
+<div class="tab-content" id="java-debug-content">
+<div class="tab-pane fade show active" id="ant-debug" role="tabpanel">
+
+```xml
+<javac srcdir="${source-directory}"
+        destdir="${classes-directory}"
+        classpath="${lib-directory}"
+        debug="true"
+/>
+```
+
+</div>
+<div class="tab-pane fade" id="javac-debug" role="tabpanel">
+
+```bash
+javac -g MyClass.java
+```
+
+</div>
+
 ## Packaging Sources
 
 Unlike Node and Python applications, most JVM applications do not include their source code within the library distribution. This prevents Rookout from verifying the source files have not changed between what the user sees and the production and will trigger a warning.
@@ -523,15 +558,6 @@ jar {
 </div>
 <div class="tab-pane fade" id="ant-sources" role="tabpanel">
 
-Setting debug to `true` indicates that source should be compiled with debug information
-```xml
-<javac srcdir="${source-directory}"
-       destdir="${classes-directory}"
-       classpath="${lib-directory}"
-       debug="true"
-/>
-```
-Customize the package to include sources in the .jar
 ```xml
 <jar destfile="${target.dir}/my-app.jar">
     <fileset dir="${target.dir}/classes" />
