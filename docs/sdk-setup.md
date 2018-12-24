@@ -425,9 +425,10 @@ java -javaagent:(pwd)/rook.jar MyClass
 ```
 <div class="rookout-org-info"></div>
 
-### API
+### Alternative API
 
-You may also use the following API:
+As an alternative, the Rookout Java Agent may be loaded as an SDK using a simple API.  
+The API works out of the box when using the [JDK](https://stackoverflow.com/questions/1906445/what-is-the-difference-between-jdk-and-jre) runtime, but for the [JRE](https://stackoverflow.com/questions/1906445/what-is-the-difference-between-jdk-and-jre) runtime you must bundle `tools.jar` along side the Rookout jar in your deployment. For more information check out the relevant [deployment examples](deployment-examples.md).
 
 ```java
 import com.rookout.rook.API;
