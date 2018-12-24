@@ -412,7 +412,7 @@ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r
 
 ### Command Line
 
-Setup the Rookout token in your environment:
+Simply add the Rookout SDK as a Java Agent to your environment:
 ```bash
 # Export your token as an environment variable
 export ROOKOUT_TOKEN=[Your Rookout Token]
@@ -427,7 +427,7 @@ java -javaagent:(pwd)/rook.jar MyClass
 
 ### Alternative API
 
-As an alternative, the Rookout Java Agent may be loaded as an SDK using a simple API.  
+As an alternative, the Rookout SDK may be loaded using a simple API.  
 The API works out of the box when using the [JDK](https://stackoverflow.com/questions/1906445/what-is-the-difference-between-jdk-and-jre) runtime, but for the [JRE](https://stackoverflow.com/questions/1906445/what-is-the-difference-between-jdk-and-jre) runtime you must bundle `tools.jar` along side the Rookout jar in your deployment. For more information check out the relevant [deployment examples](deployment-examples.md).
 
 ```java
