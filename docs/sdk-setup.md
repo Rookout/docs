@@ -454,8 +454,9 @@ public static void start(RookOptions opts)
 public static void startWithExceptions(RookOptions opts) throws Exception
 ```
 
-The `start` method is used to initialize the SDK in the background and recieves configuration using an `opts` object:
-The `startWithExceptions` method has the same functionality but throws exception upon failure and won't print to console errors.
+Both methods initialize the SDK in the background using on the configuration in the `opts` argument.  
+The simpler `start` will never impact the application's flow, writing a failure to the console.  
+The `startWithExceptions` will throw on error, so make sure to wrap the invocation with an appropriate `try`/`catch` block.
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
