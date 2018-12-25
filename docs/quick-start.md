@@ -36,6 +36,8 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
 pip install rook
 
 # Import the package in your app's entry-point file, just before it starts
+# Note! if you are using a pre-forking server such as uWSGI, Gunicorn or Celery, be sure to check out
+# the Pre-forking servers section in our SDK Setup page
 import rook
 
 if __name__ == "__main__":
