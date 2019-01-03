@@ -418,25 +418,6 @@ Example:
 }
 ```
 
-3. sumologic
-
-This operation posts a JSON object built from objects in the namespace to sumologic
-
-Example:
-```json
-{
-"name": "sumologic",
-  "target": {
-     "url": "https://[SumoEndpoint]/receiver/v1/http/[UniqueHTTPCollectorCode]"
-  },
-  "items": {
-    "function": "store.rookout.frame.function",
-    "filename": "store.rookout.frame.filename",
-    "line": "store.rookout.frame.line"
-  }
-}
-```
-
 #### Network Targets
 
 These operations send data over the network.
