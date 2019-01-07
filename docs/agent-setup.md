@@ -62,7 +62,7 @@ bash setup.sh --token=[Your Rookout Token]
 - By default, the ETL Agent listens only on localhost when running in daemon mode.  
 This can easily be changed by adding the following line to the configuration file:
 ```bash
-export LISTEN_ALL=TRUE
+export ROOKOUT_LISTEN_ALL=TRUE
 ```
 
 ### Linux Daemon OS Support
