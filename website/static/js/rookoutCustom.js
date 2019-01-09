@@ -112,6 +112,7 @@ function setRookoutTokenInPage(data) {
     let current_user = data['current_user'] || null;
 
     if (token) {
+    	$("span:contains('[Your Rookout Token]')").addClass('_lr-hide'); // hide token from LogRocket
       body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
       $('.rookout-org-info').html(`Showing token for <b>${org_name}</b>. Keep your token private.`);
       if (current_user) {
