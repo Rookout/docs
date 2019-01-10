@@ -7,8 +7,7 @@ sidebar_label: Agent Setup
 ## Introduction
 
 The Rookout ETL Agent is a component that can be installed within your network.  
-It collects debugging data from the from your application instances, performs aggregation and data redaction, and sends the results to your target data collection application. 
-
+The ETL Agent is only meant for advanced deployments meeting complex network and security requirements.  
 Using the Rookout ETL Agent you may perform all related data processing inside your own network.
 
 ## Run as Container
