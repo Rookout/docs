@@ -80,7 +80,7 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Agent |
-| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a seperator for enviroment variables |
+| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a separator for environment variables |
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
@@ -321,7 +321,7 @@ The `start` method is used to initialize the SDK in the background and recieves 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Agent |
-| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a seperator for enviroment variables |
+| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a separator for environment variables |
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
@@ -364,7 +364,7 @@ To make sure the SDK was properly installed and test your configuration (environ
 
 If you are transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging should work out of the box.
 
-If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as seperate files (usually `app.map.js`) in your deployment.
+If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as separate files (usually `app.map.js`) in your deployment.
 
 To make sure Rookout can validate the source file matches the file you are tryring to debug using hash comparison, we recommend deploying the original source files side-by-side with the transpiled ones or building your source map with the full source code.
 
@@ -462,7 +462,7 @@ The `startWithExceptions` will throw on error, so make sure to wrap the invocati
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Enviorment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Agent |
-| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a seperator for enviroment variables |
+| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a separator for environment variables |
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
