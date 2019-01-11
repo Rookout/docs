@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
 ## SDK API
 
-The SDK API offers the following methods
+### start
 
 ```python
 start(token=None,
@@ -88,6 +88,8 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/python-rook.log`) |
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
+
+### flush
 
 ```python
 flush()
@@ -310,7 +312,7 @@ require('rookout/auto_start');
 
 ## SDK API
 
-The SDK API offers the following methods
+### start
 
 ```js
 start(opts)
@@ -330,12 +332,16 @@ The `start` method is used to initialize the SDK in the background and recieves 
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 
+### stop
+
 ```js
 stop()
 ```
 
 The `stop` method is used to shutdown the SDK.  
 As Rookout is listening to a network connection, the Node process will not terminate as long as Rookout is running in the background.
+
+### flush
 
 ```js
 flush(cb)
@@ -448,7 +454,10 @@ public class Program {
 
 ## SDK API
 
-The SDK API offers the following methods
+The Java SDK may either be loaded as a Java Agent (recommended) or using an API.  
+Configuration may be passed through the API, using OS Environment Variables or Java System Properties.
+
+### start
 
 ```java
 public static void start(RookOptions opts)
@@ -470,7 +479,9 @@ The `startWithExceptions` will throw on error, so make sure to wrap the invocati
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 
-```js
+### flush
+
+```java
 public static void flush();
 ```
 
