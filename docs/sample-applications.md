@@ -147,7 +147,7 @@ __Level: Beginner__
     - **Reproduce:** Add a todo with special characters. All of these characters should disappear.
     - **Debug:**
         1. In the Rookout app, open the file `app.py`
-        2. In line 66 we see that the todo title is being filtered by `cleanStr` - Let's add a `Snapshot` to line 67
+        2. In line 66 we see that the todo title is being filtered by `cleanStr` - Let's add a Snapshot Breakpointto line 67
         3. Try to add a todo with some special characters (e.g: `do <> this`)
         4. We can clearly see both `req['title']` and `todoStr` - which is the cleaned title.
         ```python
@@ -162,24 +162,11 @@ __Level: Intermediate__
     - **Reproduce:** Add a task and when hovering on the text, on the right side you have the **&** symbol. Click on it to duplicate the task.
     - **Debug:**
         1. In the Rookout app, open the file `app.py`
-        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log Line"
-        3. Add this Breakpoint to line 113
-        4. Before triggering the Breakpoint, let's edit it so it returns what we want
-        5. In the **Breakpoint** pane on the right, click the *Edit Breakpoint* (pen) icon next to the Breakpoint you just added. It will open up the Breakpoint configuration as a JSON file
-        6. On line 37 in the `paths` object let's add a property `"store.rookout.locals.dup": "frame.dup"`
-        7. On line 51 we have `processing.operations` object, let's add a new operation in the array :
-
-        __name: send_rookout - means we are sending the information to the rookout web application__
-        __path: store.rookout.locals.dup - we tell the Breakpoint what information to send__
-
-        ```json
-        {
-            "name": "send_rookout",
-            "path": "store.rookout.locals.dup"
-        }
-        ```
-        
-        7. Add and duplicate a todo in order to see the output, and now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
+        2. Using the **Breakpoint** pane on the right, add a __Snapshot__ breakpoint at line 113
+        3. Right click the Breakpoint and choose Edit from the context menu
+        4. In the Breakpoint Editor, now displayed on the right hand side, add a variable named "dup"
+        5. Uncheck the "Stack Trace" and "collect all local frame variables" options, and click "Set" to save the breakpoint.
+        6. Add and duplicate a todo in order to see the output, and now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
 
 
 #### What's next?
