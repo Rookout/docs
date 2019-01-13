@@ -165,8 +165,9 @@ __Level: Intermediate__
         2. Using the **Breakpoint** pane on the right, add a __Snapshot__ breakpoint at line 113
         3. Right click the Breakpoint and choose Edit from the context menu
         4. In the Breakpoint Editor, now displayed on the right hand side, add a variable named "dup"
-        5. Uncheck the "Stack Trace" and "collect all local frame variables" options, and click "Set" to save the breakpoint.
-        6. Add and duplicate a todo in order to see the output, and now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
+        5. Uncheck the "Stack Trace" and "collect all local frame variables" options, and click "Set" to save the breakpoint.  
+        6. Add and duplicate a todo in order to see the output. Note that now only the "dup" (short for duplicate) variable is fetched.  
+        Now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
 
 
 #### What's next?
@@ -325,7 +326,8 @@ __Level: Intermediate__
         3. Right click the Breakpoint and choose Edit from the context menu
         4. In the Breakpoint Editor, now displayed on the right hand side, add a variable named "todo"
         5. Uncheck the "Stack Trace" and "collect all local frame variables" options, and click "Set" to save the breakpoint
-        6. Add and duplicate a todo in order to see the output, and now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
+        6. Add and duplicate a todo in order to see the output. Note that only the "todo" variable was fetched.  
+        Now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
 
 
 #### What's next?
@@ -477,7 +479,8 @@ __Level: Intermediate__
         3. Right click the Breakpoint and choose Edit from the context menu
         4. In the Breakpoint Editor, now displayed on the right hand side, add a variable named "newTodoRecord"
         5. Uncheck the "Stack Trace" and "collect all local frame variables" options, and click "Set" to save the breakpoint
-        9. Add and duplicate a todo in order to see the output, now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).  
+        9. Add and duplicate a todo in order to see the output. Note that only the newTodoRecord variable was fetched.  
+        Now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).  
         ![Invalid Duplicate Todo Record](/img/screenshots/java_bughunt_5.png)
         
 
