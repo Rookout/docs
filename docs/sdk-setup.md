@@ -361,7 +361,7 @@ To make sure the SDK was properly installed and test your configuration (environ
 
 | Implementation     | Versions       |
 | ------------------ | -------------- |
-| **Node**           | 4.3+, 6, 8, 10 |
+| **Node**           | 8, 10 |
 
 **Note:** Rookout only supports LTS (Long Time Support) versions of Node.js.
 
