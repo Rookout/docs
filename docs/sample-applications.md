@@ -147,7 +147,7 @@ __Level: Beginner__
     - **Reproduce:** Add a todo with special characters. All of these characters should disappear.
     - **Debug:**
         1. In the Rookout app, open the file `app.py`
-        2. In line 66 we see that the todo title is being filtered by `cleanStr` - Let's add a Snapshot Breakpointto line 67
+        2. In line 66 we see that the todo title is being filtered by `cleanStr` - Let's add a Snapshot Breakpoint to line 67
         3. Try to add a todo with some special characters (e.g: `do <> this`)
         4. We can clearly see both `req['title']` and `todoStr` - which is the cleaned title.
         ```python
