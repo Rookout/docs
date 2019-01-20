@@ -147,7 +147,7 @@ __Level: Beginner__
     - **Reproduce:** Add a todo with special characters. All of these characters should disappear.
     - **Debug:**
         1. In the Rookout app, open the file `app.py`
-        2. In line 66 we see that the todo title is being filtered by `cleanStr` - Let's add a `Snapshot` to line 67
+        2. In line 66 we see that the todo title is being filtered by `cleanStr` - Let's add a Snapshot Breakpoint to line 67
         3. Try to add a todo with some special characters (e.g: `do <> this`)
         4. We can clearly see both `req['title']` and `todoStr` - which is the cleaned title.
         ```python
@@ -162,24 +162,12 @@ __Level: Intermediate__
     - **Reproduce:** Add a task and when hovering on the text, on the right side you have the **&** symbol. Click on it to duplicate the task.
     - **Debug:**
         1. In the Rookout app, open the file `app.py`
-        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log Line"
-        3. Add this Breakpoint to line 113
-        4. Before triggering the Breakpoint, let's edit it so it returns what we want
-        5. In the **Breakpoint** pane on the right, click the *Edit Breakpoint* (pen) icon next to the Breakpoint you just added. It will open up the Breakpoint configuration as a JSON file
-        6. On line 37 in the `paths` object let's add a property `"store.rookout.locals.dup": "frame.dup"`
-        7. On line 51 we have `processing.operations` object, let's add a new operation in the array :
-
-        __name: send_rookout - means we are sending the information to the rookout web application__
-        __path: store.rookout.locals.dup - we tell the Breakpoint what information to send__
-
-        ```json
-        {
-            "name": "send_rookout",
-            "path": "store.rookout.locals.dup"
-        }
-        ```
-        
-        7. Add and duplicate a todo in order to see the output, and now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
+        2. Using the **Breakpoint** pane on the right, add a __Snapshot__ breakpoint at line 113
+        3. Right click the Breakpoint and choose Edit from the context menu
+        4. In the Breakpoint Editor, now displayed on the right hand side, add a variable named "dup"
+        5. Uncheck the "Stack Trace" and "collect all local frame variables" options, and click "Set" to save the breakpoint.  
+        6. Add and duplicate a todo in order to see the output. Note that now only the "dup" (short for duplicate) variable is fetched.  
+        Now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
 
 
 #### What's next?
@@ -319,7 +307,7 @@ __Level: Beginner__
     - **Reproduce:** Add a task with special characters. All these characters should not be saved.
     - **Debug:**
         1. In the Rookout app, open the file `/src/services/todos.js`
-        2. At lines 14 and 73 we see that the title passes the function `utils.cleanString(...)` - Let's add a `Snapshot` to the end of the function in file `/src/services/utils.js`.
+        2. At lines 14 and 73 we see that the title passes the function `utils.cleanString(...)` - Let's add a __Snapshot__ Breakpoint to the end of the function in file `/src/services/utils.js`.
         3. Try to add a task with some of these characters to get the frame.
         4. We can see that after using this function, on line 3 these characters are being found and replaced by regex. We found the source of the issue.
         ```javascript
@@ -334,24 +322,12 @@ __Level: Intermediate__
     - **Reproduce:** Add a task and when hovering on the text, on the right side you have the **&** symbol. Click on it to duplicate the task.
     - **Debug:**
         1. In the Rookout app, open the file `/src/services/todos.js`
-        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log Line"
-        3. Add this Breakpoint to line 104
-        4. Before triggering the Breakpoint, let's edit it so it returns what we want
-        5. In the **Breakpoint** pane on the right, click the *Edit Breakpoint* (pen) icon next to the Breakpoint you just added. It will open up the Breakpoint configuration as a JSON file
-        6. On line 6 in the `paths` object let's add a property `"store.rookout.locals.todo": "frame.todo"`
-        7. On line 28 we have `processing.operations` object, let's add a new operation in the array :
-
-        __name: send_rookout - means we are sending the information to the rookout web application__
-        __path: store.rookout.locals.todo - we tell the Breakpoint what information to send__
-
-        ```json
-        {
-            "name": "send_rookout",
-            "path": "store.rookout.locals.todo"
-        }
-        ```
-        
-        7. Add and duplicate a todo in order to see the output, and now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
+        2. Using the **Breakpoint** pane on the right, add a __Snapshot__ breakpoint at line 104
+        3. Right click the Breakpoint and choose Edit from the context menu
+        4. In the Breakpoint Editor, now displayed on the right hand side, add a variable named "todo"
+        5. Uncheck the "Stack Trace" and "collect all local frame variables" options, and click "Set" to save the breakpoint
+        6. Add and duplicate a todo in order to see the output. Note that only the "todo" variable was fetched.  
+        Now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).
 
 
 #### What's next?
@@ -474,7 +450,7 @@ __Level: Beginner__
         1. Load the app's code from github / local - as explained [in here](java-getting-started.md#usage) 
         2. In the [Rookout app](https://app.rookout.com), open the file `src/main/java/com/rookout/tutorial/TodoController.java`  
         ![TodoController.java](/img/screenshots/java-tutorial_1.png)
-        3. Add a `snapshot` Breakpoint on the `return` of the `clearCompleted` function by clicking left to the line numbering (just like you would have created a breakpoint on an IDE)  
+        3. Add a __snapshot__ Breakpoint on the `return` of the `clearCompleted` function by clicking left to the line numbering (just like you would have created a breakpoint on an IDE)  
          ![Clear Completed](/img/screenshots/java_bughunt_1.png)
         4. Try clicking on `Clear completed` again to see the message that pops in the Rookout app
         5. We can now see the whole stacktrace leading to this point and the local variables:  
@@ -487,7 +463,7 @@ __Level: Beginner__
     - **Reproduce:** Add a todo with special characters. All of these characters should disappear.
     - **Debug:**
         1. In the Rookout app, open the file `src/main/java/com/rookout/tutorial/TodoController.java`
-        2. In the addTodo function you will we see that the todo title is being filtered by `replaceAll` with a regex - Let's add a `Snapshot` to the line after it  
+        2. In the addTodo function you will we see that the todo title is being filtered by `replaceAll` with a regex - Let's add a __Snapshot__ Breakpoint to the line after it  
         ![newTodoRecord](/img/screenshots/java_bughunt_3.png)
         3. Try to add a todo with some special characters (e.g: `do <> this`)
         4. We can clearly see both `newTodoRecord.title` and `todoTitle` - which is the cleaned title.  
@@ -499,23 +475,12 @@ __Level: Intermediate__
     - **Reproduce:** Add a task and when hovering on the text, on the right side you have the **&** symbol. Click on it to duplicate the task.
     - **Debug:**
         1. In the Rookout app, open the file `src/main/java/com/rookout/tutorial/TodoController.java`
-        2. Using the **Breakpoint** pane on the right, select the *Breakpoint Type* "Log Line"
-        3. Add the Breakpoint in the duplicateTodo function on the line with `todos.add(newTodoRecord);`
-        4. Before triggering the Breakpoint, let's edit it so it returns what we want
-        5. In the **Breakpoint** pane on the right, click the *Edit Breakpoint* (pen) icon next to the Breakpoint you just added. It will open up the Breakpoint configuration as a JSON file
-        6. On line 37 in the `paths` object let's add a property `"store.rookout.locals.dup": "frame.newTodoRecord"`
-        7. On line 51 we have `processing.operations` object, let's add a new operation in the array :
-        __name: send_rookout - means we are sending the information to the rookout web application__
-        __path: store.rookout.locals.dup - we tell the Breakpoint what information to send__
-
-        ```json
-        {
-            "name": "send_rookout",
-            "path": "store.rookout.locals.dup"
-        }
-        ```
-        8. Click the save button on the upper pane.
-        9. Add and duplicate a todo in order to see the output, now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).  
+        2. Add a __Snapshot__ Breakpoint in the duplicateTodo function on the line with `todos.add(newTodoRecord);`
+        3. Right click the Breakpoint and choose Edit from the context menu
+        4. In the Breakpoint Editor, now displayed on the right hand side, add a variable named "newTodoRecord"
+        5. Uncheck the "Stack Trace" and "collect all local frame variables" options, and click "Set" to save the breakpoint
+        9. Add and duplicate a todo in order to see the output. Note that only the newTodoRecord variable was fetched.  
+        Now we can see what is being given to the object and match if we have an error in the function (parameters missing or in bad order).  
         ![Invalid Duplicate Todo Record](/img/screenshots/java_bughunt_5.png)
         
 
