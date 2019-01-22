@@ -21,7 +21,7 @@ Install the Rookout SDK (aka 'Rook') by following these steps:
 <a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="home" aria-selected="true">Python</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="profile" aria-selected="false">Node.JS</a>
+<a class="nav-link" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="profile" aria-selected="false">Node.js</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="contact" aria-selected="false">JVM</a>

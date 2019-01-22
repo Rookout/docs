@@ -638,7 +638,7 @@ Therefore, to control the amount of data for each variable type, the default siz
 
 The default limits for each variable in a frame dump are summarized in the following table:
 
-| Variable type                | Python | Node.JS | Java |
+| Variable type                | Python | Node.js | Java |
 | ---------------------------- | ------ | ------- | ---- |
 | **String or Buffer size**    | 512B   | 512B    | 512B  |
 | **Collection size**          | 20     | 20      | 20   |
@@ -674,7 +674,7 @@ However, these limits can be more lenient, as we’re only dumping one variable 
 
 The default limits for dumping a specific variable are summarized in the following table
 
-| Variable type                | Python | Node.JS | Java |
+| Variable type                | Python | Node.js | Java |
 | ---------------------------- | ------ | ------- | ---- |
 | **String or Buffer size**    | 64K    | 64K     | 64K  |
 | **Collection size**          | 20     | 20      | 50   |
