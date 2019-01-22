@@ -12,7 +12,7 @@ If you prefer to set up Rookout in your own projects go over [here](quick-start.
 <a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="true">Python</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="node" aria-selected="false">Node.JS</a>
+<a class="nav-link" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="node" aria-selected="false">Node.js</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="jvm" aria-selected="false">JVM</a>
@@ -176,7 +176,7 @@ Check out our [Quick Start guide](sdk-setup.md) to start debugging your own code
 </div>
 <div class="tab-pane fade" id="node" role="tabpanel">
 
-## Node.JS
+## Node.js
 
 #### Prerequisites
 
