@@ -439,6 +439,7 @@ The API works out of the box when using the [JDK](https://stackoverflow.com/ques
 
 ```java
 import com.rookout.rook.API;
+import com.rookout.rook.RookOptions;
 
 public class Program {
     public static void main(String[] args) {
