@@ -271,7 +271,7 @@ def start_rook(*args, **kwargs):
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
 If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
 
-Many Serverless frameworks (such as AWS sam) have built-in support for it and will work out of the box.
+Many Serverless frameworks (such as AWS SAM) have built-in support for it and will work out of the box.
 
 If you need to set up your own build, we recommend using Docker, with a command line such as:
 ```bash
@@ -395,7 +395,7 @@ The NodeJS SDK supports detecting the existing source code commit in the followi
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
 If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
 
-Many Serverless frameworks (such as AWS sam) has built-in support for it and will work out of the box.
+Many Serverless frameworks (such as AWS SAM) has built-in support for it and will work out of the box.
 
 If you need to set up your own build, we recommend using Docker, with a command line such as:
 
