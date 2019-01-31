@@ -34,7 +34,17 @@ If a Breakpoint is invoked twice within the limit (set by default to *100ms*) th
 
 To change this configuration for a specific Breakpoint, change the value of `minTimeBetweenHits` to the desired number in miliseconds:
 ```json
-"minTimeBetweenHits":10
+"minTimeBetweenHits" : 10
+```
+
+## Including Packages
+
+By default, Rookout doesn't set breakpoints inside the application's dependencies (`node_modules` for Node, `site-packages` for Python, inapplicable for JVM).
+
+This setting may be changed at the repository level by following the instructions [here](source-repos.md#debugging-packages).  
+Alternatively, you may change the value of `includeExternals` (under the `location` object) to `true` inside a specific breakpoint:
+```json
+"includeExternals" : true
 ```
 
 ## What's next?
