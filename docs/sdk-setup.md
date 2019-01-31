@@ -268,6 +268,23 @@ def start_rook(*args, **kwargs):
 
 ## Serverless and PaaS deployments
 
+### Integrating with Serverless
+
+When integrating Rookout into a Serverless application, you should explicitly flush the collected information.  
+For most common Serverless runtimes, Rookout provides easy to use wrappers such as:
+
+```python
+from rook.serverless import serverless_rook
+
+@serverless_rook
+def lambda_handler(event, context):
+  return "Hello world"
+```
+
+For more information, please check out our [deployment-examples](deployment-examples.md).
+
+### Building
+
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
 If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
 
@@ -391,7 +408,25 @@ The NodeJS SDK supports detecting the existing source code commit in the followi
 2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
 3. If the main application is running from within a Git repository, use its head. 
 
-## Serverless and PaaS
+## Serverless and PaaS deployments
+
+### Integrating with Serverless
+
+When integrating Rookout into a Serverless application, you should explicitly flush the collected information.  
+For most common Serverless runtimes, Rookout provides easy to use wrappers such as:
+
+```js
+const rookout = require('rookout/lambda');
+
+exports.handler = rookout.wrap((event, context, callback) => {
+    callback(null, "Hello World");
+});
+```
+
+For more information, please check out our [deployment-examples](deployment-examples.md).
+
+### Building
+
 If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
 If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
 
@@ -615,12 +650,17 @@ The Java SDK supports detecting the existing source code commit in the following
 
 None.
 
-## Serverless and PaaS
+## Serverless and PaaS deployments
 
-For using Java under a Serverless/PaaS environment, the following must be taken into account:
-- Include the Java Agent in your application package.
-- In many cloud platforms, passing JVM command line arguments are not supported. If so, be sure to use the Rookout API described above.
-- For Serverless applications, you must call the Rookout API on every endpoint and flush at your discretion.
-- In some Serverless environments, the tools.jar library is missing and must be included within your package as well.
+### Integrating with Serverless
+
+When integrating Rookout into a Serverless application, you should explicitly flush the collected information.  
+This requires using the including the Rookout SDK API as a dependency and packaging it with your applications. 
+
+For more information, please check out our [deployment-examples](deployment-examples.md).
+
+### Building
+
+In some Serverless environments (such as AWS Lambda), the tools.jar library is missing and must be included within your package as well.
 
 </div>
