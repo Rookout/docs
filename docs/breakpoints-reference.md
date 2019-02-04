@@ -1007,9 +1007,11 @@ They have the following attributes:
 |**ip**|string|The rook's ip as seen within the machine|
 |**external_ip**|string|The rook's ip as seen from outside the machine|
 |**user_commit**|string|The application's git commit identifier|
-|**pid**|int|The application process id|
+|**process_id**|int|The application process id|
 |**version**|string|The rook's version number|
 |**commit**|string|The rook's commit identifier|
+|**hostname**|string|The rook's host's name|
+|**labels**|string|The rook's labels|
 
 ### Agent Namespace
 
