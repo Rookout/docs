@@ -11,6 +11,8 @@ For example, adding the following snippet to the Breakpoint Operations section:
 ```json
 {
   "name": "filter",
+  "paths": ["store.rookout.frame.locals"],
+  "whitelist": false,
   "filters": [
     {
       "filter_type": "name",
@@ -25,6 +27,28 @@ For example, adding the following snippet to the Breakpoint Operations section:
 ```
 
 Will replace an instance of "secretKey":"12345" with "secretKey":"[REDACTED]", and an instance of "nameAndPassword":"LordHelmet-12345" with "nameAndPassword":"LordHelmet-****".
+
+### Whitelisting
+
+Whitelisting is the opposite operation of the example above; all the data is redacted except the matched patterns.
+
+The following snippet shows how to get local variables that match the filter.
+```json
+{
+  "name": "filter",
+  "paths": ["store.rookout.frame.locals"],
+  "whitelist": true,
+  "filters": [
+    {
+      "filter_type": "name",
+      "pattern": "secretKey"
+    }
+  ]
+}
+```
+
+Notice that the matched keys will be returned entirely, you can use another filter to redact additional data.
+Whitelising value is not supported.
 
 ## Rate Limiting
 
