@@ -83,6 +83,7 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Agent |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a separator for environment variables |
+| `labels` | `ROOKOUT_LABELS` | {} | A list of key-value labels describing your applications. When setting an environment variable, use a colon (*:*) to set a label. Separate labels with a comma (*,*). For example: ```export ROOKOUT_LABELS=env:testing,appname:billing``` |
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
@@ -344,6 +345,7 @@ The `start` method is used to initialize the SDK in the background and recieves 
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Agent |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a separator for environment variables |
+| `labels` | `ROOKOUT_LABELS` | {} | A list of key-value labels describing your applications. When setting an environment variable, use a colon (*:*) to set a label. Separate labels with a comma (*,*). For example: ```export ROOKOUT_LABELS=env:testing,appname:billing``` |
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
@@ -512,6 +514,7 @@ The `startWithExceptions` will throw on error, so make sure to wrap the invocati
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Agent |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a separator for environment variables |
+| `labels` | `ROOKOUT_LABELS` | {} | A list of key-value labels describing your applications. When setting an environment variable, use a colon (*:*) to set a label. Separate labels with a comma (*,*). For example: ```export ROOKOUT_LABELS=env:testing,appname:billing``` |
 | `host` | `ROOKOUT_AGENT_HOST` | None | If you are using a Rookout ETL Agent, this is the hostname for it |
 | `port` | `ROOKOUT_AGENT_PORT` | None | If you are using a Rookout ETL Agent, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
