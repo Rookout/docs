@@ -357,7 +357,7 @@ The `start` is used to initlaize the SDK and recieves configuration using an `op
 startSync(timeout=5000, options = {})
 ```
 
-The `startSync` method is used to initialize the SDK in a synchronous manenr using the `deasync` module and accepts the same `options` object as the `start` method. The method will return after the initial connection attempt to the debug controller succeeds or fails (either way, connection will be maintained and retried in the background) or when the timeout specified has been reached. If you choose the set `throw_errors` true, an exception will be thrown on failure.  
+The `startSync` method is used to initialize the SDK in a synchronous manner using the `deasync` module and accepts the same `options` object as the `start` method. The method will return after the initial connection attempt to the debug controller succeeds or fails (either way, connection will be maintained and retried in the background) or when the timeout specified has been reached. If you choose the set `throw_errors` true, an exception will be thrown on failure.  
 
 ### stop
 
