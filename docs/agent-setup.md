@@ -161,4 +161,9 @@ Or by adding the HTTPS_PROXY configuration to the ETL Agent configuration file a
 export HTTPS_PROXY=[Your Proxy Server]
 ```
 
+## License
+
+The Rookout ETL Agent usage license may be found here:
+[Rookout ETL Agent License](license.md)
+
 
