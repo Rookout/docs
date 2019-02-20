@@ -36,18 +36,16 @@ The following snippet shows how to get local variables that match the filter.
 ```json
 {
   "name": "filter",
-  "paths": ["store.rookout.frame.locals"],
   "whitelist": true,
   "filters": [
     {
       "filter_type": "name",
-      "pattern": "secretKey"
+      "pattern": "Benjamin"
     }
   ]
 }
 ```
 
-Notice that the matched keys will be returned entirely, you can use another filter to redact additional data.
 Whitelising value is not supported.
 
 ## Rate Limiting
