@@ -161,9 +161,18 @@ Or by adding the HTTPS_PROXY configuration to the ETL Agent configuration file a
 export HTTPS_PROXY=[Your Proxy Server]
 ```
 
+## Performance Considerations
+
+A single ETL Agent can handle thousands of concurrent applications connected to it, but the default configuration is optimized for about 100 concurrent applications.
+
+The default limits include:
+1. The ETL Agent is restricted to use a single CPU core - to change the limit set `ROOKOUT_AGENT_MAX_CPU` to the desired number of cores.
+1. The ETL Agent is restricted to 512MB of RAM - to change the limit set `ROOKOUT_AGENT_MAX_MEMORY` to the desired memory in megabytes. Should the ETL Agent exceed that, it will exit with message similar to:
+```text
+Memory limit reached (520 Mb) The limit is (512 Mb) - exiting
+```
+
 ## License
 
 The Rookout ETL Agent usage license may be found here:
 [Rookout ETL Agent License](license.md)
-
-
