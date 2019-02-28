@@ -329,6 +329,13 @@ If you prefer to configure the SDK purely using enviorment variables (see config
 require('rookout/auto_start');
 ```
 
+## Python Spark (PySpark) applications
+
+1. Import the SDK as usual in the main function that runs on the Spark driver.
+2. To import the SDK on Spark executors, run `spark-submit` with `--conf spark.python.daemon.module=rook.pyspark_daemon`.
+
+For more information, please check out our [deployment-examples](deployment-examples.md).
+
 ## SDK API
 
 ### start
