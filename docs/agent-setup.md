@@ -56,13 +56,17 @@ bash setup.sh --token=[Your Rookout Token]
 
 ### Linux Daemon Configuration
 
-- The enviorments variables for the Linux daemon are accessible by editing the `/etc/default/rookout-agent` file.
+- The environment variables for the Linux daemon are accessible by editing the `/etc/default/rookout-agent` file.
 
 - By default, the ETL Agent listens only on localhost when running in daemon mode.  
 This can easily be changed by adding the following line to the configuration file:
 ```bash
 export ROOKOUT_LISTEN_ALL=TRUE
 ```
+
+You can also do this when installing the ETL agent:
+
+`setup.sh --token=[Your Rookout Token] --listen-all`
 
 ### Linux Daemon OS Support
 
@@ -77,12 +81,17 @@ The Linux daemon is supported in the following operating systems:
 
 ### Linux Daemon Update
 
-The linux deamon can be updated to the latest version using the following command:
+The linux deamon can be updated to the latest version by rerunning the setup script:
+
+If you would like to keep the pre-existing configuration rather than overwriting it with the flags specified now, use `--keep-old-config` 
+
 ```bash
 curl -fs https://get.rookout.com > setup.sh
-bash setup.sh --update
+bash setup.sh --keep-old-config
 ```
-The ETL Agent configuration will be saved during the update process.
+
+
+If you don't specify `--keep-old-config`, the new version will be installed using the new settings.
 
 ### Linux Daemon Restart
 
@@ -171,6 +180,10 @@ The default limits include:
 ```text
 Memory limit reached (520 Mb) The limit is (512 Mb) - exiting
 ```
+
+You can also adjust the limit when installing the ETL agent:
+
+`setup.sh --token=[Your Rookout Token] --max-mem=1024`
 
 ## License
 
