@@ -31,6 +31,7 @@ Will replace an instance of "secretKey":"12345" with "secretKey":"[REDACTED]", a
 ### Whitelisting
 
 Whitelisting is the opposite operation of the example above; all the data is redacted except the matched patterns.
+Whitelisting support only variable names.
 
 For example, The following snippet shows how to get local variables that match the filter:
 ```json
@@ -71,9 +72,6 @@ class Animal{
 
 The `dog` member of any animal instance will be return entirely, while the `numberOfAnimals` will be redacted.
 Changing the `dog` pattern to `name` - will redact the `age` member of dog but not his name.
-
-
-Whitelising by value is not supported.
 
 ## Rate Limiting
 
