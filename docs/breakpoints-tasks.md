@@ -30,48 +30,48 @@ Will replace an instance of "secretKey":"12345" with "secretKey":"[REDACTED]", a
 
 ### Whitelisting
 
-Whitelisting is the opposite operation of the example above; all the data is redacted except the matched patterns.
-Whitelisting support only variable names.
+Specify which variable you want to extract using a regular expression that will be applied on the variable name only.
 
-For example, The following snippet shows how to get local variables that match the filter:
+```java
+class Dog {
+	String name;
+	int age;
+
+	public Dog(String dogName) {
+		this.name = dogName;
+		this.age = 0;
+	}
+}
+
+class Zoo {
+	Dog dog;
+	Cat cat;
+	int numberOfAnimals;
+
+	public Zoo() {
+		this.dog = new Dog("Shtubi");
+		this.numberOfAnimals = 1;
+	}
+}
+```
+
+For example, to collect only the dog member, add the following snippet to the Breakpoint Operations section:
 ```json
 {
   "name": "filter",
   "whitelist": true,
   "filters": [
     {
-      "filter_type": "name",
+      "filter_type": "name", 
       "pattern": "dog"
     }
   ]
 }
 ```
 
-```java
-class Dog{
-	String name;
-	int age;
+The `dog` member will be returned entirely, while the other members will be redacted.
 
-	public Dog(String dogName){
-		this.name = dogName;
-		this.age = 0;
-	}
-}
-
-class Animal{
-	Dog dog;
-	int numberOfAnimals;
-
-	public Animal(String animalName){
-		this.dog = new Dog(animalName);
-		this.numberOfAnimals = 0;
-	}
-}
-
-```
-
-The `dog` member of any animal instance will be return entirely, while the `numberOfAnimals` will be redacted.
-Changing the `dog` pattern to `name` - will redact the `age` member of dog but not his name.
+![Whitelist basic](/img/screenshots/filter_whitelist_1.png)
 
 ## Rate Limiting
 
