@@ -7,6 +7,8 @@ title: Breakpoint Tasks
 
 The [filter operation](breakpoints-reference.md#filter) may be used to perform data redaction on the data fetched by a Breakpoint before sending it to its destination.  
 
+The pattern support only regex strings.
+
 For example, adding the following snippet to the Breakpoint Operations section:
 ```json
 {
@@ -32,7 +34,7 @@ Will replace an instance of "secretKey":"12345" with "secretKey":"[REDACTED]", a
 
 Whitelisting is the opposite operation of the example above; all the data is redacted except the matched patterns.
 
-The following snippet shows how to get local variables that match the filter.
+For example, The following snippet shows how to get local variables that match the filter:
 ```json
 {
   "name": "filter",
@@ -40,13 +42,40 @@ The following snippet shows how to get local variables that match the filter.
   "filters": [
     {
       "filter_type": "name",
-      "pattern": "Benjamin"
+      "pattern": "dog"
     }
   ]
 }
 ```
 
-Whitelising value is not supported.
+```java
+class Dog{
+	String name;
+	int age;
+
+	public Dog(String dogName){
+		this.name = dogName;
+		this.age = 0;
+	}
+}
+
+class Animal{
+	Dog dog;
+	int numberOfAnimals;
+
+	public Animal(String animalName){
+		this.dog = new Dog(animalName);
+		this.numberOfAnimals = 0;
+	}
+}
+
+```
+
+The `dog` member of any animal instance will be return entirely, while the `numberOfAnimals` will be redacted.
+Changing the `dog` pattern to `name` - will redact the `age` member of dog but not his name.
+
+
+Whitelising by value is not supported.
 
 ## Rate Limiting
 
