@@ -56,13 +56,20 @@ bash setup.sh --token=[Your Rookout Token]
 
 ### Linux Daemon Configuration
 
-- The enviorments variables for the Linux daemon are accessible by editing the `/etc/default/rookout-agent` file.
+- The environment variables for the Linux daemon are accessible by editing the `/etc/default/rookout-agent` file.
 
 - By default, the ETL Agent listens only on localhost when running in daemon mode.  
 This can easily be changed by adding the following line to the configuration file:
 ```bash
 export ROOKOUT_LISTEN_ALL=TRUE
 ```
+
+You can also do this when installing the ETL agent:
+
+```bash
+setup.sh --token=[Your Rookout Token] --listen-all
+```
+<div class="rookout-org-info"></div>
 
 ### Linux Daemon OS Support
 
@@ -77,12 +84,17 @@ The Linux daemon is supported in the following operating systems:
 
 ### Linux Daemon Update
 
-The linux deamon can be updated to the latest version using the following command:
+The linux deamon can be updated to the latest version by rerunning the setup script:
+
+If you would like to keep the pre-existing configuration rather than overwriting it with the flags specified now, use `--keep-old-config` 
+
 ```bash
 curl -fs https://get.rookout.com > setup.sh
-bash setup.sh --update
+bash setup.sh --keep-old-config
 ```
-The ETL Agent configuration will be saved during the update process.
+
+
+If you don't specify `--keep-old-config`, the new version will be installed using the new settings.
 
 ### Linux Daemon Restart
 
@@ -161,4 +173,25 @@ Or by adding the HTTPS_PROXY configuration to the ETL Agent configuration file a
 export HTTPS_PROXY=[Your Proxy Server]
 ```
 
+## Performance Considerations
 
+A single ETL Agent can handle thousands of concurrent applications connected to it, but the default configuration is optimized for about 100 concurrent applications.
+
+The default limits include:
+1. The ETL Agent is restricted to use a single CPU core - to change the limit set `ROOKOUT_AGENT_MAX_CPU` to the desired number of cores.
+1. The ETL Agent is restricted to 512MB of RAM - to change the limit set `ROOKOUT_AGENT_MAX_MEMORY` to the desired memory in megabytes. Should the ETL Agent exceed that, it will exit with message similar to:
+```text
+Memory limit reached (520 Mb) The limit is (512 Mb) - exiting
+```
+
+You can also adjust the limit when installing the ETL agent:
+
+```bash
+setup.sh --token=[Your Rookout Token] --max-mem=1024
+```
+<div class="rookout-org-info"></div>
+
+## License
+
+The Rookout ETL Agent usage license may be found here:
+[Rookout ETL Agent License](license.md)
