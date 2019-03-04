@@ -13,8 +13,6 @@ For example, adding the following snippet to the Breakpoint Operations section:
 ```json
 {
   "name": "filter",
-  "paths": ["store.rookout.frame.locals"],
-  "whitelist": false,
   "filters": [
     {
       "filter_type": "name",
