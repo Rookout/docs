@@ -297,6 +297,19 @@ docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-python2.7 pip insta
 
 For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
+## Python Spark (PySpark) applications
+
+1. Import the SDK as usual in the main function that runs on the Spark driver.
+2. To import the SDK on Spark executors, run `spark-submit` with `--conf spark.python.daemon.module=rook.pyspark_daemon`.
+3. If running under YARN, specify the `ROOKOUT_TOKEN` environment variable for your application master and executor nodes like so:
+```bash
+spark-submit --conf spark.python.daemon.module=rook.pyspark_daemon --conf spark.yarn.appMasterEnv.ROOKOUT_TOKEN=[Your Rookout Token] --conf spark.executorEnv.ROOKOUT_TOKEN=[Your Rookout Token]
+```
+<div class="rookout-org-info"></div>
+
+
+For more information, please check out our [deployment-examples](deployment-examples.md).
+
 </div>
 
 <div class="tab-pane fade" id="node" role="tabpanel">
@@ -328,14 +341,6 @@ If you prefer to configure the SDK purely using enviorment variables (see config
 ```js
 require('rookout/auto_start');
 ```
-
-## Python Spark (PySpark) applications
-
-1. Import the SDK as usual in the main function that runs on the Spark driver.
-2. To import the SDK on Spark executors, run `spark-submit` with `--conf spark.python.daemon.module=rook.pyspark_daemon`.
-3. If running under YARN, specify the `ROOKOUT_TOKEN` environment variable for your application master and executor nodes: `--conf spark.yarn.appMasterEnv.ROOKOUT_TOKEN=[Your Rookout Token]` and `--conf spark.executorEnv.ROOKOUT_TOKEN=[Your Rookout Token]` respectively
-
-For more information, please check out our [deployment-examples](deployment-examples.md).
 
 ## SDK API
 

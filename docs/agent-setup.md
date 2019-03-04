@@ -66,7 +66,10 @@ export ROOKOUT_LISTEN_ALL=TRUE
 
 You can also do this when installing the ETL agent:
 
-`setup.sh --token=[Your Rookout Token] --listen-all`
+```bash
+setup.sh --token=[Your Rookout Token] --listen-all
+```
+<div class="rookout-org-info"></div>
 
 ### Linux Daemon OS Support
 
@@ -183,7 +186,10 @@ Memory limit reached (520 Mb) The limit is (512 Mb) - exiting
 
 You can also adjust the limit when installing the ETL agent:
 
-`setup.sh --token=[Your Rookout Token] --max-mem=1024`
+```bash
+setup.sh --token=[Your Rookout Token] --max-mem=1024
+```
+<div class="rookout-org-info"></div>
 
 ## License
 
