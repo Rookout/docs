@@ -5,7 +5,6 @@
       "quick-start",
       "sample-applications",
       "sdk-setup",
-      "sdk-digests",
       "agent-setup",
       "deployment-examples"
     ],
@@ -21,6 +20,10 @@
       "breakpoints-tasks",
       "integrations",
       "breakpoints-reference"
+    ],
+    "More": [
+      "sdk-digests",
+      "license"
     ]
   }
 }
