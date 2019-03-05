@@ -181,14 +181,11 @@ function loadSdkDigests() {
 
 function setDigestInfoForLang(lang) {
   $.get({
-    url: `https://get.rookout.com/digests-${lang}.json`,
+    url: `https://cors.io/?https://get.rookout.com/digests-${lang}.json`,
     method: 'GET',
-    dataType: 'json',
-    xhrFields: {
-      withCredentials: true
-   }
+    dataType: 'json'
   }, (digestData) => {
-    let box = $(`#${lang}-digests`);
+    const box = $(`#${lang}-digests`);
     const table = $('<table>');
     const thead = $('<thead>');
     const tbody = $('<tbody>');
@@ -200,7 +197,7 @@ function setDigestInfoForLang(lang) {
       // Descending order
       return semverBigger(b, a);
     }).forEach(function(key) {
-      ordered[key] = t[key];
+      ordered[key] = digestData[key];
     });
 
     for (let version in ordered) {
@@ -208,11 +205,11 @@ function setDigestInfoForLang(lang) {
       let td = $('<td>').html(version);
       tr.append(td);
       if (lang === 'python') {
-        td = $('<td>').html(`[SHA256] ${t[version]['digests'][`rook-${version}.tar.gz`]['sha256']}`);
+        td = $('<td>').html(`[SHA256] ${digestData[version]['digests'][`rook-${version}.tar.gz`]['sha256']}`);
       } else if (lang === 'node') {
-        td = $('<td>').html(`[SHA512] ${t[version]['digests']['integrity']}`);
+        td = $('<td>').html(`[SHA512] ${digestData[version]['digests']['integrity']}`);
       } else if (lang === 'java') {
-        td = $('<td>').html(`[SHA1] ${t[version]['digests']['sha1']}`);
+        td = $('<td>').html(`[SHA1] ${digestData[version]['digests']['sha1']}`);
       }
       tr.append(td);
       tbody.append(tr);
