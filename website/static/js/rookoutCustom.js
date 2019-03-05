@@ -183,7 +183,10 @@ function setDigestInfoForLang(lang) {
   $.get({
     url: `https://get.rookout.com/digests-${lang}.json`,
     method: 'GET',
-    dataType: 'json'
+    dataType: 'json',
+    xhrFields: {
+      withCredentials: true
+   }
   }, (digestData) => {
     let box = $(`#${lang}-digests`);
     const table = $('<table>');
