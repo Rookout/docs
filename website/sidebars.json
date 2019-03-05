@@ -20,6 +20,10 @@
       "breakpoints-tasks",
       "integrations",
       "breakpoints-reference"
+    ],
+    "More": [
+      "sdk-digests",
+      "license"
     ]
   }
 }

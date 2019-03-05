@@ -12,6 +12,7 @@ $(function () {
   loadRookoutToken();
   enableTabs();
   setTimeout(loadTabsForOS, 1000);
+  loadSdkDigests();
 });
 
 function enableTabs() {
@@ -168,3 +169,71 @@ function loadTabsForOS() {
   });
 }
 
+
+function loadSdkDigests() {
+  if (!window.location.href.includes("sdk-digests")) return;
+
+  for (let lang of ["python", "node", "java"]) {
+    setDigestInfoForLang(lang);
+  }
+}
+
+
+function setDigestInfoForLang(lang) {
+  $.get({
+    url: `https://get.rookout.com/digests-${lang}.json`,
+    method: 'GET',
+    dataType: 'json'
+  }, (digestData) => {
+    let box = $(`#${lang}-digests`);
+    const table = $('<table>');
+    const thead = $('<thead>');
+    const tbody = $('<tbody>');
+    const thead_tr = $('<tr>').append($('<th>').html("Version"))
+      .append($('<th>').html("Digest"));
+
+    let ordered = {};
+    Object.keys(digestData).sort(function(a, b) {
+      // Descending order
+      return semverBigger(b, a);
+    }).forEach(function(key) {
+      ordered[key] = t[key];
+    });
+
+    for (let version in ordered) {
+      let tr = $('<tr>');
+      let td = $('<td>').html(version);
+      tr.append(td);
+      if (lang === 'python') {
+        td = $('<td>').html(`[SHA256] ${t[version]['digests'][`rook-${version}.tar.gz`]['sha256']}`);
+      } else if (lang === 'node') {
+        td = $('<td>').html(`[SHA512] ${t[version]['digests']['integrity']}`);
+      } else if (lang === 'java') {
+        td = $('<td>').html(`[SHA1] ${t[version]['digests']['sha1']}`);
+      }
+      tr.append(td);
+      tbody.append(tr);
+    }
+
+
+    thead.append(thead_tr);
+    table.append(thead);
+    table.append(tbody);
+    box.append(table);
+  });
+}
+
+
+function semverBigger (a, b) {
+  var pa = a.split('.');
+  var pb = b.split('.');
+  for (var i = 0; i < 3; i++) {
+    var na = Number(pa[i]);
+    var nb = Number(pb[i]);
+    if (na > nb) return 1;
+    if (nb > na) return -1;
+    if (!isNaN(na) && isNaN(nb)) return 1;
+    if (isNaN(na) && !isNaN(nb)) return -1;
+  }
+  return 0;
+}

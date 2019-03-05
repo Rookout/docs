@@ -1,7 +1,7 @@
 ---
 id: license
 title: Rookout License
-sidebar_label: Welcome
+sidebar_label: License
 ---
 
 This software is a proprietary product of Rookout, and is protected under copyright laws and international copyright treaties. 
