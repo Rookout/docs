@@ -120,11 +120,11 @@ The system administrator has disabled sending application data to the Rookout se
 Please choose another data sink for your breakpoint.
 
 #### Breakpoint was Disabled due to Rate-Limiting
-Rookout employs a built-in rate-limiting mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the rate limit has been hit and the breakpoint has been disabled in the offending application instance.  
+Rookout employs a built-in rate-limiting mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the rate limit has been hit and the breakpoint has been disabled for the offending application instance.  
 Read more about configuring rate-limiting [here](breakpoints-tasks.md#rate-limiting).
 
 #### Breakpoint was Disabled due to Max Execution Time limit
-Rookout employs a built-in max execution time limit mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the execution time limit has been hit and the breakpoint has been disabled in the offending application instance.  
+Rookout employs a built-in max execution time limit mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the execution time limit has been hit and the breakpoint has been disabled for the offending application instance.  
 Read more about configuring rate-limiting [here](breakpoints-tasks.md#rate-limiting).
 
 #### Invalid JSON Key
