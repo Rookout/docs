@@ -9,7 +9,7 @@ The [filter operation](breakpoints-reference.md#filter) may be used to perform d
 
 The pattern support only regex strings.
 
-For example, adding the following snippet to the Breakpoint Operations section:
+For example, adding the following snippet to the Breakpoint *Processing Operations* section (before the `send_rookout` operation):
 ```json
 {
   "name": "filter",
@@ -23,6 +23,10 @@ For example, adding the following snippet to the Breakpoint Operations section:
       "pattern": "[0-9]+"
     }
   ]
+},
+{
+	"path": "store",
+	"name": "send_rookout"
 }
 ```
 

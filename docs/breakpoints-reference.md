@@ -306,6 +306,7 @@ In the future, an improved version of this path is expected to be default paths 
 ### Processing Operations
 
 These operations allow transforming the data and controlling the script flow.
+Multiple operations can be used and will be executed in order.
 
 #### set
 
