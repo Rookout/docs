@@ -181,7 +181,7 @@ function loadSdkDigests() {
 
 function setDigestInfoForLang(lang) {
   $.get({
-    url: `https://cors.io/?https://get.rookout.com/digests-${lang}.json`,
+    url: `https://get.rookout.com/digests-${lang}.json`,
     method: 'GET',
     dataType: 'json'
   }, (digestData) => {
