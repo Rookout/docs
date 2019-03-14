@@ -41,11 +41,11 @@ function setDigestInfoForLang(lang) {
     digestsRows += `<td>${version}</td>`;
 
     if (lang === 'python') {
-      digestsRows += `<td>[SHA256] ${digestData[version]['digests'][`rook-${version}.tar.gz`]['sha256']}</td>`;
+      digestsRows += `<td><a href="https://pypi.org/project/rook/${version}" target="_blank">[SHA256] ${digestData[version]['digests'][`rook-${version}.tar.gz`]['sha256']}</a></td>`;
     } else if (lang === 'node') {
-      digestsRows += `<td>[SHA512] ${digestData[version]['digests']['integrity']}</td>`;
+      digestsRows += `<td><a href="https://www.npmjs.com/package/rookout/v/${version}" target="_blank">[SHA512] ${digestData[version]['digests']['integrity']}</a></td>`;
     } else if (lang === 'java') {
-      digestsRows += `<td>[SHA1] ${digestData[version]['digests']['sha1']}</td>`;
+      digestsRows += `<td><a href="https://mvnrepository.com/artifact/com.rookout/rook/${version}" target="_blank">[SHA1] ${digestData[version]['digests']['sha1']}</a></td>`;
     }
     digestsRows += `</tr>`;
   }
