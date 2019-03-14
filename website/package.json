@@ -11,6 +11,7 @@
     "deploy-firebase": "firebase deploy",
     "generate-examples": "node build_utils/deployment_examples_generator.js",
     "generate-integrations": "node build_utils/output_integrations_generator.js",
+    "generate-sdk-digests": "node build_utils/sdk_digests_generator.js",
     "publish-release-notes": "node build_utils/publish_release_notes.js"
   },
   "devDependencies": {

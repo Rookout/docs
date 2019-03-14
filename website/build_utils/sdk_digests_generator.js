@@ -12,7 +12,7 @@ function loadSdkDigests() {
 
 
 function setDigestInfoForLang(lang) {
-  const digestData = JSON.parse(fs.readFileSync(path.join(process.cwd(), "sdk_digests", `digests-${lang}.json`)));
+  const digestData = JSON.parse(fs.readFileSync(path.join(process.cwd(), "build_utils", "sdk_digests", `digests-${lang}.json`)));
 
   const divLangStringToReplace = `<div id="${lang}-digests"></div>`;
 
@@ -38,6 +38,8 @@ function setDigestInfoForLang(lang) {
   let digestsRows = "";
   for (let version in ordered) {
     digestsRows += "<tr>";
+    digestsRows += `<td>${version}</td>`;
+
     if (lang === 'python') {
       digestsRows += `<td>[SHA256] ${digestData[version]['digests'][`rook-${version}.tar.gz`]['sha256']}</td>`;
     } else if (lang === 'node') {
@@ -49,9 +51,14 @@ function setDigestInfoForLang(lang) {
   }
 
   const fullTable = startTable + digestsRows + endTable;
-  let baseMd = fs.readFileSync(path.join(process.cwd(), "sdk-digests-base.md"));
-  baseMd.replace(divLangStringToReplace, `<div id="${lang}-digests">${fullTable}</div>`);
-  fs.writeFileSync(path.join(process.cwd(), "sdk-digests-base.md"), baseMd);
+  let baseMd = fs.readFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.md"), {"encoding": "utf-8"});
+  baseMd = baseMd.replace(divLangStringToReplace, `<div id="${lang}-digests">${fullTable}</div>`);
+  fs.writeFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.md"), baseMd);
+}
+
+function copyToDocsDir() {
+  const digests = fs.readFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.md"), {"encoding": "utf-8"});
+  fs.writeFileSync(path.join(process.cwd(), "..", "docs", "sdk-digests.md"), digests);
 }
 
 
@@ -70,3 +77,4 @@ function semverBigger (a, b) {
 }
 
 loadSdkDigests();
+copyToDocsDir();
