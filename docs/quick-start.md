@@ -57,7 +57,7 @@ const rook = require('rookout');
 
 rook.start({
     token: '[Your Rookout Token]'
-})
+});
 ```
 
 </div>

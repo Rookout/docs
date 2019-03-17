@@ -330,7 +330,7 @@ const rook = require('rookout');
 
 rook.start({
     token: '[Your Rookout Token]'
-})
+});
 ```
 <div class="rookout-org-info"></div>
 
@@ -347,7 +347,7 @@ require('rookout/auto_start');
 ### start
 
 ```js
-start(options={})
+start(options={});
 ```
 
 The `start` method is used to initialize the SDK. Receives configuration using an `options` object and returns a promise that will resolve when the initial connection attempt to the debug controller succeeds or fails. Either way, connection will be maintained and retried in the background. If you set `throw_errors` to true, the promise will be rejected on failure.
@@ -367,7 +367,7 @@ The `start` method is used to initialize the SDK. Receives configuration using a
 
 ### startSync
 ```js
-startSync(timeout=5000, options = {})
+startSync(timeout=5000, options = {});
 ```
 
 The `startSync` method is used to initialize the SDK in a synchronous manner using the `deasync` module and accepts the same `options` object as the `start` method. The method will return after the initial connection attempt to the debug controller succeeds or fails (either way, connection will be maintained and retried in the background) or when the timeout specified has been reached. If you choose the set `throw_errors` true, an exception will be thrown on failure.  
@@ -375,7 +375,7 @@ The `startSync` method is used to initialize the SDK in a synchronous manner usi
 ### stop
 
 ```js
-stop()
+stop();
 ```
 
 The `stop` method is used to shutdown the SDK.  
@@ -384,7 +384,7 @@ As Rookout is listening to a network connection, the Node process will not termi
 ### flush
 
 ```js
-flush(cb)
+flush(cb);
 ```
 
 The `flush` method allows explicitly flushing the Rookout logs and messages.  
