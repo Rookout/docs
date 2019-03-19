@@ -653,7 +653,7 @@ jsvc -Dsun.java.command=my.main.class
 
 | Implementation     | Versions      |
 | ------------------ | ------------- |
-| **Oracle Java**    | 7u111, 8u91   |
+| **Oracle Java**    | 7u111, 8u74   |
 | **OpenJDK**        | 1.7, 1.8      |
 
 The following languages are officially jupported: Java, Scala, Kotlin, Groovy, ColdFusion.
