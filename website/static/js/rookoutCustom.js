@@ -143,7 +143,7 @@ function setRookoutTokenInPage(data, sandbox = false) {
   }
 
   if (error) {
-    $('.rookout-org-info').html('Login to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token')
+    $('.rookout-org-info').html('Log in to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token')
   }
 }
 
