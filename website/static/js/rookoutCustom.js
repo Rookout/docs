@@ -101,18 +101,24 @@ function loadRookoutToken() {
     xhrFields: {
       withCredentials: true
    }
-  }, (data) => {
+  }, data => {
     setRookoutTokenInPage(data);
   })
-  .fail(() => {
-    setRookoutTokenInPage(null);
+  .fail( err => {
+    // 404 here means authenticated but no organization found = sandbox
+    setRookoutTokenInPage(null, err.status === 404);
   });
 }
 
 
-function setRookoutTokenInPage(data) {
+function setRookoutTokenInPage(data, sandbox = false) {
   const body = $('body');
   let error = false;
+
+  if (sandbox) {
+    $('.rookout-org-info').html('Create a Rookout organization to see your token here.')
+    return
+  }
 
   if (data) {
     const token = data['token'];
@@ -137,7 +143,7 @@ function setRookoutTokenInPage(data) {
   }
 
   if (error) {
-    $('.rookout-org-info').html('Login to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token')
+    $('.rookout-org-info').html('Log in to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token')
   }
 }
 
