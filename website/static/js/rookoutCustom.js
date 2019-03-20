@@ -116,8 +116,7 @@ function setRookoutTokenInPage(data, sandbox = false) {
   let error = false;
 
   if (sandbox) {
-    $('.rookout-org-info').html('You currently have no organization. ' +
-      'Login to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> and exit Sandbox Mode to create an organization.')
+    $('.rookout-org-info').html('Create a Rookout organization to see your token here.')
     return
   }
 
