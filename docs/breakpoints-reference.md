@@ -36,6 +36,8 @@ Example:
 
 ### log_handler
 
+*(Java/JVM only) Unsupported since Rook 0.1.65*
+
 This location indicates collecting the information whenever a log message is written to specified logger.
 
 This location has the following attributes:
