@@ -914,7 +914,7 @@ Example:
 {
   "name": "set",
   "paths": {
-    "store.os": "utils.module(os)"
+    "store.os": "utils.module(\"os\")"
   }
 }
 ```
@@ -983,7 +983,7 @@ Example
 {
   "name": "set",
   "paths": {
-    "store.path": "utils.env(PATH)"
+    "store.path": "utils.env(\"PATH\")"
   }
 }
 ```
