@@ -1,7 +1,7 @@
 ---
 id: license
-title: Rookout License
-sidebar_label: License
+title: Rookout Controller License
+sidebar_label: Controller License
 ---
 
 This software is a proprietary product of Rookout, and is protected under copyright laws and international copyright treaties. 
