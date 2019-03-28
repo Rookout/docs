@@ -20,6 +20,7 @@ function setDigestInfoForLang(lang) {
                       '<thead>\n' +
                       '<tr>\n' +
                       '<th>Version</th>\n' +
+                      '<th>Algorithm</th>\n' +
                       '<th>Digest</th>\n' +
                       '</tr>\n' +
                       '</thead>' +
@@ -38,14 +39,18 @@ function setDigestInfoForLang(lang) {
   let digestsRows = "";
   for (let version in ordered) {
     digestsRows += "<tr>";
-    digestsRows += `<td>${version}</td>`;
-
     if (lang === 'python') {
-      digestsRows += `<td><a href="https://pypi.org/project/rook/${version}" target="_blank">sha1 ${digestData[version]['digests']['sha1']}</a></td>`;
+      digestsRows += `<td><a href="https://pypi.org/project/rook/${version}" target="_blank">${version}</a></td>`;
+      digestsRows += `<td>SHA1</td>`;
+      digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
     } else if (lang === 'node') {
-      digestsRows += `<td><a href="https://www.npmjs.com/package/rookout/v/${version}" target="_blank">sha1 ${digestData[version]['digests']['sha1']}</a></td>`;
+      digestsRows += `<td><a href="https://www.npmjs.com/package/rookout/v/${version}" target="_blank">${version}</a></td>`;
+      digestsRows += `<td>SHA1</td>`;
+      digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
     } else if (lang === 'java') {
-      digestsRows += `<td><a href="https://mvnrepository.com/artifact/com.rookout/rook/${version}" target="_blank">sha1 ${digestData[version]['digests']['sha1']}</a></td>`;
+      digestsRows += `<td><a href="https://mvnrepository.com/artifact/com.rookout/rook/${version}" target="_blank">${version}</a></td>`;
+      digestsRows += `<td>SHA1</td>`;
+      digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
     }
     digestsRows += `</tr>`;
   }
