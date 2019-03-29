@@ -5,7 +5,7 @@ const process = require('process');
 
 
 function loadSdkDigests() {
-  for (let lang of ["python", "node", "java"]) {
+  for (let lang of ["python", "node", "java", "agent"]) {
     setDigestInfoForLang(lang);
   }
 }
@@ -49,6 +49,10 @@ function setDigestInfoForLang(lang) {
       digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
     } else if (lang === 'java') {
       digestsRows += `<td><a href="https://mvnrepository.com/artifact/com.rookout/rook/${version}" target="_blank">${version}</a></td>`;
+      digestsRows += `<td>SHA1</td>`;
+      digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
+    } else if (lang === 'agent') {
+      digestsRows += `<td>${version}</td>`;
       digestsRows += `<td>SHA1</td>`;
       digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
     }
