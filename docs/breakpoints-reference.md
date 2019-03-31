@@ -407,7 +407,7 @@ Example:
 
 2. slack
 
-This operation writes a string from the namespace to slack. In order to build a string [format](rules-operations.md#format) may be used.
+This operation writes a string from the namespace to slack. In order to build a string [format](breakpoints-reference.md#format) may be used.
 
 Example:
 ```json
