@@ -15,7 +15,7 @@ sidebar_label: SDK Digests
 <a class="nav-link" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="jvm" aria-selected="false">JVM</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="agent-tab" data-toggle="tab" href="#agent" role="tab" aria-controls="agent" aria-selected="false">Agent</a>
+<a class="nav-link" id="agent-tab" data-toggle="tab" href="#controller" role="tab" aria-controls="agent" aria-selected="false">Agent</a>
 </li>
 </ul>
 
@@ -67,14 +67,14 @@ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r
 
 <div class="tab-pane fade" id="agent" role="tabpanel">
 
-## Agent
+## Controller
 
-The [Rookout ETL Agent](agent-setup.md) is a component that can be installed within your network.  
-The ETL Agent is only meant for advanced deployments meeting complex network and security requirements.  
-Using the Rookout ETL Agent you may perform all related data processing inside your own network. 
+The [Rookout ETL Controller](controller-setup.md) is a component that can be installed within your network.  
+The ETL Controller is only meant for advanced deployments meeting complex network and security requirements.  
+Using the Rookout ETL Controller you may perform all related data processing inside your own network. 
 It can be download directly to the target system by running the following command:
 ```bash
-curl -L "https://get.rookout.com/agent" -o agent
+curl -L "https://get.rookout.com/controller" -o controller
 ```
 
 <br/>
