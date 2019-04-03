@@ -24,4 +24,4 @@ This means that:
 
 1. You will only set Breakpoints on the applications that fall inside your project.
 1. You will only see data originating from the Breakpoints inside your project.
-1. Other will only see your Breakpoints and data if they work inside the same project.
+1. Others will only see your Breakpoints and data if they work inside the same project.
