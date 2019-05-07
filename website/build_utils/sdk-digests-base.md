@@ -15,7 +15,7 @@ sidebar_label: SDK Digests
 <a class="nav-link" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="jvm" aria-selected="false">JVM</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="agent-tab" data-toggle="tab" href="#controller" role="tab" aria-controls="agent" aria-selected="false">Agent</a>
+<a class="nav-link" id="controller-tab" data-toggle="tab" href="#controller" role="tab" aria-controls="controller" aria-selected="false">Controller</a>
 </li>
 </ul>
 
