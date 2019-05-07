@@ -1016,19 +1016,19 @@ They have the following attributes:
 |**hostname**|string|The rook's host's name|
 |**labels**|string|The rook's labels|
 
-### Agent Namespace
+### Controller Namespace
 
-Agent namespaces represent the ETL Agent information.
+Controller namespaces represent the ETL Controller information.
 
 They have the following attributes:
 
 | Name | Type | Description|
 | ---- | ---- | ---------- |
-|**id**|string|The agent's id|
-|**tags**|list|The agent's tags|
-|**hostname**|string|The agent's host's name|
-|**ip**|string|The agent's ip|
+|**id**|string|The controller's id|
+|**tags**|list|The controller's tags|
+|**hostname**|string|The controller's host's name|
+|**ip**|string|The controller's ip|
 |**machine_type**|string|The machine CPU architecture|
-|**platform**|string|The agent's platform|
-|**version**|string|The agent's version|
-|**commit**|string|The agent's commit identifier|
+|**platform**|string|The controller's platform|
+|**version**|string|The controller's version|
+|**commit**|string|The controller's commit identifier|
