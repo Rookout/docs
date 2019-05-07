@@ -606,6 +606,11 @@ article  h4 {
 
 /* Footer */
 
+.nav-footer .sitemap div {
+    margin: 10px;
+    flex: inherit !important;
+}
+
 footer.nav-footer {
     box-shadow: none;
     background: #808080;

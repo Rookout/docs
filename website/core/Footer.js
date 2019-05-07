@@ -82,6 +82,14 @@ class Footer extends React.Component {
               <div className="sitemapLinksContainer">
                   <div className="sitemapCategoryContainer">
                     { this.renderSitemap() }
+                    <div className="sitemapLinks" key="Other">
+                      <h5 className="bold">Other</h5>
+                      <br></br>
+                      <a href="https://status.rookout.com/"
+                         target="_blank">
+                        Status
+                      </a>
+                    </div>
                   </div>
               </div>
               <div className="social">
