@@ -102,7 +102,7 @@ A selector script allows the user to define to which SDK instances (aka "Rooks")
 - **Available Paths:** Basic Path, Arithmetic Path
 - **Available Operations:** set, format, return
 - **Available Namespaces:**
-    - "agent"- ETL Agent information
+    - "controller"- ETL Controller information
     - "rook"- Rook information
     - "temp"- scratch space
 
@@ -163,7 +163,7 @@ A processing script allows the user to transfom the data and load it into variou
 - **Available Namespaces:**
     - "store"- items extracted by the SDK instance (aka "Rook")
     - "message_info"- message meta data
-    - "agent"- ETL Agent information
+    - "controller"- ETL Controller information
     - "rook"- Rook information
     - "temp"- scratch space
 
@@ -245,7 +245,7 @@ Access methods can be chained, for example:
 
 ### Arithmethic Path
 
-A more advanced path, available for most of the ETL Agent operations (check out [uses](rules-uses.md)).
+A more advanced path, available for most of the ETL Controller operations (check out [uses](rules-uses.md)).
 To select this path type, specify "calc" as the path name.
 
 This path represents an arithmetic exception involving namespace access, constants and arithmetic operators.
@@ -336,7 +336,7 @@ Example:
 {
   "name": "format",
   "path": "temp.message",
-  "format": "LOG: {agent.ip}: {store.rookout.frame.filename}@{store.rookout.frame.line}-{store.rookout.frame.function}"
+  "format": "LOG: {controller.ip}: {store.rookout.frame.filename}@{store.rookout.frame.line}-{store.rookout.frame.function}"
 }
 ```
 
@@ -359,7 +359,7 @@ Example:
 
 This operation performs data redaction on the destination paths, before they are sent to their Targets.
 
-**Note** - redaction is done by the Rookout ETL Agent, before being sent to the defined target.
+**Note** - redaction is done by the Rookout ETL Controller, before being sent to the defined target.
 
 Exmaple: 
 
@@ -521,7 +521,7 @@ These operations send data to the local file system.
 
 This operation writes a string from the namespace to a local file. In order to build a string [format](rules-operations.md#format) may be used.
 
-**Note:** this operation is only supported when using a local ETL Agent.
+**Note:** this operation is only supported when using a local ETL Controller.
 
 Example:
 ```json
@@ -539,7 +539,7 @@ Example:
 
 This operation writes a JSON formatted dump frame from the namespace to a local file.
 
-**Note:** this operation is only supported when using a local ETL Agent.
+**Note:** this operation is only supported when using a local ETL Controller.
 
 Example:
 ```json
