@@ -116,7 +116,7 @@ Rookout verifies that the source file you are seeing in our IDE is the file you 
 The breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](sdk-setup.md)).
 
 #### Sending to Rookout is Disabled
-The system administrator has disabled sending application data to the Rookout service for security reasons (read more about this configuration [here](controller-setup.md#disable-sending-data)).  
+The system administrator has disabled sending application data to the Rookout service for security reasons (read more about this configuration [here](agent-setup.md#disable-sending-data)).  
 Please choose another data sink for your breakpoint.
 
 #### Breakpoint was Disabled due to Rate-Limiting

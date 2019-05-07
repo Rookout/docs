@@ -1,5 +1,5 @@
 ---
-id: controller-setup
+id: agent-setup
 title: Controller Setup
 sidebar_label: Controller Setup
 ---
