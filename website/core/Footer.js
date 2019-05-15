@@ -55,22 +55,21 @@ class Footer extends React.Component {
             <h5 className="bold">{category}</h5>
             <br></br>
             {
-              pages.map(page =>
-                {
+              pages.map((page) => {
                 if (page.toLowerCase() === 'agent-setup') {
                     page = "Controller Setup";
                     return (
                       <a href={this.docUrl(`agent-setup.html`)} key={page}>
                         {ucFirstAllWords(page.replace(/-/g, ' '))}
                       </a>
-                    )
+                    );
                 }
                 return (
                   <a href={this.docUrl(`${page}.html`)} key={page}>
                     {ucFirstAllWords(page.replace(/-/g, ' '))}
                   </a>
-               )
-			   })
+               );
+            })
             }
           </div>
       );
