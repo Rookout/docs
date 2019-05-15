@@ -1,11 +1,12 @@
-version: 3
+version: 2
 
-notify:
-  webhooks:
-    - url: https://api.opsgenie.com/v1/json/circleci?apiKey=$OPSGENIE_API_KEY
-  branches:
-    only:
-      - master
+experimental:
+  notify:
+    webhooks:
+      - url: https://api.opsgenie.com/v1/json/circleci?apiKey=$OPSGENIE_API_KEY
+    branches:
+      only:
+        - master
 
 references:
   filter_master: &filter_master
@@ -33,7 +34,6 @@ references:
     attach_workspace:
       at: ~/docs
 
-version: 2
 jobs:
   up-version:
     working_directory: ~/docs
