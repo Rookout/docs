@@ -3,7 +3,7 @@ version: 2
 experimental:
   notify:
     webhooks:
-      - url: https://api.opsgenie.com/v1/json/circleci?apiKey=$OPSGENIE_API_KEY
+      - url: https://api.opsgenie.com/v1/json/circleci?apiKey=${OPSGENIE_API_KEY}
     branches:
       only:
         - master
