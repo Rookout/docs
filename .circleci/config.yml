@@ -1,12 +1,4 @@
 version: 2
-
-notify:
-  webhooks:
-    - url: https://api.opsgenie.com/v1/json/circleci?apiKey=${OPSGENIE_API_KEY}
-  branches:
-    only:
-      - master
-
 references:
   filter_master: &filter_master
       filters:
