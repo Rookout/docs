@@ -187,14 +187,12 @@ code {
 
 /* Tabs Component */
 
-ul.nav-tabs {
-    margin-top: 1em;
-    padding: 0 !important;
+.tabs {
+    border-top: none;
 }
 
-ul.nav-tabs li {
-    list-style: none;
-    margin: 0 !important;
+.tabs .nav-tabs > div.active {
+    border-bottom: none;
 }
 
 .nav-tabs .nav-link {
@@ -235,6 +233,7 @@ div.tab-content {
 
 div.tab-content .hljs {
     margin: 0;
+
 }
 
 input.tab-button {
