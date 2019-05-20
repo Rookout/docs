@@ -100,31 +100,17 @@ If you don't specify `--keep-old-config`, the new version will be installed usin
 
 When modifying the configuration it is important to restart the ETL Controller using one of the following options:
 
-<ul class="nav nav-tabs" id="controller-restart" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="initd-tab" data-toggle="tab" href="#initd" role="tab" aria-selected="true">init.d</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="systemd-tab" data-toggle="tab" href="#systemd" role="tab" aria-selected="false">systemd</a>
-</li>
-</ul>
-
-<div class="tab-content" id="controller-restart">
-<div class="tab-pane fade show active" id="initd" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--initd-->
 ```bash
 /etc/init.d/rookout-controller restart
 ```
-
-</div>
-<div class="tab-pane fade" id="systemd" role="tabpanel">
-
+<!--systemd-->
 ```bash
 systemctl restart rookout-controller
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
-</div>
-</div>
 
 ### Linux Daemon Uninstall
 

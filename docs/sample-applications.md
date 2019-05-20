@@ -7,6 +7,8 @@ sidebar_label: Sample Applications
 Below you will find a few sample apps with Rookout pre-installed.  
 If you prefer to set up Rookout in your own projects go over [here](quick-start.md).
 
+
+
 <ul class="nav nav-tabs page-tabs" id="sample-apps" role="tablist">
 <li class="nav-item">
 <a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="true">Python</a>
@@ -34,47 +36,26 @@ If you prefer to set up Rookout in your own projects go over [here](quick-start.
 
 1. Clone the [python tutorial](https://github.com/Rookout/tutorial-python) to your local machine and deploy it by running the commands below.<br/>
 
-<ul class="nav nav-tabs" id="python-envs" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="python-linux-tab" data-toggle="tab" href="#python-linux" role="tab" aria-controls="linux" aria-selected="true">Linux/Mac</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="python-windows-tab" data-toggle="tab" href="#python-windows" role="tab" aria-controls="windows" aria-selected="false">Windows</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="python-docker-tab" data-toggle="tab" href="#python-docker" role="tab" aria-controls="docker" aria-selected="false">Docker</a>
-</li>
-</ul>
-
-<div class="tab-content" id="python-envs">
-<div class="tab-pane fade show active" id="python-linux" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Linux/Mac-->
 ```bash
 git clone https://github.com/Rookout/tutorial-python && cd tutorial-python
 export ROOKOUT_TOKEN=[Your Rookout Token]
 pip install -r requirements.txt
 python app.py
 ```
-
-</div>
-<div class="tab-pane fade" id="python-windows" role="tabpanel">
-
+<!--Windows-->
 ```bash
 git clone https://github.com/Rookout/tutorial-python && cd tutorial-python
 set ROOKOUT_TOKEN=[Your Rookout Token]
 pip install -r requirements.txt
 python app.py
 ```
-
-</div>
-<div class="tab-pane fade" id="python-docker" role="tabpanel">
-
+<!--Docker-->
 ```bash
 docker run -p 5000:5000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial-python
 ```
-
-</div>
-</div>
+<!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
 #### Usage
@@ -187,45 +168,24 @@ Check out our [Quick Start guide](sdk-setup.md) to start debugging your own code
 
 1. Clone the [Node.js tutorial](https://github.com/Rookout/tutorial-nodejs) to your local machine and deploy it by running the commands below.<br/>
 
-<ul class="nav nav-tabs" id="node-envs" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="node-linux-tab" data-toggle="tab" href="#node-linux" role="tab" aria-controls="linux" aria-selected="true">Linux/Mac</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="node-windows-tab" data-toggle="tab" href="#node-windows" role="tab" aria-controls="windows" aria-selected="false">Windows</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="node-docker-tab" data-toggle="tab" href="#node-docker" role="tab" aria-controls="docker" aria-selected="false">Docker</a>
-</li>
-</ul>
-
-<div class="tab-content" id="node-envs">
-<div class="tab-pane fade show active" id="node-linux" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Linux/Mac-->
 ```bash
 git clone https://github.com/Rookout/tutorial-nodejs && cd tutorial-nodejs
 export ROOKOUT_TOKEN=[Your Rookout Token]
 npm start
 ```
-
-</div>
-<div class="tab-pane fade" id="node-windows" role="tabpanel">
-
+<!--Windows-->
 ```bash
 git clone https://github.com/Rookout/tutorial-nodejs && cd tutorial-nodejs
 set ROOKOUT_TOKEN=[Your Rookout Token]
 npm start
-```    
-
-</div>
-<div class="tab-pane fade" id="node-docker" role="tabpanel">
-
+```   
+<!--Docker-->
 ```bash
 docker run -p 4000:4000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial-nodejs
 ```
-
-</div>
-</div>
+<!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
 #### Usage
@@ -346,45 +306,24 @@ Check out our [Quick Start guide](sdk-setup.md) to start debugging your own code
 
 1. Clone the [java tutorial](https://github.com/Rookout/tutorial-java) to your local machine and deploying it by running the commands below.<br/>
 
-<ul class="nav nav-tabs" id="jvm-envs" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="jvm-linux-tab" data-toggle="tab" href="#jvm-linux" role="tab" aria-controls="linux" aria-selected="true">Linux/Mac</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="jvm-windows-tab" data-toggle="tab" href="#jvm-windows" role="tab" aria-controls="windows" aria-selected="false">Windows</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="jvm-docker-tab" data-toggle="tab" href="#jvm-docker" role="tab" aria-controls="docker" aria-selected="false">Docker</a>
-</li>
-</ul>
-
-<div class="tab-content" id="jvm-envs">
-<div class="tab-pane fade show active" id="jvm-linux" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Linux/Mac-->
 ```bash
 git clone https://github.com/Rookout/tutorial-java.git && cd tutorial-java
 export ROOKOUT_TOKEN=[Your Rookout Token]
 ./gradlew bootJar run
 ```
-
-</div>
-<div class="tab-pane fade" id="jvm-windows" role="tabpanel">
-
+<!--Windows-->
 ```bash
 git clone https://github.com/Rookout/tutorial-java.git && cd tutorial-java
 set ROOKOUT_TOKEN=[Your Rookout Token]
 ./gradlew bootJar run
 ```
-
-</div>
-<div class="tab-pane fade" id="jvm-docker" role="tabpanel">
-
+<!--Docker-->
 ```bash
 docker run -p 8080:8080 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial-java
 ```
-
-</div>
-</div>
+<!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
 #### Usage

@@ -15,22 +15,8 @@ Sign up to [Rookout](https://app.rookout.com).
 
 Install the Rookout SDK (aka 'Rook') by following these steps:
 
-
-<ul class="nav nav-tabs" id="quick-start" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="home" aria-selected="true">Python</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="profile" aria-selected="false">Node.js</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="contact" aria-selected="false">JVM</a>
-</li>
-</ul>
-
-<div class="tab-content" id="quick-start">
-<div class="tab-pane fade show active" id="python" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Python-->
 ```python
 # Install the Rookout pypi package
 pip install rook
@@ -44,10 +30,7 @@ if __name__ == "__main__":
     rook.start(token='[Your Rookout Token]')  
     # Your program starts here :)
 ```
-
-</div>
-<div class="tab-pane fade" id="node" role="tabpanel">
-
+<!--Node-->
 ```javascript
 // Install the npm package
 npm install --save rookout
@@ -59,10 +42,7 @@ rook.start({
     token: '[Your Rookout Token]'
 });
 ```
-
-</div>
-<div class="tab-pane fade" id="jvm" role="tabpanel">
-
+<!--JVM-->
 ```bash
 # Download our java agent
 curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
@@ -73,9 +53,7 @@ export ROOKOUT_TOKEN=[Your Rookout Token]
 # Set your JVM to use the rook as a java agent
 export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
 ```
-
-</div>
-</div>
+<!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
 ### 3. Create a Project

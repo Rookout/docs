@@ -43,18 +43,8 @@ You have compiled your classes without debug information.
 
 Here a few examples on how to configure them:
 
-<ul class="nav nav-tabs" id="java-debug" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="ant-debug-tab" data-toggle="tab" href="#ant-debug" role="tab" aria-controls="ant-debug" aria-selected="true">Ant</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="javac-debug-tab" data-toggle="tab" href="#javac-debug" role="tab" aria-controls="javac-debug" aria-selected="false">javac</a>
-</li>
-</ul>
-
-<div class="tab-content" id="java-debug-content">
-<div class="tab-pane fade show active" id="ant-debug" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Ant-->
 ```xml
 <javac srcdir="${source-directory}"
         destdir="${classes-directory}"
@@ -62,15 +52,11 @@ Here a few examples on how to configure them:
         debug="true"
 />
 ```
-
-</div>
-<div class="tab-pane fade" id="javac-debug" role="tabpanel">
-
+<!--javac-->
 ```bash
 javac -g MyClass.java
 ```
-
-</div>
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 #### (Node) No Source Maps
 You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).  

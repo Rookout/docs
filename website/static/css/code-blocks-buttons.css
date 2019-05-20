@@ -6,10 +6,10 @@ pre {
 pre .btnIcon {
     position: absolute;
     top: 0;
-    min-width: 90px;
+    min-width: 72px;
     z-index: 2;
     cursor: pointer;
-    padding: 7px;
+    padding: 2px 4px 2px 4px;
     background-color: #533C92;
     color: white;
     transition: all .25s ease-out;
@@ -30,6 +30,10 @@ pre .btnIcon:active {
     box-shadow: inset -2px 2px 31px 0px rgba(83, 60, 146 ,0.75);
 }
 
+pre .copy-icon {
+    height: 17px;
+}
+
 
 .btnIcon__body {
     align-items: center;
@@ -42,7 +46,7 @@ pre .btnIcon:active {
 }
 
 .btnIcon__label {
-    font-size: 13px;
+    font-size: 12px;
     font-family: Roboto Mono, sans-serif;
 }
 
