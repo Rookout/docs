@@ -17,7 +17,6 @@ pip install rook
 <br/>
 <div id="python-digests"></div>
 
-</div>
 <!--Node.js-->
 ## Node.js
 
@@ -30,7 +29,6 @@ npm install --save rookout
 <br/>
 <div id="node-digests"></div>
 
-</div>
 <!--JVM-->
 ## JVM
 
@@ -43,7 +41,6 @@ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r
 <br/>
 <div id="java-digests"></div>
 
-</div>
 <!--Controller-->
 ## Controller
 
@@ -58,5 +55,4 @@ curl -L "https://get.rookout.com/controller" -o controller
 <br/>
 <div id="agent-digests"></div>
 
-</div>
 <!--END_DOCUSAURUS_CODE_TABS-->
