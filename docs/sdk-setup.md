@@ -144,53 +144,26 @@ If you encounter an error similar to the following example, be sure to install t
 
 Here are the commands for installing the build environments for some common OS:
 
-<ul class="nav nav-tabs" id="build-envs" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="osx-tab" data-toggle="tab" href="#osx" role="tab" aria-controls="osx" aria-selected="true">OS X</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="debian-tab" data-toggle="tab" href="#debian" role="tab" aria-controls="debian" aria-selected="false">Debian</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="fedora-tab" data-toggle="tab" href="#fedora" role="tab" aria-controls="fedora" aria-selected="false">Fedora</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="alpine-tab" data-toggle="tab" href="#alpine" role="tab" aria-controls="alpine" aria-selected="false">Alpine</a>
-</li>
-</ul>
-
-<div class="tab-content" id="build-envs">
-<div class="tab-pane fade show active" id="osx" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--OS X-->
 ```bash
 xcode-select --install
 # If installing for PyPy on macOS, installing pkg-config is also required:
 brew install pkg-config
 ```
-
-</div>
-<div class="tab-pane fade" id="debian" role="tabpanel">
-
+<!--Debian-->
 ```bash
 apt-get update -q && apt-get install -qy g++ python-dev
 ```
-
-</div>
-<div class="tab-pane fade" id="fedora" role="tabpanel">
-
+<!--Fedora-->
 ```bash
 yum install -qy gcc-c++ python-devel
 ```
-
-</div>
-<div class="tab-pane fade" id="alpine" role="tabpanel">
-
+<!--Alpine-->
 ```bash
 apk update && apk add g++ python-dev
 ```
-
-</div>
-</div>
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Pre-forking servers
 
@@ -199,22 +172,8 @@ Several popular application servers for Python load the application code during 
 If you are using one of those servers, Rookout must be initialized in each of the workers processes.  
 We have included sample snippets for a few common options:
 
-<ul class="nav nav-tabs" id="preforking" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="uwsgi-tab" data-toggle="tab" href="#uwsgi" role="tab" aria-controls="uWSGI" aria-selected="true">uWSGI</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="gunicorn-tab" data-toggle="tab" href="#gunicorn" role="tab" aria-controls="Gunicorn" aria-selected="false">Gunicorn</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="celery-tab" data-toggle="tab" href="#celery" role="tab" aria-controls="Celery" aria-selected="false">Celery</a>
-</li>
-</ul>
-
-
-<div class="tab-content" id="preforking-content">
-<div class="tab-pane fade show active" id="uwsgi" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--uWSGI-->
 ```python
 try:
     from uwsgidecorators import postfork
@@ -231,12 +190,10 @@ except ImportError:
 ```
 <div class="rookout-org-info"></div>
 
-You must also enable theads by adding __--enable-threads__ to the command line or __enable-threads = true__ in the uWSGI ini file.  
+You must also enable threads by adding __--enable-threads__ to the command line or __enable-threads = true__ in the uWSGI ini file.  
 Read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
 
-</div>
-<div class="tab-pane fade" id="gunicorn" role="tabpanel">
-
+<!--Gunicorn-->
 ```python
 # Gunicorn does not preload applications by default
 # Under some configurations (such as --preload) you will need to create gunicorn_config.py file.
@@ -248,10 +205,7 @@ def post_fork(server, worker):
     rook.start(token='[Your Rookout Token]')
 ```
 <div class="rookout-org-info"></div>
-
-</div>
-<div class="tab-pane fade" id="celery" role="tabpanel">
-
+<!--Celery-->
 ```python
 from celery.signals import worker_process_init
 
@@ -262,9 +216,7 @@ def start_rook(*args, **kwargs):
     rook.start(token='[Your Rookout Token]')
 ```
 <div class="rookout-org-info"></div>
-
-</div>
-</div>
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Serverless and PaaS deployments
 
@@ -565,18 +517,8 @@ Rookout requires your application to be built with debug information. While most
 
 Here a few examples on how to configure them:
 
-<ul class="nav nav-tabs" id="java-debug" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="ant-debug-tab" data-toggle="tab" href="#ant-debug" role="tab" aria-controls="ant-debug" aria-selected="true">Ant</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="javac-debug-tab" data-toggle="tab" href="#javac-debug" role="tab" aria-controls="javac-debug" aria-selected="false">javac</a>
-</li>
-</ul>
-
-<div class="tab-content" id="java-debug-content">
-<div class="tab-pane fade show active" id="ant-debug" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Ant-->
 ```xml
 <javac srcdir="${source-directory}"
         destdir="${classes-directory}"
@@ -584,15 +526,11 @@ Here a few examples on how to configure them:
         debug="true"
 />
 ```
-
-</div>
-<div class="tab-pane fade" id="javac-debug" role="tabpanel">
-
+<!--javac-->
 ```bash
 javac -g MyClass.java
 ```
-
-</div>
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Packaging Sources
 
@@ -600,30 +538,14 @@ Unlike Node and Python applications, most JVM applications do not include their 
 
 In order to shut off the warning and gain the value of source verification, you should include your source files within your JAR/WAR/EAR library.
 
-<ul class="nav nav-tabs" id="jvm-sources" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" id="gradle-sources-tab" data-toggle="tab" href="#gradle-sources" role="tab" aria-controls="gradle-sources" aria-selected="true">Gradle</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="maven-sources-tab" data-toggle="tab" href="#maven-sources" role="tab" aria-controls="maven-sources" aria-selected="false">Maven</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="ant-sources-tab" data-toggle="tab" href="#ant-sources" role="tab" aria-controls="ant-sources" aria-selected="false">Ant</a>
-</li>
-</ul>
-
-<div class="tab-content" id="jvm-sources">
-<div class="tab-pane fade show active" id="gradle-sources" role="tabpanel">
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Gradle-->
 ```groovy
 jar {
    from sourceSets.main.allSource
 }
 ```
-
-</div>
-<div class="tab-pane fade" id="maven-sources" role="tabpanel">
-
+<!--Maven-->
 ```xml
 <resources>
     <resource>
@@ -631,19 +553,14 @@ jar {
     </resource>
 </resources>
 ```
-
-</div>
-<div class="tab-pane fade" id="ant-sources" role="tabpanel">
-
+<!--Ant-->
 ```xml
 <jar destfile="${target.dir}/my-app.jar">
     <fileset dir="${target.dir}/classes" />
     <fileset dir="${source-directory}" includes="**/*.java"/>
 </jar>
 ```
-
-</div>
-</div>
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Application Detection
 
