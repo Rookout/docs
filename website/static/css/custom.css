@@ -783,6 +783,17 @@ footer .social img {
         display: block;
     }
 
+    #navToggler {
+        top: 0;
+    }
+
+    .hamburger-menu > .line1,
+    .hamburger-menu > .line2,
+    .hamburger-menu > .line3
+    {
+        background-color: white;
+    }
+
     .integrations-item {
         max-width: 50%;
     }
