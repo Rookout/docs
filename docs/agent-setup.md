@@ -26,12 +26,14 @@ docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/controll
 
 ### 2. Kubernetes and Helm
 
-If you are running on Kubernetes, we recommend using our provided helm chart [available here](https://github.com/helm/charts/tree/master/stable/rookout).
+If you are running on Kubernetes, we recommend using our provided helm chart [available here](https://github.com/Rookout/helm-charts/tree/master/charts/controller).
 
 Simply execute:
 
 ```bash
-helm install --name rookout stable/rookout --set token=[Your Rookout Token]
+helm repo add rookout https://helm-charts.rookout.com
+helm repo update
+helm install --name my-release rookout/controller --set controller.token=[Your Rookout Token]
 ```
 <div class="rookout-org-info"></div>
 
