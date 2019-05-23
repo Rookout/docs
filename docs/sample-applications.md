@@ -11,13 +11,13 @@ If you prefer to set up Rookout in your own projects go over [here](quick-start.
 
 <ul class="nav nav-tabs page-tabs" id="sample-apps" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="true">Python</a>
+<a class="nav-link-page active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="true">Python</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="node" aria-selected="false">Node.js</a>
+<a class="nav-link-page" id="node-tab" data-toggle="tab" href="#node" role="tab" aria-controls="node" aria-selected="false">Node.js</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="jvm" aria-selected="false">JVM</a>
+<a class="nav-link-page" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="jvm" aria-selected="false">JVM</a>
 </li>
 </ul>
 

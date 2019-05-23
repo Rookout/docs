@@ -15,7 +15,7 @@
     "publish-release-notes": "node build_utils/publish_release_notes.js"
   },
   "devDependencies": {
-    "docusaurus": "1.9.0",
+    "docusaurus": "1.10.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.10.0",
