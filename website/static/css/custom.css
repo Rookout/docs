@@ -195,7 +195,17 @@ code {
     border-bottom: none;
 }
 
-.nav-tabs .nav-link {
+.nav-link-page {
+    font-size: 14px;
+    line-height: 1.14286;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.nav-tabs .nav-link,
+.nav-tabs .nav-link-page {
     color: #bbb;
     border-left: none;
     border-right: none;
@@ -203,7 +213,8 @@ code {
     border-radius: 0;
 }
 
-.nav-tabs .nav-link.active {
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link-page.active {
     background-color: transparent !important;
     color: #555;
     border: 1px solid #ddd;
@@ -211,12 +222,14 @@ code {
     border-bottom: 1px solid #fff;
 }
 
-.nav-tabs .nav-link:hover {
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link-page:hover {
     text-decoration: none !important;
     color: #555 !important;
 }
 
-.nav-tabs .nav-link:focus {
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link-page:focus {
     text-decoration: none !important;
 }
 
