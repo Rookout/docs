@@ -657,10 +657,10 @@ jsvc -Dsun.java.command=my.main.class
 
 | Implementation      | Versions               |
 | ------------------  | -------------          |
-| **Oracle Java**     | 7, 8, 9, 10, 11, 12    |
-| **OpenJDK**         | 7, 8, 9, 10, 11, 12    |
-| **AdoptOpenJDK**    | 8, 9, 10, 11, 12       |
-| **Amazon Corretto** | 8, 11                  |
+| **Oracle Java**     | 7u111+, 8u74+, 9, 10, 11, 12    |
+| **OpenJDK**         | 7u111+, 8u74+, 9, 10, 11, 12    |
+| **AdoptOpenJDK**    | 8u74+, 9, 10, 11, 12       |
+| **Amazon Corretto** | 8u74+, 11                  |
 
 The following languages are officially supported: Java, Scala, Kotlin, Groovy, ColdFusion.
 
