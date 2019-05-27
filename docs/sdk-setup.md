@@ -572,12 +572,14 @@ jsvc -Dsun.java.command=my.main.class
 
 ## Supported Versions
 
-| Implementation     | Versions      |
-| ------------------ | ------------- |
-| **Oracle Java**    | 7u111, 8u74   |
-| **OpenJDK**        | 1.7, 1.8      |
+| Implementation      | Versions               |
+| ------------------  | -------------          |
+| **Oracle Java**     | 7u111+, 8u74+, 9, 10, 11, 12    |
+| **OpenJDK**         | 7u111+, 8u74+, 9, 10, 11, 12    |
+| **AdoptOpenJDK**    | 8u74+, 9, 10, 11, 12       |
+| **Amazon Corretto** | 8u74+, 11                  |
 
-The following languages are officially jupported: Java, Scala, Kotlin, Groovy, ColdFusion.
+The following languages are officially supported: Java, Scala, Kotlin, Groovy, ColdFusion.
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: support@rookout.com .
 
