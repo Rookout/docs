@@ -818,7 +818,7 @@ The stack namespace allows traversal up to stack to process current context and 
 It supports the following access patterns:
 
 #### Key Access
-Using a numeric key access, a specific frame up the stack can be accessed (the returned object is a Frame Namspace).
+Using a numeric key access, a specific frame up the stack can be accessed (the returned object is a Frame Namespace).
 
 Example:
 ```json
