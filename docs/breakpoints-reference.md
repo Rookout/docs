@@ -201,8 +201,6 @@ Example:
 
 Explicit path is a dictionary with the name of the path under "name" and all the relevant arguments within the dictionary.
 
-Availability of different path types depends on the script [uses](rules-uses.md).
-
 Example:
 ```json
 "value": {
@@ -245,7 +243,7 @@ Access methods can be chained, for example:
 
 ### Arithmethic Path
 
-A more advanced path, available for most of the ETL Controller operations (check out [uses](rules-uses.md)).
+A more advanced path, available for most of the ETL Controller operations.
 To select this path type, specify "calc" as the path name.
 
 This path represents an arithmetic exception involving namespace access, constants and arithmetic operators.
@@ -820,7 +818,7 @@ The stack namespace allows traversal up to stack to process current context and 
 It supports the following access patterns:
 
 #### Key Access
-Using a numeric key access, a specific frame up the stack can be accessed (the returned object is a [Frame Namspace](/scripts/namespaces/frame)).
+Using a numeric key access, a specific frame up the stack can be accessed (the returned object is a Frame Namespace).
 
 Example:
 ```json

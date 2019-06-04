@@ -89,7 +89,7 @@ docker run -p 5000:5000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 6. Looking at the right-hand pane **Breakpoint**, you will see the Breakpoint you added, on what line you added it and it should be 
 <span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
 ![Valid Breakpoint](/img/screenshots/getting_started_4.png)
-    - If this is not the case, [click here](troubleshooting-rules.md) to see how to fix that
+    - If this is not the case, [click here](breakpoints-status.md) to see how to fix that
 7. Go the the app webpage [http://localhost:5000/](http://localhost:5000/) and add a todo in order to trigger the Breakpoint
 8. Check the bottom pane **Messages** and you'll see the snapshot you just added, as it was triggered by the handler of the web api when you added a todo
 ![Message pane](/img/screenshots/getting_started_3.png)
@@ -234,7 +234,7 @@ docker run -p 4000:4000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 6. Looking at the right-hand pane **Breakpoint**, you will see the Breakpoint you added, on what line you added it and it should be 
 <span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
 ![Valid Breakpoint](/img/screenshots/getting_started_7.png)
-    - If this is not the case, [click here](troubleshooting-rules.md) to see how to fix that
+    - If this is not the case, [click here](breakpoints-status.md.md) to see how to fix that
 7. Go the the app webpage [http://localhost:4000/](http://localhost:4000/) in order to trigger the Breakpoint
 8. Check the bottom pane **Messages** and you'll see the snapshot you just added, as it was triggered by the handler of the web page when you accessed it
 ![Message pane](/img/screenshots/getting_started_9.png)
@@ -359,7 +359,7 @@ docker run -p 8080:8080 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 
 8. Looking at the right-hand pane **Breakpoint**, you will see the Breakpoint and the line number where you added it - it should be <span style="color: #73CD1F;">**GREEN**</span>   
     ![Valid Breakpoint](/img/screenshots/java-tutorial_3.png)
-    - **If this is not the case, [check our troubleshooting guide](troubleshooting-rules.md)** 
+    - **If this is not the case, [check our troubleshooting guide](breakpoints-status.md)** 
 
 9. Go the the app page - [http://localhost:8080/](http://localhost:8080/) and add try to add a task to the todo list
 
