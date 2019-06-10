@@ -91,6 +91,7 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
 | `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/python-rook.log`) |
 | `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
+| `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
 
