@@ -376,7 +376,7 @@ To make sure Rookout can validate the source file matches the file you are tryri
 
 - [**Weback**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` options for [devtool](https://webpack.js.org/configuration/devtool/).  
 - [**babel-cli**](https://babeljs.io/docs/en/babel-cli) - use the `--source-maps inline` or `--source-maps` flags.  
-- [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` flag.  
+- [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` flag. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 - [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.  
 
 ## Source Commit Detection
