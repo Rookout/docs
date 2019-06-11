@@ -44,6 +44,7 @@ if __name__ == "__main__":
 
 The SDK should be imported just before the application begins executing.  
 This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
+The SDK can't be loaded along other debuggers (Such as Stackdriver). 
 
 **Note: Loading Rookout into a forking application is an unsafe operation.**  
 Check out the [Pre-forking servers](#pre-forking-servers) section for more details.  
@@ -290,6 +291,8 @@ rook.start({
 ```
 <div class="rookout-org-info"></div>
 
+The SDK can't be loaded along other debuggers (Such as Stackdriver).
+
 ### Alternative Import
 
 If you prefer to configure the SDK purely using environment variables (see configuration options below) you may also use the following snippet:
@@ -447,6 +450,8 @@ export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
 java -javaagent:(pwd)/rook.jar MyClass
 ```
 <div class="rookout-org-info"></div>
+
+The SDK can't be loaded along other debuggers (Such as Stackdriver).
 
 ### Alternative API
 
