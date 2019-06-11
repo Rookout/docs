@@ -87,6 +87,9 @@ You are using a pre-forking framework. Rookout must **only** be loaded after for
 #### (Python/JVM) Long Running Function
 You have placed a breakpoint on a long running function. In this runtime, breakpoints are only applied for function calls performed after the Breakpoint was created.
 
+#### (Node) Running with a Debugger
+You are using Rookout side-by-side with another debugger such as WebStorm or Stackdriver Debugger.
+
 ## Error (Red)
 
 `Error` status occurs when one of or more of your applications has reported an error in processing, applying or executing the Breakpoint.
