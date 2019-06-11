@@ -357,11 +357,13 @@ To make sure the SDK was properly installed and test your configuration (environ
 
 ## Supported Versions
 
+Rookout only supports LTS (Long Time Support) versions of Node.js.
+
 | Implementation     | Versions       |
 | ------------------ | -------------- |
 | **Node**           | 8, 10 |
 
-**Note:** Rookout only supports LTS (Long Time Support) versions of Node.js.
+**Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
 
 
 ## Transpiling and Source Maps
