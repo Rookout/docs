@@ -234,7 +234,7 @@ docker run -p 4000:4000 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/tutorial
 6. Looking at the right-hand pane **Breakpoint**, you will see the Breakpoint you added, on what line you added it and it should be 
 <span style="color: #73CD1F;">**GREEN**</span>, meaning everything is communicating correctly.
 ![Valid Breakpoint](/img/screenshots/getting_started_7.png)
-    - If this is not the case, [click here](breakpoints-status.md.md) to see how to fix that
+    - If this is not the case, [click here](breakpoints-status.md) to see how to fix that
 7. Go the the app webpage [http://localhost:4000/](http://localhost:4000/) in order to trigger the Breakpoint
 8. Check the bottom pane **Messages** and you'll see the snapshot you just added, as it was triggered by the handler of the web page when you accessed it
 ![Message pane](/img/screenshots/getting_started_9.png)
@@ -386,7 +386,7 @@ __Level: Beginner__
     <img src="/img/screenshots/python_tutorial_3.png" width="400px" height="310px" />  
 
     - **Debug:**  
-        1. Load the app's code from github / local - as explained [in here](java-getting-started.md#usage) 
+        1. Load the app's code from github / local - as explained [in here](sample-applications.md#usage) 
         2. In the [Rookout app](https://app.rookout.com), open the file `src/main/java/com/rookout/tutorial/TodoController.java`  
         ![TodoController.java](/img/screenshots/java-tutorial_1.png)
         3. Add a __snapshot__ Breakpoint on the `return` of the `clearCompleted` function by clicking left to the line numbering (just like you would have created a breakpoint on an IDE)  

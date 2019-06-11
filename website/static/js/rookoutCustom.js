@@ -10,8 +10,8 @@ $(function () {
   customizeSearchInput();
   changeLogoLink();
   loadRookoutToken();
-  enableTabs();
-  setTimeout(loadTabsForOS, 1000);
+  //enableTabs();
+  //setTimeout(loadTabsForOS, 1000);
 });
 
 function enableTabs() {
@@ -85,7 +85,7 @@ function activateAlgoliaDocSearch() {
     apiKey: 'c4a6a6e1d94fba2757ec2969d13ac547',
     indexName: 'rookout',
     inputSelector: '#rookout-search',
-    debug: window.location.hostname == 'localhost'
+    debug: window.location.hostname === 'localhost'
   });
 
   $('#rookout-search-icon').toggle();
