@@ -12,6 +12,7 @@ $(function () {
   loadRookoutToken();
   //enableTabs();
   //setTimeout(loadTabsForOS, 1000);
+  setTimeout(fixDocusaurusTabsOnLoad, 1000);
 });
 
 function enableTabs() {
@@ -171,5 +172,19 @@ function loadTabsForOS() {
     }
 
     $(`[id="${lang}-tab${osToTab[os]}"]`).prop('checked', true); // Checks radio button to load the right tab
+  });
+}
+
+function fixDocusaurusTabsOnLoad() {
+  // THE ORIGINAL EVENT IN `codetabs.js` IS NOT ALWAYS WORKING. THIS IS A WORKAROUND !
+  $('.nav-link').on('load change', function(e) {
+    e.on('click', function(e) {
+      const target = $(e.target);
+      const groupId = target.attr('data-group');
+      $(`.nav-link[data-group=${groupId}]`).removeClass('active');
+      $(`.tab-pane[data-group=${groupId}]`).removeClass('active');
+      target.addClass('active');
+      $(`#${target.attr('data-tab')}`).addClass('active');
+    });
   });
 }
