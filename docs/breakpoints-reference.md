@@ -582,6 +582,7 @@ The object namespace supports the following access patterns:
         1. *width* - change dump width
         1. *collection_dump* - change the max depth at which collections will be dumped
         1. *string* - change the max size of the string prefix that will be dumped
+        1. *limit* - change all of the configurations that will be dumped
 
 #### Understanding Object Access Limitations
 
@@ -704,6 +705,20 @@ If we return an **object** such as **frame.p**, we can define the **depth** limi
 "store.p": "frame.p.depth(10)"
 ```
 
+If we return an **object** such as **frame.p**, we can configure the dump configuration by calling the **limit** function:
+```javascript
+"store.p": "frame.p.limit('strict')"
+```
+
+The supported limits are summarized in the following table:
+
+| Configuration Name            | strict | default | tolerant |
+| ----------------------------  | ------ | ------- | ----     |
+| **Max Depth**                 | 1      | 3       | 10       |
+| **Max Width**                 | 3      | 20      | 100      |
+| **Collection Depth**          | 1      | 2       | 10       |
+| **Max String**                | 16     | 512     | 64K      |
+
 If we return a **collection** such as **frame.newFriendList**, we can define the **width** limit by calling the **width()** function:
 ```javascript
 "store.p.friends": "frame.newFriendList.width(100)"
@@ -810,6 +825,23 @@ Example:
   }
 }
 ```
+
+You can specify the dump configuration using a parameters to the dump function.
+
+The supported limits are `strict`, `default` and `tolerant`. Values are summarized in the following table:
+
+| Configuration Name            | strict | default | tolerant |
+| ----------------------------  | ------ | ------- | ----     |
+| **Max Depth**                 | 1      | 3       | 10       |
+| **Max Width**                 | 3      | 20      | 100      |
+| **Collection Depth**          | 1      | 2       | 10       |
+| **Max String**                | 16     | 512     | 64K      |
+
+Example:
+```json
+    "store.dump": "frame.dump('strict')"
+```
+
 
 ### Stack Namespace
 
