@@ -88,6 +88,17 @@ To change this configuration for a specific Breakpoint, change the value of `min
 "minTimeBetweenHits" : 10
 ```
 
+## Maximum execution time limit
+
+Rookout set a limit on the extraction time that the breakpoint causes to ensure there's no perfomance degradation when setting breakpoint on on hot code path.   
+
+If a Breakpoint reaches to the time limit (set by default to 400ms) the Breakpoint will be disabled for that application instance and it's status will be set to Error.
+
+To change this configuration for a specific Breakpoint, change the value of `maxAugTime` to the desired number in miliseconds:
+```json
+"maxAugTime" : 600
+```
+
 ## Including Packages
 
 By default, Rookout doesn't set breakpoints inside the application's dependencies (`node_modules` for Node, `site-packages` for Python, inapplicable for JVM).
