@@ -83,9 +83,22 @@ Rookout set a threshold on the rate Breakpoints are invoked within a single appl
 
 If a Breakpoint is invoked twice within the limit (set by default to *100ms*) the Breakpoint will be disabled for that application instance and it's status will be set to `Error`.
 
-To change this configuration for a specific Breakpoint, change the value of `minTimeBetweenHits` to the desired number in miliseconds:
+To change this configuration for a specific Breakpoint, change the value of `minTimeBetweenHits` to the desired number in milliseconds:
 ```json
 "minTimeBetweenHits" : 10
+```
+
+## Maximum execution time limit
+
+Rookout sets a time limit on fetching data when a Breakpoint is hit to reduce the risk of performance degragation.
+
+If a Breakpoint reaches the time limit for a specific app instance, the Breakpoint will be disabled for the instance and the Breakpoint status will become "Error".
+
+Default value for this configuration is 400ms.
+
+To change this configuration for a specific Breakpoint, change the value of `maxAugTime` to the desired number in milliseconds:
+```json
+"maxAugTime" : 600
 ```
 
 ## Including Packages
