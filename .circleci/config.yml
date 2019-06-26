@@ -12,8 +12,7 @@ references:
        mkdir -p ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
        sudo apt-get install python-setuptools python-dev build-essential -qy
        sudo easy_install pip
-       git clone git@github.com:Rookout/build_tools.git
-       cd build_tools && python setup.py install --user
+       pip install -U -e git+ssh://git@github.com/Rookout/build_tools.git#egg=rookout_build_tools
 
   setup_env_var: &setup_env_var
     run:
