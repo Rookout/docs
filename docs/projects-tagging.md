@@ -7,61 +7,85 @@ sidebar_label: Tagging
 The following are common use cases for using Tags to define Project Filters.  
 Let's assume these are some instances of your application:
 
-<img src="/img/screenshots/tagging_1.png" />  
+<img src="/img/screenshots/tag_n1.png" />  
 
 ### Setting up your Rookout deployment
 
-When installing the Rookout SDK, you may provide the service name, environment name and customer as tags.  
-For example, the Customer 1 instance of Service A in Production may be configured using the following:
+When installing the Rookout SDK, you may provide the service name, environment name and customer as tags or labels.  
+For example, Service #3 in Production may be configured using the following:
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Python-->
 ```python
 rook.start(token='[Your Rookout Token]',
-           tags=["Customer1","ServiceA","Production"])
+           labels={"ServiceName":"Service#3","Enviroment":"Production"})
 ```
+<!--Node-->
+```javascript
+rook.start({
+    token: '[Your Rookout Token]', 
+    labels:
+        {
+            "ServiceName":"Service#3",
+            "Enviroment":"Production"
+        }
+    
+});
+```
+<!--JVM-->
+```bash
+# Export your labels as an environment variable
+export ROOKOUT_LABELS=ServiceName:ServiceA,Enviroment:Production
+
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
-### Debug all instances of Service A
+### Examples
 
-When creating your Rookout Project, use tag:ServiceA to debug all instances of Service A (both Production and Staging).
+<details>
+    <summary><span style="font-size:1.3em;￿">Debug all instances of specific service</span></summary></summary>
+        <br>
+When creating your Rookout Project, use the following filter to debug all instances of Service #3 (in Production, Staging and Dev).
 
-1. Add the following filter: `tag:ServiceA`
+1. Add the following filter: `ServiceName:Service#3` 
 
-2. Import the source code for Service A.
+2. Import the source code for Service #3.
 
-<img src="/img/screenshots/tagging_2.png" />
+<img src="/img/screenshots/tag_n2.png" />
 
-### Debug all Production instances
+</details>
 
-When creating your Rookout Project, use tag:Production to debug all production instances (both Service A and Service B).
+<details>
+    <summary><span style="font-size:1.3em;￿">Debug all instances in specific enviroment</span></summary></summary>
+        <br>
+When creating your Rookout Project, use the following filter to debug only instances running in Production.
 
-1. Add the following filter: `tag:Production`
+1. Add the following filter: `Enviroment:Production` 
 
-2. Import the source code for both Service A and Service B.
+2. Import the source code of the relevant service.
 
-<img src="/img/screenshots/tagging_4.png" />
+<img src="/img/screenshots/tag_n3.png" />
 
-### Debug only Production instances of Service A
+</details>
 
-To refine the filter, you may use tag:ProductionServiceA to debug only customer instances of Service A.
+<details>
+    <summary><span style="font-size:1.3em;￿">Debug specific instance in specific enviroment</span></summary></summary>
+        <br>
+To refine the filter, you may use the following filter to debug only the instance of Service #2 runing in Staging.
 
-1. Add the following filters: `tag:ProductionServiceA`
+1. Add the following filters: `Enviroment:Staging` `ServiceName:Service#2`
 
-2. Import the source code for Service A.
+2. Import the source code for Service #2.
 
-<img src="/img/screenshots/tagging_3.png" />
+<img src="/img/screenshots/tag_n4.png" />
 
-### Debug all instances deployed for Customer 1
+</details>
 
-Use tag:Customer1 to debug all Customer 1 instances (both Service A and Service B).
-
-1. Add the following filter: `tag:Customer1`
-
-2. Import the source code for both Service A and Service B.
-
-<img src="/img/screenshots/tagging_5.png" />
-
-### Debug a specific instance
-
-In addition to Tags, you may filter using system configuration identified by the Rookout SDK.  
+<details>
+    <summary><span style="font-size:1.3em;￿">Built in labels</span></summary></summary>
+        <br>
+In addition to Labels, you may filter using system configuration identified by the Rookout SDK.  
 You may find the values for your deployments in the Rookout App Instances page.
 
 hostname -   the host name of an application instance.  
@@ -75,3 +99,8 @@ Supported platforms: `platform:python`, `platform:java`, `platform:node`
 
 processname - the process name (executable) of an application instance.  
 For example: `processname:demo/app.py`  
+
+</details>
+
+
+

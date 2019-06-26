@@ -6,13 +6,17 @@ title: Quick Start
 To install the Rookout SDK and start debugging your project, follow this quick start guide.  
 You can also check out our pre-configured example projects over [here](sample-applications.md).
 
-### 1. Sign Up
 
+<details>
+    <summary><span style="font-size:1.3em;￿">1. Sign Up</span></summary></summary>
+        <br>
 Sign up to [Rookout](https://app.rookout.com).
 
+</details>
 
-### 2. Install the SDK
-
+<details>
+    <summary><span style="font-size:1.3em;￿">2. Install the SDK</span></summary></summary>
+        <br>
 Install the Rookout SDK (aka 'Rook') by following these steps:
 
 <!--DOCUSAURUS_CODE_TABS-->
@@ -27,7 +31,8 @@ pip install rook
 import rook
 
 if __name__ == "__main__":
-    rook.start(token='[Your Rookout Token]')  
+    rook.start(token='[Your Rookout Token]',
+               labels={'Your labels'}) # Labels parameter is optional,see Tagging page below Projects 
     # Your program starts here :)
 ```
 <!--Node-->
@@ -39,7 +44,9 @@ npm install --save rookout
 const rook = require('rookout');
 
 rook.start({
-    token: '[Your Rookout Token]'
+    token: '[Your Rookout Token]',
+    labels: {'Your labels'} // Optional,see Tagging page below Projects
+            
 });
 ```
 <!--JVM-->
@@ -50,28 +57,43 @@ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r
 # Export your token as an environment variable
 export ROOKOUT_TOKEN=[Your Rookout Token]
 
+# Optional, see Tagging section below Projects
+export ROOKOUT_LABELS=[Your labels]
+
 # Set your JVM to use the rook as a java agent
 export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
-### 3. Create a Project
+</details>
 
+<details>
+    <summary><span style="font-size:1.3em;￿">3. Create a Project</span></summary></summary>
+        <br>
+        
 Log in to the [Rookout IDE](https://app.rookout.com) and create a new Project. Give it a meaningful name.<br/>
 Load your Source Code into the Rookout IDE from either Github or from your local file system.
 
 ![Add Source](/img/screenshots/quick_start_3.png)
 
-### 4. Add a Breakpoint
+</details>
 
+<details>
+    <summary><span style="font-size:1.3em;￿">4. Add a Breakpoint</span></summary></summary>
+        <br>
+        
 Add a Breakpoint at the line of code you wish to debug, just as if you were adding a Breakpoint in your own IDE.<br/>
 Run your app and trigger the code you are trying to debug.
 
 ![Add Breakpoint](/img/screenshots/quick_start_4.png)
 
-### 5. Watch the Debug Message
+</details>
 
+<details>
+    <summary><span style="font-size:1.3em;￿">5. Watch the Debug Message</span></summary></summary>
+        <br>
+        
 Watch the Debug Message in the [Rookout IDE](https://app.rookout.com).
 
 And that's it, you're done :)
@@ -87,3 +109,9 @@ And that's it, you're done :)
 - Dig deeper into [Rookout Breakpoints](breakpoints.md).
 
 - Hook Rookout into your data pipeline using one of our [Data Integrations](integrations.md).
+
+</details>
+
+
+
+

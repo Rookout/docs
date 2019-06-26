@@ -37,7 +37,8 @@ Import the SDK within your application:
 import rook
 
 if __name__ == "__main__":
-    rook.start(token='[Your Rookout Token]')
+    rook.start(token='[Your Rookout Token]',
+               labels={'Your labels'}) # Optional,see Tagging page below Projects
     # Your program starts here :)
 ```
 <div class="rookout-org-info"></div>
@@ -64,7 +65,7 @@ if __name__ == "__main__":
 
 ```python
 start(token=None,
-    tags=None,
+    labels=None,
     host=None,
     port=None,
     debug=None,
@@ -285,7 +286,12 @@ Import the SDK within your application:
 const rook = require('rookout');
 
 rook.start({
-    token: '[Your Rookout Token]'
+    token: '[Your Rookout Token]',
+    labels:
+        {
+            // Optional,see Tagging page below Projects
+        }
+
 });
 ```
 <div class="rookout-org-info"></div>
@@ -438,16 +444,31 @@ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r
 ### Java Agent
 
 Simply add the Rookout SDK as a Java Agent to your environment:
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 ```bash
 # Export your token as an environment variable
 export ROOKOUT_TOKEN=[Your Rookout Token]
 
+# Optional, see Tagging section below Projects
+export ROOKOUT_LABELS=[Your labels]
+
 # Add the Java Agent to your application using an environment variable
 export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
 
-# (Or) Add the Java Agent to your application using command line
+```
+<!--Command Line-->
+```bash
+# Export your token as an environment variable
+export ROOKOUT_TOKEN=[Your Rookout Token]
+
+# Optional, see Tagging section below Projects
+export ROOKOUT_LABELS=[Your labels]
+
+# Add the Java Agent to your application using command line
 java -javaagent:(pwd)/rook.jar MyClass
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
 ### Alternative API
