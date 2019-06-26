@@ -1,15 +1,15 @@
 /* Global site tag (gtag.js) - Google Analytics */
 if (document.getElementById) {
-  document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-3"></script>');
+  document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-3"></script>'); // Docs
+  document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-4"></script>'); // Unified
 }
 
 
 $(function () {
-  initGA();
   initLogRocket();
   customizeSearchInput();
   changeLogoLink();
-  loadRookoutToken();
+  loadRookoutToken(); // Also loads Google Analytics after we know if we are logged in
   //enableTabs();
   //setTimeout(loadTabsForOS, 1000);
   setTimeout(fixDocusaurusTabsOnLoad, 1500);
@@ -40,11 +40,13 @@ function filterOutTokenUrl(requestOrResponse) {
 	return requestOrResponse.url === 'https://app.rookout.com/rest/v1/org/token' ? null : requestOrResponse;
 }
 
-function initGA() {
+function initGA(userEmail) {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  const config = userEmail ? { 'user_id': userEmail } : {};
   gtag('js', new Date());
-  gtag('config', 'UA-104510371-3');
+  gtag('config', 'UA-104510371-3', config); // Docs Tracker
+  gtag('config', 'UA-104510371-4', config); // Unified Tracker
 }
 
 
@@ -135,6 +137,7 @@ function setRookoutTokenInPage(data, sandbox = false) {
           name: current_user.name,
           email: current_user.email
         });
+        initGA(current_user.email);
       }
     } else {
       error = true;
@@ -144,7 +147,8 @@ function setRookoutTokenInPage(data, sandbox = false) {
   }
 
   if (error) {
-    $('.rookout-org-info').html('Log in to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token')
+    $('.rookout-org-info').html('Log in to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token');
+    initGA(null);
   }
 }
 
