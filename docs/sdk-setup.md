@@ -361,7 +361,7 @@ Rookout only supports LTS (Long Time Support) versions of Node.js.
 
 | Implementation     | Versions       |
 | ------------------ | -------------- |
-| **Node**           | 8, 10 |
+| **Node**           | 8, 10, 12 |
 
 **Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
 
