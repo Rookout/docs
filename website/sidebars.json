@@ -2,17 +2,15 @@
   "introduction": {
     "Getting Started": [
       "welcome",
-      "quick-start",
       "sample-applications",
       "sdk-setup",
       "agent-setup",
-      "deployment-examples",
-      "frequently-asked-questions"
+      "deployment-examples"
     ],
     "Projects": [
       "projects",
       "source-repos",
-      "projects-tagging"
+      "projects-labels"
     ],
     "Breakpoints":[
       "breakpoints",

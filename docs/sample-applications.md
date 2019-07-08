@@ -5,7 +5,7 @@ sidebar_label: Sample Applications
 ---
 
 Below you will find a few sample apps with Rookout pre-installed.  
-If you prefer to set up Rookout in your own projects go over [here](quick-start.md).
+If you prefer to set up Rookout in your own projects go over [here](sdk-setup.md).
 
 
 

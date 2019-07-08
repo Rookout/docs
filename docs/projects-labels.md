@@ -1,17 +1,17 @@
 ---
-id: projects-tagging
-title: Tagging
-sidebar_label: Tagging
+id: projects-labels
+title: Labels
+sidebar_label: Labels
 ---
 
-The following are common use cases for using Tags to define Project Filters.  
+The following are common use cases for using labels to define Project Filters.  
 Let's assume these are some instances of your application:
 
 <img src="/img/screenshots/tag_n1.png" />  
 
 ### Setting up your Rookout deployment
 
-When installing the Rookout SDK, you may provide the service name, environment name and customer as tags or labels.  
+When installing the Rookout SDK, you may provide the service name and environment nam as labels.  
 For example, Service #3 in Production may be configured using the following:
 
 <!--DOCUSAURUS_CODE_TABS-->
@@ -41,11 +41,9 @@ export ROOKOUT_LABELS=ServiceName:ServiceA,Enviroment:Production
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
-### Examples
+## Examples
+### Debug all instances of specific service
 
-<details>
-    <summary><span style="font-size:1.3em;￿">Debug all instances of specific service</span></summary></summary>
-        <br>
 When creating your Rookout Project, use the following filter to debug all instances of Service #3 (in Production, Staging and Dev).
 
 1. Add the following filter: `ServiceName:Service#3` 
@@ -54,11 +52,8 @@ When creating your Rookout Project, use the following filter to debug all instan
 
 <img src="/img/screenshots/tag_n2.png" />
 
-</details>
+### Debug all instances of specific service
 
-<details>
-    <summary><span style="font-size:1.3em;￿">Debug all instances in specific enviroment</span></summary></summary>
-        <br>
 When creating your Rookout Project, use the following filter to debug only instances running in Production.
 
 1. Add the following filter: `Enviroment:Production` 
@@ -67,11 +62,8 @@ When creating your Rookout Project, use the following filter to debug only insta
 
 <img src="/img/screenshots/tag_n3.png" />
 
-</details>
+### Debug specific instance in specific enviroment
 
-<details>
-    <summary><span style="font-size:1.3em;￿">Debug specific instance in specific enviroment</span></summary></summary>
-        <br>
 To refine the filter, you may use the following filter to debug only the instance of Service #2 runing in Staging.
 
 1. Add the following filters: `Enviroment:Staging` `ServiceName:Service#2`
@@ -80,11 +72,8 @@ To refine the filter, you may use the following filter to debug only the instanc
 
 <img src="/img/screenshots/tag_n4.png" />
 
-</details>
+### Built in labels
 
-<details>
-    <summary><span style="font-size:1.3em;￿">Built in labels</span></summary></summary>
-        <br>
 In addition to Labels, you may filter using system configuration identified by the Rookout SDK.  
 You may find the values for your deployments in the Rookout App Instances page.
 
@@ -99,8 +88,5 @@ Supported platforms: `platform:python`, `platform:java`, `platform:node`
 
 processname - the process name (executable) of an application instance.  
 For example: `processname:demo/app.py`  
-
-</details>
-
 
 
