@@ -4,7 +4,7 @@ title: SDK Setup
 sidebar_label: SDK Setup
 ---
 
-This page will dive into the nitty gritty details on installing Rookout under various configurations  
+This page will dive into the nitty gritty details on installing Rookout under various configurations.  
 If you are encountering any difficulties with deploying Rookout, this is the place to look.
 
 <ul class="nav nav-tabs page-tabs" id="rooks-setup" role="tablist">
