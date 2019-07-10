@@ -104,7 +104,7 @@ A selector script allows the user to define to which SDK instances (aka "Rooks")
 - **Available Namespaces:**
     - "controller"- [ETL Controller information](#controller-namespace)
     - "rook"- [Rook information](#rook-namespace)
-    - "message_info"- [Message information](messgaeinfo-namespace)
+    - "message_info"- [Message information](#messageinfo-namespace)
     - "temp"- scratch space
 
 Example:
