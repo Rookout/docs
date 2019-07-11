@@ -102,8 +102,9 @@ A selector script allows the user to define to which SDK instances (aka "Rooks")
 - **Available Paths:** Basic Path, Arithmetic Path
 - **Available Operations:** set, format, return
 - **Available Namespaces:**
-    - "controller"- ETL Controller information
-    - "rook"- Rook information
+    - "controller"- [ETL Controller information](#controller-namespace)
+    - "rook"- [Rook information](#rook-namespace)
+    - "message_info"- [Message information](#messageinfo-namespace)
     - "temp"- scratch space
 
 Example:
@@ -1062,3 +1063,15 @@ They have the following attributes:
 |**platform**|string|The controller's platform|
 |**version**|string|The controller's version|
 |**commit**|string|The controller's commit identifier|
+
+### MessageInfo Namespace
+
+Message information namespace represent the specific message metadata.
+
+They have the following attributes:
+
+| Name | Type | Description|
+| ---- | ---- | ---------- |
+|**rook_id**|string|The rook that sent the specific message|
+|**rule_id**|string|The causing rule id of the specific message|
+|**time**|string|The time that the message was created|
