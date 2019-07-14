@@ -114,7 +114,7 @@ Read more about configuring rate-limiting [here](breakpoints-tasks.md#rate-limit
 
 #### Breakpoint was Disabled due to Max Execution Time limit
 Rookout employs a built-in max execution time limit mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the execution time limit has been hit and the breakpoint has been disabled for the offending application instance.  
-Read more about configuring rate-limiting [here](breakpoints-tasks.md#rate-limiting).
+Read more about configuring rate-limiting [here](breakpoints-tasks.md#maximum-execution-time-limit).
 
 #### Invalid JSON Key
 The object under the specified JSON key is invalid. Check out the [Breakpoint Tasks](breakpoints-tasks.md) and the [Breakpoint Reference](breakpoints-reference.md) for more information on how to properly configure breakpoints.
