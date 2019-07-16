@@ -13,8 +13,9 @@ references:
        sudo apt-get install python-setuptools python-dev build-essential -qy
        sudo easy_install pip
        git clone git@github.com:Rookout/build_tools.git
-       pip install -r build_tools/requirements.txt --user
-       python build_tools/setup.py install --user
+       cd build_tools
+       pip install -r requirements.txt --user
+       python setup.py install --user
 
   setup_env_var: &setup_env_var
     run:
