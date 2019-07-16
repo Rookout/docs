@@ -4,8 +4,10 @@ title: Labels
 sidebar_label: Labels
 ---
 
-The following are common use cases for using labels to define Project Filters.  
-Let's assume these are some instances of your application:
+Let's assume that you have three environments in your organization - Dev, Staging, and Production. On each environment, you have four different services - service #1, #2, #3 and #4.
+
+Labels are becoming useful when you want to collect data from a specific service, in a specific environment - you can easily choose what instances you want to work with and collect data from.
+ 
 
 <img src="/img/screenshots/tag_n1.png" />  
 
@@ -74,19 +76,21 @@ To refine the filter, you may use the following filter to debug only the instanc
 
 ### Built in labels
 
-In addition to Labels, you may filter using system configuration identified by the Rookout SDK.  
-You may find the values for your deployments in the Rookout App Instances page.
+Rookout also provides built-in labels as described in the following table. 
 
-hostname -   the host name of an application instance.  
-For example: `hostname:demo-deployment`  
+You may find those labels in the Rookout App Instances page, or in the Project configuration pane.
+ 
 
-ip - the ip address of an application instance.  
-For example: `ip:25.218.30.111`  
+| Filter by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Example 
+| ------------ | ----------------------- | 
+| `hostname` | `$hostname:demo-deployment` |
+| `ip` | `$ip:25.218.30.111`  | 
+| `platform` | `$platform:python`, `$platform:java` `$platform:node`| 
+| `processname` | `$processname:demo/app.py`| 
+| `internal ip` | `$internalIp:10.14.1.101`| 
+| `external ip` | `$externalIp:35.222.91.58`|
 
-platform - the platform used in an application instance.  
-Supported platforms: `platform:python`, `platform:java`, `platform:node`  
 
-processname - the process name (executable) of an application instance.  
-For example: `processname:demo/app.py`  
+
 
 

@@ -38,7 +38,7 @@ import rook
 
 if __name__ == "__main__":
     rook.start(token='[Your Rookout Token]',
-               labels={'Your labels'}) # Optional,see Tagging page below Projects
+               labels={"Enviroment":"Dev"}) # Optional,see Labels page below Projects
     # Your program starts here :)
 ```
 <div class="rookout-org-info"></div>
@@ -73,7 +73,6 @@ start(token=None,
     log_file=None,
     log_level=None,
     log_to_stderr=None,
-    labels=None,
     git_commit=None,
     git_origin=None,
     **kwargs)
@@ -289,7 +288,7 @@ rook.start({
     token: '[Your Rookout Token]',
     labels:
         {
-            // Optional,see Tagging page below Projects
+            "Enviroment":"Dev" // Optional,see Labels page below Projects
         }
 
 });
@@ -450,8 +449,8 @@ Simply add the Rookout SDK as a Java Agent to your environment:
 # Export your token as an environment variable
 export ROOKOUT_TOKEN=[Your Rookout Token]
 
-# Optional, see Tagging section below Projects
-export ROOKOUT_LABELS=[Your labels]
+# Optional, see Labels section below Projects
+export ROOKOUT_LABELS=Enviroment:Dev
 
 # Add the Java Agent to your application using an environment variable
 export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
@@ -459,14 +458,8 @@ export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
 ```
 <!--Command Line-->
 ```bash
-# Export your token as an environment variable
-export ROOKOUT_TOKEN=[Your Rookout Token]
-
-# Optional, see Tagging section below Projects
-export ROOKOUT_LABELS=[Your labels]
-
-# Add the Java Agent to your application using command line
-java -javaagent:(pwd)/rook.jar MyClass
+# Add the Java Agent, token and the labels to your application using command line
+java -javaagent:(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_LABELS=Enviroment:Dev
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
