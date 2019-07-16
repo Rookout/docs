@@ -36,9 +36,9 @@ if __name__ == "__main__":
 npm install --save rookout
 
 // Require the package in your app's entry-point file
-const rook = require('rookout');
+const rookout = require('rookout');
 
-rook.start({
+rookout.start({
     token: '[Your Rookout Token]'
 });
 ```

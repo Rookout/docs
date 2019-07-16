@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 "use strict";
-const rook = require('rookout/auto_start');
+const rookout = require('rookout/auto_start');
 
 const animals = ["Aardvark",
     "Abyssinian",

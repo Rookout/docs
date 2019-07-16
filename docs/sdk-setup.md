@@ -282,9 +282,9 @@ npm install --save rookout
 
 Import the SDK within your application:
 ```javascript
-const rook = require('rookout');
+const rookout = require('rookout');
 
-rook.start({
+rookout.start({
     token: '[Your Rookout Token]'
 });
 ```
