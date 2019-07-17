@@ -52,7 +52,7 @@ function setDigestInfoForLang(lang) {
     }
     digestsRows += `<td>SHA1</td>`;
     digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
-    digestsRows += `<td>${digestData[version]['digests']['arn']}</td>`;
+    digestsRows += `<td>${digestData[version]['digests']['arn'] || ''}</td>`;
     digestsRows += `</tr>`;
   }
 
