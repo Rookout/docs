@@ -408,7 +408,7 @@ You may also pass parameters using the Rookout API, Use [`startSync`](sdk-setup.
 ```js
 const rookout = require('rookout/lambda');
 
-rookout.startSync(5000, {token:"43f0e0e12cb586f2b0a24221998f943210ca338f1078e2d8fb10ad05c28aba7b"});
+rookout.startSync(5000, {token:"<YOUR-TOKEN>"});
 
 exports.handler = rookout.wrap((event, context, callback) => {
     callback(null, "Hello World");
