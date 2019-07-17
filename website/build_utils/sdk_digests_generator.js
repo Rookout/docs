@@ -16,14 +16,16 @@ function setDigestInfoForLang(lang) {
 
   const divLangStringToReplace = `<div id="${lang}-digests"></div>`;
 
-  const startTable =  '<table>\n' +
+  let startTable =    '<table>\n' +
                       '<thead>\n' +
                       '<tr>\n' +
                       '<th>Version</th>\n' +
                       '<th>Algorithm</th>\n' +
-                      '<th>Digest</th>\n' +
-                      '<th>AWS Lambda Layer ARN</th>\n' +
-                      '</tr>\n' +
+                      '<th>Digest</th>\n';
+  if (lang !== 'agent') {
+    startTable +=     '<th>AWS Lambda Layer ARN</th>\n';
+  }
+  startTable +=       '</tr>\n' +
                       '</thead>' +
                       '<tbody>';
 
@@ -52,7 +54,9 @@ function setDigestInfoForLang(lang) {
     }
     digestsRows += `<td>SHA1</td>`;
     digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
-    digestsRows += `<td>${digestData[version]['digests']['arn'] || 'N/A'}</td>`;
+    if (lang !== 'agent') {
+      digestsRows += `<td>${digestData[version]['digests']['arn'] || 'N/A'}</td>`;
+    }
     digestsRows += `</tr>`;
   }
 
