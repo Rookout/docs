@@ -403,6 +403,18 @@ exports.handler = rookout.wrap((event, context, callback) => {
 });
 ```
 
+You may also pass parameters using the Rookout API, Use `startSync` to initialize Rookout (after the 'rookout/lambda' import).
+
+```js
+const rookout = require('rookout/lambda');
+
+rookout.startSync(5000, {token:"43f0e0e12cb586f2b0a24221998f943210ca338f1078e2d8fb10ad05c28aba7b"});
+
+exports.handler = rookout.wrap((event, context, callback) => {
+    callback(null, "Hello World");
+});
+```
+
 For more information, please check out our [deployment-examples](deployment-examples.md).
 
 ### Building
