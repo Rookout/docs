@@ -55,10 +55,10 @@ function setDigestInfoForLang(lang) {
     digestsRows += `<td>SHA1</td>`;
     digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
     if (lang !== 'agent') {
-      let arn = digestData[version]['digests']['arn'];
+      let arn = digestData[version]['digests']['arn'] || 'N/A';
       arn = arn.replace('<', '&lt;')
       arn = arn.replace('>', '&gt;')
-      digestsRows += `<td>${arn || 'N/A'}</td>`;
+      digestsRows += `<td>${arn}</td>`;
     }
     digestsRows += `</tr>`;
   }
