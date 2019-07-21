@@ -546,7 +546,7 @@ javac -g MyClass.java
 
 Unlike Node and Python applications, most JVM applications do not include their source code within the library distribution. This prevents Rookout from verifying the source files have not changed between what the user sees and the production and will trigger a warning.
 
-In order to shut off the warning and gain the value of source verification, you should include your source files within your JAR/WAR/EAR library.
+To allow Rookout to verify the application version you are executing against the source files you are using to set breakpoints, include your source files within your JAR/WAR/EAR library.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Gradle-->
