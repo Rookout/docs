@@ -56,8 +56,8 @@ function setDigestInfoForLang(lang) {
     digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
     if (lang !== 'agent') {
       let arn = digestData[version]['digests']['arn'] || 'N/A';
-      arn = arn.replaceAll('<', '&lt;')
-      arn = arn.replaceAll('>', '&gt;')
+      arn = arn.replace(/</gi, '&lt;')
+      arn = arn.replace(/>/gi, '&gt;')
       digestsRows += `<td>${arn}</td>`;
     }
     digestsRows += `</tr>`;
