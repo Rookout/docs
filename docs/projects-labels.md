@@ -4,23 +4,23 @@ title: Labels
 sidebar_label: Labels
 ---
 
-Let's assume that you have three environments in your organization - Dev, Staging, and Production. On each environment, you have four different services - service #1, #2, #3 and #4.
+Labels are key/value pairs that are attached to running application instances.
 
-Labels are becoming useful when you want to collect data from a specific service, in a specific environment - you can easily choose what instances you want to work with and collect data from.
- 
+Labels can be used to organize and select groups of application instances.
+In this example organization, there are three environments - development, staging, and production with 4 different services in each environment.
 
 <img src="/img/screenshots/tag_n1.png" />  
 
 ### Setting up your Rookout deployment
 
 When installing the Rookout SDK, you may provide the service name and environment nam as labels.  
-For example, Service #3 in Production may be configured using the following:
+For example, service #3 in Production may be configured using the following:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Python-->
 ```python
 rook.start(token='[Your Rookout Token]',
-           labels={"ServiceName":"Service#3","Enviroment":"Production"})
+           labels={"service":"service#3","env":"production"})
 ```
 <!--Node-->
 ```javascript
@@ -28,8 +28,8 @@ rook.start({
     token: '[Your Rookout Token]', 
     labels:
         {
-            "ServiceName":"Service#3",
-            "Enviroment":"Production"
+            "service":"service#3",
+            "env":"production"
         }
     
 });
@@ -37,7 +37,7 @@ rook.start({
 <!--JVM-->
 ```bash
 # Export your labels as an environment variable
-export ROOKOUT_LABELS=ServiceName:ServiceA,Enviroment:Production
+export ROOKOUT_LABELS=service:service3,env:production
 
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -46,11 +46,11 @@ export ROOKOUT_LABELS=ServiceName:ServiceA,Enviroment:Production
 ## Examples
 ### Debug all instances of specific service
 
-When creating your Rookout Project, use the following filter to debug all instances of Service #3 (in Production, Staging and Dev).
+When creating your Rookout Project, use the following filter to debug all instances of service #3 (in Production, Staging and Dev).
 
-1. Add the following filter: `ServiceName:Service#3` 
+1. Add the following filter: `service:service#3` 
 
-2. Import the source code for Service #3.
+2. Import the source code for service #3.
 
 <img src="/img/screenshots/tag_n2.png" />
 
@@ -58,7 +58,7 @@ When creating your Rookout Project, use the following filter to debug all instan
 
 When creating your Rookout Project, use the following filter to debug only instances running in Production.
 
-1. Add the following filter: `Enviroment:Production` 
+1. Add the following filter: `env:production` 
 
 2. Import the source code of the relevant service.
 
@@ -66,11 +66,11 @@ When creating your Rookout Project, use the following filter to debug only insta
 
 ### Debug specific instance in specific enviroment
 
-To refine the filter, you may use the following filter to debug only the instance of Service #2 runing in Staging.
+To refine the filter, you may use the following filter to debug only the instance of service #3 running in Staging.
 
-1. Add the following filters: `Enviroment:Staging` `ServiceName:Service#2`
+1. Add the following filters: `env:staging` `service:service#3`
 
-2. Import the source code for Service #2.
+2. Import the source code for service #3.
 
 <img src="/img/screenshots/tag_n4.png" />
 
@@ -84,7 +84,6 @@ You may find those labels in the Rookout App Instances page, or in the Project c
 | Filter by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Example 
 | ------------ | ----------------------- | 
 | `hostname` | `$hostname:demo-deployment` |
-| `ip` | `$ip:25.218.30.111`  | 
 | `platform` | `$platform:python`, `$platform:java` `$platform:node`| 
 | `processname` | `$processname:demo/app.py`| 
 | `internal ip` | `$internalIp:10.14.1.101`| 

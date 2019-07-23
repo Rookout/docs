@@ -38,7 +38,7 @@ import rook
 
 if __name__ == "__main__":
     rook.start(token='[Your Rookout Token]',
-               labels={"Enviroment":"Dev"}) # Optional,see Labels page below Projects
+               labels={"env":"dev"}) # Optional,see Labels page below Projects
     # Your program starts here :)
 ```
 <div class="rookout-org-info"></div>
@@ -84,7 +84,6 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
-| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a separator for environment variables |
 | `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
@@ -289,7 +288,7 @@ rookout.start({
     token: '[Your Rookout Token]',
     labels:
         {
-            "Enviroment":"Dev" // Optional,see Labels page below Projects
+            "env":"dev" // Optional,see Labels page below Projects
         }
 });
 ```
@@ -317,7 +316,6 @@ The `start` method is used to initialize the SDK. Receives configuration using a
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
-| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a separator for environment variables |
 | `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
@@ -450,7 +448,7 @@ Simply add the Rookout SDK as a Java Agent to your environment:
 export ROOKOUT_TOKEN=[Your Rookout Token]
 
 # Optional, see Labels section below Projects
-export ROOKOUT_LABELS=Enviroment:Dev
+export ROOKOUT_LABELS=env:dev
 
 # Add the Java Agent to your application using an environment variable
 export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
@@ -459,7 +457,7 @@ export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar"
 <!--Command Line-->
 ```bash
 # Add the Java Agent, token and the labels to your application using command line
-java -javaagent:(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_LABELS=Enviroment:Dev
+java -javaagent:(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_LABELS=env:dev
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
