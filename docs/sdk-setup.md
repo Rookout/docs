@@ -398,9 +398,11 @@ For most common Serverless runtimes, Rookout provides easy to use wrappers such 
 ```js
 const rookout = require('rookout/lambda');
 
-exports.handler = rookout.wrap((event, context, callback) => {
-    callback(null, "Hello World");
-});
+function handler(event, context, callback) {
+        callback(null, "Hello World");
+}
+
+exports.handler = rookout.wrap(handler, {tags:['rookout_lambda']});
 ```
 
 For more information, please check out our [deployment-examples](deployment-examples.md).
