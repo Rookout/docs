@@ -1,7 +1,7 @@
 ---
 id: sdk-digests
-title: SDK Digests
-sidebar_label: SDK Digests
+title: Software Versions
+sidebar_label: Software Versions
 ---
 
 <!--DOCUSAURUS_CODE_TABS-->
