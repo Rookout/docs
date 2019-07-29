@@ -452,10 +452,7 @@ java -javaagent:(pwd)/rook.jar MyClass
 
 As an alternative, the Rookout SDK may be loaded using a simple API.
 
-**Note: Due to limitations introduced in Java 9, you must be using the JDK runtime and specify this Java flag: `-Djdk.attach.allowAttachSelf=true`**
-
-  
-The API works out of the box when using the [JDK](https://stackoverflow.com/questions/1906445/what-is-the-difference-between-jdk-and-jre) runtime, but for the [JRE](https://stackoverflow.com/questions/1906445/what-is-the-difference-between-jdk-and-jre) runtime you must bundle [`tools.jar`](https://mvnrepository.com/artifact/com.sun/tools/1.7.0.13) along side the Rookout jar in your deployment. For more information check out the relevant [deployment examples](deployment-examples.md).
+If you are using the JRE instead of the [JDK](https://stackoverflow.com/questions/1906445/what-is-the-difference-between-jdk-and-jre) runtime, support is limited for Java 7 and 8 and requires bundling [`tools.jar`](https://mvnrepository.com/artifact/com.sun/tools/1.7.0.13) along side the Rookout jar in your deployment. For more information check out the relevant [deployment examples](deployment-examples.md).
 
 ```java
 import com.rookout.rook.API;
@@ -471,6 +468,9 @@ public class Program {
     }
 }
 ```
+
+**Note: Due to limitations introduced in Java 9, you must use the JDK runtime and add the following Java flag: `-Djdk.attach.allowAttachSelf=true`**
+
 <div class="rookout-org-info"></div>
 
 ## SDK API
