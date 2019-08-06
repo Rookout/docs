@@ -9,7 +9,7 @@
     "Projects": [
       "projects",
       "source-repos",
-      "projects-tagging"
+      "projects-labels"
     ],
     "Breakpoints":[
       "breakpoints",

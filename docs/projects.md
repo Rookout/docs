@@ -7,7 +7,7 @@ sidebar_label: Projects
 A Rookout Project allows you to define the context for a debugging session or for a fixed debugging configuration.  
 It defines the following:
 1. The source code of the application to be debugged.
-2. The application instance (or instances) being debugged, filtered using [Rookout Tags](projects-tagging.md).
+2. The application instance (or instances) being debugged, filtered using [Rookout Labels](projects-labels.md).
 3. A set of Breakpoints (in Rookout - Rule Points, or non-breaking breakpoints) identifying code areas you wish to debug.
 
 ## Project creation
@@ -15,7 +15,7 @@ It defines the following:
 When creating a Project, use the Projetc creation dialog to define the following:
 1. Define a Project name.
 2. Import one or more source code repositories from GitHub, BitBucket or from your local file system (using the provided Explorook file server).
-3. An optional set of [filters](projects-tagging.md), used to set the context of your debug configuration to specific instances of the application being debugged.
+3. An optional set of [filters](projects-labels.md), used to set the context of your debug configuration to specific instances of the application being debugged.
 
 ## Debugging
 
