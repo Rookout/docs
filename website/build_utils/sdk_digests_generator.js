@@ -16,13 +16,16 @@ function setDigestInfoForLang(lang) {
 
   const divLangStringToReplace = `<div id="${lang}-digests"></div>`;
 
-  const startTable =  '<table>\n' +
+  let startTable =    '<table>\n' +
                       '<thead>\n' +
                       '<tr>\n' +
                       '<th>Version</th>\n' +
                       '<th>Algorithm</th>\n' +
-                      '<th>Digest</th>\n' +
-                      '</tr>\n' +
+                      '<th>Digest</th>\n';
+  if (lang !== 'agent') {
+    startTable +=     '<th>AWS Lambda Layer ARN</th>\n';
+  }
+  startTable +=       '</tr>\n' +
                       '</thead>' +
                       '<tbody>';
 
@@ -41,20 +44,21 @@ function setDigestInfoForLang(lang) {
     digestsRows += "<tr>";
     if (lang === 'python') {
       digestsRows += `<td><a href="https://pypi.org/project/rook/${version}" target="_blank">${version}</a></td>`;
-      digestsRows += `<td>SHA1</td>`;
-      digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
     } else if (lang === 'node') {
       digestsRows += `<td><a href="https://www.npmjs.com/package/rookout/v/${version}" target="_blank">${version}</a></td>`;
-      digestsRows += `<td>SHA1</td>`;
-      digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
+
     } else if (lang === 'java') {
       digestsRows += `<td><a href="https://mvnrepository.com/artifact/com.rookout/rook/${version}" target="_blank">${version}</a></td>`;
-      digestsRows += `<td>SHA1</td>`;
-      digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
     } else if (lang === 'agent') {
       digestsRows += `<td>${version}</td>`;
-      digestsRows += `<td>SHA1</td>`;
-      digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
+    }
+    digestsRows += `<td>SHA1</td>`;
+    digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
+    if (lang !== 'agent') {
+      let arn = digestData[version]['digests']['arn'] || 'N/A';
+      arn = arn.replace(/</gi, '&lt;')
+      arn = arn.replace(/>/gi, '&gt;')
+      digestsRows += `<td>${arn}</td>`;
     }
     digestsRows += `</tr>`;
   }

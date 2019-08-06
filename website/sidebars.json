@@ -2,7 +2,6 @@
   "introduction": {
     "Getting Started": [
       "welcome",
-      "sample-applications",
       "sdk-setup",
       "agent-setup",
       "deployment-examples"
