@@ -155,10 +155,10 @@ setup.sh --token=[Your Rookout Token] --https-proxy=[Your Proxy Server]
 ```
 <div class="rookout-org-info"></div>
 
-Or by adding the HTTPS_PROXY configuration to the ETL Controller configuration file at `/etc/default/rookout-controller` :
+Or by adding the ROOKOUT_PROXY configuration to the ETL Controller configuration file at `/etc/default/rookout-controller` :
 
 ```bash
-export HTTPS_PROXY=[Your Proxy Server]
+export ROOKOUT_PROXY=[Your Proxy Server]
 ```
 
 ## Performance Considerations
