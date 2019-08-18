@@ -101,6 +101,28 @@ To change this configuration for a specific Breakpoint, change the value of `max
 "maxAugTime" : 600
 ```
 
+## Auto-disable after global hit count limit
+
+You can set a breakpoint to automatically disable after a global hit count is hit.
+
+This is a soft limit - once it is hit, the breakpoint will be disabled but it may take a short while for it to be received and handled by your app instances, so you may see more hits than your limit. 
+
+To change this configuration for a specific Breakpoint, change the value of `globalHitLimit` to the desired maximum hit count:
+```json
+"globalHitLimit": 10
+```
+
+## Auto-disable after date passes
+
+You can set a breakpoint to automatically disable after a certain date passes. 
+
+This is a soft limit - once it is hit, the breakpoint will be disabled but it may take a short while for it to be received and handled by your app instances, so you may see more hits after the date passes. 
+
+To change this configuration for a specific Breakpoint, change the value of `globalDisableAfterTime` to the desired date in UTC, in RFC 3339 format:
+```json
+"globalDisableAfterTime": "2019-08-18T08:42:58.770788Z"
+```
+
 ## Including Packages
 
 By default, Rookout doesn't set breakpoints inside the application's dependencies (`node_modules` for Node, `site-packages` for Python, inapplicable for JVM).
