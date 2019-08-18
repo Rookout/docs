@@ -602,7 +602,7 @@ jsvc -Dsun.java.command=my.main.class
 | Implementation      | Versions               |
 | ------------------  | -------------          |
 | **Oracle Java**     | 7u111+, 8u74+, 9, 10, 11, 12    |
-| **OpenJDK**         | 7u111+, 8u74+, 9, 10, 11, 12    |
+| **OpenJDK**         | 7u111+, 8u74+, 9, 10, 11, 12, 13    |
 | **AdoptOpenJDK**    | 8u74+, 9, 10, 11, 12       |
 | **Amazon Corretto** | 8u74+, 11                  |
 
