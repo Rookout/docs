@@ -54,7 +54,7 @@ When creating your Rookout Project, use the following filter to debug all instan
 
 <img src="/img/screenshots/tag_n2.png" />
 
-### Debug all instances of specific service
+### Debug all instances in specific environment
 
 When creating your Rookout Project, use the following filter to debug only instances running in Production.
 
