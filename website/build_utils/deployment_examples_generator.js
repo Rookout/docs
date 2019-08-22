@@ -21,7 +21,7 @@ request(options, function (error, response, body) {
 });
 
 const filterData = (data) => {
-  const dirs =  data.filter(content => content.type === 'dir');
+  const dirs =  data.filter(content => content.type === 'dir' && !content.name.startsWith('.'));
   let dataPerLang = {};
 
   for (let dir of dirs) {
