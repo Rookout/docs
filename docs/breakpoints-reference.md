@@ -360,7 +360,7 @@ This operation performs data redaction on the destination paths, before they are
 
 **Note** - redaction is done by the Rookout ETL Controller, before being sent to the defined target.
 
-Exmaple: 
+Example: 
 
 ```json
 {
