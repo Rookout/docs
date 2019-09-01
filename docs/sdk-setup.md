@@ -398,7 +398,7 @@ The NodeJS SDK supports detecting the existing source code commit in the followi
 ### Integrating with Serverless
 
 When integrating Rookout into a Serverless application, you should explicitly flush the collected information.  
-For most common Serverless runtimes, Rookout provides easy to use wrappers such as:
+For most common Serverless runtimes, Rookout provides easy to use wrappers such as `rookout.wrap(handler, options={})`:
 
 ```js
 const rookout = require('rookout/lambda');
@@ -409,6 +409,8 @@ function handler(event, context, callback) {
 
 exports.handler = rookout.wrap(handler, {tags:['rookout_lambda']});
 ```
+
+Refer to the [SDK API](#sdk-api-1) for the available optional options
 
 For more information, please check out our [deployment-examples](deployment-examples.md).
 
