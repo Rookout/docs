@@ -4,20 +4,16 @@ title: Conditional breakpoints
 ---
 
 
-Conditional breakpoints allow collecting data from a code snippet only when a defined expression evaluates to true.
+Conditional breakpoints limit data collection from a code snippet to cases when the defined expression evaluates as true.
 
-<video width="500" controls autoplay>
-    <source src="/img/conditional.mov" type="video/mp4">
-</video>
-
-
+<iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/iua-P2o6U9w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 ### Rookout provides two types of conditions:
 - Simple - compare the value of one or two variables.
 - Advanced - define a complex condition using logical parameters (use "&&" for AND statement,  "||" for OR statement, "(" and ")" for encapsulation).
 
-### Add and Edit Conditional breakpoint:
+### Add and Edit Conditional breakpoints:
 - Set a breakpoint.
 - Click on the <img src="/img/screenshots/edit.png" height="15" width="22" > icon in the breakpoint pane.
 - Choose condition type - Simple or Advanced.
