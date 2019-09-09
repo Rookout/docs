@@ -407,27 +407,12 @@ function handler(event, context, callback) {
         callback(null, "Hello World");
 }
 
-exports.handler = rookout.wrap(handler, {tags:['rookout_lambda']});
+exports.handler = rookout.wrap(handler, {labels={"env":"dev"})};
 ```
 
 Refer to the [SDK API](#sdk-api-1) for the available optional options
 
 For more information, please check out our [deployment-examples](deployment-examples.md).
-
-### Building
-
-If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
-If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
-
-Many Serverless frameworks (such as AWS SAM) has built-in support for it and will work out of the box.
-
-If you need to set up your own build, we recommend using Docker, with a command line such as:
-
-```bash
-docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-nodejs8.10 npm install
-```
-
-For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
 </div>
 
@@ -513,7 +498,6 @@ The `startWithExceptions` will throw on error, so make sure to wrap the invocati
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
-| `tags` | `ROOKOUT_ROOK_TAGS` | [] | The list of tags you want for your application instances. Use *;* as a separator for environment variables |
 | `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
