@@ -6,7 +6,7 @@ sidebar_label: Source Repositories
 
 Each Project contains the source code you wish to debug.
 
-Rookout allows you to easily load sources from your local file system or your git provider.  This is preformed directly in our Web based IDE.
+Rookout allows you to easily load sources from your local file system or your git provider.  This is performed directly in our Web based IDE.
 
 ## Repository Settings
 
@@ -17,7 +17,7 @@ Feel free to add comments to the file in the form of lines starting with '#'.
 
 ### Debugging Packages
 
-By default, Rookout ignores your projet's dependencies (`node_modules` for Node, `site-packages` for Python, inapplicable for JVM).  
+By default, Rookout ignores your project's dependencies (`node_modules` for Node, `site-packages` for Python, inapplicable for JVM).  
 This includes the `node_modules` directory for NodeJS applications and the `site-packages` directory for Python applications.
 
 If you are debugging a project installed as a package, add the following snippet to your `.rookout` file:

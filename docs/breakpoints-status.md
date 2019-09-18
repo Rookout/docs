@@ -6,12 +6,12 @@ sidebar_label: Breakpoint Status
 
 Breakpoint status is a simple visual indicator designed to give you quick feedback if your Breakpoint is behvaing as expected.  
 
-Breakpoint status appears as a lightbulb or a warnning sign next to the Breakpoint on the right pane of the screen.  
+Breakpoint status appears as a lightbulb or a warning sign next to the Breakpoint on the right pane of the screen.  
 For more information on a Breakpoint status, you may click it or read more below.
 
 ## Breakpoint Statuses
 
-To provide quick feedback, Breakpoint statuses are *aggregated* accross all *historic* data reported on the Breakpoint.  
+To provide quick feedback, Breakpoint statuses are *aggregated* across all *historic* data reported on the Breakpoint.  
 Whenever you edit the Breakpoint, it's status is reset.
 
 **These are the available statuses**:
@@ -79,7 +79,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 You are not invoking the *correct* line of code in the correct *application instance*.
 
 #### Output to Integration
-You are using a custom Breakpoint that send the message to another [data-sink](integrations.md).
+You are using a custom Breakpoint that sends the message to another [data-sink](integrations.md).
 
 #### (Python) Preforking
 You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](sdk-setup.md#pre-forking-servers).

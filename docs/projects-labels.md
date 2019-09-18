@@ -13,7 +13,7 @@ In this example organization, there are three environments - development, stagin
 
 ### Setting up your Rookout deployment
 
-When installing the Rookout SDK, you may provide the service name and environment nam as labels.  
+When installing the Rookout SDK, you may provide the service name and environment name as labels.  
 For example, service #3 in Production may be configured using the following:
 
 <!--DOCUSAURUS_CODE_TABS-->

@@ -79,7 +79,7 @@ The `dog` member will be returned entirely, while the other members will be reda
 
 ## Rate Limiting
 
-Rookout set a threshold on the rate Breakpoints are invoked within a single application instance to ensure there's no perfomance degradation when accidentally setting breakpoints on hot code path.
+Rookout sets a threshold on the rate that Breakpoints are invoked within a single application instance to ensure there's no perfomance degradation when accidentally setting breakpoints on a hot code path.
 
 If a Breakpoint is invoked twice within the limit (set by default to *100ms*) the Breakpoint will be disabled for that application instance and it's status will be set to `Error`.
 

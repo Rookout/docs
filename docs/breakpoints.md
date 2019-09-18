@@ -3,7 +3,7 @@ id: breakpoints
 title: Breakpoints
 ---
 
-Rookout Breakpoint are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.  
+Rookout Breakpoints are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.  
 
 ## Setting Breakpoints
 

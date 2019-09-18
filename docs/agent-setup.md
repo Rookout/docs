@@ -142,7 +142,7 @@ For example, debug messages can be sent to Elasticsearch or Splunk clusters.
 
 ### Data Redaction
 
-All data received by the ETL gent undergoes a data redaction process based on the configuration set by the user.
+All data received by the ETL agent undergoes a data redaction process based on the configuration set by the user.
 
 ## Proxy Support 
 
