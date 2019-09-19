@@ -12,7 +12,7 @@ It defines the following:
 
 ## Project creation
 
-When creating a Project, use the Projetc creation dialog to define the following:
+When creating a Project, use the Project creation dialog to define the following:
 1. Define a Project name.
 2. Import one or more source code repositories from GitHub, BitBucket or from your local file system (using the provided Explorook file server).
 3. An optional set of [filters](projects-labels.md), used to set the context of your debug configuration to specific instances of the application being debugged.

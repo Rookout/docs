@@ -3,10 +3,10 @@ id: breakpoints-structure
 title: Breakpoint Structure
 ---
 
-Breakpoint are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.  
+Breakpoints are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.  
 
 The Rookout IDE offers an ever expanding set of features to customize the Breakpoints' behaviours to meet your needs.  
-In this section, we'll beyond the UI into the Breakpoint object itself to better understand what can be achieved by customizing it by code.
+In this section, we'll go beyond the UI into the Breakpoint object itself to better understand what can be achieved by customizing it by code.
 
 ## Breakpoint Function
 
