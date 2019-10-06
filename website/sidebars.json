@@ -1,9 +1,13 @@
 {
   "introduction": {
-    "Getting Started": [
+    "General": [
       "welcome",
-      "sdk-setup",
-      "agent-setup",
+      "use-cases"
+    ],
+    "SDK Setup": [
+      "python-setup",
+      "node-setup",
+      "jvm-setup",
       "deployment-examples"
     ],
     "Projects": [
@@ -19,6 +23,9 @@
       "breakpoints-tasks",
       "integrations",
       "breakpoints-reference"
+    ],
+    "Advanced": [
+      "agent-setup"
     ],
     "More": [
       "sdk-digests",
