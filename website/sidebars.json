@@ -5,6 +5,7 @@
       "use-cases"
     ],
     "SDK Setup": [
+      "setup-intro",
       "python-setup",
       "node-setup",
       "jvm-setup",
