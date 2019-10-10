@@ -6,6 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/docs/sdk-setup.html",
+        "destination": "/docs/setup-intro.html",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source" : "**/*.@(jpg|jpeg|gif|png|svg)",
