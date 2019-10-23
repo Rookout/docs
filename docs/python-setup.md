@@ -223,6 +223,7 @@ from rook.serverless import serverless_rook
 def lambda_handler(event, context):
   return "Hello world"
 ```
+**Notice:**  Rookout agent syncs his breakpoint in the backgroud so a potential race exist while launching you lambda app for the first time. It might take up to one second to apply all the breakpoints so you might consider triggering your lambda more than once.
 
 For more information, please check out our [deployment-examples](deployment-examples.md).
 

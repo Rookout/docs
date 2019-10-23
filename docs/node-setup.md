@@ -147,6 +147,8 @@ function handler(event, context, callback) {
 exports.handler = rookout.wrap(handler, {labels={"env":"dev"})};
 ```
 
+**Notice:**  Rookout agent syncs his breakpoint in the backgroud so a potential race exist while launching you lambda app for the first time. It might take up to one second to apply all the breakpoints so you might consider triggering your lambda more than once.
+
 Refer to the [SDK API](#sdk-api-1) for the available optional options
 
 For more information, please check out our [deployment-examples](deployment-examples.md).

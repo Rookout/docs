@@ -20,13 +20,14 @@
       "breakpoints",
       "breakpoints-status",
       "breakpoints-conditional",
-      "breakpoints-structure",
-      "breakpoints-tasks",
-      "integrations",
-      "breakpoints-reference"
+      "breakpoints-tasks"
+
     ],
     "Advanced": [
-      "agent-setup"
+      "integrations",
+      "agent-setup",
+      "breakpoints-structure",
+      "breakpoints-reference"
     ],
     "More": [
       "sdk-digests",
