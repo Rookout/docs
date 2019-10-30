@@ -159,6 +159,7 @@ Or by adding the ROOKOUT_PROXY configuration to the ETL Controller configuration
 
 ```bash
 export ROOKOUT_PROXY=[Your Proxy Server]
+export ROOKOUT_NO_PROXY=[comma-seperated list of hostnames that by pass proxy]
 ```
 
 ## Performance Considerations
