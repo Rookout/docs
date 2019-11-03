@@ -20,7 +20,7 @@ The ETL Controller can be configured to your needs using environment variables.
 To run as a Docker container, simply execute:
 
 ```bash
-docker run -p 7486:7486 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/controller
+docker run -p 7488:7488 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/controller
 ```
 <div class="rookout-org-info"></div>
 
