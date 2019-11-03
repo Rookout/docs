@@ -1065,6 +1065,18 @@ footer .social img {
 }
 
 .use-cases-icon {
-    width: 100%;
+    display: flex;
+    flex: 1;
     padding-top: 35px;
+}
+
+.use-cases-content {
+    display: flex;
+    flex-direction: column;
+    flex: 7;
+}
+
+.use-cases-icon img {
+    width: 30px;
+    height: 30px;
 }
