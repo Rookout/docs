@@ -1047,3 +1047,36 @@ footer .social img {
     transform: scale(1.1);
 }
 
+/* Use Cases Page */
+.use-cases-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.use-cases-column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+}
+
+.use-cases-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.use-cases-icon {
+    display: flex;
+    flex: 1;
+    padding-top: 35px;
+}
+
+.use-cases-content {
+    display: flex;
+    flex-direction: column;
+    flex: 7;
+}
+
+.use-cases-icon img {
+    width: 30px;
+    height: 30px;
+}
