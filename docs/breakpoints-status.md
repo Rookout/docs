@@ -142,6 +142,11 @@ Rookout recommends you fix `Warning` whent they appear.
 Rookout employs a built-in rate-limiting mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the rate limit has been hit and the breakpoint has been disabled for the offending application instance.  
 Read more about configuring rate-limiting [here](breakpoints-tasks.md#rate-limiting).
 
+#### Path suggestion
+Source file was deployed to unexpected location, this might happen in some serverless frameworks.
+We have matched a file with the same hash but in a different path than the wanted one.
+Use the [`.rookout`](source-repos.html#source-path-mapping) and the suggestion to map the paths correctly. 
+
 #### (JVM) Source file not found 
 Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. In most JVM based languages, please include your source within your Jar/War/Ear archives.  
 Read more about it on our [setup page](sdk-setup.md).

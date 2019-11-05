@@ -15,28 +15,16 @@ If you are deploying your software in some non-trival ways, Rookout offers the o
 Simply create a file named `.rookout` at the root of your repository and add to it any of the configurations below.  
 Feel free to add comments to the file in the form of lines starting with '#'.
 
-### Debugging Packages
-
-By default, Rookout ignores your project's dependencies (`node_modules` for Node, `site-packages` for Python, inapplicable for JVM).  
-This includes the `node_modules` directory for NodeJS applications and the `site-packages` directory for Python applications.
-
-If you are debugging a project installed as a package, add the following snippet to your `.rookout` file:
-
-```python
-#package
-```
-
-**Note:** Rookout does not map common NPM packages and does not allow setting breakpoints inside them.
-
-### Source Path Matching
+### Source Path Mapping
 
 By default Rookout uses the repository relative path of the source file you are debugging to find it.
 
 You may have to change it in a couple of cases:
+- You are using serverless framework that deploys your app with different layout.
 - You are removing a part of the path when deploying your code.
 - The path is too short or generic, and you want to make it more specific to avoid path collisions.
 
-This is done through simple path substition instructions:
+This is done through simple path substition instructions (in the `.rookout` file):
 
 #### Shortening a Path
 
@@ -65,3 +53,16 @@ To convert `my app/app.py` to `app.py` use:
 ```bash
 "my app" /
 ```
+
+### Debugging Packages
+
+By default, Rookout ignores your project's dependencies (`node_modules` for Node, `site-packages` for Python, inapplicable for JVM).  
+This includes the `node_modules` directory for NodeJS applications and the `site-packages` directory for Python applications.
+
+If you are debugging a project installed as a package, add the following snippet to your `.rookout` file:
+
+```python
+#package
+```
+
+**Note:** Rookout does not map common NPM packages and does not allow setting breakpoints inside them.
