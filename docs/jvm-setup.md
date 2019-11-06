@@ -43,6 +43,17 @@ java -javaagent:(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DRO
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
+#### Using in OSGi apps
+To use Rookout in an OSGi application, the Rookout package must be whitelisted (delegated) to the OSGi container.
+
+This is done by setting the following JVM options
+
+```
+org.osgi.framework.bootdelegation=com.rookout.*
+```
+
+This is done where all other JVM options are set (via -D flags, JVM_OPTS, etc.).
+
 ### Alternative API
 
 As an alternative, the Rookout SDK may be loaded using a simple API.
