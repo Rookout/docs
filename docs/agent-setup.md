@@ -161,6 +161,17 @@ Or by adding the ROOKOUT_PROXY configuration to the ETL Controller configuration
 export ROOKOUT_PROXY=[Your Proxy Server]
 ```
 
+## Security options
+
+The controller uses the system certificate store to verify secure connections to servers. If you prefer to skip certificate verification,
+you can set the `ROOKOUT_SKIP_SSL_VERIFY` environment variable.
+
+```bash
+export ROOKOUT_SKIP_SSL_VERIFY=1
+```
+
+**Note**: This might compromise the security of your system.
+
 ## Performance Considerations
 
 A single ETL Controller can handle thousands of concurrent applications connected to it, but the default configuration is optimized for about 100 concurrent applications.
