@@ -133,6 +133,34 @@ Alternatively, you may change the value of `includeExternals` (under the `locati
 "includeExternals" : true
 ```
 
+## Rate limiting
+
+Rookout measures the time it takes for each breakpoint to run, and disallows additional runs if the total time taken by breakpoints exceeds the quota for a certain time window. By default, breakpoints are alotted 500ms of runtime over the last five seconds (5000ms).
+
+You can change either the quota or the window size by setting:
+
+```json
+"aug": {
+  "limits": "300/4000"
+}
+```
+
+In this case, 300ms are allowed over the last four seconds. Time is always measured in milliseconds. Setting a value like `5000/5000` will disable effectively rate-limiting.
+
+## Maximum running time
+
+As a matter of safety to your application, when a single breakpoint run takes more than a reasonable time to run, it is disabled permanently. When this happens, the breakpoint will need to be manually re-enabled using the IDE, perhaps also collecting less data to prevent the safety from re-triggering.
+
+You can change the maximum amount of time allowed for a single run by setting:
+
+```json
+"aug": {
+  "maxAugTime": "700"
+}
+```
+
+Time is in milliseconds.
+
 ## What's next?
 
 To review the full Breakpoint API check out the [Reference Section](breakpoints-reference.md).
