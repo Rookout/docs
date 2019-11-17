@@ -1056,7 +1056,7 @@ They have the following attributes:
 | Name | Type | Description|
 | ---- | ---- | ---------- |
 |**user_email**|string|The email of the user who set the breakpoint|
-|**workspace**|string|Workspace ID|
+|**workspace_id**|string|Workspace ID|
 |**workspace_name**|string|Workspace name|
 |**filename**|string|Filename in which the breakpoint was set|
 |**lineno**|int|Line number|
