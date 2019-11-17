@@ -1047,6 +1047,21 @@ They have the following attributes:
 |**hostname**|string|The rook's host's name|
 |**labels**|string|The rook's labels|
 
+### Breakpoint Namespace
+
+Breakpoint namespaces (accessed via `bp`, e.g. `bp.filename`) contain information about the breakpoint that was set.
+
+They have the following attributes:
+
+| Name | Type | Description|
+| ---- | ---- | ---------- |
+|**user_email**|string|The email of the user who set the breakpoint|
+|**workspace**|string|Workspace ID|
+|**workspace_name**|string|Workspace name|
+|**filename**|string|Filename in which the breakpoint was set|
+|**lineno**|int|Line number|
+|**sha256**|string|SHA256 of the file|
+
 ### Controller Namespace
 
 Controller namespaces represent the ETL Controller information.
