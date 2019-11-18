@@ -19,8 +19,7 @@ Whenever you edit the Breakpoint, it's status is reset.
 - `Pending` (gray) - the Breakpoint has yet to be applied by any of your applications and no errors have been reported.
 - `Active` (green) - the Breakpoint has been applied by one or more of your applications has applied the Breakpoint and no errors have been reported.
 - `Error` (red) - one or more of your applications has reported an error in processing, applying or executing the Breakpoint.
-
-- `Warning` (sign) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
+- `Warning` (triangle sign) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
 
 ## Pending (Gray)
 
@@ -129,12 +128,12 @@ The breakpoint contains a invalid path argument. Check out the [Breakpoint Tasks
 
 **Note:** If Rookout deems the invalid configuration to be non-critical, this might show up as a warning instead.
 
-## Warning (Sign)
+## Warning (Triangle Sign)
 
 `Warning` status occurs when one of or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
 
-`Warning` indicates some problems have occured with the Breakpoint, and Rookout is trying it's best to deliver the you requested. This may result in the Breakpoint being executed with full success, partial success, or with no success.  
-Rookout recommends you fix `Warning` whent they appear.
+`Warning` indicates some problems have occured with the Breakpoint, and Rookout is trying it's best to deliver the data you've requested. This may result in the Breakpoint being executed with full success, partial success, or with no success.  
+Rookout recommends you to fix a `Warning` when it appears.
 
 `Warning` messages are clearly documented within the IDE, but here are some of the common ones:
 
