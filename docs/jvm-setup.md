@@ -219,3 +219,19 @@ For more information, please check out our [deployment-examples](deployment-exam
 ### Building
 
 In some Serverless environments (such as AWS Lambda), the tools.jar library is missing and must be included within your package as well.
+
+## Debugging frameworks
+
+To reduce performance overhead, the Rookout SDK will not insturment some popular libraries and frameworks. If you wish to debug such a framework, you can set the following environment variable to allow certain package prefixes:
+
+```bash
+export ROOKOUT_INCLUDE_CLASS_PREFIX=org.springframework.
+```
+
+Examples of excluded packages:
+ - com.sun.*
+ - org.springframework.*
+ - java.*
+ - org.apache.*
+ - io.netty.*
+
