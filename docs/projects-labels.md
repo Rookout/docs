@@ -11,14 +11,47 @@ In this example organization, there are three environments - development, stagin
 
 <img src="/img/screenshots/tag_n1.png" />  
 
-### Setting up your Rookout deployment
+## Setting up your Rookout deployment
 
 When installing the Rookout SDK, you may provide the service name and environment name as labels.  
 For example, service #3 in Production may be configured using the following:
 
+### With environment variables (recommanded)
+```bash
+export ROOKOUT_TOKEN='[Your Rookout Token]'
+```
+<div class="rookout-org-info"></div><br />
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Python-->
 ```python
+import os
+rook.start(token=os.environ['ROOKOUT_TOKEN'],
+           labels={"service":"service#3","env":"production"})
+```
+<!--Node-->
+```javascript
+rook.start({
+    token: process.env.ROOKOUT_TOKEN, 
+    labels:
+        {
+            "service":"service#3",
+            "env":"production"
+        }
+    
+});
+```
+<!--JVM-->
+```bash
+# Export your labels as an environment variable
+export ROOKOUT_LABELS=service:service3,env:production
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### As an argument
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Python-->
+```python
+import os
 rook.start(token='[Your Rookout Token]',
            labels={"service":"service#3","env":"production"})
 ```
@@ -34,14 +67,7 @@ rook.start({
     
 });
 ```
-<!--JVM-->
-```bash
-# Export your labels as an environment variable
-export ROOKOUT_LABELS=service:service3,env:production
-
-```
 <!--END_DOCUSAURUS_CODE_TABS-->
-<div class="rookout-org-info"></div>
 
 ## Examples
 ### Debug all instances of specific service
