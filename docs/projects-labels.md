@@ -20,7 +20,7 @@ For example, service #3 in Production may be configured using the following:
 <!--Python-->
 ```python
 rook.start(token='[Your Rookout Token]',
-           labels={"service":"service#3","env":"production"})
+           labels={"service":"service#3","env":"dev"})
 ```
 <!--Node-->
 ```javascript
@@ -29,19 +29,26 @@ rook.start({
     labels:
         {
             "service":"service#3",
-            "env":"production"
+            "env":"dev"
         }
-    
+
 });
 ```
 <!--JVM-->
 ```bash
 # Export your labels as an environment variable
-export ROOKOUT_LABELS=service:service3,env:production
+export ROOKOUT_LABELS=service:service3,env:dev
 
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
+
+Altenatively, labels can be added as environment variables in Python and Node as well:
+
+```bash
+export ROOKOUT_LABELS='service:service3,env:dev'
+```
+
 
 ## Examples
 ### Debug all instances of specific service
