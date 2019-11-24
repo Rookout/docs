@@ -58,7 +58,6 @@ jobs:
             yarn install
             yarn run lint
             yarn run generate-examples
-            yarn run generate-integrations
             yarn run generate-sdk-digests
             yarn run build
             yarn run deploy-firebase
