@@ -190,6 +190,10 @@ setup.sh --token=[Your Rookout Token] --max-mem=1024
 ```
 <div class="rookout-org-info"></div>
 
+## Health Check
+
+If you would like to perform a health check on the Rookout ETL Controller, you can access http://<ROOKOUT_CONTROLLER_HOST>:<ROOKOUT_CONTROLLER_PORT>/healthz.  For example, a default configuration on your localhost might make the health check URL available at http://localhost:7488/healthz.  A healthy ETL Controller will return an HTTP 200 OK response.
+
 ## License
 
 The Rookout ETL Controller usage license may be found here:
