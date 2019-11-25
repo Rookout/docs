@@ -77,16 +77,20 @@ The `dog` member will be returned entirely, while the other members will be reda
 
 ![Whitelist basic](/img/screenshots/filter_whitelist_1.png)
 
-## Rate Limiting
 
-Rookout sets a threshold on the rate that Breakpoints are invoked within a single application instance to ensure there's no perfomance degradation when accidentally setting breakpoints on a hot code path.
+## Rate limiting
 
-If a Breakpoint is invoked twice within the limit (set by default to *100ms*) the Breakpoint will be disabled for that application instance and it's status will be set to `Error`.
+Rookout measures the time it takes for each breakpoint to run, and disallows additional runs if the total time taken by breakpoints exceeds the quota for a certain time window. By default, breakpoints are alotted 500ms of runtime over the last five seconds (5000ms).
 
-To change this configuration for a specific Breakpoint, change the value of `minTimeBetweenHits` to the desired number in milliseconds:
+You can change either the quota or the window size by setting:
+
 ```json
-"minTimeBetweenHits" : 10
+"aug": {
+  "limits": "300/4000"
+}
 ```
+
+In this case, 300ms are allowed over the last four seconds. Time is always measured in milliseconds. Setting a value like `5000/5000` will disable effectively rate-limiting.
 
 ## Maximum execution time limit
 
@@ -132,20 +136,6 @@ Alternatively, you may change the value of `includeExternals` (under the `locati
 ```json
 "includeExternals" : true
 ```
-
-## Rate limiting
-
-Rookout measures the time it takes for each breakpoint to run, and disallows additional runs if the total time taken by breakpoints exceeds the quota for a certain time window. By default, breakpoints are alotted 500ms of runtime over the last five seconds (5000ms).
-
-You can change either the quota or the window size by setting:
-
-```json
-"aug": {
-  "limits": "300/4000"
-}
-```
-
-In this case, 300ms are allowed over the last four seconds. Time is always measured in milliseconds. Setting a value like `5000/5000` will disable effectively rate-limiting.
 
 ## Maximum running time
 
