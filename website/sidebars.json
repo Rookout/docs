@@ -25,6 +25,7 @@
     ],
     "Advanced": [
       "integrations",
+      "collaborations",
       "agent-setup",
       "breakpoints-structure",
       "breakpoints-reference"
