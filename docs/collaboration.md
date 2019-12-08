@@ -1,6 +1,6 @@
 ---
-id: collaborations
-title: Collaborations
+id: collaboration
+title: Collaboration
 ---
 
 Leverage the power of Non-Breaking Breakpoints by connecting with your existing tools.
