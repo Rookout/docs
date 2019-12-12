@@ -16,12 +16,13 @@ Whenever you edit the Breakpoint, it's status is reset.
 
 **These are the available statuses**:
 
-- `Pending` (gray) - the Breakpoint has yet to be applied by any of your applications and no errors have been reported.
-- `Active` (green) - the Breakpoint has been applied by one or more of your applications has applied the Breakpoint and no errors have been reported.
-- `Error` (red) - one or more of your applications has reported an error in processing, applying or executing the Breakpoint.
-- `Warning` (triangle sign) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
+- `Active` (solid purple) - the Breakpoint has been applied by one or more of your applications has applied the Breakpoint and no errors have been reported.
+- `Pending` (hollow purple) - the Breakpoint has yet to be applied by any of your applications and no errors have been reported.
+- `Error` (hollow purple with exclamation point) - one or more of your applications has reported an error in processing, applying or executing the Breakpoint.
+- `Warning` (solid purple with exclamation point) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
+- `Disabled` (hollow grey) - the Breakpoint is in a disabled state and will not collect data.
 
-## Pending (Gray)
+## Pending (Hollow Purple)
 
 `Pending` status occurs when none of your applications have yet to apply the Breakpoint and no errors have been reported.
 
@@ -67,7 +68,7 @@ You are debugging a package deployed as a dependency. This requires setting up y
 #### (Python/Node) Different File Layout
 File paths are changed between source repository and deployment. This requires setting up your source repository [accordingly](source-repos.md#source-path-matching).
 
-## Active Breakpoint (Green)
+## Active Breakpoint (Solid Purple)
 
 `Active` status occurs when one of or more of your applications has applied the Breakpoint and no errors have been reported.  
 In most cases, once the Breakpoint has transitioned to active, you will see messages collected the next time the line is executed.
@@ -89,7 +90,7 @@ You have placed a breakpoint on a long running function. In this runtime, breakp
 #### (Node) Running with a Debugger
 You are using Rookout side-by-side with another debugger such as WebStorm or Stackdriver Debugger.
 
-## Error (Red)
+## Error (Hollow Purple with Exclamation Point)
 
 `Error` status occurs when one of or more of your applications has reported an error in processing, applying or executing the Breakpoint.
 
@@ -128,7 +129,7 @@ The breakpoint contains a invalid path argument. Check out the [Breakpoint Tasks
 
 **Note:** If Rookout deems the invalid configuration to be non-critical, this might show up as a warning instead.
 
-## Warning (Triangle Sign)
+## Warning (Solid Purple with Exclamation Point)
 
 `Warning` status occurs when one of or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
 
