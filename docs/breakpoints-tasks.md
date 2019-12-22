@@ -86,7 +86,7 @@ You can change either the quota or the window size by setting:
 
 ```json
 "aug": {
-  "limits": "300/4000"
+  "rateLimit": "300/4000"
 }
 ```
 
