@@ -71,7 +71,6 @@ start(token=None,
     debug=None,
     throw_errors=None,
     log_file=None,
-    log_level=None,
     log_to_stderr=None,
     git_commit=None,
     git_origin=None,
@@ -89,8 +88,6 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
-| `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/python-rook.log`) |
-| `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
@@ -322,8 +319,6 @@ The `start` method is used to initialize the SDK. Receives configuration using a
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to reject the promsise or throw an exception if `start` fails (error message will not be printed in console) |
-| `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/node-rook.log`) |
-| `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
@@ -502,8 +497,6 @@ The `startWithExceptions` will throw on error, so make sure to wrap the invocati
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `/var/log/rookout/java-rook.log`) |
-| `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
 | `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
