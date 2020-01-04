@@ -81,7 +81,7 @@ To make sure the SDK was properly installed and test your configuration (environ
 
 ## Debug Information
 
-Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>pdbonly</DebugType>`) and to not be optimize (`<Optimize>false</Optimize>`)   
+Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>pdbonly</DebugType>` or `-debug+`) and to not be optimize (`<Optimize>false</Optimize>`)   
 
 ## Supported Versions
 
