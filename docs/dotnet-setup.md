@@ -1,24 +1,21 @@
 ---
 id: dotnet-setup
-title: .NetFramework SDK Instrumentation
+title: .NET Framework SDK Instrumentation
 sidebar_label: DotNet
 ---
 
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
 If you are encountering any difficulties with deploying Rookout, this is the place to look.
 
+## .NET Framework
 
-
-## DotNet
-
-The [dotnet SDK](TODO::ADD NUGGET LINK HERE) provides the ability to fetch debug data from a running application in real time.  
+The .NET Framework SDK provides the ability to fetch debug data from a running application in real time.  
 
 ## Setup
 
 ### NuGet Package
 
-Rookout SDK is install as a NuGet package in your application.
-TODO:: add link of NuGet
+Rookout SDK is install as a [NuGet package](https://www.nuget.org/packages/Rookout) in your application.
 
 #### API
 
@@ -45,7 +42,7 @@ namespace Program
 
 ## SDK API
 
-The DotNet SDK is loaded via API.  
+The .NET Framework SDK is loaded via API.  
 Configuration may be passed through the API or using OS Environment Variables.
 
 ### start
@@ -95,5 +92,4 @@ If the environment you are trying to debug is not mentioned in the list above, b
 
 ## Dependencies
 
-//TODO:: handle this
-None.
+Microsoft.DiaSymReader.Native (>= 1.7.0)
