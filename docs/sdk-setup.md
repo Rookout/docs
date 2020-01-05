@@ -18,7 +18,7 @@ If you are encountering any difficulties with deploying Rookout, this is the pla
 <a class="nav-link-page" id="jvm-tab" data-toggle="tab" href="#jvm" role="tab" aria-controls="jvm" aria-selected="false">JVM</a>
 </li>
 <li class="nav-item">
-<a class="nav-link-page" id="dotnet-tab" data-toggle="tab" href="#dotnet" role="tab" aria-controls="dotnet" aria-selected="false">DotNet</a>
+<a class="nav-link-page" id="dotnet-tab" data-toggle="tab" href="#dotnet" role="tab" aria-controls="dotnet" aria-selected="false">.Net Framework</a>
 </li>
 </ul>
 
