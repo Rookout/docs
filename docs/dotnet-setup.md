@@ -15,7 +15,7 @@ The .NET Framework SDK provides the ability to fetch debug data from a running a
 
 ### NuGet Package
 
-Rookout SDK is install as a [NuGet package](https://www.nuget.org/packages/Rookout) in your application.
+Rookout SDK is installed as a [NuGet package](https://www.nuget.org/packages/Rookout) in your application.
 
 #### API
 
@@ -73,8 +73,7 @@ The `StartWithExceptions` will throw on error, so make sure to wrap the invocati
 
 ## Test connectivity
 
-//TODO:: handle this
-To make sure the SDK was properly installed and test your configuration (environment variables only), run the following command:
+To make sure the SDK was properly installed and test your configuration (environment variables only), download and run [TestConnectivity.exe](https://get.rookout.com/RookoutDotnetTestConnectivity.zip):
 
 ## Debug Information
 
