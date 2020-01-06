@@ -1,15 +1,17 @@
 ---
 id: dotnet-setup
-title: .NET Framework SDK Instrumentation
-sidebar_label: .NET Framework
+title: .NET Framework Beta SDK Instrumentation
+sidebar_label: .NET Framework Beta SDK
 ---
+
+## Please note that .NET SDK support is currently in Beta phase and we offer limited support to limited customers
 
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
 If you are encountering any difficulties with deploying Rookout, this is the place to look.
 
 ## .NET Framework
 
-The .NET Framework SDK provides the ability to fetch debug data from a running application in real time.  
+The [.NET Framework SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real time.  
 
 ## Setup
 
@@ -19,7 +21,7 @@ Rookout SDK is installed as a [NuGet package](https://www.nuget.org/packages/Roo
 
 #### API
 
-The Rookout SDK needs to be started using simple API.
+The Rookout SDK needs to be started using a simple API.
 
 ```cs
 using Rook;
@@ -42,7 +44,7 @@ namespace Program
 
 ## SDK API
 
-The .NET Framework SDK is loaded via API.  
+The .NET Framework SDK is loaded via an API.  
 Configuration may be passed through the API or using OS Environment Variables.
 
 ### start
@@ -53,7 +55,7 @@ public static void Start(RookOptions opts)
 public static void StartWithExceptions(RookOptions opts)
 ```
 
-All methods initialize the SDK in the background using on the optional configuration in the `opts` argument.  
+All methods initialize the SDK in the background using the optional configuration in the `opts` argument.  
 The simpler `Start` will never impact the application's flow, writing a failure to the console.  
 The `StartWithExceptions` will throw on error, so make sure to wrap the invocation with an appropriate `try`/`catch` block.
 
@@ -77,7 +79,7 @@ To make sure the SDK was properly installed and test your configuration (environ
 
 ## Debug Information
 
-Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>pdbonly</DebugType>` or `-debug+`) and to not be optimize (`<Optimize>false</Optimize>`)   
+Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>pdbonly</DebugType>` or `-debug+`) and the optimize flag should not be enabled (`<Optimize>false</Optimize>`)   
 
 ## Supported Versions
 
