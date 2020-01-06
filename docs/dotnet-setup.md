@@ -50,13 +50,26 @@ Configuration may be passed through the API or using OS Environment Variables.
 ### start
 
 ```cs
-public static void Start()
+public static void Start() \\ Using only environment variables
 public static void Start(RookOptions opts)
 public static void StartWithExceptions(RookOptions opts)
 ```
 
 All methods initialize the SDK in the background using the optional configuration in the `opts` argument.  
-The simpler `Start` will never impact the application's flow, writing a failure to the console.  
+The simpler `Start` will never impact the application's flow, writing a failure to the console.
+
+When using the Start() function remember to set the ROOKOUT_TOKEN in the enviroment variable:
+
+```bash
+# Export your token as an environment variable
+set ROOKOUT_TOKEN=[Your Rookout Token]
+
+# Optional, see Labels section below Projects
+set ROOKOUT_LABELS=env:dev
+```
+
+<div class="rookout-org-info"></div>
+  
 The `StartWithExceptions` will throw on error, so make sure to wrap the invocation with an appropriate `try`/`catch` block.
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Environment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
