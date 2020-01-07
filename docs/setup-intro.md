@@ -12,6 +12,5 @@ To get started, pick your programming language or check out our [deployment exam
 1. [Python](python-setup.md)
 2. [Node.js](node-setup.md)
 3. [JVM](jvm-setup.md)
-4. [.NET Framework](dotnet-setup.md)
 
 
