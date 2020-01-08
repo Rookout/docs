@@ -50,7 +50,7 @@ Configuration may be passed through the API or using OS Environment Variables.
 ### start
 
 ```cs
-public static void Start() \\ Using only environment variables
+public static void Start() // Using only environment variables
 public static void Start(RookOptions opts)
 public static void StartWithExceptions(RookOptions opts)
 ```
