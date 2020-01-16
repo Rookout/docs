@@ -61,6 +61,7 @@ jobs:
             yarn run generate-sdk-digests
             yarn run build
             yarn run deploy-firebase
+            yarn run deploy-firebase-dci
 
   release-notes:
     working_directory: ~/docs

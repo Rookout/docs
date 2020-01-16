@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "rookout-docs"
+  },
+  "targets": {
+    "rookout-docs": {
+      "hosting": {
+        "rookout-docs": [
+          "rookout-docs"
+        ],
+        "rookout-dci-docs": [
+          "rookout-dci-docs"
+        ]
+      }
+    }
   }
 }
