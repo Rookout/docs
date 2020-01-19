@@ -1,14 +1,18 @@
 {
   "scripts": {
     "examples": "docusaurus-examples",
-    "start": "docusaurus-start",
-    "build": "docusaurus-build",
+    "start": "DEPLOY_TARGET=docs docusaurus-start",
+    "start-dci": "DEPLOY_TARGET=dci-docs docusaurus-start",
+    "build": "DEPLOY_TARGET=docs docusaurus-build",
+    "build-dci": "DEPLOY_TARGET=dci-docs docusaurus-build",
+    "clean-build": "rm -rf build",
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version",
     "lint": "./node_modules/.bin/eslint core pages",
-    "deploy-firebase": "firebase deploy",
+    "deploy-firebase": "firebase deploy --only hosting:rookout-docs",
+    "deploy-firebase-dci": "firebase deploy --only hosting:rookout-dci-docs",
     "generate-examples": "node build_utils/deployment_examples_generator.js",
     "generate-integrations": "node build_utils/output_integrations_generator.js",
     "generate-sdk-digests": "node build_utils/sdk_digests_generator.js",
@@ -25,6 +29,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.15",
+    "remarkable-embed": "^0.4.1",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5"
   }

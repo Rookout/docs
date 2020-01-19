@@ -257,7 +257,6 @@ button {
     border: none !important;
 }
 
-
 @media screen and (max-width: 650px) {
     label {
         font-size: 0;
@@ -650,7 +649,7 @@ footer .sitemapLinksContainer {
 
 footer .sitemapLinks {
     display: block;
-    line-height: 12px;
+    line-height: 16px;
     color: #FFF;
 }
 
