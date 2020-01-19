@@ -36,7 +36,6 @@ const createVariableInjectionPlugin = variables => {
 const deployTarget = process.env.DEPLOY_TARGET || 'docs';
 const projectTargets = {
   'docs': {
-    projectName: 'docs',
     organizationName: 'Rookout',
     algoliaJs: '/js/algoliaSearchRookout.js',
     primaryColor: '#533C92',
@@ -45,7 +44,6 @@ const projectTargets = {
     supportEmail: `<a href="mailto:support@rookout.com">support@rookout.com</a>`,
   },
   'dci-docs': {
-    projectName: 'dci-docs',
     organizationName: 'AppDynamics',
     algoliaJs: '/js/algoliaSearchAppd.js',
     primaryColor: '#4E3EB1',
@@ -93,7 +91,7 @@ const siteConfig = {
     ' Rookout',
   organizationName: projectTargets[deployTarget].organizationName, // or set an env variable ORGANIZATION_NAME
   // change to rookout.github.io when moving to it
-  projectName: projectTargets[deployTarget].projectName, // or set an env variable PROJECT_NAME
+  projectName: 'docs', // or set an env variable PROJECT_NAME
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default',
