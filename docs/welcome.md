@@ -13,4 +13,4 @@ Rookout makes it easy debug any app deployment - cloud or local, dev or producti
 
 You can also try the following:
 - Find your specific deployment in our [Deployment Examples](deployment-examples.md).
-- Reach out to us if anything is unclear: support@rookout.com
+- Reach out to us if anything is unclear: {@inject: supportEmail}.

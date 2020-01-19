@@ -7,7 +7,6 @@ if (document.getElementById) {
 
 $(function () {
   initLogRocket();
-  customizeSearchInput();
   changeLogoLink();
   loadRookoutToken(); // Also loads Google Analytics after we know if we are logged in
   //enableTabs();
@@ -50,7 +49,7 @@ function initGA(userEmail) {
 }
 
 
-function customizeSearchInput() {
+function customizeSearchInput(activateAlgoliaFunc) {
   const originalSearchContainer = $("ul.nav-site > .navSearchWrapper.reactNavSearchWrapper");
 
   if (originalSearchContainer.length > 0) {
@@ -79,21 +78,8 @@ function customizeSearchInput() {
     docNavbarElem.prepend(searchContainer);
   }
 
-  setTimeout(activateAlgoliaDocSearch, 1000);
+  setTimeout(activateAlgoliaFunc, 1000);
 }
-
-
-function activateAlgoliaDocSearch() {
-  docsearch({
-    apiKey: 'c4a6a6e1d94fba2757ec2969d13ac547',
-    indexName: 'rookout',
-    inputSelector: '#rookout-search',
-    debug: window.location.hostname === 'localhost'
-  });
-
-  $('#rookout-search-icon').toggle();
-}
-
 
 function loadRookoutToken() {
   const ROOKOUT_TOKEN_URL = 'https://app.rookout.com/rest/v1/org/token';

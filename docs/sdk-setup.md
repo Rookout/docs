@@ -586,7 +586,7 @@ jsvc -Dsun.java.command=my.main.class
 
 The following languages are officially supported: Java, Scala, Kotlin, Groovy, ColdFusion.
 
-If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: support@rookout.com .
+If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail} .
 
 ## Source Commit Detection
 

@@ -102,7 +102,7 @@ Rookout requires your application to be deployed with debug information (Pdb fil
 
 The following languages are officially supported: C#.
 
-If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: support@rookout.com .
+If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail}
 
 ## Dependencies
 

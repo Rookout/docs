@@ -1,8 +1,11 @@
 {
   "scripts": {
     "examples": "docusaurus-examples",
-    "start": "docusaurus-start",
-    "build": "docusaurus-build",
+    "start": "DEPLOY_TARGET=docs docusaurus-start",
+    "start-dci": "DEPLOY_TARGET=dci-docs docusaurus-start",
+    "build": "DEPLOY_TARGET=docs docusaurus-build",
+    "build-dci": "DEPLOY_TARGET=dci-docs docusaurus-build",
+    "clean-build": "rm -rf build",
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
@@ -26,6 +29,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.15",
+    "remarkable-embed": "^0.4.1",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5"
   }

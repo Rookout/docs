@@ -61,6 +61,8 @@ jobs:
             yarn run generate-sdk-digests
             yarn run build
             yarn run deploy-firebase
+            yarn run clean-build
+            yarn run build-dci
             yarn run deploy-firebase-dci
 
   release-notes:
