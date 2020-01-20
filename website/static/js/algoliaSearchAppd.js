@@ -1,7 +1,7 @@
 function activateAlgoliaDocSearch() {
   docsearch({
-    apiKey: 'c4a6a6e1d94fba2757ec2969d13ac547',
-    indexName: 'rookout',
+    apiKey: 'bd9a57e3fd2c1d61e44b4ab7dd8a438a',
+    indexName: 'rookout_dci',
     inputSelector: '#rookout-search',
     debug: window.location.hostname === 'localhost'
   });
