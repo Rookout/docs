@@ -114,8 +114,8 @@ Whenever you edit the Breakpoint, it's status is reset.
 
 - `Active` (solid purple) - the Breakpoint has been applied by one or more of your applications has applied the Breakpoint and no errors have been reported.
 - `Pending` (hollow purple) - the Breakpoint has yet to be applied by any of your applications and no errors have been reported.
-- `Error` (hollow purple with exclamation point) - one or more of your applications has reported an error in processing, applying or executing the Breakpoint.
-- `Warning` (solid purple with exclamation point) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
+- `Error` (hollow purple with triangle) - one or more of your applications has reported an error in processing, applying or executing the Breakpoint.
+- `Warning` (solid purple with triangle) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
 - `Disabled` (hollow grey) - the Breakpoint is in a disabled state and will not collect data.
 
 ## Pending (Hollow Purple)
@@ -132,7 +132,7 @@ The source file you used the set the breakpoint is not loaded in any of the appl
 
 #### Running with a Debugger \ Analysis tool
 You are using Rookout side-by-side with another debugger \ Analysis tool such as VisualStudio or another Instrumentation analysis tool. 
-We Advise not to run the application without a debugger due to unexpected behavior. 
+We advise not to run the application without a debugger due to unexpected behavior. 
 
 ## Dependencies
 
