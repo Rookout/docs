@@ -21,7 +21,7 @@ Rookout will send the message from your user straight to your chosen channel.
 
 <img src="/img/screenshots/authorize-slack.png" />
 
-3. Select the relevant channels from the list and click "Share".
+3. Select the relevant issues/tickets from the list and click "Share".
 
 <img src="/img/screenshots/select-channels.png" />
 
