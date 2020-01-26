@@ -28,7 +28,8 @@ Rookout will send the message from your user straight to your chosen channel.
 ## Jira
 
 In rookout, as you debug your app, you can share the data you extract using Jira.
-On the message there is a share button which has an authorize Jira app button.
+On the message there is a share button which opens a new menu. 
+On this menu you can authorize the Jira app by clicking Authorize.
 To enable the use of Rookout’s Jira integration for posting messages to Jira issues,
 simply authorize the app by pressing the button and authorizing Rookout in the opened window.
 There is no need to install Rookout in your Jira workspace.
