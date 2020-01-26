@@ -18,8 +18,8 @@ Whenever you edit the Breakpoint, it's status is reset.
 
 - `Active` (solid purple) - the Breakpoint has been applied by one or more of your applications has applied the Breakpoint and no errors have been reported.
 - `Pending` (hollow purple) - the Breakpoint has yet to be applied by any of your applications and no errors have been reported.
-- `Error` (hollow purple with exclamation point) - one or more of your applications has reported an error in processing, applying or executing the Breakpoint.
-- `Warning` (solid purple with exclamation point) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
+- `Error` (hollow purple with triangle) - one or more of your applications has reported an error in processing, applying or executing the Breakpoint.
+- `Warning` (solid purple with triangle) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
 - `Disabled` (hollow grey) - the Breakpoint is in a disabled state and will not collect data.
 
 ## Pending (Hollow Purple)
@@ -90,7 +90,7 @@ You have placed a breakpoint on a long running function. In this runtime, breakp
 #### (Node) Running with a Debugger
 You are using Rookout side-by-side with another debugger such as WebStorm or Stackdriver Debugger.
 
-## Error (Hollow Purple with Exclamation Point)
+## Error (Hollow Purple with triangle)
 
 `Error` status occurs when one of or more of your applications has reported an error in processing, applying or executing the Breakpoint.
 
@@ -129,7 +129,7 @@ The breakpoint contains a invalid path argument. Check out the [Breakpoint Tasks
 
 **Note:** If Rookout deems the invalid configuration to be non-critical, this might show up as a warning instead.
 
-## Warning (Solid Purple with Exclamation Point)
+## Warning (Solid Purple with triangle)
 
 `Warning` status occurs when one of or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
 
