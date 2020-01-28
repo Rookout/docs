@@ -94,6 +94,20 @@ To make sure the SDK was properly installed and test your configuration (environ
 
 Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>pdbonly</DebugType>` or `-debug+`) and the optimize flag should not be enabled (`<Optimize>false</Optimize>`)   
 
+
+Pdb (Program Data Base) file is a repository to maintain information about your application. 
+
+It stores the important debug information such as:
+* file names 
+* variable names 
+* offsets of the functions
+* file hashes
+
+Although Rookout doesn't run your program in debug mode, we need the PDB file to properly collect the data per your request.
+
+For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
+
+
 ## Supported Versions
 
 | Implementation      | Versions               |
