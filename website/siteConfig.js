@@ -49,7 +49,7 @@ const projectTargets = {
     primaryColor: '#4E3EB1',
     websiteUrl: 'https://dci.docs.rookout.com',
     headerIcon: 'img/logos/appd_rookout_logo_combined.svg',
-    supportEmail: `<a href="mailto:support@rookout.com">support@rookout.com</a>`,
+    supportEmail: `<a href="https://www.appdynamics.com/support/">https://www.appdynamics.com/support/</a>`,
   },
 };
 
