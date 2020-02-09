@@ -1,7 +1,7 @@
 ---
 id: dotnet-setup
-title: .NET Framework Beta SDK Instrumentation
-sidebar_label: .NET Framework Beta SDK
+title: .NET Beta SDK Instrumentation
+sidebar_label: .NET Beta SDK
 ---
 
 ## Please note that .NET SDK support is currently in Beta phase and we offer limited support to limited customers
@@ -9,9 +9,9 @@ sidebar_label: .NET Framework Beta SDK
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
 If you are encountering any difficulties with deploying Rookout, this is the place to look.
 
-## .NET Framework
+## .NET
 
-The [.NET Framework SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real time.  
+The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real time.  
 
 ## Setup
 
@@ -44,7 +44,7 @@ namespace Program
 
 ## SDK API
 
-The .NET Framework SDK is loaded via an API.  
+The .NET SDK is loaded via an API.  
 Configuration may be passed through the API or using OS Environment Variables.
 
 ### start
@@ -110,9 +110,10 @@ For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-
 
 ## Supported Versions
 
-| Implementation      | Versions               |
-| ------------------  | -------------          |
-| **.NET Framework**     | 4.5, 4.6, 4.7, 4.8    |
+| Implementation      | Versions              |
+| ------------------  | -------------         |
+| **.NET Framework**  | 4.5, 4.6, 4.7, 4.8    |
+| **.NET Core**       | 3.0, 3.1              |
 
 The following languages are officially supported: C#.
 
