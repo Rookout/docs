@@ -54,67 +54,25 @@ org.osgi.framework.bootdelegation=com.rookout.*
 
 This is done where all other JVM options are set (via -D flags, JVM_OPTS, etc.).
 
-### Alternative API
-
-As an alternative, the Rookout SDK may be loaded using a simple API.
-
-If you are using the JRE instead of the [JDK](https://stackoverflow.com/questions/1906445/what-is-the-difference-between-jdk-and-jre) runtime, support is limited for Java 7 and 8 and requires bundling [`tools.jar`](https://mvnrepository.com/artifact/com.sun/tools/1.7.0.13) along side the Rookout jar in your deployment. For more information check out the relevant [deployment examples](deployment-examples.md).
-
-```java
-import com.rookout.rook.API;
-import com.rookout.rook.RookOptions;
-
-public class Program {
-    public static void main(String[] args) {
-        RookOptions opts = new RookOptions();
-        opts.token = "[Your Rookout Token]";
-        API.start(opts);
-
-        // ...
-    }
-}
-```
-
 **Note: Due to limitations introduced in Java 9, you must use the JDK runtime and add the following Java flag: `-Djdk.attach.allowAttachSelf=true`**
 
 <div class="rookout-org-info"></div>
 
-## SDK API
+## SDK Configuration
 
-The Java SDK may either be loaded as a Java Agent (recommended) or using an API.  
-Configuration may be passed through the API, using OS Environment Variables or Java System Properties.
+Configuration is performed using OS Environment Variables or Java System Properties.
 
-### start
-
-```java
-public static void start(RookOptions opts)
-public static void startWithExceptions(RookOptions opts) throws Exception
-```
-
-Both methods initialize the SDK in the background using on the configuration in the `opts` argument.  
-The simpler `start` will never impact the application's flow, writing a failure to the console.  
-The `startWithExceptions` will throw on error, so make sure to wrap the invocation with an appropriate `try`/`catch` block.
-
-| Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Environment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
-| ------------ | ----------------------- | ------------- | ----------- |
-| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
-| `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
-| `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
-| `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
-| `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
-| `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
-| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
-| `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
-
-### flush
-
-```java
-public static void flush();
-```
-
-The `flush` method allows explicitly flushing the Rookout logs and messages.  
-The callback is executed when the method finishes.
+| Environment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
+| ----------------------- | ------------- | ----------- |
+| `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
+| `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
+| `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
+| `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
+| `ROOKOUT_PROXY` | None | URL to proxy server
+| `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
+| `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
+| `ROOKOUT_COMMIT` | None | String that indicates your git commit |
+| `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
 
 ## Test connectivity
 
