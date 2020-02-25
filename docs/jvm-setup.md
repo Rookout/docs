@@ -26,11 +26,10 @@ Simply add the Rookout SDK as a Java Agent to your environment:
 <!--Environment Variable-->
 ```bash
 # Add your token and the Java Agent to your application using an environment variable
-export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar" -DROOKOUT_TOKEN=[Your Rookout Token]
+export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token]"
 
 # Optional, see Labels section below Projects
 export ROOKOUT_LABELS=env:dev
-
 ```
 <!--Command Line-->
 ```bash
