@@ -25,7 +25,7 @@ Simply add the Rookout SDK as a Java Agent to your environment:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Environment Variable-->
 ```bash
-# Add your token and the Java Agent to your application using an environment variable
+# Add the Rookout Java Agent to your application using an environment variable
 export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token]"
 
 # Optional, see Labels section below Projects
