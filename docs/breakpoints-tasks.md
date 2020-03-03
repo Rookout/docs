@@ -5,78 +5,15 @@ title: Breakpoint Tasks
 
 ## Data Redaction
 
-The [filter operation](breakpoints-reference.md#filter) may be used to perform data redaction on the data fetched by a Breakpoint before sending it to its destination.  
+An organization admin can define a data redaction mechanizm to limit the information exposed to users through breakpoints data collection.
 
-The pattern support only regex strings.
+In **Breakpoint Settings** -> **Data Redaction** the admin can define Regular Experssion patterns to be blacklisted in future set breakpoints.
 
-For example, adding the following snippet to the Breakpoint *Processing Operations* section (before the `send_rookout` operation):
-```json
-{
-  "name": "filter",
-  "filters": [
-    {
-      "filter_type": "name",
-      "pattern": "secretKey"
-    },
-    {
-      "filter_type": "value",
-      "pattern": "[0-9]+"
-    }
-  ]
-},
-{
-	"path": "store",
-	"name": "send_rookout"
-}
-```
+For example, adding a rule regarding variable named "secretKey" will replace the output `"secretKey":"12345"` with `"secretKey":"[REDACTED]"`, and adding a rule regarding a variable with the value "[0-9]+" will replace `"nameAndPassword":"LordHelmet-12345"` with `"nameAndPassword":"LordHelmet-****"`.
 
-Will replace an instance of "secretKey":"12345" with "secretKey":"[REDACTED]", and an instance of "nameAndPassword":"LordHelmet-12345" with "nameAndPassword":"LordHelmet-****".
+Replacing the data redaction method to "whitelist" will redact all variables, except the specified variable names and values that were whitelisted.
 
-### Whitelisting
-
-Specify which variable you want to extract using a regular expression that will be applied on the variable name only.
-
-```java
-class Dog {
-	String name;
-	int age;
-
-	public Dog(String dogName) {
-		this.name = dogName;
-		this.age = 0;
-	}
-}
-
-class Zoo {
-	Dog dog;
-	Cat cat;
-	int numberOfAnimals;
-
-	public Zoo() {
-		this.dog = new Dog("Shtubi");
-		this.numberOfAnimals = 1;
-	}
-}
-```
-
-For example, to collect only the dog member, add the following snippet to the Breakpoint Operations section:
-```json
-{
-  "name": "filter",
-  "whitelist": true,
-  "filters": [
-    {
-      "filter_type": "name", 
-      "pattern": "dog"
-    }
-  ]
-}
-```
-
-The `dog` member will be returned entirely, while the other members will be redacted.
-
-![Whitelist basic](/img/screenshots/filter_whitelist_1.png)
-
+Please notice that the data redaction settings will apply only on future breakpoints, and will not effect existing ones.
 
 ## Rate limiting
 
