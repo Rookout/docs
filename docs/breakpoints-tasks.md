@@ -15,8 +15,7 @@ Adding a rule regarding the variable value “[0-9]+” will replace `“nameAnd
 Replacing the data redaction method to “whitelist” will redact all variables, except the specified variable names and values that were whitelisted.
 Please notice that the data redaction settings will apply only to breakpoints that were set following the configuration change.
 
-![Data Redaction example](/img/screenshots/data_redaction_example_1.png)
-
+<img src="/img/screenshots/data_redaction_example_1.png" />
 
 ## Rate limiting
 
