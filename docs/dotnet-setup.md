@@ -89,13 +89,10 @@ The `StartWithExceptions` will throw on error, so make sure to wrap the invocati
 ## Test connectivity
 
 To make sure the SDK was properly installed and test your configuration (environment variables only), download and run TestConnectivity:
-[Windows .Net Framework](https://get.rookout.com/test_connectivity_windows_x64_framework.zip)
-
-[Windows .Net Core](https://get.rookout.com/test_connectivity_windows_x64_core.zip)
-
-[Ubuntu .Net Core](https://get.rookout.com/test_connectivity_ubuntu_x64.zip)
-
-[Mac .Net Core](https://get.rookout.com/test_connectivity_mac_x64.zip) - Use right click and open to allow the tool to run 
+* [Windows .Net Framework](https://get.rookout.com/test_connectivity_windows_x64_framework.zip)
+* [Windows .Net Core](https://get.rookout.com/test_connectivity_windows_x64_core.zip)
+* [Ubuntu .Net Core](https://get.rookout.com/test_connectivity_ubuntu_x64.zip)
+* [Mac .Net Core](https://get.rookout.com/test_connectivity_mac_x64.zip) - Use right click and open to allow the tool to run 
 
 ## Debug Information
 
