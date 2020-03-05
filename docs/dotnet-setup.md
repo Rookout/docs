@@ -29,13 +29,16 @@ namespace Program
 {
     class Program
     {
-        Rook.RookOptions options = new Rook.RookOptions() 
+        static int Main(string[] args)
         {
-            token = "[Your Rookout Token]"
-        };
-        Rook.API.Start(options);
-
-        // ...
+            Rook.RookOptions options = new Rook.RookOptions() 
+            {
+                token = "[Your Rookout Token]"
+            };
+            Rook.API.Start(options);
+    
+            // ...
+        }
     }
 }
 ```
