@@ -9,6 +9,7 @@
       "python-setup",
       "node-setup",
       "jvm-setup",
+      "dotnet-setup",
       "deployment-examples"
     ],
     "Projects": [
