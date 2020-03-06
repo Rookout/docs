@@ -92,7 +92,7 @@ The callback is executed when the method finishes.
 
 To make sure the SDK was properly installed and test your configuration (environment variables only), run the following command:
 ```bash
-./node_modules/.bin/rookout_check
+./node_modules/.bin/rookout-check
 ```
 
 ## Supported Versions
