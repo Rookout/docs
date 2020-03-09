@@ -82,16 +82,38 @@ function customizeSearchInput(activateAlgoliaFunc) {
 }
 
 function loadRookoutToken() {
-  const ROOKOUT_TOKEN_URL = 'https://app.rookout.com/rest/v1/org/token';
+  const ROOKOUT_TOKEN_URL = 'https://app.rookout.com/graphql';
 
   $.get({
     url: ROOKOUT_TOKEN_URL,
-    method: 'GET',
+    method: 'POST',
     xhrFields: {
       withCredentials: true
-   }
-  }, data => {
-    setRookoutTokenInPage(data);
+   },
+    contentType: 'application/json',
+    data: JSON.stringify({
+      query: `  {
+    currentUserInfo {
+      info {
+        id
+        username
+        fullname
+        email
+      }
+      orgs {
+        id
+        name
+        isAdmin
+        token
+      }
+    }
+  }`
+    })
+
+  }, ({ data }) => {
+    const info = data.currentUserInfo.info;
+    const orgs = data.currentUserInfo.orgs.filter(org => org.name !== 'Sandbox');
+    setRookoutTokenInPage({ current_user: info, org_name: orgs[0].name, token: orgs[0].token });
   })
   .fail( err => {
     // 404 here means authenticated but no organization found = sandbox
