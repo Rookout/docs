@@ -82,7 +82,7 @@ function customizeSearchInput(activateAlgoliaFunc) {
 }
 
 function gqlRequest(query, callback) {
-  const ROOKOUT_TOKEN_URL = 'https://localhost:8080/graphql';
+  const ROOKOUT_TOKEN_URL = 'https://app.rookout.com/graphql';
   return $.get({
     url: ROOKOUT_TOKEN_URL,
     method: 'POST',
