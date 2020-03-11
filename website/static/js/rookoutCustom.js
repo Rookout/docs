@@ -81,52 +81,75 @@ function customizeSearchInput(activateAlgoliaFunc) {
   setTimeout(activateAlgoliaFunc, 1000);
 }
 
-function loadRookoutToken() {
-  const ROOKOUT_TOKEN_URL = 'https://app.rookout.com/graphql';
-
-  $.get({
+function gqlRequest(query, callback) {
+  const ROOKOUT_TOKEN_URL = 'https://localhost:8080/graphql';
+  return $.get({
     url: ROOKOUT_TOKEN_URL,
     method: 'POST',
     xhrFields: {
       withCredentials: true
-   },
+    },
     contentType: 'application/json',
     data: JSON.stringify({
-      query: `  {
+      query
+    })
+
+  }, callback)
+}
+
+function loadRookoutToken() {
+  gqlRequest(`  {
     currentUserInfo {
       info {
         id
         username
         fullname
         email
+        isSuperUser
       }
+
+    }
+  }`, ({ data }) => {
+    const info = data.currentUserInfo.info;
+    if (info.isSuperUser) {
+      setRookoutTokenInPage(null);
+    } else {
+    gqlRequest( `  {
+    currentUserInfo {
       orgs {
         id
         name
         isAdmin
         token
       }
-    }
-  }`
-    })
 
-  }, ({ data }) => {
-    const info = data.currentUserInfo.info;
-    const orgs = data.currentUserInfo.orgs.filter(org => org.name !== 'Sandbox');
-    setRookoutTokenInPage({ current_user: info, org_name: orgs[0].name, token: orgs[0].token });
+    }
+  }`, ({ data }) => {
+      let orgInfo = {};
+        const orgs = data.currentUserInfo.orgs.filter(org => org.name !== 'Sandbox');
+        if (orgs.length === 0) {
+          setRookoutTokenInPage(null, true);
+          return;
+        }
+        orgInfo = { org_name: orgs[0].name, token: orgs[0].token };
+        setRookoutTokenInPage({ current_user: info, ...orgInfo });
+  })
+      .fail( err => {
+        setRookoutTokenInPage(null);
+      })
+    }
   })
   .fail( err => {
-    // 404 here means authenticated but no organization found = sandbox
-    setRookoutTokenInPage(null, err.status === 404);
+    setRookoutTokenInPage(null);
   });
 }
 
 
-function setRookoutTokenInPage(data, sandbox = false) {
+function setRookoutTokenInPage(data, noOrg = false) {
   const body = $('body');
   let error = false;
 
-  if (sandbox) {
+  if (noOrg) {
     $('.rookout-org-info').html('Create a Rookout organization to see your token here.')
     return
   }
