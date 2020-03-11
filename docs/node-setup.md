@@ -32,14 +32,6 @@ rookout.start({
 ```
 <div class="rookout-org-info"></div>
 
-### Alternative Import
-
-If you prefer to configure the SDK purely using environment variables (see configuration options below) you may also use the following snippet:
-
-```js
-require('rookout/auto_start');
-```
-
 ## SDK API
 
 ### start

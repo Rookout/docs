@@ -31,19 +31,8 @@ if __name__ == "__main__":
 The SDK should be imported just before the application begins executing.  
 This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
 
-**Note: Loading Rookout into a forking application is an unsafe operation.**  
-Check out the [Pre-forking servers](#pre-forking-servers) section for more details.  
+For [Pre-forking servers](#pre-forking-servers) please read the relevant section..  
 
-
-### Alternative Import
-
-If you prefer to configure the SDK purely using environment variables (see configuration options below) you may also use the following snippet:
-
-```python
-if __name__ == "__main__":
-    from rook import auto_start
-    # Your program starts here :)
-```
 
 ## SDK API
 
