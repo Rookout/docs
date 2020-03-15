@@ -25,3 +25,7 @@ This means that:
 1. You will only set Breakpoints on the applications that fall inside your project.
 1. You will only see data originating from the Breakpoints inside your project.
 1. Others will only see your Breakpoints and data if they work inside the same project.
+
+## Setting Up and Using a Project
+
+<iframe src="https://player.vimeo.com/video/373625957?color=af6bd6&title=0&byline=0&portrait=0" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>

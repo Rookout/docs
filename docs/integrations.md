@@ -5,6 +5,8 @@ title: Integrations
 
 Leverage the power of Non-Breaking Breakpoints by connecting with your existing tools.
 
+<iframe src="https://player.vimeo.com/video/373625564?color=af6bd6&title=0&byline=0&portrait=0" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 ## Target Setup
 
 1. In the top left corner click on the menu button.
@@ -28,4 +30,3 @@ Leverage the power of Non-Breaking Breakpoints by connecting with your existing 
 2. Choose the requested target from the target menu, and click Set to save your settings.
 
 <img src="/img/screenshots/choose_target.png" />
-
