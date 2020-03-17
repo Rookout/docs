@@ -106,9 +106,10 @@ If you are transpiling your JavaScript/TypeScript before execution (for instance
 
 To make sure Rookout can validate the source file matches the file you are tryring to debug using hash comparison, we recommend deploying the original source files side-by-side with the transpiled ones or building your source map with the full source code.
 
-### Configuration for Common Tools
+### Configurations for Common Tools
 
-- [**Weback**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` options for [devtool](https://webpack.js.org/configuration/devtool/).  
+- [**Weback**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for [devtool](https://webpack.js.org/configuration/devtool/).  
+- [**Babel**](https://babeljs.io/) - use the `-s inline` or `-s true` flags.
 - [**babel-cli**](https://babeljs.io/docs/en/babel-cli) - use the `--source-maps inline` or `--source-maps` flags.  
 - [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` flag. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 - [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.  
