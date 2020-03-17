@@ -15,7 +15,7 @@ Conditional breakpoints limit data collection from a code snippet to cases when 
 
 ### Add and Edit Conditional breakpoints:
 - Set a breakpoint.
-- Click on the <img src="/img/screenshots/edit.png" height="15" width="22" > icon in the breakpoint pane.
+- Right click on the new breakpoint, and then select 'Edit' in the menu.
 - Choose condition type - Simple or Advanced.
 - Set your condition.
 
@@ -29,6 +29,7 @@ Conditional breakpoints limit data collection from a code snippet to cases when 
 | `>=` | `a>=1`, `x>=y`  | If the value of left operand is greater than or equal to the value of right operand, then condition becomes true. |
 | `<` | `a<1`, `x<y` | If the value of left operand is less than the value of right operand, then condition becomes true. |
 | `<=` | `a<=1`, `x<=y` | If the value of left operand is less than or equal to the value of right operand, then condition becomes true. |
+| `in` | `'bbb' in a` | If the value of the left operand is included in the right operand, then the condition becomes true. |
 | `&&` | `a<=1 && b!='bbb'` |  If both the operands are true then condition becomes true. |
 | <code> &#124;&#124;</code> | `a<=1`<code>&#124;&#124;</code>`b=='bbb'`  | If any of the two operands are non-zero then condition becomes true. |
 | `()` | `(a<=1`<code>&#124;&#124;</code>`b=='bbb') && (x<y)` | Parentheses could be used for changing the precedence when evaluating the conditio |
