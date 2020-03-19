@@ -59,11 +59,13 @@ jobs:
             yarn run lint
             yarn run generate-examples
             yarn run generate-sdk-digests
-            yarn run fetch-swagger-ui
             yarn run build
+            yarn run fetch-swagger-ui
             yarn run deploy-firebase
+            yarn run clean-swagger-ui
             yarn run clean-build
             yarn run build-dci
+            yarn run fetch-swagger-ui
             yarn run deploy-firebase-dci
 
   release-notes:
