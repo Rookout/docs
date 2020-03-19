@@ -15,7 +15,7 @@ Adding a rule regarding the variable value “[0-9]+” will replace `“nameAnd
 Replacing the data redaction method to “whitelist” will redact all variables, except the specified variable names and values that were whitelisted.
 Please notice that the data redaction settings will apply only to breakpoints that were set following the configuration change.
 
-The regular expressions expected syntax is the [RE2](https://github.com/google/re2/wiki/Syntax). Please notice that the case-insensitive flag (`(?i)`) can be added to a rule only by unchecking the case-sensative checkbox next to it, while other flags are currently unsupported. 
+The regular expressions expected syntax is the [RE2](https://github.com/google/re2/wiki/Syntax). Please notice that use of flags is currently unsupported, while case-insensitive flag (`(?i)`) can be added to a rule by unchecking the case-sensative checkbox next to it.
 
 <img src="/img/screenshots/data_redaction_example_1.png" />
 
