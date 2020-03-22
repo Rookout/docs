@@ -68,7 +68,7 @@ const siteConfig = {
   editUrl: 'https://github.com/Rookout/docs/edit/master/docs/',
   cleanUrl: true, // allow URLs with no .HTML extension to work the same
   headerLinks: [
-    { page: 'website-redirect', label: 'Website' },
+    { page: 'website-redirect', label: 'Website' }
   ],
   /* path to images for header/footer */
   headerIcon: projectTargets[deployTarget].headerIcon,
