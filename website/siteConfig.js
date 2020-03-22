@@ -69,7 +69,6 @@ const siteConfig = {
   cleanUrl: true, // allow URLs with no .HTML extension to work the same
   headerLinks: [
     { page: 'website-redirect', label: 'Website' },
-    { page: 'api', label: 'API Documentation' }
   ],
   /* path to images for header/footer */
   headerIcon: projectTargets[deployTarget].headerIcon,
