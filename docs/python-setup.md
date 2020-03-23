@@ -209,6 +209,8 @@ def lambda_handler(event, context):
   return "Hello world"
 ```
 
+**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 10 seconds.
+
 For more information, please check out our [deployment-examples](deployment-examples.md).
 
 ### Building

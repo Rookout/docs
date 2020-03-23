@@ -168,6 +168,8 @@ This requires using the including the Rookout SDK API as a dependency and packag
 
 For more information, please check out our [deployment-examples](deployment-examples.md).
 
+**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 30 seconds.
+
 ### Building
 
 In some Serverless environments (such as AWS Lambda), the tools.jar library is missing and must be included within your package as well.
@@ -186,4 +188,3 @@ Examples of excluded packages:
  - java.*
  - org.apache.*
  - io.netty.*
-
