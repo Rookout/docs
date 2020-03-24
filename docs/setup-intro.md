@@ -9,8 +9,9 @@ If you are encountering any difficulties with deploying Rookout, this is the pla
 
 
 To get started, pick your programming language or check out our [deployment examples](deployment-examples.md):
+1. [JVM](jvm-setup.md)
+1. [.Net](dotnet-setup.md)
 1. [Python](python-setup.md)
-2. [Node.js](node-setup.md)
-3. [JVM](jvm-setup.md)
+1. [Node.js](node-setup.md)
 
 
