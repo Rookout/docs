@@ -36,3 +36,8 @@ Conditional breakpoints limit data collection from a code snippet to cases when 
 | `[]` | `arr[4]!=4`, `dict['a']!=4`  | Set conditions regarding to a specific sequence’s element - list, dict etc. |
 | `size` | `arr.size() >= 32` | Use size instead of len or length on any platform |
 
+### Time-To-Live:
+
+Seting time-to-live on a breakpoint places limits on the life span of the breakpoint. The breakpoint will disable automatically past the configured limit
+
+<iframe src="https://player.vimeo.com/video/373492033?color=af6bd6&title=0&byline=0&portrait=0" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
