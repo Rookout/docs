@@ -6,10 +6,10 @@
     ],
     "SDK Setup": [
       "setup-intro",
-      "python-setup",
-      "node-setup",
       "jvm-setup",
       "dotnet-setup",
+      "python-setup",
+      "node-setup",
       "deployment-examples"
     ],
     "Projects": [
