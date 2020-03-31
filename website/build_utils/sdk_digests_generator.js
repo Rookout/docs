@@ -5,7 +5,7 @@ const process = require('process');
 
 
 function loadSdkDigests() {
-  for (let lang of ["python", "node", "java", "agent"]) {
+  for (let lang of ["python", "node", "java", "dotnet", "agent"]) {
     setDigestInfoForLang(lang);
   }
 }
@@ -49,6 +49,8 @@ function setDigestInfoForLang(lang) {
 
     } else if (lang === 'java') {
       digestsRows += `<td><a href="https://mvnrepository.com/artifact/com.rookout/rook/${version}" target="_blank">${version}</a></td>`;
+    } else if (lang === 'dotnet') {
+      digestsRows += `<td><a href="https://www.nuget.org/packages/Rookout/${version}" target="_blank">${version}</a></td>`;
     } else if (lang === 'agent') {
       digestsRows += `<td>${version}</td>`;
     }
