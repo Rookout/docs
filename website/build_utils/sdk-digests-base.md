@@ -41,6 +41,18 @@ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r
 <br/>
 <div id="java-digests"></div>
 
+<!--.NET-->
+## .NET
+
+The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real time.  
+It can easily be installed by running the following command:
+```bash
+Install-Package Rookout
+```
+
+<br/>
+<div id="dotnet-digests"></div>
+
 <!--Controller-->
 ## Controller
 
