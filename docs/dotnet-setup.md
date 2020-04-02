@@ -33,7 +33,8 @@ namespace Program
         {
             Rook.RookOptions options = new Rook.RookOptions() 
             {
-                token = "[Your Rookout Token]"
+                token = "[Your Rookout Token]",
+                labels = new Dictionary<string, string> { { "env", "dev" } }
             };
             Rook.API.Start(options);
     
@@ -53,27 +54,10 @@ Configuration may be passed through the API or using OS Environment Variables.
 ### start
 
 ```cs
-public static void Start() // Using only environment variables
 public static void Start(RookOptions opts)
-public static void StartWithExceptions(RookOptions opts)
 ```
 
-All methods initialize the SDK in the background using the optional configuration in the `opts` argument.  
-The simpler `Start` will never impact the application's flow, writing a failure to the console.
-
-When using the Start() function remember to set the ROOKOUT_TOKEN in the enviroment variable:
-
-```bash
-# Export your token as an environment variable
-set ROOKOUT_TOKEN=[Your Rookout Token]
-
-# Optional, see Labels section below Projects
-set ROOKOUT_LABELS=env:dev
-```
-
-<div class="rookout-org-info"></div>
-  
-The `StartWithExceptions` will throw on error, so make sure to wrap the invocation with an appropriate `try`/`catch` block.
+The Start method is used to initialize the SDK in the background and accepts the RookOptions object with the following attributes:
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Environment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
@@ -125,37 +109,3 @@ For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-
 The following languages are officially supported: C#.
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail}
-
-
-## Breakpoint Statuses
-
-To provide quick feedback, Breakpoint statuses are *aggregated* across all *historic* data reported on the Breakpoint.  
-Whenever you edit the Breakpoint, it's status is reset.
-
-**These are the available statuses**:
-
-- `Active` (solid purple) - the Breakpoint has been applied by one or more of your applications has applied the Breakpoint and no errors have been reported.
-- `Pending` (hollow purple) - the Breakpoint has yet to be applied by any of your applications and no errors have been reported.
-- `Error` (hollow purple with triangle) - one or more of your applications has reported an error in processing, applying or executing the Breakpoint.
-- `Warning` (solid purple with triangle) - this state appears in addition to the other states, indicating that one or more of your applications has reported a warning in processing, applying or executing the Breakpoint.
-- `Disabled` (hollow grey) - the Breakpoint is in a disabled state and will not collect data.
-
-## Pending (Hollow Purple)
-
-`Pending` status occurs when none of your applications have yet to apply the Breakpoint and no errors have been reported.
-
-This can be caused by any of the following reasons:
-
-#### No Application instances
-You have no application instances connected to the current [project](projects.md). This is common for Serverless and batch applications which are invoked on demand.
-
-#### Wrong Source File
-The source file you used the set the breakpoint is not loaded in any of the applications in the current [project](projects.md).
-
-#### Running with a Debugger \ Analysis tool
-You are using Rookout side-by-side with another debugger \ Analysis tool such as VisualStudio or another Instrumentation analysis tool. 
-We advise not to run the application without a debugger due to unexpected behavior. 
-
-## Dependencies
-
-Microsoft.DiaSymReader.Native (>= 1.7.0)
