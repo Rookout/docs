@@ -4,30 +4,31 @@ title: Breakpoint Status
 sidebar_label: Breakpoint Status
 ---
 
-## Breakpoint Statuses
-
-
-**These are the available statuses**:
+## Breakpoint Status Indicators
 
 | Status                         | Icon | Description   |
 | :------------------------------------------------------------ | :-------------: |:-------------        |
-| Active                 | <img src="/img/screenshots/active_status.png" width="30" height="30" />   | The Breakpoint has been applied by one or more of your applications has applied the Breakpoint and is ready to stream data.         |
-| Pending                | <img src="/img/screenshots/pending_status.png" width="30" height="30" />    | The Breakpoint has not been applied by any of your applications.        |
-| Disabled               | <img src="/img/screenshots/disabled_status.png" width="30" height="30"/>                  | The Breakpoint has been disabled and will not collect data.                                                          |
-| Error  and Warning     | <img src="/img/screenshots/error_status.png" width="30" height="30"/> <img src="/img/screenshots/warning_status.png" width="30" height="30"/>                 | There was an issue with applying this breakpoint in one or more applications.          |
+| Active                 | <img src="/img/screenshots/active_status.png" width="30" height="30" />   | The Breakpoint has been applied to one or more of your applications, and is ready to stream data.|
+| Pending                | <img src="/img/screenshots/pending_status.png" width="30" height="30" />    | The Breakpoint has not been applied by any of your applications.|
+| Disabled               | <img src="/img/screenshots/disabled_status.png" width="30" height="30"/>  | The Breakpoint has been disabled and will not collect data.|
+| Error  and Warning     | <img src="/img/screenshots/error_status.png" width="30" height="30"/> <img src="/img/screenshots/warning_status.png" width="30" height="30"/>| There was an issue with applying this breakpoint in one or more applications.|
 
 
 ## Pending
 
-`Pending` status occurs when none of your applications have yet to apply the Breakpoint and no errors have been reported.
-
-This can be caused by any of the following reasons:
+`Pending` status indicates that the breakpoint has not been applied to any of your applications.
+This could mean one of the following:
 
 - #### No Application instances
-  You have no application instances connected to the current [project](projects.md). This is common for Serverless and batch applications which are invoked on demand.
+  The breakpoint could not be applied because no application instance matches the current filter.
+  This could mean one of the following:
+  - The Rookout SDK has not been installed.
+  - The Rookout SDK has been installed, but the application cannot connect to the Rookout service.
+  - The application can connect to the Rookout service, but is excluded by the current filter definition.
+  - The application is a serverless application, that only spins up on demand.
 
 - #### Wrong Source File
-  The source file you used the set the breakpoint is not loaded in any of the applications in the current [project](projects.md).
+  The source file you used the set the breakpoint is not loaded in any of the applications in the current filter.
 
 - #### (JVM) No Code
   You have set the breakpoint on a line that has no executable code associated with it.
@@ -57,7 +58,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
   You are not invoking the *correct* line of code in the correct *application instance*.
 
 - #### Output to Integration
-  You are using a custom Breakpoint that sends the message to another [data-sink](integrations.md).
+  You are using a custom Breakpoint that sends the message to another [Target](integrations.md).
 
 - #### (Python) Preforking
   You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](python-setup.md#pre-forking-servers).
