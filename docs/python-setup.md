@@ -83,10 +83,10 @@ python -m rook
 
 ## Supported Python versions
 
-| Implementation     | Versions           |
-| ------------------ | ------------------ |
-| **CPython**        | 2.7, 3.5, 3.6, 3.7 |
-| **PyPy**           | 6.0.0              |
+| Implementation     | Versions                |
+| ------------------ | ----------------------- |
+| **CPython**        | 2.7, 3.5, 3.6, 3.7, 3.8 |
+| **PyPy**           | 6.0.0                   |
 
 Rookout was tested on `pip` versions 9+.
 
