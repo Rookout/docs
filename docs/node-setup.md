@@ -69,7 +69,6 @@ stop();
 ```
 
 The `stop` method is used to shutdown the SDK.  
-As Rookout is listening to a network connection, the Node process will not terminate as long as Rookout is running in the background.
 
 ### flush
 
@@ -100,11 +99,16 @@ Rookout supports the latest NodeJS and all releases that are under maintenance (
 
 ## Transpiling and Source Maps
 
-If you are transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging should work out of the box.
+Transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging will work out of the box.
 
-If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as separate files (usually `app.map.js`) in your deployment.
+When transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), include the source maps inline within the source files or as separate files (usually `app.map.js`) within your deployment.
 
-To make sure Rookout can validate the source file matches the file you are tryring to debug using hash comparison, we recommend deploying the original source files side-by-side with the transpiled ones or building your source map with the full source code.
+To allow Rookout to validate the source file matches the file you are trying to debug, please include the original sources files in the source maps or deploy them side-by-side with the transpiled.
+
+To test if you are transpiling with source maps, search for this comment in the transpiled files:
+```js
+//# sourceMappingURL=/path/to/file.js.map
+```
 
 ### Configurations for Common Tools
 
