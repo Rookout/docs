@@ -62,7 +62,6 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
-| `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
 

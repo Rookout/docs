@@ -66,7 +66,6 @@ Configuration is performed using OS Environment Variables or Java System Propert
 | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `ROOKOUT_PROXY` | None | URL to proxy server
 | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
 | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
 | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
 
