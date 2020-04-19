@@ -12,7 +12,7 @@
       "node-setup",
       "deployment-examples"
     ],
-    "Projects": [
+    "Debug Session": [
       "projects",
       "source-repos",
       "projects-labels"
