@@ -7,6 +7,8 @@ title: Breakpoint Tasks
 
 An admin can define data redaction rules to limit the information collected by Rookout Breakpoints.
 
+<iframe width="600" height="300" src="https://www.youtube.com/embed/dJgit1yPem4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 In **Breakpoint Settings** -> **Data Redaction** the admin can define Regular Experession patterns to be blacklisted.
 
 For example, adding a rule for the variable name “secretKey” will replace the output `“secretKey”:“12345”` with `“secretKey”:“[REDACTED]“`.
