@@ -104,5 +104,6 @@ For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-
 | **.NET Core**       | 3.0, 3.1              |
 
 The following languages are officially supported: C#.
+IIS support: we currently support IIS 8.0 and above.
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail}
