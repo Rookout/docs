@@ -145,7 +145,9 @@ apk update && apk add g++ python-dev
 
 Several popular application servers for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
-If you are using one of those servers, You can set the fork argument in the SDK api to true to automatically enable Rookout in forked processes, otherwise - You must initialize Rookout in each of the workers processes.  
+If you are using one of those servers, You can set the fork argument in the SDK api to true to automatically enable Rookout in forked processes, and no additional changes will be required.
+
+If you are don't enable fork support Rookout must be started in each of the workers processes.  
 We have included sample snippets for a few common options:
 
 <!--DOCUSAURUS_CODE_TABS-->
