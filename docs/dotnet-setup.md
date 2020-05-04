@@ -1,10 +1,8 @@
 ---
 id: dotnet-setup
-title: .NET Beta SDK Instrumentation
-sidebar_label: .NET Beta SDK
+title: .NET SDK Instrumentation
+sidebar_label: .NET SDK
 ---
-
-## Please note that .NET SDK support is currently in Beta phase and we offer limited support to limited customers
 
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
 If you are encountering any difficulties with deploying Rookout, this is the place to look.
