@@ -1,7 +1,7 @@
 ---
 id: dotnet-setup
 title: .NET SDK Instrumentation
-sidebar_label: .NET SDK
+sidebar_label: .NET
 ---
 
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
