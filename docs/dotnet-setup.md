@@ -100,7 +100,7 @@ For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-
 | Implementation      | Versions              |
 | ------------------  | -------------         |
 | **.NET Framework**  | 4.5, 4.6, 4.7, 4.8    |
-| **.NET Core**       | 3.0, 3.1              |
+| **.NET Core**       | 2.1, 2.2, 3.0, 3.1    |
 
 The following languages are officially supported: C#.
 IIS support: we currently support IIS 8.0 and above.
