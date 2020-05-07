@@ -100,11 +100,11 @@ Rookout supports the latest NodeJS and all releases that are under maintenance (
 
 ## Transpiling and Source Maps
 
-If you are transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging should work out of the box.
+If you are transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout will work out of the box.
 
-If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as separate files (usually `app.map.js`) in your deployment.
+If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as separate files (usually `app.map.js`) in your deployment. As a general rule of thumb, configure the target to the Node version you are using, to minimize unneeded transpilation. If you are seeing problems setting breakpoints around async/await statements, you are likely transpiling too agressively.
 
-To make sure Rookout can validate the source file matches the file you are tryring to debug using hash comparison, we recommend deploying the original source files side-by-side with the transpiled ones or building your source map with the full source code.
+To make sure you can validate the source file matches the file you are tryring to debug using hash comparison, we recommend deploying the original source files side-by-side with the transpiled ones or building your source map with the full source code.
 
 ### Configurations for Common Tools
 
