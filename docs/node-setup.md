@@ -54,14 +54,6 @@ The `start` method is used to initialize the SDK. Receives configuration using a
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to reject the promsise or throw an exception if `start` fails (error message will not be printed in console) |
 
-
-### startSync
-```js
-startSync(timeout=5000, options = {});
-```
-
-The `startSync` method is used to initialize the SDK in a synchronous manner using the `deasync` module and accepts the same `options` object as the `start` method. The method will return after the initial connection attempt to the debug controller succeeds or fails (either way, connection will be maintained and retried in the background) or when the timeout specified has been reached. If you choose the set `throw_errors` true, an exception will be thrown on failure.  
-
 ### stop
 
 ```js
