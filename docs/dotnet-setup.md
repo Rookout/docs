@@ -97,8 +97,6 @@ For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-
 
 ## Packaging Sources
 
-Unlike Node and Python applications, most dotnet applications do not include their source code within the library distribution. This prevents Rookout from verifying the source files have not changed between what the user sees and the production and will trigger a warning.
-
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
 
 ```xml
