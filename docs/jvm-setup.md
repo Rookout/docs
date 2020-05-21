@@ -68,6 +68,7 @@ Configuration is performed using OS Environment Variables or Java System Propert
 | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `ROOKOUT_PROXY` | None | URL to proxy server
 | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
+| `ROOKOUT_SOURCES` | None | Source information (see below) |
 
 
 ## Test connectivity
@@ -147,11 +148,21 @@ The following languages are officially supported: Java, Scala, Kotlin, Groovy, C
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail}
 
-## Source Commit Detection
+## Source information
 
-The Java SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
-1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
-2. If the Java main application is jar/war/ear and it’s manifest includes the value “ROOKOUT_MANIFEST_COMMIT”, use it.
+Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
+
+ROOKOUT_SOURCES is a semicolon-separated list with either a source control repository and commit information, or a path on the local filesystem to a JAR file.
+
+Example
+```
+ROOKOUT_SOURCES=https://github.com/Rookout/Rookout#afe123;/path/to/lib.jar
+```
+
+To load source information from a jar file, you need to add the following attributes to the JAR manifest:
+
+`Rookout-Repository`: repository URL
+`Rookout-Commit`: commit identifier
 
 ## Dependencies
 
