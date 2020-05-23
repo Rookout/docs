@@ -141,7 +141,7 @@ The Rookout SDK can be loaded to a running JVM process by following these steps:
 2. Export all of your configuration as environment variables (`ROOKOUT_TOKEN` for example)
 3. Run the following command line. 
 ```bash
-java -jar rook.jar
+ROOKOUT_TARGET_PID=1234 java -jar rook.jar
 ```
 
 ## Supported Versions
