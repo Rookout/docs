@@ -137,7 +137,7 @@ jsvc -Dsun.java.command=my.main.class
 ## Dynamic loading in running JVM process
 
 The Rookout SDK can be loaded to a running JVM process by following these steps:
-1. Export the destination process ID as `ROOKOUT_DESTINATION_PID` as environment variable.
+1. Export the destination process ID as `ROOKOUT_TARGET_PID` as environment variable.
 2. Export all of your configuration as environment variables (`ROOKOUT_TOKEN` for example)
 3. Run the following command line. 
 ```bash
