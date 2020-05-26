@@ -195,7 +195,7 @@ In some Serverless environments (such as AWS Lambda), the tools.jar library is m
 
 ## Debugging frameworks
 
-To reduce performance overhead, the Rookout SDK will not insturment some popular libraries and frameworks. If you wish to debug such a framework, you can set the following environment variable to allow certain package prefixes:
+To reduce performance overhead, the Rookout SDK will not instrument some popular libraries and frameworks. If you wish to debug such a framework, you can set the following environment variable to allow certain package prefixes:
 
 ```bash
 export ROOKOUT_INCLUDE_CLASS_PREFIX=org.springframework.
@@ -207,3 +207,11 @@ Examples of excluded packages:
  - java.*
  - org.apache.*
  - io.netty.*
+
+## Whitelisting packages
+
+To reduce performance overhead, the Rookout SDK can instrument only libraries and frameworks that you specify. you can set the following environment variable to whitelist certain package prefixes:  
+
+```bash
+export ROOKOUT_WHITELIST_CLASS_PREFIX=com.your.package,com.another.package
+```
