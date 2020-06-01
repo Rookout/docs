@@ -14,13 +14,16 @@ When you integrate your source code into Rookout, it remains between your code r
 ## Source Code Fetching 
 ### Git Providers
 
-Rookout supports the following Git Providers:
+Rookout integrates directly to the cloud editions of the following Git Providers:
 1. Github
 2. BitBucket
 3. GitLab
 
+In addition, Rookout offers a desktop app for fetching source repositories from a local file system.
+This allows fetching source code from local editions of Git providers, as well as from Perforce.
+
 ##### Automatic Fetching
-To configure automatic fetching sources please add the following environment variables while deploying Rookout:
+To automatically fetch source code repositories from cloud based Github, Bitbucket or Gitlab, use the following environment variables while deploying rookout:
 1. ```ROOKOUT_COMMIT```  - String that indicates your git commit
 2. ```ROOKOUT_REMOTE_ORIGIN``` - String that indicates your git remote origin
 
@@ -30,8 +33,7 @@ After adding those environment variables, the sources will be loaded automatical
 
 ##### Manual Fetching
 You can load your sources manually in the web IDE as explained in the following video.
-In that case, you need to make sure that you have load the sources that match the sources of the running instance.
-
+When fetching source repositories manually, make sure to fetch the version of the code that is deployed in the app you are trying to debug.
 <iframe width="600" height="300" src="https://www.youtube.com/embed/divAqo048eA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Local FileSystem - Rookout Desktop App 
