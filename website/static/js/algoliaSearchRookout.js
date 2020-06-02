@@ -5,8 +5,6 @@ function activateAlgoliaDocSearch() {
     inputSelector: '#rookout-search',
     debug: window.location.hostname === 'localhost'
   });
-
-  $('#rookout-search-icon').toggle();
 }
 
 
