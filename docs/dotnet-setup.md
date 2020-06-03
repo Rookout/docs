@@ -73,9 +73,13 @@ The Start method is used to initialize the SDK in the background and accepts the
 
 To make sure the SDK was properly installed and test your configuration (environment variables only), download and run TestConnectivity:
 * [Windows .Net Framework](https://get.rookout.com/test_connectivity_windows_x64_framework.zip)
-* [Windows .Net Core](https://get.rookout.com/test_connectivity_windows_x64_core.zip)
-* [Ubuntu .Net Core](https://get.rookout.com/test_connectivity_ubuntu_x64.zip)
-* [Mac .Net Core](https://get.rookout.com/test_connectivity_mac_x64.zip) - Use right click and open to allow the tool to run 
+* [.Net Core](https://get.rookout.com/test_connectivity_core_x64.zip)
+    
+Unix: 
+* Core 2.x: `chmod 777 ./test_core_2.x.sh && ./test_core_2.x.sh`
+* Core 3.x: `chmod 777 ./test_core_3.x.sh && ./test_core_3.x.sh`
+
+Windows: Simply run test_core_2.x.bat or test_core_3.x.bat respectively.
 
 ## Debug Information
 
