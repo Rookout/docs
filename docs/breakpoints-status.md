@@ -79,7 +79,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
   Rookout verifies that the source file you are seeing in our IDE is the file you deploying in your application. If the file version is wrong (detected using an Hash calculation) the Breakpoint will not be set. If you use source commit detection you will see the correct git commit to use on the [App instances page](https://app.rookout.com/app/connectivity/rooks).
 
 - #### (Python) Invalid Breakpoint position
-  The breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](sdk-setup.md)).
+  The breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](python-setup.md)).
 
 - #### Sending to Rookout is Disabled
   The system administrator has disabled sending application data to the Rookout service for security reasons (read more about this configuration [here](agent-setup.md#disable-sending-data)).
@@ -101,9 +101,10 @@ If you fail to see any messages arriving, this may be caused by any of the follo
   We have matched a file with the same hash but in a different path than the wanted one.
   Use the [`.rookout`](source-repos.html#source-path-mapping) and the suggestion to map the paths correctly.
 
-- #### (JVM) Source file not found
-  Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. In most JVM based languages, please include your source within your Jar/War/Ear archives.
-  Read more about it on our [setup page](jvm-setup#packaging-sources).
+- #### (JVM/.Net) Source file not found
+  Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug.  
+  - In most JVM based languages, please include your source within your Jar/War/Ear archives. Read more about it on our [setup page](jvm-setup#packaging-sources).
+  - In most .Net based languages, please embedded sources into your pdb. Read more about it on our [setup page](dotnet-setup#packaging-sources).
 
 - #### (Node) Original Source Files are Missing
   Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. For transpiled JS/TS/CS, please deploy your original sources side-by-side with the transpiled ones or include sources within the source map.
