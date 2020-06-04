@@ -76,10 +76,10 @@ To make sure the SDK was properly installed and test your configuration (environ
 * [.Net Core](https://get.rookout.com/test_connectivity_core_x64.zip)
     
 Unix: 
-* Core 2.x: `chmod +x ./test_core_2.x.sh && ./test_core_2.x.sh`
-* Core 3.x: `chmod +x ./test_core_3.x.sh && ./test_core_3.x.sh`
+* Core 2.x: `chmod +x ./rookout_test_core_2.x.sh && ./rookout_test_core_2.x.sh`
+* Core 3.x: `chmod +x ./rookout_test_core_3.x.sh && ./rookout_test_core_3.x.sh`
 
-Windows: Simply run test_core_2.x.bat or test_core_3.x.bat respectively.
+Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respectively.
 
 ## Debug Information
 
