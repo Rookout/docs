@@ -94,7 +94,6 @@ Although Rookout doesn't run your program in debug mode, we need the PDB file to
 
 For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
 
-
 ## Packaging Sources
 
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
@@ -102,7 +101,6 @@ To make sure you are collecting data from the source line where you have set the
 ```xml
     <EmbedAllSources>true</EmbedAllSources>
 ```
-
 
 ## Supported Versions
 

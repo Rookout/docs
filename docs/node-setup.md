@@ -79,17 +79,6 @@ To make sure the SDK was properly installed and test your configuration (environ
 ./node_modules/.bin/rookout-check
 ```
 
-## Supported Versions
-
-Rookout supports the latest NodeJS and all releases that are under maintenance (LTS). Support for older versions is limited.
-
-| Implementation     | Versions       |
-| ------------------ | -------------- |
-| **Node**           | 8, 10, 11, 12 |
-
-**Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
-
-
 ## Transpiling and Source Maps
 
 If you are transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout will work out of the box.
@@ -112,6 +101,16 @@ The NodeJS SDK supports detecting the existing source code commit in the followi
 1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
 2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
 3. If the main application is running from within a Git repository, use its head. 
+
+## Supported Versions
+
+Rookout supports the latest NodeJS and all releases that are under maintenance (LTS). Support for older versions is limited.
+
+| Implementation     | Versions       |
+| ------------------ | -------------- |
+| **Node**           | 8, 10, 11, 12 |
+
+**Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
 
 ## Serverless and PaaS deployments
 

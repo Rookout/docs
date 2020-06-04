@@ -174,10 +174,6 @@ To load source information from a jar file, you need to add the following attrib
 `Rookout-Repository`: repository URL
 `Rookout-Commit`: commit identifier
 
-## Dependencies
-
-None.
-
 ## Serverless and PaaS deployments
 
 ### Integrating with Serverless
