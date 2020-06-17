@@ -107,6 +107,18 @@ To make sure you are collecting data from the source line where you have set the
     <EmbedAllSources>true</EmbedAllSources>
 ```
 
+## Source information
+
+Use the MSBuildGitHash package to initialize the SDK with information about the sources used in your application.
+
+MSBuildGitHash is installed as a [NuGet package](https://www.nuget.org/packages/MSBuildGitHash) in your application.
+
+After installing the [NuGet package](https://www.nuget.org/packages/MSBuildGitHash) remember to add the following line in the .csproj file:
+
+```xml
+    <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
+```
+
 
 ## Supported Versions
 
