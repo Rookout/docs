@@ -37,7 +37,8 @@ When fetching source repositories manually, make sure to fetch the version of th
 <iframe width="600" height="300" src="https://www.youtube.com/embed/divAqo048eA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Local FileSystem - Rookout Desktop App 
-If you are using a git provider that Rookout does not support, you can associate source code files from the local filesystem into a Rookout debug session.
+If you are using any local git provider, or any hosted git provider besides Github, Gitlab or Bitbucket, you can associate source code files from the local filesystem into a Rookout debug session.
+
 To do that, please download and install Rookout Desktop App. See the following video to learn how to download Rookout Desktop App:
 <iframe width="600" height="300" src="https://www.youtube.com/embed/mkMpzQPNcsI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -54,6 +55,12 @@ If you are transpiling your JavaScript/TypeScript on the fly (using babel-node o
 If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as separate files (usually app.map.js) in your deployment.
 
 For more information, please click [here](node-setup#transpiling-and-source-maps).
+
+### .Net
+
+To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
+
+For more information, please click [here](dotnet-setup#packaging-sources).
 
 
 ## Repository Settings
