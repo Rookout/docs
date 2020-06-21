@@ -41,6 +41,21 @@ If you are using a git provider that Rookout does not support, you can associate
 To do that, please download and install Rookout Desktop App. See the following video to learn how to download Rookout Desktop App:
 <iframe width="600" height="300" src="https://www.youtube.com/embed/mkMpzQPNcsI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Packaging Sources
+
+### Java
+To make sure you are collecting data from the source line where you have set the breakpoint, please include your source files within your JAR/WAR/EAR library.
+
+For more information, please click [here](jvm-setup#packaging-sources).
+
+### JavaScript/TypeScript
+If you are transpiling your JavaScript/TypeScript on the fly (using babel-node or a similar tool), Rookout will work out of the box.
+
+If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as separate files (usually app.map.js) in your deployment.
+
+For more information, please click [here](node-setup#transpiling-and-source-maps).
+
+
 ## Repository Settings
 
 If you are deploying your software in some non-trival ways, Rookout offers the option of customizing the way breakpoints are set directly from your source repository.
