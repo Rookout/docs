@@ -62,13 +62,14 @@ Configuration is performed using OS Environment Variables or Java System Propert
 | ----------------------- | ------------- | ----------- |
 | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
 | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
+| `ROOKOUT_COMMIT` | None | String that indicates your git commit |
+| `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
 | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
 | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `ROOKOUT_PROXY` | None | URL to proxy server
 | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
-| `ROOKOUT_COMMIT` | None | String that indicates your git commit |
-| `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
+| `ROOKOUT_SOURCES` | None | Source information (see below) |
+
 
 ## Test connectivity
 
@@ -99,8 +100,6 @@ javac -g MyClass.java
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Packaging Sources
-
-Unlike Node and Python applications, most JVM applications do not include their source code within the library distribution. This prevents Rookout from verifying the source files have not changed between what the user sees and the production and will trigger a warning.
 
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your JAR/WAR/EAR library.
 
@@ -136,6 +135,16 @@ Some Java based runtimes such as [Jsvc](https://commons.apache.org/proper/common
 jsvc -Dsun.java.command=my.main.class
 ```
 
+## Dynamic loading in running JVM process
+
+The Rookout SDK can be loaded to a running JVM process by following these steps:
+1. Export the destination process ID as `ROOKOUT_TARGET_PID` as environment variable.
+2. Export all of your configuration as environment variables (`ROOKOUT_TOKEN` for example)
+3. Run the following command line. 
+```bash
+ROOKOUT_TARGET_PID=1234 java -jar rook.jar
+```
+
 ## Supported Versions
 
 | Implementation      | Versions               |
@@ -149,11 +158,21 @@ The following languages are officially supported: Java, Scala, Kotlin, Groovy, C
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail}
 
-## Source Commit Detection
+## Source information
 
-The Java SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
-1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
-2. If the Java main application is jar/war/ear and it’s manifest includes the value “ROOKOUT_MANIFEST_COMMIT”, use it.
+Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
+
+ROOKOUT_SOURCES is a semicolon-separated list with either a source control repository and revision information, or a path on the local filesystem to a JAR file.
+
+Example
+```
+ROOKOUT_SOURCES=https://github.com/Rookout/Rookout#afe123;/path/to/lib.jar
+```
+
+To load source information from a jar file, you need to add the following attributes to the JAR manifest:
+
+`Rookout-Repository`: Repository URL
+`Rookout-Revision`: Revision identifier
 
 ## Dependencies
 
@@ -176,7 +195,7 @@ In some Serverless environments (such as AWS Lambda), the tools.jar library is m
 
 ## Debugging frameworks
 
-To reduce performance overhead, the Rookout SDK will not insturment some popular libraries and frameworks. If you wish to debug such a framework, you can set the following environment variable to allow certain package prefixes:
+To reduce performance overhead, the Rookout SDK will not instrument some popular libraries and frameworks. If you wish to debug such a framework, you can set the following environment variable to allow certain package prefixes:
 
 ```bash
 export ROOKOUT_INCLUDE_CLASS_PREFIX=org.springframework.
@@ -188,3 +207,11 @@ Examples of excluded packages:
  - java.*
  - org.apache.*
  - io.netty.*
+
+## Whitelisting packages
+
+To reduce performance overhead, the Rookout SDK can instrument only libraries and frameworks that you specify. you can set the following environment variable to whitelist certain package prefixes:  
+
+```bash
+export ROOKOUT_WHITELIST_CLASS_PREFIX=com.your.package,com.another.package
+```

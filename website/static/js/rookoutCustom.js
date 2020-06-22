@@ -70,7 +70,7 @@ function customizeSearchInput(activateAlgoliaFunc) {
     const searchBarIcon = $(document.createElement('img'));
     searchBarIcon.attr('src', '/img/icons/search.svg');
     searchBarIcon.attr('id', 'rookout-search-icon')
-    searchBarIcon.toggle();
+    searchBarIcon.hide();
 
     searchContainer.append(searchBarInput);
     searchContainer.append(searchBarIcon);
@@ -78,7 +78,11 @@ function customizeSearchInput(activateAlgoliaFunc) {
     docNavbarElem.prepend(searchContainer);
   }
 
-  setTimeout(activateAlgoliaFunc, 1000);
+  setTimeout(function() {
+    activateAlgoliaFunc();
+    $('#rookout-search-icon').show();
+  }, 3000);
+
 }
 
 function gqlRequest(query, callback) {
