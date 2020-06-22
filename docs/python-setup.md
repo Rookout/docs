@@ -57,14 +57,15 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
+| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
+| `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
+| `fork` | `ROOKOUT_ENABLE_FORK` | False | Set to `True` to enable support in forked processes |
 | `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
-| `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
-| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
-| `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
+
 
 ### flush
 
@@ -145,7 +146,9 @@ apk update && apk add g++ python-dev
 
 Several popular application servers for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
-If you are using one of those servers, Rookout must be initialized in each of the workers processes.  
+If you are using one of those servers, You can set the fork argument in the SDK api to true to automatically enable Rookout in forked processes, and no additional changes will be required.
+
+If you are don't enable fork support Rookout must be started in each of the workers processes.  
 We have included sample snippets for a few common options:
 
 <!--DOCUSAURUS_CODE_TABS-->

@@ -46,21 +46,13 @@ The `start` method is used to initialize the SDK. Receives configuration using a
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
+| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
+| `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
 | `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to reject the promsise or throw an exception if `start` fails (error message will not be printed in console) |
-| `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
-| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
-| `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
-
-### startSync
-```js
-startSync(timeout=5000, options = {});
-```
-
-The `startSync` method is used to initialize the SDK in a synchronous manner using the `deasync` module and accepts the same `options` object as the `start` method. The method will return after the initial connection attempt to the debug controller succeeds or fails (either way, connection will be maintained and retried in the background) or when the timeout specified has been reached. If you choose the set `throw_errors` true, an exception will be thrown on failure.  
 
 ### stop
 
@@ -98,12 +90,11 @@ Rookout supports the latest NodeJS and all releases that are under maintenance (
 
 
 ## Transpiling and Source Maps
-
 Transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging will work out of the box.
 
 When transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), include the source maps inline within the source files or as separate files (usually `app.map.js`) within your deployment.
 
-To allow Rookout to validate the source file matches the file you are trying to debug, please include the original sources files in the source maps or deploy them side-by-side with the transpiled.
+To make sure you can validate the source file matches the file you are tryring to debug, please include the original source files side-by-side with the transpiled ones or build your source map with the full source code.
 
 To test if you are transpiling with source maps, search for this comment in the transpiled files:
 ```js
@@ -113,8 +104,7 @@ To test if you are transpiling with source maps, search for this comment in the 
 ### Configurations for Common Tools
 
 - [**Weback**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for [devtool](https://webpack.js.org/configuration/devtool/).  
-- [**Babel**](https://babeljs.io/) - use the `-s inline` or `-s true` flags.
-- [**babel-cli**](https://babeljs.io/docs/en/babel-cli) - use the `--source-maps inline` or `--source-maps` flags.  
+- [**Babel**](https://babeljs.io/) - use the `--source-maps inline` or `--source-maps` flags.  
 - [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` flag. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 - [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.  
 

@@ -1,10 +1,8 @@
 ---
 id: dotnet-setup
-title: .NET Beta SDK Instrumentation
-sidebar_label: .NET Beta SDK
+title: .NET SDK Instrumentation
+sidebar_label: .NET
 ---
-
-## Please note that .NET SDK support is currently in Beta phase and we offer limited support to limited customers
 
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
 If you are encountering any difficulties with deploying Rookout, this is the place to look.
@@ -63,23 +61,25 @@ The Start method is used to initialize the SDK in the background and accepts the
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
+| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
+| `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
 | `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `log_file` | `ROOKOUT_LOG_FILE` | None | Path to file to use for the SDK logs (default is `%USERPROFILE%/rookout/dotnet-rook.log`) |
-| `log_level` | `ROOKOUT_LOG_LEVEL` | None | Control the SDK logging verbosity |
-| `log_to_stderr` | `ROOKOUT_LOG_TO_STDERR` | False | Set to `True` to have the SDK log to stderr |
-| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
-| `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
+
 
 ## Test connectivity
 
 To make sure the SDK was properly installed and test your configuration (environment variables only), download and run TestConnectivity:
 * [Windows .Net Framework](https://get.rookout.com/test_connectivity_windows_x64_framework.zip)
-* [Windows .Net Core](https://get.rookout.com/test_connectivity_windows_x64_core.zip)
-* [Ubuntu .Net Core](https://get.rookout.com/test_connectivity_ubuntu_x64.zip)
-* [Mac .Net Core](https://get.rookout.com/test_connectivity_mac_x64.zip) - Use right click and open to allow the tool to run 
+* [.Net Core](https://get.rookout.com/test_connectivity_core_x64.zip)
+    
+Unix: 
+* Core 2.x: `chmod +x ./rookout_test_core_2.x.sh && ./rookout_test_core_2.x.sh`
+* Core 3.x: `chmod +x ./rookout_test_core_3.x.sh && ./rookout_test_core_3.x.sh`
+
+Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respectively.
 
 ## Debug Information
 
@@ -99,13 +99,35 @@ Although Rookout doesn't run your program in debug mode, we need the PDB file to
 For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
 
 
+## Packaging Sources
+
+To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
+
+```xml
+    <EmbedAllSources>true</EmbedAllSources>
+```
+
+## Source information
+
+Use the MSBuildGitHash package to initialize the SDK with information about the sources used in your application.
+
+MSBuildGitHash is installed as a [NuGet package](https://www.nuget.org/packages/MSBuildGitHash) in your application.
+
+After installing the [NuGet package](https://www.nuget.org/packages/MSBuildGitHash) remember to add the following line in the .csproj file:
+
+```xml
+    <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
+```
+
+
 ## Supported Versions
 
 | Implementation      | Versions              |
 | ------------------  | -------------         |
 | **.NET Framework**  | 4.5, 4.6, 4.7, 4.8    |
-| **.NET Core**       | 3.0, 3.1              |
+| **.NET Core**       | 2.1, 2.2, 3.0, 3.1    |
 
 The following languages are officially supported: C#.
+IIS support: we currently support IIS 8.0 and above.
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail}

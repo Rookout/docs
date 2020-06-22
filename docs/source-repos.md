@@ -54,15 +54,14 @@ To convert `my app/app.py` to `app.py` use:
 "my app" /
 ```
 
-### Debugging Packages
+### (Node) Debugging Packages
 
-By default, Rookout ignores your project's dependencies (`node_modules` for Node, `site-packages` for Python, inapplicable for JVM).  
-This includes the `node_modules` directory for NodeJS applications and the `site-packages` directory for Python applications.
+By default, under NodeJS, Rookout ignores your project's dependencies the `node_modules` folder.
 
-If you are debugging a project installed as a package, add the following snippet to your `.rookout` file:
+If the project you are debugging is installed as a package on the server add the following snippet to your `.rookout` file:
 
-```python
+```node
 #package
 ```
 
-**Note:** Rookout does not map common NPM packages and does not allow setting breakpoints inside them.
+**Note:** Rookout does not map the most common NPM packages for performance reasons and does not allow setting breakpoints inside them.
