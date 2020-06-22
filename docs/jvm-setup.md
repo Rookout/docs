@@ -127,6 +127,22 @@ jar {
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
+## Source information
+
+Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
+
+ROOKOUT_SOURCES is a semicolon-separated list with either a source control repository and revision information, or a path on the local filesystem to a JAR file.
+
+Example
+```
+ROOKOUT_SOURCES=https://github.com/Rookout/Rookout#afe123;/path/to/lib.jar
+```
+
+To load source information from a jar file, you need to add the following attributes to the JAR manifest:
+
+`Rookout-Repository`: Repository URL
+`Rookout-Revision`: Revision identifier
+
 ## Application Detection
 
 Rookout uses the semi-documented `sun.java.command` system property to identify your application and display it for within the Web Application.  
@@ -157,22 +173,6 @@ ROOKOUT_TARGET_PID=1234 java -jar rook.jar
 The following languages are officially supported: Java, Scala, Kotlin, Groovy, ColdFusion.
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail}
-
-## Source information
-
-Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
-
-ROOKOUT_SOURCES is a semicolon-separated list with either a source control repository and revision information, or a path on the local filesystem to a JAR file.
-
-Example
-```
-ROOKOUT_SOURCES=https://github.com/Rookout/Rookout#afe123;/path/to/lib.jar
-```
-
-To load source information from a jar file, you need to add the following attributes to the JAR manifest:
-
-`Rookout-Repository`: Repository URL
-`Rookout-Revision`: Revision identifier
 
 ## Dependencies
 
@@ -207,11 +207,3 @@ Examples of excluded packages:
  - java.*
  - org.apache.*
  - io.netty.*
-
-## Whitelisting packages
-
-To reduce performance overhead, the Rookout SDK can instrument only libraries and frameworks that you specify. you can set the following environment variable to whitelist certain package prefixes:  
-
-```bash
-export ROOKOUT_WHITELIST_CLASS_PREFIX=com.your.package,com.another.package
-```
