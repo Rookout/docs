@@ -73,9 +73,13 @@ The Start method is used to initialize the SDK in the background and accepts the
 
 To make sure the SDK was properly installed and test your configuration (environment variables only), download and run TestConnectivity:
 * [Windows .Net Framework](https://get.rookout.com/test_connectivity_windows_x64_framework.zip)
-* [Windows .Net Core](https://get.rookout.com/test_connectivity_windows_x64_core.zip)
-* [Ubuntu .Net Core](https://get.rookout.com/test_connectivity_ubuntu_x64.zip)
-* [Mac .Net Core](https://get.rookout.com/test_connectivity_mac_x64.zip) - Use right click and open to allow the tool to run 
+* [.Net Core](https://get.rookout.com/test_connectivity_core_x64.zip)
+    
+Unix: 
+* Core 2.x: `chmod +x ./rookout_test_core_2.x.sh && ./rookout_test_core_2.x.sh`
+* Core 3.x: `chmod +x ./rookout_test_core_3.x.sh && ./rookout_test_core_3.x.sh`
+
+Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respectively.
 
 ## Debug Information
 
@@ -101,6 +105,18 @@ To make sure you are collecting data from the source line where you have set the
 
 ```xml
     <EmbedAllSources>true</EmbedAllSources>
+```
+
+## Source information
+
+Use the MSBuildGitHash package to initialize the SDK with information about the sources used in your application.
+
+MSBuildGitHash is installed as a [NuGet package](https://www.nuget.org/packages/MSBuildGitHash) in your application.
+
+After installing the [NuGet package](https://www.nuget.org/packages/MSBuildGitHash) remember to add the following line in the .csproj file:
+
+```xml
+    <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
 ```
 
 

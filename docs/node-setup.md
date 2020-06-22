@@ -61,7 +61,6 @@ stop();
 ```
 
 The `stop` method is used to shutdown the SDK.  
-As Rookout is listening to a network connection, the Node process will not terminate as long as Rookout is running in the background.
 
 ### flush
 
@@ -91,18 +90,21 @@ Rookout supports the latest NodeJS and all releases that are under maintenance (
 
 
 ## Transpiling and Source Maps
+Transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging will work out of the box.
 
-If you are transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout will work out of the box.
+When transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), include the source maps inline within the source files or as separate files (usually `app.map.js`) within your deployment.
 
-If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as separate files (usually `app.map.js`) in your deployment. As a general rule of thumb, configure the target to the Node version you are using, to minimize unneeded transpilation. If you are seeing problems setting breakpoints around async/await statements, you are likely transpiling too agressively.
+To make sure you can validate the source file matches the file you are tryring to debug, please include the original source files side-by-side with the transpiled ones or build your source map with the full source code.
 
-To make sure you can validate the source file matches the file you are tryring to debug using hash comparison, we recommend deploying the original source files side-by-side with the transpiled ones or building your source map with the full source code.
+To test if you are transpiling with source maps, search for this comment in the transpiled files:
+```js
+//# sourceMappingURL=/path/to/file.js.map
+```
 
 ### Configurations for Common Tools
 
-- [**Webpack**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for [devtool](https://webpack.js.org/configuration/devtool/).  
-- [**Babel**](https://babeljs.io/) - use the `-s inline` or `-s true` flags.
-- [**babel-cli**](https://babeljs.io/docs/en/babel-cli) - use the `--source-maps inline` or `--source-maps` flags.  
+- [**Weback**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for [devtool](https://webpack.js.org/configuration/devtool/).  
+- [**Babel**](https://babeljs.io/) - use the `--source-maps inline` or `--source-maps` flags.  
 - [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` flag. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 - [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.  
 

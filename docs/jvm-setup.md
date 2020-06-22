@@ -131,7 +131,7 @@ jar {
 
 Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
 
-ROOKOUT_SOURCES is a semicolon-separated list with either a source control repository and commit information, or a path on the local filesystem to a JAR file.
+ROOKOUT_SOURCES is a semicolon-separated list with either a source control repository and revision information, or a path on the local filesystem to a JAR file.
 
 Example
 ```
@@ -140,8 +140,8 @@ ROOKOUT_SOURCES=https://github.com/Rookout/Rookout#afe123;/path/to/lib.jar
 
 To load source information from a jar file, you need to add the following attributes to the JAR manifest:
 
-`Rookout-Repository`: repository URL
-`Rookout-Commit`: commit identifier
+`Rookout-Repository`: Repository URL
+`Rookout-Revision`: Revision identifier
 
 ## Application Detection
 
