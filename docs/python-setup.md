@@ -81,6 +81,12 @@ To make sure the SDK was properly installed in your Python (virtual) environment
 ```bash
 python -m rook
 ```
+## Source Commit Detection
+
+The Python SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
+1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
+2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
+3. If the main application is running from within a Git repository, use its head. 
 
 ## Supported Python versions
 
@@ -92,14 +98,6 @@ python -m rook
 Rookout was tested on `pip` versions 9+.
 
 ***Note:*** We recommend avoiding production deployments of Rookout on Windows OS.
-
-## Source Commit Detection
-
-The Python SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
-1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
-2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
-3. If the main application is running from within a Git repository, use its head. 
-
 
 ## Dependencies
 

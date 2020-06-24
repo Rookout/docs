@@ -98,15 +98,6 @@ Although Rookout doesn't run your program in debug mode, we need the PDB file to
 
 For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
 
-
-## Packaging Sources
-
-To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
-
-```xml
-    <EmbedAllSources>true</EmbedAllSources>
-```
-
 ## Source information
 
 Use the MSBuildGitHash package to initialize the SDK with information about the sources used in your application.
@@ -119,6 +110,13 @@ After installing the [NuGet package](https://www.nuget.org/packages/MSBuildGitHa
     <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
 ```
 
+## Packaging Sources
+
+To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
+
+```xml
+    <EmbedAllSources>true</EmbedAllSources>
+```
 
 ## Supported Versions
 
