@@ -99,7 +99,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 - #### Path suggestion
   Source file was deployed to unexpected location, this might happen in some serverless frameworks.
   We have matched a file with the same hash but in a different path than the wanted one.
-  Use the [`.rookout`](source-repos.html#source-path-mapping) and the suggestion to map the paths correctly.
+  Use the [`.rookout`](source-repos.md#source-path-mapping) and the suggestion to map the paths correctly.
 
 - #### (JVM/.Net) Source file not found
   Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug.  
