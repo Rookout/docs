@@ -68,6 +68,18 @@ The Start method is used to initialize the SDK in the background and accepts the
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 
+## Setup your .csproj files
+
+For the best Rookout experience please make sure the following attributes are in each `.csproj` you wish to debug:
+
+[`<DebugType>full</DebugType>`](https://docs.rookout.com/docs/dotnet-setup/#debug-information)
+
+[`<Optimize>false</Optimize>`](https://docs.rookout.com/docs/dotnet-setup/#debug-information)
+
+[`<MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>`](https://docs.rookout.com/docs/dotnet-setup/#source-information) - Another Nuget package needed
+
+[`<EmbedAllSources>true</EmbedAllSources>`](https://docs.rookout.com/docs/dotnet-setup/#packaging-sources)
+ 
 
 ## Test connectivity
 
@@ -83,7 +95,7 @@ Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respe
 
 ## Debug Information
 
-Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>pdbonly</DebugType>` or `-debug+`) and the optimize flag should not be enabled (`<Optimize>false</Optimize>`)   
+Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>full</DebugType>`) and the optimize flag should not be enabled (`<Optimize>false</Optimize>`)   
 
 
 Pdb (Program Data Base) file is a repository to maintain information about your application. 
