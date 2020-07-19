@@ -26,7 +26,7 @@ Simply add the Rookout SDK as a Java Agent to your environment:
 <!--Environment Variable-->
 ```bash
 # Add the Rookout Java Agent to your application using an environment variable
-export JAVA_TOOL_OPTIONS="-javaagent:(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token]"
+export JAVA_TOOL_OPTIONS="-javaagent:$(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token]"
 
 # Optional, see Labels section below Projects
 export ROOKOUT_LABELS=env:dev
@@ -34,7 +34,7 @@ export ROOKOUT_LABELS=env:dev
 <!--Command Line-->
 ```bash
 # Add the Java Agent, token and the labels to your application using command line
-java -javaagent:(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_LABELS=env:dev
+java -javaagent:$(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_LABELS=env:dev
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
