@@ -22,7 +22,7 @@ Rookout SDK is installed as a [NuGet package](https://www.nuget.org/packages/Roo
 The Rookout SDK needs to be started using a simple API.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--cs-->
+<!--C#-->
 ```cs
 using Rook;
 namespace Program
@@ -43,7 +43,7 @@ namespace Program
     }
 }
 ```
-<!--vb.net-->
+<!--VB.NET-->
 ```vs
 Imports Rook
 
@@ -59,6 +59,23 @@ Module Program
     
     End Sub
 End Module
+```
+<!--F#-->
+```fs
+open System
+open Rook
+open System.Collections.Generic
+
+[<EntryPoint>]
+let main argv =
+    let labels = new Dictionary<string, string>()
+    labels.Add("env", "dev")
+  
+    let opt = Rook.RookOptions(token="[Your Rookout Token]", labels=labels)
+    Rook.API.Start(opt)
+
+    // .....
+
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
@@ -157,8 +174,12 @@ To make sure you are collecting data from the source line where you have set the
 | **.NET Framework**  | 4.5, 4.6, 4.7, 4.8    |
 | **.NET Core**       | 2.1, 2.2, 3.0, 3.1    |
 
-The following languages are officially supported: C#, VB.NET.
+## Supported Languages
 
-IIS support: we currently support IIS 8.0 and above.
+The following languages are officially supported: C#, VB.NET and F#.
+
+## IIS support
+
+We currently support IIS 8.0 and above.
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail}
