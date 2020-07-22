@@ -1,24 +1,18 @@
-const request = require('request');
+const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-const options = {
-  url: 'https://api.github.com/repos/Rookout/deployment-examples/contents/',
-  headers: {
-    'User-Agent': 'RookoutDocs/1.0'
-  }
-};
-
-request(options, function (error, response, body) {
-  if (error) {
+// Make a request for a user with a given ID
+axios.get('https://api.github.com/repos/Rookout/deployment-examples/contents/', { headers: { 'User-Agent': 'RookoutDocs/1.0' }  })
+  .then(function (response) {
+    const dirs = filterData(response.data);
+    const generatedContent = buildMarkdown(dirs);
+    updateMarkdownFile(generatedContent);
+  })
+  .catch(function (error) {
     console.error('error:', error);
     throw error;
-  }
-
-  const dirs = filterData(JSON.parse(body));
-  const generatedContent = buildMarkdown(dirs);
-  updateMarkdownFile(generatedContent);
-});
+  });
 
 const filterData = (data) => {
   const dirs =  data.filter(content => content.type === 'dir' && !content.name.startsWith('.'));

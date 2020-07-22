@@ -15,7 +15,6 @@
     "deploy-firebase": "firebase deploy --only hosting:rookout-docs",
     "deploy-firebase-dci": "firebase deploy --only hosting:rookout-dci-docs",
     "generate-examples": "node build_utils/deployment_examples_generator.js",
-    "generate-integrations": "node build_utils/output_integrations_generator.js",
     "generate-sdk-digests": "node build_utils/sdk_digests_generator.js",
     "publish-release-notes": "node build_utils/publish_release_notes.js"
   },
@@ -29,9 +28,8 @@
     "firebase-tools": "^6.0.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "lodash": "^4.17.19",
-    "remarkable-embed": "^0.4.1",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.5"
+    "remarkable-embed": "^0.4.1"
   }
 }
