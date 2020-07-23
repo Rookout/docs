@@ -92,10 +92,25 @@ To test if you are transpiling with source maps, search for this comment in the 
 
 ### Configurations for Common Tools
 
-- [**Weback**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for [devtool](https://webpack.js.org/configuration/devtool/).  
+- [**Webpack**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for [devtool](https://webpack.js.org/configuration/devtool/).  
 - [**Babel**](https://babeljs.io/) - use the `--source-maps inline` or `--source-maps` flags.  
 - [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` flag. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
-- [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.  
+- [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.
+
+#### TypeScript & Webpack
+
+Because of the way Webpack handles TypeScript inputs, an additional step is needed:
+
+1. Install `source-map-loader`: `npm install -D source-map-loader`
+2. Add the following rule to `webpack.config.json` (under `rules`):
+
+```js
+ {
+    test: /\.js$/,
+    use: ["source-map-loader"],
+    enforce: "pre"
+ }
+```
 
 ## Source Commit Detection
 
