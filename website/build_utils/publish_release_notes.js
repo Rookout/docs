@@ -1,4 +1,4 @@
-const request = require('request');
+const axios = require('axios');
 
 const ENFORCER_SECRET = process.env.ENFORCER_SECRET;
 const NEW_VERSION = process.env.NEW_VERSION;
@@ -16,24 +16,17 @@ const release_data = {
   }
 };
 
-const options = {
-  url: 'https://github-enforcer.rookout.com/release',
-  method: 'POST',
+
+axios.post('https://github-enforcer.rookout.com/release', release_data, {
   headers: {
     'User-Agent': 'RookoutDocs/1.0',
     'Content-Type': 'application/json',
-    'X-Enforcer-Signature': ENFORCER_SECRET
-  },
-  json: true,
-  body: release_data
-};
-
-request(options, function (error, response, body) {
-  if (error) {
+    'X-Enforcer-Signature': ENFORCER_SECRET,
+  }})
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
     console.error('error:', error);
     throw error;
-  }
-
-  console.log(body);
-});
-
+  });
