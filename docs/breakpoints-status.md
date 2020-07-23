@@ -92,8 +92,8 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 
 `Warning` messages are clearly documented within the IDE, but here are some of the common ones:
 
-- #### Breakpoint was Disabled due to Rate-Limiting
-  Rookout employs a built-in rate-limiting mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the rate limit has been hit and the breakpoint has been disabled for the offending application instance.
+- #### Breakpoint collection is sampled due to rate-limiting
+  Rookout employs a built-in rate-limiting mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the rate limit has been hit and the breakpoint has been rate-limited for the offending application instance. Collection is sampled in order to prevent performance impact on your application.
   Read more about configuring rate-limiting [here](breakpoints-tasks.md#rate-limiting).
 
 - #### Path suggestion
