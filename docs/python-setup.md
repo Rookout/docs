@@ -66,6 +66,17 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
 
+### restart
+
+```python
+restart(labels=None)
+```
+
+The `restart` method is used to change the SDK labels:
+
+| Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Environment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
+| ------------ | ----------------------- | ------------- | ----------- |
+| `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 
 ### flush
 
