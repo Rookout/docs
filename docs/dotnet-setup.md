@@ -132,8 +132,7 @@ Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respe
 
 ## Debug Information
 
-Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>full</DebugType>`) and the optimize flag should not be enabled (`<Optimize>false</Optimize>`)   
-
+Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>full</DebugType>`). Note that disabling the optimize flag will further improve data collection (`<Optimize>false</Optimize>`)
 
 Pdb (Program Data Base) file is a repository to maintain information about your application. 
 
