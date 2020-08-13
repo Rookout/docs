@@ -166,6 +166,14 @@ To make sure you are collecting data from the source line where you have set the
     <EmbedAllSources>true</EmbedAllSources>
 ```
 
+## Dynamic library loading
+
+To be able to debug libraries loaded using [`AppDomain.Load(Byte[], Byte[])`](https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.load?view=netcore-3.1#System_AppDomain_Load_System_Byte___System_Byte___) make sure to load those binaries into Rookout using:
+
+```cs
+Rook.API.LoadAssembly(Assembly a, byte[] pdb, byte[] assembly)
+```
+
 ## Supported Versions
 
 | Implementation      | Versions              |
