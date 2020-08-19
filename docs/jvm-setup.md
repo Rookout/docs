@@ -62,7 +62,7 @@ Configuration is performed using OS Environment Variables or Java System Propert
 | ----------------------- | ------------- | ----------- |
 | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
 | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
-| `ROOKOUT_COMMIT` | None | String that indicates your git commit |
+| `ROOKOUT_COMMIT` | None | String that indicates your git commit or a branch name |
 | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
 | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
 | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
