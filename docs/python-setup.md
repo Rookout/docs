@@ -57,7 +57,7 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
-| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit |
+| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit or a branch name |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
 | `fork` | `ROOKOUT_ENABLE_FORK` | False | Set to `True` to enable support in forked processes |
 | `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
