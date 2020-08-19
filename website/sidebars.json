@@ -13,7 +13,7 @@
       "deployment-examples"
     ],
     "Debug Session": [
-      "servers-selection",
+      "server-selection",
       "source-repos",
       "projects-labels"
     ],

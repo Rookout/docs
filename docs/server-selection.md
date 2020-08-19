@@ -1,5 +1,5 @@
 ---
-id: servers-selection
+id: server-selection
 title: Servers Selection
 sidebar_label: Servers Selection
 ---
@@ -28,5 +28,5 @@ chosen according to your filters. Click **Let's go** and start your debug sessio
 You may want to save the state of your debug session. It can be done by using a bookmark.
 It will save the following:
 1. Connected source code repositories.
-2. One or set of filters that have been selected.
+2. One or a set of filters that have been selected.
 
