@@ -24,8 +24,9 @@ Filter by a specific hostname, label, process, IP, etc…
 Now, you can see the instances you will debug on the next debug session,\
 chosen according to your filters. Click **Let's go** and start your debug session.
  
-Click on the pencil to **edit your debug session**. 
+
 <img src="/img/screenshots/pencil_to_server_selection.png"/>
+Click on the pencil to **edit your debug session**. 
 
 **Bookmarks** \
 You may want to save the state of your debug session. It can be done by using a bookmark.
