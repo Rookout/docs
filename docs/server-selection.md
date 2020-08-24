@@ -17,8 +17,8 @@ Choose instances that are running in a specific environment.
 Choose instances according to their source code repositories.
 
 **Other Filters**:\
-Filter your instances by [labels](projects-labels.md) that were defined during the Rookout SDK installation. 
-Choose instances with a specific hostname, labels, process, IP, etc…
+Filter your instances by [labels](projects-labels.md) that were manually defined during the Rookout SDK setup, 
+Filter by a specific hostname, label, process, IP, etc…
 
 
 Now, you can see the instances you will debug on the next debug session,\
