@@ -1,9 +1,9 @@
 ---
 id: server-selection
-title: Servers Selection
+title: Debug session setup
 sidebar_label: Servers Selection
 ---
-The Server Selection screen will allow you to define the context of your debug session.
+This screen will allow you to define the context of your debug session.
 
 ### Set Up your Debug Session 
 To start a debug session, define at least one of the following filters:
