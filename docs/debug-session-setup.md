@@ -1,9 +1,9 @@
 ---
-id: server-selection
+id: debug-session-setup
 title: Debug session setup
-sidebar_label: Servers Selection
+sidebar_label: Debug session setup
 ---
-This screen will allow you to define the context of your debug session.
+This screen will allow you to select the context of your debug session.
 
 ### Set Up your Debug Session 
 To start a debug session, define at least one of the following filters:
@@ -18,19 +18,15 @@ Choose instances according to their source code repositories.
 
 **Other Filters**:\
 Filter your instances by [labels](projects-labels.md) that were manually defined during the Rookout SDK setup, 
-Filter by a specific hostname, label, process, IP, etc…
+or filter by a specific hostname, label, process, IP, etc…
 
 
 Now, you can see the instances you will debug on the next debug session,\
-chosen according to your filters. Click **Let's go** and start your debug session.
+according to the selected filters. Click **Let's go** to start your debug session.
  
 
-<img src="/img/screenshots/pencil_to_server_selection.png"/>
-Click on the pencil to **edit your debug session**. 
 
-**Bookmarks** \
-You may want to save the state of your debug session. It can be done by using a bookmark.
-It will save the following:
-1. Connected source code repositories.
-2. One or a set of filters that have been selected.
+<img src="/img/screenshots/pencil_to_server_selection.png"/>
+
+Click on the pencil from your current debug session to **edit and change instances**.
 
