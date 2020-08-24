@@ -7,7 +7,7 @@ Rookout Breakpoints are “non-breaking breakpoints” that let the Rookout SDK 
 
 ## Setting Breakpoints
 
-Before setting a Breakpoint you must create a [project](projects.md) and install the [Rookout SDK](sdk-setup.md) in your application.
+Before setting a Breakpoint you must [select your instances](server-selection.md) and install the [Rookout SDK](sdk-setup.md) in your application.
 
 You set the Breakpoints within the [Rookout IDE](https://app.rookout.com) by left-clicking on the gutter, just like your own IDE.  
 
