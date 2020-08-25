@@ -38,7 +38,15 @@ rook.start({
 ```bash
 # Export your labels as an environment variable
 export ROOKOUT_LABELS=service:service3,env:dev
-
+```
+<!--.NET-->
+```cs
+Rook.RookOptions options = new Rook.RookOptions() 
+    {
+        token = "[Your Rookout Token]",
+        labels = new Dictionary<string, string> { { "service", "service#3" }, { "env", "dev" } }
+    };
+Rook.API.Start(options);
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
