@@ -193,3 +193,16 @@ For more information, please check out our [deployment-examples](deployment-exam
 
 In some Serverless environments (such as AWS Lambda), the tools.jar library is missing and must be included within your package as well.
 
+## Illegal reflective access warning
+
+JVM version higher than 9 will print the following warning:
+```bash
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.rookout.rook.Processor.NamespaceSerializer
+WARNING: Please consider reporting this to the maintainers of com.rookout.rook.Processor.NamespaceSerializer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+```
+This warning is generated due to our approach of accessing private attributes.
+
+**You can safely ignore this warning and it will not cause any issue to your application**
