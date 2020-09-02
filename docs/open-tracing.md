@@ -16,6 +16,14 @@ determining its behavior when multiple services contact it in parallel rather th
 Different tools implements OpenTracing standard by providing a timeline view of requests using the OpenTracing terminology (spans, tags, span context etc...).
 Rookout can integrate with such tools and fetch tracing data. 
 
+Click here to learn more about [OpenTracing](https://opentracing.io/)
 
-Rookout Tracing information is available for Java and Python applications that implement OpenTracing. \n
-For more information, contact us at support@rookout.com
+**Fetch tracing data**
+1. Set up a Breakpoint. 
+2. Make sure Tracing checkbox is checked - go to BP editor, under collection check the Tracing checkbox. 
+3. Trigger the bp and open a message
+4. On the right side of the message pane, click on the tracing tab.
+5. Now you will be able to see all the tracing data.
+
+Rookout Tracing information is available for Java and Python applications that implement OpenTracing.\
+For more information, contact us at support@rookout.com.
