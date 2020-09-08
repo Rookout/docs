@@ -223,7 +223,7 @@ namespace LambdaExample
 }
 ```
 
-Refer to the [SDK API](#sdk-api-1) for the available optional options
+**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 20 seconds.
 
-For more information, please check out our [deployment-examples](deployment-examples.md).
+Refer to the [SDK API](#sdk-api-1) for the available optional options
 
