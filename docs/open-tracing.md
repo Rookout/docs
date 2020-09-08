@@ -9,7 +9,6 @@ in a large scale applications.
 
 Common use cases:
 * Microservices - follow the journey a transactions takes through microservices architecture.
-* Caching — troubleshooting to determine whether a request is hitting the cache. 
 * Arbitration — tracing the full history of a single process,
 determining its behavior when multiple services contact it in parallel rather than sequentially.
 
