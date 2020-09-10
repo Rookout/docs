@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "remarkable-embed": "^0.4.1"
   }
 }

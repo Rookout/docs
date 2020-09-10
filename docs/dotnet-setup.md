@@ -190,3 +190,40 @@ The following languages are officially supported: C#, VB.NET and F#.
 We currently support IIS 8.0 and above.
 
 If the environment you are trying to debug is not mentioned in the list above, be sure to let us know: {@inject: supportEmail}
+
+
+## Serverless and PaaS deployments
+
+### Integrating with AWS Lambda
+
+When integrating Rookout into an application running on AWS Lambda, you should explicitly flush the collected information once lambda execution concludes.  
+Rookout provides an easy to use wrapper - wrap your code with `using (Rook.API.StartLambda(options))` as in the example below:
+
+```cs
+using Rook;
+
+namespace LambdaExample
+{
+    public class Function
+    {
+
+        public string FunctionHandler(string input, ILambdaContext context)
+        {
+            Rook.RookOptions options = new Rook.RookOptions()
+            {
+                labels = new Dictionary<string, string> { { "env", "lambda" } }
+            };
+            using (Rook.API.StartLambda(options))
+            {
+                /// Your code
+                return "Hello World";
+            }
+        }
+    }
+}
+```
+
+**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 20 seconds.
+
+Refer to the [SDK API](#sdk-api-1) for the available optional options
+

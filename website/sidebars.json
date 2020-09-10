@@ -29,7 +29,8 @@
       "collaborations",
       "agent-setup",
       "breakpoints-structure",
-      "breakpoints-reference"
+      "breakpoints-reference",
+      "open-tracing"
     ],
     "More": [
       "sdk-digests",
