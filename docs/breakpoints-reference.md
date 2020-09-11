@@ -641,12 +641,12 @@ Therefore, to control the amount of data for each variable type, the default siz
 
 The default limits for each variable in a frame dump are summarized in the following table:
 
-| Variable type                | Python | Node.js | Java |
-| ---------------------------- | ------ | ------- | ---- |
-| **String or Buffer size**    | 512B   | 512B    | 512B  |
-| **Collection size**          | 20     | 20      | 20   |
-| **Object depth**             | 3      | 3       | 5    |
-| **Collection object depth**  | 2      | 2       | 2    |
+| Variable type                | Python | Node.js | Java | DotNet |
+| ---------------------------- | ------ | ------- | ---- | ---- |
+| **String or Buffer size**    | 512B   | 512B    | 512B | 512B |
+| **Collection size**          | 20     | 20      | 20   | 20   |
+| **Object depth**             | 3      | 3       | 4    | 3    |
+| **Collection object depth**  | 2      | 2       | 2    | 2    |
 
 If you have reached the object **depth** limit you should expect to see the following message in the message pane:  
 `Max depth has been reached`
