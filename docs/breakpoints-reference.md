@@ -635,18 +635,18 @@ And if friendship is a symmetric quality, then we may end up with an infinite lo
 Therefore, to control the amount of data for each variable type, the default size limitations below will apply:
 
 1. When we return a **string** or a **buffer**, we limit its **size** to 512 bytes.
-1. When we return an **object that contains other objects**, we denote each level of containment as **depth** and limit it to 3 by default (5 for Java).
+1. When we return an **object that contains other objects**, we denote each level of containment as **depth** and limit it to 3 by default (4 for Java).
 1. When we return a **collection** we denote its size as **width** and limit it to 20 by default (50 for Java).
 1. When we return a **collection of objects** that may contain other objects, we denote each level of containment as **collection depth** and limit it to 2 by default (3 for Java).
 
 The default limits for each variable in a frame dump are summarized in the following table:
 
-| Variable type                | Python | Node.js | Java |
-| ---------------------------- | ------ | ------- | ---- |
-| **String or Buffer size**    | 512B   | 512B    | 512B  |
-| **Collection size**          | 20     | 20      | 20   |
-| **Object depth**             | 3      | 3       | 5    |
-| **Collection object depth**  | 2      | 2       | 2    |
+| Variable type                | Python | Node.js | Java | DotNet |
+| ---------------------------- | ------ | ------- | ---- | ------ |
+| **String or Buffer size**    | 512B   | 512B    | 512B | 512B   |
+| **Collection size**          | 20     | 20      | 20   | 20     |
+| **Object depth**             | 3      | 3       | 4    | 3      |
+| **Collection object depth**  | 2      | 2       | 2    | 2      |
 
 If you have reached the object **depth** limit you should expect to see the following message in the message pane:  
 `Max depth has been reached`
@@ -677,12 +677,12 @@ However, these limits can be more lenient, as we’re only dumping one variable 
 
 The default limits for dumping a specific variable are summarized in the following table
 
-| Variable type                | Python | Node.js | Java |
-| ---------------------------- | ------ | ------- | ---- |
-| **String or Buffer size**    | 64K    | 64K     | 64K  |
-| **Collection size**          | 20     | 20      | 50   |
-| **Object depth**             | 5      | 3       | 5    |
-| **Collection object depth**  | 2      | 2       | 3    |
+| Variable type                | Python | Node.js | Java | DotNet |
+| ---------------------------- | ------ | ------- | ---- | ------ |
+| **String or Buffer size**    | 64K    | 64K     | 64K  | 64K    |
+| **Collection size**          | 20     | 20      | 50   | 50     |
+| **Object depth**             | 5      | 3       | 5    | 5      |
+| **Collection object depth**  | 2      | 2       | 3    | 3      |
 
 C) Fetching a specific variable
 
