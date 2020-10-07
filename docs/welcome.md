@@ -32,13 +32,13 @@ Rookout integrates with your source-control provider to fetch you the correct so
 
 When investigating application issues, existing observability tools such as logging, tracing and error tracking, are an important source of information.
 
-Rookout integrates with those services to offer show you the correspending transaction identifiers.
+Rookout integrates with those services to show you the corresponding transaction identifiers.
 
 Rookout even empowers you to add logs, metrics, and alerts to running applications on the fly, seeing them side-by-side with traditional logs and metrics.
 
 ## Key features
 
-1. Debug multiple application simultaneously.
+1. Debug multiple applications simultaneously.
 1. Conditional breakpoints for pinpoint collection.
 1. Version control integration.
 1. OpenTracing integration.
@@ -54,4 +54,5 @@ Rookout's SDKs and agents use bytecode-manipulation (and similar techniques) to 
 
 - Sign up to [Rookout](https://app.rookout.com) and [deploy](setup-intro.md) on your first application.
 - Find your specific deployment in our [Deployment Examples](deployment-examples.md).
+- Checkout the [Rookout workshop](https://github.com/Rookout/rookout-training) on GitHub.
 - Reach out to us if anything is unclear: {@inject: supportEmail}.
