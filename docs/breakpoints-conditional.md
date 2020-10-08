@@ -6,8 +6,7 @@ Conditional breakpoints allows you to limit your data collection from a code sni
 
 Add a Condition by right click on a breakpoint and choose the 'Edit' option. A right pane will open up, click on the arrow next to 'Condition', write the expression you wish to check and click 'Set' at the bottom of the pane.
 
-<iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/watch?v=IkuvAH52PVA&feature=youtu.be&ab_channel=Rookout?rel=0" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IkuvAH52PVA" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
 ### Rookout provides two types of conditions:
 - Simple - compare the value of one or two variables.
 - Advanced - define a complex condition using logical parameters (use "&&" for AND statement,  "||" for OR statement, "(" and ")" for encapsulation).
