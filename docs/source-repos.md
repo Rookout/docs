@@ -23,12 +23,36 @@ In addition, Rookout offers a desktop app for fetching source repositories from 
 This allows fetching source code from local editions of Git providers, as well as from Perforce.
 
 ##### Automatic Fetching
-To automatically fetch source code repositories from cloud based Github, Bitbucket or Gitlab, use the following environment variables while deploying rookout:
+Rookout has the ability to connect to a repository in order to automatically fetch your source code anytime a specific application instance is selected for debugging. To automatically fetch source code repositories from cloud based Github, Bitbucket or Gitlab, use the following environment variables while deploying rookout:
 1. ```ROOKOUT_COMMIT```  - String that indicates your git commit
 2. ```ROOKOUT_REMOTE_ORIGIN``` - String that indicates your git remote origin
 
+After adding those environment variables, the sources will be loaded automatically once the instance will be filtered.  As an example, the environment variables could be set as follows:
 
-After adding those environment variables, the sources will be loaded automatically once the instance will be filtered.
+```export ROOKOUT_REMOTE_ORIGIN=https://github.com/Rookout/tutorial-python```\
+```export ROOKOUT_COMMIT=3793853884cae77cc082961aa64cdb0ab93a0e35```
+
+Note, we are setting the commit to a specific revision or branch name which should match the revision of your code deployed in the environment you are debugging. Oftentimes organizations opt to integrate setting of these parameters into their CI/CD process so that they can be dynamically configured upon each new deployment. After these environment variables are set, when viewing the Application Instances screen, you should see the Source origin and Revision fields set with the values you set in your environment variables:
+
+<img src="/img/screenshots/source_origin_revision.png" />
+
+Now, when you select a Rookout Label to debug an application instance where these environments variables are set, Rookout will attempt to auto clone your repository on your local machine with the correct code revision so that you are immediately ready to start debugging.  You should see the text auto loaded in parenthesis next to your repository when this happens successfully.
+
+<img src="/img/screenshots/debug_auto_loaded.png" width="50%"/>
+
+When auto source loading happens the git files will be cloned on your local machine in the following locations:
+
+**Windows**: %APPDATA%/Rookout/git_root\
+**Mac**: $HOME/Library/Application Support/Rookout/git_root\
+**Linux**: $HOME/.Rookout/git_root
+
+For teams that have self-hosted / on-prem repositories, it is required that the Rookout Desktop Application be installed first. You must also have git or perforce command line tools installed on your machine.  To install the Rookout Desktop App, click on the **+** button in the debugger view, choose **Local Filesystem**, and then follow the steps to download and install the Rookout Desktop App.
+
+<img src="/img/screenshots/local_file_system.png" width="40%" />
+
+Fo the on-prem git workflow, you can fine more details in this video:
+
+<iframe width="600" height="300" src="https://www.youtube.com/embed/d4LwqNFeR7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ##### Manual Fetching
