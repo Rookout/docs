@@ -30,7 +30,8 @@
       "agent-setup",
       "breakpoints-structure",
       "breakpoints-reference",
-      "open-tracing"
+      "open-tracing",
+      "keyboard-shortcuts"
     ],
     "More": [
       "sdk-digests",
