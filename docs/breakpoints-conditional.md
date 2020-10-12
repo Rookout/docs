@@ -17,7 +17,7 @@ Add a Condition by right click on a breakpoint and choose the 'Edit' option. A r
 - Simple - compare the value of one or two variables.
 - Advanced - define a complex condition using logical parameters (use "&&" for AND statement,  "||" for OR statement, "(" and ")" for encapsulation).
 
-`### Advanced conditions - supported operators and functions:
+### Advanced conditions - supported operators and functions:
 
 | Operator  | Example  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description |
 | ------------ | ----------------------- | ------------- |
