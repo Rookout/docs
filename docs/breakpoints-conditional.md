@@ -2,7 +2,6 @@
 id: breakpoints-conditional
 title: Conditional breakpoints
 ---
-
 A large amount of messages in a Debug Session can be confusing at times, especially when trying to solve a specific bug or find a certain use case. 
 For a faster debugging experience - refine data and filter out irrelevant messages by setting a Conditional Breakpoint. 
 
