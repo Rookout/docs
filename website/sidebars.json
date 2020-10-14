@@ -22,8 +22,10 @@
       "breakpoints-status",
       "breakpoints-conditional",
       "breakpoints-tasks"
-
     ],
+    "Organizations":[
+      "organizations"
+    ],    
     "Advanced": [
       "integrations",
       "collaborations",
