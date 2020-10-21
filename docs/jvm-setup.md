@@ -195,7 +195,7 @@ In some Serverless environments (such as AWS Lambda), the tools.jar library is m
 
 ## Illegal reflective access warning
 
-Under JVM version higher then 9 you may see the following (harmless) warning:
+When using JVM versions 9 and above, you may see the following harmless warning:
 ```bash
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.rookout.rook.Processor.NamespaceSerializer
