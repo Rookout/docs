@@ -49,7 +49,7 @@ When Collection level has reached the limit, you expect to see the following mes
 
 ## Rate limiting
 
-Rookout measures the time it takes for each breakpoint to run, and disallows additional runs if the total time taken by breakpoints exceeds the quota for a certain time window. By default, breakpoints are alotted 500ms of runtime over the last five seconds (5000ms).
+Rookout measures the time it takes for each breakpoint to run, and disallows additional runs if the total time taken by breakpoints exceeds the quota for a certain time window. By default, breakpoints are alotted 150ms of runtime over the last twenty seconds (20000ms).
 
 You can change either the quota or the window size by setting:
 
