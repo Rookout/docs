@@ -225,7 +225,9 @@ namespace LambdaExample
 }
 ```
 
-**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 20 seconds.
+On .NET Core 3 or newer, you can also use `await using` instead of just `using`.
+
+**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less than 20 seconds.
 
 Refer to the [SDK API](#sdk-api-1) for the available optional options
 
