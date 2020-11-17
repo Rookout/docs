@@ -83,7 +83,7 @@ Transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://ba
 
 When transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), include the source maps inline within the source files or as separate files (usually `app.map.js`) within your deployment.
 
-To make sure you can validate the source file matches the file you are tryring to debug, please include the original source files side-by-side with the transpiled ones or build your source map with the full source code.
+To make sure you can validate the source file matches the file you are trying to debug, please include the original source files side-by-side with the transpiled ones or build your source map with the full source code.
 
 To test if you are transpiling with source maps, search for this comment in the transpiled files:
 ```js
