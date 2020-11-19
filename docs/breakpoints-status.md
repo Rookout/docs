@@ -68,6 +68,10 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 
 - #### (Node) Running with a Debugger
   You are using Rookout side-by-side with another debugger such as WebStorm or Stackdriver Debugger.
+  
+- #### (Node) No Source Maps
+  You are using a transpiled application. Try using a minimal transpile level, or set it to a recent version of Node.js.
+  Check out the Rookout [source map support section](node-setup.md#transpiling-and-source-maps).
 
 ## Error
 
