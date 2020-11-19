@@ -90,6 +90,8 @@ To test if you are transpiling with source maps, search for this comment in the 
 //# sourceMappingURL=/path/to/file.js.map
 ```
 
+If you face cases where some variables are not collected, or where some breakpoints fail to be hit, try using a minimal transpile level, or set it to a recent version of Node.js.
+
 ### Configurations for Common Tools
 
 - [**Webpack**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for [devtool](https://webpack.js.org/configuration/devtool/).  
