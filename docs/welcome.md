@@ -4,7 +4,7 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-### Looking for our SDK docs? Check out the [Java](jvm-setup.md), [.Net](dotnet-setup.md), [Python](python-setup.md), [Node.js](node-setup.md) pages!
+### Looking for our SDK docs? Check out the [Java](jvm-setup.md), [.Net](dotnet-setup.md), [Python](python-setup.md), [Node.js](node-setup.md), [Ruby](ruby-setup.md) pages!
 
 ## Hi, welcome to Rookout!  
 

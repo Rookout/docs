@@ -13,5 +13,5 @@ To get started, pick your programming language or check out our [deployment exam
 1. [.Net](dotnet-setup.md)
 1. [Python](python-setup.md)
 1. [Node.js](node-setup.md)
-
+1. [Ruby](ruby-setup.md)
 
