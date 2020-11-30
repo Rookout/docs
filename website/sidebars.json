@@ -9,6 +9,7 @@
       "jvm-setup",
       "dotnet-setup",
       "python-setup",
+      "ruby-setup",
       "node-setup",
       "deployment-examples"
     ],
