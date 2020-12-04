@@ -73,7 +73,7 @@ The Ruby SDK supports detecting the existing source code commit in the following
 1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
 2. If the main application is running from within a Git repository, use its head. 
 
-## Supported Python versions
+## Supported Ruby versions
 
 | Implementation     | Versions                |
 | ------------------ | ----------------------- |
