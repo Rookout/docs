@@ -165,10 +165,10 @@ ROOKOUT_TARGET_PID=1234 java -jar rook.jar
 
 | Implementation      | Versions               |
 | ------------------  | -------------          |
-| **Oracle Java**     | 7u111+, 8u74+, 9, 10, 11, 12    |
-| **OpenJDK**         | 7u111+, 8u74+, 9, 10, 11, 12, 13    |
-| **AdoptOpenJDK**    | 8u74+, 9, 10, 11, 12       |
-| **Amazon Corretto** | 8u74+, 11                  |
+| **Oracle Java**     | 7u111+, 8u74+, 11u4+, 12    |
+| **OpenJDK**         | 7u111+, 8u74+, 11u4+, 12, 13    |
+| **AdoptOpenJDK**    | 8u74+, 11u4+, 12       |
+| **Amazon Corretto** | 8u74+, 11u4+                  |
 
 The following languages are officially supported: Java, Scala, Kotlin, Groovy, ColdFusion.
 
