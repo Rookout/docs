@@ -46,7 +46,7 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit or a branch name |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
-| `fork` | `ROOKOUT_ENABLE_FORK` | False | Set to `True` to enable support in forked processes (WIP) |
+| `fork` | `ROOKOUT_ENABLE_FORK` | False | Set to `True` to enable support in forked processes |
 | `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server (WIP) |
@@ -83,7 +83,7 @@ The Ruby SDK supports detecting the existing source code commit in the following
 
 The Ruby SDK dependencies contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
 
-## Pre-forking servers (WIP)
+## Pre-forking servers
 
 Several popular application servers for Ruby load the application code during startup and then `fork()` the process multiple times to worker processes.
 
