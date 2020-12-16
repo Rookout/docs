@@ -81,7 +81,50 @@ The Ruby SDK supports detecting the existing source code commit in the following
 
 ## Dependencies
 
-The Ruby SDK dependencies contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
+The Ruby SDK third-party dependencies contain native extensions. For best compatibility, we recommend forcing bundler to build all gems on installation.
+```bash
+bundle config force_ruby_platform true
+```
+
+If you encounter an error similar to the following example, be sure to install the environment specific build tools specified below:
+
+```json
+ERROR:  Error installing rookout:
+        ERROR: Failed to build gem native extension.
+
+    current directory: /usr/local/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+/usr/local/bin/ruby -I /usr/local/lib/ruby/2.7.0 -r ./siteconf20201216-7-oytr1k.rb extconf.rb
+creating Makefile
+
+current directory: /usr/local/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+sh: make: not found
+
+current directory: /usr/local/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+sh: make: not found
+
+make failed, exit code 127
+```
+
+Here are the commands for installing the build environments for some common OS:
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--OS X-->
+```bash
+xcode-select --install
+```
+<!--Debian-->
+```bash
+```
+<!--Fedora-->
+```bash
+```
+<!--Alpine-->
+```bash
+apk add make gcc musl-dev git
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Pre-forking servers
 
