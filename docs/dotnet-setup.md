@@ -11,15 +11,11 @@ If you are encountering any difficulties with deploying Rookout, this is the pla
 
 The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real time.  
 
+It can easily be installed as a [NuGet package](https://www.nuget.org/packages/Rookout).
+
 ## Setup
 
-### NuGet Package
-
-Rookout SDK is installed as a [NuGet package](https://www.nuget.org/packages/Rookout) in your application.
-
-#### API
-
-The Rookout SDK needs to be started using a simple API.
+Start the SDK within your application:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--C#-->
@@ -80,11 +76,10 @@ let main argv =
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
+Check out the [debug information](#debug-information), [source information](#source-information), and [packaging-sources](#packaging-sources) sections for recommendations on how to configure the build process.
+
 
 ## SDK API
-
-The .NET SDK is loaded via an API.  
-Configuration may be passed through the API or using OS Environment Variables.
 
 ### start
 
@@ -92,7 +87,7 @@ Configuration may be passed through the API or using OS Environment Variables.
 public static void Start(RookOptions opts)
 ```
 
-The Start method is used to initialize the SDK in the background and accepts the RookOptions object with the following attributes:
+The Start method is used to initialize the SDK in the background and accepts a `RookOptions` object with the following attributes:
 
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Environment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
@@ -104,19 +99,6 @@ The Start method is used to initialize the SDK in the background and accepts the
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-
-## Setup your .csproj files
-
-For the best Rookout experience please make sure the following attributes are in each `.csproj` you wish to debug:
-
-[`<DebugType>full</DebugType>`](https://docs.rookout.com/docs/dotnet-setup/#debug-information)
-
-[`<Optimize>false</Optimize>`](https://docs.rookout.com/docs/dotnet-setup/#debug-information)
-
-[`<MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>`](https://docs.rookout.com/docs/dotnet-setup/#source-information) - Another Nuget package needed
-
-[`<EmbedAllSources>true</EmbedAllSources>`](https://docs.rookout.com/docs/dotnet-setup/#packaging-sources)
- 
 
 ## Test connectivity
 
@@ -132,29 +114,17 @@ Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respe
 
 ## Debug Information
 
-Rookout requires your application to be deployed with debug information (Pdb files `<DebugType>full/portable/pdbonly</DebugType>`). Note that disabling the optimize flag will further improve data collection (`<Optimize>false</Optimize>`)
-
-Notice that `embedded` DebugType is not supported.
-
-Pdb (Program Data Base) file is a repository to maintain information about your application. 
-
-It stores the important debug information such as:
-* file names 
-* variable names 
-* offsets of the functions
-* file hashes
-
-Although Rookout doesn't run your program in debug mode, we need the PDB file to properly collect the data per your request.
+Rookout requires your application to be built and deployed with a debug information in the form of a pdb file. Rookout supports the `full`, `portable` and `pdbonly` configurations, while `embedded` is *not* supported.
 
 For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
 
+Disabling compiler optimizations `<Optimize>false</Optimize>` will further improve the debugging experience at a small cost to the application performance.
+
 ## Source information
 
-Use the MSBuildGitHash package to initialize the SDK with information about the sources used in your application.
+Use the MSBuildGitHash package to embed the Git remote origin and commit hash to your application binary.
 
-MSBuildGitHash is installed as a [NuGet package](https://www.nuget.org/packages/MSBuildGitHash) in your application.
-
-After installing the [NuGet package](https://www.nuget.org/packages/MSBuildGitHash) remember to add the following line in the .csproj file:
+After installing the [MSBuildGitHash NuGet package](https://www.nuget.org/packages/MSBuildGitHash) add the following line in the .csproj file:
 
 ```xml
     <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
@@ -230,4 +200,3 @@ On .NET Core 3 or newer, you can also use `await using` instead of just `using`.
 **Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less than 20 seconds.
 
 Refer to the [SDK API](#sdk-api-1) for the available optional options
-
