@@ -147,7 +147,7 @@ yum install -qy gcc-c++ python-devel
 ```
 <!--Alpine-->
 ```bash
-apk update && apk add g++ python-dev
+apk update && apk add g++ python-dev linux-headers
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
