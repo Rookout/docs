@@ -17,7 +17,7 @@ pip install rook
 
 ## Setup
 
-Import the SDK within your application:
+Start the SDK within your application:
 ```python
 import rook
 

@@ -17,7 +17,7 @@ gem install rookout
 
 ## Setup
 
-Import the SDK within your application as early as possible:
+Start the SDK within your application as early as possible:
 ```ruby
 require 'rookout'
 ::Rookout.start token: '[Your Rookout Token]', labels: {env: "dev"}

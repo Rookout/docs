@@ -17,7 +17,7 @@ npm install --save rookout
 
 ## Setup
 
-Import the SDK within your application:
+Start the SDK within your application:
 ```javascript
 const rookout = require('rookout');
 
