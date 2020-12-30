@@ -81,7 +81,11 @@ The Ruby SDK supports detecting the existing source code commit in the following
 
 ## Dependencies
 
-The Ruby SDK dependencies contains native extensions. For most common interpreter and OS configurations, pre-built binaries are provided. For other configurations, a build environment is needed to successfully install Rookout.
+The Ruby SDK dependencies contain native extensions. To ensure optimum compatibility, we highly recommend you build them in your local environment.
+If you are using Bundler, please configure it by running:
+```
+bundle config force_ruby_platform true
+```
 
 ## Pre-forking servers
 
