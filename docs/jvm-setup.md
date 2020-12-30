@@ -50,8 +50,6 @@ org.osgi.framework.bootdelegation=com.rookout.*
 
 This is done where all other JVM options are set (via -D flags, JVM_OPTS, etc.).
 
-**Note: Due to limitations introduced in Java 9, you must use the JDK runtime and add the following Java flag: `-Djdk.attach.allowAttachSelf=true`**
-
 <div class="rookout-org-info"></div>
 
 ## SDK Configuration
