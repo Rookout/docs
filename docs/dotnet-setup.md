@@ -152,6 +152,7 @@ Rook.API.LoadAssembly(Assembly a, byte[] pdb, byte[] assembly)
 | ------------------  | -------------         |
 | **.NET Framework**  | 4.5, 4.6, 4.7, 4.8    |
 | **.NET Core**       | 2.1, 2.2, 3.0, 3.1    |
+| **.NET**            | 5.0                   |
 
 ## Supported Languages
 
