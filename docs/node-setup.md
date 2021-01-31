@@ -87,10 +87,10 @@ ROOKOUT_SOURCES is a semicolon-separated list with a source control repository a
 This will allow Rookout to automatically fetch your application's source code from the right revision, and also additional dependencies' sources.
 When using Git the repository is a URL (remote origin) and the revision is a full commit hash or a branch name.
 
-Example
-Let's say I use https://github.com/Rookout/tutorial-nodejs with the commit 2f79053d7bc7c9c9561a30dda202b3dcd2b72b90 and I use the Lodash package (https://github.com/lodash/lodash) from its master branch:
+For example let's say I use https://github.com/Rookout/tutorial-nodejs with the commit 2f79053d7bc7c9c9561a30dda202b3dcd2b72b90 and I use the Lodash package (https://github.com/lodash/lodash) from its master branch:
 ```
 ROOKOUT_SOURCES=https://github.com/Rookout/tutorial-nodejs#cf85c4e0365d8082ca2e1af63ca8b5b436a13909;https://github.com/lodash/lodash#master
+```
 
 ## Transpiling and Source Maps
 Transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging will work out of the box.
