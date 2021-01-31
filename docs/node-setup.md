@@ -53,7 +53,7 @@ The `start` method is used to initialize the SDK. Receives configuration using a
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to reject the promsise or throw an exception if `start` fails (error message will not be printed in console) |
-| `ROOKOUT_SOURCES` | None | Source information (see below) |
+| `sources` | `ROOKOUT_SOURCES` | None | Source information (see below) |
 
 
 ### stop
