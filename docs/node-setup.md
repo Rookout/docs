@@ -53,6 +53,8 @@ The `start` method is used to initialize the SDK. Receives configuration using a
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to reject the promsise or throw an exception if `start` fails (error message will not be printed in console) |
+| `ROOKOUT_SOURCES` | None | Source information (see below) |
+
 
 ### stop
 
@@ -77,6 +79,18 @@ To make sure the SDK was properly installed and test your configuration (environ
 ```bash
 ./node_modules/.bin/rookout-check
 ```
+## Source information
+
+Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
+
+ROOKOUT_SOURCES is a semicolon-separated list with a source control repository and revision information. 
+This will allow Rookout to automatically fetch your application's source code from the right revision, and also additional dependencies' sources.
+When using Git the repository is a URL (remote origin) and the revision is a full commit hash or a branch name.
+
+Example
+Let's say I use https://github.com/Rookout/tutorial-nodejs with the commit 2f79053d7bc7c9c9561a30dda202b3dcd2b72b90 and I use the Lodash package (https://github.com/lodash/lodash) from its master branch:
+```
+ROOKOUT_SOURCES=https://github.com/Rookout/tutorial-nodejs#cf85c4e0365d8082ca2e1af63ca8b5b436a13909;https://github.com/lodash/lodash#master
 
 ## Transpiling and Source Maps
 Transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging will work out of the box.
