@@ -40,15 +40,22 @@ For [Pre-forking servers](#pre-forking-servers) please read the relevant section
 
 ```python
 start(token=None,
-    labels=None,
+    tags=None,
     host=None,
     port=None,
     debug=None,
-    throw_errors=None,    
+    throw_errors=None,
+    log_file=None,
+    log_level=None,
     log_to_stderr=None,
+    labels=None,
+    use_import_hook=None,
     git_commit=None,
     git_origin=None,
-    **kwargs)
+    proxy=None,
+    fork=None,
+    enable_monitor=None,
+    **kwargs):
 ```
 
 The `start` method is used to initialize the SDK in the background and accepts the following arguments:
@@ -56,15 +63,15 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Environment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
 | ------------ | ----------------------- | ------------- | ----------- |
 | `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
+| `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
+| `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
+| `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
+| `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit or a branch name |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
-| `fork` | `ROOKOUT_ENABLE_FORK` | False | Set to `True` to enable support in forked processes |
-| `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
-| `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
-| `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
+| `fork` | `ROOKOUT_ENABLE_FORK` | False | Set to `True` to enable support in forked processes |
 
 ### restart
 
