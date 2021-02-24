@@ -40,22 +40,16 @@ For [Pre-forking servers](#pre-forking-servers) please read the relevant section
 
 ```python
 start(token=None,
-    tags=None,
     host=None,
     port=None,
     debug=None,
-    throw_errors=None,
-    log_file=None,
-    log_level=None,
+    throw_errors=None,    
     log_to_stderr=None,
     labels=None,
-    use_import_hook=None,
     git_commit=None,
     git_origin=None,
-    proxy=None,
     fork=None,
-    enable_monitor=None,
-    **kwargs):
+    **kwargs)
 ```
 
 The `start` method is used to initialize the SDK in the background and accepts the following arguments:
