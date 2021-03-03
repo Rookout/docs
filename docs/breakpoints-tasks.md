@@ -9,12 +9,12 @@ An admin can define data redaction rules to limit the information collected by R
 
 <iframe width="600" height="300" src="https://www.youtube.com/embed/dJgit1yPem4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-In **Breakpoint Settings** -> **Data Redaction** the admin can define Regular Experession patterns to be blacklisted.
+In **Breakpoint Settings** -> **Data Redaction** the admin can define Regular Experession patterns to be excluded.
 
 For example, adding a rule for the variable name “secretKey” will replace the output `“secretKey”:“12345”` with `“secretKey”:“[REDACTED]“`.
 Adding a rule regarding the variable value “[0-9]+” will replace `“nameAndPassword”:“LordHelmet-12345”` with `“nameAndPassword”:“LordHelmet-****“`.
 
-Replacing the data redaction method to “whitelist” will redact all variables, except the specified variable names and values that were whitelisted.
+Replacing the data redaction method to “Include-list” will redact all variables, except the specified variable names and values that were included.
 Please notice that the data redaction settings will apply only to breakpoints that were set following the configuration change.
 
 The regular expressions expected syntax is the [RE2](https://github.com/google/re2/wiki/Syntax). Please notice that use of flags is currently unsupported, while case-insensitive flag (`(?i)`) can be added to a rule by unchecking the case-sensative checkbox next to it.
