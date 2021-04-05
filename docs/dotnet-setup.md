@@ -134,6 +134,19 @@ If you wish to disable the source file integration specify RookoutDisableGitInfo
 <RookoutDisableGitInfo>true</RookoutDisableGitInfo>
 ```
 
+## Multi-Project Solutions
+
+To support multi-projects Solutions its recommended to add the following `Directory.Build.props` file to your Root folder:
+```xml
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <PackageReference Include="Rookout" Version="0.1.*" />
+  </ItemGroup>
+
+</Project>
+```
+
 ## Dynamic library loading
 
 To be able to debug libraries loaded using [`AppDomain.Load(Byte[], Byte[])`](https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.load?view=netcore-3.1#System_AppDomain_Load_System_Byte___System_Byte___) make sure to load those binaries into Rookout using:
