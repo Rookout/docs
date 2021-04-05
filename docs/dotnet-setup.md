@@ -13,6 +13,8 @@ The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to f
 
 It can easily be installed as a [NuGet package](https://www.nuget.org/packages/Rookout).
 
+It is recommended to have powershell installed in your build server.
+
 ## Setup
 
 Start the SDK within your application:
@@ -122,20 +124,14 @@ Disabling compiler optimizations `<Optimize>false</Optimize>` will further impro
 
 ## Source information
 
-Use the MSBuildGitHash package to embed the Git remote origin and commit hash to your application binary.
+During the build process the Nuget package will execute a simple powershell script that will embeds your source information to ensure best match of sources during runtime.
+The embedded info includes:
+* Your Git repository url and Commit Sha.
+* The first 8 bytes of the md5 of your source files.
 
-After installing the [MSBuildGitHash NuGet package](https://www.nuget.org/packages/MSBuildGitHash) add the following line in the .csproj file:
-
+If you wish to disable the source file integration specify RookoutDisableGitInfo\RookoutDisableSourceInfo in your csproj; for example:
 ```xml
-    <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
-```
-
-## Packaging Sources
-
-To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
-
-```xml
-    <EmbedAllSources>true</EmbedAllSources>
+<RookoutDisableGitInfo>true</RookoutDisableGitInfo>
 ```
 
 ## Dynamic library loading
