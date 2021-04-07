@@ -122,18 +122,6 @@ For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-
 
 Disabling compiler optimizations `<Optimize>false</Optimize>` will further improve the debugging experience at a small cost to the application performance.
 
-## Source information
-
-During the build process the Nuget package will execute a simple powershell script that will embeds your source information to ensure best match of sources during runtime.
-The embedded info includes:
-* Your Git repository url and Commit Sha.
-* The first 8 bytes of the md5 of your source files.
-
-If you wish to disable the source file integration specify RookoutDisableGitInfo\RookoutDisableSourceInfo in your csproj; for example:
-```xml
-<RookoutDisableGitInfo>true</RookoutDisableGitInfo>
-```
-
 ## Multi-Project Solutions
 
 To support multi-projects Solutions its recommended to add the following `Directory.Build.props` file to your Root folder:
