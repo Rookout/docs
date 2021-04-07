@@ -13,6 +13,8 @@ The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to f
 
 It can easily be installed as a [NuGet package](https://www.nuget.org/packages/Rookout).
 
+It is recommended to have powershell installed in your build server.
+
 ## Setup
 
 Start the SDK within your application:
@@ -120,22 +122,17 @@ For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-
 
 Disabling compiler optimizations `<Optimize>false</Optimize>` will further improve the debugging experience at a small cost to the application performance.
 
-## Source information
+## Multi-Project Solutions
 
-Use the MSBuildGitHash package to embed the Git remote origin and commit hash to your application binary.
-
-After installing the [MSBuildGitHash NuGet package](https://www.nuget.org/packages/MSBuildGitHash) add the following line in the .csproj file:
-
+To support multi-projects Solutions its recommended to add the following `Directory.Build.props` file to your Root folder:
 ```xml
-    <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
-```
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-## Packaging Sources
+  <ItemGroup>
+    <PackageReference Include="Rookout" Version="0.1.*" />
+  </ItemGroup>
 
-To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
-
-```xml
-    <EmbedAllSources>true</EmbedAllSources>
+</Project>
 ```
 
 ## Dynamic library loading
