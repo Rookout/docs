@@ -8,9 +8,6 @@ sidebar_label: Keyboard Shortcuts
 
 **Open File Search:** Cmd / Ctrl + shift + f
 
-**Next Tab File:** Ctrl + ]  / Cmd + ]
-    
-
 ## Right Pane
 
 **Next Tab:** Ctrl + ~  / Cmd + ~
