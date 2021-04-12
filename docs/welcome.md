@@ -12,21 +12,21 @@ Rookouts helps you fix bugs and understand your code by instantly collecting app
 
 Once you deploy the SDK, no additional coding, redeploying or restarting of your application is required!
 
-<iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/wPwXgGKP1L8" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+<iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/watch?v=3U99qdYKNmw&t" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
 
 ## Non-breaking breakpoints
 
 Rookout provides you with a debugger-like production-grade tool for applications built using any architecture running in any environment.
 
-Understading bugs often gets difficult when relying on the existing, limited, outputs of the system.
+Understanding bugs often gets difficult when relying on the existing, limited, outputs of the system.
 
-Easily set a non-breaking breakpoint on any line of code to immediately see the full state, including variables values, stack traces, and more.
+Easily set a non-breaking breakpoint on any line of code to immediately see the full state, including variable values, stack traces, and more.
 
 ## Integrate with your version control
 
-When working on a remote enviorment, it's imperative to know exactly what source code it's executing.
+When working on a remote environment, it's imperative to know exactly what source code it's executing.
 
-Rookout integrates with your source-control provider to fetch you the correct source code for each and every enviorment ([security information)](https://www.rookout.com/security/source-code-security).
+Rookout integrates with your source-control provider to fetch you the correct source code for each and every environment ([see our source code security page for more info)](https://www.rookout.com/security/source-code-security).
 
 ## Integrate with your observability tools
 
@@ -40,11 +40,12 @@ Rookout even empowers you to add logs, metrics, and alerts to running applicatio
 
 1. Debug multiple applications simultaneously.
 1. Conditional breakpoints for pinpoint collection.
-1. Version control integration.
-1. OpenTracing integration.
-1. Create new logs, metrics and alerts.
-1. Negligible performance overhead with strict controls.
-1. Enterprise grade [security](https://www.rookout.com/security).
+2. Profiling capabilities.
+3. Version control integration.
+4. OpenTracing integration.
+5. Create new logs, metrics and alerts.
+6. Negligible performance overhead with strict controls.
+7. Enterprise grade [security](https://www.rookout.com/security).
 
 ## How does it work?
 
