@@ -122,6 +122,16 @@ For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-
 
 Disabling compiler optimizations `<Optimize>false</Optimize>` will further improve the debugging experience at a small cost to the application performance.
 
+## Source information
+
+Use the MSBuildGitHash package to embed the Git remote origin and commit hash to your application binary.
+
+After installing the [MSBuildGitHash NuGet package](https://www.nuget.org/packages/MSBuildGitHash) add the following line in the .csproj file:
+
+```xml
+    <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
+```
+
 ## Multi-Project Solutions
 
 To support multi-projects Solutions its recommended to add the following `Directory.Build.props` file to your Root folder:
