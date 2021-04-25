@@ -83,14 +83,3 @@ sidebar_label: Use Cases
         </div>
     </div>
 </div>
-<br/><br/>
-<div class="use-cases-container">
-        <div class="use-cases-item">
-            <h3>Live Debugging</h3>
-            <iframe src="https://player.vimeo.com/video/373625210?color=af6bd6&title=0&byline=0&portrait=0" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            <h3>Dynamic Logging</h3>
-            <iframe src="https://player.vimeo.com/video/373624992?color=af6bd6&title=0&byline=0&portrait=0" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            <h3>Dynamic Alerting</h3>
-            <iframe src="https://player.vimeo.com/video/373624962?color=af6bd6&title=0&byline=0&portrait=0" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        </div>
-</div>
