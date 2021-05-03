@@ -19,13 +19,13 @@ The below diagram shows the pure SaaS deployment model. The Rookout SDK connects
 <img src="/img/screenshots/setup_guide_arch.jpg" />
 
 ### Rookout SDK
-The Rookout SDK is a set of libraries that are configured either as a dependency to your application or as a Java agent. It communicates with the Rookout Service and allows Rookout to collect live debug data on demand from your application
+The Rookout SDK is a set of libraries that are configured as a dependency to your application. It communicates with the Rookout Service and allows Rookout to collect live debug data on demand from your application
 
 ### Rookout Client
 The Rookout Client is a web-based UI where you have the ability to dynamically debug your application through the setting of non-breaking breakpoints (also known as data collection points). All user interactions with Rookout are done from this UI.
 
 ### Rookout Service
-This is a SaaS service hosted by Rookout which hosts the control plane for managing your Rookout debug sessions as well as the data plane for processing debug data.
+This is a SaaS hosted by Rookout which hosts the control plane for managing your Rookout debug sessions as well as the data plane for processing debug data.
 
 ### Rookout Data On-Prem (Optional)
 For enterprise customers with data privacy requirements, the data processing components of Rookout can optionally be installed within your network or VPC so that all data processed by Rookout stays locally within your control. If interested in finding out how to get started with the enterprise version of Rookout reach out to us by [clicking here](https://www.rookout.com/company/contact).
@@ -63,7 +63,7 @@ For example:\
 ```export ROOKOUT_REMOTE_ORIGIN=https://github.com/Rookout/tutorial-python```\
 ```export ROOKOUT_COMMIT=defbaa76e22751366dab483f67856a00bb626031```
 
-Rookout also has the ability to automatically fetch your source code repository by embedding the .git folder within your Docker container. For more details on this approach, see [this blog post](https://www.rookout.com/blog/embedding-source-code-version-information-in-docker-images).
+Rookout also has the ability to automatically fetch your source code repository by including the .git folder within your deployed application. For more details on this approach, see [this blog post](https://www.rookout.com/blog/embedding-source-code-version-information-in-docker-images).
 
 ## Debugging With Rookout
 
@@ -97,7 +97,7 @@ The steps to connect your source code repository differ slightly based on whethe
 
 ### Cloud/Hosted Repositories
 
-If you previously configured the environment variables discussed above (or included the .git folder in your Docker container) Rookout will automatically fetch your source code. If not, you can manually connect your source code repository. In the debugging view, simply click the + button and select your source code repository from the list.
+If you previously configured the environment variables discussed above (or included the .git folder in your deployed application) Rookout will automatically fetch your source code on your local machine. If not, you can manually connect your source code repository. In the debugging view, simply click the + button and select your source code repository from the list.
 
 <img src="/img/screenshots/setup_guide_source_repos.jpg" />
 
@@ -111,7 +111,7 @@ For more information on source fetching, refer to the following link: [Source Re
 
 ### On-Prem Repositories
 
-If you are attempting to connect into an on-prem or self-hosted source code server, you will need to configure the ROOKOUT_REMOTE_ORIGIN and ROOKOUT_COMMIT environment variables or package your .git folder in your Docker container as described in the Deploying the Rookout SDK section.
+If you are attempting to connect into an on-prem or self-hosted source code server, you will need to configure the ROOKOUT_REMOTE_ORIGIN and ROOKOUT_COMMIT environment variables or include your .git folder with your deployed application as described in the Deploying the Rookout SDK section.
 
 You will also need to configure your Git on-prem server in the Source Control page of Rookout which can be found by clicking on Settings -> Source Control.
 
