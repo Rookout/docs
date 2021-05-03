@@ -139,9 +139,9 @@ The NodeJS SDK supports detecting the existing source code commit in the followi
 
 Rookout supports the latest NodeJS and all releases that are under maintenance (LTS). Support for older versions is limited.
 
-| Implementation     | Versions       |
-| ------------------ | -------------- |
-| **Node**           | 8, 10, 11, 12 |
+| Implementation     | Versions              |
+| ------------------ | --------------------- |
+| **Node**           | 8, 10, 11, 12, 13, 14 |
 
 **Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
 
