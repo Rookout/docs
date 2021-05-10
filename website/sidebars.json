@@ -2,7 +2,8 @@
   "introduction": {
     "General": [
       "welcome",
-      "use-cases"
+      "use-cases",
+      "setup-guide"
     ],
     "SDK Setup": [
       "setup-intro",
