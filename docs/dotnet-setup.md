@@ -215,20 +215,3 @@ To make sure you are collecting data from the source line where you have set the
 ```xml
     <EmbedAllSources>true</EmbedAllSources>
 ```
-
-## Log file location
-
-By default, the sdk will create the folder `rookout` in the current temp folder and will write the log into `dotnet-rook.log`.
-
-### Windows
-
-On Windows machine it will be one of these folders:
-* `%TEMP%` or `%TMP%` - Usually is the `%USERPROFILE%\AppData\Local\Temp`
-
-Remember that the `%USERPROFILE%` is mapped to the running app user.
-
-IIS - On IIS servers the folder will be created under `C:\Windows\Temp` 
-
-### Unix
-
-On Unix machines it will usually be under `/tmp/rookout/dotnet-rook.log`
