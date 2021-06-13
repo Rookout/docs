@@ -83,7 +83,7 @@ Check out the [debug information](#debug-information), [source information](#sou
 
 ## SDK API
 
-### start
+**start:**
 
 ```cs
 public static void Start(RookOptions opts)
@@ -114,11 +114,23 @@ Unix:
 
 Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respectively.
 
-## Debug Information
+## Configuration Support
 
-Rookout requires your application to be built and deployed with a debug information in the form of a pdb file. Rookout supports the `full`, `portable` and `pdbonly` configurations, while `embedded` is *not* supported.
+### DebugType
 
-For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
+Rookout requires your application to be built and deployed with a debug information in the form of a pdb file.
+
+Rookout supports `DebugType` values: `full`, `portable` and `pdbonly`, while `embedded` is *not* supported.
+
+*For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/*
+
+### Self-Contained
+
+Rookout does not support self-contained deployments.
+
+*For further reading: https://docs.microsoft.com/en-us/dotnet/core/deploying/#publish-self-contained*
+
+### Optimizations
 
 Disabling compiler optimizations `<Optimize>false</Optimize>` will further improve the debugging experience at a small cost to the application performance.
 
