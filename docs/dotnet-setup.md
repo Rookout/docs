@@ -13,8 +13,6 @@ The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to f
 
 It can easily be installed as a [NuGet package](https://www.nuget.org/packages/Rookout).
 
-_Note: It is recommended to have Powershell and Git installed on your build server._
-
 ## Setup
 
 Start the SDK within your application:
