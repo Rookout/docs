@@ -17,7 +17,7 @@ _Note: It is recommended to have Powershell and Git installed on your build serv
 
 ## Setup
 
-Start the SDK within your application, by adding the following to your *main* method:
+Start the SDK within your application, by adding the following to your *main* method or your application's entry point:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--C#-->
