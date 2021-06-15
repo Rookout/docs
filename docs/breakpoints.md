@@ -18,4 +18,4 @@ For more information you can click on the Breakpoint status indicator in the IDE
 ## Data Collection
 
 The next time the code you have set the breakpoint on will be invoked, Rookout will collect parts of the application state and send it to Rookout or other data sinks of your choosing.  
-You can read more about the [Breakpoint structure](breakpoints-structure.md) and how to preform [common changes](breakpoints-tasks.md) to it.
+You can read more about the [Breakpoint structure](breakpoints-structure.md) and how to perform [common changes](breakpoints-tasks.md) to it.
