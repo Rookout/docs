@@ -122,7 +122,21 @@ Disabling compiler optimizations `<Optimize>false</Optimize>` will further impro
 
 ## Source information
 
-Use the MSBuildGitHash package to embed the Git remote origin and commit hash to your application binary.
+To enable automatic source fetching, information about the source control must be specified.
+
+### Environment Variables or Start Parameters
+
+Use the environment variables or start parameters as described above in the API section. 
+
+### Git Folder
+
+If the .git folder is present at the root of your project, and no environment variables / start parameters are set, then the source information will be taken from it.
+
+### MSBuildGitHash Package
+
+Use the MSBuildGitHash package to embed the Git information to your application binary.
+
+Note that for this method, the git binary is required to be installed on the build machine.
 
 After installing the [MSBuildGitHash NuGet package](https://www.nuget.org/packages/MSBuildGitHash) add the following line in the .csproj file:
 
