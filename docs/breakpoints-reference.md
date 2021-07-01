@@ -1021,7 +1021,7 @@ Example
 
 ### Rook Namespace
 
-Rook namespaces represents the SDK instance (aka "Rook") being evaluated.
+Rook namespaces represents the SDK instance (accessed via `rook`, e.g. `rook.hostname`) being evaluated.
 
 They have the following attributes:
 
@@ -1081,7 +1081,7 @@ They have the following attributes:
 
 ### MessageInfo Namespace
 
-Message information namespace represent the specific message metadata.
+Message information namespace represent the specific message metadata (accessed via `message_info`, e.g. `message_info.time`).
 
 They have the following attributes:
 
