@@ -34,29 +34,6 @@ Example:
 }
 ```  
 
-### log_handler
-
-*(Java/JVM only) Unsupported since Rook 0.1.65*
-
-This location indicates collecting the information whenever a log message is written to specified logger.
-
-This location has the following attributes:
-1. **logger** - the logger name to monitor.
-
-Example:
-```json
-"location": {
-  "name": "log_handler",
-  "logger": "django.server"
-}
-```  
-
-Logging frameworks monitored:
-- Python
-    - logging
-- JVM
-    - JUL - Java.Util.Logging
-
 ### Include External Files
 
 This **optional** configuration may be used to specify if debug information should be collected from packages included as external libraries.
