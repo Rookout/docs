@@ -16,6 +16,8 @@ sidebar_label: Installation - Kubernetes
 
 ### Install using Helm
 
+*Note: Installation requires Kubernetes 1.9+ with Beta APIs enabled.*
+
 To install our Helm chart, execute according to your Helm version:
 
 <!--DOCUSAURUS_CODE_TABS-->
