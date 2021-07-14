@@ -1,7 +1,7 @@
 ---
-id: etl-controller-docker
-title: Installing the ETL Controller on Docker
-sidebar_label: Installation - Docker
+id: etl-controller-linux
+title: Installing the ETL Controller on Linux
+sidebar_label: Installation - Linux
 ---
 
 ---

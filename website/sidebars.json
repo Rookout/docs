@@ -35,7 +35,6 @@
       "etl-controller-config"
     ],
     "Advanced": [
-      "integrations",
       "collaborations",
       "breakpoints-reference",
       "open-tracing",

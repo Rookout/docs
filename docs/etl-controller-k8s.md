@@ -16,7 +16,7 @@ sidebar_label: Installation - Kubernetes
 
 ### Install using Helm
 
-To install our Helm chart (with a basic configuration), execute according to your Helm version:
+To install our Helm chart, execute according to your Helm version:
 
 <!--DOCUSAURUS_CODE_TABS-->
 
@@ -41,6 +41,8 @@ helm install my-controller rookout/controller --set controller.token=[Your Rooko
 <div class="rookout-org-info"></div>
 
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+This installs the Controller with the most basic configuration, see the [configuration](#configuration) section for more options.
 
 ### Install without Helm
 
