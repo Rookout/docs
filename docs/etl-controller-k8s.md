@@ -6,9 +6,7 @@ sidebar_label: Installation - Kubernetes
 
 ---
 
-*Please note that the ETL Controller feature is only available on the Enterprise plan.*
-
-*Enterprise users - please [contact us](https://www.rookout.com/company/contact) to enable the ETL Controller feature for your organization.*
+*Please note that the ETL Controller feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the ETL Controller feature for your organization.*
 
 ---
 
