@@ -18,6 +18,7 @@ Rookout integrates directly to the cloud editions of the following Git Providers
 1. Github
 2. BitBucket
 3. GitLab
+4. Azure DevOps
 
 In addition, Rookout offers a desktop app for fetching source repositories from a local file system.
 This allows fetching source code from local editions of Git providers, as well as from Perforce.
@@ -46,7 +47,7 @@ When auto source loading happens the git files will be cloned on your local mach
 **Mac**: $HOME/Library/Application Support/Rookout/git_root\
 **Linux**: $HOME/.Rookout/git_root
 
-For teams that have self-hosted / on-prem repositories, it is required that the Rookout Desktop Application be installed first. You must also have git or perforce command line tools installed on your machine.  To install the Rookout Desktop App, click on the **+** button in the debugger view, choose **Local Filesystem**, and then follow the steps to download and install the Rookout Desktop App.
+For teams that have BitBucket self-hosted / on-prem repositories, it is required that the Rookout Desktop Application be installed first. You must also have git or perforce command line tools installed on your machine.  To install the Rookout Desktop App, click on the **+** button in the debugger view, choose **Local Filesystem**, and then follow the steps to download and install the Rookout Desktop App.
 
 <img src="/img/screenshots/local_file_system.png" width="40%" />
 
