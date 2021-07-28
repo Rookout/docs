@@ -3,48 +3,44 @@ id: collaborations
 title: Collaborations
 ---
 
-Leverage the power of Non-Breaking Breakpoints by connecting with your existing tools.
+Leverage the power of Rookout by collaborating with your collegues using the following features:.
 
 ## Slack
 
-In rookout, as you debug your app, you can share the data you extract using Slack.
-On the message there is a share button which has an authorize Slack app button.
-To enable the use of Rookout’s Slack integration for message sharing, simply authorize the app by pressing the button and authorizing Rookout-Share in the opened window.
-There is no need to install Rookout in your Slack workspace.
-Rookout will send the message from your user straight to your chosen channel.
+In rookout, as you debug your app, you can share the data you extract through your organization's Slack channels.
+Simply select the debug message that you would like to share, and click on the Slack share button on the right.
 
-1. While viewing a message click the share button.
+<img src="/img/screenshots/Slack_Collaboration_Tool.png" />
 
-<img src="/img/screenshots/click-share.png" />
- 
-2. Authorize Rookout-Share to enable sending messages from your browser.
+If this is the first time that you are using this feature, you will need to follow the steps to enable the Slack connection:
 
-<img src="/img/screenshots/authorize-slack.png" />
+<img src="/img/screenshots/Slack_Authorise.png" />
 
-3. Select the relevant channels from the list and click "Share".
+Then simply share the message with your collegues by selecting the relevant channel in your Slack account:
 
-<img src="/img/screenshots/select-channels.png" />
+<img src="/img/screenshots/Slack_Share.png" />
+
 
 ## Jira
 
-In rookout, as you debug your app, you can share the data you extract using Jira.
-On the message there is a share button which opens a new menu. 
-On this menu you can authorize the Jira app by clicking Authorize.
-To enable the use of Rookout’s Jira integration for posting messages to Jira issues,
-simply authorize the app by pressing the button and authorizing Rookout in the opened window.
-There is no need to install Rookout in your Jira workspace.
-Rookout will send the message from your user straight to your chosen issues.
+In rookout, as you debug your app, you can share the data you extract through to Jira.
+Simply select the debug message that you would like to share, and click on the Jira share button on the right.
 
-1. While viewing a message click the share button.
+<img src="/img/screenshots/jira_share.png" />
 
-<img src="/img/screenshots/click-share.png" />
- 
-2. Authorize Rookout-Share to enable sending messages from your browser.
+If this is the first time that you are using this feature, you will need to follow the steps to enable the Slack connection:
 
-<img src="/img/screenshots/authorize-jira.png" />
+<img src="/img/screenshots/jira_auth.png" />
 
-3. Select the relevant issues/tickets from the list and click "Share".
+Then simply share the message to Jira.
 
-<img src="/img/screenshots/select-ticket.png" />
+## URL
+
+You can also share a URL to the message collected in Rookout by using the URL-share button:
+
+<img src="/img/screenshots/URL_Share.png" />
+
+You can send this to your collegues. When they open the URL, they will be redirected to Rookout with the message that you collected displayed for them.
+
 
 
