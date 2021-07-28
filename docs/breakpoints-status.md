@@ -9,43 +9,11 @@ sidebar_label: Breakpoint Status
 | Status                         | Icon | Description   |
 | :------------------------------------------------------------ | :-------------: |:-------------        |
 | Active                 | <img src="/img/screenshots/active_status.png" width="30" height="30" />   | The Breakpoint has been applied to one or more of your applications, and is ready to stream data.|
-| Pending                | <img src="/img/screenshots/pending_status.png" width="30" height="30" />    | The Breakpoint has not been applied by any of your applications.|
+| Pending                | <img src="/img/screenshots/pending_status.png" width="30" height="30" />    | A connection has not been established with any of your applications / instances, hence data will not be streamed.|
 | Disabled               | <img src="/img/screenshots/disabled_status.png" width="30" height="30"/>  | The Breakpoint has been disabled and will not collect data.|
-| Error  and Warning     | <img src="/img/screenshots/error_status.png" width="30" height="30"/> <img src="/img/screenshots/warning_status.png" width="30" height="30"/>| There was an issue with applying this breakpoint in one or more applications.|
+| Error                  | <img src="/img/screenshots/error_status.png" width="30" height="30"/> <img src="/img/screenshots/warning_status.png" width="30" height="30"/>| There was an issue with applying this breakpoint in one or more applications and data won't be streamed.|
+| Warning               | <img src="/img/screenshots/disabled_status.png" width="30" height="30"/>  | The Breakpoint has been disabled and will not collect data.|
 
-
-## Pending
-
-`Pending` status indicates that the breakpoint has not been applied to any of your applications.
-This could mean one of the following:
-
-- #### No Application instances
-  The breakpoint could not be applied because no application instance matches the current filter.
-  This could mean one of the following:
-  - The Rookout SDK has not been installed.
-  - The Rookout SDK has been installed, but the application cannot connect to the Rookout service.
-  - The application can connect to the Rookout service, but is excluded by the current filter definition.
-  - The application is a serverless application, that only spins up on demand.
-
-- #### Wrong Source File
-  The source file you used the set the breakpoint is not loaded in any of the applications in the current filter.
-
-- #### (JVM) No Code
-  You have set the breakpoint on a line that has no executable code associated with it.
-
-- #### (JVM) No Debug Information
-  You have compiled your classes without debug information.
-  Click [here](jvm-setup#debug-information) for more information.
-
-- #### (Node) No Source Maps
-  You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).
-  Check out the Rookout [source map support section](node-setup.md#transpiling-and-source-maps).
-
-- #### (Python/Node) Code is in a Dependency
-  You are debugging a package deployed as a dependency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
-
-- #### (Python/Node) Different File Layout
-  File paths are changed between source repository and deployment. This requires setting up your source repository [accordingly](source-repos.md#source-path-matching).
 
 ## Active
 
@@ -72,6 +40,51 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 - #### (Node) No Source Maps
   You are using a transpiled application. Try using a minimal transpile level, or set it to a recent version of Node.js.
   Check out the Rookout [source map support section](node-setup.md#transpiling-and-source-maps).
+
+
+## Pending
+
+`Pending` status indicates that the breakpoint has not been applied to any of your applications.
+This could mean one of the following:
+
+- #### No Application instances
+  The breakpoint could not be applied as no application instance matches the current filter.
+  This could mean one of the following:
+  - The Rookout SDK has not been installed.
+  - The Rookout SDK has been installed, but the application cannot connect to the Rookout service.
+  - The application can connect to the Rookout service, but is excluded by the current filter definition.
+  - The application is a serverless application, that only spins up on demand.
+
+- #### Wrong Source File
+  The source file you used the set the breakpoint is not loaded in any of the applications in the current filter.
+
+- #### (JVM) No Code
+  You have set the breakpoint on a line that has no executable code associated with it.
+
+- #### (JVM) No Debug Information
+  You have compiled your classes without debug information.
+  Click [here](jvm-setup#debug-information) for more information.
+
+- #### (Node) No Source Maps
+  You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).
+  Check out the Rookout [source map support section](node-setup.md#transpiling-and-source-maps).
+
+- #### (Python/Node) Code is in a Dependency
+  You are debugging a package deployed as a dependency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
+
+- #### (Python/Node) Different File Layout
+  File paths are changed between source repository and deployment. This requires setting up your source repository [accordingly](source-repos.md#source-path-matching).
+  
+
+## Disabled
+
+`Disabled` status occurs when the breakpoint was disabled due to limits. These include limits applied by the user for that specific breakpoint (e.g. time limit / hit limit).
+
+To see more information on the reason why the breakpoint was disabled, right click on the breakpoint and select status.
+
+You can re-enable the breakpoint (by reseting the limit counter) through right clicking on the breakpoint and selecting `Enable`.
+
+
 
 ## Error
 
