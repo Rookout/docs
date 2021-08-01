@@ -3,7 +3,7 @@ id: collaborations
 title: Collaborations
 ---
 
-Leverage the power of Rookout by collaborating with your collegues using the following features:.
+Leverage the power of Rookout by collaborating with your colleagues using the following features:.
 
 ## Slack
 
@@ -16,7 +16,7 @@ If this is the first time that you are using this feature, you will need to foll
 
 <img src="/img/screenshots/Slack_Authorise.png" />
 
-Then simply share the message with your collegues by selecting the relevant channel in your Slack account:
+Then simply share the message with your colleagues by selecting the relevant channel in your Slack account:
 
 <img src="/img/screenshots/Slack_Share.png" />
 
@@ -40,7 +40,7 @@ You can also share a URL to the message collected in Rookout by using the URL-sh
 
 <img src="/img/screenshots/URL_Share.png" />
 
-You can send this to your collegues. When they open the URL, they will be redirected to Rookout with the message that you collected displayed for them.
+You can send this to your colleagues. When they open the URL, they will be redirected to Rookout with the message that you collected displayed for them.
 
 
 
