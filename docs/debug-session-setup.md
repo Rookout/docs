@@ -10,7 +10,7 @@ To start the debug session, you will need to select one or more filters from the
 
 <iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/T20vi4CIKwM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Filters can be chosen either directly from the table by clicking on the appropriate row/column in the table or from the drowndown menu by choosing from the following categories:
+Filters can be chosen either directly from the table by clicking on the appropriate row/column in the table or from the drop down menu by choosing from the following categories:
 
 **Labels**:\
 Labels are *name:value* pairs which you can tag instances with when you deploy Rookout. It is a best practice to label environments using the 'env' name, for example 'env:prod'. To read more about labels, see the [labels](https://docs.rookout.com/docs/projects-labels/) page.
@@ -29,6 +29,8 @@ This filter allows you to select an instance based on a process name.
 
 **General Filters**:\
 This section contains the 'serverless' filter. Since serverless instances don't execute until the serverless function is invoked, this filter allows you to start your debug session before your instance is running.
+In addition, for Kubernetes deployments, Rookout will automatically create labels based on the name of the deployment as well as the namespace.
+
 
 
 Click **Start Debugging** to start your debug session.
