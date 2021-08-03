@@ -10,9 +10,14 @@ sidebar_label: Configuration
 
 ---
 
+This page includes configuration reference for the ETL Controller.
+
+1. For Kubernetes installations see [Helm Values](#helm-values)
+2. For Docker installations see [Environment Variables](#environment-variables)
+
 ## Helm Values
 
-Configure the controller [k8s installation](etl-controller-k8s) by setting values in the `values.yaml` file or using `--set` in the `helm install` command.
+Configure the controller [k8s installation](etl-controller-k8s.md) by setting values in the `values.yaml` file or using `--set` in the `helm install` command.
 
 ### Controller Configuration
 
@@ -50,7 +55,7 @@ Configure the controller [k8s installation](etl-controller-k8s) by setting value
 
 ## Environment Variables
 
-Configure the controller [docker container](etl-controller-docker) by passing environment variables to it.
+Configure the controller [docker container](etl-controller-docker.md) by passing environment variables to it.
 
 | Configuration                                         | Environment Variable             | Value             | Default |
 | ---                                                   | ---                              | ---               | ---     |
