@@ -27,11 +27,15 @@
     ],
     "Organizations":[
       "organizations"
-    ],    
+    ],
+    "ETL Controller":[
+      "etl-controller-intro",
+      "etl-controller-k8s",
+      "etl-controller-docker",
+      "etl-controller-config"
+    ],
     "Advanced": [
-      "integrations",
       "collaborations",
-      "agent-setup",
       "breakpoints-reference",
       "tracing-timeline",
       "keyboard-shortcuts"
