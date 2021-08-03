@@ -82,8 +82,10 @@ To apply the configuration, execute:
 kubectl apply -f rookout-controller.yaml
 ```
 
+Once your ETL Controller is connected to Rookout, you should be able to see it in the Rookout app under *Settings > Connected Applications > Controllers*.
+
 ## Configuration
 
 To further configure the Controller installation, add configuration values to the `values.yaml` file or to the installation command using `--set`.
 
-All configuration values can be found [here](etl-controller-config#helm-values).
+All configuration values can be found [here](etl-controller-config.md#helm-values).

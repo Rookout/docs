@@ -26,4 +26,4 @@ This installs the Controller with the most basic configuration. See the configur
 
 To further configure the Controller installation, add environment variables as arguments to the `docker run` command with `-e "CONFIG=value"`.
 
-All configuration values can be found [here](etl-controller-config#environment-variables).
+All configuration values can be found [here](etl-controller-config.md#environment-variables).
