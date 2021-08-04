@@ -43,7 +43,7 @@ Now, when you select a Rookout Label to debug an application instance where thes
 
 When auto source loading happens the git files will be cloned on your local machine in the following locations:
 
-**Windows**: %APPDATA%/Rookout/git_root\
+**Windows**: %APPDATA%/Roaming/Rookout/git_root\
 **Mac**: $HOME/Library/Application Support/Rookout/git_root\
 **Linux**: $HOME/.Rookout/git_root
 
