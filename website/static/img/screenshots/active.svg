@@ -1,0 +1,9 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.887695" y="1.11444" width="13" height="13" rx="6.5" transform="rotate(-1 0.887695 1.11444)" fill="#ADE572"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="15">
+<rect x="0.887695" y="1.11444" width="13" height="13" rx="6.5" transform="rotate(-1 0.887695 1.11444)" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="0.887695" y="1.11444" width="13" height="13" transform="rotate(-1 0.887695 1.11444)" fill="#9962FF"/>
+</g>
+</svg>
