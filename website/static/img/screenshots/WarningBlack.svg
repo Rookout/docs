@@ -1,0 +1,18 @@
+<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 22">
+<g id="Group 2">
+<g id="01">
+<rect id="Rectangle 4" y="0.226883" width="13" height="13" rx="6.5" transform="rotate(-1 0 0.226883)" fill="#ADE572"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+<rect id="Rectangle 4_2" y="0.226883" width="13" height="13" rx="6.5" transform="rotate(-1 0 0.226883)" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<g id="Breakpoint color/active">
+<rect id="Rectangle" y="0.226883" width="13" height="13" transform="rotate(-1 0 0.226883)" fill="#9962FF"/>
+</g>
+</g>
+</g>
+<path id="!" d="M17.0332 8.59181H16.0547L15.9785 2.46877H17.1152L17.0332 8.59181ZM15.9375 10.4551C15.9375 10.2793 15.9902 10.1328 16.0957 10.0156C16.2051 9.89455 16.3652 9.834 16.5762 9.834C16.7871 9.834 16.9473 9.89455 17.0566 10.0156C17.166 10.1328 17.2207 10.2793 17.2207 10.4551C17.2207 10.6309 17.166 10.7774 17.0566 10.8945C16.9473 11.0078 16.7871 11.0645 16.5762 11.0645C16.3652 11.0645 16.2051 11.0078 16.0957 10.8945C15.9902 10.7774 15.9375 10.6309 15.9375 10.4551Z" fill="black"/>
+</g>
+</g>
+</svg>
