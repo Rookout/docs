@@ -98,11 +98,11 @@ You may find those labels in the Rookout App Instances page, or in the Project c
 
 | Filter by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Example 
 | ------------ | ----------------------- | 
-| `hostname` | `$hostname:demo-deployment` |
-| `platform` | `$platform:python`, `$platform:java` `$platform:node`| 
-| `processname` | `$processname:demo/app.py`| 
-| `internal ip` | `$internalIp:10.14.1.101`| 
-| `external ip` | `$externalIp:35.222.91.58`|
+| `Hosts` | `demo-java-8d7f979f4-sq7s9`, `10.44.6.287`|
+| `Repository` | `https://github.com/rookout/tutorial-java`| 
+| `Revisions` | `master`, `2591736ae8a654e92f02212793182bbfd2bae320`| 
+| `Process` | `server.js`, `/bin/rails`| 
+| `General` | `Serverless`, `rookout_debug:on`, `k8s_deployment:deploymentName`, `k8s_namespace:myNamespace`, `live_logger:on` |
 
 
 
