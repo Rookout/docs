@@ -144,6 +144,8 @@ Rookout supports the following NodeJS versions:
 | **12**   | 12.9 --> 12.22   |
 | **14**   | 14.0 --> 14.17   |
 
+For all other NodeJS versions, please [contact us](https://www.rookout.com/company/contact).
+
 **Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
 
 ## Serverless and PaaS deployments
