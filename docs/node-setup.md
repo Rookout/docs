@@ -137,12 +137,12 @@ The NodeJS SDK supports detecting the existing source code commit in the followi
 
 ## Supported Versions
 
-Rookout supports the latest NodeJS and all releases that are under maintenance (LTS). Support for older versions is limited.
+Rookout supports the following NodeJS versions:
 
-| Supprt             | Versions                       |
-| ---                | ---                            |
-| **Full**           | 12 (>= 12.9), 14               |
-| **Limited**        | 8, 10, 11, 12 (< 12.9), 13, 15 |
+| Version  | Supported Minors |
+| ---      | ---              |
+| **12**   | 12.9 --> 12.22   |
+| **14**   | 14.0 --> 14.17   |
 
 **Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
 
