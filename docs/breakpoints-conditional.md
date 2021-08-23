@@ -4,17 +4,17 @@ title: Conditional breakpoints
 ---
 
 A large amount of messages in a Debug Session can be confusing at times, especially when trying to solve a specific bug or find a certain use case. 
-For a faster debugging experience - refine data and filter out irrelevant messages by setting a Conditional Breakpoint. 
+For a faster debugging experience - you can refine data and filter out irrelevant messages by setting a Conditional Breakpoint. 
 
-Conditional breakpoints allows you to limit your data collection from a code snippet to only when the defined expression evaluates as true.
-This makes it possible to debug specific scenarios, and limit your messages to   
+Conditional breakpoints allow you to limit the data collected from a code snippet. You will only collect data when the defined expression evaluates as true.
+This makes it possible to debug specific scenarios, and limit the messages that you are collection.
 
-Add a Condition by right click on a breakpoint and choose the 'Edit' option. A right pane will open up, click on the arrow next to 'Condition', write the expression you wish to check and click 'Set' at the bottom of the pane.
+Add a breakpoint condition by right clicking on a breakpoint and selecting the 'Edit' option. After selecting 'Advance', a right pane will open up. Click on the arrow next to 'Condition', enter the condition expression you wish to use (either through the basic or advanced editor) and click 'Set' at the bottom of the pane.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IkuvAH52PVA" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
 
 ### Rookout provides two types of conditions:
-- Simple - compare the value of one or two variables.
+- Simple - compare the values of one or two variables.
 - Advanced - define a complex condition using logical parameters (use "&&" for AND statement,  "||" for OR statement, "(" and ")" for encapsulation).
 
 ### Advanced conditions - supported operators and functions:
@@ -39,8 +39,8 @@ Add a Condition by right click on a breakpoint and choose the 'Edit' option. A r
 
 
 **Keep in mind:** 
-1. The supported syntax may be different from your developing language and it can be confusing - just make sure you use the supported operators above.  
-2. A condition can be invalid due to typos and wrong variables, check that your variables written correctly. 
+1. The supported syntax may be different from your dev language and it can be confusing - just make sure you use the supported operators above.  
+2. A condition can be invalid due to typos and wrong variables. Please check that your variables are written correctly. 
 
 ### Breakpoint Limits:
 
