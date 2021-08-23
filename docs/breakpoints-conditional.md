@@ -37,12 +37,17 @@ Add a Condition by right click on a breakpoint and choose the 'Edit' option. A r
 
 * Evaluating functions are currently not supported in conditions. 
 
-### Time-To-Live:
-
-Seting time-to-live on a breakpoint places limits on the life span of the breakpoint. The breakpoint will disable automatically past the configured limit
-
-<iframe src="https://player.vimeo.com/video/373492033?color=af6bd6&title=0&byline=0&portrait=0" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 **Keep in mind:** 
 1. The supported syntax may be different from your developing language and it can be confusing - just make sure you use the supported operators above.  
 2. A condition can be invalid due to typos and wrong variables, check that your variables written correctly. 
+
+### Breakpoint Limits:
+
+You can set limits on individual breakpoints to limit the amount of data that is collected. When the limits are reached, the breakpoint will be disabled automatically. Once disabled it will not collect additional snapshot data, even if the code is triggered. The user may re-enable the breakpoint by right clicking on it and selecting Enable.
+
+The limits can be based on:
+- Time (e.g. 1 Hour, 24 hours, a week etc.)
+- Hit limit (based on the number of times that the breakpoint gets triggered)
+
+<iframe src="https://www.youtube.com/watch?v=nQGP8GUpWXY" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
