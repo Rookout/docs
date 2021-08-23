@@ -4,23 +4,27 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-### Looking for our SDK docs? Check out the [Java](jvm-setup.md), [.Net](dotnet-setup.md), [Python](python-setup.md), [Node.js](node-setup.md), and [Ruby](ruby-setup.md) pages!
+## Hi, welcome to Rookout!
 
-## Hi, welcome to Rookout!  
+Rookouts lets you fetch data from live, remote applications, without changing code and without waiting for a restart.
 
-Rookouts helps you fix bugs and understand your code by instantly collecting application state from any line of code in live applications.
+Once the Rookout SDK is deployed, debug snapshots and and log lines may be collected with a click of a button.
 
-Once you deploy the SDK, no additional coding, redeploying or restarting of your application is required!
+## Rookout Live Debugger
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3U99qdYKNmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Non-breaking breakpoints
+Rookout Live Debugger provides a debugger-like production-grade tool for applications running in a wide variety of technologies and deployments.
 
-Rookout provides you with a debugger-like production-grade tool for applications built using any architecture running in any environment.
+Use Non-Breaking Breakpoints to instantly see the full state of your app, including variable values, stack traces, and more.
 
-Understanding bugs often gets difficult when relying on the existing, limited, outputs of the system.
+## Rookout Live Logger
 
-Easily set a non-breaking breakpoint on any line of code to immediately see the full state, including variable values, stack traces, and more.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3U99qdYKNmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Rookout Live Logger provides a live-tail-like experience, letting you increase log verbosity immediately and safely.
+
+Use advanced, context based filters to switch on hidden Debug or Trace log lines and quickly get to the root cause of an issue.
 
 ## Integrate with your version control
 

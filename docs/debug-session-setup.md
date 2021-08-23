@@ -1,12 +1,12 @@
 ---
 id: debug-session-setup
-title: Debug session setup
-sidebar_label: Debug session setup
+title: Session Configuration
+sidebar_label: Session Configuration
 ---
-Once you have deployed Rookout within your application and are ready to begin your debug session, you will first need to select which application instances you would like to debug.
+Before starting a Live Debugger session or a Live Logger session, you will need to select which application instances you would like to debug.
 
-### Set Up your Debug Session 
-To start the debug session, you will need to select one or more filters from the table or drop down list as shown in the video below:
+### Set up your Debugging or Logging Session 
+To start your debugging or logging session, you will need to select one or more filters from the table or drop down list as shown in the video below:
 
 <iframe style="margin: 20px 0 0 0" width="560" height="315" src="https://www.youtube.com/embed/T20vi4CIKwM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

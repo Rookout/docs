@@ -1,7 +1,7 @@
 {
   "scripts": {
     "examples": "docusaurus-examples",
-    "start": "DEPLOY_TARGET=docs docusaurus-start",
+    "start": "docusaurus-start",
     "start-dci": "DEPLOY_TARGET=dci-docs docusaurus-start",
     "build": "DEPLOY_TARGET=docs docusaurus-build",
     "build-dci": "DEPLOY_TARGET=dci-docs docusaurus-build",
