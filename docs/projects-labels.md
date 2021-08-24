@@ -89,21 +89,6 @@ To refine the filter, you may use the following filter to debug only the instanc
 
 <img src="/img/screenshots/tag_n4.png" />
 
-### Built in labels
-
-Rookout also provides built-in labels as described in the following table. 
-
-You may find those labels in the Rookout App Instances page, or in the Project configuration pane.
- 
-
-| Filter by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Example 
-| ------------ | ----------------------- | 
-| `Hosts` | `demo-java-8d7f979f4-sq7s9`, `10.44.6.287`|
-| `Repository` | `https://github.com/rookout/tutorial-java`| 
-| `Revisions` | `master`, `2591736ae8a654e92f02212793182bbfd2bae320`| 
-| `Process` | `server.js`, `/bin/rails`| 
-| `General` | `Serverless`, `rookout_debug:on`, `k8s_deployment:deploymentName`, `k8s_namespace:myNamespace`, `live_logger:on` |
-
 
 
 
