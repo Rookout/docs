@@ -113,9 +113,9 @@ If you face cases where some variables are not collected, or where some breakpoi
 - [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` flag. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 - [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.
 
-#### TypeScript & Webpack
+#### Complex Transpiling Configurations
 
-Because of the way Webpack handles TypeScript inputs, an additional step is needed:
+In some cases, if use multiple transpiling steps, such as running TypeScript followed by Webpack, you might need an additional step to make sure source maps end up in the right place.
 
 1. Install `source-map-loader`: `npm install -D source-map-loader`
 2. Add the following rule to `webpack.config.json` (under `rules`):
