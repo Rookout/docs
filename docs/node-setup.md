@@ -115,7 +115,7 @@ If you face cases where some variables are not collected, or where some breakpoi
 
 #### Advanced Webpack Transpiling Configurations
 
-If multiple transpiling steps are used (for example - TypeScript followed by Webpack), you may need to add an additional step to your Webpack coonfig. 
+If multiple transpiling steps are used (for example - TypeScript followed by Webpack), you may need to add an additional step to your Webpack config. 
 
 The additional step will make sure the source maps end up in the right place:
 
