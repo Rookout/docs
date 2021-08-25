@@ -114,6 +114,10 @@ function loadRookoutToken() {
 
     }
   }`, ({ data }) => {
+    if (!data) {
+      setRookoutTokenInPage(null);
+      return;
+    }
     const info = data.currentUserInfo.info;
     if (info.isSuperUser) {
       setRookoutTokenInPage(null);
