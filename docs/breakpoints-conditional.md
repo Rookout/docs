@@ -50,5 +50,4 @@ The limits can be based on:
 - Time (e.g. 1 Hour, 24 hours, a week etc.)
 - Hit limit (based on the number of times that the breakpoint gets triggered)
 
-https://vimeo.com/531276977
 <iframe width="560" height="315" src="https://youtube.com/embed/nQGP8GUpWXY" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
