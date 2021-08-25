@@ -89,21 +89,6 @@ To refine the filter, you may use the following filter to debug only the instanc
 
 <img src="/img/screenshots/tag_n4.png" />
 
-### Built in labels
-
-Rookout also provides built-in labels as described in the following table. 
-
-You may find those labels in the Rookout App Instances page, or in the Project configuration pane.
- 
-
-| Filter by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Example 
-| ------------ | ----------------------- | 
-| `hostname` | `$hostname:demo-deployment` |
-| `platform` | `$platform:python`, `$platform:java` `$platform:node`| 
-| `processname` | `$processname:demo/app.py`| 
-| `internal ip` | `$internalIp:10.14.1.101`| 
-| `external ip` | `$externalIp:35.222.91.58`|
-
 
 
 
