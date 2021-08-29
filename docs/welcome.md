@@ -20,7 +20,7 @@ Use Non-Breaking Breakpoints to instantly see the full state of your app, includ
 
 ## Rookout Live Logger
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3U99qdYKNmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YvbfaNbEQo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Rookout Live Logger provides a live-tail-like experience, letting you increase log verbosity immediately and safely.
 

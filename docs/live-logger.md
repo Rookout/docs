@@ -17,5 +17,5 @@ This will help you pinpoint your search to logs related to a specific error mess
 ## Context based Filtering
 
 Rookout integrates with OpenTracing based tools, as well as with MDC.
-Use the Filter By field only switch on logs that match the wanted context.
+Use the Filter By field to only switch on logs that match the wanted context.
 This will help you reduce logging overhead by only collecting logs relating to a specific service, transaction, user or account.
