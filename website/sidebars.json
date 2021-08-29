@@ -14,7 +14,7 @@
       "node-setup",
       "deployment-examples"
     ],
-    "Debug Session": [
+    "Session Configuration": [
       "debug-session-setup",
       "source-repos",
       "projects-labels"
@@ -35,6 +35,7 @@
       "etl-controller-config"
     ],
     "Advanced": [
+      "live-logger",
       "collaborations",
       "breakpoints-reference",
       "tracing-timeline",

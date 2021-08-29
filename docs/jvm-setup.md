@@ -39,7 +39,7 @@ java -javaagent:$(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DR
 <!--END_DOCUSAURUS_CODE_TABS-->
 <div class="rookout-org-info"></div>
 
-#### Using in OSGi apps
+#### Debugging OSGi apps
 To use Rookout in an OSGi application, the Rookout package must be whitelisted (delegated) to the OSGi container.
 
 This is done by setting the following JVM options
@@ -67,6 +67,7 @@ Configuration is performed using OS Environment Variables or Java System Propert
 | `ROOKOUT_PROXY` | None | URL to proxy server
 | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `ROOKOUT_SOURCES` | None | Source information (see below) |
+| `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout Live Logger |
 
 
 ## Test connectivity

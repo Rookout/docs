@@ -20,7 +20,7 @@ sidebar_label: Use Cases
                 <img src="/img/icons/use-cases/file.png" />
             </div>
             <div class="use-cases-content">
-              <h2>Sustainable Logging</h2>
+              <h2>Dynamic Logging</h2>
               Dev teams often suffer from logging-FOMO (Fear of Missing Out): trying to log everything all the time. This generates a significant amount of garbage logs and horrid signal/noise ratios. By shifting their logging mindset to Rookout, teams reduce FOMO, logging costs, and most importantly the heavy labor required to support intense logging pipelines and cleanups.
             </div>
         </div>
