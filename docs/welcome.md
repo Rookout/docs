@@ -30,7 +30,7 @@ Use advanced, context based filters to switch on hidden Debug or Trace log lines
 
 When working on a remote environment, it's imperative to know exactly what source code it's executing.
 
-Rookout integrates with your source-control provider to fetch you the correct source code for each and every environment ([see our source code security page for more info)](https://www.rookout.com/security/source-code-security).
+Rookout integrates with your source-control provider to fetch you the correct source code for each and every environment (see our [source code security page](https://www.rookout.com/security/source-code-security) for more info).
 
 ## Integrate with your observability tools
 
