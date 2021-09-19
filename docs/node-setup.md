@@ -142,18 +142,18 @@ Rookout supports the following NodeJS versions:
 | Release  | Versions           |
 | ---      | ---                |
 | **12**   | 12.5.0 --> 12.22.6 |
-| **14**   | 14.0.0 --> 14.17.5 |
+| **14**   | 14.0.0 --> 14.17.6 |
 
 We strongly recommend using one of the supported NodeJS versions, however there is limited support for the following versions:
 
 | Release  | Versions           |
 | ---      | ---                |
 | **8**    | 8.0.0  --> 8.17.0  |
-| **14**   | 9.0.0  --> 9.11.2  |
-| **12**   | 10.0.0 --> 10.24.1 |
-| **14**   | 11.0.0 --> 11.15.0 |
-| **14**   | 12.0.0 --> 12.4.0  |
-| **14**   | 13.0.0 --> 13.14.0 |
+| **9**    | 9.0.0  --> 9.11.2  |
+| **10**   | 10.0.0 --> 10.24.1 |
+| **11**   | 11.0.0 --> 11.15.0 |
+| **12**   | 12.0.0 --> 12.4.0  |
+| **13**   | 13.0.0 --> 13.14.0 |
 
 For other NodeJS versions, please [contact us](https://www.rookout.com/company/contact).
 
