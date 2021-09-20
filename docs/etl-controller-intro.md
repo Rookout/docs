@@ -16,7 +16,8 @@ The Rookout ETL Controller is a component made for advanced deployments dealing 
 
 The ETL Controller can be installed within your network and handle connections from multiple Rookout SDK instances and send the collected data to configurable targets such as Elasticsearch, Slack, Datadog, and many more. It can also act as a gateway from your network instead of having each Rookout instance connect directly to the outside world.
 
-Connecting the ETL Controller to a [datastore](datastore-intro.md) lets you choose to keep all the collected data on-premise.
+Connecting the ETL Controller to a datastore lets you choose to keep all the collected data on-premise.
+For more information about the Rookout Datastore, [contact us](https://rookout.com/contact).
 
 ## Connection
 
