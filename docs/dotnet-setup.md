@@ -99,6 +99,7 @@ The Start method is used to initialize the SDK in the background and accepts a `
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
+| `live_logger` | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout Live Logger |
 
 ## Test connectivity
 

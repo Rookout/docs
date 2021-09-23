@@ -54,7 +54,7 @@ The `start` method is used to initialize the SDK. Receives configuration using a
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | None | False | Set to `True` to reject the promsise or throw an exception if `start` fails (error message will not be printed in console) |
 | `sources` | `ROOKOUT_SOURCES` | None | Source information (see below) |
-| NONE | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout Live Logger |
+| `live_logger` | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout Live Logger |
 
 
 ### stop
