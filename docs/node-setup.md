@@ -111,7 +111,7 @@ If you face cases where some variables are not collected, or where some breakpoi
 
 - [**Webpack**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for [devtool](https://webpack.js.org/configuration/devtool/).  
 - [**Babel**](https://babeljs.io/) - use the `--source-maps inline` or `--source-maps` flags.  
-- [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` flag. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+- [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` and `--inlineSourceMap` flags. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 - [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.
 
 #### Advanced Webpack Transpiling Configurations
