@@ -43,4 +43,3 @@ Click on the purple arrow from your current debug session to **edit and change s
 Visualize your Kubernetes environment. Rookout’s Cloud Native Debug Session allows you to group and filter by Namespace, Cluster, and other Kubernetes-specific attributes, giving you a clear visual display of your application’s pods and clusters grouped by K8S-driven categories.  
 
 <img src="/img/screenshots/cloud_native_session.png"/>
-
