@@ -79,16 +79,16 @@ Configure whether the connection of SDK instances to the Controller will be encr
 
 For security best practices, set this to `PLAIN` only if the connection is secure and trusted, or if you are using TLS termination.
 
-If server mode is set to `TLS`, a certificate and a private key must be provided at `/var/controller-tls-secrets/tls.crt` and `/var/controller-tls-secrets/tls.key` respectively.
+If server mode is set to `TLS`, a certificate and a private key must be provided:
 
-To do so in a K8s deployment, you will need to create the following secret & configmap in your k8s cluster:
+* For K8s deployments, you will need to create the following secret & configmap in your k8s cluster:
 
 ```bash
 kubectl create configmap rookout-tls-cert --from-file=tls.crt=<path to cert file>
 kubectl create secret generic rookout-tls-key --from-file=tls.key=<path to key file>
 ```
 
-For Docker deployments, create volumes for the certificate and key that are mapped to the locations described above.
+* For Docker deployments, create volumes for the certificate and key, and map them to `/var/controller-tls-secrets/tls.crt` and `/var/controller-tls-secrets/tls.key` respectively.
 
 ### Proxy Server
 
