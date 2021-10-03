@@ -44,5 +44,5 @@ Visualize your Kubernetes environment. Rookout’s Cloud Native Debug Session al
 
 To enable Cloud Native Debug Session for your account, contact Rookout support. 
 
-<img src="/img/screenshots/cloud_native_session.png"/>
+<img src="/img/screenshots/cloud_native_session.jpg"/>
 
