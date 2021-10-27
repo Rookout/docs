@@ -28,7 +28,7 @@
     "firebase-tools": "^6.0.0"
   },
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^0.21.3",
     "lodash": "^4.17.21",
     "remarkable-embed": "^0.4.1"
   }
