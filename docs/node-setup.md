@@ -176,9 +176,10 @@ function handler(event, context, callback) {
         callback(null, "Hello World");
 }
 
-exports.handler = rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{"env":"dev"}});
+exports.handler = rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{env:"dev"}});
 ```
 
 **Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 10 seconds.
+**Note:** To add the function's name automatically as a label, consider adding the following - function_name:process.env.AWS_LAMBDA_FUNCTION_NAME 
 
 For more information, please check out our [deployment-examples](deployment-examples.md).
