@@ -162,9 +162,9 @@ ROOKOUT_TARGET_PID=1234 java -jar rook.jar
 
 ## Supported Versions
 
-The following Java versions are supported: 7 (7u111+), 8 (8u74+), 11 (11u4+), 13, 17 
+The following Java versions are supported: 7 (7u111+), 8 (8u74+), 11 (11u4+), 13, 17.
 
-The following languages are supported: Java, Scala, Kotlin, Groovy, ColdFusion, and Closure.
+The following languages are supported: Java, Scala, Kotlin, Groovy, ColdFusion, and Clojure.
 
 If your version or language is not mentioned above, please let us know at {@inject: supportEmail}.
 
