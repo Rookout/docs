@@ -10,14 +10,14 @@ sidebar_label: Configuration
 
 ---
 
-This page includes configuration reference for the ETL Controller.
+This page includes configuration details for the ETL Controller.
 
-1. For Kubernetes installations see [Helm Values](#helm-values)
-2. For Docker installations see [Environment Variables](#environment-variables)
+1. For Kubernetes, see the [Helm Values](#helm-values)
+2. For Docker, see the [Environment Variables](#environment-variables)
 
 ## Helm Values
 
-Configure the controller [k8s installation](etl-controller-k8s.md) by setting values in the `values.yaml` file or using `--set` in the `helm install` command.
+Configure the controller [k8s installation](etl-controller-installation#kubernetes) by setting values in the `values.yaml` file or using `--set` in the `helm install` command.
 
 ### Controller Configuration
 
@@ -59,7 +59,7 @@ Configure the controller [k8s installation](etl-controller-k8s.md) by setting va
 
 ## Environment Variables
 
-Configure the controller [docker container](etl-controller-docker.md) by passing environment variables to it.
+Configure the controller [docker container](etl-controller-installation#docker) by passing environment variables to it.
 
 | Configuration                                         | Environment Variable             | Value             | Default |
 | ---                                                   | ---                              | ---               | ---     |
@@ -81,20 +81,22 @@ Set this to your organization's token just like you would when configuring the R
 
 ### Server Mode
 
-Configure whether the connection of SDK instances to the Controller will be encrypted using TLS or not.
+Configure the Controller to either use TSL encryption (`TLS` mode) or plain text (`PLAIN` mode) for incoming connections.
 
-For security best practices, set this to `PLAIN` only if the connection is secure and trusted, or if you are using TLS termination.
+For security best practice, only set this to `PLAIN` if the connection is secure or along with a [TLS termination proxy](https://en.wikipedia.org/wiki/TLS_termination_proxy).
 
-If server mode is set to `TLS`, a certificate and a private key must be provided at `/var/controller-tls-secrets/tls.crt` and `/var/controller-tls-secrets/tls.key` respectively.
+If you can't provide a TLS termination proxy or load balancer, set the server mode to `TLS` and configure the following:
 
-To do so in a K8s deployment, you will need to create the following secret & configmap in your k8s cluster:
+For Docker deployments, place a certificate and a private key in `/var/controller-tls-secrets/tls.crt` and `/var/controller-tls-secrets/tls.key` respectively. You can create volumes for the certificate and key and map them to these locations.
+
+
+For K8s deployments, create the following secret & configmap in your k8s cluster instead:
 
 ```bash
 kubectl create configmap rookout-tls-cert --from-file=tls.crt=<path to cert file>
 kubectl create secret generic rookout-tls-key --from-file=tls.key=<path to key file>
 ```
 
-For Docker deployments, create volumes for the certificate and key that are mapped to the locations described above.
 
 ### Proxy Server
 
@@ -104,25 +106,25 @@ If authentication is required, it is possible to add a username and password. Th
 
 ### Send Data to Rookout
 
-If you wish that data collected from breakpoints will only be sent by the Controller to targets and not to Rookout's servers and the web IDE, set this configuration to `false`.
+Set this configuration to `false` to send data collected by the Controller only to targets and not to Rookout's servers.
 
 ### Skip SSL Verification
 
-If this is set to `true`, the Controller will skip the verification of SSL certificates when connecting to servers.
+Set this to `true` to make the Controller skip the verification of SSL certificates when connecting to servers.
 
-For security best practices, this option should always be set to `false`.
+For security best practices, you should always set this to `false`.
 
 ### Limit CPU Cores
 
-Limit the amount of CPU cores the Controller will use.
+Limit the number of CPU cores the Controller uses.
 
 ### Limit Memory
 
-Limit the amount of RAM the Controller will use.
+Limit the amount of RAM the Controller uses.
 
 ### Listen on Port
 
-Set the port the Controller will listen on for incoming SDK instances.
+Set the port the Controller should listen on for incoming SDK instances.
 
 ### Data Redaction
 
@@ -130,4 +132,4 @@ All data received by the ETL agent undergoes a data redaction process based on t
 
 ## Health Check
 
-If you would like to perform a health check on the Rookout ETL Controller, you can access `http://<ROOKOUT_CONTROLLER_HOST>:<ROOKOUT_CONTROLLER_PORT>/healthz`. A healthy ETL Controller will return an HTTP 200 OK response.
+If you would like to perform a health check on the Rookout ETL Controller, you can access `http://<ROOKOUT_CONTROLLER_HOST>:<ROOKOUT_CONTROLLER_PORT>/healthz`. A healthy ETL Controller should return a response of "HTTP 200".

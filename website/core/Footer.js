@@ -80,15 +80,6 @@ class Footer extends React.Component {
     return (
         <footer className="nav-footer" id="footer">
           <section className="sitemap">
-              <a href={this.props.config.baseUrl}>
-                  {this.props.config.footerIcon && (
-                      <img
-                          className="rook-footer-logo"
-                          src={this.props.config.baseUrl + this.props.config.footerIcon}
-                          alt={this.props.config.title}
-                      />
-                  )}
-              </a>
               <div className="sitemapLinksContainer">
                   <div className="sitemapCategoryContainer">
                     { this.renderSitemap() }
