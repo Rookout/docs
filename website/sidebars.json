@@ -38,7 +38,6 @@
     "Advanced": [
       "live-logger",
       "collaborations",
-      "breakpoints-reference",
       "tracing-timeline",
       "keyboard-shortcuts"
     ],
