@@ -7,12 +7,12 @@
     ],
     "SDK Setup": [
       "setup-intro",
-      "go-setup",
       "jvm-setup",
       "dotnet-setup",
       "python-setup",
       "ruby-setup",
       "node-setup",
+      "go-setup",
       "deployment-examples"
     ],
     "Session Configuration": [
