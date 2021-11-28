@@ -19,7 +19,7 @@ The below diagram shows the pure SaaS deployment model. The Rookout SDK connects
 <img src="/img/screenshots/setup_guide_arch.jpg" />
 
 ### Rookout SDK
-The Rookout SDK is a set of libraries that are configured as a dependency in your application. It communicates with the Rookout Service and allows Rookout to collect live debugging data on demand.
+The Rookout SDK is a set of libraries that are configured as a dependency in your application. It communicates with the Rookout Service and allows Rookout to collect live debug data on demand.
 
 ### Rookout Client
 The Rookout Client is a web-based UI where you have the ability to dynamically debug your application through the setting of non-breaking breakpoints (also known as data collection points). All user interactions with Rookout are done from this UI.
