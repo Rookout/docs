@@ -60,25 +60,25 @@ The following table includes all configuration options. Pass them to the `rookou
 | `sources` | `ROOKOUT_SOURCES` | None | Source information (see below) |
 | NONE | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout [Live Logger](live-logger.md) |
 
-## Transpiling and Source Maps
+## Transpiling and Bundling
 
 If your application's code is being transpiled or bundled, you must include the source maps, either "in-line" or as separate files.
 
-### Configurations for Common Tools
+### Configuration for common tools
 
-- [**Webpack**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for the `devtool` option ([reference](https://webpack.js.org/configuration/devtool)).
-- [**Babel**](https://babeljs.io/) - use either `inline` or `true` values for the `sourceMaps` option ([reference](https://babeljs.io/docs/en/options#sourcemaps)).
-- [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` and `--inlineSourceMap` flags. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
-- [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.
+- [**Webpack**](https://webpack.js.org/) - use either the `inline-source-map` or `source-map` values for the `devtool` option in the webpack config file ([reference](https://webpack.js.org/configuration/devtool)).
+- [**Babel**](https://babeljs.io/) - use either the `inline` or `true` values for the `sourceMaps` option in the Babel config file ([reference](https://babeljs.io/docs/en/options#sourcemaps)).
+- [**TypeScript**](https://www.typescriptlang.org/) - add either `"inlineSourceMap": true` or `"sourceMap": true` in the TypeScript config file ([reference](https://www.typescriptlang.org/tsconfig#inlineSourceMap)).
+- [**CoffeeScript**](https://coffeescript.org/) - pass either the `-M` (inline) or `-m` flags to the `coffee` CLI tool ([reference](https://coffeescript.org/#usage)).
 
-#### Advanced Webpack Transpiling Configurations
+### Advanced transpiling configurations
 
-If multiple transpiling steps are used (for example - TypeScript followed by Webpack), you may need to add an additional step to your Webpack config. 
+If multiple transpiling steps are used (for example - TypeScript followed by Webpack), you may need to add a step to your Webpack config. 
 
-The additional step will make sure the source maps end up in the right place:
+For webpack, use `source-map-loader`:
 
-1. Install `source-map-loader`: `npm install -D source-map-loader`
-2. Add the following rule to `webpack.config.json` (under `rules`):
+1. Install using `npm install -D source-map-loader`
+2. Add the following rule to the webpack config file (under `rules`):
 
 ```js
  {
@@ -106,9 +106,9 @@ Rookout supports the latest NodeJS and all releases that are under maintenance (
 
 **Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
 
-## Serverless and PaaS deployments
+## Serverless and PaaS Deployments
 
-### Integrating with Serverless
+### Integrating with serverless
 
 When integrating Rookout into a Serverless application, you should explicitly flush the collected information.  
 For most common Serverless runtimes, Rookout provides easy to use wrappers such as `rookout.wrap(handler, options={})`:
