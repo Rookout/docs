@@ -11,7 +11,8 @@ When you integrate your source code into Rookout, it remains between your code r
 **Rookout never sees nor has access to your source code. In fact, your code never even reaches the Rookout servers.**
  
 
-## Source Code Fetching 
+## Source Code Fetching
+
 ### Git Providers
 
 Rookout integrates directly to the cloud editions of the following Git Providers:
@@ -86,62 +87,3 @@ For more information, please click [here](node-setup#transpiling-and-source-maps
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
 
 For more information, please click [here](dotnet-setup#packaging-sources).
-
-
-## Repository Settings
-
-If you are deploying your software in some non-trival ways, Rookout offers the option of customizing the way breakpoints are set directly from your source repository.
-
-Simply create a file named `.rookout` at the root of your repository and add to it any of the configurations below.  
-Feel free to add comments to the file in the form of lines starting with '#'.
-
-### Source Path Mapping
-
-By default Rookout uses the repository relative path of the source file you are debugging to find it.
-
-You may have to change it in a couple of cases:
-- You are using serverless framework that deploys your app with different layout.
-- You are removing a part of the path when deploying your code.
-- The path is too short or generic, and you want to make it more specific to avoid path collisions.
-
-This is done through simple path substition instructions (in the `.rookout` file):
-
-#### Shortening a Path
-
-To convert `microservice1/app.py` to `app.py` use:
-```bash
-/microservice1 /
-```
-
-#### Replacing a Path
-
-To convert `microservice1/app.py` to `app/app.py` use:
-```bash
-/microservice1 /app
-```
-
-#### Lengthening a Path
-
-To convert `app.py` to `microservice1/app.py` use:
-```bash
-/ /microservice1
-```
-
-#### Manipulating a Path with Spaces
-
-To convert `my app/app.py` to `app.py` use:
-```bash
-"my app" /
-```
-
-### (Node) Debugging Packages
-
-By default, under NodeJS, Rookout ignores your project's dependencies the `node_modules` folder.
-
-If the project you are debugging is installed as a package on the server add the following snippet to your `.rookout` file:
-
-```node
-#package
-```
-
-**Note:** Rookout does not map the most common NPM packages for performance reasons and does not allow setting breakpoints inside them.
