@@ -88,13 +88,6 @@ For webpack, use `source-map-loader`:
  }
 ```
 
-## Source Commit Detection
-
-The NodeJS SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
-1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
-2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
-3. If the main application is running from within a Git repository, use its head. 
-
 ## Supported Versions
 
 Rookout supports the latest NodeJS and all releases that are under maintenance (LTS). Support for older versions is limited.
@@ -104,14 +97,13 @@ Rookout supports the latest NodeJS and all releases that are under maintenance (
 | **Full**           | 12 (>= 12.9), 14               |
 | **Limited**        | 8, 10, 11, 12 (< 12.9), 13, 15 |
 
-**Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
+**Note:** The Rookout NodeJS SDK does not support running side-by-side with another debugger.
 
 ## Serverless and PaaS Deployments
 
 ### Integrating with serverless
 
-When integrating Rookout into a Serverless application, you should explicitly flush the collected information.  
-For most common Serverless runtimes, Rookout provides easy to use wrappers such as `rookout.wrap(handler, options={})`:
+For AWS Lambda, it is recommended to use the provided wrapper like so:
 
 ```js
 const rookout = require('rookout/lambda');
@@ -122,7 +114,6 @@ function handler(event, context, callback) {
 
 exports.handler = rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{"env":"dev"}});
 ```
+<div class="rookout-org-info"></div>
 
-**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 10 seconds.
-
-For more information, please check out our [deployment-examples](deployment-examples.md).
+**Note:** Although Rookout's impact on performance is negligible during regular use, the Rookout SDK does slow down serverless cold starts. Please make sure your function's timeout is higher than 10 seconds.
