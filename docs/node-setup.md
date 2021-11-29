@@ -6,18 +6,23 @@ sidebar_label: Node.js
 
 ## Installation
 
-Install the Rookout Node SDK using one of the following methods:
+Install the Rookout [Node SDK](https://www.npmjs.com/package/rookout)) using one of the following methods:
 
-**NPM**
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--NPM-->
 
 ```bash
 npm install --save rookout
 ```
 
-**Yarn**
+<!--Yarn-->
+
 ```bash
 yarn add rookout
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Setup
 
@@ -40,7 +45,7 @@ rookout.start({
 ```
 <div class="rookout-org-info"></div>
 
-Note that the `rookout.start` method returns a promise that resolves when the connection attempt succeeds or fails. You can choose to utilize that Promise or to ignore it.
+Note that the `rookout.start` method returns a promise that resolves when the connection attempt succeeds (fullfill) or fails (reject). You can choose to utilize that Promise or to ignore it.
 
 ## Configuration
 
@@ -48,7 +53,7 @@ The following table includes all configuration options. Pass them to the `rookou
 
 | Parameter | Environment Variable | Default Value | Description |
 | --- | --- | --- | --- |
-| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
+| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. May be left empty if you are using a Rookout ETL Controller |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit or a branch name |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
@@ -92,7 +97,7 @@ For webpack, use `source-map-loader`:
 
 Rookout supports the latest NodeJS and all releases that are under maintenance (LTS). Support for older versions is limited.
 
-| Supprt             | Versions                       |
+| Support             | Versions                       |
 | ---                | ---                            |
 | **Full**           | 12 (>= 12.9), 14               |
 | **Limited**        | 8, 10, 11, 12 (< 12.9), 13, 15 |
