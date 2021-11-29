@@ -39,3 +39,9 @@ Click **Start Debugging** to start your debug session.
 
 Click on the purple arrow from your current debug session to **edit and change selected instances**.
 
+### Cloud-Native Debug Session
+Visualize your Kubernetes environment. Rookout’s Cloud Native Debug Session allows you to group and filter by Namespace, Cluster, and other Kubernetes-specific attributes, giving you a clear visual display of your application’s pods and clusters grouped by K8s-driven categories.  
+
+To enable Cloud Native Debug Session for your account, contact Rookout support. 
+
+<img src="/img/screenshots/cloud_native_session.jpg"/>

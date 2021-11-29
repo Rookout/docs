@@ -63,7 +63,7 @@ This could mean one of the following:
 
 - #### (JVM) No Debug Information
   You have compiled your classes without debug information.
-  Click [here](jvm-setup#debug-information) for more information.
+  Click [here](https://docs.rookout.com/docs/jvm-setup#debug-information) for more information.
 
 - #### (Node) No Source Maps
   You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).
