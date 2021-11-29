@@ -95,18 +95,33 @@ For webpack, use `source-map-loader`:
 
 ## Supported Versions
 
-Rookout supports the latest NodeJS and all releases that are under maintenance (LTS). Support for older versions is limited.
+Rookout supports the following NodeJS versions:
 
-| Support             | Versions                       |
-| ---                | ---                            |
-| **Full**           | 12 (>= 12.9), 14               |
-| **Limited**        | 8, 10, 11, 12 (< 12.9), 13, 15 |
+| Release  | Versions           |
+| ---      | ---                |
+| **12**   | 12.5.0 --> 12.22.7 |
+| **14**   | 14.0.0 --> 14.18.1 |
+| **16**   | 16.0.0 --> 16.13.0 |
+
+We strongly recommend using one of the supported NodeJS (LTS) versions, however there is limited support for the following versions:
+
+| Release  | Versions           |
+| ---      | ---                |
+| **8**    | 8.0.0  --> 8.17.0  |
+| **9**    | 9.0.0  --> 9.11.2  |
+| **10**   | 10.0.0 --> 10.24.1 |
+| **11**   | 11.0.0 --> 11.15.0 |
+| **12**   | 12.0.0 --> 12.4.0  |
+
+For other NodeJS versions, please [contact us](https://www.rookout.com/company/contact).
 
 **Note:** The Rookout NodeJS SDK does not support running side-by-side with another debugger.
 
 ## Serverless and PaaS Deployments
 
 ### Integrating with serverless
+
+For most serverless types, Rookout can be installed as usual.
 
 For AWS Lambda, it is recommended to use the provided wrapper like so:
 
@@ -117,8 +132,16 @@ function handler(event, context, callback) {
         callback(null, "Hello World");
 }
 
-exports.handler = rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{"env":"dev"}});
+exports.handler = rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{env:"dev"}});
 ```
+
 <div class="rookout-org-info"></div>
 
 **Note:** Although Rookout's impact on performance is negligible during regular use, the Rookout SDK does slow down serverless cold starts. Please make sure your function's timeout is higher than 10 seconds.
+
+**Note:** To add the function's name automatically as a label in Rookout, use the environment variable, for example:
+```javascript
+rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{f_name:process.env.AWS_LAMBDA_FUNCTION_NAME}})
+```
+
+<div class="rookout-org-info"></div>

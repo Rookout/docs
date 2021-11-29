@@ -109,7 +109,3 @@ You can change the maximum amount of time allowed for a single run by setting:
 ```
 
 Time is in milliseconds.
-
-## What's next?
-
-To review the full Breakpoint API check out the [Reference Section](breakpoints-reference.md).
