@@ -10,9 +10,7 @@ sidebar_label: Installation
 
 ---
 
-## Installation
-
-Follow these installation instructions to deploy the ETL Controller in your environment, either on Kubernetes or Docker containers.
+Follow these installation instructions to deploy the ETL Controller in your environment, either on Kubernetes or Docker.
 
 After your ETL Controller successfully connects to Rookout, it should appear in the Rookout app under *Settings > Connected Applications > Controllers*.
 
@@ -49,8 +47,6 @@ helm install my-controller rookout/controller --set controller.token=[Your Rooko
 <div class="rookout-org-info"></div>
 
 <!--END_DOCUSAURUS_CODE_TABS-->
-
-This installs the Controller with the most basic configuration, see the [configuration](#configuration) section for more options.
 
 ### Install without Helm
 
@@ -104,7 +100,9 @@ docker run -p 7488:7488 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/controll
 
 The instructions above describe how to install the Controller with the most basic configuration.
 
-To further configure the Controller installation, add configuration values to the `values.yaml` file or the installation command using `--set`.
+To further configure your Controller installation:
+* Kubernetes - add configuration values to the `values.yaml` file or the installation command using `--set`.
+* Docker - add configuration values as environment variables using the `-e` flag.
 
 Connecting Rookout SDK instances to the Controller requires providing a TLS certificate or adding a TLS termination proxy for encryption purposes.
 
