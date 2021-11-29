@@ -4,6 +4,8 @@ title: Node.js SDK Instrumentation
 sidebar_label: Node.js
 ---
 
+This page will dive into the nitty gritty details on installing Rookout under various configurations.  
+
 ## Installation
 
 Install the Rookout [Node SDK](https://www.npmjs.com/package/rookout)) using one of the following methods:
@@ -32,7 +34,9 @@ To add the SDK to your application, add:
 const rookout = require('rookout');
 ```
 
-Then, in your app’s entry point, add:
+### Start
+
+To start the SDK, add the following to your app’s entry point:
 
 ```javascript
 rookout.start({
@@ -46,6 +50,15 @@ rookout.start({
 <div class="rookout-org-info"></div>
 
 Note that the `rookout.start` method returns a promise that resolves when the connection attempt succeeds (fullfill) or fails (reject). You can choose to utilize that Promise or to ignore it.
+
+### Flush
+
+The `flush` method allows explicitly flushing the Rookout logs and messages.  
+The callback is executed when the method finishes.
+
+```js
+rookout.flush(cb);
+```
 
 ## Configuration
 
