@@ -131,7 +131,7 @@ The additional step will make sure the source maps end up in the right place:
  }
 ```
 
-## Source Commit Detection
+## Source Code Detection
 
 The NodeJS SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
 1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
@@ -169,3 +169,15 @@ exports.handler = rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{"
 **Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 10 seconds.
 
 For more information, please check out our [deployment-examples](deployment-examples.md).
+
+### Debugging Node Modules
+
+By default, Rookout ignores your project's dependencies in the `node_modules` folder.
+
+If the project you wish to debug is installed as a node module, create a file in the project's repository root folder, with the following content:
+
+```
+#package
+```
+
+**Note:** Rookout does not map the most common NPM packages for performance reasons and does not allow setting breakpoints inside such packages.
