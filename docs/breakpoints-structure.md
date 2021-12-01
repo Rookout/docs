@@ -112,4 +112,3 @@ This script is simply a sequence of two operations:
 
 - Check out [common tasks](breakpoints-tasks.md) with Breakpoints.
 - Check out [examples](integrations.md) for custom ETL pipelines.
-- Check out the detailed the [Breakpoint Scripting Reference](breakpoints-reference.md).

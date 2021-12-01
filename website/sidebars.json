@@ -7,12 +7,12 @@
     ],
     "SDK Setup": [
       "setup-intro",
-      "go-setup",
       "jvm-setup",
       "dotnet-setup",
       "python-setup",
       "ruby-setup",
       "node-setup",
+      "go-setup",
       "deployment-examples"
     ],
     "Session Configuration": [
@@ -42,7 +42,6 @@
     "Advanced": [
       "live-logger",
       "collaborations",
-      "breakpoints-reference",
       "tracing-timeline",
       "keyboard-shortcuts"
     ],
