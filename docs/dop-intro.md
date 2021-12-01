@@ -42,19 +42,6 @@ For details about the connection of the SDK and the ETL Controller, see [this se
 
 When data is received, the ETL Controller connects to the Datastore over HTTPS to store the data. When using Rookout, if configured right, the user's web browser connects directly to the Datastore over WebSocket (securely) to fetch the stored data.
 
-## Installation
-
-**Please note: We recommend deploying and setting up an ETL Controller before proceeding.**
-
-Installation methods:
-
-1. [Kubernetes](datastore-k8s.md)
-2. [Docker](datastore-docker.md)
-
-## Configuration
-
-See configuration options [here](datastore-config.md).
-
 ## License
 
 Find the Rookout Datastore usage license here:
