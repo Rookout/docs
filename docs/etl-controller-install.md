@@ -84,7 +84,7 @@ kubectl apply -f rookout-controller.yaml
 
 ## Docker
 
-To install the Controller as a Docker container (using [this image](https://hub.docker.com/r/rookout/controller/)), execute the following:
+To deploy the Controller as a Docker container (using [this image](https://hub.docker.com/r/rookout/controller/)), execute the following:
 
 ```bash
 docker run -p 7488:7488 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/controller
