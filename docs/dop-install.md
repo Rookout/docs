@@ -94,7 +94,7 @@ docker run -p 8080:8080 -e "ROOKOUT_DOP_SERVER_MODE=PLAIN" -e "ROOKOUT_TOKEN=[Yo
 
 ## Next Steps
 
-The instructions above describe how to install the Datastore with the most basic configuration.
+The instructions above describe how to deploy the Datastore with the most basic configuration.
 
 Using the Datastore requires setting up a TLS termination proxy (recommended) or providing it with a TLS certificate for encryption purposes.
 
