@@ -46,7 +46,7 @@ helm install --name my-controller rookout/controller --set controller.token=[You
 
 ### Install without Helm
 
-If you're not using Helm with your Kubernetes cluster, you'll still be able to install the Controller.
+If you're not using Helm with your Kubernetes cluster, you'll still be able to deploy the Controller.
 
 Helm is needed to be installed locally ([Helm](https://helm.sh/docs/intro/install/)) in order to create the yaml file from the templates.
 
