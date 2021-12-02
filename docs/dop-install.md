@@ -84,7 +84,7 @@ kubectl apply -f rookout-datastore.yaml
 
 ## Docker
 
-To install the Datastore as a Docker container (using [this image](https://hub.docker.com/r/rookout/data-on-prem/)), execute the following:
+To deploy the Datastore as a Docker container (using [this image](https://hub.docker.com/r/rookout/data-on-prem/)), execute the following:
 
 ```bash
 docker run -p 8080:8080 -e "ROOKOUT_DOP_SERVER_MODE=PLAIN" -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/data-on-prem
