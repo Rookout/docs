@@ -46,7 +46,7 @@ helm install --name my-datastore rookout/datastore --set datastore.token=<YOUR_O
  
 ### Install without Helm
 
-If you're not using Helm with your Kubernetes cluster, you'll still be able to install the Datastore.
+If you're not using Helm with your Kubernetes cluster, you'll still be able to deploy the Datastore.
 
 Helm is needed to be installed locally ([Helm](https://helm.sh/docs/intro/install/)) to create the yaml file from the templates.
 
