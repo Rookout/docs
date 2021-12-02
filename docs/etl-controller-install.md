@@ -94,7 +94,7 @@ docker run -p 7488:7488 -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/controll
 
 ## Next Steps
 
-The instructions above describe how to install the Controller with the most basic configuration.
+The instructions above describe how to deploy the Controller with the most basic configuration.
 
 When the Controller successfully connects to Rookout, it should appear in the Rookout app under *Settings > Connected Applications > Controllers*.
 
