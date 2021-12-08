@@ -114,7 +114,7 @@ Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respe
 
 ## Debug Information
 
-Rookout requires your application to be built and deployed with a debug information in the form of a pdb file. Rookout supports the `full`, `portable` and `pdbonly` configurations, while `embedded` is *not* supported.
+Rookout requires your application to be built and deployed with a debug information in the form of a pdb file. Rookout supports the `full`, `portable` and `pdbonly` configurations, while `embedded` is *not* supported. We strongly recommend using `portable`, in order to get maximum support for the functions that need to be debugged.
 
 For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
 
