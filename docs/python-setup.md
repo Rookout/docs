@@ -1,6 +1,6 @@
 ---
 id: python-setup
-title: Python SDK Instrumentation
+title: Python SDK
 sidebar_label: Python
 ---
 

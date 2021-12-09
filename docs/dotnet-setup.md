@@ -1,21 +1,27 @@
 ---
 id: dotnet-setup
-title: .NET SDK Instrumentation
+title: .NET SDK
 sidebar_label: .NET
 ---
 
-This page will dive into the nitty gritty details on installing Rookout under various configurations.  
-If you are encountering any difficulties with deploying Rookout, this is the place to look.
+This page dives into the nitty-gritty details on installing Rookout under various configurations.  
+If you encounter difficulties with deploying Rookout, this is the place to look.
 
-## .NET
+## Installation
 
-The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real time.  
+The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real-time.  
 
 It can easily be installed as a [NuGet package](https://www.nuget.org/packages/Rookout).
 
+## Supported Languages
+
+The following languages are currently supported by the .NET SDK: C#, VB.NET, and F#.
+
+If you use a language that is not mentioned above, please let us know at {@inject: supportEmail}.
+
 ## Setup
 
-Start the SDK within your application, by adding the following to your *main* method or your application's entry point:
+Start the SDK within your application by adding the following to your *main* method or your application's entry point:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--C#-->
@@ -172,10 +178,6 @@ Rook.API.LoadAssembly(Assembly a, byte[] pdb, byte[] assembly)
 | **.NET Framework**  | 4.5, 4.6, 4.7, 4.8    |
 | **.NET Core**       | 2.1, 2.2, 3.0, 3.1    |
 | **.NET**            | 5.0                   |
-
-## Supported Languages
-
-The following languages are officially supported: C#, VB.NET and F#.
 
 ## IIS support
 

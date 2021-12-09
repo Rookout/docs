@@ -1,6 +1,6 @@
 ---
 id: ruby-setup
-title: Ruby SDK Instrumentation
+title: Ruby SDK
 sidebar_label: Ruby
 ---
 
