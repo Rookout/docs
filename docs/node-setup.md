@@ -188,7 +188,7 @@ For more information, please check out our [deployment-examples](deployment-exam
 
 By default, Rookout ignores your project's dependencies in the `node_modules` folder.
 
-If the project you wish to debug is installed as a node module, create a file in the project's repository root folder, with the following content:
+If the project you wish to debug is installed as a node module, create a file in the project's repository root folder, called `.rookout`, with the following content:
 
 ```
 #package
