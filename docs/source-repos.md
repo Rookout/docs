@@ -45,6 +45,9 @@ Note that we are setting the commit to a specific revision or branch name that s
 
 When these environment variables are set, in the Application Instances screen, you should see the Source origin and Revision fields set with the values you set:
 
+- Not sure what's your repository's remote origin? Just run the following command locally where you've cloned your repository:
+```git config --get remote.origin.url```
+
 <img src="/img/screenshots/source_origin_revision.png" />
 
 Now, when you choose to debug an application instance where these environments variables are set, Rookout attempts to fetch the source code so that you are immediately ready to start debugging. You should see the text "auto loaded" in parenthesis next to your repository when this happens successfully:
