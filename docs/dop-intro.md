@@ -12,7 +12,7 @@ sidebar_label: Introduction
 
 ## Introduction
 
-Although Rookout never has access to your source code, for many of our clients, such as Fortune 500 corporations and companies within regulated industries, handing off data processing to Rookout is not possible due to internal and external policies, regulations, and other factors.
+Although Rookout never has access to your source code, for many of our clients, such as Fortune 100 corporations and companies within regulated industries, handing off data processing to Rookout is not possible due to internal and external policies, regulations, and other factors.
 
 Rookout’s hybrid Data On-Premise architecture allows users to benefit from the productivity and security features of Rookout while enjoying the simplicity and efficiency of a SaaS product. 
 
@@ -46,3 +46,7 @@ When data is received, the ETL Controller connects to the Datastore over HTTPS t
 
 Find the Rookout Datastore usage license here:
 [Rookout Datastore License](license.md)
+
+## Next Steps
+
+To deploy the datastore to your environment, follow the instructions [here](dop-install.md).
