@@ -1,27 +1,9 @@
 ---
-id: breakpoints-tasks
-title: Breakpoint Tasks
+id: breakpoint-limits
+title: Breakpoint Limits
 ---
 
-## Data Redaction
-
-An admin can define data redaction rules to limit the information collected by Rookout Breakpoints.
-
-<iframe width="600" height="300" src="https://www.youtube.com/embed/dJgit1yPem4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-In **Breakpoint Settings** -> **Data Redaction** the admin can define Regular Experession patterns to be excluded.
-
-For example, adding a rule for the variable name “secretKey” will replace the output `“secretKey”:“12345”` with `“secretKey”:“[REDACTED]“`.
-Adding a rule regarding the variable value “[0-9]+” will replace `“nameAndPassword”:“LordHelmet-12345”` with `“nameAndPassword”:“LordHelmet-****“`.
-
-Replacing the data redaction method to “Include-list” will redact all variables, except the specified variable names and values that were included.
-Please notice that the data redaction settings will apply only to breakpoints that were set following the configuration change.
-
-The regular expressions expected syntax is the [RE2](https://github.com/google/re2/wiki/Syntax). Please notice that use of flags is currently unsupported, while case-insensitive flag (`(?i)`) can be added to a rule by unchecking the case-sensative checkbox next to it.
-
-<img src="/img/screenshots/data_redaction_example_1.png" />
-
-### Collection level
+## Collection level
 
 Collection level is set to minimize the performance impact of collecting variables in a frame that has complex objects, huge strings and infinite reference loops.
 Setting Collection level will ensure that only variables at the top of the variable tree will be fetched.
@@ -44,8 +26,6 @@ When you want to collect a variable that is out of the Collection limit, you can
 
 When Collection level has reached the limit, you expect to see the following messages: 
 `Collection level exceeded (right click to collect)`
-
-
 
 ## Rate limiting
 

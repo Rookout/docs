@@ -21,7 +21,7 @@ For more information, you can click on the Breakpoint status indicator or read m
 
 The next time the code you have set the breakpoint on is invoked, Rookout collects parts of the application state and sends it to the IDE or any other targets of your choosing.
 
-You can read more about the [Breakpoint structure](breakpoints-structure.md) and how to perform [common changes](breakpoints-tasks.md) to it.
+You can read more about the [Breakpoint structure](breakpoints-structure.md) and how to perform [common changes](breakpoint-limits.md) to it.
 
 ## Breakpoint Limits:
 

@@ -111,7 +111,7 @@ You can re-enable the breakpoint (by reseting the limit counter) through right c
 
 - #### Breakpoint collection is sampled due to rate-limiting
   Rookout employs a built-in rate-limiting mechanism to prevent breakpoints set in hot code paths from impacting application performance. This error indicates the rate limit has been hit and the breakpoint has been rate-limited for the offending application instance. Collection is sampled in order to prevent performance impact on your application.
-  Read more about configuring rate-limiting [here](breakpoints-tasks.md#rate-limiting).
+  Read more about configuring rate-limiting [here](breakpoint-limits.md#rate-limiting).
 
 - #### Path suggestion
   Source file was deployed to unexpected location, this might happen in some serverless frameworks.
