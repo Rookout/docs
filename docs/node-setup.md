@@ -131,7 +131,7 @@ The additional step will make sure the source maps end up in the right place:
  }
 ```
 
-## Source Commit Detection
+## Source Code Detection
 
 The NodeJS SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
 1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
@@ -145,8 +145,8 @@ Rookout supports the following NodeJS versions:
 | Release  | Versions           |
 | ---      | ---                |
 | **12**   | 12.5.0 --> 12.22.7 |
-| **14**   | 14.0.0 --> 14.18.1 |
-| **16**   | 16.0.0 --> 16.13.0 |
+| **14**   | 14.0.0 --> 14.18.2 |
+| **16**   | 16.0.0 --> 16.13.1 |
 
 We strongly recommend using one of the supported NodeJS (LTS) versions, however there is limited support for the following versions:
 
@@ -183,3 +183,15 @@ exports.handler = rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{e
 **Note:** To add the function's name automatically as a label, consider adding the following - function_name:process.env.AWS_LAMBDA_FUNCTION_NAME 
 
 For more information, please check out our [deployment-examples](deployment-examples.md).
+
+### Debugging Node Modules
+
+By default, Rookout ignores your project's dependencies in the `node_modules` folder.
+
+If the project you wish to debug is installed as a node module, create a file in the project's repository root folder, called `.rookout`, with the following content:
+
+```
+#package
+```
+
+**Note:** Rookout does not map the most common NPM packages for performance reasons and does not allow setting breakpoints inside such packages.

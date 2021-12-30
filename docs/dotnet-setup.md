@@ -112,13 +112,46 @@ Unix:
 
 Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respectively.
 
-## Debug Information
+## Project Requirements
 
-Rookout requires your application to be built and deployed with a debug information in the form of a pdb file. Rookout supports the `full`, `portable` and `pdbonly` configurations, while `embedded` is *not* supported.
+### Debug type
+
+Rookout requires your application to be built and deployed with debug information in the form of `.pdb` files.
+
+In your project’s settings, set the “debug type” to `portable` like so:
+
+```xml
+<DebugType>portable</DebugType>
+```
+
+While other “debug types” such as `full` and `pdbonly` may work (but are not recommended), the `embedded` type is not supported at all.
 
 For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
 
+### Optimizations
+
 Disabling compiler optimizations `<Optimize>false</Optimize>` will further improve the debugging experience at a small cost to the application performance.
+
+### Multi-Project Solutions
+
+To support multi-projects Solutions its recommended to add the following `Directory.Build.props` file to your Root folder:
+```xml
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <PackageReference Include="Rookout" Version="0.1.*" />
+  </ItemGroup>
+
+</Project>
+```
+
+### Dynamic library loading
+
+To be able to debug libraries loaded using [`AppDomain.Load(Byte[], Byte[])`](https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.load?view=netcore-3.1#System_AppDomain_Load_System_Byte___System_Byte___) make sure to load those binaries into Rookout using:
+
+```cs
+Rook.API.LoadAssembly(Assembly a, byte[] pdb, byte[] assembly)
+```
 
 ## Source information
 
@@ -142,27 +175,6 @@ After installing the [MSBuildGitHash NuGet package](https://www.nuget.org/packag
 
 ```xml
     <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
-```
-
-## Multi-Project Solutions
-
-To support multi-projects Solutions its recommended to add the following `Directory.Build.props` file to your Root folder:
-```xml
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
-  <ItemGroup>
-    <PackageReference Include="Rookout" Version="0.1.*" />
-  </ItemGroup>
-
-</Project>
-```
-
-## Dynamic library loading
-
-To be able to debug libraries loaded using [`AppDomain.Load(Byte[], Byte[])`](https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.load?view=netcore-3.1#System_AppDomain_Load_System_Byte___System_Byte___) make sure to load those binaries into Rookout using:
-
-```cs
-Rook.API.LoadAssembly(Assembly a, byte[] pdb, byte[] assembly)
 ```
 
 ## Supported Versions

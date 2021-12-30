@@ -1,7 +1,7 @@
 ---
 id: debug-session-setup
-title: Session Configuration Introduction
-sidebar_label: Introduction
+title: Instances Selection
+sidebar_label: Instances Selection
 ---
 Before starting a Live Debugger session or a Live Logger session, you will need to select which application instances you would like to debug.
 
