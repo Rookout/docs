@@ -4,8 +4,6 @@ title: Data Redaction
 sidebar_label: Data Redaction
 ---
 
-## Data Redaction
-
 Rookout offers data redaction rules to let you control sensitive data and specify which data it should not collect.
 In the **Data Redaction** page under the settings menu, an admin can define data redaction using regular expression patterns.
 

@@ -33,59 +33,18 @@ Rookout measures the time it takes for each breakpoint to run, and disallows add
 
 ## Maximum execution time limit
 
-Rookout sets a time limit on fetching data when a Breakpoint is hit to reduce the risk of performance degragation.
+Rookout sets a time limit on fetching data when a Breakpoint is hit to reduce the risk of performance degradation.
 
-If a Breakpoint reaches the time limit for a specific app instance, the Breakpoint will be disabled for the instance and the Breakpoint status will become "Error".
+If a Breakpoint reaches the time limit for a specific app instance, the breakpoint will be disabled for the instance, and the Breakpoint status will change to "Error".
 
-Default value for this configuration is 400ms.
-
-To change this configuration for a specific Breakpoint, change the value of `maxAugTime` to the desired number in milliseconds:
-```json
-"maxAugTime" : 600
-```
+The default value for this configuration is 400ms.
 
 ## Auto-disable after global hit count limit
 
-You can set a breakpoint to automatically disable after a global hit count is hit. By default, this feature is disabled.
+You can set a breakpoint to automatically disable after a global hit count is hit.
 
 This is a soft limit - once it is hit, the breakpoint will be disabled but it may take a short while for it to be received and handled by your app instances, so you may see more hits than your limit. 
 
-To change this configuration for a specific Breakpoint, in the `aug` section, change the value of `globalHitLimit` to the desired maximum hit count:
-```json
-"globalHitLimit": 10
-```
-
-## Auto-disable after date passes
-
-You can set a breakpoint to automatically disable after a certain date passes. By default, this feature is disabled.
-
-This is a soft limit - once it is hit, the breakpoint will be disabled but it may take a short while for it to be received and handled by your app instances, so you may see more hits after the date passes. 
-
-To change this configuration for a specific Breakpoint, in the `aug` section, change the value of `globalDisableAfterTime` to the desired date in UTC, in RFC 3339 format:
-```json
-"globalDisableAfterTime": "2019-08-18T08:42:58.770788Z"
-```
-
-## Including Packages
-
-By default, Rookout doesn't set breakpoints inside the application's dependencies (`node_modules` for Node, `site-packages` for Python, inapplicable for JVM).
-
-This setting may be changed at the repository level by following the instructions [here](source-repos.md#debugging-packages).  
-Alternatively, you may change the value of `includeExternals` (under the `location` object) to `true` inside a specific breakpoint:
-```json
-"includeExternals" : true
-```
-
 ## Maximum running time
 
-As a matter of safety to your application, when a single breakpoint run takes more than a reasonable time to run, it is disabled permanently. When this happens, the breakpoint will need to be manually re-enabled using the IDE, perhaps also collecting less data to prevent the safety from re-triggering.
-
-You can change the maximum amount of time allowed for a single run by setting:
-
-```json
-"aug": {
-  "maxAugTime": "700"
-}
-```
-
-Time is in milliseconds.
+As a matter of safety to your application, when a single breakpoint run takes more than a reasonable time to run, it is disabled permanently. When this happens, the breakpoint will need to be manually re-enabled, perhaps also collecting less data to prevent the safety from re-triggering.

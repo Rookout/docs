@@ -21,8 +21,6 @@ For more information, you can click on the Breakpoint status indicator or read m
 
 The next time the code you have set the breakpoint on is invoked, Rookout collects parts of the application state and sends it to the IDE or any other targets of your choosing.
 
-You can read more about the [Breakpoint structure](breakpoints-structure.md) and how to perform [common changes](breakpoint-limits.md) to it.
-
 ## Breakpoint Limits:
 
 You can set limits on individual breakpoints to limit the amount of data to be collected. When limits are reached, the breakpoint should be disabled automatically. Once disabled, it should not collect additional data. You can re-enable the breakpoint by right-clicking on it and selecting Enable.

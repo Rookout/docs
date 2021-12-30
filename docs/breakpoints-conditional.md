@@ -12,11 +12,23 @@ Setting a condition is done by right-clicking on a breakpoint and selecting the 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IkuvAH52PVA" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
 
-### Rookout provides two types of conditions:
-- Simple - compare the values of one or two variables.
-- Advanced - define a complex condition using logical parameters (use "&&" for AND statement,  "||" for OR statement, "(" and ")" for encapsulation).
+You can use local variables from your code in the condition, as well as our [built-in variables](built-in-variables.md).
 
-### Advanced conditions - supported operators and functions:
+## Condition types:
+
+Rookout provides two condition types, simple and advanced. Switching between these modes is done per breakpoint, in the breakpoint setting pane, by clicking the toggle button shown in the following image:
+
+![Condition type toggle](/img/screenshots/advanced_condition.png)
+
+### Simple conditions
+
+Using a simple condition, we can compare a variable with some value (or another variable).
+
+### Advanced conditions
+
+Using an advanced condition, we can define a more complex condition using logical parameters. Use "&&" for AND statement,  "||" for OR statement, "(" and ")" for encapsulation.
+
+Advanced conditions support the following operators and functions:
 
 | Operator  | Example | Description |
 | --- | --- | --- |
@@ -33,5 +45,4 @@ Setting a condition is done by right-clicking on a breakpoint and selecting the 
 | `[]` | `arr[4]!=4`, `dict['a']!=4`  | Set conditions regarding to a specific sequence’s element - list, dict etc. |
 | `size` | `arr.size() >= 32` | Use size instead of len or length on any platform |
 
-**Keep in mind:** 
-1. The supported syntax may differ between languages.
+**Keep in mind:** the supported syntax may differ between languages.
