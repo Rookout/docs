@@ -1,6 +1,6 @@
 ---
 id: node-setup
-title: Node.js SDK Instrumentation
+title: Node.js SDK
 sidebar_label: Node.js
 ---
 

@@ -1,13 +1,11 @@
 ---
 id: jvm-setup
-title: JVM SDK Instrumentation
+title: JVM SDK
 sidebar_label: JVM
 ---
 
-This page will dive into the nitty gritty details on installing Rookout under various configurations.  
-If you are encountering any difficulties with deploying Rookout, this is the place to look.
-
-
+This page dives into the nitty-gritty details on installing Rookout under various configurations.  
+If you encounter difficulties with deploying Rookout, this is the place to look.
 
 ## JVM
 
@@ -16,6 +14,12 @@ It can be download directly to the target system by running the following comman
 ```bash
 curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
 ```
+
+## Supported Languages
+
+The following languages are currently supported by the JVM SDK: Java, Scala, Kotlin, Groovy, ColdFusion, and Clojure.
+
+If you use a language that is not mentioned above, please let us know at {@inject: supportEmail}.
 
 ## Setup
 
@@ -164,9 +168,7 @@ ROOKOUT_TARGET_PID=1234 java -jar rook.jar
 
 The following Java versions are supported: 7 (7u111+), 8 (8u74+), 11 (11u4+), 13, 17.
 
-The following languages are supported: Java, Scala, Kotlin, Groovy, ColdFusion, and Clojure.
-
-If your version or language is not mentioned above, please let us know at {@inject: supportEmail}.
+If your version is not mentioned above, please let us know at {@inject: supportEmail}.
 
 ## Dependencies
 
