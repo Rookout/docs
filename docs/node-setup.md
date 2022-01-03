@@ -49,7 +49,7 @@ rookout.start({
 ```
 <div class="rookout-org-info"></div>
 
-Note that the `rookout.start` method returns a promise that resolves when the connection attempt succeeds (fullfill) or fails (reject). You can choose to utilize that Promise or to ignore it.
+Note that the `rookout.start` method returns a promise that resolves (fulfills) when the connection attempt either succeeds or fails. You can change this behavior by setting the `throw_errors` parameter to `true` (to reject on fail). Either way, you can choose to utilize this Promise or ignore it.
 
 ### Flush
 
@@ -58,6 +58,13 @@ The callback is executed when the method finishes.
 
 ```js
 rookout.flush(cb);
+```
+
+### Connectivity test
+
+To make sure the SDK is properly configured and test your connection (using environment variables only), run the following command:
+```bash
+./node_modules/.bin/rookout-check
 ```
 
 ## Configuration
@@ -74,9 +81,37 @@ The following table includes all configuration options. Pass them to the `rookou
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `throw_errors` | --- | False | Set to `True` to reject the promsise or throw an exception if `start` fails (error messages are not printed to the console when this is set) |
-| `sources` | `ROOKOUT_SOURCES` | None | Source information (see below) |
-| NONE | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout [Live Logger](live-logger.md) |
+| `throw_errors` | --- | False | Set to `True` to reject the promsie when `start` fails |
+| `sources` | `ROOKOUT_SOURCES` | None | Sources information (see [info below](#sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
+| --- | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout [Live Logger](live-logger.md) |
+
+### Sources
+
+Use the sources configuration parameter to initialize the SDK with information about the sources used in your application.
+
+It is a semicolon-separated list of source control repository and revision information. It allowes Rookout to automatically fetch the source code of your application, and of additional dependencies, if any.
+
+The format for this parameter is as follows:
+
+`{git repo url}#{commit ID};{git repo url}#{commit ID};...`
+
+For example, for the repository https://github.com/Rookout/tutorial-nodejs and the commit 2f79053d7bc7c9c9561a30dda202b3dcd2b72b90 along with the Lodash package at commit 2da024c3b4f9947a48517639de7560457cd4ec6c, we would use:
+
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Environment variables-->
+
+```bash
+ROOKOUT_SOURCES=https://github.com/Rookout/tutorial-nodejs#cf85c4e0365d8082ca2e1af63ca8b5b436a13909;https://github.com/lodash/lodash#2da024c3b4f9947a48517639de7560457cd4ec6c
+```
+
+<!--Start function parameters-->
+
+```javascript
+sources: "https://github.com/Rookout/tutorial-nodejs#cf85c4e0365d8082ca2e1af63ca8b5b436a13909;https://github.com/lodash/lodash#2da024c3b4f9947a48517639de7560457cd4ec6c"
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Transpiling and Bundling
 
@@ -134,7 +169,7 @@ For other NodeJS versions, please [contact us](https://www.rookout.com/company/c
 
 ### Integrating with serverless
 
-For most serverless types, Rookout can be installed as usual.
+For most serverless types, you can install Rookout normally, as described [above](#setup).
 
 For AWS Lambda, it is recommended to use the provided wrapper like so:
 
