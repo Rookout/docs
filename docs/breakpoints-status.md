@@ -26,7 +26,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
   You are not invoking the *correct* line of code in the correct *application instance*.
 
 - #### Output to Integration
-  You are using a custom Breakpoint that sends the message to another [Target](integrations.md).
+  You are using a custom Breakpoint that sends the message to another target.
 
 - #### (Python) Preforking
   You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](python-setup.md#pre-forking-servers).
