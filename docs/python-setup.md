@@ -158,7 +158,7 @@ Several popular application servers for Python load the application code during 
 
 If you are using one of those servers, you can set the fork argument in the SDK api to true to automatically enable Rookout in forked processes, and no additional changes will be required.
 
-If you are don't enable fork support Rookout must be started in each of the workers processes.  
+If you don't enable fork support, Rookout must be started in each of the workers processes.  
 We have included sample snippets for a few common options:
 
 <!--DOCUSAURUS_CODE_TABS-->
