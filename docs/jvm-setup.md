@@ -132,6 +132,21 @@ jar {
 
 ## Source information
 
+To enable automatic source fetching, information about the source control must be specified.
+
+### Environment Variables or Start Parameters
+
+Use the environment variables or start parameters as described above in the API section. 
+
+### Git Folder
+
+Rookout gets the source information from the .git folder if both of the following apply:
+
+1. The .git folder is present at any of the parent directories of where the application is running (searching up the tree).
+2. No environment variables or start parameters are set for source information.
+
+### Multiple Sources
+
 Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
 
 ROOKOUT_SOURCES is a semicolon-separated list with either a source control repository and revision information, or a path on the local filesystem to a JAR file.
@@ -141,6 +156,7 @@ Example
 ROOKOUT_SOURCES=https://github.com/Rookout/Rookout#afe123;/path/to/lib.jar
 ```
 
+### Jar File
 To load source information from a jar file, you need to add the following attributes to the JAR manifest:
 
 `Rookout-Repository`: Repository URL

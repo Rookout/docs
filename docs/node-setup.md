@@ -80,18 +80,6 @@ To make sure the SDK was properly installed and test your configuration (environ
 ```bash
 ./node_modules/.bin/rookout-check
 ```
-## Source information
-
-Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
-
-ROOKOUT_SOURCES is a semicolon-separated list with a source control repository and revision information. 
-This will allow Rookout to automatically fetch your application's source code from the right revision, and also additional dependencies' sources.
-When using Git the repository is a URL (remote origin) and the revision is a full commit hash or a branch name.
-
-For example let's say I use https://github.com/Rookout/tutorial-nodejs with the commit 2f79053d7bc7c9c9561a30dda202b3dcd2b72b90 and I use the Lodash package (https://github.com/lodash/lodash) from its master branch:
-```
-ROOKOUT_SOURCES=https://github.com/Rookout/tutorial-nodejs#cf85c4e0365d8082ca2e1af63ca8b5b436a13909;https://github.com/lodash/lodash#master
-```
 
 ## Transpiling and Source Maps
 Transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging will work out of the box.
@@ -131,12 +119,33 @@ The additional step will make sure the source maps end up in the right place:
  }
 ```
 
-## Source Code Detection
+## Source information
 
-The NodeJS SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
-1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
-2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
-3. If the main application is running from within a Git repository, use its head. 
+To enable automatic source fetching, information about the source control must be specified.
+
+### Environment Variables or Start Parameters
+
+Use the environment variables or start parameters as described above in the API section. 
+
+### Git Folder
+
+Rookout gets the source information from the .git folder if both of the following apply:
+
+1. The .git folder is present at any of the parent directories of where the application is running (searching up the tree).
+2. No environment variables or start parameters are set for source information.
+
+### Multiple Sources
+
+Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
+
+ROOKOUT_SOURCES is a semicolon-separated list with a source control repository and revision information. 
+This will allow Rookout to automatically fetch your application's source code from the right revision, and also additional dependencies' sources.
+When using Git the repository is a URL (remote origin) and the revision is a full commit hash or a branch name.
+
+For example let's say I use https://github.com/Rookout/tutorial-nodejs with the commit 2f79053d7bc7c9c9561a30dda202b3dcd2b72b90 and I use the Lodash package (https://github.com/lodash/lodash) from its master branch:
+```
+ROOKOUT_SOURCES=https://github.com/Rookout/tutorial-nodejs#cf85c4e0365d8082ca2e1af63ca8b5b436a13909;https://github.com/lodash/lodash#master
+```
 
 ## Supported Versions
 

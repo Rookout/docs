@@ -169,7 +169,10 @@ Use the environment variables or start parameters as described above in the API 
 
 ### Git Folder
 
-If the .git folder is present at the root of your project, and no environment variables / start parameters are set, then the source information will be taken from it.
+Rookout gets the source information from the .git folder if both of the following apply:
+
+1. The .git folder is present at any of the parent directories of where the application is running (searching up the tree).
+2. No environment variables or start parameters are set for source information.
 
 ### MSBuildGitHash Package
 

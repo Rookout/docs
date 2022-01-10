@@ -93,12 +93,20 @@ To make sure the SDK was properly installed in your Python (virtual) environment
 ```bash
 python -m rook
 ```
-## Source Commit Detection
+## Source information
 
-The Python SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
-1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
-2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
-3. If the main application is running from within a Git repository, use its head. 
+To enable automatic source fetching, information about the source control must be specified.
+
+### Environment Variables or Start Parameters
+
+Use the environment variables or start parameters as described above in the API section. 
+
+### Git Folder
+
+Rookout gets the source information from the .git folder if both of the following apply:
+
+1. The .git folder is present at any of the parent directories of where the application is running (searching up the tree).
+2. No environment variables or start parameters are set for source information.
 
 ## Supported Python versions
 
