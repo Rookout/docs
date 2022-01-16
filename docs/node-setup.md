@@ -148,8 +148,8 @@ Rookout supports the following NodeJS versions:
 | Release  | Versions           |
 | ---      | ---                |
 | **12**   | 12.5.0 --> 12.22.7 |
-| **14**   | 14.0.0 --> 14.18.2 |
-| **16**   | 16.0.0 --> 16.13.1 |
+| **14**   | 14.0.0 --> 14.18.3 |
+| **16**   | 16.0.0 --> 16.13.2 |
 
 We strongly recommend using one of the supported NodeJS (LTS) versions, however there is limited support for the following versions:
 
