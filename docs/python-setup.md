@@ -238,9 +238,15 @@ def start_rook(*args, **kwargs):
 
 ## Serverless and PaaS deployments
 
-### Integrating with Serverless
+**Note:** Adding the Rookout SDK should slow down your Serverless cold-start times. Please make sure your timeout is no less than 10 seconds.
 
-When integrating Rookout into a Serverless application, you should explicitly flush the collected information using the `flush` method.
+### Integrating Rookout to a serverless application
+
+There are two methods to integrating Rookout to a serverless application.
+
+#### The default method
+
+The default method is more configurable, but when using it you should explicitly flush the collected information using the `flush` method:
 
 ```python
 import rook
@@ -259,13 +265,9 @@ def lambda_handler(event, context):
 
 <div class="rookout-org-info"></div>
 
-**Note:** Adding the Rookout SDK should slow down your Serverless cold-start times. Please make sure your timeout is no less than 10 seconds.
+Using the default method, you can also choose to automatically add the function's name as a label in Rookout.
 
-### Function name label
-
-To add the function's name automatically as a label in Rookout, use the context provided by your serverless vendor.
-
-On AWS lambda for example, use the `AWS_LAMBDA_FUNCTION_NAME` environment variable or the `function_name` context property in the labels configuration, like so:
+To do so, use the context provided by your serverless vendor. On AWS lambda for example, use the `AWS_LAMBDA_FUNCTION_NAME` environment variable or the `function_name` context property in the labels configuration, like so:
 
 ```python
   rook.start(
@@ -278,6 +280,18 @@ On AWS lambda for example, use the `AWS_LAMBDA_FUNCTION_NAME` environment variab
 ```
 
 <div class="rookout-org-info"></div>
+
+#### The wrapper method
+
+A more easy, yet less configurable method is to use Rookout's provided wrapper, like so:
+
+```python
+from rook.serverless import serverless_rook
+
+@serverless_rook
+def lambda_handler(event, context):
+  return "Hello world"
+```
 
 ### Building
 
