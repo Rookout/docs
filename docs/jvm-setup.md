@@ -27,8 +27,11 @@ If you use a language that is not mentioned above, please let us know at {@injec
 ### Java Agent
 
 Simply add the Rookout SDK as a Java Agent to your environment:
+
 <!--DOCUSAURUS_CODE_TABS-->
+
 <!--Environment Variable-->
+
 ```bash
 # Add the Rookout Java Agent to your application using an environment variable
 export JAVA_TOOL_OPTIONS="-javaagent:$(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token]"
@@ -56,8 +59,6 @@ org.osgi.framework.bootdelegation=com.rookout.*
 ```
 
 This is done where all other JVM options are set (via -D flags, JVM_OPTS, etc.).
-
-<div class="rookout-org-info"></div>
 
 ## SDK Configuration
 
@@ -195,13 +196,127 @@ If your version is not mentioned above, please let us know at {@inject: supportE
 
 ### Integrating with Serverless
 
-When integrating Rookout into a Serverless application, you should explicitly flush the collected information. This requires using the including the Rookout SDK API as a dependency and packaging it with your applications.
+To integrate Rookout to a serverless application, it is required to add Rookout as a dependency, instead of using it as a Java agent. It is also required to explicitly flush the collected information.
 
-For more information, please check out our [deployment-examples](deployment-examples.md).
+Follow these steps to add Rookout to your serverless application:
 
-**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 30 seconds.
+First, add Rookout as a dependency:
 
-**Note** In some Serverless environments (such as AWS Lambda), the tools.jar library is missing and must be included within your package as well.
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Gradle-->
+
+```groovy
+dependencies {
+    implementation 'com.rookout:rook:latest.release'
+}
+```
+
+<!--Maven-->
+
+```xml
+<dependencies>
+    <dependency>
+    <groupId>com.rookout</groupId>
+    <artifactId>rook</artifactId>
+    <version>RELEASE</version>
+    </dependency>
+</dependencies>
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+Some serverless environments may be missing the "tools" dependency, you can add it from the Nuiton repository:
+
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Gradle-->
+
+```groovy
+repositories {
+    mavenCentral()
+    maven {
+        url "https://nexus.nuiton.org/nexus/service/local/repositories/thirdparty/content/"
+    }
+}
+
+// ...
+
+dependencies {
+    implementation 'com.sun:tools:1.7.0.13'
+}
+```
+
+<!--Maven-->
+
+```xml
+<repositories>
+    <repository>
+        <id>nuiton</id>
+        <name>nuiton</name>
+        <url>https://nexus.nuiton.org/nexus/service/local/repositories/thirdparty/content/</url>
+    </repository>
+</repositories>
+
+<!--...-->
+
+<dependencies>
+    <dependency>
+    <groupId>com.sun</groupId>
+    <artifactId>tools</artifactId>
+    <version>1.7.0.13</version>
+    </dependency>
+</dependencies>
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+Now, add Rookout to your code, start is using `API.start` and flush using `API.flush`:
+
+```java
+import com.rookout.rook.API;
+import com.rookout.rook.RookOptions;
+
+// ...
+
+public String handleRequest(Map<String,String> event, Context context) { // AWS Lambda example
+    RookOptions opts = new RookOptions();
+    HashMap<String, String> labels = new HashMap<String, String>();
+
+    labels.put("env", "dev");
+    opts.labels = labels;
+
+    API.start(opts);
+
+    // ...
+
+    API.flush();
+
+    return response;
+}
+```
+
+Optionally, you can add the function's name as a label. To do so, use the context provided by your cloud vendor. For example, in AWS Lambda:
+
+```java
+labels.put("func_name", context.getFunctionName());
+```
+
+Next, add your Rookout token as an environment variable:
+
+```bash
+ROOKOUT_TOKEN=[Your Rookout Token]
+```
+
+<div class="rookout-org-info"></div>
+
+For Java 11, also add the following option as an environment variable:
+
+```bash
+JAVA_TOOL_OPTIONS=-Djdk.attach.allowAttachSelf=true
+```
+
+**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 10 seconds.
 
 ## Illegal reflective access warning
 
