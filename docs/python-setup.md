@@ -238,52 +238,9 @@ def start_rook(*args, **kwargs):
 
 ## Serverless and PaaS deployments
 
-**Note:** Adding the Rookout SDK should slow down your Serverless cold-start times. Please make sure your timeout is no less than 10 seconds.
-
 ### Integrating Rookout to a serverless application
 
-There are two methods to integrating Rookout to a serverless application.
-
-#### The default method
-
-The default method is more configurable, but when using it you should explicitly flush the collected information using the `flush` method:
-
-```python
-import rook
-
-# ...
-
-def lambda_handler(event, context):
-  rook.start(token='[Your Rookout Token]',
-            labels={"env": "dev"})
-  
-  # ...
-
-  rook.flush()
-  return "Hello world"
-```
-
-<div class="rookout-org-info"></div>
-
-Using the default method, you can also choose to automatically add the function's name as a label in Rookout.
-
-To do so, use the context provided by your serverless vendor. On AWS lambda for example, use the `AWS_LAMBDA_FUNCTION_NAME` environment variable or the `function_name` context property in the labels configuration, like so:
-
-```python
-  rook.start(
-    token='[Your Rookout Token]',
-    labels={
-      "func_name": context.function_name
-      "env": "dev"
-    }
-  )
-```
-
-<div class="rookout-org-info"></div>
-
-#### The wrapper method
-
-A more easy, yet less configurable method is to use Rookout's provided wrapper, like so:
+Rookout provides an easy to use wrapper that works for most common serverless runtimes:
 
 ```python
 from rook.serverless import serverless_rook
@@ -292,6 +249,8 @@ from rook.serverless import serverless_rook
 def lambda_handler(event, context):
   return "Hello world"
 ```
+
+**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less than 10 seconds.
 
 ### Building
 
