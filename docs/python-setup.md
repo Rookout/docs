@@ -11,6 +11,7 @@ If you are encountering any difficulties with deploying Rookout, this is the pla
 
 The [Python SDK](https://pypi.org/project/rook/) provides the ability to fetch debug data from a running application in real time.  
 It can easily be installed by running the following command:
+
 ```bash
 pip install rook
 ```
@@ -18,21 +19,22 @@ pip install rook
 ## Setup
 
 Start the SDK within your application:
+
 ```python
 import rook
 
 if __name__ == "__main__":
     rook.start(token='[Your Rookout Token]',
-               labels={"env":"dev"}) # Optional,see Labels page below Projects
+               labels={"env": "dev"}) # Optional,see Labels page below Projects
     # Your program starts here :)
 ```
+
 <div class="rookout-org-info"></div>
 
 The SDK should be imported just before the application begins executing.  
 This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
 
 For [Pre-forking servers](#pre-forking-servers) please read the relevant section..  
-
 
 ## SDK API
 
@@ -90,9 +92,11 @@ The `flush` method allows explicitly flushing the Rookout logs and messages.
 ## Test connectivity
 
 To make sure the SDK was properly installed in your Python (virtual) environment, and test your configuration (environment variables only), run the following command:
+
 ```bash
 python -m rook
 ```
+
 ## Source information
 
 To enable automatic source fetching, information about the source control must be specified.
@@ -140,37 +144,47 @@ If you encounter an error similar to the following example, be sure to install t
 Here are the commands for installing the build environments for some common OS:
 
 <!--DOCUSAURUS_CODE_TABS-->
+
 <!--OS X-->
+
 ```bash
 xcode-select --install
 # If installing for PyPy on macOS, installing pkg-config is also required:
 brew install pkg-config
 ```
+
 <!--Debian-->
+
 ```bash
 apt-get update -q && apt-get install -qy g++ python-dev
 ```
+
 <!--Fedora-->
+
 ```bash
 yum install -qy gcc-c++ python-devel
 ```
 <!--Alpine-->
+
 ```bash
 apk update && apk add g++ python-dev linux-headers
 ```
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Pre-forking servers
 
 Several popular application servers for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
-If you are using one of those servers, you can set the fork argument in the SDK api to true to automatically enable Rookout in forked processes, and no additional changes will be required.
+If you are using one of those servers, you can set the `fork` argument in the SDK API to true to automatically enable Rookout in forked processes, and no additional changes are required.
 
-If you don't enable fork support, Rookout must be started in each of the workers processes.  
+If you don't enable fork support, Rookout must be started in each of the worker processes.  
 We have included sample snippets for a few common options:
 
 <!--DOCUSAURUS_CODE_TABS-->
+
 <!--uWSGI-->
+
 ```python
 try:
     from uwsgidecorators import postfork
@@ -185,12 +199,14 @@ except ImportError:
     import rook
     rook.start(token='[Your Rookout Token]')
 ```
+
 <div class="rookout-org-info"></div>
 
 You must also enable threads by adding __--enable-threads__ to the command line or __enable-threads = true__ in the uWSGI ini file.  
 Read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
 
 <!--Gunicorn-->
+
 ```python
 # Gunicorn does not preload applications by default
 # Under some configurations (such as --preload) you will need to create gunicorn_config.py file.
@@ -201,8 +217,11 @@ def post_fork(server, worker):
     import rook
     rook.start(token='[Your Rookout Token]')
 ```
+
 <div class="rookout-org-info"></div>
+
 <!--Celery-->
+
 ```python
 from celery.signals import worker_process_init
 
@@ -212,15 +231,16 @@ def start_rook(*args, **kwargs):
     import rook
     rook.start(token='[Your Rookout Token]')
 ```
+
 <div class="rookout-org-info"></div>
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Serverless and PaaS deployments
 
-### Integrating with Serverless
+### Integrating Rookout to a serverless application
 
-When integrating Rookout into a Serverless application, you should explicitly flush the collected information.  
-For most common Serverless runtimes, Rookout provides easy to use wrappers such as:
+Rookout provides an easy to use wrapper that works for most common serverless runtimes:
 
 ```python
 from rook.serverless import serverless_rook
@@ -230,9 +250,7 @@ def lambda_handler(event, context):
   return "Hello world"
 ```
 
-**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 10 seconds.
-
-For more information, please check out our [deployment-examples](deployment-examples.md).
+**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less than 10 seconds.
 
 ### Building
 

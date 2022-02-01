@@ -43,7 +43,7 @@ rookout.start({
     token: '[Your Rookout Token]',
     labels:
         {
-            "env": "dev" // Optional, see the Labels page for more info.
+            env: "dev" // Optional, see the Labels page for more info.
         }
 });
 ```
@@ -180,21 +180,32 @@ function handler(event, context, callback) {
         callback(null, "Hello World");
 }
 
-exports.handler = rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{env:"dev"}});
+exports.handler = rookout.wrap(handler, {token: '[Your Rookout Token]', labels: {env: "dev"}});
 ```
 
 <div class="rookout-org-info"></div>
 
 **Note:** Although Rookout's impact on performance is negligible during regular use, the Rookout SDK does slow down serverless cold starts. Please make sure your function's timeout is higher than 10 seconds.
 
-**Note:** To add the function's name automatically as a label in Rookout, use the environment variable, for example:
+### Function name label
+
+To add the function's name automatically as a label in Rookout, use the context provided by your serverless vendor.
+
+On AWS lambda for example, use the `AWS_LAMBDA_FUNCTION_NAME` environment variable in the labels configuration, like so:
+
 ```javascript
-rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{f_name:process.env.AWS_LAMBDA_FUNCTION_NAME}})
+rookout.wrap(handler, {
+    token:'[Your Rookout Token]',
+    labels: {
+        function_name: env.AWS_LAMBDA_FUNCTION_NAME,
+        env: "dev"
+    }
+})
 ```
 
 <div class="rookout-org-info"></div>
 
-### Debugging Node Modules
+## Debugging Node Modules
 
 By default, Rookout ignores your project's dependencies in the `node_modules` folder.
 
