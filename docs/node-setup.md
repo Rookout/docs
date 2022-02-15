@@ -93,25 +93,17 @@ If your application's code is being transpiled or bundled, you must include the 
 
 - [**Webpack**](https://webpack.js.org/) - use either the `inline-source-map` or `source-map` values for the `devtool` option in the webpack config file ([reference](https://webpack.js.org/configuration/devtool)).
 - [**Babel**](https://babeljs.io/) - use either the `"inline"`, `"both"` or `true` values for the `sourceMaps` option in the Babel config file ([reference](https://babeljs.io/docs/en/options#sourcemaps)).
-- [**TypeScript**](https://www.typescriptlang.org/) - add either `"inlineSourceMap": true` or `"sourceMap": true` as well as `"inlineSources": true` in the TypeScript config file ([reference](https://www.typescriptlang.org/tsconfig#inlineSourceMap)).
+- [**TypeScript**](https://www.typescriptlang.org/) - add either `"inlineSourceMap": true` or `"sourceMap": true` in the TypeScript config file ([reference](https://www.typescriptlang.org/tsconfig#inlineSourceMap)).
 - [**CoffeeScript**](https://coffeescript.org/) - pass either the `-M` (inline) or `-m` flags to the `coffee` CLI tool ([reference](https://coffeescript.org/#usage)).
 
-### Advanced transpiling configurations
+### Don't Pack Rookout
 
-If multiple transpiling steps are used (for example - TypeScript followed by Webpack), you may need to add a step to your Webpack config. 
+Packing Rookout and other dependencies in general might create unnecessary issues, so we should leave them unpacked.
+ - Webpack: Import `webpack-node-externals` like so: `const nodeExternals = require('webpack-node-externals');`, and add `externals: [nodeExternals()],` to `module.exports`.
 
-For webpack, use `source-map-loader`:
+ - Angular Universal + Webpack: Add `"externalDependencies": ["rookout"],` under `"options"` inside `angular.json`.
 
-1. Install using `npm install -D source-map-loader`
-2. Add the following rule to the webpack config file (under `rules`):
-
-```js
- {
-    test: /\.js$/,
-    use: ["source-map-loader"],
-    enforce: "pre"
- }
-```
+IMPORTANT: Don't forget to copy your `node_modules` directory to your server cause it is no longer packed.
 
 ## Source information
 
