@@ -145,21 +145,21 @@ ROOKOUT_SOURCES=https://github.com/Rookout/tutorial-nodejs#cf85c4e0365d8082ca2e1
 
 Rookout supports the following NodeJS versions:
 
-| Release  | Versions           |
-| ---      | ---                |
-| **12**   | 12.5.0 --> 12.22.7 |
-| **14**   | 14.0.0 --> 14.18.3 |
-| **16**   | 16.0.0 --> 16.13.2 |
+| Release  | Versions            |
+| ---      | ---                 |
+| **12**   | 12.5.0 --> 12.22.10 |
+| **14**   | 14.0.0 --> 14.19.0  |
+| **16**   | 16.0.0 --> 16.13.2  |
 
 We strongly recommend using one of the supported NodeJS (LTS) versions, however there is limited support for the following versions:
 
-| Release  | Versions           |
-| ---      | ---                |
-| **8**    | 8.0.0  --> 8.17.0  |
-| **9**    | 9.0.0  --> 9.11.2  |
-| **10**   | 10.0.0 --> 10.24.1 |
-| **11**   | 11.0.0 --> 11.15.0 |
-| **12**   | 12.0.0 --> 12.4.0  |
+| Release  | Versions            |
+| ---      | ---                 |
+| **8**    | 8.0.0  --> 8.17.0   |
+| **9**    | 9.0.0  --> 9.11.2   |
+| **10**   | 10.0.0 --> 10.24.1  |
+| **11**   | 11.0.0 --> 11.15.0  |
+| **12**   | 12.0.0 --> 12.4.0   |
 
 For other NodeJS versions, please [contact us](https://www.rookout.com/company/contact).
 
