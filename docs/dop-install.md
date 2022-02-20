@@ -12,6 +12,8 @@ sidebar_label: Installation
 
 Follow these installation instructions to deploy the Datastore in your environment, either on Kubernetes or Docker.
 
+These instructions were written under the assumption that an [ETL Controller](etl-controller-intro.md) is already up and running.
+
 ## Kubernetes
 
 There are two ways to deploy the Datastore on Kubernetes.
@@ -102,12 +104,12 @@ To configure the Rookout app to use the datastore, go to the "Setup" page in the
 
 The first URL is called "Datastore URL accessible from user's browser" which should start with `https://` followed by the domain name of the datastore that is accessible from the user's computers.
 
-The second URL is called "Datastore URL accessible from the Rookout Controller". It should either start with `http://` if using `PLAIN` server mode and the ETL Controller is in the same local network as the Datastore, or with `https://` otherwise.
+The second URL is called "Datastore URL accessible from the Rookout Controller". It should start with `http://` or `https://`, depending on the type of the connection between the ETL Controller and the Datastore.
 
 To further configure your Datastore installation:
 
-* Kubernetes - add configuration values to the `values.yaml` file or the installation command using `--set`.
-* Docker - add configuration values as environment variables using the `-e` flag.
+* Kubernetes - add configuration values using the `helm upgrade` or `helm install` commands (using the `values.yaml` file or the `--set` parameter).
+* Docker - add configuration values as environment variables using the `-e` flag to the `docker run` command.
 
 Read more about encryption, and all other configuration values [here](dop-config.md#helm-values).
 
