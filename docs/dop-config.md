@@ -17,7 +17,7 @@ This page includes configuration details for the Datastore.
 
 ## Helm Values
 
-Configure the Datastore [k8s installation](dop-install#kubernetes) by setting values in the `values.yaml` file or using `--set` in the `helm install` command.
+Configure the Datastore [k8s installation](dop-install#kubernetes) by setting values in the `values.yaml` file or using `--set` in the `helm install` or `helm upgrade` commands.
 
 ### Datastore Configuration
 
