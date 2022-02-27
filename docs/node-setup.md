@@ -96,14 +96,14 @@ If your application's code is being transpiled or bundled, you must include the 
 - [**TypeScript**](https://www.typescriptlang.org/) - add either `"inlineSourceMap": true` or `"sourceMap": true` as well as `"inlineSources": true` in the TypeScript config file ([reference](https://www.typescriptlang.org/tsconfig#inlineSourceMap)).
 - [**CoffeeScript**](https://coffeescript.org/) - pass either the `-M` (inline) or `-m` flags to the `coffee` CLI tool ([reference](https://coffeescript.org/#usage)).
 
-### Don't Pack Rookout
+### Setting up Webpack to pack Rookout can get tricky
 
 Packing Rookout and other dependencies in general might create unnecessary issues, so we should leave them unpacked.
  - Webpack: Import `webpack-node-externals` like so: `const nodeExternals = require('webpack-node-externals');`, and add `externals: [nodeExternals()],` to `module.exports`.
 
  - Angular Universal + Webpack: Add `"externalDependencies": ["rookout"],` under `"options"` inside `angular.json`.
 
-IMPORTANT: Don't forget to copy your `node_modules` directory to your server cause it is no longer packed.
+**Note:** Make sure that the `node_modules` directory is available where your application will be running, as the modules are no longer being packed to the bundle.
 
 ## Source information
 
