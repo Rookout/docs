@@ -87,9 +87,9 @@ The following table includes all configuration options. Pass them to the `rookou
 
 ## Transpiling and Bundling
 
-If your application's code is being transpiled or bundled, you must include the source maps, either in-line or as separate files.
+### Source maps
 
-### Configuration for common tools
+If your application's code is being transpiled or bundled, you must include the source maps, either in-line or as separate files.
 
 - [**Webpack**](https://webpack.js.org/) - use either the `inline-source-map` or `source-map` values for the `devtool` option in the webpack config file ([reference](https://webpack.js.org/configuration/devtool)).
 - [**Babel**](https://babeljs.io/) - use either the `"inline"`, `"both"` or `true` values for the `sourceMaps` option in the Babel config file ([reference](https://babeljs.io/docs/en/options#sourcemaps)).
@@ -98,12 +98,15 @@ If your application's code is being transpiled or bundled, you must include the 
 
 ### Bundling tools
 
-By default, Webpack will pack Rookout together along with all other modules, which can get tricky and may not work. We recommend excluding it from the bundle by following these instructions:
- - Webpack: Import `webpack-node-externals` like so: `const nodeExternals = require('webpack-node-externals');`, and add `externals: [nodeExternals()],` to `module.exports`.
+By default, Webpack packs Rookout with all other modules, which can get tricky and may not work. We recommend excluding it from the bundle by following these instructions:
 
- - Angular Universal + Webpack: Add `"externalDependencies": ["rookout"],` under `"options"` inside `angular.json`.
+- **Webpack** - There are two options, both require editing the `webpack.config.js` file:
+    1. **Exclude all modules** - Import `webpack-node-externals` like so: `const nodeExternals = require('webpack-node-externals');`, then add `externals: [nodeExternals()]` to `module.exports`.
+    1. **Exclude Rookout only** - Add `externals: {'rookout': 'commonjs rookout'}` to `module.exports`, or `externals: {'rookout/lambda': 'commonjs rookout/lambda'}` if running on AWS Lambda with [our wrapper](#integrating-with-serverless).
 
-**Note:** Make sure that the `node_modules` directory is available where your application will be running, as the modules are no longer being packed to the bundle.
+- **Angular Universal** - Add `"externalDependencies": ["rookout"],` under `"options"` inside `angular.json`.
+
+**Note:** In this case, the `node_modules` directory must be available where your application is running, as the modules will no longer get packed into the bundle. If you only excluded the Rookout module, only it needs to be available.
 
 ## Source information
 
