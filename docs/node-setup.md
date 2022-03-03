@@ -87,31 +87,26 @@ The following table includes all configuration options. Pass them to the `rookou
 
 ## Transpiling and Bundling
 
-If your application's code is being transpiled or bundled, you must include the source maps, either in-line or as separate files.
+### Source maps
 
-### Configuration for common tools
+If your application's code is being transpiled or bundled, you must include the source maps, either in-line or as separate files.
 
 - [**Webpack**](https://webpack.js.org/) - use either the `inline-source-map` or `source-map` values for the `devtool` option in the webpack config file ([reference](https://webpack.js.org/configuration/devtool)).
 - [**Babel**](https://babeljs.io/) - use either the `"inline"`, `"both"` or `true` values for the `sourceMaps` option in the Babel config file ([reference](https://babeljs.io/docs/en/options#sourcemaps)).
 - [**TypeScript**](https://www.typescriptlang.org/) - add either `"inlineSourceMap": true` or `"sourceMap": true` as well as `"inlineSources": true` in the TypeScript config file ([reference](https://www.typescriptlang.org/tsconfig#inlineSourceMap)).
 - [**CoffeeScript**](https://coffeescript.org/) - pass either the `-M` (inline) or `-m` flags to the `coffee` CLI tool ([reference](https://coffeescript.org/#usage)).
 
-### Advanced transpiling configurations
+### Bundling tools
 
-If multiple transpiling steps are used (for example - TypeScript followed by Webpack), you may need to add a step to your Webpack config. 
+By default, Webpack packs Rookout with all other modules, which can get tricky and may not work. We recommend excluding it from the bundle by following these instructions:
 
-For webpack, use `source-map-loader`:
+- **Webpack** - There are two options, both require editing the `webpack.config.js` file:
+    1. **Exclude all modules** - Import `webpack-node-externals` like so: `const nodeExternals = require('webpack-node-externals');`, then add `externals: [nodeExternals()]` to `module.exports`.
+    1. **Exclude Rookout only** - Add `externals: {'rookout': 'commonjs rookout'}` to `module.exports`, or `externals: {'rookout/lambda': 'commonjs rookout/lambda'}` if running on AWS Lambda with [our wrapper](#integrating-with-serverless).
 
-1. Install using `npm install -D source-map-loader`
-2. Add the following rule to the webpack config file (under `rules`):
+- **Angular Universal** - Add `"externalDependencies": ["rookout"],` under `"options"` inside `angular.json`.
 
-```js
- {
-    test: /\.js$/,
-    use: ["source-map-loader"],
-    enforce: "pre"
- }
-```
+**Note:** In this case, the `node_modules` directory must be available where your application is running, as the modules will no longer get packed into the bundle. If you only excluded the Rookout module, only it needs to be available.
 
 ## Source information
 
