@@ -12,7 +12,7 @@
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version",
     "lint": "./node_modules/.bin/eslint core pages",
-    "create-sa-key-json": "$GSA_KEY > \"$HOME\"/gcloud.json",
+    "create-sa-key-json": "echo echo $GSA_KEY > \"$HOME\"/gcloud.json",
     "deploy-firebase": "GOOGLE_APPLICATION_CREDENTIALS=\"$HOME\"/gcloud.json firebase deploy --only hosting:rookout-docs",
     "deploy-firebase-dci": "firebase deploy --only hosting:rookout-dci-docs",
     "generate-examples": "node build_utils/deployment_examples_generator.js",
