@@ -25,6 +25,12 @@ references:
     attach_workspace:
       at: ~/docs
 
+  auth_google: &auth_google
+    run:
+      command: |
+        echo ${GSA_KEY} > gcp-key.json && gcloud auth activate-service-account --key-file gcp-key.json
+        gcloud --quiet config set project &{GOOGLE_PROJECT_ID} && gcloud docker --authorize-only
+
 jobs:
   up-version:
     working_directory: ~/docs
@@ -50,6 +56,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys
+      - *auth_google
       - run:
           name: Deploying to Firebase Hosting
           command: |
