@@ -62,6 +62,9 @@ jobs:
           name: Deploying to Firebase Hosting
           command: |
             cd website
+            pwd
+            ls
+            cp /website/package.json .
             yarn install
             yarn run lint
             yarn run generate-examples
