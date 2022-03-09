@@ -57,6 +57,7 @@ jobs:
       - checkout
       - add_ssh_keys
       - *auth_google
+      - run: export GOOGLE_APPLICATION_CREDENTIALS=/root/docs/gcp-key.json
       - run:
           name: Deploying to Firebase Hosting
           command: |
