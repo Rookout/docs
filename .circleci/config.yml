@@ -52,9 +52,12 @@ jobs:
     working_directory: ~/docs
     docker:
       - image: circleci/node:10.16.3
+    environment:
+        GOOGLE_APPLICATION_CREDENTIALS: "/home/circleci/docs/gcp-key.json"
     steps:
       - checkout
       - add_ssh_keys
+      - *setup_workspace
       - *auth_google
       - run:
           name: Pre Deply to Firebase Hosting
@@ -66,12 +69,8 @@ jobs:
             yarn run generate-sdk-digests
             yarn run build
             yarn run fetch-swagger-ui
-      - run:
-          name: Deploying to Firebase Hosting
-          command: "GOOGLE_APPLICATION_CREDENTIALS=/root/docs/gcp-key.json yarn run firebase deploy --only hosting:rookout-docs"
-      - run:
-          name: Post Deploying to Firebase Hosting
-          command: |
+            yarn run firebase use rookout-docs --debug
+            yarn run firebase deploy --project rookout-docs --only hosting:rookout-docs --debug
             yarn run clean-build
             yarn run build-dci
             yarn run fetch-swagger-ui
