@@ -69,7 +69,7 @@ jobs:
             yarn run generate-sdk-digests
             yarn run build
             yarn run fetch-swagger-ui
-            yarn run firebase use --add --debug
+            yarn run firebase use rookout-docs --debug
             yarn run firebase deploy --project rookout-docs --only hosting:rookout-docs --debug
             yarn run clean-build
             yarn run build-dci
