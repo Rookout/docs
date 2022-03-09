@@ -57,6 +57,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys
+      - *setup_workspace
       - *auth_google
       - run:
           name: Deploying to Firebase Hosting
