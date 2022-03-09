@@ -53,7 +53,7 @@ jobs:
     docker:
       - image: circleci/node:10.16.3
     environment:
-        GOOGLE_APPLICATION_CREDENTIALS: "/root/docs/gcp-key.json"
+        GOOGLE_APPLICATION_CREDENTIALS: "/home/circleci/docs/gcp-key.json"
     steps:
       - checkout
       - add_ssh_keys
