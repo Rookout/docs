@@ -60,7 +60,7 @@ jobs:
       - *setup_workspace
       - *auth_google
       - run:
-          name: Deploying to Firebase Hosting
+          name: Pre Deply to Firebase Hosting
           command: |
             cd website
             yarn install
@@ -69,7 +69,7 @@ jobs:
             yarn run generate-sdk-digests
             yarn run build
             yarn run fetch-swagger-ui
-            yarn run firebase use rookout-docs --debug
+            yarn run firebase use rookout-docs --add --debug
             yarn run firebase deploy --project rookout-docs --only hosting:rookout-docs --debug
             yarn run clean-build
             yarn run build-dci
