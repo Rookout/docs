@@ -68,7 +68,7 @@ jobs:
             yarn run fetch-swagger-ui
       - run:
           name: Deploying to Firebase Hosting
-          command: "GOOGLE_APPLICATION_CREDENTIALS=/root/docs/gcp-key.json firebase deploy --only hosting:rookout-docs"
+          command: "GOOGLE_APPLICATION_CREDENTIALS=/root/docs/gcp-key.json yarn run firebase deploy --only hosting:rookout-docs"
       - run:
           name: Post Deploying to Firebase Hosting
           command: |
