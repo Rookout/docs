@@ -28,8 +28,7 @@ references:
   auth_google: &auth_google
     run:
       command: |
-        echo ${GSA_KEY} > gcp-key.json && gcloud auth activate-service-account --key-file gcp-key.json
-        gcloud --quiet config set project &{GOOGLE_PROJECT_ID} && gcloud docker --authorize-only
+        echo ${GSA_KEY} > gcp-key.json
 
 jobs:
   up-version:
