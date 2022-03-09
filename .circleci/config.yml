@@ -66,11 +66,11 @@ jobs:
             yarn run generate-sdk-digests
             yarn run build
             yarn run fetch-swagger-ui
-      -run:
-        name: Deploying to Firebase Hosting
+      - run:
+          name: Deploying to Firebase Hosting
           command: "GOOGLE_APPLICATION_CREDENTIALS=/root/docs/gcp-key.json firebase deploy --only hosting:rookout-docs"
-      -run:
-        name: Post Deploying to Firebase Hosting
+      - run:
+          name: Post Deploying to Firebase Hosting
           command: |
             yarn run clean-build
             yarn run build-dci
