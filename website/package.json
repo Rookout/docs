@@ -12,7 +12,6 @@
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version",
     "lint": "./node_modules/.bin/eslint core pages",
-    "deploy-firebase": "GOOGLE_APPLICATION_CREDENTIALS=/root/docs/gcp-key.json && firebase deploy --only hosting:rookout-docs",
     "deploy-firebase-dci": "firebase deploy --only hosting:rookout-dci-docs",
     "generate-examples": "node build_utils/deployment_examples_generator.js",
     "generate-sdk-digests": "node build_utils/sdk_digests_generator.js",

@@ -57,7 +57,7 @@ jobs:
       - add_ssh_keys
       - *auth_google
       - run:
-          name: Deploying to Firebase Hosting
+          name: Pre Deply to Firebase Hosting
           command: |
             cd website
             yarn install
@@ -66,7 +66,12 @@ jobs:
             yarn run generate-sdk-digests
             yarn run build
             yarn run fetch-swagger-ui
-            yarn run deploy-firebase
+      -run:
+        name: Deploying to Firebase Hosting
+          command: "GOOGLE_APPLICATION_CREDENTIALS=/root/docs/gcp-key.json firebase deploy --only hosting:rookout-docs"
+      -run:
+        name: Post Deploying to Firebase Hosting
+          command: |
             yarn run clean-build
             yarn run build-dci
             yarn run fetch-swagger-ui
