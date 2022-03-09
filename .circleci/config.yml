@@ -67,7 +67,6 @@ jobs:
             yarn run generate-sdk-digests
             yarn run build
             yarn run fetch-swagger-ui
-            yarn run create-sa-key-json
             yarn run deploy-firebase
             yarn run clean-build
             yarn run build-dci
