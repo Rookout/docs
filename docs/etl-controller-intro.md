@@ -25,7 +25,7 @@ The diagram below describes the data flow:
 
 ![ETL Controller Diagram](/img/screenshots/etl_controller_diagram.png)
 
-The SDK instances connect to the Controller over WebSocket through port 7488 by default. The Controller's hostname needs to be configured for each SDK instance.
+The SDK instances connect to the Controller over WebSocket the hostname and port need to be configured for each SDK instance.
 
 The ETL Controller connects to Rookout's cloud services to receive commands and report telemetry information over WebSocket Secure through port 443.
 
