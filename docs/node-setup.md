@@ -85,7 +85,7 @@ The following table includes all configuration options. Pass them to the `rookou
 | `sources` | `ROOKOUT_SOURCES` | None | Sources information (see [info below](#sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
 | --- | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout [Live Logger](live-logger.md) |
 
-## Transpiling and Bundling
+## Code manipulation
 
 If your application's code is being transpiled or bundled, you must include the source maps, either in-line or as separate files.
 
@@ -111,6 +111,29 @@ For webpack, use `source-map-loader`:
     use: ["source-map-loader"],
     enforce: "pre"
  }
+```
+
+### Uglification/minification
+
+Rookout works with uglified/minified code if it's provided with source maps, however, mangling (changing of variable names) should not be applied.
+
+Webpack may automatically mangle variable names when used in production. To disable mangling in webpack, add the following to `webpack.config.js`:
+
+```js
+const TerserPlugin = require("terser-webpack-plugin");
+
+module.exports = {
+ 
+ // ...
+
+ optimization: {
+   minimizer: [new TerserPlugin({
+      terserOptions: {
+         mangle: false,
+       },
+   })],
+ },
+};
 ```
 
 ## Source information

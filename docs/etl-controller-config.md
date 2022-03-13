@@ -70,7 +70,7 @@ Configure the controller [docker container](etl-controller-docker.md) by passing
 | [Proxy password](#proxy-server)                       | `ROOKOUT_PROXY_PASSWORD`         | String            | -       |
 | [Send data to Rookout](#send-data-to-rookout)         | `ROOKOUT_SEND_DATA`              | `true` or `false` | `true`  |
 | [Skip SSL verification](#skip-ssl-verification)       | `ROOKOUT_SKIP_SSL_VERIFY`        | `true` or `false` | `false` |
-| [Limit CPU cores](#resources-cpu-cores)               | `ROOKOUT_CONTROLLER_MAX_CPU`     | Integer           | 1       |
+| [Limit CPU cores](#limit-cpu-cores)               | `ROOKOUT_CONTROLLER_MAX_CPU`     | Integer           | 1       |
 | [Limit memory](#limit-memory)                         | `ROOKOUT_CONTROLLER_MAX_MEMORY`  | Integer (MB)      | 512     |
 
 ## Configuration Details
