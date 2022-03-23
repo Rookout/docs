@@ -1,7 +1,7 @@
 ---
 id: license
-title: Rookout Controller License
-sidebar_label: Controller License
+title: Rookout Controller and Datastore License
+sidebar_label: Controller and Datastore License
 ---
 
 This software is a proprietary product of Rookout, and is protected under copyright laws and international copyright treaties. 

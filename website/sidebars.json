@@ -32,9 +32,13 @@
     ],
     "ETL Controller":[
       "etl-controller-intro",
-      "etl-controller-k8s",
-      "etl-controller-docker",
+      "etl-controller-install",
       "etl-controller-config"
+    ],
+    "Data On-Premise":[
+      "dop-intro",
+      "dop-install",
+      "dop-config"
     ],
     "Advanced": [
       "live-logger",
