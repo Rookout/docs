@@ -1,6 +1,7 @@
 ---
 id: collaborations
-title: Collaborations
+title: Collaboration
+sidebar_label: Collaboration
 ---
 
 Leverage the power of Rookout by collaborating with your colleagues using the following features:

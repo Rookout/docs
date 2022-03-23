@@ -24,7 +24,8 @@
       "breakpoints",
       "breakpoints-status",
       "breakpoints-conditional",
-      "breakpoints-tasks"
+      "breakpoint-limits",
+      "built-in-variables"
     ],
     "Organizations":[
       "organizations"
@@ -43,7 +44,8 @@
       "live-logger",
       "collaborations",
       "tracing-timeline",
-      "keyboard-shortcuts"
+      "keyboard-shortcuts",
+      "data-redaction"
     ],
     "More": [
       "sdk-digests",

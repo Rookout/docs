@@ -1,21 +1,27 @@
 ---
 id: dotnet-setup
-title: .NET SDK Instrumentation
+title: .NET SDK
 sidebar_label: .NET
 ---
 
-This page will dive into the nitty gritty details on installing Rookout under various configurations.  
-If you are encountering any difficulties with deploying Rookout, this is the place to look.
+This page dives into the nitty-gritty details on installing Rookout under various configurations.  
+If you encounter difficulties with deploying Rookout, this is the place to look.
 
-## .NET
+## Installation
 
-The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real time.  
+The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real-time.  
 
 It can easily be installed as a [NuGet package](https://www.nuget.org/packages/Rookout).
 
+## Supported Languages
+
+The following languages are currently supported by the .NET SDK: C#, VB.NET, and F#.
+
+If you use a language that is not mentioned above, please let us know at {@inject: supportEmail}.
+
 ## Setup
 
-Start the SDK within your application, by adding the following to your *main* method or your application's entry point:
+Start the SDK within your application by adding the following to your *main* method or your application's entry point:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--C#-->
@@ -112,13 +118,46 @@ Unix:
 
 Windows: Simply run rookout_test_core_2.x.bat or rookout_test_core_3.x.bat respectively.
 
-## Debug Information
+## Project Requirements
 
-Rookout requires your application to be built and deployed with a debug information in the form of a pdb file. Rookout supports the `full`, `portable` and `pdbonly` configurations, while `embedded` is *not* supported.
+### Debug type
+
+Rookout requires your application to be built and deployed with debug information in the form of `.pdb` files.
+
+In your project’s settings, set the “debug type” to `portable` like so:
+
+```xml
+<DebugType>portable</DebugType>
+```
+
+While other “debug types” such as `full` and `pdbonly` may work (but are not recommended), the `embedded` type is not supported at all.
 
 For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
 
+### Optimizations
+
 Disabling compiler optimizations `<Optimize>false</Optimize>` will further improve the debugging experience at a small cost to the application performance.
+
+### Multi-Project Solutions
+
+To support multi-projects Solutions its recommended to add the following `Directory.Build.props` file to your Root folder:
+```xml
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <PackageReference Include="Rookout" Version="0.1.*" />
+  </ItemGroup>
+
+</Project>
+```
+
+### Dynamic library loading
+
+To be able to debug libraries loaded using [`AppDomain.Load(Byte[], Byte[])`](https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.load?view=netcore-3.1#System_AppDomain_Load_System_Byte___System_Byte___) make sure to load those binaries into Rookout using:
+
+```cs
+Rook.API.LoadAssembly(Assembly a, byte[] pdb, byte[] assembly)
+```
 
 ## Source information
 
@@ -130,7 +169,10 @@ Use the environment variables or start parameters as described above in the API 
 
 ### Git Folder
 
-If the .git folder is present at the root of your project, and no environment variables / start parameters are set, then the source information will be taken from it.
+Rookout gets the source information from the .git folder if both of the following apply:
+
+1. The .git folder is present at any of the parent directories of where the application is running (searching up the tree).
+2. No environment variables or start parameters are set for source information.
 
 ### MSBuildGitHash Package
 
@@ -144,27 +186,6 @@ After installing the [MSBuildGitHash NuGet package](https://www.nuget.org/packag
     <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
 ```
 
-## Multi-Project Solutions
-
-To support multi-projects Solutions its recommended to add the following `Directory.Build.props` file to your Root folder:
-```xml
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
-  <ItemGroup>
-    <PackageReference Include="Rookout" Version="0.1.*" />
-  </ItemGroup>
-
-</Project>
-```
-
-## Dynamic library loading
-
-To be able to debug libraries loaded using [`AppDomain.Load(Byte[], Byte[])`](https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.load?view=netcore-3.1#System_AppDomain_Load_System_Byte___System_Byte___) make sure to load those binaries into Rookout using:
-
-```cs
-Rook.API.LoadAssembly(Assembly a, byte[] pdb, byte[] assembly)
-```
-
 ## Supported Versions
 
 | Implementation      | Versions              |
@@ -172,10 +193,6 @@ Rook.API.LoadAssembly(Assembly a, byte[] pdb, byte[] assembly)
 | **.NET Framework**  | 4.5, 4.6, 4.7, 4.8    |
 | **.NET Core**       | 2.1, 2.2, 3.0, 3.1    |
 | **.NET**            | 5.0                   |
-
-## Supported Languages
-
-The following languages are officially supported: C#, VB.NET and F#.
 
 ## IIS support
 

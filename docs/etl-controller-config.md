@@ -55,6 +55,7 @@ Configure the controller [k8s installation](etl-controller-install#kubernetes) b
 
 Configure a Controller [docker container](etl-controller-install#docker) by passing environment variables to it.
 
+
 | Configuration                                                       | Environment Variable             | Value             | Default |
 | ---                                                                 | ---                              | ---               | ---     |
 | [Rookout token](#rookout-token)                                     | `ROOKOUT_TOKEN`                  | Rookout token     | -       |
@@ -64,6 +65,7 @@ Configure a Controller [docker container](etl-controller-install#docker) by pass
 | [Proxy password](#proxy-server)                                     | `ROOKOUT_PROXY_PASSWORD`         | String            | -       |
 | [Send data to Rookout](#send-data-to-rookout)                       | `ROOKOUT_SEND_DATA`              | `true` or `false` | `true`  |
 | [Skip Datastore SSL verification](#skip-datastore-ssl-verification) | `ROOKOUT_DOP_NO_SSL_VERIFY`      | `true` or `false` | `false` |
+
 
 ## Configuration Details
 

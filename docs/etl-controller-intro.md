@@ -1,6 +1,6 @@
 ---
 id: etl-controller-intro
-title: ETL Controller
+title: ETL Controller Introduction
 sidebar_label: Introduction
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: ruby-setup
-title: Ruby SDK Instrumentation
+title: Ruby SDK
 sidebar_label: Ruby
 ---
 
@@ -11,9 +11,22 @@ If you are encountering any difficulties with deploying Rookout, this is the pla
 
 The [Ruby SDK](https://rubygems.org/gems/rookout) provides the ability to fetch debug data from a running application in real time.  
 It can easily be installed by running the following command:
+
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Gemfile-->
+
 ```bash
 gem install rookout
 ```
+
+<!--Bundler-->
+
+```bash
+bundle add rookout
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Setup
 
@@ -67,11 +80,21 @@ To make sure the SDK was properly installed in your Ruby environment, and test y
 ```bash
 rookout
 ```
-## Source Commit Detection
 
-The Ruby SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
-1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
-2. If the main application is running from within a Git repository, use its head. 
+## Source information
+
+To enable automatic source fetching, information about the source control must be specified.
+
+### Environment Variables or Start Parameters
+
+Use the environment variables or start parameters as described above in the API section. 
+
+### Git Folder
+
+Rookout gets the source information from the .git folder if both of the following apply:
+
+1. The .git folder is present at any of the parent directories of where the application is running (searching up the tree).
+2. No environment variables or start parameters are set for source information.
 
 ## Supported Ruby versions
 
@@ -89,24 +112,19 @@ bundle config force_ruby_platform true
 
 ## Pre-forking servers
 
-Several popular application servers for Ruby load the application code during startup and then `fork()` the process multiple times to worker processes.
+Several popular application servers for Ruby load the application code during startup and then "fork" the process multiple times to worker processes.
 
-If you are using one of those servers, you can set the fork argument in the SDK api to true to automatically enable Rookout in forked processes, and no additional changes will be required.
+If you are using one of those servers, you can set the `fork` argument in the `start` method to true. Doing so will automatically enable Rookout in any forked process, with no additional changes be required.
 
-## Serverless and PaaS deployments (WIP)
+If you don't enable forking support, Rookout must be started in each of the workers processes.
+
+## Serverless and PaaS deployments
 
 ### Integrating with Serverless
 
-When integrating Rookout into a Serverless application, you should explicitly flush the collected information.  
-For most common Serverless runtimes, Rookout provides easy to use wrappers such as:
-
-```ruby
-TBD
-```
+When integrating Rookout into a Serverless application, you should explicitly flush the collected information using the `flush` method.
 
 **Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 10 seconds.
-
-For more information, please check out our [deployment-examples](deployment-examples.md).
 
 ### Building
 
@@ -116,6 +134,7 @@ If you are running on a Windows or Mac machine (or using an incompatible Linux d
 Many Serverless frameworks (such as AWS SAM) have built-in support for it and will work out of the box.
 
 If you need to set up your own build, we recommend using Docker, with a command line such as:
+
 ```bash
 docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-ruby2.7 pip install -r requirements.txt
 ```

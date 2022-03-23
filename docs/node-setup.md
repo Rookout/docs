@@ -1,50 +1,79 @@
 ---
 id: node-setup
-title: Node.js SDK Instrumentation
+title: Node.js SDK
 sidebar_label: Node.js
 ---
 
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
-If you are encountering any difficulties with deploying Rookout, this is the place to look.
 
-## Node.js
+## Installation
 
-The [NodeJS SDK](https://www.npmjs.com/package/rookout) provides the ability to fetch debug data from a running application in real time.  
-It can easily be installed by running the following command:
+Install the Rookout [Node SDK](https://www.npmjs.com/package/rookout)) using one of the following methods:
+
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--NPM-->
+
 ```bash
 npm install --save rookout
 ```
 
+<!--Yarn-->
+
+```bash
+yarn add rookout
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ## Setup
 
-Start the SDK within your application:
+To add the SDK to your application, add:
+
 ```javascript
 const rookout = require('rookout');
+```
 
+### Start
 
+To start the SDK, add the following to your app’s entry point:
+
+```javascript
 rookout.start({
     token: '[Your Rookout Token]',
     labels:
         {
-            "env":"dev" // Optional,see Labels page below Projects
+            env: "dev" // Optional, see the Labels page for more info.
         }
 });
 ```
 <div class="rookout-org-info"></div>
 
-## SDK API
+Note that the `rookout.start` method returns a promise that resolves (fulfills) when the connection attempt either succeeds or fails. You can change this behavior by setting the `throw_errors` parameter to `true` (to reject on fail). Either way, you can choose to utilize this Promise or ignore it.
 
-### start
+### Flush
+
+The `flush` method allows explicitly flushing the Rookout logs and messages.  
+The callback is executed when the method finishes.
 
 ```js
-start(options={});
+rookout.flush(cb);
 ```
 
-The `start` method is used to initialize the SDK. Receives configuration using an `options` object and returns a promise that will resolve when the initial connection attempt to the debug controller succeeds or fails. Either way, connection will be maintained and retried in the background. If you set `throw_errors` to true, the promise will be rejected on failure.
+### Connectivity test
 
-| Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Environment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
-| ------------ | ----------------------- | ------------- | ----------- |
-| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
+To make sure the SDK is properly configured and test your connection (using environment variables only), run the following command:
+```bash
+./node_modules/.bin/rookout-check
+```
+
+## Configuration
+
+The following table includes all configuration options. Pass them to the `rookout.start` method or using environment variables.
+
+| Parameter | Environment Variable | Default Value | Description |
+| --- | --- | --- | --- |
+| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. May be left empty if you are using a Rookout ETL Controller |
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit or a branch name |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
@@ -52,35 +81,72 @@ The `start` method is used to initialize the SDK. Receives configuration using a
 | `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `throw_errors` | None | False | Set to `True` to reject the promsise or throw an exception if `start` fails (error message will not be printed in console) |
-| `sources` | `ROOKOUT_SOURCES` | None | Source information (see below) |
-| NONE | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout Live Logger |
+| `throw_errors` | --- | False | Set to `True` to reject the promsie when `start` fails |
+| `sources` | `ROOKOUT_SOURCES` | None | Sources information (see [info below](#sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
+| --- | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout [Live Logger](live-logger.md) |
 
+## Code manipulation
 
-### stop
+### Source maps
+
+If your application's code is being transpiled or bundled, you must include the source maps, either in-line or as separate files.
+
+- [**Webpack**](https://webpack.js.org/) - use either the `inline-source-map` or `source-map` values for the `devtool` option in the webpack config file ([reference](https://webpack.js.org/configuration/devtool)).
+- [**Babel**](https://babeljs.io/) - use either the `"inline"`, `"both"` or `true` values for the `sourceMaps` option in the Babel config file ([reference](https://babeljs.io/docs/en/options#sourcemaps)).
+- [**TypeScript**](https://www.typescriptlang.org/) - add either `"inlineSourceMap": true` or `"sourceMap": true` as well as `"inlineSources": true` in the TypeScript config file ([reference](https://www.typescriptlang.org/tsconfig#inlineSourceMap)).
+- [**CoffeeScript**](https://coffeescript.org/) - pass either the `-M` (inline) or `-m` flags to the `coffee` CLI tool ([reference](https://coffeescript.org/#usage)).
+
+### Bundling tools
+
+By default, Webpack packs Rookout with all other modules, which can get tricky and may not work. We recommend excluding it from the bundle by following these instructions:
+
+- **Webpack** - There are two options, both require editing the `webpack.config.js` file:
+    1. **Exclude all modules** - Import `webpack-node-externals` like so: `const nodeExternals = require('webpack-node-externals');`, then add `externals: [nodeExternals()]` to `module.exports`.
+    1. **Exclude Rookout only** - Add `externals: {'rookout': 'commonjs rookout'}` to `module.exports`, or `externals: {'rookout/lambda': 'commonjs rookout/lambda'}` if running on AWS Lambda with [our wrapper](#integrating-with-serverless).
+
+- **Angular Universal** - Add `"externalDependencies": ["rookout"],` under `"options"` inside `angular.json`.
+
+**Note:** In this case, the `node_modules` directory must be available where your application is running, as the modules will no longer get packed into the bundle. If you only excluded the Rookout module, only it needs to be available.
+
+### Uglification/minification
+
+Rookout works with uglified/minified code if it's provided with source maps, however, mangling (changing of variable names) should not be applied.
+
+Webpack may automatically mangle variable names when used in production. To disable mangling in webpack, add the following to `webpack.config.js`:
 
 ```js
-stop();
+const TerserPlugin = require("terser-webpack-plugin");
+
+module.exports = {
+ 
+ // ...
+
+ optimization: {
+   minimizer: [new TerserPlugin({
+      terserOptions: {
+         mangle: false,
+       },
+   })],
+ },
+};
 ```
 
-The `stop` method is used to shutdown the SDK.  
-
-### flush
-
-```js
-flush(cb);
-```
-
-The `flush` method allows explicitly flushing the Rookout logs and messages.  
-The callback is executed when the method finishes.
-
-## Test connectivity
-
-To make sure the SDK was properly installed and test your configuration (environment variables only), run the following command:
-```bash
-./node_modules/.bin/rookout-check
-```
 ## Source information
+
+To enable automatic source fetching, information about the source control must be specified.
+
+### Environment Variables or Start Parameters
+
+Use the environment variables or start parameters as described above in the API section. 
+
+### Git Folder
+
+Rookout gets the source information from the .git folder if both of the following apply:
+
+1. The .git folder is present at any of the parent directories of where the application is running (searching up the tree).
+2. No environment variables or start parameters are set for source information.
+
+### Multiple Sources
 
 Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
 
@@ -93,81 +159,37 @@ For example let's say I use https://github.com/Rookout/tutorial-nodejs with the 
 ROOKOUT_SOURCES=https://github.com/Rookout/tutorial-nodejs#cf85c4e0365d8082ca2e1af63ca8b5b436a13909;https://github.com/lodash/lodash#master
 ```
 
-## Transpiling and Source Maps
-Transpiling your JavaScript/TypeScript on the fly (using [babel-node](https://babeljs.io/docs/en/babel-node) or a similar tool), Rookout debugging will work out of the box.
-
-When transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), include the source maps inline within the source files or as separate files (usually `app.map.js`) within your deployment.
-
-To make sure you can validate the source file matches the file you are trying to debug, please include the original source files side-by-side with the transpiled ones or build your source map with the full source code.
-
-To test if you are transpiling with source maps, search for this comment in the transpiled files:
-```js
-//# sourceMappingURL=/path/to/file.js.map
-```
-
-If you face cases where some variables are not collected, or where some breakpoints fail to be hit, try using a minimal transpile level, or set it to a recent version of Node.js.
-
-### Configurations for Common Tools
-
-- [**Webpack**](https://webpack.js.org/) - use the `inline-source-map` or `source-map` values for [devtool](https://webpack.js.org/configuration/devtool/).  
-- [**Babel**](https://babeljs.io/) - use the `--source-maps inline` or `--source-maps` flags.  
-- [**Typescript**](https://www.typescriptlang.org/) - use the `--inlineSources` flag. For [**ts-node**](https://github.com/TypeStrong/ts-node) add source maps using the `tsconfig.json` [file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
-- [**CoffeeScript**](https://coffeescript.org/) - use the `-M` or `-m` flags.
-
-#### Advanced Webpack Transpiling Configurations
-
-If multiple transpiling steps are used (for example - TypeScript followed by Webpack), you may need to add an additional step to your Webpack config. 
-
-The additional step will make sure the source maps end up in the right place:
-
-1. Install `source-map-loader`: `npm install -D source-map-loader`
-2. Add the following rule to `webpack.config.json` (under `rules`):
-
-```js
- {
-    test: /\.js$/,
-    use: ["source-map-loader"],
-    enforce: "pre"
- }
-```
-
-## Source Commit Detection
-
-The NodeJS SDK supports detecting the existing source code commit in the following methods, in descending order of priority:
-1. If the environment variable “ROOKOUT_COMMIT” exists, use it.
-2. If the environment variable “ROOKOUT_GIT” exists, search for the configuration of the “.git” folder and use its head.
-3. If the main application is running from within a Git repository, use its head. 
-
 ## Supported Versions
 
 Rookout supports the following NodeJS versions:
 
-| Release  | Versions           |
-| ---      | ---                |
-| **12**   | 12.5.0 --> 12.22.7 |
-| **14**   | 14.0.0 --> 14.18.1 |
-| **16**   | 16.0.0 --> 16.13.0 |
+| Release  | Versions            |
+| ---      | ---                 |
+| **12**   | 12.5.0 --> 12.22.10 |
+| **14**   | 14.0.0 --> 14.19.0  |
+| **16**   | 16.0.0 --> 16.13.2  |
 
 We strongly recommend using one of the supported NodeJS (LTS) versions, however there is limited support for the following versions:
 
-| Release  | Versions           |
-| ---      | ---                |
-| **8**    | 8.0.0  --> 8.17.0  |
-| **9**    | 9.0.0  --> 9.11.2  |
-| **10**   | 10.0.0 --> 10.24.1 |
-| **11**   | 11.0.0 --> 11.15.0 |
-| **12**   | 12.0.0 --> 12.4.0  |
+| Release  | Versions            |
+| ---      | ---                 |
+| **8**    | 8.0.0  --> 8.17.0   |
+| **9**    | 9.0.0  --> 9.11.2   |
+| **10**   | 10.0.0 --> 10.24.1  |
+| **11**   | 11.0.0 --> 11.15.0  |
+| **12**   | 12.0.0 --> 12.4.0   |
 
 For other NodeJS versions, please [contact us](https://www.rookout.com/company/contact).
 
-**Note:** The Rookout NodeJS SDK does not support running side-by-side with debugger such as WebStorm or Stackdriver Debugger.
+**Note:** The Rookout NodeJS SDK does not support running side-by-side with another debugger.
 
-## Serverless and PaaS deployments
+## Serverless and PaaS Deployments
 
-### Integrating with Serverless
+### Integrating with serverless
 
-When integrating Rookout into a Serverless application, you should explicitly flush the collected information.  
-For most common Serverless runtimes, Rookout provides easy to use wrappers such as `rookout.wrap(handler, options={})`:
+For most serverless types, you can install Rookout normally, as described [above](#setup).
+
+For AWS Lambda, it is recommended to use the provided wrapper like so:
 
 ```js
 const rookout = require('rookout/lambda');
@@ -176,10 +198,39 @@ function handler(event, context, callback) {
         callback(null, "Hello World");
 }
 
-exports.handler = rookout.wrap(handler, {token:'[Your Rookout Token]', labels:{env:"dev"}});
+exports.handler = rookout.wrap(handler, {token: '[Your Rookout Token]', labels: {env: "dev"}});
 ```
 
-**Note:** Adding the Rookout SDK will slow down your Serverless cold-start times. Please make sure your timeout is no less then 10 seconds.
-**Note:** To add the function's name automatically as a label, consider adding the following - function_name:process.env.AWS_LAMBDA_FUNCTION_NAME 
+<div class="rookout-org-info"></div>
 
-For more information, please check out our [deployment-examples](deployment-examples.md).
+**Note:** Although Rookout's impact on performance is negligible during regular use, the Rookout SDK does slow down serverless cold starts. Please make sure your function's timeout is higher than 10 seconds.
+
+### Function name label
+
+To add the function's name automatically as a label in Rookout, use the context provided by your serverless vendor.
+
+On AWS lambda for example, use the `AWS_LAMBDA_FUNCTION_NAME` environment variable in the labels configuration, like so:
+
+```javascript
+rookout.wrap(handler, {
+    token:'[Your Rookout Token]',
+    labels: {
+        function_name: env.AWS_LAMBDA_FUNCTION_NAME,
+        env: "dev"
+    }
+})
+```
+
+<div class="rookout-org-info"></div>
+
+## Debugging Node Modules
+
+By default, Rookout ignores your project's dependencies in the `node_modules` folder.
+
+If the project you wish to debug is installed as a node module, create a file in the project's repository root folder, called `.rookout`, with the following content:
+
+```
+#package
+```
+
+**Note:** Rookout does not map the most common NPM packages for performance reasons and does not allow setting breakpoints inside such packages.
