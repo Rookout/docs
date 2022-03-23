@@ -85,7 +85,7 @@ The following table includes all configuration options. Pass them to the `rookou
 | `sources` | `ROOKOUT_SOURCES` | None | Sources information (see [info below](#sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
 | --- | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout [Live Logger](live-logger.md) |
 
-## Transpiling and Bundling
+## Code manipulation
 
 ### Source maps
 
@@ -107,6 +107,29 @@ By default, Webpack packs Rookout with all other modules, which can get tricky a
 - **Angular Universal** - Add `"externalDependencies": ["rookout"],` under `"options"` inside `angular.json`.
 
 **Note:** In this case, the `node_modules` directory must be available where your application is running, as the modules will no longer get packed into the bundle. If you only excluded the Rookout module, only it needs to be available.
+
+### Uglification/minification
+
+Rookout works with uglified/minified code if it's provided with source maps, however, mangling (changing of variable names) should not be applied.
+
+Webpack may automatically mangle variable names when used in production. To disable mangling in webpack, add the following to `webpack.config.js`:
+
+```js
+const TerserPlugin = require("terser-webpack-plugin");
+
+module.exports = {
+ 
+ // ...
+
+ optimization: {
+   minimizer: [new TerserPlugin({
+      terserOptions: {
+         mangle: false,
+       },
+   })],
+ },
+};
+```
 
 ## Source information
 
