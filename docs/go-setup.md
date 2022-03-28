@@ -6,7 +6,7 @@ sidebar_label: Go
 
 ---
 
-*Please note that the Go SDK is currently not generally available. We are rolling it out gradually to keep up with the high demand.*
+*Please note that the Go SDK is currently not publicly available. We are rolling it out gradually to keep up with the high demand.*
 
 *Please [Contact us](https://www.rookout.com/company/contact) if you would like to get access.*
 
