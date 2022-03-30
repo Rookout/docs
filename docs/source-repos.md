@@ -64,6 +64,150 @@ Fo the on-prem git workflow, you can fine more details in this video:
 
 <iframe width="600" height="300" src="https://www.youtube.com/embed/d4LwqNFeR7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+#### Automatic Fetching CI Examples
+
+Table: GIT_COMMIT and GIT_COMMIT variables in different CIs
+
+| CI | Variable Names | Ref Doc |
+| ------------- | ------------- | ------------- |
+| CrcleCI | CIRCLE_REPOSITORY_URL <br> CIRCLE_SHA1 | https://circleci.com/docs/2.0/env-vars/ |
+| Jenkins | GIT_URL <br> GIT_COMMIT | Env variables available in git Plugin <br> https://plugins.jenkins.io/git/#plugin-content-environment-variables |
+| GitHub Actions | github.repositoryUrl <br> GITHUB_SHA <br> github.sha | https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables <br> https://docs.github.com/en/actions/learn-github-actions/contexts |
+| Azure DevOps | Build.SourceVersion <br> Build.Repository.Uri | https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml |
+| BitBucket Pipelines | BITBUCKET_REPO_FULL_NAME <br> BITBUCKET_COMMIT | https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/ |
+| GitLab CI | CI_REPOSITORY_URL <br> CI_COMMIT_SHA | https://docs.gitlab.com/ee/ci/variables/predefined_variables.html |
+| Travis CI | REPO_URL=https://github.com/${TRAVIS_REPO_SLUG}.git <br> TRAVIS_COMMIT | https://docs.travis-ci.com/user/environment-variables/ |
+| BuildBot | repoUrl <br> revision | http://docs.buildbot.net/latest/manual/configuration/changesources.html |
+| AWS CodePipeline | CODEBUILD_SOURCE_REPO_URL <br> CODEBUILD_RESOLVED_SOURCE_VERSION | https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html |
+| Shell | \$(git rev-parse HEAD) <br> $(git config --get remote.origin.url) | |
+
+### CrcleCI
+
+```
+version: 2
+jobs:
+  build:
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - run:
+          name: Build application Docker image
+          command: |
+            docker build . -t user/app:latest \
+                  --build-arg GIT_COMMIT=$CIRCLE_SHA1 \
+                  --build-arg GIT_ORIGIN=$CIRCLE_REPOSITORY_URL
+```
+
+### Jenkins
+
+```
+#!groovy
+
+pipeline {
+  stages {
+    stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build . -t user/app:latest --build-arg GIT_COMMIT=$GIT_COMMIT --build-arg GIT_ORIGIN=$GIT_URL'
+      }
+    }
+  }
+}
+```
+
+### GitHub Actions
+
+```
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          build-args:|
+            GIT_COMMIT=$github.sha
+            GIT_ORIGIN=$github.repositoryUrl
+          tags: user/app:latest
+```
+
+### Azure DevOps
+
+```  
+steps:
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: user/app:latest
+    command: build
+    Dockerfile: Dockerfile
+    arguments: --build-arg GIT_COMMIT=$Build.SourceVersion --build-arg GIT_ORIGIN=$Build.Repository.Uri
+```
+
+### BitBucket Pipelines
+
+```
+pipelines:
+  default:
+    - step:
+        script:
+          - docker build . -t user/app:latest \
+                 --build-arg GIT_COMMIT=$BITBUCKET_COMMIT \
+                 --build-arg GIT_ORIGIN=$BITBUCKET_REPO_FULL_NAME
+        services:
+          - docker
+```
+
+### GitLab CI
+
+```
+services:
+  - docker:19.03.12-dind
+
+before_script:
+  - docker info
+
+build:
+  stage: build
+  script:
+    - docker build . -t user/app:latest \
+           --build-arg GIT_COMMIT=$CI_COMMIT_SHA \
+           --build-arg GIT_ORIGIN=$CI_REPOSITORY_URL
+
+```
+
+### Travis CI
+
+```
+services:
+  - docker
+
+variables:
+  REPO_URL=https://github.com/${TRAVIS_REPO_SLUG}.git
+
+script:
+  - docker build . -t user/app:latest \
+           --build-arg GIT_COMMIT=$TRAVIS_COMMIT \
+           --build-arg GIT_ORIGIN=$REPO_URL
+
+```
+
+### AWs CodePipeline
+
+```
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - docker build . -t user/app:latest \
+           --build-arg GIT_COMMIT=$CODEBUILD_RESOLVED_SOURCE_VERSION \
+           --build-arg GIT_ORIGIN=$CODEBUILD_SOURCE_REPO_URL
+```
+
 ### Local FileSystem - Rookout Desktop App 
 
 If you are using a local git provider or any hosted git provider that is not listed, you can tell Rookout to fetch the source code files from your local filesystem.
@@ -91,3 +235,5 @@ For more information, see [this page](node-setup#transpiling-and-source-maps).
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
 
 For more information, see [this page](dotnet-setup#packaging-sources).
+
+#
