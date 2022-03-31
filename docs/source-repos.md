@@ -66,7 +66,21 @@ Fo the on-prem git workflow, you can fine more details in this video:
 
 #### Automatic Fetching CI Examples
 
-Table: GIT_COMMIT and GIT_COMMIT variables in different CIs
+As an example to incorporate autofetching in your docker application's Pipiline step you should add env variables with arguments to your `Dockerfile`, and pass those arguments using CI variables with docker build command. This way it will pass actual information about the origin commit to rookout system. See table with predefined variables in different CI systems and example pipeline steps.
+
+[Docker Example Link](https://github.com/Rookout/tutorial-python/blob/master/Dockerfile)
+```
+...
+ARG GIT_COMMIT=unspecified
+ENV ROOKOUT_COMMIT=$GIT_COMMIT
+
+ARG GIT_ORIGIN=unspecified
+ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
+...
+```
+
+
+##### Table: GIT_COMMIT and GIT_COMMIT variables in different CIs
 
 | CI | Variable Names | Ref Doc |
 | ------------- | ------------- | ------------- |
@@ -195,7 +209,7 @@ script:
 
 ```
 
-### AWs CodePipeline
+### AWS CodePipeline
 
 ```
 version: 0.2
