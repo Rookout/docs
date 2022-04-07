@@ -66,7 +66,7 @@ Fo the on-prem git workflow, you can fine more details in this video:
 
 #### Automatic Fetching CI Examples
 
-As an example to incorporate autofetching in your docker application's Pipiline step you should add env variables with arguments to your `Dockerfile`, and pass those arguments using CI variables with docker build command. This way it will pass actual information about the origin commit to rookout system. See table with predefined variables in different CI systems and example pipeline steps.
+As an example of how to incorporate autofetching in your docker application's Pipiline step you should add env variables with arguments to your `Dockerfile` as in example below, and pass those arguments using CI variables with docker build command. This way it will pass actual information about the origin commit to rookout system. See table with predefined variables in different CI systems and example pipeline steps.
 
 [Docker Example Link](https://github.com/Rookout/tutorial-python/blob/master/Dockerfile)
 ```
@@ -90,15 +90,15 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 | Azure DevOps | Build.SourceVersion <br> Build.Repository.Uri | https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml |
 | BitBucket Pipelines | BITBUCKET_REPO_FULL_NAME <br> BITBUCKET_COMMIT | https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/ |
 | GitLab CI | CI_REPOSITORY_URL <br> CI_COMMIT_SHA | https://docs.gitlab.com/ee/ci/variables/predefined_variables.html |
-| Travis CI | REPO_URL=https://github.com/${TRAVIS_REPO_SLUG}.git <br> TRAVIS_COMMIT | https://docs.travis-ci.com/user/environment-variables/ |
+| Travis CI | $(git config --get remote.origin.url) <br> TRAVIS_COMMIT | https://docs.travis-ci.com/user/environment-variables/ |
 | BuildBot | repoUrl <br> revision | http://docs.buildbot.net/latest/manual/configuration/changesources.html |
 | AWS CodePipeline | CODEBUILD_SOURCE_REPO_URL <br> CODEBUILD_RESOLVED_SOURCE_VERSION | https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html |
 | Shell | \$(git rev-parse HEAD) <br> $(git config --get remote.origin.url) | |
 
+#### Pipeline Step Examples
 ### CrcleCI
 
 ```
-version: 2
 jobs:
   build:
     docker:
@@ -115,8 +115,6 @@ jobs:
 ### Jenkins
 
 ```
-#!groovy
-
 pipeline {
   stages {
     stage('Docker Build') {
@@ -178,12 +176,6 @@ pipelines:
 ### GitLab CI
 
 ```
-services:
-  - docker:19.03.12-dind
-
-before_script:
-  - docker info
-
 build:
   stage: build
   script:
@@ -196,24 +188,16 @@ build:
 ### Travis CI
 
 ```
-services:
-  - docker
-
-variables:
-  REPO_URL=https://github.com/${TRAVIS_REPO_SLUG}.git
-
 script:
   - docker build . -t user/app:latest \
            --build-arg GIT_COMMIT=$TRAVIS_COMMIT \
-           --build-arg GIT_ORIGIN=$REPO_URL
+           --build-arg GIT_ORIGIN=$(git config --get remote.origin.url)
 
 ```
 
 ### AWS CodePipeline
 
 ```
-version: 0.2
-
 phases:
   build:
     commands:
