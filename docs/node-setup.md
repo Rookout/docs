@@ -83,7 +83,6 @@ The following table includes all configuration options. Pass them to the `rookou
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | --- | False | Set to `True` to reject the promsie when `start` fails |
 | `sources` | `ROOKOUT_SOURCES` | None | Sources information (see [info below](#sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
-| `quick` | `ROOKOUT_LAMBDA_QUICK_START` | false | Optimize cold start time (AWS Lambda wrapper only) |
 | --- | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout [Live Logger](live-logger.md) |
 
 ## Code manipulation
@@ -204,7 +203,11 @@ exports.handler = rookout.wrap(handler, {token: '[Your Rookout Token]', labels: 
 
 <div class="rookout-org-info"></div>
 
-**Note:** Rookout default cold start time is 500ms, and is reduced to 100ms by adding `quick: true` to the options object.
+### Serverless cold-start times
+
+Rookout takes around 500ms to initialize by default, this affects only cold starts of your function. If cold-start times are critical, the initialization time can be reduced to around 100ms by adding `quick: true` to the options object, or setting "ROOKOUT_LAMBDA_QUICK_START=True" as an environment variable.
+
+Note that at the moment the quick start feature only works with the Lambda wrapper, and might cause some messages not to be sent to the UI.
 
 <div class="rookout-org-info"></div>
 
