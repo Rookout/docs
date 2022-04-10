@@ -203,23 +203,11 @@ exports.handler = rookout.wrap(handler, {token: '[Your Rookout Token]', labels: 
 
 <div class="rookout-org-info"></div>
 
-**Note:** Although Rookout's impact on performance is negligible during regular use, the Rookout SDK does slow down serverless cold starts. Please make sure your function's timeout is higher than 10 seconds.
+### Serverless cold-start times
 
-### Function name label
+Rookout takes around 500ms to initialize by default, this affects only cold starts of your function. If cold-start times are critical, the initialization time can be reduced to around 100ms by adding `quick: true` to the options object, or setting "ROOKOUT_LAMBDA_QUICK_START=True" as an environment variable.
 
-To add the function's name automatically as a label in Rookout, use the context provided by your serverless vendor.
-
-On AWS lambda for example, use the `AWS_LAMBDA_FUNCTION_NAME` environment variable in the labels configuration, like so:
-
-```javascript
-rookout.wrap(handler, {
-    token:'[Your Rookout Token]',
-    labels: {
-        function_name: env.AWS_LAMBDA_FUNCTION_NAME,
-        env: "dev"
-    }
-})
-```
+Note that at the moment the quick start feature only works with the Lambda wrapper, and might cause some messages not to be sent to the UI.
 
 <div class="rookout-org-info"></div>
 
