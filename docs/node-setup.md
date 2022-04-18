@@ -205,9 +205,7 @@ exports.handler = rookout.wrap(handler, {token: '[Your Rookout Token]', labels: 
 
 ### Serverless cold-start times
 
-Rookout takes around 500ms to initialize by default, this affects only cold starts of your function. If cold-start times are critical, the initialization time can be reduced to around 100ms by adding `quick: true` to the options object, or setting "ROOKOUT_LAMBDA_QUICK_START=True" as an environment variable.
-
-Note that at the moment the quick start feature only works with the Lambda wrapper, and might cause some messages not to be sent to the UI.
+Cold start time may increase by up to 500ms when using Rookout. If cold-start times are critical, the initialization time can be further reduced by adding `quick: true` to the options object of the Lambda wrapper, or setting "ROOKOUT_LAMBDA_QUICK_START=True" as an environment variable.
 
 <div class="rookout-org-info"></div>
 
