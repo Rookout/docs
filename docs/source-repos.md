@@ -66,7 +66,7 @@ Fo the on-prem git workflow, you can fine more details in this video:
 
 #### Automatic Fetching CI Examples
 
-As an example of how to incorporate autofetching in your docker application's Pipiline step you should add env variables with arguments to your `Dockerfile` as in example below, and pass those arguments using CI variables with docker build command. This way it will pass actual information about the origin commit to rookout system. See table with predefined variables in different CI systems and example pipeline steps.
+As an example of how to incorporate autofetching into a Docker application pipeline, you should add env variables with arguments to your `Dockerfile` as illustrated below, and pass those arguments using CI variables with docker build command. This way, it will pass actual information about the origin commit to rookout system. See table with predefined variables in different CI systems and example pipeline steps.
 
 [Docker Example Link](https://github.com/Rookout/tutorial-python/blob/master/Dockerfile)
 ```
@@ -84,7 +84,7 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 
 | CI | Variable Names | Ref Doc |
 | ------------- | ------------- | ------------- |
-| CrcleCI | CIRCLE_REPOSITORY_URL <br> CIRCLE_SHA1 | https://circleci.com/docs/2.0/env-vars/ |
+| CircleCI | CIRCLE_REPOSITORY_URL <br> CIRCLE_SHA1 | https://circleci.com/docs/2.0/env-vars/ |
 | Jenkins | GIT_URL <br> GIT_COMMIT | Env variables available in git Plugin <br> https://plugins.jenkins.io/git/#plugin-content-environment-variables |
 | GitHub Actions | github.repositoryUrl <br> GITHUB_SHA <br> github.sha | https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables <br> https://docs.github.com/en/actions/learn-github-actions/contexts |
 | Azure DevOps | Build.SourceVersion <br> Build.Repository.Uri | https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml |
@@ -96,7 +96,7 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 | Shell | \$(git rev-parse HEAD) <br> $(git config --get remote.origin.url) | |
 
 #### Pipeline Step Examples
-### CrcleCI
+### CircleCI
 
 ```
 jobs:
