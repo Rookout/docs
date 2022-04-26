@@ -192,7 +192,7 @@ After installing the [MSBuildGitHash NuGet package](https://www.nuget.org/packag
 | ------------------  | -------------         |
 | **.NET Framework**  | 4.5, 4.6, 4.7, 4.8    |
 | **.NET Core**       | 2.1, 2.2, 3.0, 3.1    |
-| **.NET**            | 5.0                   |
+| **.NET**            | 5.0, 6.0              |
 
 ## IIS support
 
