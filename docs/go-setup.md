@@ -6,9 +6,9 @@ sidebar_label: Go
 
 ---
 
-*Please note that the Go SDK is currently not publicly available. We are rolling it out gradually to keep up with the high demand.*
+*Deploying the Golang SDK requires name/password to our private repository.*
 
-*Please [Contact us](https://www.rookout.com/company/contact) if you would like to get access.*
+*Please [Contact us](https://www.rookout.com/company/contact) for access.*
 
 ---
 
