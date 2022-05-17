@@ -54,19 +54,19 @@ Configuration is where you may get fancy. You have got a few additional options 
 
 Rookout offers the smoothest debugging experience by displaying up-to-date source code for each server.
 
-The easiest way to set this up for a containerized application is by copying a handful of files from your `.git` folder into the container image.
+Set this up for a containerized application is by adding a handful of files from your `.git` folder to the container image.
 
 Start by editing (or adding, if needed) your `.Dockerignore` file and slightly modify the traditional `.git` exclude:
 ```ignore
-# Files and Folders to ignore
+# Keep ignoring .git
 .git
-# Allow files for specific files with an !
+# Allow specific files with !
 !.git/HEAD
 !.git/config
 !.git/refs
 ```
 
-Then, add a final `copy` command to the `Dockerfile`.
+Add a final `copy` command to the `Dockerfile`.
 ```docker
 COPY .git /.git
 ```
