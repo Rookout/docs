@@ -1,0 +1,82 @@
+---
+id: java-container-tutorial
+title: "Tutorial: install Rookout on containerized Java"
+sidebar_label: Containerized Java
+---
+
+This short tutorial will walk you through the perfect Rookout deployment for containerized Java applications in just three quick steps.
+
+If you have any follow-up questions, check out the full docs for the Rookout [Java Agent](jvm-setup) or reach out!
+
+### Get Your Application
+
+First things first, choose which application you will use.
+If you don't have one readily available, please use this [sample application](https://github.com/Rookout/java-tutorial-2022).  
+
+Start by:
+```bash
+git clone https://github.com/Rookout/java-tutorial-2022
+cd java-tutorial-2022
+```
+
+### 1. Add the Java Agent
+
+Rookout for Java (and any other JVM-based language) is a simple Java Agent.  
+Deploy it by downloading the JAR to the image and instructing the JVM to load it.
+
+Open the `Dockerfile` and add the following two lines just above the `ENTRYPOINT` command:
+```docker
+RUN curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
+ENV JAVA_TOOL_OPTIONS "-javaagent:rook.jar"
+```
+
+*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds (like ours), make do all your changes on the **final** stage.
+
+### 2. Configure Rookout
+
+Next, configure the Java Agent to connect to your Rookout account (if you haven't signed up, do that right [here](https://app.rookout.com/#mode=signUp).
+
+To keep things simple, set the Rookout token as an environment variable. While you are at it, set up another variable to identify your application instance as a dev environment.  
+
+Add these two lines below the lines you have already added:
+
+```docker
+ENV ROOKOUT_TOKEN [Your Rookout Token]
+ENV ROOKOUT_LABELS "env:dev"
+```
+
+Configuration is where you may get fancy. You have got a few additional options up your sleeve:
+1. Move options from environment variables to secret or configuration managers.
+2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
+3. Dig deeper into other options available right [here](jvm-setup#sdk-configuration).
+
+### 3. Configure Sources
+
+Rookout offers the smoothest debugging experience by displaying up-to-date source code for each server.
+
+The easiest way to set this up for a containerized application is by copying a handful of files from your `.git` folder into the container image.
+
+Start by editing (or adding, if needed) your `.Dockerignore` file and slightly modify the traditional `.git` exclude:
+```ignore
+# Files and Folders to ignore
+.git
+# Allow files for specific files with an !
+!.git/HEAD
+!.git/config
+!.git/refs
+```
+
+Then, add a final `copy` command to the `Dockerfile`.
+```docker
+COPY .git /.git
+```
+
+### Test
+
+Go ahead, build and run your Docker image:
+```
+docker build . -t rookout-java-todo
+docker run -it -p 8080:8080 rookout-java-todo
+```
+
+You can see the application running at `http://localhost:8080` and use Rookout to debug it on the fly!

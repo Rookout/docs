@@ -5,6 +5,9 @@
       "use-cases",
       "setup-guide"
     ],
+    "Tutorials": [
+      "java-container-tutorial"
+    ],
     "SDK Setup": [
       "setup-intro",
       "jvm-setup",
