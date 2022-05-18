@@ -51,7 +51,7 @@ Configuration is where you can get fancy. You have got additional options up you
 2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
 3. Dig deeper into other options available right [here](jvm-setup#sdk-configuration).
 
-### 3. Configure Sources
+### 3. Add Source Information
 
 Rookout offers the smoothest debugging experience by fetching up-to-date source code for each server.
 
@@ -74,7 +74,9 @@ COPY .git /.git
 
 ### Test
 
-Go ahead, build and run your Docker image:
+**One second!** if you are not using our demo app, please commit and push your changes to a new branch.
+
+Build and run your Docker image:
 ```
 docker build . -t rookout-java-todo
 docker run -it -p 8080:8080 rookout-java-todo
