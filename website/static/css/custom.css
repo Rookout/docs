@@ -1093,8 +1093,11 @@ footer .social  a {
     align-content: center;
     padding: unset !important;
     margin: unset !important;
+    height: 40px;
+    width: 40px;
 }
 footer .social  a img {
     margin: unset;
-    transform: scale(1.3);
+    height: 100%;
+    width: 100%;
 }
