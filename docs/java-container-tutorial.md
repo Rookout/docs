@@ -79,4 +79,7 @@ docker build . -t rookout-java-todo
 docker run -it -p 8080:8080 rookout-java-todo
 ```
 
-You can see the application running at `http://localhost:8080` and use Rookout to debug it on the fly!
+As your Java application spins up, search for this output at the top:
+<img src="/img/screenshots/java_success.png" />
+
+Interact with your application at `http://localhost:8080` and use Rookout to debug it on the fly!
