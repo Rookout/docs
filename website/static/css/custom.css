@@ -1080,3 +1080,21 @@ footer .social img {
     width: 30px;
     height: 30px;
 }
+
+
+/*over ride docusaurus social buttons*/
+footer .social {
+    display: flex;
+    gap: 10px;
+}
+footer .social  a {
+    display: flex !important;
+    justify-content: center;
+    align-content: center;
+    padding: unset !important;
+    margin: unset !important;
+}
+footer .social  a img {
+    margin: unset;
+    transform: scale(1.3);
+}
