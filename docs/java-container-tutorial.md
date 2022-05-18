@@ -4,13 +4,13 @@ title: "Tutorial: install Rookout on containerized Java"
 sidebar_label: Containerized Java
 ---
 
-This short tutorial will walk you through the perfect Rookout deployment for containerized Java applications in just three quick steps.
+This short tutorial will walk you through the perfect Rookout deployment for containerized Java applications in three quick steps.
 
-If you have any follow-up questions, check out the full docs for the Rookout [Java Agent](jvm-setup) or reach out!
+For any follow-up questions, check out the full docs for the Rookout [Java Agent](jvm-setup) or reach out!
 
 ### Get Your Application
 
-First things first, choose an application
+First things first, choose an application.
 If you don't have one readily available, use our [sample application](https://github.com/Rookout/java-tutorial-2022).  
 
 Start by:
@@ -34,7 +34,7 @@ ENV JAVA_TOOL_OPTIONS "-javaagent:rook.jar"
 
 ### 2. Start Rookout
 
-Configure the Java Agent to connect to your Rookout account (if you haven't signed up, do that right [here](https://app.rookout.com/#mode=signUp).
+Configure the Java Agent to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp).
 
 To keep things simple, set the Rookout token as an environment variable.  
 While you are at it, set up another variable to identify your application instance as a dev environment.   
@@ -55,7 +55,7 @@ Configuration is where you can get fancy. You have got additional options up you
 
 Rookout offers the smoothest debugging experience by fetching up-to-date source code for each server.
 
-Set this up for a containerized applications by adding a handful of files from your `.git` folder to the container image.
+Set this up for containerized applications by adding a handful of files from your `.git` folder to the container image.
 
 Edit (or add, if needed) your `.Dockerignore` file and adapt the traditional `.git` exclude:
 ```ignore
