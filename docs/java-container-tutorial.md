@@ -51,7 +51,7 @@ Configuration is where you can get fancy. You have got additional options up you
 2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
 3. Dig deeper into other options available right [here](jvm-setup#sdk-configuration).
 
-### 3. Add Source Information
+### 3. Embed Source Information
 
 Rookout offers the smoothest debugging experience by fetching up-to-date source code for each server.
 
