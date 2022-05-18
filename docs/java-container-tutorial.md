@@ -10,7 +10,7 @@ If you have any follow-up questions, check out the full docs for the Rookout [Ja
 
 ### Get Your Application
 
-First things first, choose which application you will use.
+First things first, choose an application
 If you don't have one readily available, please use this [sample application](https://github.com/Rookout/java-tutorial-2022).  
 
 Start by:
@@ -30,13 +30,14 @@ RUN curl -L "https://repository.sonatype.org/service/local/artifact/maven/redire
 ENV JAVA_TOOL_OPTIONS "-javaagent:rook.jar"
 ```
 
-*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds (like ours), make do all your changes on the **final** stage.
+*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds (like ours), make all your changes on the **final** stage.
 
-### 2. Configure Rookout
+### 2. Start Rookout
 
-Next, configure the Java Agent to connect to your Rookout account (if you haven't signed up, do that right [here](https://app.rookout.com/#mode=signUp).
+Configure the Java Agent to connect to your Rookout account (if you haven't signed up, do that right [here](https://app.rookout.com/#mode=signUp).
 
-To keep things simple, set the Rookout token as an environment variable. While you are at it, set up another variable to identify your application instance as a dev environment.  
+To keep things simple, set the Rookout token as an environment variable.  
+While you are at it, set up another variable to identify your application instance as a dev environment.   
 
 Add these two lines below the lines you have already added:
 
@@ -45,7 +46,7 @@ ENV ROOKOUT_TOKEN [Your Rookout Token]
 ENV ROOKOUT_LABELS "env:dev"
 ```
 
-Configuration is where you may get fancy. You have got a few additional options up your sleeve:
+Configuration is where you can get fancy. You have got additional options up your sleeve:
 1. Move options from environment variables to secret or configuration managers.
 2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
 3. Dig deeper into other options available right [here](jvm-setup#sdk-configuration).
@@ -56,7 +57,7 @@ Rookout offers the smoothest debugging experience by displaying up-to-date sourc
 
 Set this up for a containerized application is by adding a handful of files from your `.git` folder to the container image.
 
-Start by editing (or adding, if needed) your `.Dockerignore` file and slightly modify the traditional `.git` exclude:
+Edit (or add, if needed) your `.Dockerignore` file and adapt the traditional `.git` exclude:
 ```ignore
 # Keep ignoring .git
 .git
