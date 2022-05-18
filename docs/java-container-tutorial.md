@@ -11,7 +11,7 @@ If you have any follow-up questions, check out the full docs for the Rookout [Ja
 ### Get Your Application
 
 First things first, choose an application
-If you don't have one readily available, please use this [sample application](https://github.com/Rookout/java-tutorial-2022).  
+If you don't have one readily available, use our [sample application](https://github.com/Rookout/java-tutorial-2022).  
 
 Start by:
 ```bash
@@ -53,9 +53,9 @@ Configuration is where you can get fancy. You have got additional options up you
 
 ### 3. Configure Sources
 
-Rookout offers the smoothest debugging experience by displaying up-to-date source code for each server.
+Rookout offers the smoothest debugging experience by fetching up-to-date source code for each server.
 
-Set this up for a containerized application is by adding a handful of files from your `.git` folder to the container image.
+Set this up for a containerized application is done by adding a handful of files from your `.git` folder to the container image.
 
 Edit (or add, if needed) your `.Dockerignore` file and adapt the traditional `.git` exclude:
 ```ignore
