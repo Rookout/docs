@@ -55,7 +55,7 @@ Configuration is where you can get fancy. You have got additional options up you
 
 Rookout offers the smoothest debugging experience by fetching up-to-date source code for each server.
 
-Set this up for a containerized application is done by adding a handful of files from your `.git` folder to the container image.
+Set this up for a containerized applications by adding a handful of files from your `.git` folder to the container image.
 
 Edit (or add, if needed) your `.Dockerignore` file and adapt the traditional `.git` exclude:
 ```ignore
