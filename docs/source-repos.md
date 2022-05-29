@@ -25,7 +25,7 @@ Rookout integrates directly to the cloud editions of the following Git Providers
 In addition, Rookout offers a desktop app for fetching source repositories from a local file system.
 This allows fetching source code from local editions of Git providers, as well as from Perforce.
 
-##### Automatic Fetching
+### Automatic Fetching
 
 Rookout can connect to a repository and automatically fetch the source code for the selected instance.
 
@@ -96,7 +96,7 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 | Shell | \$(git rev-parse HEAD) <br> $(git config --get remote.origin.url) | |
 
 #### Pipeline Step Examples
-### CircleCI
+##### CircleCI
 
 ```
 jobs:
@@ -112,7 +112,7 @@ jobs:
                   --build-arg GIT_ORIGIN=$CIRCLE_REPOSITORY_URL
 ```
 
-### Jenkins
+##### Jenkins
 
 ```
 pipeline {
@@ -127,7 +127,7 @@ pipeline {
 }
 ```
 
-### GitHub Actions
+##### GitHub Actions
 
 ```
 jobs:
@@ -146,7 +146,7 @@ jobs:
           tags: user/app:latest
 ```
 
-### Azure DevOps
+##### Azure DevOps
 
 ```  
 steps:
@@ -159,7 +159,7 @@ steps:
     arguments: --build-arg GIT_COMMIT=$Build.SourceVersion --build-arg GIT_ORIGIN=$Build.Repository.Uri
 ```
 
-### BitBucket Pipelines
+##### BitBucket Pipelines
 
 ```
 pipelines:
@@ -173,7 +173,7 @@ pipelines:
           - docker
 ```
 
-### GitLab CI
+##### GitLab CI
 
 ```
 build:
@@ -185,7 +185,7 @@ build:
 
 ```
 
-### Travis CI
+##### Travis CI
 
 ```
 script:
@@ -195,7 +195,7 @@ script:
 
 ```
 
-### AWS CodePipeline
+##### AWS CodePipeline
 
 ```
 phases:
