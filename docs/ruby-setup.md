@@ -39,8 +39,9 @@ require 'rookout'
 
 The SDK should be imported as early as possible within your application code.
 This is due to the fact you can only set non-breaking breakpoints on ruby files that have been loaded after the Rookout SDK has been started.
+Usually you will want to start the Roookout SDK in a file that initializes your application, but keep in mind that you will not be able to place non-breaking breakpoints in that file.
 
-**Note** The Rookout start method is in a different file from the files where breakpoints are set.
+
 
 For [Pre-forking servers](#pre-forking-servers) please read the relevant section..  
 
