@@ -14,7 +14,8 @@ For example, adding a rule for the variable name “secretKey” replaces the ou
 Adding a rule regarding the variable value “[0-9]+” will replace `“nameAndPassword”:“LordHelmet-12345”` with `“nameAndPassword”:“LordHelmet-****“`.
 
 Replacing the data redaction method to “Include-list” redacts all variable names and values, except those specified in the list.
-Please note, data redaction settings only apply to breakpoints set after the configuration change.
+
+**Please note, data redaction settings only apply to breakpoints set after the configuration change.**
 
 The regular expressions expected syntax is the [RE2](https://github.com/google/re2/wiki/Syntax). The use of flags is currently unsupported. Case sensitivity can be set using the checkbox to the left of any list item.
 
