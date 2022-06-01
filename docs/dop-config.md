@@ -45,6 +45,8 @@ Configure the Datastore [k8s installation](dop-install#kubernetes) by setting va
 | Service account<br>name          | `serviceAccount.name`                     | String               | -           |
 | Pod<br>annotations               | `podAnnotations`                          | Key: value           | -           |
 | Service<br>annotations           | `service.annotations`                     | Key: value           | -           |
+| Service port                     | `datastore.servicePort`                   | Integer              | 80          |
+| Service port (TLS mode)          | `datastore.servicePortTLS`                | Integer              | 443         |
 
 ## Environment Variables
 
