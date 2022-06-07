@@ -6,7 +6,8 @@
       "setup-guide"
     ],
     "Tutorials": [
-      "java-container-tutorial"
+      "java-container-tutorial",
+      "node-container-tutorial"
     ],
     "SDK Setup": [
       "setup-intro",
