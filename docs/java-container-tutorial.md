@@ -27,7 +27,7 @@ Deploy it by downloading the JAR to the image and instructing the JVM to load it
 Open the `Dockerfile` and add the following two lines just above the `ENTRYPOINT` command:
 ```docker
 RUN curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.rookout&a=rook&v=LATEST" -o rook.jar
-ENV JAVA_TOOL_OPTIONS "-javaagent:rook.jar"
+ENV JAVA_TOOL_OPTIONS "-javaagent:/app/rook.jar"
 ```
 
 *Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds (like ours), make all your changes on the **final** stage.
