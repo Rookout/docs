@@ -173,7 +173,6 @@ We strongly recommend using one of the supported NodeJS (LTS) versions, however 
 
 | Release  | Versions            |
 | ---      | ---                 |
-| **8**    | 8.0.0  --> 8.17.0   |
 | **9**    | 9.0.0  --> 9.11.2   |
 | **10**   | 10.0.0 --> 10.24.1  |
 | **11**   | 11.0.0 --> 11.15.0  |
