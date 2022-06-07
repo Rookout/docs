@@ -34,7 +34,7 @@ ENV JAVA_TOOL_OPTIONS "-javaagent:/app/rook.jar"
 
 ### 2. Start Rookout
 
-Configure the Java Agent to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp).
+Configure the Java Agent to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
 
 To keep things simple, set the Rookout token as an environment variable.  
 While you are at it, set up another variable to identify your application instance as a dev environment.   
