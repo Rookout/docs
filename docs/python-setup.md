@@ -176,65 +176,7 @@ apk update && apk add g++ python-dev linux-headers
 
 Several popular application servers for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
-If you are using one of those servers, you can set the `fork` argument in the SDK API to true to automatically enable Rookout in forked processes, and no additional changes are required.
-
-If you don't enable fork support, Rookout must be started in each of the worker processes.  
-We have included sample snippets for a few common options:
-
-<!--DOCUSAURUS_CODE_TABS-->
-
-<!--uWSGI-->
-
-```python
-try:
-    from uwsgidecorators import postfork
-
-    # Run Rookout after the fork
-    @postfork
-    def run_rookout():
-        import rook
-        rook.start(token='[Your Rookout Token]')
-except ImportError:
-    # If there's no uWSGI, run Rookout normally
-    import rook
-    rook.start(token='[Your Rookout Token]')
-```
-
-<div class="rookout-org-info"></div>
-
-You must also enable threads by adding __--enable-threads__ to the command line or __enable-threads = true__ in the uWSGI ini file.  
-Read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
-
-<!--Gunicorn-->
-
-```python
-# Gunicorn does not preload applications by default
-# Under some configurations (such as --preload) you will need to create gunicorn_config.py file.
-
-# Load the file using the -c flag: 'gunicorn -c python:gunicorn_config server:app'
-
-def post_fork(server, worker):
-    import rook
-    rook.start(token='[Your Rookout Token]')
-```
-
-<div class="rookout-org-info"></div>
-
-<!--Celery-->
-
-```python
-from celery.signals import worker_process_init
-
-# Use the `worker_process_init` signal to load Rookout on worker start:
-@worker_process_init.connect
-def start_rook(*args, **kwargs):
-    import rook
-    rook.start(token='[Your Rookout Token]')
-```
-
-<div class="rookout-org-info"></div>
-
-<!--END_DOCUSAURUS_CODE_TABS-->
+If you are using one of those servers, you can set the `fork` argument in the SDK API to true to automatically enable Rookout in forked processes.
 
 ## Serverless and PaaS deployments
 
