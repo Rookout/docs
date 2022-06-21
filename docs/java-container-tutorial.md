@@ -1,6 +1,6 @@
 ---
 id: java-container-tutorial
-title: "Tutorial: install Rookout on containerized Java"
+title: "Tutorial: Install Rookout on containerized Java"
 sidebar_label: Containerized Java
 ---
 
