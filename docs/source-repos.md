@@ -25,7 +25,7 @@ Rookout integrates directly to the cloud editions of the following Git Providers
 In addition, Rookout offers a desktop app for fetching source repositories from a local file system.
 This allows fetching source code from local editions of Git providers, as well as from Perforce.
 
-##### Automatic Fetching
+### Automatic Fetching
 
 Rookout can connect to a repository and automatically fetch the source code for the selected instance.
 
@@ -63,6 +63,147 @@ To install the Rookout Desktop App, click on the **+** button in the debugger vi
 Fo the on-prem git workflow, you can fine more details in this video:
 
 <iframe width="600" height="300" src="https://www.youtube.com/embed/d4LwqNFeR7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### Automatic Fetching CI Examples
+
+As an example of how to incorporate auto fetching into a Docker application pipeline, you should add environment variables with arguments to your `Dockerfile` as illustrated below, then pass those arguments using CI variables with the `docker build` command. See table with predefined variables in different CI systems and example pipeline steps.
+
+[Docker Example Link](https://github.com/Rookout/tutorial-python/blob/master/Dockerfile)
+```
+...
+ARG GIT_COMMIT=unspecified
+ENV ROOKOUT_COMMIT=$GIT_COMMIT
+
+ARG GIT_ORIGIN=unspecified
+ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
+...
+```
+
+
+##### Table: GIT_COMMIT and GIT_COMMIT variables in different CIs
+
+| CI | Variable Names | Ref Doc |
+| ------------- | ------------- | ------------- |
+| CircleCI | CIRCLE_REPOSITORY_URL <br> CIRCLE_SHA1 | https://circleci.com/docs/2.0/env-vars/ |
+| Jenkins | GIT_URL <br> GIT_COMMIT | Env variables available in git Plugin <br> https://plugins.jenkins.io/git/#plugin-content-environment-variables |
+| GitHub Actions | github.repositoryUrl <br> GITHUB_SHA <br> github.sha | https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables <br> https://docs.github.com/en/actions/learn-github-actions/contexts |
+| Azure DevOps | Build.SourceVersion <br> Build.Repository.Uri | https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml |
+| BitBucket Pipelines | BITBUCKET_REPO_FULL_NAME <br> BITBUCKET_COMMIT | https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/ |
+| GitLab CI | CI_REPOSITORY_URL <br> CI_COMMIT_SHA | https://docs.gitlab.com/ee/ci/variables/predefined_variables.html |
+| Travis CI | $(git config --get remote.origin.url) <br> TRAVIS_COMMIT | https://docs.travis-ci.com/user/environment-variables/ |
+| BuildBot | repoUrl <br> revision | http://docs.buildbot.net/latest/manual/configuration/changesources.html |
+| AWS CodePipeline | CODEBUILD_SOURCE_REPO_URL <br> CODEBUILD_RESOLVED_SOURCE_VERSION | https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html |
+| Shell | \$(git rev-parse HEAD) <br> $(git config --get remote.origin.url) | |
+
+##### CircleCI
+
+```
+jobs:
+  build:
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - run:
+          name: Build application Docker image
+          command: |
+            docker build . -t user/app:latest \
+                  --build-arg GIT_COMMIT=$CIRCLE_SHA1 \
+                  --build-arg GIT_ORIGIN=$CIRCLE_REPOSITORY_URL
+```
+
+##### Jenkins
+
+```
+pipeline {
+  stages {
+    stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build . -t user/app:latest --build-arg GIT_COMMIT=$GIT_COMMIT --build-arg GIT_ORIGIN=$GIT_URL'
+      }
+    }
+  }
+}
+```
+
+##### GitHub Actions
+
+```
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          build-args:|
+            GIT_COMMIT=$github.sha
+            GIT_ORIGIN=$github.repositoryUrl
+          tags: user/app:latest
+```
+
+##### Azure DevOps
+
+```  
+steps:
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: user/app:latest
+    command: build
+    Dockerfile: Dockerfile
+    arguments: --build-arg GIT_COMMIT=$Build.SourceVersion --build-arg GIT_ORIGIN=$Build.Repository.Uri
+```
+
+##### BitBucket Pipelines
+
+```
+pipelines:
+  default:
+    - step:
+        script:
+          - docker build . -t user/app:latest \
+                 --build-arg GIT_COMMIT=$BITBUCKET_COMMIT \
+                 --build-arg GIT_ORIGIN=$BITBUCKET_REPO_FULL_NAME
+        services:
+          - docker
+```
+
+##### GitLab CI
+
+```
+build:
+  stage: build
+  script:
+    - docker build . -t user/app:latest \
+           --build-arg GIT_COMMIT=$CI_COMMIT_SHA \
+           --build-arg GIT_ORIGIN=$CI_REPOSITORY_URL
+
+```
+
+##### Travis CI
+
+```
+script:
+  - docker build . -t user/app:latest \
+           --build-arg GIT_COMMIT=$TRAVIS_COMMIT \
+           --build-arg GIT_ORIGIN=$(git config --get remote.origin.url)
+
+```
+
+##### AWS CodePipeline
+
+```
+phases:
+  build:
+    commands:
+      - docker build . -t user/app:latest \
+           --build-arg GIT_COMMIT=$CODEBUILD_RESOLVED_SOURCE_VERSION \
+           --build-arg GIT_ORIGIN=$CODEBUILD_SOURCE_REPO_URL
+```
 
 ### Local FileSystem - Rookout Desktop App 
 
