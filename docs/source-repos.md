@@ -66,7 +66,7 @@ Fo the on-prem git workflow, you can fine more details in this video:
 
 #### Automatic Fetching CI Examples
 
-As an example of how to incorporate autofetching into a Docker application pipeline, you should add env variables with arguments to your `Dockerfile` as illustrated below, and pass those arguments using CI variables with docker build command. This way, it will pass actual information about the origin commit to rookout system. See table with predefined variables in different CI systems and example pipeline steps.
+As an example of how to incorporate auto fetching into a Docker application pipeline, you should add environment variables with arguments to your `Dockerfile` as illustrated below, then pass those arguments using CI variables with the `docker build` command. See table with predefined variables in different CI systems and example pipeline steps.
 
 [Docker Example Link](https://github.com/Rookout/tutorial-python/blob/master/Dockerfile)
 ```
@@ -95,7 +95,6 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 | AWS CodePipeline | CODEBUILD_SOURCE_REPO_URL <br> CODEBUILD_RESOLVED_SOURCE_VERSION | https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html |
 | Shell | \$(git rev-parse HEAD) <br> $(git config --get remote.origin.url) | |
 
-#### Pipeline Step Examples
 ##### CircleCI
 
 ```
@@ -233,5 +232,3 @@ For more information, see [this page](node-setup#transpiling-and-source-maps).
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
 
 For more information, see [this page](dotnet-setup#packaging-sources).
-
-#
