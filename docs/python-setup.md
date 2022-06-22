@@ -172,11 +172,6 @@ apk update && apk add g++ python-dev linux-headers
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## Pre-forking servers
-
-Several popular application servers for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
-
-If you are using one of those servers, you can set the `fork` argument in the SDK API to true to automatically enable Rookout in forked processes.
 
 ## Serverless and PaaS deployments
 
@@ -208,7 +203,9 @@ docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-python2.7 pip insta
 
 For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
 
-## Python Spark (PySpark) applications
+## Configuration for special use cases
+
+### Python Spark (PySpark) applications
 
 1. Import the SDK as usual in the main function that runs on the Spark driver.
 2. To import the SDK on Spark executors, run `spark-submit` with `--conf spark.python.daemon.module=rook.pyspark_daemon`.
@@ -218,6 +215,13 @@ spark-submit --conf spark.python.daemon.module=rook.pyspark_daemon --conf spark.
 ```
 <div class="rookout-org-info"></div>
 
+### Pre-forking servers
 
-For more information, please check out our [deployment-examples](deployment-examples.md).
+Several popular application servers for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
+If you are using one of those servers, you can set the `fork` argument in the SDK API to true to automatically enable Rookout in forked processes.
+
+### uWSGI applications
+
+For uWSGI applications, you must enable threads by adding __--enable-threads__ to the command line or __enable-threads = true__ to the uWSGI ini file.  
+You can read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
