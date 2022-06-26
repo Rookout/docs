@@ -226,7 +226,7 @@ If you are using one of those servers, you can set the `fork` argument in the SD
 For uWSGI applications, you must enable threads by adding __--enable-threads__ to the command line or __enable-threads = true__ to the uWSGI ini file.  
 You can read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
 
-In addition, you must start rook at each worker seperatly. See sample snippet.
+In addition, you must start Rookout at each worker separately using the `postfork` decorator. See the sample snippet below.
 You can read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/PythonDecorators.html#module-uwsgidecorators).
 
 ```python
