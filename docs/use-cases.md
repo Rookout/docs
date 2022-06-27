@@ -12,7 +12,7 @@ sidebar_label: Use Cases
             </div>
             <div class="use-cases-content">
               <h2>Live Debugging: Production, Dev, and Staging</h2>
-              Rookout is built to be production-grade and also works in dev and staging. In our modern age, when other environments become as complex and nearly as critical as Production itself, many dev teams find value in using Rookout there too. Think, for example, of debugging Kubernetes in Minikube on your local machine. Rookout makes it possible.
+              Rookout is built to be production-grade and also works in dev and staging. In our modern age, when other environments become as complex and nearly as critical as Production itself, many dev teams find v alue in using Rookout there too. Think, for example, of debugging Kubernetes in Minikube on your local machine. Rookout makes it possible.
             </div>
         </div>
         <div class="use-cases-item">
