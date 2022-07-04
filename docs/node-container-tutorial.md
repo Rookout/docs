@@ -1,7 +1,7 @@
 ---
 id: node-container-tutorial
-title: "Tutorial: install Rookout on containerized Node.JS"
-sidebar_label: Containerized NodeJS
+title: "Deploy Rookout on a Node.JS container"
+sidebar_label: Node.JS Container
 ---
 
 This short tutorial will walk you through the perfect Rookout deployment for containerized NodeJS applications in four quick steps.
@@ -41,7 +41,7 @@ rookout.start({
     labels: {
         env: dev
     }
-}).then(bla bla bla)
+}).then(/*Start your application here*/)
 ```
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
