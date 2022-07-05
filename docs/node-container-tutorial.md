@@ -56,7 +56,7 @@ Configure transpiling tools to generate source maps and include them in your con
 For babel, open the `babel.config.json` file and change the `sourceMaps` configuration to `inline`:
 ```json
 {
-    "sourceMaps": "inline",
+    "sourceMaps": "inline"
 }
 ```
 
