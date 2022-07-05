@@ -47,7 +47,7 @@ rookout.start({
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 1. Move options to secret or configuration managers.
 2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
-3. Dig deeper into other options available right [here](jvm-setup#sdk-configuration).
+3. Dig deeper into other options available right [here](node-setup#sdk-configuration).
 
 ### 3. Include Source Maps
 
