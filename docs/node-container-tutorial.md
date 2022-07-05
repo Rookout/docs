@@ -99,3 +99,7 @@ As your Node.JS application spins up, search for this output at the top:
 <img src="/img/screenshots/nodejs_success.png" />
 
 Interact with your application at `http://localhost:8080` and use Rookout to debug it on the fly!
+
+### Questions?
+
+Check out this reference [implementation](https://github.com/Rookout/node-tutorial-2022/compare/configure-rookout) or reach out to us via chat or [email](mailto:support@rookout.com).
