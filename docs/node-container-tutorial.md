@@ -53,7 +53,7 @@ Configuration is where you can get fancy. You have got additional options up you
 
 Configure transpiling tools to generate source maps and include them in your container image.
 
-For babel, open the `.babelrc` file and change the `sourceMaps` configuration to `inline`:
+For babel, open the `babel.config.json` file and change the `sourceMaps` configuration to `inline`:
 ```json
 {
     "sourceMaps": "inline",
