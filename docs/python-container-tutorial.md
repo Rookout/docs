@@ -27,20 +27,33 @@ Go ahead and add it as a dependency:
 pip install rook
 ```
 
-If you are using a requirements.txt file, add it there as well.
+If you use a requirements.txt file or something similar, add it there.
 
 ### 2. Start Rookout
 
 Load and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
 
-To keep things simple, set the Rookout token as an environment variable.  
-While you are at it, set up another variable to identify your application instance as a dev environment.   
+Edit your main file - in our case, `run.py`:
+```python
+....
+import rook
+rook.start(
+    token=[Your Rookout Token],
+    labels={"env": "dev"}
+)
+...
+```
 
-Add these two lines below the lines you have already added:
-
-```docker
-ENV ROOKOUT_TOKEN [Your Rookout Token]
-ENV ROOKOUT_LABELS "env:dev"
+If your application uses forking operations, you can configure rookout to support it using the `fork` argument:
+```python
+....
+import rook
+rook.start(
+    token=[Your Rookout Token],
+    labels={"env": "dev"},
+    fork=True
+)
+...
 ```
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
@@ -64,7 +77,7 @@ Edit (or add) your `.Dockerignore` file and adapt the traditional `.git` exclude
 !.git/refs
 ```
 
-Add a final `copy` command to the `Dockerfile`.
+Add a final `COPY` command to the `Dockerfile`.
 ```docker
 COPY .git /.git
 ```
@@ -75,15 +88,15 @@ COPY .git /.git
 
 Build and run your Docker image:
 ```
-docker build . -t rookout-java-todo
-docker run -it -p 8080:8080 rookout-java-todo
+docker build . -t rookout-python-todo
+docker run -it -p 8080:8080 rookout-python-todo
 ```
 
-As your Java application spins up, search for this output at the top:
-<img src="/img/screenshots/java_success.png" />
+As your Python application spins up, search for this output at the top:
+<img src="/img/screenshots/python_success.png" />
 
 Interact with your application at `http://localhost:8080` and use Rookout to debug it on the fly!
 
 ### Questions?
 
-Check out this reference [implementation](https://github.com/Rookout/java-tutorial-2022/compare/master...Rookout:java-tutorial-2022:configure-rookout) or reach out to us via chat or [email](mailto:support@rookout.com).
+Check out this reference [implementation](https://github.com/Rookout/python-tutorial-2022/compare/configure-rookout) or reach out to us via chat or [email](mailto:support@rookout.com).
