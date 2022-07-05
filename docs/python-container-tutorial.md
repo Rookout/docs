@@ -33,27 +33,15 @@ If you use a requirements.txt file or something similar, add it there.
 
 Load and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
 
-Edit your main file - in our case, `run.py`:
+The best place to do that is at the beginning of your main function or the bottom of the global scope in your main file (in our case - `run.py`):
 ```python
-....
 import rook
 rook.start(
     token=[Your Rookout Token],
     labels={"env": "dev"}
+    # When using multiprocessing, enable fork support to load Rookout in all workers
+    #fork=True
 )
-...
-```
-
-If your application uses forking operations, you can configure rookout to support it using the `fork` argument:
-```python
-....
-import rook
-rook.start(
-    token=[Your Rookout Token],
-    labels={"env": "dev"},
-    fork=True
-)
-...
 ```
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
