@@ -29,7 +29,7 @@ To install our Helm chart, execute according to your Helm version:
 ```bash
 helm repo add rookout https://helm-charts.rookout.com
 helm repo update
-helm install my-datastore rookout/datastore --set datastore.token=<YOUR_ORGANIZATION_TOKEN>
+helm install my-datastore rookout/datastore --set datastore.token=[Your Rookout Token]
 ```
 
 <div class="rookout-org-info"></div>
@@ -39,7 +39,7 @@ helm install my-datastore rookout/datastore --set datastore.token=<YOUR_ORGANIZA
 ```bash
 helm repo add rookout https://helm-charts.rookout.com
 helm repo update
-helm install --name my-datastore rookout/datastore --set datastore.token=<YOUR_ORGANIZATION_TOKEN>
+helm install --name my-datastore rookout/datastore --set datastore.token=[Your Rookout Token]
 ```
 
 <div class="rookout-org-info"></div>
