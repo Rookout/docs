@@ -201,7 +201,7 @@ If you need to set up your own build, we recommend using Docker, with a command 
 docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-python2.7 pip install -r requirements.txt
 ```
 
-For more information check out this blog post: https://www.rookout.com/3_min_hack_for_building_local_native_extensions/
+For more information check out this blog post: https://www.rookout.com/blog/3-min-hack-for-locally-building-a-native-extension/
 
 ## Configuration for special use cases
 
