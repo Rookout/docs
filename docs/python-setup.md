@@ -204,7 +204,7 @@ docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-python2.7 pip insta
 For more information check out this blog post: https://www.rookout.com/blog/3-min-hack-for-locally-building-a-native-extension/
 
 ## Configuration for special use cases
-
+    
 ### Python Spark (PySpark) applications
 
 1. Import the SDK as usual in the main function that runs on the Spark driver.
@@ -215,11 +215,11 @@ spark-submit --conf spark.python.daemon.module=rook.pyspark_daemon --conf spark.
 ```
 <div class="rookout-org-info"></div>
 
-### Pre-forking servers
+### Pre-forking (Celery, Gunicorn, etc.)
 
-Several popular application servers for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
+Several popular application servers and frameworks for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
-If you are using one of those servers, you can set the `fork` argument in the SDK API to true to automatically enable Rookout in forked processes.
+If you are using one of those application servers or frameworks, you should set the `fork` argument in the SDK API or the ROOKOUT_ENABLE_FORK environment variable to true to automatically enable Rookout in forked processes.
 
 ### uWSGI applications
 
