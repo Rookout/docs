@@ -37,12 +37,13 @@ Edit your main file - in our case `index.js`:
 ```javascript
 const rookout = require('rookout')
 rookout.start({ 
-    token: [Your Rookout Token],
+    token: '[Your Rookout Token]',
     labels: {
-        env: dev
+        env: 'dev'
     }
 }).then(/*Start your application here*/)
 ```
+<div class="rookout-org-info"></div>
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 1. Move options to secret or configuration managers.

@@ -45,6 +45,7 @@ Add these two lines below the lines you have already added:
 ENV ROOKOUT_TOKEN [Your Rookout Token]
 ENV ROOKOUT_LABELS "env:dev"
 ```
+<div class="rookout-org-info"></div>
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 1. Move options from environment variables to secret or configuration managers.

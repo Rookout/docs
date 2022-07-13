@@ -37,12 +37,13 @@ The best place to do that is at the beginning of your main function or the botto
 ```python
 import rook
 rook.start(
-    token=[Your Rookout Token],
+    token='[Your Rookout Token]',
     labels={"env": "dev"}
     # When using multiprocessing, enable fork support to load Rookout in all workers
     #fork=True
 )
 ```
+<div class="rookout-org-info"></div>
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 1. Move options from environment variables to secret or configuration managers.
