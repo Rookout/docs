@@ -8,7 +8,8 @@
     "Tutorials": [
       "java-container-tutorial",
       "node-container-tutorial",
-      "python-container-tutorial"
+      "python-container-tutorial",
+      "dotnet-container-tutorial"
     ],
     "SDK Setup": [
       "setup-intro",

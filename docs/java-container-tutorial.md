@@ -67,7 +67,7 @@ Edit (or add) your `.Dockerignore` file and adapt the traditional `.git` exclude
 !.git/refs
 ```
 
-Add a final `copy` command to the `Dockerfile`.
+Add a final `COPY` command to the `Dockerfile`.
 ```docker
 COPY .git /.git
 ```
