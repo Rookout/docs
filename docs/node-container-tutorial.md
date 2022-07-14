@@ -29,7 +29,7 @@ npm install --save rookout
 
 Load and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
 
-The start function returns a promise - wait for it if you want to debug the application initialization code.
+The start function returns a promise - wait for it to debug the application initialization code.
 
 Edit your main file - in our case `index.js`:
 ```javascript
