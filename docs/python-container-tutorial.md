@@ -22,7 +22,7 @@ cd python-tutorial-2022
 ### 1. Add the Python Package
 
 Rookout for Python is a public PyPI Package.
-Add it as a depedency to your `requirements.txt` file, `pipenv` configuration, or `pip` CLI.
+Add `rook` as a dependency to your `requirements.txt` file, `pipenv` configuration, or `pip` CLI.
 ```bash
 pip install rook
 ```
