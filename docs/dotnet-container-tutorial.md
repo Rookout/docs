@@ -31,8 +31,6 @@ dotnet add package Rookout
 
 Load and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
 
-The start function returns a promise - wait for it if you want to debug the application initialization code.
-
 Start the SDK within your application by adding the following to your *main* method or your application's entry point. In our case, Program.cs:
 ```cs
 using Rook;
@@ -52,7 +50,7 @@ Configuration is where you can get fancy. You have got additional options up you
 2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
 3. Dig deeper into other options available right [here](dotnet-setup#sdk-api).
 
-### 3. Use MSBuildGitHash to embed source information
+### 3. Embed source information - Project Configuration
 
 Use the MSBuildGitHash package to embed the Git information to your application binary.
 
@@ -70,33 +68,29 @@ After installing the package add the following lines to the .csproj file:
     </PropertyGroup>
 ```
 
-### 4. Packaging Sources
-
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
 To do so, add the following line to the .csproj file:
 ```xml
     <EmbedAllSources>true</EmbedAllSources>
 ```
 
-### 5. Project Requirements - Debug Type
-
 Rookout requires your application to be built and deployed with debug information in the form of `.pdb` files.
 
 To do so, set the “debug type” to `portable` in your .csproj file like so:
 
 ```xml
-<DebugType>portable</DebugType>
+    <DebugType>portable</DebugType>
 ```
 
 You could read more about it [here](dotnet-setup#debug-type).
 
-### 6. Embed Source Information
+### 4. Embed Source Information - Docker Configuration
 
 Rookout offers the smoothest debugging experience by displaying up-to-date source code for each server.
 
 Set this up for containerized applications by adding a handful of [files](https://www.rookout.com/blog/embedding-source-code-version-information-in-docker-images/) from your `.git` folder to the container image.  
 
-Edit (or add) your `.Dockerignore` file and adapt the traditional `.git` exclude:
+Edit (or add) your `.dockerignore` file and adapt the traditional `.git` exclude:
 ```ignore
 # Keep ignoring .git
 .git
