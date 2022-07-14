@@ -19,10 +19,10 @@ git clone https://github.com/Rookout/python-tutorial-2022
 cd python-tutorial-2022
 ```
 
-### 1. Add the pip Package
+### 1. Add the Python Package
 
-Rookout for Python is a simple pip Package.
-Go ahead and add it as a dependency:
+Rookout for Python is a public PyPI Package.
+Add it as a depedency to your `requirements.txt` file, `pipenv` configuration, or `pip` CLI.
 ```bash
 pip install rook
 ```
