@@ -4,7 +4,7 @@ title: "Deploy Rookout on a .NET container"
 sidebar_label: .NET Container
 ---
 
-This short tutorial will walk you through the perfect Rookout deployment for containerized .NET applications in four quick steps.
+This short tutorial will walk you through the perfect Rookout deployment for containerized .NET applications in three quick steps.
 
 For any follow-up questions, check out the full docs for the [Rookout NuGet package](dotnet-setup) or reach out!
 
@@ -50,23 +50,7 @@ Configuration is where you can get fancy. You have got additional options up you
 2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
 3. Dig deeper into other options available right [here](dotnet-setup#sdk-api).
 
-### 3. Embed source information - Project Configuration
-
-Use the MSBuildGitHash package to embed the Git information to your application binary.
-
-Note that for this method, the git binary is required to be installed on the build machine.
-
-First, add the NuGet package:
-```bash
-dotnet add package MSBuildGitHash
-```
-
-After installing the package add the following lines to the .csproj file:
-```xml
-    <PropertyGroup>
-        <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
-    </PropertyGroup>
-```
+### 3. Embed Source Information
 
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
 To do so, add the following line to the .csproj file:
@@ -84,11 +68,9 @@ To do so, set the “debug type” to `portable` in your .csproj file like so:
 
 You could read more about it [here](dotnet-setup#debug-type).
 
-### 4. Embed Source Information - Docker Configuration
-
 Rookout offers the smoothest debugging experience by displaying up-to-date source code for each server.
 
-Set this up for containerized applications by adding a handful of [files](https://www.rookout.com/blog/embedding-source-code-version-information-in-docker-images/) from your `.git` folder to the container image.  
+Set this up for containerized applications by adding a handful of [files](https://www.rookout.com/blog/embedding-source-code-version-information-in-docker-images/) from your `.git` folder to the container image.
 
 Edit (or add) your `.dockerignore` file and adapt the traditional `.git` exclude:
 ```ignore
@@ -100,12 +82,12 @@ Edit (or add) your `.dockerignore` file and adapt the traditional `.git` exclude
 !.git/refs
 ```
 
-Add a `COPY` command to the end of the `Dockerfile`, just above the `RUN dotnet build ...` command.
+Add a `COPY` command to the end of the `Dockerfile`, just above the `ENTRYPOINT`.
 ```docker
 COPY .git /.git
 ```
 
-*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds (like ours), make all your changes on the **build** stage.
+*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds (like ours), make all your changes on the **final** stage.
 
 ### Test
 
