@@ -6,8 +6,6 @@ sidebar_label: Java Container
 
 This short tutorial will walk you through the perfect Rookout deployment for containerized Java applications in three quick steps.
 
-For any follow-up questions, check out the full docs for the Rookout [Java Agent](jvm-setup) or reach out!
-
 ### Get Your Application
 
 First things first, choose an application.
@@ -89,4 +87,6 @@ Interact with your application at `http://localhost:8080` and use Rookout to deb
 
 ### Questions?
 
-Check out this reference [implementation](https://github.com/Rookout/java-tutorial-2022/compare/master...Rookout:java-tutorial-2022:configure-rookout) or reach out to us via chat or [email](mailto:support@rookout.com).
+1. Check out this reference [implementation](https://github.com/Rookout/java-tutorial-2022/compare/master...Rookout:java-tutorial-2022:configure-rookout).
+2. Dig into the full JVM agent [docs](jvm-setup).
+3. Reach out to us via chat or [email](mailto:support@rookout.com).
