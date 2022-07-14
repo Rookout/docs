@@ -8,7 +8,7 @@ This page will dive into the nitty gritty details on installing Rookout under va
 
 ## Installation
 
-Install the Rookout [Node SDK](https://www.npmjs.com/package/rookout)) using one of the following methods:
+Install the Rookout [Node SDK](https://www.npmjs.com/package/rookout) using one of the following methods:
 
 <!--DOCUSAURUS_CODE_TABS-->
 
