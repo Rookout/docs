@@ -6,8 +6,6 @@ sidebar_label: Node.JS Container
 
 This short tutorial will walk you through the perfect Rookout deployment for containerized NodeJS applications in four quick steps.
 
-For any follow-up questions, check out the full docs for the [Rookout npm package](node-setup) or reach out!
-
 ### Get Your Application
 
 First things first, choose an application.
@@ -103,4 +101,6 @@ Interact with your application at `http://localhost:8080` and use Rookout to deb
 
 ### Questions?
 
-Check out this reference [implementation](https://github.com/Rookout/node-tutorial-2022/compare/configure-rookout) or reach out to us via chat or [email](mailto:support@rookout.com).
+1. Check out this reference [implementation](https://github.com/Rookout/node-tutorial-2022/compare/configure-rookout).
+2. Dig into the full Node.JS agent [docs](node-setup).
+3. Reach out to us via chat or [email](mailto:support@rookout.com).
