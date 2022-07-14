@@ -25,8 +25,6 @@ Add `rook` as a dependency to your `requirements.txt` file, `pipenv` configurati
 pip install rook
 ```
 
-If you use a requirements.txt file or something similar, add it there.
-
 ### 2. Start Rookout
 
 Load and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
@@ -38,7 +36,7 @@ rook.start(
     token="[Your Rookout Token]",
     labels={"env": "dev"}
     # When using multiprocessing, enable fork support to load Rookout in all workers
-    #fork=True
+    #, fork=True
 )
 ```
 <div class="rookout-org-info"></div>
