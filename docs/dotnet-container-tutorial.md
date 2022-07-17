@@ -46,28 +46,21 @@ Rook.API.Start(options);
 <div class="rookout-org-info"></div>
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
-1. Move options to secret or configuration managers.
+1. Load options from secret or configuration managers.
 2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
 3. Dig deeper into other options available right [here](dotnet-setup#sdk-api).
 
-### 3. Embed Source Information
+### 3. Configure Build Settings
 
-To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
-To do so, add the following line to the .csproj file:
+For the best and most reliable debugging experience, add a couple of settings to your `.csproj` file(s):
+1. Set the debug information format to `portable`.
+2. Embed sources in the PDB file for verificaiton.
 ```xml
+    <DebugType>portable</DebugType>
     <EmbedAllSources>true</EmbedAllSources>
 ```
 
-Rookout requires your application to be built and deployed with debug information in the form of `.pdb` files.
-
-To do so, set the “debug type” to `portable` in your .csproj file like so:
-
-```xml
-    <DebugType>portable</DebugType>
-```
-
-You could read more about it [here](dotnet-setup#debug-type).
-
+### 4. Embed Source Information
 Rookout offers the smoothest debugging experience by displaying up-to-date source code for each server.
 
 Set this up for containerized applications by adding a handful of [files](https://www.rookout.com/blog/embedding-source-code-version-information-in-docker-images/) from your `.git` folder to the container image.
