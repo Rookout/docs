@@ -4,7 +4,7 @@ title: "Deploy Rookout on a .NET container"
 sidebar_label: .NET Container
 ---
 
-This short tutorial will walk you through the perfect Rookout deployment for containerized .NET applications in three quick steps.
+This short tutorial will walk you through the perfect Rookout deployment for containerized .NET applications in four quick steps.
 
 For any follow-up questions, check out the full docs for the [Rookout NuGet package](dotnet-setup) or reach out!
 
