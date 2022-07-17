@@ -6,7 +6,7 @@ sidebar_label: .NET Container
 
 This short tutorial will walk you through the perfect Rookout deployment for containerized .NET applications in four quick steps.
 
-For any follow-up questions, check out the full docs for the [Rookout NuGet package](dotnet-setup) or reach out!
+For any follow-up questions, check out the full docs for the [Rookout .NET SDK](dotnet-setup.md) or reach out!
 
 ### Get Your Application
 
@@ -47,8 +47,8 @@ Rook.API.Start(options);
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 1. Load options from secret or configuration managers.
-2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
-3. Dig deeper into other options available right [here](dotnet-setup#sdk-api).
+2. If you are using a [Rookout Controller](etl-controller-intro.md), set up the remote host and port configuration.
+3. Dig deeper into other options available right [here](dotnet-setup.md#sdk-api).
 
 ### 3. Configure Build Settings
 
