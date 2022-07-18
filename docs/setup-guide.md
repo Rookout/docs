@@ -128,8 +128,3 @@ When a non-breaking breakpoint is triggered, you should see messages in the mess
 For more information on Non-Breaking Breakpoints, refer to this page: [Debug Session Setup](debug-session-setup.md)
 
 If you encounter an issue while setting a breakpoint, refer to this page for information on breakpoint statuses: [Breakpoint Status](breakpoints-status.md)
-
-## Frequently asked questions
-
-For more information, take a look at the [Rookout FAQ page](https://www.rookout.com/faq).
-
