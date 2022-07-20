@@ -28,7 +28,7 @@ cd go-tutorial-2022
 ### 1. Add the stub GoSDK Package
 
 Rookout for Go is a private package.
-However, to allow seemless integration during developement, we publish a stub package that can be integrated as a placeholder
+However, to allow seamless integration during development, we publish a stub package that can be integrated as a placeholder
 and replaced by the real package during deployment.
 Go ahead and add it as a dependency:
 ```bash
@@ -59,7 +59,7 @@ func main() {
 
 You may need to run go mod tidy to make GoSDK a direct dependency
 ```bash
-go mody tidy
+go mod tidy
 ```
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
@@ -69,7 +69,7 @@ Configuration is where you can get fancy. You have got additional options up you
 
 ### 3. Embed the Full GoSDK During Deployment
 After obtaining the credentials for our private repository, follow these instructions:
-1. Get the ARTIFACTORY_CREDS build argument in your Dockerfile:
+1. Get the ARTIFACTORY_CREDS build-argument in your Dockerfile:
 ```docker
 ARG ARTIFACTORY_CREDS
 ```
@@ -78,7 +78,7 @@ ARG ARTIFACTORY_CREDS
 RUN go env -w GONOSUMDB="github.com/Rookout/GoSDK"
 RUN go env -w GOPROXY="https://proxy.golang.org,https://${ARTIFACTORY_CREDS}@rookout.jfrog.io/artifactory/api/go/rookout-go,direct"
 ```
-3. Make sure you install necessary OS dependencies on your image.\
+3. Make sure you install the necessary OS dependencies on your image.\
     i. For alpine:
     ```docker
     RUN apk add --no-cache gcc musl-dev build-base zlib-static
