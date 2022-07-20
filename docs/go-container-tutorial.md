@@ -57,6 +57,11 @@ func main() {
 ```
 <div class="rookout-org-info"></div>
 
+You may need to run go mod tidy to make GoSDK a direct dependency
+```bash
+go mody tidy
+```
+
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 1. Move options from environment variables to secret or configuration managers.
 2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
