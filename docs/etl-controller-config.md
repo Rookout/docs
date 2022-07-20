@@ -17,7 +17,7 @@ This page includes configuration details for the ETL Controller.
 
 ## Helm Values
 
-Configure the controller [k8s installation](etl-controller-install#kubernetes) by setting values in the `values.yaml` file or using `--set` in the `helm install` command.
+Configure the controller [k8s installation](etl-controller-install.md#kubernetes) by setting values in the `values.yaml` file or using `--set` in the `helm install` command.
 
 ### Controller Configuration
 
