@@ -131,7 +131,7 @@ You can re-enable the breakpoint (by reseting the limit counter) through right c
   There is an invalid key in the breakpoint condition or collection configuration. For more information click [here](breakpoints-conditional.md#advanced-conditions).
 
 - #### Method Not Found
-  Your are trying to use an unsupported method in condition configuration. Please check the supported [methods](breakpoints-conditional#advanced-conditions-supported-operators-and-functions).
+  Your are trying to use an unsupported method in condition configuration. Please check the supported [methods](breakpoints-conditional.md#advanced-conditions).
 
 - #### Key Not Found
   There is an invalid key in the breakpoint condition or collection configuration. For more information click [here](breakpoints-conditional#advanced-conditions-supported-operators-and-functions).
