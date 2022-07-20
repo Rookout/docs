@@ -125,7 +125,7 @@ You can re-enable the breakpoint (by reseting the limit counter) through right c
 
 - #### (Node) Original Source Files are Missing
   Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. For transpiled JS/TS/CS, please deploy your original sources side-by-side with the transpiled ones or include sources within the source map.
-  Read more about it on our [setup page](node-setup#transpiling-and-source-maps).
+  Read more about it on our [setup page](node-setup.md#source-maps).
 
 - #### Attribute Not Found
   There is an invalid key in the breakpoint condition or collection configuration. For more information click [here](breakpoints-conditional#advanced-conditions-supported-operators-and-functions).
