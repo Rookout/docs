@@ -50,7 +50,7 @@ Configure the Datastore [k8s installation](dop-install.md#kubernetes) by setting
 
 ## Environment Variables
 
-Configure a Datastore [docker container](dop-install#docker) by passing environment variables to it.
+Configure a Datastore [docker container](dop-install.md#docker) by passing environment variables to it.
 
 | Configuration                                         | Environment Variable             | Value             | Default |
 | ---                                                   | ---                              | ---               | ---     |
