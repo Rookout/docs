@@ -53,7 +53,7 @@ Configure the controller [k8s installation](etl-controller-install.md#kubernetes
 
 ## Environment Variables
 
-Configure a Controller [docker container](etl-controller-install#docker) by passing environment variables to it.
+Configure a Controller [docker container](etl-controller-install.md#docker) by passing environment variables to it.
 
 
 | Configuration                                                       | Environment Variable             | Value             | Default |
