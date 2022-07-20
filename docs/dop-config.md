@@ -17,7 +17,7 @@ This page includes configuration details for the Datastore.
 
 ## Helm Values
 
-Configure the Datastore [k8s installation](dop-install#kubernetes) by setting values in the `values.yaml` file or using `--set` in the `helm install` or `helm upgrade` commands.
+Configure the Datastore [k8s installation](dop-install.md#kubernetes) by setting values in the `values.yaml` file or using `--set` in the `helm install` or `helm upgrade` commands.
 
 ### Datastore Configuration
 
@@ -50,14 +50,14 @@ Configure the Datastore [k8s installation](dop-install#kubernetes) by setting va
 
 ## Environment Variables
 
-Configure a Datastore [docker container](dop-install#docker) by passing environment variables to it.
+Configure a Datastore [docker container](dop-install.md#docker) by passing environment variables to it.
 
 | Configuration                                         | Environment Variable             | Value             | Default |
 | ---                                                   | ---                              | ---               | ---     |
 | [Rookout token](#rookout-token)                       | `ROOKOUT_DOP_LOGGING_TOKEN`      | Rookout token     | -       |
 | [Server mode](#server-mode)                           | `ROOKOUT_DOP_SERVER_MODE`        | `PLAIN` or `TLS`  | `PLAIN` |
-| [Limit CPU cores](#resources-cpu-cores)               | `ROOKOUT_CONTROLLER_MAX_CPU`     | Integer           | 1       |
-| [Limit memory](#limit-memory)                         | `ROOKOUT_CONTROLLER_MAX_MEMORY`  | Integer (MB)      | 512     |
+| Limit CPU cores             | `ROOKOUT_CONTROLLER_MAX_CPU`     | Integer           | 1       |
+| Limit memory                         | `ROOKOUT_CONTROLLER_MAX_MEMORY`  | Integer (MB)      | 512     |
 | [Listen on port](#listen-on-port)                     | `ROOKOUT_DOP_PORT`               | Integer           | 8080     |
 
 ## Configuration Details

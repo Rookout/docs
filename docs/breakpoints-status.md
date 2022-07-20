@@ -120,20 +120,20 @@ You can re-enable the breakpoint (by reseting the limit counter) through right c
 
 - #### (JVM/.Net) Source file not found
   Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug.  
-  - In most JVM based languages, please include your source within your Jar/War/Ear archives. Read more about it on our [setup page](jvm-setup#packaging-sources).
-  - In most .Net based languages, please embedded sources into your pdb. Read more about it on our [setup page](dotnet-setup#packaging-sources).
+  - In most JVM based languages, please include your source within your Jar/War/Ear archives. Read more about it on our [setup page](jvm-setup.md#packaging-sources).
+  - In most .Net based languages, please embedded sources into your pdb. Read more about it on our [setup page](dotnet-setup.md#packaging-sources).
 
 - #### (Node) Original Source Files are Missing
   Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. For transpiled JS/TS/CS, please deploy your original sources side-by-side with the transpiled ones or include sources within the source map.
-  Read more about it on our [setup page](node-setup#transpiling-and-source-maps).
+  Read more about it on our [setup page](node-setup.md#source-maps).
 
 - #### Attribute Not Found
-  There is an invalid key in the breakpoint condition or collection configuration. For more information click [here](breakpoints-conditional#advanced-conditions-supported-operators-and-functions).
+  There is an invalid key in the breakpoint condition or collection configuration. For more information click [here](breakpoints-conditional.md#advanced-conditions).
 
 - #### Method Not Found
-  Your are trying to use an unsupported method in condition configuration. Please check the supported [methods](breakpoints-conditional#advanced-conditions-supported-operators-and-functions).
+  Your are trying to use an unsupported method in condition configuration. Please check the supported [methods](breakpoints-conditional.md#advanced-conditions).
 
 - #### Key Not Found
-  There is an invalid key in the breakpoint condition or collection configuration. For more information click [here](breakpoints-conditional#advanced-conditions-supported-operators-and-functions).
+  There is an invalid key in the breakpoint condition or collection configuration. For more information click [here](breakpoints-conditional.md#advanced-conditions).
 
 
