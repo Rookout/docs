@@ -174,13 +174,10 @@ COPY .git /.git
 
 **One second!** if you are not using our demo app, please commit and push your changes to a new branch.
 
----
+Note: 
+Deploying the Golang SDK requires name/password to our private repository.
+Please [Contact us](https://www.rookout.com/company/contact) for access.
 
-*Deploying the Golang SDK requires name/password to our private repository.*
-
-*Please [Contact us](https://www.rookout.com/company/contact) for access.*
-
----
 
 Build and run your Docker image:
 ```
