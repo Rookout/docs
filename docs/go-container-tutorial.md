@@ -107,7 +107,7 @@ RUN go get -d github.com/Rookout/GoSDK@v0.1.15
 ```
 Notice we did not get the stub, but the full version.
 
-4. Modify the build command to allow for GoSDK to work:
+5. Modify the build command to allow for GoSDK to work:
 For that, add -gcflags 'all=-N -l' to the build command, as well as a tag relevant to the image's base OS
 <!--DOCUSAURUS_CODE_TABS-->
 
