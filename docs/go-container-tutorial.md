@@ -17,16 +17,15 @@ git clone https://github.com/Rookout/go-tutorial-2022
 cd go-tutorial-2022
 ```
 
-### 1. Add the stub GoSDK Package
+### 1. Add the GoSDK Package (stub)
 
-Rookout for Go is a private package.
-However, to allow seamless integration during development, we publish a stub package that can be integrated as a placeholder
-and replaced by the real package during deployment.
-Go ahead and add it as a dependency:
+Start out by adding The Rookout package:
 ```bash
 go get github.com/Rookout/GoSDK
 ```
-Make sure the installed package's version ends with "-stub"
+
+Not the installed package's version will end with "-stub", as it's only a placeholder.
+
 ### 2. Start Rookout
 
 Load and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
@@ -49,7 +48,7 @@ func main() {
 ```
 <div class="rookout-org-info"></div>
 
-You may need to run go mod tidy to make GoSDK a direct dependency
+As usual, it's always best to run `tidy` after adding a new dependency:
 ```bash
 go mod tidy
 ```
