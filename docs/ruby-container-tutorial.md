@@ -22,21 +22,9 @@ cd ruby-tutorial-2022
 Rookout for Ruby is a public Gem Package.
 It can easily be installed by running the following command:
 
-<!--DOCUSAURUS_CODE_TABS-->
-
-<!--Bundler-->
-
 ```bash
 bundle add rookout
 ```
-
-<!--Gemfile-->
-
-```bash
-gem install rookout
-```
-
-<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### 2. Start Rookout
 
