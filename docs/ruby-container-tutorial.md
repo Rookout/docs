@@ -84,13 +84,13 @@ COPY .git /.git
 Build and run your Docker image:
 ```
 docker build . -t rookout-ruby-todo
-docker run -it -p 3000:3000 rookout-ruby-todo
+docker run -it -p 8080:8080 rookout-ruby-todo
 ```
 
 As your Ruby application spins up, search for this output at the top:
 <img src="/img/screenshots/ruby_success.png" />
 
-Interact with your application at `http://localhost:3000` and use Rookout to debug it on the fly!
+Interact with your application at `http://localhost:8080` and use Rookout to debug it on the fly!
 
 ### Questions?
 
