@@ -67,7 +67,7 @@ Add a final `COPY` command to the `Dockerfile`.
 COPY .git /.git
 ```
 
-*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds (like ours), make all your changes on the **final** stage.
+*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds, make all your changes on the **final** stage.
 
 ### Test
 

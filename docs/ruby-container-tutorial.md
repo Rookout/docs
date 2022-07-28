@@ -24,16 +24,16 @@ It can easily be installed by running the following command:
 
 <!--DOCUSAURUS_CODE_TABS-->
 
-<!--Gemfile-->
-
-```bash
-gem install rookout
-```
-
 <!--Bundler-->
 
 ```bash
 bundle add rookout
+```
+
+<!--Gemfile-->
+
+```bash
+gem install rookout
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -75,7 +75,7 @@ Add a final `COPY` command to the `Dockerfile`.
 COPY .git /.git
 ```
 
-*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds (like ours), make all your changes on the **final** stage.
+*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds, make all your changes on the **final** stage.
 
 ### Test
 
