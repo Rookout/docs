@@ -24,7 +24,7 @@ Start out by adding The Rookout package:
 go get github.com/Rookout/GoSDK
 ```
 
-Not the installed package's version will end with "-stub", as it's only a placeholder.
+Note: the installed package's version will end with "-stub", as it's only a placeholder.
 
 ### 2. Start Rookout
 
