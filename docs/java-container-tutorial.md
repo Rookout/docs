@@ -89,5 +89,5 @@ Interact with your application at `http://localhost:8080` and use Rookout to deb
 ### Questions?
 
 1. Check out this reference [implementation](https://github.com/Rookout/java-tutorial-2022/compare/master...Rookout:java-tutorial-2022:configure-rookout).
-2. Dig into the full JVM agent [docs](jvm-setup).
+2. Dig into our JVM [docs](jvm-setup).
 3. Reach out to us via chat or [email](mailto:support@rookout.com).
