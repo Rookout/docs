@@ -26,7 +26,7 @@ Configure the Datastore [k8s installation](dop-install.md#kubernetes) by setting
 | [Rookout token](#rookout-token)                       | `datastore.token`            | Rookout token                | -       |  
 | [Server mode](#server-mode)                           | `datastore.serverMode`       | `PLAIN`, `TLS`, or `AUTOTLS` | `PLAIN` |
 | [Listen on port](#listen-on-port)                     | `datastore.dopContainerPort` | Integer                      | 8080    |
-| [In-memory database](#in-memory-database)             | `datastore.inMemoryDb`       | `true` or `false`            | `false` |
+| [In-memory database](#in-memory-database)             | `datastore.inMemoryDb`       | `true` or `false`            | `true`  |
 
 ### Additional Kubernetes Configuration
 
@@ -107,4 +107,4 @@ Note that under K8s deployments, the external service port is 80 for `PLAIN` ser
 
 ### In-memory database
 
-Set this to `true` to have the Datastore store it's data in-memory (RAM) instead of on the disk.
+Set this to `false` to have the Datastore store its data as a file on the disk (less recommended), instead of in the RAM.
