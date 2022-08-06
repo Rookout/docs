@@ -48,7 +48,7 @@ module.exports={
         },
         "blog": {},
         "theme": {
-          "customCss": "../src/css/customTheme.css"
+          "customCss": "../website/src/css/customTheme.css"
         }
       }
     ]
