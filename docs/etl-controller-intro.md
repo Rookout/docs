@@ -3,12 +3,11 @@ id: etl-controller-intro
 title: ETL Controller Introduction
 sidebar_label: Introduction
 ---
+* * *
 
----
+_Please note that the ETL Controller feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the ETL Controller feature for your organization._
 
-*Please note that the ETL Controller feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the ETL Controller feature for your organization.*
-
----
+* * *
 
 ## Introduction
 

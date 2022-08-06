@@ -3,26 +3,23 @@ id: sdk-digests
 title: Software Versions
 sidebar_label: Software Versions
 ---
+<div>DOCUSAURUS_CODE_TABSPython SDK<br />
+<div id="python-digests" />
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Python SDK-->
+Node.js SDK
 
-<br/>
-<div id="python-digests"></div>
+<br />
+<div id="node-digests" />
 
-<!--Node.js SDK-->
+JVM SDK
 
-<br/>
-<div id="node-digests"></div>
+<br />
+<div id="java-digests" />
 
-<!--JVM SDK-->
+ETL Controller
 
-<br/>
-<div id="java-digests"></div>
+<br />
+<div id="agent-digests" />
 
-<!--ETL Controller-->
-
-<br/>
-<div id="agent-digests"></div>
-
-<!--END_DOCUSAURUS_CODE_TABS-->
+END_DOCUSAURUS_CODE_TABS
+</div>

@@ -3,7 +3,6 @@ id: keyboard-shortcuts
 title: Keyboard Shortcuts
 sidebar_label: Keyboard Shortcuts
 ---
-
 ## Global
 
 **Open File Search:** Cmd / Ctrl + shift + f
@@ -20,11 +19,9 @@ sidebar_label: Keyboard Shortcuts
 
 **Exit:** Esc
 
-
 ## Message Table
 
 **Prev and Next:** ← /  →	
-
 
 ## Code Pane
 

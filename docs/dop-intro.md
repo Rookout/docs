@@ -3,12 +3,11 @@ id: dop-intro
 title: Data On-Premise
 sidebar_label: Introduction
 ---
+* * *
 
----
+_Please note that the Data On-Premise feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the Data On-Premise feature for your organization._
 
-*Please note that the Data On-Premise feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the Data On-Premise feature for your organization.*
-
----
+* * *
 
 ## Introduction
 

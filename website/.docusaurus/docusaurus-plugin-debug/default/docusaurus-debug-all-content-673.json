@@ -1,0 +1,1433 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "className": "docs-version-current",
+          "path": "/docs",
+          "tagsPath": "/docs/tags",
+          "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs",
+          "editUrlLocalized": "https://github.com/Rookout/docs/edit/master/docs/i18n/en/docusaurus-plugin-content-docs/current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/Users/naomielstein/codebase/docs/website/sidebars.json",
+          "contentPath": "/Users/naomielstein/codebase/docs/docs",
+          "contentPathLocalized": "/Users/naomielstein/codebase/docs/website/i18n/en/docusaurus-plugin-content-docs/current",
+          "docs": [
+            {
+              "unversionedId": "breakpoint-limits",
+              "id": "breakpoint-limits",
+              "title": "Breakpoint Limits",
+              "description": "Collection level",
+              "source": "@site/../docs/breakpoint-limits.md",
+              "sourceDirName": ".",
+              "slug": "/breakpoint-limits",
+              "permalink": "/docs/breakpoint-limits",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/breakpoint-limits.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "breakpoint-limits",
+                "title": "Breakpoint Limits"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Conditional Breakpoints",
+                "permalink": "/docs/breakpoints-conditional"
+              },
+              "next": {
+                "title": "Built-in Variables",
+                "permalink": "/docs/built-in-variables"
+              }
+            },
+            {
+              "unversionedId": "breakpoints",
+              "id": "breakpoints",
+              "title": "Breakpoints Introduction",
+              "description": "Rookout Breakpoints are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.",
+              "source": "@site/../docs/breakpoints.md",
+              "sourceDirName": ".",
+              "slug": "/breakpoints",
+              "permalink": "/docs/breakpoints",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/breakpoints.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "breakpoints",
+                "title": "Breakpoints Introduction",
+                "sidebar_label": "Introduction"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Labels",
+                "permalink": "/docs/projects-labels"
+              },
+              "next": {
+                "title": "Breakpoint Status",
+                "permalink": "/docs/breakpoints-status"
+              }
+            },
+            {
+              "unversionedId": "breakpoints-conditional",
+              "id": "breakpoints-conditional",
+              "title": "Conditional Breakpoints",
+              "description": "Receiving too many messages while debugging can be confusing, especially when looking for a specific use case. That is where conditional breakpoints come into play - you can use conditions and filter out just the data you need.",
+              "source": "@site/../docs/breakpoints-conditional.md",
+              "sourceDirName": ".",
+              "slug": "/breakpoints-conditional",
+              "permalink": "/docs/breakpoints-conditional",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/breakpoints-conditional.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "breakpoints-conditional",
+                "title": "Conditional Breakpoints"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Breakpoint Status",
+                "permalink": "/docs/breakpoints-status"
+              },
+              "next": {
+                "title": "Breakpoint Limits",
+                "permalink": "/docs/breakpoint-limits"
+              }
+            },
+            {
+              "unversionedId": "breakpoints-status",
+              "id": "breakpoints-status",
+              "title": "Breakpoint Status",
+              "description": "Breakpoint Status Indicators",
+              "source": "@site/../docs/breakpoints-status.md",
+              "sourceDirName": ".",
+              "slug": "/breakpoints-status",
+              "permalink": "/docs/breakpoints-status",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/breakpoints-status.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "breakpoints-status",
+                "title": "Breakpoint Status",
+                "sidebar_label": "Breakpoint Status"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/docs/breakpoints"
+              },
+              "next": {
+                "title": "Conditional Breakpoints",
+                "permalink": "/docs/breakpoints-conditional"
+              }
+            },
+            {
+              "unversionedId": "built-in-variables",
+              "id": "built-in-variables",
+              "title": "Built-in Variables",
+              "description": "When setting breakpoint conditions or breakpoint logs, you can use Rookout's built-in variables as well as your local variables.",
+              "source": "@site/../docs/built-in-variables.md",
+              "sourceDirName": ".",
+              "slug": "/built-in-variables",
+              "permalink": "/docs/built-in-variables",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/built-in-variables.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "built-in-variables",
+                "title": "Built-in Variables",
+                "sidebar_label": "Built-in Variables"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Breakpoint Limits",
+                "permalink": "/docs/breakpoint-limits"
+              },
+              "next": {
+                "title": "Organizations",
+                "permalink": "/docs/organizations"
+              }
+            },
+            {
+              "unversionedId": "collaborations",
+              "id": "collaborations",
+              "title": "Collaboration",
+              "description": "Leverage the power of Rookout by collaborating with your colleagues using the following features:",
+              "source": "@site/../docs/collaboration.md",
+              "sourceDirName": ".",
+              "slug": "/collaborations",
+              "permalink": "/docs/collaborations",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/collaboration.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "collaborations",
+                "title": "Collaboration",
+                "sidebar_label": "Collaboration"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Live Logger",
+                "permalink": "/docs/live-logger"
+              },
+              "next": {
+                "title": "Tracing Timeline",
+                "permalink": "/docs/tracing-timeline"
+              }
+            },
+            {
+              "unversionedId": "data-redaction",
+              "id": "data-redaction",
+              "title": "Data Redaction",
+              "description": "Rookout offers data redaction rules to let you control sensitive data and specify which data it should not collect.",
+              "source": "@site/../docs/data-redaction.md",
+              "sourceDirName": ".",
+              "slug": "/data-redaction",
+              "permalink": "/docs/data-redaction",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/data-redaction.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "data-redaction",
+                "title": "Data Redaction",
+                "sidebar_label": "Data Redaction"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Keyboard Shortcuts",
+                "permalink": "/docs/keyboard-shortcuts"
+              },
+              "next": {
+                "title": "Software Versions",
+                "permalink": "/docs/sdk-digests"
+              }
+            },
+            {
+              "unversionedId": "debug-session-setup",
+              "id": "debug-session-setup",
+              "title": "Instances Selection",
+              "description": "Before starting a Live Debugger session or a Live Logger session, you will need to select which application instances you would like to debug.",
+              "source": "@site/../docs/debug-session-setup.md",
+              "sourceDirName": ".",
+              "slug": "/debug-session-setup",
+              "permalink": "/docs/debug-session-setup",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/debug-session-setup.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "debug-session-setup",
+                "title": "Instances Selection",
+                "sidebar_label": "Instances Selection"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Deployment Examples",
+                "permalink": "/docs/deployment-examples"
+              },
+              "next": {
+                "title": "Source Code",
+                "permalink": "/docs/source-repos"
+              }
+            },
+            {
+              "unversionedId": "deployment-examples",
+              "id": "deployment-examples",
+              "title": "Deployment Examples",
+              "description": "https:",
+              "source": "@site/../docs/deployment-examples.md",
+              "sourceDirName": ".",
+              "slug": "/deployment-examples",
+              "permalink": "/docs/deployment-examples",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/deployment-examples.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "deployment-examples",
+                "title": "Deployment Examples",
+                "sidebar_label": "Deployment Examples"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Go",
+                "permalink": "/docs/go-setup"
+              },
+              "next": {
+                "title": "Instances Selection",
+                "permalink": "/docs/debug-session-setup"
+              }
+            },
+            {
+              "unversionedId": "dop-config",
+              "id": "dop-config",
+              "title": "Datastore Configuration",
+              "description": "*",
+              "source": "@site/../docs/dop-config.md",
+              "sourceDirName": ".",
+              "slug": "/dop-config",
+              "permalink": "/docs/dop-config",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/dop-config.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "dop-config",
+                "title": "Datastore Configuration",
+                "sidebar_label": "Configuration"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Installation",
+                "permalink": "/docs/dop-install"
+              },
+              "next": {
+                "title": "Live Logger",
+                "permalink": "/docs/live-logger"
+              }
+            },
+            {
+              "unversionedId": "dop-install",
+              "id": "dop-install",
+              "title": "Datastore Installation",
+              "description": "*",
+              "source": "@site/../docs/dop-install.md",
+              "sourceDirName": ".",
+              "slug": "/dop-install",
+              "permalink": "/docs/dop-install",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/dop-install.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "dop-install",
+                "title": "Datastore Installation",
+                "sidebar_label": "Installation"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/docs/dop-intro"
+              },
+              "next": {
+                "title": "Configuration",
+                "permalink": "/docs/dop-config"
+              }
+            },
+            {
+              "unversionedId": "dop-intro",
+              "id": "dop-intro",
+              "title": "Data On-Premise",
+              "description": "*",
+              "source": "@site/../docs/dop-intro.md",
+              "sourceDirName": ".",
+              "slug": "/dop-intro",
+              "permalink": "/docs/dop-intro",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/dop-intro.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "dop-intro",
+                "title": "Data On-Premise",
+                "sidebar_label": "Introduction"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Configuration",
+                "permalink": "/docs/etl-controller-config"
+              },
+              "next": {
+                "title": "Installation",
+                "permalink": "/docs/dop-install"
+              }
+            },
+            {
+              "unversionedId": "dotnet-container-tutorial",
+              "id": "dotnet-container-tutorial",
+              "title": "Deploy Rookout on a .NET container",
+              "description": "This short tutorial will walk you through the perfect Rookout deployment for containerized .NET applications in four quick steps.",
+              "source": "@site/../docs/dotnet-container-tutorial.md",
+              "sourceDirName": ".",
+              "slug": "/dotnet-container-tutorial",
+              "permalink": "/docs/dotnet-container-tutorial",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/dotnet-container-tutorial.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "dotnet-container-tutorial",
+                "title": "Deploy Rookout on a .NET container",
+                "sidebar_label": ".NET Container"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Python Container",
+                "permalink": "/docs/python-container-tutorial"
+              },
+              "next": {
+                "title": "Introduction",
+                "permalink": "/docs/setup-intro"
+              }
+            },
+            {
+              "unversionedId": "dotnet-setup",
+              "id": "dotnet-setup",
+              "title": ".NET SDK",
+              "description": "This page dives into the nitty-gritty details on installing Rookout under various configurations.",
+              "source": "@site/../docs/dotnet-setup.md",
+              "sourceDirName": ".",
+              "slug": "/dotnet-setup",
+              "permalink": "/docs/dotnet-setup",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/dotnet-setup.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "dotnet-setup",
+                "title": ".NET SDK",
+                "sidebar_label": ".NET"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "JVM",
+                "permalink": "/docs/jvm-setup"
+              },
+              "next": {
+                "title": "Python",
+                "permalink": "/docs/python-setup"
+              }
+            },
+            {
+              "unversionedId": "etl-controller-config",
+              "id": "etl-controller-config",
+              "title": "ETL Controller Configuration",
+              "description": "*",
+              "source": "@site/../docs/etl-controller-config.md",
+              "sourceDirName": ".",
+              "slug": "/etl-controller-config",
+              "permalink": "/docs/etl-controller-config",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/etl-controller-config.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "etl-controller-config",
+                "title": "ETL Controller Configuration",
+                "sidebar_label": "Configuration"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Installation",
+                "permalink": "/docs/etl-controller-install"
+              },
+              "next": {
+                "title": "Introduction",
+                "permalink": "/docs/dop-intro"
+              }
+            },
+            {
+              "unversionedId": "etl-controller-install",
+              "id": "etl-controller-install",
+              "title": "ETL Controller Installation",
+              "description": "*",
+              "source": "@site/../docs/etl-controller-install.md",
+              "sourceDirName": ".",
+              "slug": "/etl-controller-install",
+              "permalink": "/docs/etl-controller-install",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/etl-controller-install.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "etl-controller-install",
+                "title": "ETL Controller Installation",
+                "sidebar_label": "Installation"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/docs/etl-controller-intro"
+              },
+              "next": {
+                "title": "Configuration",
+                "permalink": "/docs/etl-controller-config"
+              }
+            },
+            {
+              "unversionedId": "etl-controller-intro",
+              "id": "etl-controller-intro",
+              "title": "ETL Controller Introduction",
+              "description": "*",
+              "source": "@site/../docs/etl-controller-intro.md",
+              "sourceDirName": ".",
+              "slug": "/etl-controller-intro",
+              "permalink": "/docs/etl-controller-intro",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/etl-controller-intro.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "etl-controller-intro",
+                "title": "ETL Controller Introduction",
+                "sidebar_label": "Introduction"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Organizations",
+                "permalink": "/docs/organizations"
+              },
+              "next": {
+                "title": "Installation",
+                "permalink": "/docs/etl-controller-install"
+              }
+            },
+            {
+              "unversionedId": "etl-controller-linux",
+              "id": "etl-controller-linux",
+              "title": "Installing the ETL Controller on Linux",
+              "description": "*",
+              "source": "@site/../docs/etl-controller-linux.md",
+              "sourceDirName": ".",
+              "slug": "/etl-controller-linux",
+              "permalink": "/docs/etl-controller-linux",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/etl-controller-linux.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "etl-controller-linux",
+                "title": "Installing the ETL Controller on Linux",
+                "sidebar_label": "Installation - Linux"
+              }
+            },
+            {
+              "unversionedId": "go-setup",
+              "id": "go-setup",
+              "title": "Go SDK",
+              "description": "*",
+              "source": "@site/../docs/go-setup.md",
+              "sourceDirName": ".",
+              "slug": "/go-setup",
+              "permalink": "/docs/go-setup",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/go-setup.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "go-setup",
+                "title": "Go SDK",
+                "sidebar_label": "Go"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Node.js",
+                "permalink": "/docs/node-setup"
+              },
+              "next": {
+                "title": "Deployment Examples",
+                "permalink": "/docs/deployment-examples"
+              }
+            },
+            {
+              "unversionedId": "java-container-tutorial",
+              "id": "java-container-tutorial",
+              "title": "Deploy Rookout on a Java container",
+              "description": "This short tutorial will walk you through the perfect Rookout deployment for containerized Java applications in three quick steps.",
+              "source": "@site/../docs/java-container-tutorial.md",
+              "sourceDirName": ".",
+              "slug": "/java-container-tutorial",
+              "permalink": "/docs/java-container-tutorial",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/java-container-tutorial.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "java-container-tutorial",
+                "title": "Deploy Rookout on a Java container",
+                "sidebar_label": "Java Container"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Setup Guide",
+                "permalink": "/docs/setup-guide"
+              },
+              "next": {
+                "title": "Node.JS Container",
+                "permalink": "/docs/node-container-tutorial"
+              }
+            },
+            {
+              "unversionedId": "jvm-setup",
+              "id": "jvm-setup",
+              "title": "JVM SDK",
+              "description": "This page dives into the nitty-gritty details on installing Rookout under various configurations.",
+              "source": "@site/../docs/jvm-setup.md",
+              "sourceDirName": ".",
+              "slug": "/jvm-setup",
+              "permalink": "/docs/jvm-setup",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/jvm-setup.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "jvm-setup",
+                "title": "JVM SDK",
+                "sidebar_label": "JVM"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/docs/setup-intro"
+              },
+              "next": {
+                "title": ".NET",
+                "permalink": "/docs/dotnet-setup"
+              }
+            },
+            {
+              "unversionedId": "keyboard-shortcuts",
+              "id": "keyboard-shortcuts",
+              "title": "Keyboard Shortcuts",
+              "description": "Global",
+              "source": "@site/../docs/keyboard-shortcuts.md",
+              "sourceDirName": ".",
+              "slug": "/keyboard-shortcuts",
+              "permalink": "/docs/keyboard-shortcuts",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/keyboard-shortcuts.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "keyboard-shortcuts",
+                "title": "Keyboard Shortcuts",
+                "sidebar_label": "Keyboard Shortcuts"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Tracing Timeline",
+                "permalink": "/docs/tracing-timeline"
+              },
+              "next": {
+                "title": "Data Redaction",
+                "permalink": "/docs/data-redaction"
+              }
+            },
+            {
+              "unversionedId": "license",
+              "id": "license",
+              "title": "Rookout Controller and Datastore License",
+              "description": "This software is a proprietary product of Rookout, and is protected under copyright laws and international copyright treaties.",
+              "source": "@site/../docs/license.md",
+              "sourceDirName": ".",
+              "slug": "/license",
+              "permalink": "/docs/license",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/license.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "license",
+                "title": "Rookout Controller and Datastore License",
+                "sidebar_label": "Controller and Datastore License"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Software Versions",
+                "permalink": "/docs/sdk-digests"
+              }
+            },
+            {
+              "unversionedId": "live-logger",
+              "id": "live-logger",
+              "title": "Live Logger",
+              "description": "Rookout Live Logger gives you full control of your logging verbosity.",
+              "source": "@site/../docs/live-logger.md",
+              "sourceDirName": ".",
+              "slug": "/live-logger",
+              "permalink": "/docs/live-logger",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/live-logger.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "live-logger",
+                "title": "Live Logger"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Configuration",
+                "permalink": "/docs/dop-config"
+              },
+              "next": {
+                "title": "Collaboration",
+                "permalink": "/docs/collaborations"
+              }
+            },
+            {
+              "unversionedId": "node-container-tutorial",
+              "id": "node-container-tutorial",
+              "title": "Deploy Rookout on a Node.JS container",
+              "description": "This short tutorial will walk you through the perfect Rookout deployment for containerized NodeJS applications in four quick steps.",
+              "source": "@site/../docs/node-container-tutorial.md",
+              "sourceDirName": ".",
+              "slug": "/node-container-tutorial",
+              "permalink": "/docs/node-container-tutorial",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/node-container-tutorial.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "node-container-tutorial",
+                "title": "Deploy Rookout on a Node.JS container",
+                "sidebar_label": "Node.JS Container"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Java Container",
+                "permalink": "/docs/java-container-tutorial"
+              },
+              "next": {
+                "title": "Python Container",
+                "permalink": "/docs/python-container-tutorial"
+              }
+            },
+            {
+              "unversionedId": "node-setup",
+              "id": "node-setup",
+              "title": "Node.js SDK",
+              "description": "This page will dive into the nitty gritty details on installing Rookout under various configurations.",
+              "source": "@site/../docs/node-setup.md",
+              "sourceDirName": ".",
+              "slug": "/node-setup",
+              "permalink": "/docs/node-setup",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/node-setup.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "node-setup",
+                "title": "Node.js SDK",
+                "sidebar_label": "Node.js"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Ruby",
+                "permalink": "/docs/ruby-setup"
+              },
+              "next": {
+                "title": "Go",
+                "permalink": "/docs/go-setup"
+              }
+            },
+            {
+              "unversionedId": "organizations",
+              "id": "organizations",
+              "title": "Organizations",
+              "description": "Rookout Organizations are a way to group all of your applications and developers who need access to debug those applications into a shared Rookout workspace.",
+              "source": "@site/../docs/organizations.md",
+              "sourceDirName": ".",
+              "slug": "/organizations",
+              "permalink": "/docs/organizations",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/organizations.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "organizations",
+                "title": "Organizations"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Built-in Variables",
+                "permalink": "/docs/built-in-variables"
+              },
+              "next": {
+                "title": "Introduction",
+                "permalink": "/docs/etl-controller-intro"
+              }
+            },
+            {
+              "unversionedId": "projects-labels",
+              "id": "projects-labels",
+              "title": "Labels",
+              "description": "Labels are key/value pairs that are attached to running application instances.",
+              "source": "@site/../docs/projects-labels.md",
+              "sourceDirName": ".",
+              "slug": "/projects-labels",
+              "permalink": "/docs/projects-labels",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/projects-labels.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "projects-labels",
+                "title": "Labels",
+                "sidebar_label": "Labels"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Source Code",
+                "permalink": "/docs/source-repos"
+              },
+              "next": {
+                "title": "Introduction",
+                "permalink": "/docs/breakpoints"
+              }
+            },
+            {
+              "unversionedId": "python-container-tutorial",
+              "id": "python-container-tutorial",
+              "title": "Deploy Rookout on a Python container",
+              "description": "This short tutorial will walk you through the perfect Rookout deployment for containerized Python applications in three quick steps.",
+              "source": "@site/../docs/python-container-tutorial.md",
+              "sourceDirName": ".",
+              "slug": "/python-container-tutorial",
+              "permalink": "/docs/python-container-tutorial",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/python-container-tutorial.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "python-container-tutorial",
+                "title": "Deploy Rookout on a Python container",
+                "sidebar_label": "Python Container"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Node.JS Container",
+                "permalink": "/docs/node-container-tutorial"
+              },
+              "next": {
+                "title": ".NET Container",
+                "permalink": "/docs/dotnet-container-tutorial"
+              }
+            },
+            {
+              "unversionedId": "python-setup",
+              "id": "python-setup",
+              "title": "Python SDK",
+              "description": "This page will dive into the nitty gritty details on installing Rookout under various configurations.",
+              "source": "@site/../docs/python-setup.md",
+              "sourceDirName": ".",
+              "slug": "/python-setup",
+              "permalink": "/docs/python-setup",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/python-setup.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "python-setup",
+                "title": "Python SDK",
+                "sidebar_label": "Python"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": ".NET",
+                "permalink": "/docs/dotnet-setup"
+              },
+              "next": {
+                "title": "Ruby",
+                "permalink": "/docs/ruby-setup"
+              }
+            },
+            {
+              "unversionedId": "ruby-setup",
+              "id": "ruby-setup",
+              "title": "Ruby SDK",
+              "description": "This page will dive into the nitty gritty details on installing Rookout under various configurations.",
+              "source": "@site/../docs/ruby-setup.md",
+              "sourceDirName": ".",
+              "slug": "/ruby-setup",
+              "permalink": "/docs/ruby-setup",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/ruby-setup.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "ruby-setup",
+                "title": "Ruby SDK",
+                "sidebar_label": "Ruby"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Python",
+                "permalink": "/docs/python-setup"
+              },
+              "next": {
+                "title": "Node.js",
+                "permalink": "/docs/node-setup"
+              }
+            },
+            {
+              "unversionedId": "sdk-digests",
+              "id": "sdk-digests",
+              "title": "Software Versions",
+              "description": "DOCUSAURUSCODETABSPython SDK",
+              "source": "@site/../docs/sdk-digests.md",
+              "sourceDirName": ".",
+              "slug": "/sdk-digests",
+              "permalink": "/docs/sdk-digests",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/sdk-digests.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "sdk-digests",
+                "title": "Software Versions",
+                "sidebar_label": "Software Versions"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Data Redaction",
+                "permalink": "/docs/data-redaction"
+              },
+              "next": {
+                "title": "Controller and Datastore License",
+                "permalink": "/docs/license"
+              }
+            },
+            {
+              "unversionedId": "setup-guide",
+              "id": "setup-guide",
+              "title": "Rookout Setup Guide",
+              "description": "This guide should help you set up Rookout within your environment, from setting up the Rookout SDK through using Rookout's user interface and debugging your application.",
+              "source": "@site/../docs/setup-guide.md",
+              "sourceDirName": ".",
+              "slug": "/setup-guide",
+              "permalink": "/docs/setup-guide",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/setup-guide.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "setup-guide",
+                "title": "Rookout Setup Guide",
+                "sidebar_label": "Setup Guide"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Use Cases",
+                "permalink": "/docs/use-cases"
+              },
+              "next": {
+                "title": "Java Container",
+                "permalink": "/docs/java-container-tutorial"
+              }
+            },
+            {
+              "unversionedId": "setup-intro",
+              "id": "setup-intro",
+              "title": "Rookout's SDK Instrumentation",
+              "description": "The following pages will dive into the nitty gritty details on installing Rookout under various configurations.",
+              "source": "@site/../docs/setup-intro.md",
+              "sourceDirName": ".",
+              "slug": "/setup-intro",
+              "permalink": "/docs/setup-intro",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/setup-intro.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "setup-intro",
+                "title": "Rookout's SDK Instrumentation",
+                "sidebar_label": "Introduction"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": ".NET Container",
+                "permalink": "/docs/dotnet-container-tutorial"
+              },
+              "next": {
+                "title": "JVM",
+                "permalink": "/docs/jvm-setup"
+              }
+            },
+            {
+              "unversionedId": "source-repos",
+              "id": "source-repos",
+              "title": "Source Code",
+              "description": "Introduction",
+              "source": "@site/../docs/source-repos.md",
+              "sourceDirName": ".",
+              "slug": "/source-repos",
+              "permalink": "/docs/source-repos",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/source-repos.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "source-repos",
+                "title": "Source Code",
+                "sidebar_label": "Source Code"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Instances Selection",
+                "permalink": "/docs/debug-session-setup"
+              },
+              "next": {
+                "title": "Labels",
+                "permalink": "/docs/projects-labels"
+              }
+            },
+            {
+              "unversionedId": "tracing-timeline",
+              "id": "tracing-timeline",
+              "title": "Tracing Timeline",
+              "description": "Rookout’s Tracing Timeline enriches your debug session with transaction information over a time dimension graph. By viewing debug snapshots side by side with the application’s tracing information, you get a holistic view that empowers your debugging and troubleshooting experience and allows you to get knowledgeable decisions.",
+              "source": "@site/../docs/tracing-timeline.md",
+              "sourceDirName": ".",
+              "slug": "/tracing-timeline",
+              "permalink": "/docs/tracing-timeline",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/tracing-timeline.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "tracing-timeline",
+                "title": "Tracing Timeline",
+                "sidebar_label": "Tracing Timeline"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Collaboration",
+                "permalink": "/docs/collaborations"
+              },
+              "next": {
+                "title": "Keyboard Shortcuts",
+                "permalink": "/docs/keyboard-shortcuts"
+              }
+            },
+            {
+              "unversionedId": "use-cases",
+              "id": "use-cases",
+              "title": "Use Cases",
+              "description": "Live Debugging: Production, Dev, and Staging",
+              "source": "@site/../docs/use-cases.md",
+              "sourceDirName": ".",
+              "slug": "/use-cases",
+              "permalink": "/docs/use-cases",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/use-cases.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "use-cases",
+                "title": "Use Cases",
+                "sidebar_label": "Use Cases"
+              },
+              "sidebar": "introduction",
+              "previous": {
+                "title": "Getting Started",
+                "permalink": "/docs/welcome"
+              },
+              "next": {
+                "title": "Setup Guide",
+                "permalink": "/docs/setup-guide"
+              }
+            },
+            {
+              "unversionedId": "welcome",
+              "id": "welcome",
+              "title": "Getting Started",
+              "description": "Hi, welcome to Rookout!",
+              "source": "@site/../docs/welcome.md",
+              "sourceDirName": ".",
+              "slug": "/welcome",
+              "permalink": "/docs/welcome",
+              "draft": false,
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/welcome.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "frontMatter": {
+                "id": "welcome",
+                "title": "Getting Started",
+                "sidebar_label": "Getting Started"
+              },
+              "sidebar": "introduction",
+              "next": {
+                "title": "Use Cases",
+                "permalink": "/docs/use-cases"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "introduction": [
+              {
+                "type": "category",
+                "label": "General",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "welcome"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "use-cases"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "setup-guide"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Tutorials",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "java-container-tutorial"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "node-container-tutorial"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "python-container-tutorial"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "dotnet-container-tutorial"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "SDK Setup",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "setup-intro"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "jvm-setup"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "dotnet-setup"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "python-setup"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "ruby-setup"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "node-setup"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "go-setup"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "deployment-examples"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Session Configuration",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "debug-session-setup"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "source-repos"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "projects-labels"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Breakpoints",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "breakpoints"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "breakpoints-status"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "breakpoints-conditional"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "breakpoint-limits"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "built-in-variables"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Organizations",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "organizations"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "ETL Controller",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "etl-controller-intro"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "etl-controller-install"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "etl-controller-config"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Data On-Premise",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "dop-intro"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "dop-install"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "dop-config"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Advanced",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "live-logger"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "collaborations"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tracing-timeline"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "keyboard-shortcuts"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-redaction"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "More",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "sdk-digests"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "license"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": {
+      "blogSidebarTitle": "Recent posts",
+      "blogPosts": [],
+      "blogListPaginated": [],
+      "blogTags": {},
+      "blogTagsListPath": "/blog/tags",
+      "blogTagsPaginated": []
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": []
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}

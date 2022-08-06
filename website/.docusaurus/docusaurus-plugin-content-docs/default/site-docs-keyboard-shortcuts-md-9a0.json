@@ -1,0 +1,31 @@
+{
+  "unversionedId": "keyboard-shortcuts",
+  "id": "keyboard-shortcuts",
+  "title": "Keyboard Shortcuts",
+  "description": "Global",
+  "source": "@site/../docs/keyboard-shortcuts.md",
+  "sourceDirName": ".",
+  "slug": "/keyboard-shortcuts",
+  "permalink": "/docs/keyboard-shortcuts",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/keyboard-shortcuts.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
+  "frontMatter": {
+    "id": "keyboard-shortcuts",
+    "title": "Keyboard Shortcuts",
+    "sidebar_label": "Keyboard Shortcuts"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Tracing Timeline",
+    "permalink": "/docs/tracing-timeline"
+  },
+  "next": {
+    "title": "Data Redaction",
+    "permalink": "/docs/data-redaction"
+  }
+}

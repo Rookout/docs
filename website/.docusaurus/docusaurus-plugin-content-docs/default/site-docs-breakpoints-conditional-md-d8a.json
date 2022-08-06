@@ -1,0 +1,30 @@
+{
+  "unversionedId": "breakpoints-conditional",
+  "id": "breakpoints-conditional",
+  "title": "Conditional Breakpoints",
+  "description": "Receiving too many messages while debugging can be confusing, especially when looking for a specific use case. That is where conditional breakpoints come into play - you can use conditions and filter out just the data you need.",
+  "source": "@site/../docs/breakpoints-conditional.md",
+  "sourceDirName": ".",
+  "slug": "/breakpoints-conditional",
+  "permalink": "/docs/breakpoints-conditional",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/breakpoints-conditional.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
+  "frontMatter": {
+    "id": "breakpoints-conditional",
+    "title": "Conditional Breakpoints"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Breakpoint Status",
+    "permalink": "/docs/breakpoints-status"
+  },
+  "next": {
+    "title": "Breakpoint Limits",
+    "permalink": "/docs/breakpoint-limits"
+  }
+}

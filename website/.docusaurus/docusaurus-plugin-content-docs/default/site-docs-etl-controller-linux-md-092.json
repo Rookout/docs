@@ -1,0 +1,22 @@
+{
+  "unversionedId": "etl-controller-linux",
+  "id": "etl-controller-linux",
+  "title": "Installing the ETL Controller on Linux",
+  "description": "*",
+  "source": "@site/../docs/etl-controller-linux.md",
+  "sourceDirName": ".",
+  "slug": "/etl-controller-linux",
+  "permalink": "/docs/etl-controller-linux",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/etl-controller-linux.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
+  "frontMatter": {
+    "id": "etl-controller-linux",
+    "title": "Installing the ETL Controller on Linux",
+    "sidebar_label": "Installation - Linux"
+  }
+}
