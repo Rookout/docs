@@ -103,7 +103,7 @@ Rookout gets the source information from the .git folder if both of the followin
 
 | Implementation     | Versions                |
 | ------------------ | ----------------------- |
-| **MRI**        | 2.6, 2.7 |
+| **MRI**        | 2.6, 2.7, 3.0, 3.1 |
 
 ## Dependencies
 
