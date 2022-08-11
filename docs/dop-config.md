@@ -56,8 +56,6 @@ Configure a Datastore [docker container](dop-install.md#docker) by passing envir
 | ---                                                   | ---                              | ---               | ---     |
 | [Rookout token](#rookout-token)                       | `ROOKOUT_DOP_LOGGING_TOKEN`      | Rookout token     | -       |
 | [Server mode](#server-mode)                           | `ROOKOUT_DOP_SERVER_MODE`        | `PLAIN` or `TLS`  | `PLAIN` |
-| Limit CPU cores             | `ROOKOUT_CONTROLLER_MAX_CPU`     | Integer           | 1       |
-| Limit memory                         | `ROOKOUT_CONTROLLER_MAX_MEMORY`  | Integer (MB)      | 512     |
 | [Listen on port](#listen-on-port)                     | `ROOKOUT_DOP_PORT`               | Integer           | 8080     |
 
 ## Configuration Details
