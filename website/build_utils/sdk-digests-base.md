@@ -56,7 +56,7 @@ Install-Package Rookout
 <!--Controller-->
 ## Controller
 
-The [Rookout ETL Controller](agent-setup.md) is a component that can be installed within your network.  
+The [Rookout ETL Controller](etl-controller-intro.md) is a component that can be installed within your network.  
 The ETL Controller is only meant for advanced deployments meeting complex network and security requirements.  
 Using the Rookout ETL Controller you may perform all related data processing inside your own network. 
 It can be download directly to the target system by running the following command:

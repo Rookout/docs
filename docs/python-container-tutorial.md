@@ -43,8 +43,8 @@ rook.start(
 
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 1. Move options to secret or configuration managers.
-2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
-3. Dig deeper into other options available right [here](python-setup#sdk-api).
+2. If you are using a [Rookout Controller](etl-controller-intro.md), set up the remote host and port configuration.
+3. Dig deeper into other options available right [here](python-setup.md#sdk-api).
 
 ### 3. Embed Source Information
 
@@ -87,5 +87,5 @@ Interact with your application at `http://localhost:8080` and use Rookout to deb
 ### Questions?
 
 1. Check out this reference [implementation](https://github.com/Rookout/python-tutorial-2022/compare/configure-rookout).
-2. Dig into our Python [docs](python-setup).
+2. Dig into our Python [docs](python-setup.md).
 3. Reach out to us via chat or [email](mailto:support@rookout.com).
