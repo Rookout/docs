@@ -98,5 +98,5 @@ Interact with your application at `http://localhost:8080` and use Rookout to deb
 ### Questions?
 
 1. Check out this reference [implementation](https://github.com/Rookout/dotnet-tutorial-2022/compare/configure-rookout).
-2. Dig into our .Net [docs](dotnet-setup).
+2. Dig into our .Net [docs](dotnet-setup.md).
 3. Reach out to us via chat or [email](mailto:support@rookout.com).
