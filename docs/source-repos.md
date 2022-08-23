@@ -218,17 +218,17 @@ To do that, please download and install Rookout Desktop App. See the following v
 ### Java
 To make sure you are collecting data from the source line where you have set the breakpoint, please include your source files within your JAR/WAR/EAR library.
 
-For more information, see [this page](jvm-setup#packaging-sources).
+For more information, see [this page](jvm-setup.md#packaging-sources).
 
 ### JavaScript/TypeScript
 If you are transpiling your JavaScript/TypeScript on the fly (using babel-node or a similar tool), Rookout will work out of the box.
 
 If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as separate files (usually app.map.js) in your deployment.
 
-For more information, see [this page](node-setup#transpiling-and-source-maps).
+For more information, see [this page](node-setup.md#source-maps).
 
 ### .Net
 
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
 
-For more information, see [this page](dotnet-setup#packaging-sources).
+For more information, see [this page](dotnet-setup.md#packaging-sources).
