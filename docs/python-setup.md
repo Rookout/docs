@@ -66,8 +66,10 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit or a branch name |
 | `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
-| `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
+| `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server |
 | `fork` | `ROOKOUT_ENABLE_FORK` | False | Set to `True` to enable support in forked processes |
+| `sources` | `ROOKOUT_SOURCES` | None | Sources information (see [info below](#multiple-sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
+
 
 ### restart
 
@@ -241,4 +243,17 @@ except ImportError:
     # If there's no uWSGI, run Rookout normally
     import rook
     rook.start(token='[Your Rookout Token]')
+```
+
+### Multiple Sources
+
+Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
+
+ROOKOUT_SOURCES is a semicolon-separated list with a source control repository and revision information. 
+This will allow Rookout to automatically fetch your application's source code from the right revision, and also additional dependencies' sources.
+When using Git the repository is a URL (remote origin) and the revision is a full commit hash or a branch name.
+
+For example let's say I use https://github.com/Rookout/tutorial-python with the commit e3f4f9634e3445c36c39b473beca11ce456202df and I use the Flask package (https://github.com/pallets/flask) from its master branch:
+```
+ROOKOUT_SOURCES=https://github.com/Rookout/tutorial-python#e3f4f9634e3445c36c39b473beca11ce456202df;https://github.com/pallets/flask#master
 ```
