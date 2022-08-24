@@ -82,7 +82,7 @@ The following table includes all configuration options. Pass them to the `rookou
 | `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server
 | `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
 | `throw_errors` | --- | False | Set to `True` to reject the promsie when `start` fails |
-| `sources` | `ROOKOUT_SOURCES` | None | Sources information (see [info below](#sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
+| `sources` | `ROOKOUT_SOURCES` | None | Sources information (see [info below](#multiple-sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
 | `live_logger` | `ROOKOUT_LIVE_LOGGER` | False | Set to `True` to enable Rookout [Live Logger](live-logger.md) |
 
 ## Code manipulation
