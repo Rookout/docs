@@ -1,0 +1,31 @@
+{
+  "unversionedId": "java-container-tutorial",
+  "id": "java-container-tutorial",
+  "title": "Deploy Rookout on a Java container",
+  "description": "This short tutorial will walk you through the perfect Rookout deployment for containerized Java applications in three quick steps.",
+  "source": "@site/../docs/java-container-tutorial.md",
+  "sourceDirName": ".",
+  "slug": "/java-container-tutorial",
+  "permalink": "/docs/java-container-tutorial",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/java-container-tutorial.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Naomi Elstein",
+  "lastUpdatedAt": 1661259194,
+  "formattedLastUpdatedAt": "Aug 23, 2022",
+  "frontMatter": {
+    "id": "java-container-tutorial",
+    "title": "Deploy Rookout on a Java container",
+    "sidebar_label": "Java Container"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Setup Guide",
+    "permalink": "/docs/setup-guide"
+  },
+  "next": {
+    "title": "Node.JS Container",
+    "permalink": "/docs/node-container-tutorial"
+  }
+}

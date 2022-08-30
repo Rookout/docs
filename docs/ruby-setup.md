@@ -3,7 +3,6 @@ id: ruby-setup
 title: Ruby SDK
 sidebar_label: Ruby
 ---
-
 This page will dive into the nitty gritty details on installing Rookout under various configurations.  
 If you are encountering any difficulties with deploying Rookout, this is the place to look.
 
@@ -12,67 +11,76 @@ If you are encountering any difficulties with deploying Rookout, this is the pla
 The [Ruby SDK](https://rubygems.org/gems/rookout) provides the ability to fetch debug data from a running application in real time.  
 It can easily be installed by running the following command:
 
-<!--DOCUSAURUS_CODE_TABS-->
+DOCUSAURUS_CODE_TABS
 
-<!--Gemfile-->
+Gemfile
 
 ```bash
+
 gem install rookout
+
 ```
 
-<!--Bundler-->
+Bundler
 
 ```bash
+
 bundle add rookout
+
 ```
 
-<!--END_DOCUSAURUS_CODE_TABS-->
+END_DOCUSAURUS_CODE_TABS
 
 ## Setup
 
 Start the SDK within your application as early as possible:
+
 ```ruby
+
 require 'rookout'
 ::Rookout.start token: '[Your Rookout Token]', labels: {env: "dev"}
+
 ```
-<div class="rookout-org-info"></div>
+
+<div className="rookout-org-info" />
 
 The SDK should be imported as early as possible within your application code.
 This is due to the fact you can only set non-breaking breakpoints on ruby files that have been loaded after the Rookout SDK has been started.
 Usually you will want to start the Roookout SDK in a file that initializes your application, but keep in mind that you will not be able to place non-breaking breakpoints in that file.
 
-
-
 For [Pre-forking servers](#pre-forking-servers) please read the relevant section..  
-
 
 ## SDK API
 
 ### start
 
 ```ruby
+
 start(**options)
+
 ```
 
 The `start` method is used to initialize the SDK in the background and accepts the following options:
 
-| Argument &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Environment Variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value | Description |
-| ------------ | ----------------------- | ------------- | ----------- |
-| `token` | `ROOKOUT_TOKEN` | None | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller |
-| `labels` | `ROOKOUT_LABELS` | {} | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
-| `git_commit` | `ROOKOUT_COMMIT` | None | String that indicates your git commit or a branch name |
-| `git_origin` | `ROOKOUT_REMOTE_ORIGIN` | None | String that indicates your git remote origin |
-| `fork` | `ROOKOUT_ENABLE_FORK` | False | Set to `True` to enable support in forked processes |
-| `host` | `ROOKOUT_CONTROLLER_HOST` | None | If you are using a Rookout ETL Controller, this is the hostname for it |
-| `port` | `ROOKOUT_CONTROLLER_PORT` | None | If you are using a Rookout ETL Controller, this is the port for it |
-| `proxy` | `ROOKOUT_PROXY` | None | URL to proxy server (WIP) |
-| `debug` | `ROOKOUT_DEBUG` | False | Set to `True` to increase log level to debug |
-| `throw_errors` | None | False | Set to `True` to throw an exception if `start` fails (error message will not be printed in console) |
+| Argument                           | Environment Variable                               | Default Value | Description                                                                                                            |
+| ---------------------------------- | -------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `token`                     | `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller                |
+| `labels`                    | `ROOKOUT_LABELS`                            | {"{"}{"}"}            | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
+| `git_commit`                | `ROOKOUT_COMMIT`                            | None          | String that indicates your git commit or a branch name                                                                 |
+| `git_origin`                | `ROOKOUT_REMOTE_ORIGIN`                     | None          | String that indicates your git remote origin                                                                           |
+| `fork`                      | `ROOKOUT_ENABLE_FORK`                       | False         | Set to `True` to enable support in forked processes                                                             |
+| `host`                      | `ROOKOUT_CONTROLLER_HOST`                   | None          | If you are using a Rookout ETL Controller, this is the hostname for it                                                 |
+| `port`                      | `ROOKOUT_CONTROLLER_PORT`                   | None          | If you are using a Rookout ETL Controller, this is the port for it                                                     |
+| `proxy`                     | `ROOKOUT_PROXY`                             | None          | URL to proxy server (WIP)                                                                                              |
+| `debug`                     | `ROOKOUT_DEBUG`                             | False         | Set to `True` to increase log level to debug                                                                    |
+| `throw_errors`              | None                                               | False         | Set to `True` to throw an exception if `start` fails (error message will not be printed in console)      |
 
 ### flush
 
 ```ruby
+
 flush()
+
 ```
 
 The `flush` method allows explicitly flushing the Rookout logs and messages.
@@ -80,8 +88,11 @@ The `flush` method allows explicitly flushing the Rookout logs and messages.
 ## Test connectivity
 
 To make sure the SDK was properly installed in your Ruby environment, and test your configuration (environment variables only), run the following command:
+
 ```bash
+
 rookout
+
 ```
 
 ## Source information
@@ -96,21 +107,24 @@ Use the environment variables or start parameters as described above in the API 
 
 Rookout gets the source information from the .git folder if both of the following apply:
 
-1. The .git folder is present at any of the parent directories of where the application is running (searching up the tree).
-2. No environment variables or start parameters are set for source information.
+1.  The .git folder is present at any of the parent directories of where the application is running (searching up the tree).
+2.  No environment variables or start parameters are set for source information.
 
 ## Supported Ruby versions
 
-| Implementation     | Versions                |
-| ------------------ | ----------------------- |
+| Implementation | Versions           |
+| -------------- | ------------------ |
 | **MRI**        | 2.6, 2.7, 3.0, 3.1 |
 
 ## Dependencies
 
 The Ruby SDK dependencies contain native extensions. To ensure optimum compatibility, we highly recommend you build them in your local environment.
 If you are using Bundler, please configure it by running:
+
 ```
+
 bundle config force_ruby_platform true
+
 ```
 
 ## Pre-forking servers
@@ -139,7 +153,9 @@ Many Serverless frameworks (such as AWS SAM) have built-in support for it and wi
 If you need to set up your own build, we recommend using Docker, with a command line such as:
 
 ```bash
+
 docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-ruby2.7 pip install -r requirements.txt
+
 ```
 
-For more information check out this blog post: https://www.rookout.com/blog/3-min-hack-for-locally-building-a-native-extension/
+For more information check out this blog post: https:

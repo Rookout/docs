@@ -1,0 +1,27 @@
+{
+  "unversionedId": "welcome",
+  "id": "welcome",
+  "title": "Getting Started",
+  "description": "Hi, welcome to Rookout!",
+  "source": "@site/../docs/welcome.md",
+  "sourceDirName": ".",
+  "slug": "/welcome",
+  "permalink": "/docs/welcome",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/welcome.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Lir (Rookout)",
+  "lastUpdatedAt": 1630237116,
+  "formattedLastUpdatedAt": "Aug 29, 2021",
+  "frontMatter": {
+    "id": "welcome",
+    "title": "Getting Started",
+    "sidebar_label": "Getting Started"
+  },
+  "sidebar": "introduction",
+  "next": {
+    "title": "Use Cases",
+    "permalink": "/docs/use-cases"
+  }
+}

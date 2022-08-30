@@ -1,0 +1,30 @@
+{
+  "unversionedId": "live-logger",
+  "id": "live-logger",
+  "title": "Live Logger",
+  "description": "Rookout Live Logger gives you full control of your logging verbosity.",
+  "source": "@site/../docs/live-logger.md",
+  "sourceDirName": ".",
+  "slug": "/live-logger",
+  "permalink": "/docs/live-logger",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/live-logger.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Oded Keret",
+  "lastUpdatedAt": 1630236452,
+  "formattedLastUpdatedAt": "Aug 29, 2021",
+  "frontMatter": {
+    "id": "live-logger",
+    "title": "Live Logger"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Configuration",
+    "permalink": "/docs/dop-config"
+  },
+  "next": {
+    "title": "Collaboration",
+    "permalink": "/docs/collaborations"
+  }
+}

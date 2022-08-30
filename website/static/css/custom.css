@@ -1101,3 +1101,15 @@ footer .social  a img {
     height: 100%;
     width: 100%;
 }
+
+
+/*SearchBar*/
+.navbar__items--right {
+    width: 20% !important;
+}
+
+.navbar__items.navbar__items--right div[class^='searchBox'] {
+    width:  100% !important;
+}
+
+

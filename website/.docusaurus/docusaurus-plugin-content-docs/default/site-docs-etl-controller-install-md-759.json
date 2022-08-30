@@ -1,0 +1,31 @@
+{
+  "unversionedId": "etl-controller-install",
+  "id": "etl-controller-install",
+  "title": "ETL Controller Installation",
+  "description": "*",
+  "source": "@site/../docs/etl-controller-install.md",
+  "sourceDirName": ".",
+  "slug": "/etl-controller-install",
+  "permalink": "/docs/etl-controller-install",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/etl-controller-install.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Lir (Rookout)",
+  "lastUpdatedAt": 1648020614,
+  "formattedLastUpdatedAt": "Mar 23, 2022",
+  "frontMatter": {
+    "id": "etl-controller-install",
+    "title": "ETL Controller Installation",
+    "sidebar_label": "Installation"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/etl-controller-intro"
+  },
+  "next": {
+    "title": "Configuration",
+    "permalink": "/docs/etl-controller-config"
+  }
+}

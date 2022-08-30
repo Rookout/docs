@@ -1,0 +1,31 @@
+{
+  "unversionedId": "ruby-setup",
+  "id": "ruby-setup",
+  "title": "Ruby SDK",
+  "description": "This page will dive into the nitty gritty details on installing Rookout under various configurations.",
+  "source": "@site/../docs/ruby-setup.md",
+  "sourceDirName": ".",
+  "slug": "/ruby-setup",
+  "permalink": "/docs/ruby-setup",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/ruby-setup.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Urook",
+  "lastUpdatedAt": 1659960604,
+  "formattedLastUpdatedAt": "Aug 8, 2022",
+  "frontMatter": {
+    "id": "ruby-setup",
+    "title": "Ruby SDK",
+    "sidebar_label": "Ruby"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Python",
+    "permalink": "/docs/python-setup"
+  },
+  "next": {
+    "title": "Node.js",
+    "permalink": "/docs/node-setup"
+  }
+}

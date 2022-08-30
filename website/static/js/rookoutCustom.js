@@ -12,6 +12,8 @@ $(function () {
   //enableTabs();
   //setTimeout(loadTabsForOS, 1000);
   setTimeout(fixDocusaurusTabsOnLoad, 1500);
+  setTimeout(addKeyCombo, 200);
+
 });
 
 function enableTabs() {
@@ -228,4 +230,35 @@ function fixDocusaurusTabsOnLoad() {
     target.addClass('active');
     $(`#${target.attr('data-tab')}`).addClass('active');
   });
+}
+
+
+  // add event listener on CMD + K
+  document.onkeydown = function (e) {
+    if((e.altKey || e.metaKey)  &&  e.code == 'KeyK') {
+      const search = document.querySelector('.aa-DetachedSearchButton');
+      if(search) {
+        search.click()
+      }
+    }
+}
+
+// add key combo divs to the search input
+function addKeyCombo() {
+    const searchInput = document.querySelector('.aa-DetachedSearchButton')
+  if (searchInput) {
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('key-code-wrapper')
+    const key1 = document.createElement('span')
+    key1.classList.add('keycode-icon')
+
+    const isMac =  navigator.userAgent.includes('Mac OS')
+    key1.innerText = isMac ?  '⌘' : 'Alt'
+
+    const key2 = document.createElement('span')
+    key2.classList.add('keycode-icon')
+    key2.innerText = 'K'
+    wrapper.append(key1, key2)
+    searchInput.append(wrapper)
+  }
 }

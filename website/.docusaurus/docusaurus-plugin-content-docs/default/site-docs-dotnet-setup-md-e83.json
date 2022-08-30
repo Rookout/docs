@@ -1,0 +1,31 @@
+{
+  "unversionedId": "dotnet-setup",
+  "id": "dotnet-setup",
+  "title": ".NET SDK",
+  "description": "This page dives into the nitty-gritty details on installing Rookout under various configurations.",
+  "source": "@site/../docs/dotnet-setup.md",
+  "sourceDirName": ".",
+  "slug": "/dotnet-setup",
+  "permalink": "/docs/dotnet-setup",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/dotnet-setup.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Dudi Cohen",
+  "lastUpdatedAt": 1651006947,
+  "formattedLastUpdatedAt": "Apr 26, 2022",
+  "frontMatter": {
+    "id": "dotnet-setup",
+    "title": ".NET SDK",
+    "sidebar_label": ".NET"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "JVM",
+    "permalink": "/docs/jvm-setup"
+  },
+  "next": {
+    "title": "Python",
+    "permalink": "/docs/python-setup"
+  }
+}

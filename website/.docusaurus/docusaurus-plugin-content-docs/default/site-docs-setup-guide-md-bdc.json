@@ -1,0 +1,31 @@
+{
+  "unversionedId": "setup-guide",
+  "id": "setup-guide",
+  "title": "Rookout Setup Guide",
+  "description": "This guide should help you set up Rookout within your environment, from setting up the Rookout SDK through using Rookout's user interface and debugging your application.",
+  "source": "@site/../docs/setup-guide.md",
+  "sourceDirName": ".",
+  "slug": "/setup-guide",
+  "permalink": "/docs/setup-guide",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/setup-guide.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "naomirookout",
+  "lastUpdatedAt": 1658151110,
+  "formattedLastUpdatedAt": "Jul 18, 2022",
+  "frontMatter": {
+    "id": "setup-guide",
+    "title": "Rookout Setup Guide",
+    "sidebar_label": "Setup Guide"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Use Cases",
+    "permalink": "/docs/use-cases"
+  },
+  "next": {
+    "title": "Java Container",
+    "permalink": "/docs/java-container-tutorial"
+  }
+}

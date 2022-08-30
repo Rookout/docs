@@ -1,0 +1,27 @@
+{
+  "unversionedId": "license",
+  "id": "license",
+  "title": "Rookout Controller and Datastore License",
+  "description": "This software is a proprietary product of Rookout, and is protected under copyright laws and international copyright treaties.",
+  "source": "@site/../docs/license.md",
+  "sourceDirName": ".",
+  "slug": "/license",
+  "permalink": "/docs/license",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/license.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Lir (Rookout)",
+  "lastUpdatedAt": 1648020614,
+  "formattedLastUpdatedAt": "Mar 23, 2022",
+  "frontMatter": {
+    "id": "license",
+    "title": "Rookout Controller and Datastore License",
+    "sidebar_label": "Controller and Datastore License"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Software Versions",
+    "permalink": "/docs/sdk-digests"
+  }
+}

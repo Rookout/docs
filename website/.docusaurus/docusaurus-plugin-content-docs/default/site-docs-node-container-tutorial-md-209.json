@@ -1,0 +1,31 @@
+{
+  "unversionedId": "node-container-tutorial",
+  "id": "node-container-tutorial",
+  "title": "Deploy Rookout on a Node.JS container",
+  "description": "This short tutorial will walk you through the perfect Rookout deployment for containerized NodeJS applications in four quick steps.",
+  "source": "@site/../docs/node-container-tutorial.md",
+  "sourceDirName": ".",
+  "slug": "/node-container-tutorial",
+  "permalink": "/docs/node-container-tutorial",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/node-container-tutorial.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Naomi Elstein",
+  "lastUpdatedAt": 1661259194,
+  "formattedLastUpdatedAt": "Aug 23, 2022",
+  "frontMatter": {
+    "id": "node-container-tutorial",
+    "title": "Deploy Rookout on a Node.JS container",
+    "sidebar_label": "Node.JS Container"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Java Container",
+    "permalink": "/docs/java-container-tutorial"
+  },
+  "next": {
+    "title": "Python Container",
+    "permalink": "/docs/python-container-tutorial"
+  }
+}

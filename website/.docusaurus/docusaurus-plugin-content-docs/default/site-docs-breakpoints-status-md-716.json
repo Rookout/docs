@@ -1,0 +1,31 @@
+{
+  "unversionedId": "breakpoints-status",
+  "id": "breakpoints-status",
+  "title": "Breakpoint Status",
+  "description": "Breakpoint Status Indicators",
+  "source": "@site/../docs/breakpoints-status.md",
+  "sourceDirName": ".",
+  "slug": "/breakpoints-status",
+  "permalink": "/docs/breakpoints-status",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/breakpoints-status.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Naomi Elstein",
+  "lastUpdatedAt": 1658317085,
+  "formattedLastUpdatedAt": "Jul 20, 2022",
+  "frontMatter": {
+    "id": "breakpoints-status",
+    "title": "Breakpoint Status",
+    "sidebar_label": "Breakpoint Status"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/breakpoints"
+  },
+  "next": {
+    "title": "Conditional Breakpoints",
+    "permalink": "/docs/breakpoints-conditional"
+  }
+}

@@ -3,10 +3,8 @@ id: data-redaction
 title: Data Redaction
 sidebar_label: Data Redaction
 ---
-
 Rookout offers data redaction rules to let you control sensitive data and specify which data it should not collect.
 In the **Data Redaction** page under the settings menu, an admin can define data redaction using regular expression patterns.
-
 
 <img src="/img/screenshots/data_redaction_example_1.png" />
 
@@ -19,4 +17,4 @@ Replacing the data redaction method to “Include-list” redacts all variable n
 
 The regular expressions expected syntax is the [RE2](https://github.com/google/re2/wiki/Syntax). The use of flags is currently unsupported. Case sensitivity can be set using the checkbox to the left of any list item.
 
-<iframe width="600" height="300" src="https://www.youtube.com/embed/dJgit1yPem4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width={600} height={300} src="https://www.youtube.com/embed/dJgit1yPem4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} />

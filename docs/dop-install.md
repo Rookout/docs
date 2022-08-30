@@ -3,12 +3,11 @@ id: dop-install
 title: Datastore Installation
 sidebar_label: Installation
 ---
+* * *
 
----
+_Please note that the Data On-Premise feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the Data On-Premise feature for your organization._
 
-*Please note that the Data On-Premise feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the Data On-Premise feature for your organization.*
-
----
+* * *
 
 Follow these installation instructions to deploy the Datastore in your environment, either on Kubernetes or Docker.
 
@@ -22,30 +21,34 @@ There are two ways to deploy the Datastore on Kubernetes.
 
 To install our Helm chart, execute according to your Helm version:
 
-<!--DOCUSAURUS_CODE_TABS-->
+DOCUSAURUS_CODE_TABS
 
-<!--Helm v3-->
+Helm v3
 
 ```bash
+
 helm repo add rookout https://helm-charts.rookout.com
 helm repo update
 helm install my-datastore rookout/datastore --set datastore.token=[Your Rookout Token]
+
 ```
 
-<div class="rookout-org-info"></div>
+<div className="rookout-org-info" />
 
-<!--Helm v2-->
+Helm v2
 
 ```bash
+
 helm repo add rookout https://helm-charts.rookout.com
 helm repo update
 helm install --name my-datastore rookout/datastore --set datastore.token=[Your Rookout Token]
+
 ```
 
-<div class="rookout-org-info"></div>
+<div className="rookout-org-info" />
 
-<!--END_DOCUSAURUS_CODE_TABS-->
- 
+END_DOCUSAURUS_CODE_TABS
+
 ### Install without Helm
 
 If you're not using Helm with your Kubernetes cluster, you'll still be able to deploy the Datastore.
@@ -56,32 +59,38 @@ First, Clone our [Helm charts repository](https://github.com/Rookout/helm-charts
 
 Next, execute according to your Helm version:
 
-<!--DOCUSAURUS_CODE_TABS-->
+DOCUSAURUS_CODE_TABS
 
-<!--Helm v3-->
+Helm v3
 
 ```bash
+
 helm template my-controller . --set datastore.token=[Your Rookout Token] > rookout-datastore.yaml
+
 ```
 
-<div class="rookout-org-info"></div>
+<div className="rookout-org-info" />
 
-<!--Helm v2-->
+Helm v2
 
 ```bash
+
 helm template --name my-datastore . --set datastore.token=[Your Rookout Token] > rookout-datastore.yaml
+
 ```
 
-<div class="rookout-org-info"></div>
+<div className="rookout-org-info" />
 
-<!--END_DOCUSAURUS_CODE_TABS-->
+END_DOCUSAURUS_CODE_TABS
 
 This command should create a file called "rookout-datastore.yaml" including the Kubernetes deployment and service configuration.
 
 To apply the configuration, execute:
 
 ```bash
+
 kubectl apply -f rookout-datastore.yaml
+
 ```
 
 ## Docker
@@ -89,10 +98,12 @@ kubectl apply -f rookout-datastore.yaml
 To deploy the Datastore as a Docker container (using [this image](https://hub.docker.com/r/rookout/data-on-prem/)), execute the following:
 
 ```bash
+
 docker run -p 8080:8080 -e "ROOKOUT_DOP_SERVER_MODE=PLAIN" -e "ROOKOUT_TOKEN=[Your Rookout Token]" rookout/data-on-prem
+
 ```
 
-<div class="rookout-org-info"></div>
+<div className="rookout-org-info" />
 
 ## Next Steps
 
@@ -108,8 +119,7 @@ The second URL is called "Datastore URL accessible from the Rookout Controller".
 
 To further configure your Datastore installation:
 
-* Kubernetes - add configuration values using the `helm upgrade` or `helm install` commands (using the `values.yaml` file or the `--set` parameter).
-* Docker - add configuration values as environment variables using the `-e` flag to the `docker run` command.
+-   Kubernetes - add configuration values using the `helm upgrade` or `helm install` commands (using the `values.yaml` file or the `--set` parameter).
+-   Docker - add configuration values as environment variables using the `-e` flag to the `docker run` command.
 
 Read more about encryption, and all other configuration values [here](dop-config.md#helm-values).
-
