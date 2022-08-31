@@ -234,21 +234,14 @@ article h2 {
   margin-bottom: 0 !important;
   border-radius: 0 !important;
   padding: .1rem !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  --prism-background-color: unset !important
 
 }
 
 
 .theme-code-block code {
   padding: .4rem 1rem !important;
-  background: #F0F0F0 !important;
 }
-.theme-code-block code span.plain {
-  color: black !important;
 
-}
 
 .rookout-org-info {
   background-color: #533c92;
@@ -256,9 +249,8 @@ article h2 {
   padding: 5px 10px;
   border-radius: 0 0 5px 5px;
 }
-
-
-
-[aria-label='Copy code to clipboard'], [aria-label='Copied']{
-  background: var(--ifm-color-primary) !important;
+.prism-code, .prism-code code {
+  border-radius: 0 !important;
 }
+
+
