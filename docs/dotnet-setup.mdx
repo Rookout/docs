@@ -170,21 +170,27 @@ Disabling compiler optimizations `` will further improve the debugging experienc
 
 ### Multi-Project Solutions
 
-To support multi-projects Solutions its recommended to add the following `` file to your Root folder:
+To support multi-projects Solutions its recommended to add the following `<Optimize>false</Optimize>` file to your Root folder:
 
 ```xml
 
+    <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+      <ItemGroup>
+        <PackageReference Include="Rookout" Version="0.1.*" />
+      </ItemGroup>
+
+    </Project>
 
 ```
 
 ### Dynamic library loading
 
-To be able to debug libraries loaded using [``](https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.load?view=netcore-3.1#System_AppDomain_Load_System_Byte___System_Byte___) make sure to load those binaries into Rookout using:
+To be able to debug libraries loaded using [`AppDomain.Load(Byte[], Byte[])`](https://docs.microsoft.com/en-us/dotnet/api/system.appdomain.load?view=netcore-3.1#System_AppDomain_Load_System_Byte___System_Byte___) make sure to load those binaries into Rookout using:
 
-```cs
+```clike
 
-
+Rook.API.LoadAssembly(Assembly a, byte[] pdb, byte[] assembly)
 
 ```
 
@@ -213,7 +219,7 @@ After installing the [MSBuildGitHash NuGet package](https://www.nuget.org/packag
 
 ```xml
 
-
+    <MSBuildGitHashCommand>git config --get remote.origin.url %26%26 git rev-parse HEAD</MSBuildGitHashCommand>
 
 ```
 
@@ -236,11 +242,31 @@ If the environment you are trying to debug is not mentioned in the list above, b
 ### Integrating with AWS Lambda
 
 When integrating Rookout into an application running on AWS Lambda, you should explicitly flush the collected information once lambda execution concludes.
-Rookout provides an easy to use wrapper - wrap your code with `` as in the example below:
+Rookout provides an easy to use wrapper - wrap your code with `using (Rook.API.StartLambda(options))` as in the example below:
 
-```cs
+```clike
 
+using Rook;
 
+namespace LambdaExample
+{
+    public class Function
+    {
+
+        public string FunctionHandler(string input, ILambdaContext context)
+        {
+            Rook.RookOptions options = new Rook.RookOptions()
+            {
+                labels = new Dictionary<string, string> { { "env", "lambda" } }
+            };
+            using (Rook.API.StartLambda(options))
+            {
+                /// Your code
+                return "Hello World";
+            }
+        }
+    }
+}
 
 ```
 
@@ -256,6 +282,6 @@ To make sure you are collecting data from the source line where you have set the
 
 ```xml
 
-
+    <EmbedAllSources>true</EmbedAllSources>
 
 ```

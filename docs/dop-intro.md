@@ -48,4 +48,4 @@ Find the Rookout Datastore usage license here:
 
 ## Next Steps
 
-To deploy the datastore to your environment, follow the instructions [here](dop-install.md).
+To deploy the datastore to your environment, follow the instructions [here](dop-install.mdx).

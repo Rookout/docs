@@ -3,17 +3,25 @@ id: ruby-setup
 title: Ruby SDK
 sidebar_label: Ruby
 ---
-This page will dive into the nitty gritty details on installing Rookout under various configurations.  
+This page will dive into the nitty gritty details on installing Rookout under various configurations.
 If you are encountering any difficulties with deploying Rookout, this is the place to look.
 
 ## Ruby
 
-The [Ruby SDK](https://rubygems.org/gems/rookout) provides the ability to fetch debug data from a running application in real time.  
+The [Ruby SDK](https://rubygems.org/gems/rookout) provides the ability to fetch debug data from a running application in real time.
 It can easily be installed by running the following command:
 
-DOCUSAURUS_CODE_TABS
 
-Gemfile
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="gem"
+    values={[
+        {label: 'GemFile', value: 'gem'},
+        {label: 'Bundler', value: 'bundler'},
+    ]}>
+<TabItem value="gem">
 
 ```bash
 
@@ -21,15 +29,17 @@ gem install rookout
 
 ```
 
-Bundler
+</TabItem>
+<TabItem value="bundler">
 
 ```bash
 
 bundle add rookout
 
 ```
+</TabItem>
+</Tabs>
 
-END_DOCUSAURUS_CODE_TABS
 
 ## Setup
 
@@ -48,7 +58,7 @@ The SDK should be imported as early as possible within your application code.
 This is due to the fact you can only set non-breaking breakpoints on ruby files that have been loaded after the Rookout SDK has been started.
 Usually you will want to start the Roookout SDK in a file that initializes your application, but keep in mind that you will not be able to place non-breaking breakpoints in that file.
 
-For [Pre-forking servers](#pre-forking-servers) please read the relevant section..  
+For [Pre-forking servers](#pre-forking-servers) please read the relevant section..
 
 ## SDK API
 
@@ -101,7 +111,7 @@ To enable automatic source fetching, information about the source control must b
 
 ### Environment Variables or Start Parameters
 
-Use the environment variables or start parameters as described above in the API section. 
+Use the environment variables or start parameters as described above in the API section.
 
 ### Git Folder
 
@@ -145,7 +155,7 @@ When integrating Rookout into a Serverless application, you should explicitly fl
 
 ### Building
 
-If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
+If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production.
 If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
 
 Many Serverless frameworks (such as AWS SAM) have built-in support for it and will work out of the box.

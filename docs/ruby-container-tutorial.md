@@ -49,7 +49,7 @@ Configuration is where you can get fancy. You have got additional options up you
 
 1.  Move options from environment variables to secret or configuration managers.
 2.  If you are using a [Rookout Controller](etl-controller-intro.md), set up the remote host and port configuration.
-3.  Dig deeper into other options available right [here](ruby-setup.md#sdk-api).
+3.  Dig deeper into other options available right [here](ruby-setup.mdx#sdk-api).
 
 ### 3. Embed Source Information
 
@@ -101,5 +101,5 @@ Interact with your application at `http://localhost:8080` and use Rookout to deb
 ### Questions?
 
 1.  Check out this reference [implementation](https://github.com/Rookout/ruby-tutorial-2022/compare/configure-rookout).
-2.  Dig into the full Ruby agent [docs](ruby-setup.md).
+2.  Dig into the full Ruby agent [docs](ruby-setup.mdx).
 3.  Reach out to us via chat or [email](mailto:support@rookout.com).

@@ -19,21 +19,16 @@ There are two ways to deploy the ETL Controller on Kubernetes.
 
 To install our Helm chart, execute according to your Helm version:
 
-DOCUSAURUS_CODE_TABS
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Helm v3
-
-```bash
-
-helm repo add rookout https://helm-charts.rookout.com
-helm repo update
-helm install my-controller rookout/controller --set controller.token=[Your Rookout Token]
-
-```
-
-<div className="rookout-org-info" />
-
-Helm v2
+<Tabs
+    defaultValue="v2"
+    values={[
+        {label: 'Helm v3', value: 'v3'},
+        {label: 'Helm v2', value: 'v2'},
+    ]}>
+<TabItem value="v2">
 
 ```bash
 
@@ -43,9 +38,22 @@ helm install --name my-controller rookout/controller --set controller.token=[You
 
 ```
 
+</TabItem>
+<TabItem value="v3">
+
+```bash
+
+helm repo add rookout https://helm-charts.rookout.com
+helm repo update
+helm install my-controller rookout/controller --set controller.token=[Your Rookout Token]
+
+```
+
+</TabItem>
+</Tabs>
 <div className="rookout-org-info" />
 
-END_DOCUSAURUS_CODE_TABS
+
 
 ### Install without Helm
 
@@ -57,9 +65,13 @@ First, Clone our [Helm charts repository](https://github.com/Rookout/helm-charts
 
 Next, execute according to your Helm version:
 
-DOCUSAURUS_CODE_TABS
-
-Helm v2
+<Tabs
+    defaultValue="v2"
+    values={[
+        {label: 'Helm v3', value: 'v3'},
+        {label: 'Helm v2', value: 'v2'},
+    ]}>
+<TabItem value="v2">
 
 ```bash
 
@@ -67,9 +79,8 @@ helm template . --set controller.token=[Your Rookout Token] --name=my-controller
 
 ```
 
-<div className="rookout-org-info" />
-
-Helm v3
+</TabItem>
+<TabItem value="v3">
 
 ```bash
 
@@ -77,9 +88,10 @@ helm template my-controller . --set controller.token=[Your Rookout Token] > rook
 
 ```
 
+</TabItem>
+</Tabs>
 <div className="rookout-org-info" />
 
-END_DOCUSAURUS_CODE_TABS
 
 This command should create a file called "rookout-controller.yaml" including the Kubernetes deployment and service configuration.
 

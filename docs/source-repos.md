@@ -84,24 +84,34 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 
 ##### Table: GIT_COMMIT and GIT_COMMIT variables in different CIs
 
-| CI                  | Variable Names                                                     | Ref Doc                                                                                                                                                                               |
-| ------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CircleCI            | CIRCLE_REPOSITORY_URL <br /> CIRCLE_SHA1                             | https:                                                                                                                                             |
-| Jenkins             | GIT_URL  GIT_COMMIT                                            | Env variables available in git Plugin                                                                       |
-| GitHub Actions      | github.repositoryUrl  GITHUB_SHA  github.sha               |    |
-| Azure DevOps        | Build.SourceVersion  Build.Repository.Uri                      |                                                                                  |
-| BitBucket Pipelines | BITBUCKET_REPO_FULL_NAME  BITBUCKET_COMMIT                     |                                                                                                            |
-| GitLab CI           | CI_REPOSITORY_URL  CI_COMMIT_SHA                               |                                                                                                                    |
-| Travis CI           | $(git config --get remote.origin.url)  TRAVIS_COMMIT           |                                                                                                                               |
-| BuildBot            | repoUrl  revision                                              |                                                                                                              |
-| AWS CodePipeline    | CODEBUILD_SOURCE_REPO_URL  CODEBUILD_RESOLVED_SOURCE_VERSION   |                                                                                                   |
-| Shell               | \\$(git rev-parse HEAD)  $(git config --get remote.origin.url) |                                                                                                                                                                                       |
+| CI                  | Variable Names                                               | Ref Doc                                                                                                                                                                       |
+| ------------------- |--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CircleCI            | CIRCLE_REPOSITORY_URL <br /> CIRCLE_SHA1                     | https://circleci.com/docs/2.0/env-vars/                                                                                                                                       |
+| Jenkins             | GIT_URL  GIT_COMMIT                                          | Env variables available in git Plugin  https://plugins.jenkins.io/git/#plugin-content-environment-variables                                                                   |
+| GitHub Actions      | github.repositoryUrl  GITHUB_SHA  github.sha                 | https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables  https://docs.github.com/en/actions/learn-github-actions/contexts |
+| Azure DevOps        | Build.SourceVersion  Build.Repository.Uri                    | https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml                                                                                                                                                                              |
+| BitBucket Pipelines | BITBUCKET_REPO_FULL_NAME  BITBUCKET_COMMIT                   |     https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/                                                                                                                                                            |
+| GitLab CI           | CI_REPOSITORY_URL  CI_COMMIT_SHA                             |      https://docs.gitlab.com/ee/ci/variables/predefined_variables.html                                                                                                                                                                   |
+| Travis CI           | $(git config --get remote.origin.url)  TRAVIS_COMMIT         |        https://docs.travis-ci.com/user/environment-variables/                                                                                                                                                                       |
+| BuildBot            | repoUrl  revision                                            |              http://docs.buildbot.net/latest/manual/configuration/changesources.html                                                                                                                                                                 |
+| AWS CodePipeline    | CODEBUILD_SOURCE_REPO_URL  CODEBUILD_RESOLVED_SOURCE_VERSION |              https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html                                                                                                                                                                 |
+| Shell               | $(git rev-parse HEAD)  $(git config --get remote.origin.url) |                                                                                                                                                                               |
 
 ##### CircleCI
 
 ```
 
-
+jobs:
+  build:
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - run:
+          name: Build application Docker image
+          command: |
+            docker build . -t user/app:latest \
+                  --build-arg GIT_COMMIT=$CIRCLE_SHA1 \
+                  --build-arg GIT_ORIGIN=$CIRCLE_REPOSITORY_URL
 
 ```
 
@@ -109,7 +119,16 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 
 ```
 
-
+pipeline {
+  stages {
+    stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build . -t user/app:latest --build-arg GIT_COMMIT=$GIT_COMMIT --build-arg GIT_ORIGIN=$GIT_URL'
+      }
+    }
+  }
+}
 
 ```
 
@@ -117,7 +136,20 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 
 ```
 
-
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          build-args:|
+            GIT_COMMIT=$github.sha
+            GIT_ORIGIN=$github.repositoryUrl
+          tags: user/app:latest
 
 ```
 
@@ -125,7 +157,14 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 
 ```
 
-
+steps:
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: user/app:latest
+    command: build
+    Dockerfile: Dockerfile
+    arguments: --build-arg GIT_COMMIT=$Build.SourceVersion --build-arg GIT_ORIGIN=$Build.Repository.Uri
 
 ```
 
@@ -133,7 +172,15 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 
 ```
 
-
+pipelines:
+  default:
+    - step:
+        script:
+          - docker build . -t user/app:latest \
+                 --build-arg GIT_COMMIT=$BITBUCKET_COMMIT \
+                 --build-arg GIT_ORIGIN=$BITBUCKET_REPO_FULL_NAME
+        services:
+          - docker
 
 ```
 
@@ -141,6 +188,12 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 
 ```
 
+build:
+  stage: build
+  script:
+    - docker build . -t user/app:latest \
+           --build-arg GIT_COMMIT=$CI_COMMIT_SHA \
+           --build-arg GIT_ORIGIN=$CI_REPOSITORY_URL
 
 
 ```
@@ -149,6 +202,10 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 
 ```
 
+script:
+  - docker build . -t user/app:latest \
+           --build-arg GIT_COMMIT=$TRAVIS_COMMIT \
+           --build-arg GIT_ORIGIN=$(git config --get remote.origin.url)
 
 
 ```
@@ -157,7 +214,12 @@ ENV ROOKOUT_REMOTE_ORIGIN=$GIT_ORIGIN
 
 ```
 
-
+phases:
+  build:
+    commands:
+      - docker build . -t user/app:latest \
+           --build-arg GIT_COMMIT=$CODEBUILD_RESOLVED_SOURCE_VERSION \
+           --build-arg GIT_ORIGIN=$CODEBUILD_SOURCE_REPO_URL
 
 ```
 
@@ -183,7 +245,7 @@ If you are transpiling your JavaScript/TypeScript on the fly (using babel-node o
 
 If you are transpiling your JavaScript/TypeScript before execution (for instance in your CI/CD), you must include the source maps inline within the source files or as separate files (usually app.map.js) in your deployment.
 
-For more information, see [this page](node-setup.md#source-maps).
+For more information, see [this page](node-setup.mdx#source-maps).
 
 ### .Net
 

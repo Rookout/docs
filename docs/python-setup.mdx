@@ -3,12 +3,12 @@ id: python-setup
 title: Python SDK
 sidebar_label: Python
 ---
-This page will dive into the nitty gritty details on installing Rookout under various configurations.  
+This page will dive into the nitty gritty details on installing Rookout under various configurations.
 If you are encountering any difficulties with deploying Rookout, this is the place to look.
 
 ## Python
 
-The [Python SDK](https://pypi.org/project/rook/) provides the ability to fetch debug data from a running application in real time.  
+The [Python SDK](https://pypi.org/project/rook/) provides the ability to fetch debug data from a running application in real time.
 It can easily be installed by running the following command:
 
 ```bash
@@ -34,10 +34,10 @@ if __name__ == "__main__":
 
 <div className="rookout-org-info" />
 
-The SDK should be imported just before the application begins executing.  
+The SDK should be imported just before the application begins executing.
 This is due to the fact that in Python, there's no clean way to identify a module has finished defining it's classes.
 
-For [Pre-forking servers](#pre-forking-servers) please read the relevant section..  
+For [Pre-forking servers](#pre-forking-servers) please read the relevant section..
 
 ## SDK API
 
@@ -49,7 +49,7 @@ start(token=None,
     host=None,
     port=None,
     debug=None,
-    throw_errors=None,    
+    throw_errors=None,
     log_to_stderr=None,
     labels=None,
     git_commit=None,
@@ -115,7 +115,7 @@ To enable automatic source fetching, information about the source control must b
 
 ### Environment Variables or Start Parameters
 
-Use the environment variables or start parameters as described above in the API section. 
+Use the environment variables or start parameters as described above in the API section.
 
 ### Git Folder
 
@@ -157,9 +157,20 @@ If you encounter an error similar to the following example, be sure to install t
 
 Here are the commands for installing the build environments for some common OS:
 
-DOCUSAURUS_CODE_TABS
 
-OS X
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="osx"
+    values={[
+        {label: 'OS X', value: 'osx'},
+        {label: 'Debian', value: 'Debian'},
+        {label: 'Fedora', value: 'Fedora'},
+        {label: 'Alpine', value: 'Alpine'},
+    ]}>
+
+<TabItem value="osx">
 
 ```bash
 
@@ -169,7 +180,8 @@ brew install pkg-config
 
 ```
 
-Debian
+</TabItem>
+<TabItem value="Debian">
 
 ```bash
 
@@ -177,7 +189,8 @@ apt-get update -q && apt-get install -qy g++ python-dev
 
 ```
 
-Fedora
+</TabItem>
+<TabItem value="Fedora">
 
 ```bash
 
@@ -185,7 +198,8 @@ yum install -qy gcc-c++ python-devel
 
 ```
 
-Alpine
+</TabItem>
+<TabItem value="Alpine">
 
 ```bash
 
@@ -193,7 +207,9 @@ apk update && apk add g++ python-dev linux-headers
 
 ```
 
-END_DOCUSAURUS_CODE_TABS
+</TabItem>
+</Tabs>
+
 
 ## Serverless and PaaS deployments
 
@@ -215,7 +231,7 @@ def lambda_handler(event, context):
 
 ### Building
 
-If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production. 
+If you are running your application on a Serverless or PaaS (Platform as a Service), you must build your package in an environment similar to those used in production.
 If you are running on a Windows or Mac machine (or using an incompatible Linux distribution) you may encounter some issues here.
 
 Many Serverless frameworks (such as AWS SAM) have built-in support for it and will work out of the box.
@@ -235,42 +251,55 @@ For more information check out this blog post: https:
 ### Python Spark (PySpark) applications
 
 1.  Import the SDK as usual in the main function that runs on the Spark driver.
-2.  To import the SDK on Spark executors, run `` with ``.
-3.  If running under YARN, specify the `` environment variable for your application master and executor nodes like so:
+2.  To import the SDK on Spark executors, run `spark-submit` with `--conf spark.python.daemon.module=rook.pyspark_daemon`.
+3.  If running under YARN, specify the `ROOKOUT_TOKEN` environment variable for your application master and executor nodes like so:
 
 ```bash
 
-
+spark-submit --conf spark.python.daemon.module=rook.pyspark_daemon --conf spark.yarn.appMasterEnv.ROOKOUT_TOKEN=[Your Rookout Token] --conf spark.executorEnv.ROOKOUT_TOKEN=[Your Rookout Token]
 
 ```
+<div className="rookout-org-info" />
 
 
 
 ### Pre-forking (Celery, Gunicorn, etc.)
 
-Several popular application servers and frameworks for Python load the application code during startup and then `` the process multiple times to worker processes.
+Several popular application servers and frameworks for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
-If you are using one of those application servers or frameworks, you should set the `` argument in the SDK API or the ROOKOUT_ENABLE_FORK environment variable to true to automatically enable Rookout in forked processes.
+If you are using one of those application servers or frameworks, you should set the `fork` argument in the SDK API or the ROOKOUT_ENABLE_FORK environment variable to true to automatically enable Rookout in forked processes.
 
 ### uWSGI applications
 
-For uWSGI applications, you must enable threads by adding **--enable-threads** to the command line or **enable-threads = true** to the uWSGI ini file.  
+For uWSGI applications, you must enable threads by adding **--enable-threads** to the command line or **enable-threads = true** to the uWSGI ini file.
 You can read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#a-note-on-python-threads).
 
-In addition, you must start Rookout at each worker separately using the `` decorator. See the sample snippet below.
+In addition, you must start Rookout at each worker separately using the `postfork` decorator. See the sample snippet below.
 You can read more about it [here](https://uwsgi-docs.readthedocs.io/en/latest/PythonDecorators.html#module-uwsgidecorators).
 
 ```python
 
+try:
+    from uwsgidecorators import postfork
 
+    # Run Rookout after the fork
+    @postfork
+    def run_rookout():
+        import rook
+        rook.start(token='[Your Rookout Token]')
+except ImportError:
+
+    # If there's no uWSGI, run Rookout normally
+    import rook
+    rook.start(token='[Your Rookout Token]')
 
 ```
 
 ### Multiple Sources
 
-Use the environment variable `` to initialize the SDK with information about the sources used in your application.
+Use the environment variable `ROOKOUT_SOURCES` to initialize the SDK with information about the sources used in your application.
 
-ROOKOUT_SOURCES is a semicolon-separated list with a source control repository and revision information. 
+ROOKOUT_SOURCES is a semicolon-separated list with a source control repository and revision information.
 This will allow Rookout to automatically fetch your application's source code from the right revision, and also additional dependencies' sources.
 When using Git the repository is a URL (remote origin) and the revision is a full commit hash or a branch name.
 
@@ -278,6 +307,6 @@ For example let's say I use  with the commit e3f4f9634e3445c36c39b473beca11ce456
 
 ```
 
-
+ROOKOUT_SOURCES=https://github.com/Rookout/tutorial-python#e3f4f9634e3445c36c39b473beca11ce456202df;https://github.com/pallets/flask#master
 
 ```

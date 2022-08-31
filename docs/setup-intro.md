@@ -10,6 +10,6 @@ To get started, pick your programming language or check out our [deployment exam
 
 1.  [JVM](jvm-setup.mdx)
 2.  [.Net](dotnet-setup.mdx)
-3.  [Python](python-setup.md)
-4.  [Node.js](node-setup.md)
-5.  [Ruby](ruby-setup.md)
+3.  [Python](python-setup.mdx)
+4.  [Node.js](node-setup.mdx)
+5.  [Ruby](ruby-setup.mdx)

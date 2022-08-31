@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '45b'),
+    component: ComponentCreator('/docs', '938'),
     routes: [
       {
         path: '/docs/breakpoint-limits',
@@ -103,7 +103,7 @@ export default [
       },
       {
         path: '/docs/dop-install',
-        component: ComponentCreator('/docs/dop-install', 'e44'),
+        component: ComponentCreator('/docs/dop-install', '0a2'),
         exact: true,
         sidebar: "introduction"
       },
@@ -133,7 +133,7 @@ export default [
       },
       {
         path: '/docs/etl-controller-install',
-        component: ComponentCreator('/docs/etl-controller-install', '50c'),
+        component: ComponentCreator('/docs/etl-controller-install', 'a08'),
         exact: true,
         sidebar: "introduction"
       },
@@ -192,7 +192,7 @@ export default [
       },
       {
         path: '/docs/node-setup',
-        component: ComponentCreator('/docs/node-setup', '5ae'),
+        component: ComponentCreator('/docs/node-setup', '917'),
         exact: true,
         sidebar: "introduction"
       },
@@ -216,7 +216,7 @@ export default [
       },
       {
         path: '/docs/python-setup',
-        component: ComponentCreator('/docs/python-setup', '5f9'),
+        component: ComponentCreator('/docs/python-setup', '2a9'),
         exact: true,
         sidebar: "introduction"
       },
@@ -228,7 +228,7 @@ export default [
       },
       {
         path: '/docs/ruby-setup',
-        component: ComponentCreator('/docs/ruby-setup', 'd3b'),
+        component: ComponentCreator('/docs/ruby-setup', '59f'),
         exact: true,
         sidebar: "introduction"
       },

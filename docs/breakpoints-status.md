@@ -27,7 +27,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
     You are using a custom Breakpoint that sends the message to another target.
 
 -   #### (Python) Preforking
-    You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](python-setup.md#pre-forking-servers).
+    You are using a pre-forking framework. Rookout must **only** be loaded after forking, check out the [documentation](python-setup.mdx#pre-forking-servers).
 
 -   #### (Python/JVM) Long Running Function
     You have placed a breakpoint on a long running function. In this runtime, breakpoints are only applied for function calls performed after the Breakpoint was created.
@@ -37,7 +37,7 @@ If you fail to see any messages arriving, this may be caused by any of the follo
 
 -   #### (Node) No Source Maps
     You are using a transpiled application. Try using a minimal transpile level, or set it to a recent version of Node.js.
-    Check out the Rookout [source map support section](node-setup.md#transpiling-and-source-maps).
+    Check out the Rookout [source map support section](node-setup.mdx#transpiling-and-source-maps).
 
 ## Pending
 
@@ -64,7 +64,7 @@ This could mean one of the following:
 
 -   #### (Node) No Source Maps
     You are using a transpiled application without including [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).
-    Check out the Rookout [source map support section](node-setup.md#transpiling-and-source-maps).
+    Check out the Rookout [source map support section](node-setup.mdx#transpiling-and-source-maps).
 
 -   #### (Python/Node) Code is in a Dependency
     You are debugging a package deployed as a dependency. This requires setting up your source repository [accordingly](source-repos.md#debugging-packages).
@@ -90,7 +90,7 @@ You can re-enable the breakpoint (by reseting the limit counter) through right c
     Rookout verifies that the source file you are seeing in our IDE is the file you deploying in your application. If the file version is wrong (detected using an Hash calculation) the Breakpoint will not be set. If you use source commit detection you will see the correct git commit to use on the [App instances page](https://app.rookout.com/app/connectivity/rooks).
 
 -   #### (Python) Invalid Breakpoint position
-    The breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](python-setup.md)).
+    The breakpoint has been placed where Rookout cannot set it. This includes empty lines, comments and module-scope code (outside of classes and functions). This may also mean Rookout has been imported too early - in Python it must be imported after all modules has been loaded (read more about it [here](python-setup.mdx)).
 
 -   #### Sending to Rookout is Disabled
     The system administrator has disabled sending application data to the Rookout service for security reasons.
@@ -118,7 +118,7 @@ You can re-enable the breakpoint (by reseting the limit counter) through right c
 
 -   #### (Node) Original Source Files are Missing
     Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. For transpiled JS/TS/CS, please deploy your original sources side-by-side with the transpiled ones or include sources within the source map.
-    Read more about it on our [setup page](node-setup.md#source-maps).
+    Read more about it on our [setup page](node-setup.mdx#source-maps).
 
 -   #### Attribute Not Found
     There is an invalid key in the breakpoint condition or collection configuration. For more information click [here](breakpoints-conditional.md#advanced-conditions).

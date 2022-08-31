@@ -46,9 +46,9 @@ Rookout deployment steps vary slightly between programming languages, visit the 
 
 1.  [JVM](jvm-setup.mdx)
 2.  [.Net](dotnet-setup.mdx)
-3.  [Python](python-setup.md)
-4.  [Node.js](node-setup.md)
-5.  [Ruby](ruby-setup.md)
+3.  [Python](python-setup.mdx)
+4.  [Node.js](node-setup.mdx)
+5.  [Ruby](ruby-setup.mdx)
 6.  [Go](go-setup.md)
 
 For more framework-specific examples, check out our [deployment examples](deployment-examples.md).
