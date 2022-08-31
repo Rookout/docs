@@ -80,7 +80,7 @@ Edit (or add) your `.Dockerignore` file and adapt the traditional `.git` exclude
 
 Add a final `COPY` command to the `Dockerfile`.
 
-```docker
+```Docker 
 
 COPY .git /.git
 

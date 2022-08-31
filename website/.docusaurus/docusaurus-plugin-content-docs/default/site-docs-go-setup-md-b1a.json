@@ -11,9 +11,9 @@
   "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/go-setup.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Liran Haimovitch",
-  "lastUpdatedAt": 1651682718,
-  "formattedLastUpdatedAt": "May 4, 2022",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
   "frontMatter": {
     "id": "go-setup",
     "title": "Go SDK",

@@ -11,9 +11,9 @@
   "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/jvm-setup.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Lir",
-  "lastUpdatedAt": 1643628905,
-  "formattedLastUpdatedAt": "Jan 31, 2022",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
   "frontMatter": {
     "id": "jvm-setup",
     "title": "JVM SDK",

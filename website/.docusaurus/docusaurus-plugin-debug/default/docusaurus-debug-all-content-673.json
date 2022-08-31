@@ -16,7 +16,7 @@
           "routePriority": -1,
           "sidebarFilePath": "/Users/ryan/Desktop/projects/docs/website/sidebars.json",
           "contentPath": "/Users/ryan/Desktop/projects/docs/docs",
-          "contentPathLocalized": "/Users/ryan/Desktop/projects/docs/v2-website/i18n/en/docusaurus-plugin-content-docs/current",
+          "contentPathLocalized": "/Users/ryan/Desktop/projects/docs/website/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "breakpoint-limits",

@@ -11,9 +11,9 @@
   "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/node-setup.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Naomi Elstein",
-  "lastUpdatedAt": 1661838490,
-  "formattedLastUpdatedAt": "Aug 30, 2022",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
   "frontMatter": {
     "id": "node-setup",
     "title": "Node.js SDK",

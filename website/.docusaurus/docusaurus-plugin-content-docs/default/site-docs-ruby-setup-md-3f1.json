@@ -11,9 +11,9 @@
   "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/ruby-setup.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Urook",
-  "lastUpdatedAt": 1659960604,
-  "formattedLastUpdatedAt": "Aug 8, 2022",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
   "frontMatter": {
     "id": "ruby-setup",
     "title": "Ruby SDK",

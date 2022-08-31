@@ -18,8 +18,7 @@ export default {
     "https://buttons.github.io/buttons.js",
     "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",
     "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js",
-    "/js/rookoutCustom.js",
-    "/js/code-blocks-buttons.js"
+    "/js/rookoutCustom.js"
   ],
   "stylesheets": [
     "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"

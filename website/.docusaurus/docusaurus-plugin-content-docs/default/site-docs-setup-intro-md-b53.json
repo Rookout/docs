@@ -11,9 +11,9 @@
   "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/setup-intro.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Liran Haimovitch",
-  "lastUpdatedAt": 1606737752,
-  "formattedLastUpdatedAt": "Nov 30, 2020",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
   "frontMatter": {
     "id": "setup-intro",
     "title": "Rookout's SDK Instrumentation",

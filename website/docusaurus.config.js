@@ -87,7 +87,6 @@ module.exports={
     "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js",
     "/js/rookoutCustom.js",
 
-    "/js/code-blocks-buttons.js"
   ],
   "stylesheets": [
     "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"

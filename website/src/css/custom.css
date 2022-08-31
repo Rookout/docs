@@ -11,7 +11,7 @@
   --ifm-heading-font-weight: 300;
   --ifm-heading-color: var(--ifm-color-primary);
   --ifm-h1-font-size: 30px;
-  --main-cotainer-bg-color: #f9f9f9
+  --main-cotainer-bg-color: #f9f9f9;
 }
 
 
@@ -21,9 +21,22 @@ main[class^='docMainContainer'] {
 
 }
 
+main[class^='docMainContainer'] .col {
+  padding: 0 3rem !important
+}
+
+
 /*Global*/
 body, div, h1, h2, h3, h4, h5, h6, input, p, span {
   font-family: var(--ifm-font-family-monospace);
+
+}
+
+header h1 {
+  font-weight: 300 !important;
+  color: #533c92;
+  font-size: 30px!important;
+
 
 }
 
@@ -180,3 +193,72 @@ article h2 {
 }
 
 
+
+/* Use Cases Page */
+.use-cases-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.use-cases-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 25px;
+}
+
+.use-cases-item {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 30px;
+
+}
+
+.use-cases-icon {
+  display: flex;
+  flex: 1;
+}
+
+.use-cases-content {
+  display: flex;
+  flex-direction: column;
+  flex: 7;
+}
+
+.use-cases-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/*code blocks*/
+.theme-code-block  {
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+  padding: .1rem !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  --prism-background-color: unset !important
+
+}
+
+
+.theme-code-block code {
+  padding: .4rem 1rem !important;
+  background: #F0F0F0 !important;
+}
+.theme-code-block code span.plain {
+  color: black !important;
+
+}
+
+.rookout-org-info {
+  background-color: #533c92;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 0 0 5px 5px;
+}
+
+
+
+[aria-label='Copy code to clipboard'], [aria-label='Copied']{
+  background: var(--ifm-color-primary) !important;
+}

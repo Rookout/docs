@@ -11,9 +11,9 @@
   "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/python-setup.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Dudi Cohen",
-  "lastUpdatedAt": 1661338700,
-  "formattedLastUpdatedAt": "Aug 24, 2022",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
   "frontMatter": {
     "id": "python-setup",
     "title": "Python SDK",

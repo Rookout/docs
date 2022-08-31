@@ -10,8 +10,7 @@ $(function () {
   changeLogoLink();
   loadRookoutToken(); // Also loads Google Analytics after we know if we are logged in
   //enableTabs();
-  //setTimeout(loadTabsForOS, 1000);
-  setTimeout(fixDocusaurusTabsOnLoad, 1500);
+  setTimeout(loadTabsForOS, 1000);
   setTimeout(addKeyCombo, 200);
 
 });
@@ -158,7 +157,7 @@ function loadRookoutToken() {
 function setRookoutTokenInPage(data, noOrg = false) {
   const body = $('body');
   let error = false;
-
+  noOrg = true
   if (noOrg) {
     $('.rookout-org-info').html('Create a Rookout organization to see your token here.')
     return
@@ -235,7 +234,7 @@ function fixDocusaurusTabsOnLoad() {
 
   // add event listener on CMD + K
   document.onkeydown = function (e) {
-    if((e.altKey || e.metaKey)  &&  e.code == 'KeyK') {
+    if((e.altKey || e.metaKey)  &&  e.code === 'KeyK') {
       const search = document.querySelector('.aa-DetachedSearchButton');
       if(search) {
         search.click()
