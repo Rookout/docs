@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '530'),
+    component: ComponentCreator('/docs', '45b'),
     routes: [
       {
         path: '/docs/breakpoint-limits',
@@ -121,7 +121,7 @@ export default [
       },
       {
         path: '/docs/dotnet-setup',
-        component: ComponentCreator('/docs/dotnet-setup', 'f9e'),
+        component: ComponentCreator('/docs/dotnet-setup', 'ee2'),
         exact: true,
         sidebar: "introduction"
       },
@@ -162,7 +162,7 @@ export default [
       },
       {
         path: '/docs/jvm-setup',
-        component: ComponentCreator('/docs/jvm-setup', 'bb3'),
+        component: ComponentCreator('/docs/jvm-setup', '139'),
         exact: true,
         sidebar: "introduction"
       },

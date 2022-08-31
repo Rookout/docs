@@ -113,8 +113,8 @@ You can re-enable the breakpoint (by reseting the limit counter) through right c
 
 -   #### (JVM/.Net) Source file not found
     Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug.  
-    -   In most JVM based languages, please include your source within your Jar/War/Ear archives. Read more about it on our [setup page](jvm-setup.md#packaging-sources).
-    -   In most .Net based languages, please embedded sources into your pdb. Read more about it on our [setup page](dotnet-setup.md#packaging-sources).
+    -   In most JVM based languages, please include your source within your Jar/War/Ear archives. Read more about it on our [setup page](jvm-setup.mdx#packaging-sources).
+    -   In most .Net based languages, please embedded sources into your pdb. Read more about it on our [setup page](dotnet-setup.mdx#packaging-sources).
 
 -   #### (Node) Original Source Files are Missing
     Rookout relies on source file hashing to ensure you are debugging the correct version of the files you are trying to debug. For transpiled JS/TS/CS, please deploy your original sources side-by-side with the transpiled ones or include sources within the source map.

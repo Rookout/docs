@@ -175,7 +175,7 @@ To do that, please download and install Rookout Desktop App. See the following v
 
 To make sure you are collecting data from the source line where you have set the breakpoint, please include your source files within your JAR/WAR/EAR library.
 
-For more information, see [this page](jvm-setup.md#packaging-sources).
+For more information, see [this page](jvm-setup.mdx#packaging-sources).
 
 ### JavaScript/TypeScript
 
@@ -189,4 +189,4 @@ For more information, see [this page](node-setup.md#source-maps).
 
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your library.
 
-For more information, see [this page](dotnet-setup.md#packaging-sources).
+For more information, see [this page](dotnet-setup.mdx#packaging-sources).

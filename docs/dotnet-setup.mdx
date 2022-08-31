@@ -3,12 +3,12 @@ id: dotnet-setup
 title: ".NET SDK"
 sidebar_label: ".NET"
 ---
-This page dives into the nitty-gritty details on installing Rookout under various configurations.  
+This page dives into the nitty-gritty details on installing Rookout under various configurations.
 If you encounter difficulties with deploying Rookout, this is the place to look.
 
 ## Installation
 
-The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real-time.  
+The [.NET SDK](https://www.nuget.org/packages/Rookout) provides the ability to fetch debug data from a running application in real-time.
 
 It can easily be installed as a [NuGet package](https://www.nuget.org/packages/Rookout).
 
@@ -22,76 +22,87 @@ If you use a language that is not mentioned above, please let us know at {"{"}@i
 
 Start the SDK within your application by adding the following to your _main_ method or your application's entry point:
 
-DOCUSAURUS_CODE_TABS
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-C#
+<Tabs
+    defaultValue="cs"
+    values={[
+        {label: 'C#', value: 'cs'},
+        {label: 'VB.NET', value: 'vs'},
+        {label: 'F#', value: 'fs'},
+    ]}>
+<TabItem value="cs">
 
-```cs
-
-using Rook;
-namespace Program
-{
-    class Program
+```clike
+    using Rook;
+    namespace Program
     {
-        static int Main(string[] args)
+        class Program
         {
-            Rook.RookOptions options = new Rook.RookOptions() 
+            static int Main(string[] args)
             {
-                token = "[Your Rookout Token]",
-                labels = new Dictionary<string, string> { { "env", "dev" } }
-            };
-            Rook.API.Start(options);
-    
-            // ...
+                Rook.RookOptions options = new Rook.RookOptions()
+                {
+                    token = "[Your Rookout Token]",
+                    labels = new Dictionary<string, string> { { "env", "dev" } }
+                };
+                Rook.API.Start(options);
+
+                // ...
+            }
         }
     }
-}
-
 ```
 
-VB.NET
+</TabItem>
+<TabItem value="vs">
 
-```vs
+```clike
+    Imports Rook
 
-Imports Rook
+    Module Program
+        Sub Main(args As String())
+            Dim opts = New RookOptions()
+            opts.token = "[Your Rookout Token]"
+            opts.labels = New Dictionary(Of String, String)()
+            opts.labels.Add("env", "dev")
+            Rook.API.Start(opts)
 
-Module Program
-    Sub Main(args As String())
-        Dim opts = New RookOptions()
-        opts.token = "[Your Rookout Token]"
-        opts.labels = New Dictionary(Of String, String)()
-        opts.labels.Add("env", "dev")
-        Rook.API.Start(opts)
-    
-        //......
-    
-    End Sub
-End Module
-
+            //......
+        End Sub
+    End Module
 ```
 
-F#
 
-```fs
+</TabItem>
+<TabItem value="fs">
 
-open System
-open Rook
-open System.Collections.Generic
+```clike
+    open System
+    open Rook
+    open System.Collections.Generic
 
-[<EntryPoint>]
-let main argv =
-    let labels = new Dictionary<string, string>()
-    labels.Add("env", "dev")
-  
-    let opt = Rook.RookOptions(token="[Your Rookout Token]", labels=labels)
-    Rook.API.Start(opt)
+    [<EntryPoint>]
+    let main argv =
+        let labels = new Dictionary<string, string>()
+        labels.Add("env", "dev")
 
-    // .....
+        let opt = Rook.RookOptions(token="[Your Rookout Token]", labels=labels)
+        Rook.API.Start(opt)
+
+        // .....
 
 
 ```
+</TabItem>
+</Tabs>
 
-END_DOCUSAURUS_CODE_TABS
+
+
+
+
+
 
 <div className="rookout-org-info" />
 
@@ -126,9 +137,9 @@ To make sure the SDK was properly installed and test your configuration (environ
 
 -   [Windows .Net Framework](https://get.rookout.com/test_connectivity_windows_x64_framework.zip)
 -   [.Net Core](https://get.rookout.com/test_connectivity_core_x64.zip)
-      
 
-Unix: 
+
+Unix:
 
 -   Core 2.x: `chmod +x ./rookout_test_core_2.x.sh && ./rookout_test_core_2.x.sh`
 -   Core 3.x: `chmod +x ./rookout_test_core_3.x.sh && ./rookout_test_core_3.x.sh`
@@ -183,7 +194,7 @@ To enable automatic source fetching, information about the source control must b
 
 ### Environment Variables or Start Parameters
 
-Use the environment variables or start parameters as described above in the API section. 
+Use the environment variables or start parameters as described above in the API section.
 
 ### Git Folder
 
@@ -224,7 +235,7 @@ If the environment you are trying to debug is not mentioned in the list above, b
 
 ### Integrating with AWS Lambda
 
-When integrating Rookout into an application running on AWS Lambda, you should explicitly flush the collected information once lambda execution concludes.  
+When integrating Rookout into an application running on AWS Lambda, you should explicitly flush the collected information once lambda execution concludes.
 Rookout provides an easy to use wrapper - wrap your code with `` as in the example below:
 
 ```cs

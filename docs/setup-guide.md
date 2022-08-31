@@ -44,8 +44,8 @@ Once the Rookout SDK is added, it runs in the background with your application a
 
 Rookout deployment steps vary slightly between programming languages, visit the links below for setup instructions:
 
-1.  [JVM](jvm-setup.md)
-2.  [.Net](dotnet-setup.md)
+1.  [JVM](jvm-setup.mdx)
+2.  [.Net](dotnet-setup.mdx)
 3.  [Python](python-setup.md)
 4.  [Node.js](node-setup.md)
 5.  [Ruby](ruby-setup.md)

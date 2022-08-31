@@ -42,7 +42,7 @@
       "plugin": "plugin---docusaurus-debugb-19-6f1"
     }
   },
-  "/docs-530": {
+  "/docs-45b": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docs-013-c60"
@@ -101,9 +101,9 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dotnet-container-tutoriala-08-3c4"
   },
-  "/docs/dotnet-setup-f9e": {
+  "/docs/dotnet-setup-ee2": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dotnet-setupe-83-948"
+    "content": "content---docs-dotnet-setup-573-dc5"
   },
   "/docs/etl-controller-config-b38": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -129,9 +129,9 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-java-container-tutorialf-86-a97"
   },
-  "/docs/jvm-setup-bb3": {
+  "/docs/jvm-setup-139": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-jvm-setup-70-c-7a6"
+    "content": "content---docs-jvm-setup-940-2cf"
   },
   "/docs/keyboard-shortcuts-2c1": {
     "__comp": "__comp---theme-doc-item-178-a40",

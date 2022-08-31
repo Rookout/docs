@@ -3,12 +3,12 @@ id: jvm-setup
 title: JVM SDK
 sidebar_label: JVM
 ---
-This page dives into the nitty-gritty details on installing Rookout under various configurations.  
+This page dives into the nitty-gritty details on installing Rookout under various configurations.
 If you encounter difficulties with deploying Rookout, this is the place to look.
 
 ## JVM
 
-The [JVM SDK](https://mvnrepository.com/artifact/com.rookout/rook/latest) provides the ability to fetch debug data from a running application in real time.  
+The [JVM SDK](https://mvnrepository.com/artifact/com.rookout/rook/latest) provides the ability to fetch debug data from a running application in real time.
 It can be download directly to the target system by running the following command:
 
 ```bash
@@ -27,32 +27,38 @@ If you use a language that is not mentioned above, please let us know at {"{"}@i
 
 ### Java Agent
 
+
 Simply add the Rookout SDK as a Java Agent to your environment:
 
-DOCUSAURUS_CODE_TABS
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Environment Variable
-
-```bash
-
-# Add the Rookout Java Agent to your application using an environment variable
-export JAVA_TOOL_OPTIONS="-javaagent:$(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token]"
-
-# Optional, see Labels section below Projects
-export ROOKOUT_LABELS=env:dev
-
-```
-
-Command Line
+<Tabs
+    defaultValue="env"
+    values={[
+        {label: 'Environment Variable', value: 'env'},
+        {label: 'Command Line', value: 'cl'},
+    ]}>
+<TabItem value="env">
 
 ```bash
 
-# Add the Java Agent, token and the labels to your application using command line
-java -javaagent:$(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_LABELS=env:dev
+        # Add the Rookout Java Agent to your application using an environment variable
+        export JAVA_TOOL_OPTIONS="-javaagent:$(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token]"
+
+        # Optional, see Labels section below Projects
+        export ROOKOUT_LABELS=env:dev
+```
+</TabItem>
+<TabItem value='cl'>
+
+```bash
+
+     java -javaagent:$(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_LABELS=env:dev
 
 ```
-
-END_DOCUSAURUS_CODE_TABS
+</TabItem>
+</Tabs>
 
 <div className="rookout-org-info" />
 
@@ -99,74 +105,87 @@ java -jar rook.jar
 
 ## Debug Information
 
-Rookout requires your application to be built with debug information. While most modern Java build tools such as `Gradle` and `Maven` do so by default, some such as [`Ant`](https://ant.apache.org/manual/Tasks/javac.html) and [`javac`](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/javac.html) do not.  
+Rookout requires your application to be built with debug information. While most modern Java build tools such as `Gradle` and `Maven` do so by default, some such as [`Ant`](https://ant.apache.org/manual/Tasks/javac.html) and [`javac`](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/javac.html) do not.
 
 Here a few examples on how to configure them:
 
-DOCUSAURUS_CODE_TABS
+<Tabs
+    defaultValue="ant"
+    values={[
+        {label: 'ANT', value: 'ant'},
+        {label: 'javac', value: 'javac'},
+    ]}>
 
-Ant
+<TabItem value="ant">
 
 ```xml
 
-<javac srcdir="${source-directory}"
+    <javac srcdir="${source-directory}"
         destdir="${classes-directory}"
         classpath="${lib-directory}"
         debug="true"
 />
 
 ```
-
-javac
+</TabItem>
+<TabItem value="javac">
 
 ```bash
 
-javac -g MyClass.java
+    javac -g MyClass.java
 
 ```
+</TabItem>
+</Tabs>
 
-END_DOCUSAURUS_CODE_TABS
 
 ## Packaging Sources
 
 To make sure you are collecting data from the source line where you have set the breakpoint, include your source files within your JAR/WAR/EAR library.
 
-DOCUSAURUS_CODE_TABS
-
-Gradle
+<Tabs
+    defaultValue="Gradle"
+    values={[
+        {label: 'Gradle', value: 'Gradle'},
+        {label: 'Maven', value: 'Maven'},
+        {label: 'Ant', value: 'Ant'},
+    ]}>
+<TabItem value="Gradle">
 
 ```groovy
 
-jar {
-   from sourceSets.main.allSource
-}
+    jar {
+        from sourceSets.main.allSource
+    }
 
 ```
 
-Maven
+</TabItem>
+<TabItem value="Maven">
 
 ```xml
 
-<resources>
-    <resource>
-        <directory>${basedir}/src/main/java</directory>
-    </resource>
-</resources>
+    <resources>
+        <resource>
+            <directory>${basedir}/src/main/java</directory>
+        </resource>
+    </resources>
 
 ```
-
-Ant
+</TabItem>
+<TabItem value="Ant">
 
 ```xml
 
-<jar destfile="${target.dir}/my-app.jar">
-    <fileset dir="${target.dir}/classes" />
-    <fileset dir="${source-directory}" includes="**/*.java"/>
-</jar>
+    <jar destfile="${target.dir}/my-app.jar">
+        <fileset dir="${target.dir}/classes" />
+        <fileset dir="${source-directory}" includes="**/*.java"/>
+    </jar>
 
 ```
+</TabItem>
+</Tabs>
 
-END_DOCUSAURUS_CODE_TABS
 
 ## Source information
 
@@ -206,7 +225,7 @@ To load source information from a jar file, you need to add the following attrib
 
 ## Application Detection
 
-Rookout uses the semi-documented `sun.java.command` system property to identify your application and display it for within the Web Application.  
+Rookout uses the semi-documented `sun.java.command` system property to identify your application and display it for within the Web Application.
 Some Java based runtimes such as [Jsvc](https://commons.apache.org/proper/commons-daemon/jsvc.html) don't set it as expected. If missing, you may set it manually:
 
 ```bash
@@ -240,19 +259,24 @@ Follow these steps to add Rookout to your serverless application:
 
 First, add Rookout as a dependency:
 
-DOCUSAURUS_CODE_TABS
-
-Gradle
+<Tabs
+    defaultValue="gradle"
+    values={[
+        {label: 'Gradle', value: 'gradle'},
+        {label: 'Maven', value: 'maven'},
+    ]}>
+<TabItem value="gradle">
 
 ```groovy
 
-dependencies {
-    implementation 'com.rookout:rook:latest.release'
-}
+    dependencies {
+     implementation 'com.rookout:rook:latest.release'
+    }
 
 ```
 
-Maven
+</TabItem>
+<TabItem value="maven">
 
 ```xml
 
@@ -266,32 +290,36 @@ Maven
 
 ```
 
-END_DOCUSAURUS_CODE_TABS
+</TabItem>
+</Tabs>
 
 Some serverless environments may be missing the "tools" dependency, you can add it from the Nuiton repository:
-
-DOCUSAURUS_CODE_TABS
-
-Gradle
+<Tabs
+    defaultValue="gradle"
+    values={[
+        {label: 'Gradle', value: 'gradle'},
+        {label: 'Maven', value: 'maven'},
+    ]}>
+<TabItem value="gradle">
 
 ```groovy
 
-repositories {
-    mavenCentral()
-    maven {
-        url "https://nexus.nuiton.org/nexus/service/local/repositories/thirdparty/content/"
+    repositories {
+        mavenCentral()
+        maven {
+            url https: '//nexus.nuiton.org/nexus/service/local/repositories/thirdparty/content/'
+        }
     }
-}
 
-// ...
 
-dependencies {
-    implementation 'com.sun:tools:1.7.0.13'
-}
+    dependencies {
+        implementation 'com.sun:tools:1.7.0.13'
+    }
 
 ```
 
-Maven
+</TabItem>
+<TabItem value="maven">
 
 ```xml
 
@@ -306,16 +334,18 @@ Maven
 <!--...
 
 dependencies
-    
+
     com.sun
     tools
     1.7.0.13
-    
+
 --&gt;
+
 
 ```
 
-END_DOCUSAURUS_CODE_TABS
+</TabItem>
+</Tabs>
 
 Now, add Rookout to your code, start is using `API.start` and flush using `API.flush`:
 

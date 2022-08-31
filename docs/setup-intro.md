@@ -8,8 +8,8 @@ If you are encountering any difficulties with deploying Rookout, this is the pla
 
 To get started, pick your programming language or check out our [deployment examples](deployment-examples.md):
 
-1.  [JVM](jvm-setup.md)
-2.  [.Net](dotnet-setup.md)
+1.  [JVM](jvm-setup.mdx)
+2.  [.Net](dotnet-setup.mdx)
 3.  [Python](python-setup.md)
 4.  [Node.js](node-setup.md)
 5.  [Ruby](ruby-setup.md)

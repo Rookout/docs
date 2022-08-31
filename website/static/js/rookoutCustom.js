@@ -2,6 +2,9 @@
 if (document.getElementById) {
   document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-3"></script>'); // Docs
   document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-4"></script>'); // Unified
+  document.write('<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-csharp.min.js"></script>'); // Unified
+
+
 }
 
 
@@ -11,6 +14,7 @@ $(function () {
   loadRookoutToken(); // Also loads Google Analytics after we know if we are logged in
   //enableTabs();
   setTimeout(loadTabsForOS, 1000);
+  setTimeout(fixDocusaurusTabsOnLoad, 1500);
   setTimeout(addKeyCombo, 200);
 
 });
