@@ -13,22 +13,22 @@ To start your debugging or logging session, you will need to select one or more 
 
 Filters can be chosen either directly from the table by clicking on the appropriate row/column in the table or from the drop down menu by choosing from the following categories:
 
-**Labels**:\\
+**Labels**: <br/>
 Labels are _name:value_ pairs which you can tag instances with when you deploy Rookout. It is a best practice to label environments using the 'env' name, for example 'env:prod'. To read more about labels, see the [labels](https://docs.rookout.com/docs/projects-labels/) page.
 
-**Repository**:\\
+**Repository**: <br/>
 Choose instances according to their source code repositories. You will need to ensure you have confirugred automatic source code fetching as desribed on the [source code fetching](https://docs.rookout.com/docs/source-repos/) page.
 
-**Hosts**:\\
+**Hosts**: <br/>
 This filter allows you to select an instances by IP address or hostname.
 
-**Revisions**:\\
+**Revisions**: <br/>
 This filter allows you to select an instance based on a source code commit revision hash.
 
-**Process**:\\
+**Process**: <br/>
 This filter allows you to select an instance based on a process name.
 
-**General Filters**:\\
+**General Filters**: <br/>
 This section contains the 'serverless' filter. Since serverless instances don't execute until the serverless function is invoked, this filter allows you to start your debug session before your instance is running.
 In addition, for Kubernetes deployments, Rookout will automatically create labels based on the name of the deployment as well as the namespace.
 
