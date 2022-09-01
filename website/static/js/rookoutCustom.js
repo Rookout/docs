@@ -163,7 +163,7 @@ function setRookoutTokenInPage(data, noOrg = false) {
   let error = false;
   noOrg = true
   if (noOrg) {
-    $('.rookout-org-info').html('Create a Rookout organization to see your token here.')
+    $('.rookout-org-info').html('Log in to app.rookout.com to see your organization token.')
     return
   }
 
