@@ -1184,12 +1184,12 @@
               "id": "welcome",
               "title": "Getting Started",
               "description": "Hi, welcome to Rookout!",
-              "source": "@site/../docs/welcome.md",
+              "source": "@site/../docs/welcome.mdx",
               "sourceDirName": ".",
               "slug": "/welcome",
               "permalink": "/docs/welcome",
               "draft": false,
-              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/welcome.md",
+              "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/welcome.mdx",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
@@ -1459,7 +1459,13 @@
     }
   },
   "docusaurus-plugin-content-pages": {
-    "default": []
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/supportemail",
+        "source": "@site/src/pages/supportemail.js"
+      }
+    ]
   },
   "docusaurus-plugin-debug": {},
   "docusaurus-theme-classic": {},

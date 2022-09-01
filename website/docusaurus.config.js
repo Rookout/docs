@@ -6,8 +6,9 @@
     algoliaJs: '/js/algoliaSearchRookout.js',
     primaryColor: '#533C92',
     websiteUrl: 'https://docs.rookout.com',
-    headerIcon: 'img/logos/bird_logo_white.svg',
-    supportEmail: `<a href="mailto:support@rookout.com">support@rookout.com</a>`,
+    headerIcon: 'img/logos/rookout-logo-v2.png',
+    supportEmail: `support@rookout.com`,
+    supportType: "mailto"
   },
   'dci-docs': {
     organizationName: 'AppDynamics',
@@ -15,13 +16,15 @@
     primaryColor: '#4E3EB1',
     websiteUrl: 'https://dci.docs.rookout.com',
     headerIcon: 'img/logos/appd_rookout_logo_combined.svg',
-    supportEmail: `<a href="https://www.appdynamics.com/support/" target="_blank">https://www.appdynamics.com/support/</a>`,
+    supportEmail: `https://www.appdynamics.com/support/`,
+    supportType: 'href'
   },
 };
 
 
   markdownVariables = {
   supportEmail: projectTargets[deployTarget].supportEmail,
+    supportType : projectTargets[deployTarget].supportType
 };
 
 const introduction = "introduction"
@@ -147,5 +150,6 @@ module.exports={
       "links": [...footerLinks, ...otherFooterLinks],
       "copyright": `Copyright © ${new Date().getFullYear()}  Rookout`,
     }
-  }
+  },
+  customFields: markdownVariables
 }

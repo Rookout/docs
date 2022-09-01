@@ -25,16 +25,8 @@ export default {
   ],
   "favicon": "img/logos/bird_logo.png",
   "customFields": {
-    "fonts": {
-      "rookoutFont": [
-        "Roboto",
-        "sans-serif"
-      ]
-    },
-    "markdownPlugins": [
-      null
-    ],
-    "repoUrl": "https://github.com/Rookout/docs"
+    "supportEmail": "support@rookout.com",
+    "supportType": "mailto"
   },
   "onBrokenLinks": "log",
   "onBrokenMarkdownLinks": "log",
@@ -77,7 +69,7 @@ export default {
       "logo": {
         "target": "_self",
         "href": "/docs/welcome",
-        "src": "img/logos/bird_logo_white.svg"
+        "src": "img/logos/rookout-logo-v2.png"
       },
       "items": [],
       "hideOnScroll": false

@@ -17,11 +17,15 @@ curl -L "https://repository.sonatype.org/service/local/artifact/maven/redirect?r
 
 ```
 
+import SupportEmail from '../website/src/pages/supportemail.js'
+
+
+
 ## Supported Languages
 
 The following languages are currently supported by the JVM SDK: Java, Scala, Kotlin, Groovy, ColdFusion, and Clojure.
 
-If you use a language that is not mentioned above, please let us know at {"{"}@inject: supportEmail{"}"}.
+If you use a language that is not mentioned above, please let us know at <SupportEmail />
 
 ## Setup
 
@@ -83,7 +87,7 @@ Configuration is performed using OS Environment Variables or Java System Propert
 | Environment Variable                               | Default Value | Description                                                                                                            |
 | -------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller                |
-| `ROOKOUT_LABELS`                            | {"{"}{"}"}            | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
+| `ROOKOUT_LABELS`                            | {}            | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `ROOKOUT_COMMIT`                            | None          | String that indicates your git commit or a branch name                                                                 |
 | `ROOKOUT_REMOTE_ORIGIN`                     | None          | String that indicates your git remote origin                                                                           |
 | `ROOKOUT_CONTROLLER_HOST`                   | None          | If you are using a Rookout ETL Controller, this is the hostname for it                                                 |
@@ -247,7 +251,7 @@ To do so, run the SDK jar using `java [additional parameters] -jar rook.jar`, co
 
 The following Java versions are supported: 7 (7u111+), 8 (8u74+), 11 (11u4+), 13, 17.
 
-If your version is not mentioned above, please let us know at {"{"}@inject: supportEmail{"}"}.
+If your version is not mentioned above, please let us know at <SupportEmail />.
 
 ## Serverless and PaaS deployments
 

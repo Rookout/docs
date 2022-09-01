@@ -38,8 +38,13 @@ export default [
     exact: true
   },
   {
+    path: '/supportemail',
+    component: ComponentCreator('/supportemail', 'dac'),
+    exact: true
+  },
+  {
     path: '/docs',
-    component: ComponentCreator('/docs', '938'),
+    component: ComponentCreator('/docs', 'd1b'),
     routes: [
       {
         path: '/docs/breakpoint-limits',
@@ -270,7 +275,7 @@ export default [
       },
       {
         path: '/docs/welcome',
-        component: ComponentCreator('/docs/welcome', '95b'),
+        component: ComponentCreator('/docs/welcome', '2b5'),
         exact: true,
         sidebar: "introduction"
       }
