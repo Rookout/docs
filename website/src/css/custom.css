@@ -43,11 +43,30 @@ header h1 {
 /*Navbar*/
 .navbar {
   background: #240F57 !important;
+  height: 100px;
 }
 
 .navbar__title{
   color: white;
   font-family: var(--ifm-font-family-monospace);
+  position: relative;
+  top: 14px;
+
+}
+
+.navbar__items:not(.navbar__items--right) {
+  padding-left:189px;
+  height: 100%;
+
+}
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.navbar__logo img {
+  width: 200px;
+  height: 55px;
 }
 
 article h2 {
