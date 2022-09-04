@@ -16,6 +16,7 @@ function setDigestInfoForLang(lang) {
 
     const divLangStringToReplace = `<div id="${lang}-digests"></div>`;
 
+
     let startTable =    '<table>\n' +
         '<thead>\n' +
         '<tr>\n' +
@@ -66,13 +67,13 @@ function setDigestInfoForLang(lang) {
     }
 
     const fullTable = startTable + digestsRows + endTable;
-    let baseMd = fs.readFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.md"), {"encoding": "utf-8"});
+    let baseMd = fs.readFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.mdx"), {"encoding": "utf-8"});
     baseMd = baseMd.replace(divLangStringToReplace, `<div id="${lang}-digests">${fullTable}</div>`);
-    fs.writeFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.md"), baseMd);
+    fs.writeFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.mdx"), baseMd);
 }
 
 function copyToDocsDir() {
-    const digests = fs.readFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.md"), {"encoding": "utf-8"});
+    const digests = fs.readFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.mdx"), {"encoding": "utf-8"});
     fs.writeFileSync(path.join(process.cwd(), "..", "docs", "sdk-digests.mdx"), digests);
 }
 
