@@ -283,3 +283,23 @@ article h2 {
   .markdown img + p {
   margin-top: 15px;
 }
+
+
+
+/*deployment page*/
+
+#deployment-page  h3 {
+  padding-top: 15px;
+    color: black !important;
+    font-weight: 700;
+  display: flex;
+
+
+}
+
+#deployment-page a {
+  white-space: pre-line !important;
+  display: flex;
+  padding-bottom: 10px;
+}
+
