@@ -370,7 +370,7 @@
     "deployment-examples": {
       "id": "deployment-examples",
       "title": "Deployment Examples",
-      "description": "https:",
+      "description": "Aws",
       "sidebar": "introduction"
     },
     "dop-config": {

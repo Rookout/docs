@@ -268,7 +268,7 @@
               "unversionedId": "deployment-examples",
               "id": "deployment-examples",
               "title": "Deployment Examples",
-              "description": "https:",
+              "description": "Aws",
               "source": "@site/../docs/deployment-examples.md",
               "sourceDirName": ".",
               "slug": "/deployment-examples",

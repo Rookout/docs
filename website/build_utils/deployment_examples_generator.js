@@ -36,7 +36,7 @@ const buildMarkdown = (data) => {
 id: deployment-examples
 title: Deployment Examples
 sidebar_label: Deployment Examples
----\n\n`;
+--- \n\n <div id="deployment-page"> \n\n`;
 
     for (let language in data) {
         md += `### ${ucFirstAllWords(language)}\n\n`;
@@ -49,6 +49,7 @@ sidebar_label: Deployment Examples
         }
     }
 
+    md += '</div>'
     return md;
 };
 
