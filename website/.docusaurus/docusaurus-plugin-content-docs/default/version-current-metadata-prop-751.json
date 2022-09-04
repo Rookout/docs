@@ -513,7 +513,7 @@
     "sdk-digests": {
       "id": "sdk-digests",
       "title": "Software Versions",
-      "description": "DOCUSAURUSCODETABSPython SDK",
+      "description": "<Tabs defaultValue=\"python\"",
       "sidebar": "introduction"
     },
     "setup-guide": {

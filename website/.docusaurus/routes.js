@@ -44,7 +44,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'd1b'),
+    component: ComponentCreator('/docs', '064'),
     routes: [
       {
         path: '/docs/breakpoint-limits',
@@ -239,7 +239,7 @@ export default [
       },
       {
         path: '/docs/sdk-digests',
-        component: ComponentCreator('/docs/sdk-digests', '86b'),
+        component: ComponentCreator('/docs/sdk-digests', '318'),
         exact: true,
         sidebar: "introduction"
       },
