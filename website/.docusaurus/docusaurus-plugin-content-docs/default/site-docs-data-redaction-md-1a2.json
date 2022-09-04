@@ -1,0 +1,31 @@
+{
+  "unversionedId": "data-redaction",
+  "id": "data-redaction",
+  "title": "Data Redaction",
+  "description": "Rookout offers data redaction rules to let you control sensitive data and specify which data it should not collect.",
+  "source": "@site/../docs/data-redaction.md",
+  "sourceDirName": ".",
+  "slug": "/data-redaction",
+  "permalink": "/docs/data-redaction",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/data-redaction.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
+  "frontMatter": {
+    "id": "data-redaction",
+    "title": "Data Redaction",
+    "sidebar_label": "Data Redaction"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Keyboard Shortcuts",
+    "permalink": "/docs/keyboard-shortcuts"
+  },
+  "next": {
+    "title": "Software Versions",
+    "permalink": "/docs/sdk-digests"
+  }
+}

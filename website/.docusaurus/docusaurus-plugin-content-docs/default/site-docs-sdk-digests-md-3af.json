@@ -1,0 +1,31 @@
+{
+  "unversionedId": "sdk-digests",
+  "id": "sdk-digests",
+  "title": "Software Versions",
+  "description": "DOCUSAURUSCODETABSPython SDK",
+  "source": "@site/../docs/sdk-digests.md",
+  "sourceDirName": ".",
+  "slug": "/sdk-digests",
+  "permalink": "/docs/sdk-digests",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/sdk-digests.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
+  "frontMatter": {
+    "id": "sdk-digests",
+    "title": "Software Versions",
+    "sidebar_label": "Software Versions"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Data Redaction",
+    "permalink": "/docs/data-redaction"
+  },
+  "next": {
+    "title": "Controller and Datastore License",
+    "permalink": "/docs/license"
+  }
+}

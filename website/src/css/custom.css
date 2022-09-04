@@ -1,0 +1,285 @@
+:root{
+  --ifm-color-primary-lightest: #6E53B8;
+  --ifm-color-primary-lighter: #5F45A8;
+  --ifm-color-primary-light: #5B42A1;
+  --ifm-color-primary: #421578;
+  --ifm-color-primary-dark: #4B3683;
+  --ifm-color-primary-darker: #47337C;
+  --ifm-color-primary-darkest: #3A2A66;
+  --ifm-font-family-monospace: Roboto,sans-serif;
+  --ifm-font-family-base: Roboto,sans-serif;
+  --ifm-heading-font-weight: 300;
+  --ifm-heading-color: var(--ifm-color-primary);
+  --ifm-h1-font-size: 30px;
+  --main-cotainer-bg-color: #f9f9f9;
+}
+
+
+
+main[class^='docMainContainer'] {
+  background-color: var(--main-cotainer-bg-color) !important;
+
+}
+
+main[class^='docMainContainer'] .col {
+  padding: 0 3rem !important
+}
+
+
+/*Global*/
+body, div, h1, h2, h3, h4, h5, h6, input, p, span {
+  font-family: var(--ifm-font-family-monospace);
+
+}
+
+header h1 {
+  font-weight: 300 !important;
+  color: #421578;
+  font-size: 30px!important;
+
+
+}
+
+/*Navbar*/
+.navbar {
+  background: #240F57 !important;
+  height: 100px;
+}
+
+.navbar__title{
+  color: white;
+  font-family: var(--ifm-font-family-monospace);
+  position: relative;
+  top: 14px;
+
+}
+
+.navbar__items:not(.navbar__items--right) {
+  padding-left:189px;
+  height: 100%;
+
+}
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.navbar__logo img {
+  width: 200px;
+  height: 55px;
+}
+
+article h2 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+ /*Footer*/
+
+.footer {
+  background: grey !important;
+  position: relative;
+}
+.footer .footer__title {
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+
+}
+.footer .footer__link-item {
+  color: hsla(0,0%,100%,.6);
+  margin: 2px -10px;
+  padding: 3px 10px;
+
+}
+.footer .row.footer__links {
+  flex-wrap: nowrap;
+}
+
+.footer .footer__copyright {
+  color: white;
+}
+
+
+ .footer div.row.footer__links > div:last-child{
+  position: absolute !important;
+  right: 0;
+  width: min-content;
+   bottom: 20%;
+   z-index: 100;
+}
+
+ svg[class^='iconExternalLink']{
+   display: none !important
+ }
+
+ /*Work around for footer links*/
+.footer div.row.footer__links > div:last-child .footer__title {
+  display: none;
+
+}
+
+/*Social Links*/
+.footer .social-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.footer .social-wrapper .social-icon {
+  display: flex!important;
+  justify-content: center;
+  align-content: center;
+  padding: unset!important;
+  margin: unset!important;
+  height: 40px;
+  width: 40px;
+}
+
+/*SearchBar*/
+.navbar__items--right {
+  min-width: 200px !important;
+}
+
+.navbar__items.navbar__items--right div[class^='searchBox'] {
+  width:  100% !important;
+}
+
+.dsla-search-field button[type='button'] {
+  border-radius: 20px !important;
+
+}
+
+.aa-DetachedSearchButtonIcon {
+  cursor: pointer!important;
+}
+
+
+
+
+/*Navlist*/
+
+
+.theme-doc-sidebar-container {
+  background: #f1f1f1;
+}
+.menu__link{
+  color: #7c8390!important;
+  transition: color .4s ease-in;
+}
+
+.menu__link:hover{
+    color:black !important
+}
+
+.menu__link--active, .menu__link--active:hover {
+  color:black !important
+}
+
+
+/*keycodes*/
+.key-code-wrapper {
+  display: flex;
+  gap: 5px;
+  margin-left: 20px;
+  opacity: 0;
+  animation-delay: .4s;
+
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+  animation-duration: .4s;
+}
+.keycode-icon {
+  font-size: 9px;
+  background: #421578 !important;
+  height: 20px;
+  min-width: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+
+@keyframes fadeIn {
+  from  {
+    opacity: 0;
+  }
+  to {
+    opacity: 1 ;
+  }
+}
+
+
+
+/* Use Cases Page */
+.use-cases-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.use-cases-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 25px;
+}
+
+.use-cases-item {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 30px;
+
+}
+
+.use-cases-icon {
+  display: flex;
+  flex: 1;
+}
+
+.use-cases-content {
+  display: flex;
+  flex-direction: column;
+  flex: 7;
+}
+
+.use-cases-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/*code blocks*/
+.theme-code-block  {
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+  padding: .1rem !important;
+
+}
+
+
+.theme-code-block code {
+  padding: .4rem 1rem !important;
+}
+
+
+.rookout-org-info {
+  background-color: #533c92;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 15px;
+}
+.prism-code, .prism-code code {
+  border-radius: 0 !important;
+}
+
+
+.tabs-container {
+  margin-bottom: 0 !important;
+}
+
+
+.theme-code-block + p,
+  .markdown img + p {
+  margin-top: 15px;
+}

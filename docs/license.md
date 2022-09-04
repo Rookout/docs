@@ -3,21 +3,20 @@ id: license
 title: Rookout Controller and Datastore License
 sidebar_label: Controller and Datastore License
 ---
-
 This software is a proprietary product of Rookout, and is protected under copyright laws and international copyright treaties. 
 
 Any use of the software is subject to and governed by the license conditions below: 
 
-1. You may run, execute or otherwise actively use this software (whether as a whole or portions of it) only if you have entered into a separate software-as-a-service agreement with Rookout. 
+1.  You may run, execute or otherwise actively use this software (whether as a whole or portions of it) only if you have entered into a separate software-as-a-service agreement with Rookout. 
 
-2. You may republish and redistribute this software but only within the same code repository it is found in. 
+2.  You may republish and redistribute this software but only within the same code repository it is found in. 
 
-3. All other uses, reproductions, copies, distributions or publications of this software are strictly prohibited. 
+3.  All other uses, reproductions, copies, distributions or publications of this software are strictly prohibited. 
 
-4. You may not use this software to breach the security of the Rookout software-as-a-service, to circumvent, manipulate, impair or disrupt its 
-operation, or perform any benchmark or penetration testing of the Rookout software-as-a-service. 
+4.  You may not use this software to breach the security of the Rookout software-as-a-service, to circumvent, manipulate, impair or disrupt its 
+    operation, or perform any benchmark or penetration testing of the Rookout software-as-a-service. 
 
-5. YOU MAY NOT USE THIS SOFTWARE FOR ANY ACTIVITY THAT CONSTITUTES, OR ENCOURAGES CONDUCT THAT WOULD CONSTITUTE, A CRIMINAL OFFENSE, GIVE RISE TO CIVIL LIABILITY OR OTHERWISE VIOLATE ANY APPLICABLE LAW. 
+5.  YOU MAY NOT USE THIS SOFTWARE FOR ANY ACTIVITY THAT CONSTITUTES, OR ENCOURAGES CONDUCT THAT WOULD CONSTITUTE, A CRIMINAL OFFENSE, GIVE RISE TO CIVIL LIABILITY OR OTHERWISE VIOLATE ANY APPLICABLE LAW. 
 
 Any use of this software is further subject to and governed by the following limitations: 
 

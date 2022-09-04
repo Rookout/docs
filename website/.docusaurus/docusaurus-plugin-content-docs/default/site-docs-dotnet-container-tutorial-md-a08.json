@@ -1,0 +1,31 @@
+{
+  "unversionedId": "dotnet-container-tutorial",
+  "id": "dotnet-container-tutorial",
+  "title": "Deploy Rookout on a .NET container",
+  "description": "This short tutorial will walk you through the perfect Rookout deployment for containerized .NET applications in four quick steps.",
+  "source": "@site/../docs/dotnet-container-tutorial.md",
+  "sourceDirName": ".",
+  "slug": "/dotnet-container-tutorial",
+  "permalink": "/docs/dotnet-container-tutorial",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/dotnet-container-tutorial.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
+  "frontMatter": {
+    "id": "dotnet-container-tutorial",
+    "title": "Deploy Rookout on a .NET container",
+    "sidebar_label": ".NET Container"
+  },
+  "sidebar": "introduction",
+  "previous": {
+    "title": "Python Container",
+    "permalink": "/docs/python-container-tutorial"
+  },
+  "next": {
+    "title": "Ruby Container",
+    "permalink": "/docs/ruby-container-tutorial"
+  }
+}
