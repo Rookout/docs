@@ -319,6 +319,11 @@
     ]
   },
   "docs": {
+    "api": {
+      "id": "api",
+      "title": "API",
+      "description": ""
+    },
     "breakpoint-limits": {
       "id": "breakpoint-limits",
       "title": "Breakpoint Limits",

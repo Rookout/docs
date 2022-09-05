@@ -1,0 +1,19 @@
+{
+  "unversionedId": "api",
+  "id": "api",
+  "title": "API",
+  "description": "",
+  "source": "@site/../docs/api.md",
+  "sourceDirName": ".",
+  "slug": "/api",
+  "permalink": "/docs/api",
+  "draft": false,
+  "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/api.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "api",
+    "title": "API",
+    "sidebar_label": "API"
+  }
+}

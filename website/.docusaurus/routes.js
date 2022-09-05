@@ -9,8 +9,13 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '064'),
+    component: ComponentCreator('/docs', '911'),
     routes: [
+      {
+        path: '/docs/api',
+        component: ComponentCreator('/docs/api', '198'),
+        exact: true
+      },
       {
         path: '/docs/breakpoint-limits',
         component: ComponentCreator('/docs/breakpoint-limits', 'cba'),

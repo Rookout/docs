@@ -21,6 +21,10 @@
           "mainDocId": "welcome",
           "docs": [
             {
+              "id": "api",
+              "path": "/docs/api"
+            },
+            {
               "id": "breakpoint-limits",
               "path": "/docs/breakpoint-limits",
               "sidebar": "introduction"

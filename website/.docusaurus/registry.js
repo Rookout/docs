@@ -40,6 +40,7 @@ export default {
   'c254336b': [() => import(/* webpackChunkName: 'c254336b' */ '@site/../docs/welcome.mdx'), '@site/../docs/welcome.mdx', require.resolveWeak('@site/../docs/welcome.mdx')],
   'd8a49851': [() => import(/* webpackChunkName: 'd8a49851' */ '@site/../docs/breakpoints-conditional.md'), '@site/../docs/breakpoints-conditional.md', require.resolveWeak('@site/../docs/breakpoints-conditional.md')],
   'df3f6f92': [() => import(/* webpackChunkName: 'df3f6f92' */ '@site/../docs/ruby-setup.mdx'), '@site/../docs/ruby-setup.mdx', require.resolveWeak('@site/../docs/ruby-setup.mdx')],
+  'e111f111': [() => import(/* webpackChunkName: 'e111f111' */ '@site/../docs/api.md'), '@site/../docs/api.md', require.resolveWeak('@site/../docs/api.md')],
   'e3da461f': [() => import(/* webpackChunkName: 'e3da461f' */ '@site/../docs/deployment-examples.md'), '@site/../docs/deployment-examples.md', require.resolveWeak('@site/../docs/deployment-examples.md')],
   'e5a7d762': [() => import(/* webpackChunkName: 'e5a7d762' */ '@site/../docs/dop-intro.md'), '@site/../docs/dop-intro.md', require.resolveWeak('@site/../docs/dop-intro.md')],
   'e6312514': [() => import(/* webpackChunkName: 'e6312514' */ '@site/../docs/python-container-tutorial.md'), '@site/../docs/python-container-tutorial.md', require.resolveWeak('@site/../docs/python-container-tutorial.md')],
