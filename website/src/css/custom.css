@@ -303,3 +303,30 @@ article h2 {
   padding-bottom: 10px;
 }
 
+@media screen and (max-width: 600px) {
+
+  html, body {
+    overflow-x: hidden !important;
+  }
+  div[class^='searchBox'] {
+    display: none !important
+  }
+
+  .navbar__brand {
+    position: relative;
+    top: -10px;
+
+  }
+  .navbar__items:not(.navbar__items--right) {
+    padding-left: unset!important;
+
+  }
+
+  iframe[title="YouTube video player"] {
+    width: fit-content;
+  }
+
+  .navbar__toggle {
+    color: white;
+  }
+}
