@@ -11,9 +11,9 @@
   "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/python-container-tutorial.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Author",
-  "lastUpdatedAt": 1539502055,
-  "formattedLastUpdatedAt": "Oct 14, 2018",
+  "lastUpdatedBy": "Ryan Hoffman",
+  "lastUpdatedAt": 1661946491,
+  "formattedLastUpdatedAt": "Aug 31, 2022",
   "frontMatter": {
     "id": "python-container-tutorial",
     "title": "Deploy Rookout on a Python container",

@@ -11,9 +11,9 @@
   "editUrl": "https://github.com/Rookout/docs/edit/master/docs/../docs/node-container-tutorial.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Author",
-  "lastUpdatedAt": 1539502055,
-  "formattedLastUpdatedAt": "Oct 14, 2018",
+  "lastUpdatedBy": "Ryan Hoffman",
+  "lastUpdatedAt": 1661946491,
+  "formattedLastUpdatedAt": "Aug 31, 2022",
   "frontMatter": {
     "id": "node-container-tutorial",
     "title": "Deploy Rookout on a Node.JS container",
