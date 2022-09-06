@@ -95,7 +95,7 @@ module.exports={
   "stylesheets": [
     "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
   ],
-  "favicon": "img/logos/bird_logo.png",
+  "favicon": "https://cdn.rookout.com/static/rookout/rookout_favicon.svg",
   "customFields": {
     "fonts": {
       "rookoutFont": [
