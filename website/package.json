@@ -10,7 +10,7 @@
     "clean-build": "docusaurus clear && rm -rf build",
     "prefetch-swagger-ui": "curl -LJO https://github.com/swagger-api/swagger-ui/archive/v3.25.0.tar.gz && tar xzf swagger-ui-3.25.0.tar.gz",
     "fetch-swagger-ui": "mv swagger-ui-3.25.0/dist/* build/docs/api && node build_utils/fix_swagger_url.js",
-    "postfetch-swagger-ui": "rm -rf swagger-ui-3.25.0.tar.gz swagger-ui-3.25.0",
+    "postfetch-swagger-ui": "rm -rf swagger-ui-3.25.0.tar.gz swagger-ui-3.25.0 && cp -R ./build/docs/api ./build",
     "publish-gh-pages": "docusaurus publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
