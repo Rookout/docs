@@ -151,5 +151,6 @@ module.exports={
       "copyright": `Copyright © ${new Date().getFullYear()}  Rookout`,
     }
   },
-  customFields: markdownVariables
+  customFields: markdownVariables,
+  onBrokenMarkdownLinks: 'throw'
 }
