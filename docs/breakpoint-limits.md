@@ -11,11 +11,11 @@ To ensure that a specific variable is collected despite being deep in the variab
 
 Default limits for each variable:
 | Variable type                | Python | Node.js | Java | DotNet |
-\| ---------------------------- \| ------ \| ------- \| ---- \| ------ \|
-\| **String or Buffer size**    | 512B   | 512B    | 512B | 512B   |
-\| **Collection size**          | 20     | 10      | 20   | 20     |
-\| **Object level**             | 3      | 3       | 4    | 3      |
-\| **Collection level**         | 2      | 2       | 2    | 2      |
+| ---------------------------- | ------ | ------- | ---- | ------ |
+| **String or Buffer size**    | 512B   | 512B    | 512B | 512B   |
+| **Collection size**          | 20     | 10      | 20   | 20     |
+| **Object level**             | 3      | 3       | 4    | 3      |
+| **Collection level**         | 2      | 2       | 2    | 2      |
 
 When you want to collect a variable that is out of the Collection limit, you can:
 
