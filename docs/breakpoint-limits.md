@@ -10,6 +10,7 @@ Setting Collection level will ensure that only variables at the top of the varia
 To ensure that a specific variable is collected despite being deep in the variable tree, use the Collect Variable functionality.
 
 Default limits for each variable:
+
 | Variable type                | Python | Node.js | Java | DotNet |
 | ---------------------------- | ------ | ------- | ---- | ------ |
 | **String or Buffer size**    | 512B   | 512B    | 512B | 512B   |
