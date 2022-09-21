@@ -43,7 +43,6 @@ header h1 {
 /*Navbar*/
 .navbar {
   background: #240F57 !important;
-  height: 100px;
 }
 
 .navbar__title{
@@ -67,6 +66,8 @@ header h1 {
 .navbar__logo img {
   width: 200px;
   height: 55px;
+  position: relative;
+  top: -5px;
 }
 
 article h2 {
