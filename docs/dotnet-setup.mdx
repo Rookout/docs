@@ -165,15 +165,15 @@ In your project’s settings, set the “debug type” to `portable` like so:
 
 While other “debug types” such as `full` and `pdbonly` may work (but are not recommended), the `embedded` type is not supported at all.
 
-For further reading: https:
+For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
 
 ### Optimizations
 
-Disabling compiler optimizations `` will further improve the debugging experience at a small cost to the application performance.
+Disabling compiler optimizations `<Optimize>false</Optimize>` will further improve the debugging experience at a small cost to the application performance.
 
 ### Multi-Project Solutions
 
-To support multi-projects Solutions its recommended to add the following `<Optimize>false</Optimize>` file to your Root folder:
+To support multi-projects Solutions its recommended to add the following `Directory.Build.props` file to your Root folder:
 
 ```xml
 
