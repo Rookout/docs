@@ -1,6 +1,7 @@
- const sidebar =  require ('./sidebars.json')
- const deployTarget = process.env.DEPLOY_TARGET || 'docs';
- const projectTargets = {
+const sidebar = require('./sidebars.json');
+
+const deployTarget = process.env.DEPLOY_TARGET || 'docs';
+const projectTargets = {
   'docs': {
     organizationName: 'Rookout',
     algoliaJs: '/js/algoliaSearchRookout.js',
@@ -8,7 +9,7 @@
     websiteUrl: 'https://docs.rookout.com',
     headerIcon: 'img/logos/rookout-logo-v2.png',
     supportEmail: `support@rookout.com`,
-    supportType: "mailto"
+    supportType: "mailto",
   },
   'dci-docs': {
     organizationName: 'AppDynamics',
@@ -17,70 +18,73 @@
     websiteUrl: 'https://dci.docs.rookout.com',
     headerIcon: 'img/logos/appd_rookout_logo_combined.svg',
     supportEmail: `https://www.appdynamics.com/support/`,
-    supportType: 'href'
+    supportType: 'href',
   },
 };
 
 
-  markdownVariables = {
+markdownVariables = {
   supportEmail: projectTargets[deployTarget].supportEmail,
-    supportType : projectTargets[deployTarget].supportType
+  supportType: projectTargets[deployTarget].supportType,
+  fonts: {
+    rookoutFont: [
+      "Roboto",
+      "sans-serif",
+    ],
+  },
+  markdownPlugins: [
+    null,
+  ],
+  repoUrl: "https://github.com/Rookout/docs",
 };
 
-const introduction = "introduction"
-const titles = Object.keys(sidebar[introduction])
+const introduction = "introduction";
+const titles = Object.keys(sidebar[introduction]);
 
 
+const buildFooterUrl = suffix => `/docs/${suffix}`;
+const footerLinks = titles.map(key => ({
+  title: key,
+  items: sidebar[introduction][key].map(item => ({
+    label: item.replace('-', " "),
+    to: buildFooterUrl(item),
+  })),
+}));
+const otherFooterLinks = [
+  {
+    title: "Other",
+    items: [
+      {
+        label: "Status",
+        href: "https://status.rookout.com/",
+      },
+    ],
 
-const buildFooterUrl = (suffix) => {
-  return '/docs/' + suffix
-}
-const footerLinks = titles.map(key => {
-  return {
-    title: key,
-    items: sidebar[introduction][key].map( item => {
-      return {
-        label: item.replace('-', " "),
-        to: buildFooterUrl(item)
-      }
-    })
-  }
-})
- const otherFooterLinks = [
-     {
-        title: "Other",
-        items: [
-          {
-            label: "Status",
-            href: "https://status.rookout.com/"
-          }
-        ],
-
-    },
-   {
-     title: "Social",
-     items: [
-       {
-         html: `<div class="social-wrapper"> 
+  },
+  {
+    title: "Social",
+    items: [
+      {
+        html: `<div class="social-wrapper"> 
 
          <a class="social-icon" href="https://github.com/Rookout" target="_blank"><img src="/img/social/github.svg" alt="GitHub - Rookout"></a>
          <a class="social-icon" href="https://www.facebook.com/rookoutlabs/" target="_blank"><img src="/img/social/facebook.svg" alt="Facebook - Rookout"></a>
          <a class="social-icon" href="https://twitter.com/rookoutlabs" target="_blank"><img src="/img/social/twitter.svg" alt="Twitter - Rookout"></a>
          <a class="social-icon" href="https://www.linkedin.com/company/rookout/" target="_blank"><img src="/img/social/linkedin.svg" alt="LinkedIn - Rookout"></a>
-        </div>`
-       }
-     ]
-   }
- ]
+        </div>`,
+      },
+    ],
+  },
+];
 
 module.exports={
-  "title": "Documentation",
-  "tagline": "Rookout - Get data on-demand from your live code just when you need it.",
-  "url": projectTargets[deployTarget].websiteUrl,
-  "baseUrl": "/",
-  "organizationName": projectTargets[deployTarget].organizationName,
-  "projectName": "docs",
-  "scripts": [
+  title: "Documentation",
+  tagline: "Rookout - Get data on-demand from your live code just when you need it.",
+  url: projectTargets[deployTarget].websiteUrl,
+  baseUrl: "/",
+  organizationName: projectTargets[deployTarget].organizationName,
+  projectName: "docs",
+  scripts: [
     "https://cdn.logrocket.io/LogRocket.min.js",
     "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js",
@@ -92,65 +96,54 @@ module.exports={
 
 
   ],
-  "stylesheets": [
-    "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  stylesheets: [
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
   ],
-  "favicon": "https://cdn.rookout.com/static/rookout/rookout_favicon.svg",
-  "customFields": {
-    "fonts": {
-      "rookoutFont": [
-        "Roboto",
-        "sans-serif"
-      ]
-    },
-    "markdownPlugins": [
-      null
-    ],
-    "repoUrl": "https://github.com/Rookout/docs"
-  },
-  "onBrokenLinks": "log",
-  "onBrokenMarkdownLinks": "log",
-  "presets": [
+  favicon: "https://cdn.rookout.com/static/rookout/rookout_favicon.svg",
+
+  onBrokenLinks: "log",
+  onBrokenMarkdownLinks: "log",
+  presets: [
     [
       "@docusaurus/preset-classic",
       {
-        "docs": {
-          "showLastUpdateAuthor": true,
-          "showLastUpdateTime": true,
-          "editUrl": "https://github.com/Rookout/docs/edit/master/docs/",
-          "path": "../docs",
-          "sidebarPath": "../website/sidebars.json"
+        docs: {
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          editUrl: "https://github.com/Rookout/docs/edit/master/docs/",
+          path: "../docs",
+          sidebarPath: "../website/sidebars.json",
         },
-        "blog": {},
-        "theme": {
-          customCss: [require.resolve('./src/css/custom.css')],        }
-      }
-    ]
+        blog: {},
+        theme: { customCss: [require.resolve('./src/css/custom.css')] },
+      },
+    ],
   ],
   plugins: [
-      [require.resolve("@cmfcmf/docusaurus-search-local"), {maxSearchResults: 12}],
+    [require.resolve("@cmfcmf/docusaurus-search-local"), { maxSearchResults: 12 }],
   ],
 
-  "themeConfig": {
+  themeConfig: {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
-    "navbar": {
-      "title": "Documentation",
-      "logo": {
+    navbar: {
+      title: "Documentation",
+      logo: {
         target: "_self",
         href: "/docs/welcome",
-        "src": projectTargets[deployTarget].headerIcon
+        src: projectTargets[deployTarget].headerIcon,
       },
-      "items": []
+      items: [],
     },
-    "footer": {
-      "links": [...footerLinks, ...otherFooterLinks],
-      "copyright": `Copyright © ${new Date().getFullYear()}  Rookout`,
-    }
+    footer: {
+      links: [...footerLinks, ...otherFooterLinks],
+      copyright: `Copyright © ${new Date().getFullYear()}  Rookout`,
+    },
   },
+  // eslint-disable-next-line no-undef
   customFields: markdownVariables,
   onBrokenMarkdownLinks: 'throw'
 }

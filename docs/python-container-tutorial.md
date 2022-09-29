@@ -42,8 +42,6 @@ import rook
 rook.start(
     token="[Your Rookout Token]",
     labels={"env": "dev"}
-    # When using multiprocessing, enable fork support to load Rookout in all workers
-    #, fork=True
 )
 
 ```
