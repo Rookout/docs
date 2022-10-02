@@ -11,7 +11,7 @@
       "redirects": [
         {
           "source": "/",
-          "destination": "/docs/welcome.html",
+          "destination": "/docs/welcome/",
           "type": 301
         },
         {
