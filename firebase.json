@@ -10,6 +10,11 @@
       ],
       "redirects": [
         {
+          "source": "/",
+          "destination": "/docs/welcome.html",
+          "type": 301
+        },
+        {
           "source": "/docs/sdk-setup.html",
           "destination": "/docs/setup-intro/setup-intro.html",
           "type": 301
