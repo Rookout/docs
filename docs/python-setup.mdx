@@ -267,7 +267,7 @@ spark-submit --conf spark.python.daemon.module=rook.pyspark_daemon --conf spark.
 
 Several popular application servers and frameworks for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
-If you are using one of those application servers or frameworks, you could set the `fork` argument in the SDK API or the ROOKOUT_ENABLE_FORK environment variable to true to automatically enable Rookout in forked processes. Leaving the `fork` argument empty means that Rookout will auto detect if it should enable this feature.
+The Rookout SDK should automatically detect if you are using one of those application servers or frameworks, and run itself in forked processes. You can also set the `fork` argument in the SDK API or the ROOKOUT_ENABLE_FORK environment variable to `True` to force that behavior.
 
 ### uWSGI applications
 
