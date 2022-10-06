@@ -229,6 +229,7 @@ If you are using a local git provider or any hosted git provider that is not lis
 
 To do that, please download and install Rookout Desktop App. See the following video to learn how:
 
+<iframe width={600} height={300} src="https://www.youtube.com/embed/mkMpzQPNcsI" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} />
 
 
 ## Packaging Sources
