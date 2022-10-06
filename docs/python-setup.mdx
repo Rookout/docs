@@ -72,7 +72,7 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `git_commit`                | `ROOKOUT_COMMIT`                            | None          | String that indicates your git commit or a branch name                                                                         |
 | `git_origin`                | `ROOKOUT_REMOTE_ORIGIN`                     | None          | String that indicates your git remote origin                                                                                   |
 | `proxy`                     | `ROOKOUT_PROXY`                             | None          | URL to proxy server                                                                                                            |
-| `fork`                      | `ROOKOUT_ENABLE_FORK`                       | False         | Set to `True` to enable support in forked processes                                                                     |
+| `fork`                      | `ROOKOUT_ENABLE_FORK`                       | None         | Set to `True` to force running in forked children processes
 | `sources`                   | `ROOKOUT_SOURCES`                           | None          | Sources information (see [info below](#multiple-sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
 
 ### restart
@@ -267,7 +267,7 @@ spark-submit --conf spark.python.daemon.module=rook.pyspark_daemon --conf spark.
 
 Several popular application servers and frameworks for Python load the application code during startup and then `fork()` the process multiple times to worker processes.
 
-If you are using one of those application servers or frameworks, you should set the `fork` argument in the SDK API or the ROOKOUT_ENABLE_FORK environment variable to true to automatically enable Rookout in forked processes.
+The Rookout SDK should automatically detect if you are using one of those application servers or frameworks, and run itself in forked processes. You can also set the `fork` argument in the SDK API or the ROOKOUT_ENABLE_FORK environment variable to `True` to force that behavior.
 
 ### uWSGI applications
 
