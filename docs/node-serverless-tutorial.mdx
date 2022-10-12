@@ -1,0 +1,139 @@
+---
+id: node-serverless-tutorial
+title: "Deploy Rookout on a Node.JS with 'Serverless-Framework' "
+sidebar_label: Node.JS Serverless
+---
+This short tutorial will walk you through the perfect Rookout deployment for NodeJS applications with [Serverless-framework](https://www.serverless.com/) in a few quick steps.
+
+### Get Your Application
+
+First things first, choose an application.
+If you don't have one readily available, use our [sample application](https://github.com/Rookout/tutorial-nodejs-serverless-2022).
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Start by:
+
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: "NPM", value: "npm"},
+        {label: "Yarn", value: "yarn"},
+    ]}
+    >
+<TabItem value="npm">
+
+```bash
+git clonehttps://github.com/Rookout/tutorial-nodejs-serverless-2022
+cd tutorial-nodejs-serverless-2022
+npm install
+```
+</TabItem>
+<TabItem value="yarn">
+
+```bash
+git clonehttps://github.com/Rookout/tutorial-nodejs-serverless-2022
+cd tutorial-nodejs-serverless-2022
+yarn
+```
+</TabItem>
+
+</Tabs>
+
+### 1. Add the Rookout npm Package
+
+Rookout for NodeJS is a simple npm Package.
+Go ahead and add it as a dependency:
+
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: "NPM", value: "npm"},
+        {label: "Yarn", value: "yarn"},
+    ]}
+>
+<TabItem value="npm">
+
+```bash
+npm install --save rookout
+```
+</TabItem>
+<TabItem value="yarn">
+
+```bash
+yarn add rookout
+```
+</TabItem>
+
+</Tabs>
+
+
+### 2. Configure Rookout
+
+Load and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
+
+The start function returns a promise - wait for it to debug the application initialization code.
+
+Edit your main file - in our case `handler.js`:
+
+```javascript
+const serverless = require("serverless-http") // <-- serverless-framework;
+const server = require('./server') //  <-- the http server initializer ;
+const rookout = require('rookout/lambda')
+
+module.exports.handler = rookout.wrap(serverless(server), {
+    token: '[Your Rookout Token]',
+    labels: {env: 'dev'},
+});
+
+```
+
+<div className="rookout-org-info" />
+
+
+### 3. Deploy your serverless application
+
+```bash
+ sls deploy --nos3sync
+```
+
+After deployment is completed successfully, results will be printed out to the console, similar to this:
+
+```bash
+Deploying tutorial-node-js-serverless-2022 to stage dev (us-east-1)
+
+✔ Service deployed to stack tutorial-node-js-serverless-2022-dev (70s)
+
+endpoint: ANY - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com  #  <-- The public endpoint
+functions:
+  api: tutorial-node-js-serverless-2022-dev-api (16 MB)
+```
+###### Note: your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer
+
+To validate that our endpoint works we can invoke it.
+```bash
+curl --request POST 'https://xxxxxx.execute-api.us-east-1.amazonaws.com/todos' --header 'Content-Type: application/json' --data-raw '{"title": "Buy Coffee", "order": 123}'
+```
+
+
+### 4. Deploying to s3 and communicate with our serverless functions
+
+To add UI which interacts with those endpoints. Copy the endpoint printed `https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com` and go to `static/js/app.js` replace all instances of `[lambda_endpoint]` with the copied endpoint link.
+
+In addition, please go to `serverless.yaml` and under `custom.bucketName`, change/select a name of your liking.
+
+
+When prerequisite are completed run:
+```bash
+sls deploy
+```
+
+After deployment has been successful we can access it through [https://[bucket-name].s3.amazonaws.com/index.html](https://[bucket-name].s3.amazonaws.com/index.html)
+
+
+### Questions?
+
+1.  Check out this reference [implementation](https://github.com/Rookout/tutorial-nodejs-serverless-2022/compare/configure-rookout).
+3.  Reach out to us via chat or [email](mailto:support@rookout.com).
