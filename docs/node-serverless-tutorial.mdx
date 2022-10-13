@@ -1,6 +1,6 @@
 ---
 id: node-serverless-tutorial
-title: "Deploy Rookout on a Node.JS with 'Serverless-Framework'"
+title: "Deploy Rookout on a Node.JS with 'Serverless-Framework' "
 sidebar_label: Node.JS Serverless
 ---
 This short tutorial will walk you through the perfect Rookout deployment for NodeJS applications with [Serverless-framework](https://www.serverless.com/) in a few quick steps.
@@ -16,11 +16,31 @@ import TabItem from '@theme/TabItem';
 
 Start by:
 
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: "NPM", value: "npm"},
+        {label: "Yarn", value: "yarn"},
+    ]}
+    >
+<TabItem value="npm">
+
 ```bash
 git clone https://github.com/Rookout/tutorial-nodejs-serverless-2022
 cd tutorial-nodejs-serverless-2022
-npm install # or yarn install
+npm install
 ```
+</TabItem>
+<TabItem value="yarn">
+
+```bash
+git clonehttps://github.com/Rookout/tutorial-nodejs-serverless-2022
+cd tutorial-nodejs-serverless-2022
+yarn
+```
+</TabItem>
+
+</Tabs>
 
 ### 1. Add the Rookout SDK
 
@@ -53,6 +73,8 @@ yarn add rookout
 ### 2. Configure Rookout
 
 Load the Rookout module and configure the agent with your Rookout account token (if you haven't signed up yet, you can do that [here](https://app.rookout.com/#mode=signUp)).
+
+The start function returns a promise - wait for it to debug the application initialization code.
 
 Edit your main file - in our case `handler.js`:
 
@@ -96,7 +118,7 @@ curl --request POST 'https://xxxxxx.execute-api.us-east-1.amazonaws.com/todos' -
 ```
 
 
-####  Optional: Deploying to s3 and communicate with our serverless functions
+### 4. Deploying to S3
 
 To add UI which interacts with those endpoints. Copy the endpoint printed `https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com` and go to `static/js/app.js` replace all instances of `[lambda_endpoint]` with the copied endpoint link.
 
@@ -108,7 +130,7 @@ When prerequisite are completed run:
 sls deploy
 ```
 
-After deployment has been successful we can access it through [https://[bucket-name].s3.amazonaws.com/index.html](https://[bucket-name].s3.amazonaws.com/index.html)
+After a successful deployment we can access our function through [https://[bucket-name].s3.amazonaws.com/index.html](https://[bucket-name].s3.amazonaws.com/index.html)
 
 
 ### Questions?
