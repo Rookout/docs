@@ -16,31 +16,11 @@ import TabItem from '@theme/TabItem';
 
 Start by:
 
-<Tabs
-    defaultValue="npm"
-    values={[
-        {label: "NPM", value: "npm"},
-        {label: "Yarn", value: "yarn"},
-    ]}
-    >
-<TabItem value="npm">
-
 ```bash
 git clone https://github.com/Rookout/tutorial-nodejs-serverless-2022
 cd tutorial-nodejs-serverless-2022
-npm install
+npm install # or yarn install
 ```
-</TabItem>
-<TabItem value="yarn">
-
-```bash
-git clonehttps://github.com/Rookout/tutorial-nodejs-serverless-2022
-cd tutorial-nodejs-serverless-2022
-yarn
-```
-</TabItem>
-
-</Tabs>
 
 ### 1. Add the Rookout SDK
 
@@ -73,8 +53,6 @@ yarn add rookout
 ### 2. Configure Rookout
 
 Load the Rookout module and configure the agent with your Rookout account token (if you haven't signed up yet, you can do that [here](https://app.rookout.com/#mode=signUp)).
-
-The start function returns a promise - wait for it to debug the application initialization code.
 
 Edit your main file - in our case `handler.js`:
 
@@ -118,7 +96,7 @@ curl --request POST 'https://xxxxxx.execute-api.us-east-1.amazonaws.com/todos' -
 ```
 
 
-### 4. Deploying to s3 and communicate with our serverless functions
+####  Optional: Deploying to s3 and communicate with our serverless functions
 
 To add UI which interacts with those endpoints. Copy the endpoint printed `https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com` and go to `static/js/app.js` replace all instances of `[lambda_endpoint]` with the copied endpoint link.
 
