@@ -26,7 +26,7 @@ Start by:
 <TabItem value="npm">
 
 ```bash
-git clonehttps://github.com/Rookout/tutorial-nodejs-serverless-2022
+git clone https://github.com/Rookout/tutorial-nodejs-serverless-2022
 cd tutorial-nodejs-serverless-2022
 npm install
 ```
@@ -42,9 +42,9 @@ yarn
 
 </Tabs>
 
-### 1. Add the Rookout npm Package
+### 1. Add the Rookout SDK
 
-Rookout for NodeJS is a simple npm Package.
+The Rookout SDK for NodeJS is a simple node module that allows you to run the Rookout agent.
 Go ahead and add it as a dependency:
 
 <Tabs
@@ -72,7 +72,7 @@ yarn add rookout
 
 ### 2. Configure Rookout
 
-Load and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
+Load the Rookout module and configure the agent with your Rookout account token (if you haven't signed up yet, you can do that [here](https://app.rookout.com/#mode=signUp)).
 
 The start function returns a promise - wait for it to debug the application initialization code.
 
