@@ -47,14 +47,15 @@
       "dop-install",
       "dop-config"
     ],
-    "Advanced": [
+    "Advanced Features": [
       "live-logger",
       "collaborations",
       "tracing-timeline",
       "keyboard-shortcuts",
       "data-redaction"
     ],
-    "More": [
+    "Miscellaneous": [
+      "advanced-deployment",
       "sdk-digests",
       "license"
     ]
