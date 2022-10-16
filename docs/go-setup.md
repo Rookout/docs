@@ -29,5 +29,6 @@ The `Start` method is used to initialize the SDK.
 | `labels` | -                                | {}            | A map of key:value labels for your application instances                                                |
 | -               | `ROOKOUT_CONTROLLER_HOST` | None          | If you are using a Rookout ETL Controller, this is the hostname for it                                  |
 | -               | `ROOKOUT_CONTROLLER_PORT` | None          | If you are using a Rookout ETL Controller, this is the port for it                                      |
+| `quiet`         | `ROOKOUT_QUIET`           | False         | Set to `True` to stop informative log messages from being written to the standard output and error      |
 
 _For more information, please [contact us](https://rookout.com/contact)._
