@@ -92,6 +92,18 @@ module.exports.handler = rookout.wrap(serverless(server), {
 
 <div className="rookout-org-info" />
 
+Update your `serverless.yaml` to have Rookout's environment variables configured for your project
+
+```yaml
+provider:
+    ...
+    environment:
+      ROOKOUT_REMOTE_ORIGIN: git@github.com:Rookout/tutorial-nodejs-serverless-2022.git
+      ROOKOUT_COMMIT: master
+
+```
+##### you can change `ROOKOUT_REMOTE_ORIGIN` to your project's remote origin and update the `ROOKOUT_COMMIT` to any commit in that poject
+
 
 ### 3. Deploy your serverless application
 
