@@ -11,7 +11,7 @@ sidebar_label: Breakpoint Status
 | Pending  |   <img src="/img/screenshots/pending.svg" width={30} height={30} />   | A connection has not been established with any of your applications / instances, hence data will not be streamed. |
 | Disabled |   <img src="/img/screenshots/disabled.svg" width={30} height={30} />   | The Breakpoint has been disabled and will not collect data.                                                       |
 | Error    |     <img src="/img/screenshots/Error.svg" width={30} height={30} />    | There was an issue with applying this breakpoint in one or more applications and data won't be streamed.          |
-| Warning  | <img src="/img/screenshots/WarningBlack.svg" width={30} height={30} /> | The Breakpoint has been disabled and will not collect data.                                                       |
+| Warning  | <img src="/img/screenshots/WarningBlack.svg" width={30} height={30} /> | There was an issue with applying this breakpoint in one or more applications, data may still be collected.                                                       |
 
 ## Active
 
