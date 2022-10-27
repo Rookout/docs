@@ -1,0 +1,183 @@
+---
+id: go-setup
+title: Go SDK
+sidebar_label: Go
+---
+This page dives into the nitty-gritty details on installing Rookout under various configurations. If you encounter difficulties with deploying Rookout, this is the place to look.
+
+## Installation
+
+Rookout's Go SDK is served from a public repository which you can access ... . 
+
+### Environment Variables
+
+In order to install the SDK, you will need to set two environment variables, GONOSUMDB and GOPROXY.
+
+Before setting environment variables, it is wise to unset Linux variables you may have that will override them -
+
+```bash
+
+unset GONOSUMDB
+unset GOPROXY
+
+```
+
+#### GONOSUMDB
+
+GONOSUMDB is configured so the Go tool will skip the authentication of the downloaded module. Without it the process will fail, as there is more than one module called Rookout/GoSDK (this is due to our solution that makes it possible not to configure a Go proxy in some environments, more on that later).
+
+Define this variable as follows -
+
+```bash
+
+go env -w GONOSUMDB="github.com/Rookout/GoSDK"
+
+```
+
+If you are already using the GONOSUMDB variable to skip authentication for other private repositories, just add "github.com/Rookout/GoSDK" to the GONOSUMDB list.
+
+#### GOPROXY
+
+GOPROXY is configured so that the Go tool will be able to authenticate to our private repository and get the module from there.
+
+Define this variable as follows -
+
+```bash
+
+go env -w GOPROXY=“https://proxy.golang.org,https://rookout.jfrog.io/artifactory/api/go/rookout-go,direct”
+
+```
+If you are already using GOPROXY, you can add our proxy by adding https://rookout.jfrog.io/artifactory/api/go/rookout-go after https://proxy.golang.org and beforedirect in the GOPROXY list.
+
+### Get the package
+
+Once the Go tool variables are configured, run the following inside your app’s directory to add the Rookout SDK to the go.mod file - 
+
+```bash
+
+go get -d github.com/Rookout/GoSDK
+
+```
+
+This command will fetch the Rookout SDK from our private repository onto your machine, and will also add the Rookout SDK as a dependency to your project (adding it to the go.mod file). You should only run this command one time.
+
+:::note 
+
+Don’t forget to add the -d flag to go get so that the package will be downloaded and added to go.mod, but not installed. This is the best practice according to the Go official documentation.
+
+:::
+
+:::note 
+
+If your app is running in a container, you will need to first follow the instructions up to this point on a local machine (to add the Rookout SDK to go.mod), then configure the Go tool environment variables in the container image as well, so that go mod download will be able to fetch our SDK.
+
+:::
+
+### Add code to start Rookout within your application
+
+Now that we have the Rookout SDK as a dependency, we need to start it from within your application. Go to the file containing your main package and import Rookout:
+
+```go
+
+import (
+    rookout "github.com/Rookout/GoSDK"
+)
+
+```
+
+Then, in your main function, as early as possible, call rookout.start like so:
+
+```go 
+
+err := rookout.Start(rookout.RookOptions{token=[your-rookout-token]})
+fmt.Println(err)
+
+```
+
+// todo link the environment variables for rookout.start
+
+### Build the application
+
+#### Enable CGO
+
+Make sure that CGO isn’t disabled. It is enabled by default but may be changed using the CGO_ENABLED variable. Make sure it is not disabled in your environment variables as well as the Go tool environment. 
+
+```bash
+
+echo ${CGO_ENABLED} && go env | grep CGO_ENABLED
+
+```
+
+#### Remove some LD flags
+
+Rookout may not work with some LD flags (-s, -w), these are often passed in the go build command using -ldflags.
+
+#### Operating system dependencies
+
+Depending on your OS, you may need to install additional dependencies: 
+
+// todo reorganize the list, add it here 
+
+#### Add gcflags 
+
+We recommend using the following gcflags for your go build: 
+
+```bash
+
+-gcflags="all=-dwarflocationlists=true"
+
+```
+
+This configuration minimizes Rookout’s CPU usage within our clients' application, while providing nearly complete coverage of the project and its dependencies. 
+
+A user can decide to replace `all` with `./...`. This will apply the gcflags chosen exclusively to the project code. `all` can also be replaced with the name of a specific package or regex to choose specific modules to cover.
+
+Note: to attain complete code coverage at the cost of user resource consumption, the following gcflags can be configured: 
+
+```bash
+
+-gcflags 'all=-N -l'
+
+```
+
+#### Specify the OS distribution as a tag
+
+Specify the OS distribution as a tag to the go build command using the -tags parameter:
+
+// todo determine the list here
+
+## Dynamically linking dependencies 
+
+By default, the Rookout module links its dependencies statically. This is done to support multi-stage docker images, running on distroless images, having separate build and run machines, or any other reason for not having all the operating system dependencies the Rookout SDK needs, installed on the machine that will run your application.
+
+To configure Rookout to dynamically link dependencies, add another tag to the `-tags` flag of the `go build` command, called `rookout_dynamic` - e.g., `-tags=ubuntu20,rookout_dynamic`. Doing so means all the OS dependencies must exist on the target machine on which the application is going to run.
+
+:::note 
+
+Cross-compiling may not work out-of-the-box for you. In this case please contact us for assistance.
+
+:::
+
+## SDK Configuration 
+
+### start
+
+```go 
+
+Start(labels)
+```
+The `Start` method is used to initialize the SDK and it accepts the following variables:
+
+| Environment Variable                        | Default Value | Description                                                                                                            |
+| ------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller                |
+| `ROOKOUT_LABELS`                            | {}            | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables        |
+| `ROOKOUT_COMMIT`                            | None          | String that indicates your git commit or a branch name                                                                 |
+| `ROOKOUT_REMOTE_ORIGIN`                     | None          | String that indicates your git remote origin                                                                           |
+| `ROOKOUT_CONTROLLER_HOST`                   | None          | If you are using a Rookout ETL Controller, this is the hostname for it                                                 |
+| `ROOKOUT_CONTROLLER_PORT`                   | None          | If you are using a Rookout ETL Controller, this is the port for it                                                     |
+| `ROOKOUT_PROXY`                             | None          | URL to proxy server                                                                                                    |
+| `ROOKOUT_DEBUG`                             | False         | Set to `True` to increase log level to debug                                                                           |
+| `ROOKOUT_SOURCES`                           | None          | Source information (see below)                                                                                         |
+| `ROOKOUT_LIVE_LOGGER`                       | False         | Set to `True` to enable Rookout Live Logger                                                                            |
+| `ROOKOUT_QUIET`                             | False         | Set to `True` to stop informative log messages from being written to the standard output and error                     |
