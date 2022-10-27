@@ -7,51 +7,11 @@ This page dives into the nitty-gritty details on installing Rookout under variou
 
 ## Installation
 
-Rookout's Go SDK is served from a public repository which you can access ... . 
-
-### Environment Variables
-
-In order to install the SDK, you will need to set two environment variables, GONOSUMDB and GOPROXY.
-
-Before setting environment variables, it is wise to unset Linux variables you may have that will override them -
-
-```bash
-
-unset GONOSUMDB
-unset GOPROXY
-
-```
-
-#### GONOSUMDB
-
-GONOSUMDB is configured so the Go tool will skip the authentication of the downloaded module. Without it the process will fail, as there is more than one module called Rookout/GoSDK (this is due to our solution that makes it possible not to configure a Go proxy in some environments, more on that later).
-
-Define this variable as follows -
-
-```bash
-
-go env -w GONOSUMDB="github.com/Rookout/GoSDK"
-
-```
-
-If you are already using the GONOSUMDB variable to skip authentication for other private repositories, just add "github.com/Rookout/GoSDK" to the GONOSUMDB list.
-
-#### GOPROXY
-
-GOPROXY is configured so that the Go tool will be able to authenticate to our private repository and get the module from there.
-
-Define this variable as follows -
-
-```bash
-
-go env -w GOPROXY=“https://proxy.golang.org,https://rookout.jfrog.io/artifactory/api/go/rookout-go,direct”
-
-```
-If you are already using GOPROXY, you can add our proxy by adding https://rookout.jfrog.io/artifactory/api/go/rookout-go after https://proxy.golang.org and beforedirect in the GOPROXY list.
+Rookout's Go SDK is served from a public repository on github. 
 
 ### Get the package
 
-Once the Go tool variables are configured, run the following inside your app’s directory to add the Rookout SDK to the go.mod file - 
+Run the following inside your app’s directory to add the Rookout SDK to the go.mod file - 
 
 ```bash
 
