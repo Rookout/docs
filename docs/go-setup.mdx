@@ -65,11 +65,38 @@ echo ${CGO_ENABLED} && go env | grep CGO_ENABLED
 
 ```
 
-#### Operating system dependencies
+#### Additional Dependencies
 
-Depending on your OS, you may need to install additional dependencies: 
+If you are using the following environments, you will need to install additional dependencies:
 
-// todo reorganize the list, add it here 
+##### Debian OS 
+
+```bash 
+
+apt update && apt install -y libffi-dev zlib1g-dev libedit-dev libc++-11-dev libc++abi-11-dev
+
+```
+
+Note: If needed, add `sudo` for both commands.
+
+##### Alpine distribution 
+```bash 
+
+apk add —-no-cache gcc musl-dev zlib-static build-base
+
+```
+
+Note: If needed, add `sudo`.
+
+##### Photon OS 
+
+```bash
+
+tdnf install -y git gcc glibc-devel binutils  zlib-devel openssl-devel linux-api-headers
+
+```
+
+Note: If needed, add `sudo`.
 
 #### Specify the OS distribution as a tag
 
@@ -77,9 +104,9 @@ Specify the OS distribution as a tag to the `go build` command using the `-tags`
 
 // todo determine the list here
 
-#### LD flags
+#### ldflags
 
-Rookout may not work with some LD flags (-s, -w). These are often passed in the `go build` command using `-ldflags`.
+Rookout may not work with the ld flags `-s` and `-w`. These are often passed in the `go build` command using `-ldflags`; we recommend remoing them.
 
 #### gcflags 
 
