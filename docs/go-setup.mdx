@@ -27,12 +27,6 @@ The `-d` flag ensures that the package will be downloaded and added to go.mod, b
 
 :::
 
-:::note 
-
-If your app is running in a container, you will need to first follow the instructions up to this point on a local machine (to add the Rookout SDK to go.mod), then configure the Go tool environment variables in the container image as well, so that go mod download will be able to fetch our SDK.
-
-:::
-
 ### Add code to start Rookout within your application
 
 Go to the file containing your main package and import Rookout:
