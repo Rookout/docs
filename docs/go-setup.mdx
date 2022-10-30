@@ -14,7 +14,7 @@ Rookout's Go SDK is served from a [public repository](github.com/Rookout/GoSDK) 
 
 ### Get the package
 
-Run the following inside your app’s directory to add the Rookout SDK to the go.mod file - 
+Run the following inside your app’s directory to add the Rookout SDK to the `go.mod` file - 
 
 ```bash
 
@@ -22,17 +22,17 @@ go get -d github.com/Rookout/GoSDK
 
 ```
 
-This command will fetch the Rookout SDK from our repository onto your machine, and will also add the Rookout SDK as a dependency to your project (adding it to the go.mod file). You should only run this command one time.
+This command will fetch the Rookout SDK from our repository onto your machine, and will also add the Rookout SDK as a dependency to your project (adding it to the `go.mod` file). You should only run this command one time.
 
 :::note 
 
-The `-d` flag ensures that the package will be downloaded and added to go.mod, but not installed.
+The `-d` flag ensures that the package will be downloaded and added to `go.mod`, but not installed.
 
 :::
 
 ### Start Rookout within your application
 
-Go to the file containing your main package and import Rookout:
+Go to the file containing your `main` package and import Rookout:
 
 ```go
 
@@ -42,7 +42,7 @@ import (
 
 ```
 
-Then, in your main function, as early as possible, call rookout.start like so:
+Then, in your `main` function, as early as possible, call `rookout.Start`:
 
 ```go 
 
@@ -51,13 +51,13 @@ fmt.Println(err)
 
 ```
 
-For a list of optional arguments to pass to the Start function , see the [SDK configuration](#start) section. 
+For a list of optional arguments to pass to the `Start` function, see the [SDK configuration section](#start). 
 
 ### Build the application
 
 #### Enable CGO
 
-Make sure that CGO isn’t disabled. It is enabled by default but may be changed using the CGO_ENABLED variable. Make sure it is not disabled in your environment variables as well as the Go tool environment. 
+Make sure that CGO isn’t disabled. It is enabled by default but may be changed using the `CGO_ENABLED` variable. Make sure it is not disabled in your environment variables as well as the Go tool environment. 
 
 ```bash
 
@@ -73,15 +73,15 @@ Depending on your OS, you may need to install additional dependencies:
 
 #### Specify the OS distribution as a tag
 
-Specify the OS distribution as a tag to the go build command using the `-tags` parameter:
+Specify the OS distribution as a tag to the `go build` command using the `-tags` parameter:
 
 // todo determine the list here
 
 #### LD flags
 
-Rookout may not work with some LD flags (-s, -w), these are often passed in the go build command using -ldflags.
+Rookout may not work with some LD flags (-s, -w). These are often passed in the `go build` command using `-ldflags`.
 
-#### Add gcflags 
+#### gcflags 
 
 We recommend using the following gcflags for your go build: 
 
@@ -111,7 +111,7 @@ To configure Rookout to dynamically link dependencies, add another tag to the `-
 
 :::note 
 
-Cross-compiling may not work out-of-the-box for you. In this case please contact us for assistance.
+Cross-compiling may not work out-of-the-box for you. In this case please contact us for assistance at <SupportEmail /> 
 
 :::
 
