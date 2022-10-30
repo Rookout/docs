@@ -8,7 +8,7 @@ import SupportEmail from '../website/src/pages/supportemail.js'
 
 This page dives into the nitty-gritty details on installing Rookout under various configurations. If you encounter difficulties with deploying Rookout, this is the place to look.
 
-## Installation
+## Setup
 
 Rookout's Go SDK is served from a [public repository](github.com/Rookout/GoSDK) on Github. 
 
@@ -30,7 +30,7 @@ The `-d` flag ensures that the package will be downloaded and added to go.mod, b
 
 :::
 
-### Add code to start Rookout within your application
+### Start Rookout within your application
 
 Go to the file containing your main package and import Rookout:
 
@@ -51,7 +51,7 @@ fmt.Println(err)
 
 ```
 
-// todo link the environment variables for rookout.start
+For a list of optional arguments to pass to the Start function , see the [SDK configuration](#start) section. 
 
 ### Build the application
 
@@ -65,15 +65,21 @@ echo ${CGO_ENABLED} && go env | grep CGO_ENABLED
 
 ```
 
-#### Remove some LD flags
-
-Rookout may not work with some LD flags (-s, -w), these are often passed in the go build command using -ldflags.
-
 #### Operating system dependencies
 
 Depending on your OS, you may need to install additional dependencies: 
 
 // todo reorganize the list, add it here 
+
+#### Specify the OS distribution as a tag
+
+Specify the OS distribution as a tag to the go build command using the `-tags` parameter:
+
+// todo determine the list here
+
+#### LD flags
+
+Rookout may not work with some LD flags (-s, -w), these are often passed in the go build command using -ldflags.
 
 #### Add gcflags 
 
@@ -97,12 +103,6 @@ Note: to attain complete code coverage at the cost of user resource consumption,
 
 ```
 
-#### Specify the OS distribution as a tag
-
-Specify the OS distribution as a tag to the go build command using the -tags parameter:
-
-// todo determine the list here
-
 ## Dynamically linking dependencies 
 
 By default, the Rookout module links its dependencies statically. This is done to support multi-stage docker images, running on distroless images, having separate build and run machines, or any other reason for not having all the operating system dependencies the Rookout SDK needs, installed on the machine that will run your application.
@@ -117,7 +117,7 @@ Cross-compiling may not work out-of-the-box for you. In this case please contact
 
 ## SDK Configuration 
 
-### start
+### Start
 
 ```go 
 
@@ -144,3 +144,7 @@ The `Start` method is used to initialize the SDK and it accepts the following va
 The following Go versions are supported: 1.15 - 1.19
 
 If your version is not mentioned above, please let us know at <SupportEmail /> 
+
+## Supported Operating Systems 
+
+// todo add section
