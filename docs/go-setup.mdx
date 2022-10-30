@@ -98,11 +98,9 @@ tdnf install -y git gcc glibc-devel binutils  zlib-devel openssl-devel linux-api
 
 Note: If needed, add `sudo`.
 
-#### Specify the OS distribution as a tag
+#### Alpine - Specify the OS distribution as a tag
 
-Specify the OS distribution as a tag to the `go build` command using the `-tags` parameter:
-
-// todo determine the list here
+Most OS distributions are automatically recognized. However, if you are using the Alpine distribution, you must specify this in the `go build` command by adding the tag `alpine` to the `-tags` parameter.
 
 #### ldflags
 
