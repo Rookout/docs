@@ -19,11 +19,11 @@ go get -d github.com/Rookout/GoSDK
 
 ```
 
-This command will fetch the Rookout SDK from our private repository onto your machine, and will also add the Rookout SDK as a dependency to your project (adding it to the go.mod file). You should only run this command one time.
+This command will fetch the Rookout SDK from our repository onto your machine, and will also add the Rookout SDK as a dependency to your project (adding it to the go.mod file). You should only run this command one time.
 
 :::note 
 
-Don’t forget to add the -d flag to go get so that the package will be downloaded and added to go.mod, but not installed. This is the best practice according to the Go official documentation.
+The `-d` flag ensures that the package will be downloaded and added to go.mod, but not installed.
 
 :::
 
@@ -35,7 +35,7 @@ If your app is running in a container, you will need to first follow the instruc
 
 ### Add code to start Rookout within your application
 
-Now that we have the Rookout SDK as a dependency, we need to start it from within your application. Go to the file containing your main package and import Rookout:
+Go to the file containing your main package and import Rookout:
 
 ```go
 
