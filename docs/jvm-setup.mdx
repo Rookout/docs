@@ -66,11 +66,11 @@ import TabItem from '@theme/TabItem';
 
 <div className="rookout-org-info" />
 
-#### Debugging OSGi apps
+#### Whitelisting Rookout
 
-To use Rookout in an OSGi application, the Rookout package must be whitelisted (delegated) to the OSGi container.
+In OSGi, JBoss and Wildfly apps, Rookout must be whitelisted in order to run.
 
-This is done by setting the following JVM options
+In an OSGi applicaiton, the Rookout package should be whitelisted (delegated) to the OSGi container by setting the following JVM options -
 
 ```bash
 
@@ -79,6 +79,8 @@ org.osgi.framework.bootdelegation=com.rookout.*
 ```
 
 This is done where all other JVM options are set (via -D flags, JVM_OPTS, etc.).
+
+You can see our [JBoss](https://github.com/Rookout/deployment-examples/tree/master/java-jboss) and [Wildfly](https://github.com/Rookout/deployment-examples/tree/master/java-wildfly-docker) deployment examples to learn how to whitelist Rookout in those applications. 
 
 ## SDK Configuration
 
