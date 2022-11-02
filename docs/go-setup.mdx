@@ -128,12 +128,6 @@ Note: to attain complete code coverage at the cost of user resource consumption,
 
 ```
 
-## Dynamically linking dependencies 
-
-By default, the Rookout module links its dependencies statically. This is done to support multi-stage docker images, running on distroless images, having separate build and run machines, or any other reason for not having all the operating system dependencies the Rookout SDK needs, installed on the machine that will run your application.
-
-To configure Rookout to dynamically link dependencies, add another tag to the `-tags` flag of the `go build` command, called `rookout_dynamic` - e.g., `-tags=ubuntu20,rookout_dynamic`. Doing so means all the OS dependencies must exist on the target machine on which the application is going to run.
-
 :::note 
 
 Cross-compiling may not work out-of-the-box for you. In this case please contact us for assistance at <SupportEmail /> 
