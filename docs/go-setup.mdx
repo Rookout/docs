@@ -22,14 +22,6 @@ go get -d github.com/Rookout/GoSDK
 
 ```
 
-This command will fetch the Rookout SDK from our repository onto your machine, and will also add the Rookout SDK as a dependency to your project (adding it to the `go.mod` file). You should only run this command one time.
-
-:::note 
-
-The `-d` flag ensures that the package will be downloaded and added to `go.mod`, but not installed.
-
-:::
-
 ### Start Rookout within your application
 
 Go to the file containing your `main` package and import Rookout:
@@ -77,7 +69,6 @@ apt update && apt install -y libffi-dev zlib1g-dev libedit-dev libc++-11-dev lib
 
 ```
 
-Note: If needed, add `sudo` for both commands.
 
 ##### Alpine distribution 
 ```bash 
@@ -86,7 +77,6 @@ apk add —-no-cache gcc musl-dev zlib-static build-base
 
 ```
 
-Note: If needed, add `sudo`.
 
 ##### Photon OS 
 
