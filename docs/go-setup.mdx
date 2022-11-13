@@ -10,8 +10,6 @@ This page dives into the nitty-gritty details on installing Rookout under variou
 
 ## Setup
 
-Rookout's Go SDK is served from a [public repository](github.com/Rookout/GoSDK) on Github. 
-
 ### Get the package
 
 Run the following inside your app’s directory to add the Rookout SDK to the `go.mod` file - 
@@ -37,8 +35,7 @@ import (
 Then, in your `main` function, as early as possible, call `rookout.Start`:
 
 ```go 
-
-rookout.Start(rookout.RookOptions{token=[Your Rookout Token]})
+rookout.Start(rookout.RookOptions{token=[Your Rookout Token], labels=map[string]string{"env": "dev"}})
 
 ```
 <div className="rookout-org-info" />
@@ -82,7 +79,7 @@ The `Start` method is used to initialize the SDK and it accepts the following va
 
 | Environment Variable                        | Default Value | Description                                                                                                            |
 | ------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller                |
+| `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization                                                                                |
 | `ROOKOUT_LABELS`                            | {}            | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables        |
 | `ROOKOUT_COMMIT`                            | None          | String that indicates your git commit or a branch name                                                                 |
 | `ROOKOUT_REMOTE_ORIGIN`                     | None          | String that indicates your git remote origin                                                                           |
@@ -91,18 +88,20 @@ The `Start` method is used to initialize the SDK and it accepts the following va
 | `ROOKOUT_PROXY`                             | None          | URL to proxy server                                                                                                    |
 | `ROOKOUT_DEBUG`                             | False         | Set to `True` to increase log level to debug                                                                           |
 | `ROOKOUT_SOURCES`                           | None          | Source information (see below)                                                                                         |
-| `ROOKOUT_LIVE_LOGGER`                       | False         | Set to `True` to enable Rookout Live Logger                                                                            |
 | `ROOKOUT_QUIET`                             | False         | Set to `True` to stop informative log messages from being written to the standard output and error                     |
+
+## Supported Versions 
+
+Rookout supports Go version 1.15 to 1.19 on Mac and Linux (Debian, Alpine, Photon, etc) operating systems.
 
 ## Dependencies
 
 Depending on your environment, you may need to install additional dependencies.
-
 <Tabs
     defaultValue="debian"
     values={[
         {label: 'Debian OS', value: 'debian'},
-        {label: 'Alpine distribution', value: 'alpine'},
+        {label: 'Alpine OS', value: 'alpine'},
         {label: 'Photon OS', value: 'photon'},
     ]}>
     
@@ -132,34 +131,28 @@ tdnf install -y git gcc glibc-devel binutils  zlib-devel openssl-devel linux-api
 </TabItem>
 </Tabs>
 
-## Supported Versions 
+## CGO
 
-The following Go versions are supported: 1.15 - 1.19
+Rookout requires CGO which is enabled by default.
 
-If your version is not mentioned above, please let us know at <SupportEmail /> 
-
-## Supported Operating Systems 
-
-The Go SDK supports Mac and Linux (Debian, Alpine, Photon, etc) operating systems.
-
-## Troubleshooting
-
-### CGO
-
-If you're getting `error: ld returned 1 exit status` as well as some `undefined reference`s, you may have disabled CGO. 
-
-CGO is enabled by default but may be changed using the `CGO_ENABLED` variable. Make sure it is not disabled in your environment variables as well as the Go tool environment:
+To verify your configuration you can run:
 
 ```bash
 
 echo ${CGO_ENABLED} && go env | grep CGO_ENABLED
 
 ```
-### Alpine OS 
-If you're getting `error: ld returned 1 exit status` as well as some `undefined reference`s when running on Alpine, you may not have added `alpine` to the `-tags` property when building your app.
 
-### Linker flags
-Rookout requires the Go linker to generate the symbol tables. Please do not omit them by setting the `-w` or `-s` [ldflags](https://pkg.go.dev/cmd/link). 
+## Linker flags
+Rookout requires the Go binary to include a symbol table. 
 
-### Cross compiling
+Please avoid omitting them by setting the `-w` or `-s` [ldflags](https://pkg.go.dev/cmd/link). 
+
+## Alpine OS 
+
+Please make sure to add `-tags=alpine` to your `go build` command when running on Alpine.
+
+Forgetting to do so will result in `error: ld returned 1 exit status`.
+
+## Cross compiling
 Cross compiling Go applications can get tricky, feel free to reach out to us with any questions :) 
