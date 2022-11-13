@@ -146,7 +146,7 @@ echo ${CGO_ENABLED} && go env | grep CGO_ENABLED
 ## Linker flags
 Rookout requires the Go binary to include a symbol table. 
 
-Please avoid omitting them by setting the `-w` or `-s` [ldflags](https://pkg.go.dev/cmd/link). 
+Please avoid setting the `-w` and `-s` [ldflags](https://pkg.go.dev/cmd/link), as doing so causes the application to omit these tables. 
 
 ## Alpine OS 
 
