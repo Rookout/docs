@@ -38,91 +38,37 @@ Then, in your `main` function, as early as possible, call `rookout.Start`:
 
 ```go 
 
-err := rookout.Start(rookout.RookOptions{token=[your-rookout-token]})
-fmt.Println(err)
+rookout.Start(rookout.RookOptions{token=[Your Rookout Token]})
 
 ```
-
-For a list of optional arguments to pass to the `Start` function, see the [SDK configuration section](#start). 
+<div className="rookout-org-info" />
 
 ### Build the application
 
-#### Enable CGO
-
-Make sure that CGO isn’t disabled. It is enabled by default but may be changed using the `CGO_ENABLED` variable. Make sure it is not disabled in your environment variables as well as the Go tool environment. 
-
-```bash
-
-echo ${CGO_ENABLED} && go env | grep CGO_ENABLED
-
-```
-
-#### Additional Dependencies
-
-If you are using the following environments, you will need to install additional dependencies:
-
-##### Debian OS 
+<Tabs
+    defaultValue="general"
+    values={[
+        {label: 'General', value: 'general'},
+        {label: 'Alpine distribution', value: 'alpine'},
+    ]}>
+    
+<TabItem value="general">    
 
 ```bash 
 
-apt update && apt install -y libffi-dev zlib1g-dev libedit-dev libc++-11-dev libc++abi-11-dev
+go build -gcflags="all=-dwarflocationlists=true"
 
 ```
+</TabItem>
+<TabItem value="alpine">    
 
-
-##### Alpine distribution 
 ```bash 
 
-apk add —-no-cache gcc musl-dev zlib-static build-base
+go build -gcflags="all=-dwarflocationlists=true" -tags=alpine
 
 ```
-
-
-##### Photon OS 
-
-```bash
-
-tdnf install -y git gcc glibc-devel binutils  zlib-devel openssl-devel linux-api-headers
-
-```
-
-Note: If needed, add `sudo`.
-
-#### Alpine - Specify the OS distribution as a tag
-
-Most OS distributions are automatically recognized. However, if you are using the Alpine distribution, you must specify this in the `go build` command by adding the tag `alpine` to the `-tags` parameter.
-
-#### ldflags
-
-Rookout may not work with the ld flags `-s` and `-w`. These are often passed in the `go build` command using `-ldflags`; we recommend remoing them.
-
-#### gcflags 
-
-We recommend using the following gcflags for your go build: 
-
-```bash
-
--gcflags="all=-dwarflocationlists=true"
-
-```
-
-This configuration minimizes Rookout’s CPU usage within our clients' application, while providing nearly complete coverage of the project and its dependencies. 
-
-A user can decide to replace `all` with `./...`. This will apply the gcflags chosen exclusively to the project code. `all` can also be replaced with the name of a specific package or regex to choose specific modules to cover.
-
-Note: to attain complete code coverage at the cost of user resource consumption, the following gcflags can be configured: 
-
-```bash
-
--gcflags 'all=-N -l'
-
-```
-
-:::note 
-
-Cross-compiling may not work out-of-the-box for you. In this case please contact us for assistance at <SupportEmail /> 
-
-:::
+</TabItem>
+</Tabs>
 
 ## SDK Configuration 
 
@@ -148,6 +94,44 @@ The `Start` method is used to initialize the SDK and it accepts the following va
 | `ROOKOUT_LIVE_LOGGER`                       | False         | Set to `True` to enable Rookout Live Logger                                                                            |
 | `ROOKOUT_QUIET`                             | False         | Set to `True` to stop informative log messages from being written to the standard output and error                     |
 
+## Dependencies
+
+Depending on your environment, you may need to install additional dependencies.
+
+<Tabs
+    defaultValue="debian"
+    values={[
+        {label: 'Debian OS', value: 'debian'},
+        {label: 'Alpine distribution', value: 'alpine'},
+        {label: 'Photon OS', value: 'photon'},
+    ]}>
+    
+<TabItem value="debian">    
+
+```bash 
+
+apt update && apt install -y libffi-dev zlib1g-dev libedit-dev libc++-11-dev libc++abi-11-dev
+
+```
+</TabItem>
+<TabItem value="alpine">    
+
+```bash 
+
+apk add —-no-cache gcc musl-dev zlib-static build-base
+
+```
+</TabItem>
+<TabItem value="photon">    
+
+```bash
+
+tdnf install -y git gcc glibc-devel binutils  zlib-devel openssl-devel linux-api-headers
+
+```
+</TabItem>
+</Tabs>
+
 ## Supported Versions 
 
 The following Go versions are supported: 1.15 - 1.19
@@ -156,4 +140,26 @@ If your version is not mentioned above, please let us know at <SupportEmail />
 
 ## Supported Operating Systems 
 
-The Go SDK supports Mac and Linux OSs. 
+The Go SDK supports Mac and Linux (Debian, Alpine, Photon, etc) operating systems.
+
+## Troubleshooting
+
+### CGO
+
+If you're getting `error: ld returned 1 exit status` as well as some `undefined reference`s, you may have disabled CGO. 
+
+CGO is enabled by default but may be changed using the `CGO_ENABLED` variable. Make sure it is not disabled in your environment variables as well as the Go tool environment:
+
+```bash
+
+echo ${CGO_ENABLED} && go env | grep CGO_ENABLED
+
+```
+### Alpine OS 
+If you're getting `error: ld returned 1 exit status` as well as some `undefined reference`s when running on Alpine, you may not have added `alpine` to the `-tags` property when building your app.
+
+### Linker flags
+Rookout requires the Go linker to generate the symbol tables. Please do not omit them by setting the `-w` or `-s` [ldflags](https://pkg.go.dev/cmd/link). 
+
+### Cross compiling
+Cross compiling Go applications can get tricky, feel free to reach out to us with any questions :) 
