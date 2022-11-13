@@ -68,15 +68,29 @@ import TabItem from '@theme/TabItem';
 
 #### Debugging OSGi apps
 
-To use Rookout in an OSGi application, the Rookout package must be whitelisted (delegated) to the OSGi container.
+To use Rookout in an OSGi application such as JBoss or Wildfly, delegate the Rookout package in the OSGi configuration:
 
-This is done by setting the following JVM options
+<Tabs
+    defaultValue="env"
+    values={[
+        {label: 'Environment Variable', value: 'env'},
+        {label: 'Command Line', value: 'cl'},
+    ]}>
+<TabItem value="env">
+
+```bash
+        export JAVA_TOOL_OPTIONS="-Dorg.osgi.framework.bootdelegation=com.rookout.* -javaagent:$(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token]"
+```
+</TabItem>
+<TabItem value='cl'>
 
 ```bash
 
-org.osgi.framework.bootdelegation=com.rookout.*
+     java -Dorg.osgi.framework.bootdelegation=com.rookout.* -javaagent:$(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_LABELS=env:dev
 
 ```
+</TabItem>
+</Tabs>
 
 This is done where all other JVM options are set (via -D flags, JVM_OPTS, etc.).
 
