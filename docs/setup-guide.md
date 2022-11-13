@@ -49,7 +49,7 @@ Rookout deployment steps vary slightly between programming languages, visit the 
 3.  [Python](python-setup.mdx)
 4.  [Node.js](node-setup.mdx)
 5.  [Ruby](ruby-setup.mdx)
-6.  [Go](go-setup.md)
+6.  [Go](go-setup.mdx)
 
 For more framework-specific examples, check out our [deployment examples](deployment-examples.md).
 
