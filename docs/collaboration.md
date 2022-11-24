@@ -3,7 +3,6 @@ id: collaborations
 title: Collaboration
 sidebar_label: Collaboration
 ---
-
 Leverage the power of Rookout by collaborating with your colleagues using the following features:
 
 ## Slack
@@ -20,7 +19,6 @@ If this is the first time that you are using this feature, you will need to foll
 Then simply share the message with your colleagues by selecting the relevant channel in your Slack account:
 
 <img src="/img/screenshots/Slack_Share.png" />
-
 
 ## Jira
 

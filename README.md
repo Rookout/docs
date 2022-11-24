@@ -14,5 +14,9 @@ We appreciate any insights and improvements.
 Feel free to fork and open pull requests, every page of documentation on the website has an 'Edit' button to help you
 navigate.
 
+## Dependency
+
+ * `node > 16.14`
+
 ## Running locally
 Run `npm build` and `npm start` in `website` to start a local copy.

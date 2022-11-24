@@ -2,7 +2,7 @@
   "hosting": [
       {
       "target": "rookout-docs",
-      "public": "website/build/docs",
+      "public": "website/build",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -10,8 +10,13 @@
       ],
       "redirects": [
         {
+          "source": "/",
+          "destination": "/docs/welcome/",
+          "type": 301
+        },
+        {
           "source": "/docs/sdk-setup.html",
-          "destination": "/docs/setup-intro.html",
+          "destination": "/docs/setup-intro/setup-intro.html",
           "type": 301
         }
       ],
@@ -43,7 +48,7 @@
       "redirects": [
         {
           "source": "/docs/sdk-setup.html",
-          "destination": "/docs/setup-intro.html",
+          "destination": "/docs/setup-intro/setup-intro.html",
           "type": 301
         }
       ],

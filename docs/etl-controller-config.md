@@ -3,69 +3,68 @@ id: etl-controller-config
 title: ETL Controller Configuration
 sidebar_label: Configuration
 ---
+* * *
 
----
+_Please note that the ETL Controller feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the ETL Controller feature for your organization._
 
-*Please note that the ETL Controller feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the ETL Controller feature for your organization.*
-
----
+* * *
 
 This page includes configuration details for the ETL Controller.
 
-1. For Kubernetes, see the [Helm Values](#helm-values)
-2. For Docker, see the [Environment Variables](#environment-variables)
+1.  For Kubernetes, see the [Helm Values](#helm-values)
+2.  For Docker, see the [Environment Variables](#environment-variables)
 
 ## Helm Values
 
-Configure the controller [k8s installation](etl-controller-install#kubernetes) by setting values in the `values.yaml` file or using `--set` in the `helm install` command.
+Configure the controller [k8s installation](etl-controller-install.mdx#kubernetes) by setting values in the `values.yaml` file or using `--set` in the `helm install` command.
 
 ### Controller Configuration
 
-| Configuration                                                       | Key                                         | Value                | Default |
-| ---                                                                 | ---                                         | ---                  | ---     |
-| [Rookout token](#rookout-token)                                     | `controller.token`                          | Rookout token        | -       |  
-| [Server mode](#server-mode)                                         | `controller.serverMode`                     | `PLAIN` or `TLS`     | `PLAIN` |
-| [Proxy server](#proxy-server)                                       | `controller.proxy`                          | URL                  | -       |
-| [Proxy username](#proxy-server)                                     | `controller.proxyUsername`                  | URL                  | -       |
-| [Proxy password](#proxy-server)                                     | `controller.proxyPassword`                  | URL                  | -       |
-| [Skip Datastore SSL verification](#skip-datastore-ssl-verification) | `controller.datastore_no_ssl_verif`         | `true` or `false`    | `false` |
-| [Listen on port](#listen-on-port)                                   | `controller.port`                           | Integer              | 7488    |
+| Configuration                                                       | Key                                        | Value                           | Default        |
+| ------------------------------------------------------------------- | ------------------------------------------ | ------------------------------- | -------------- |
+| [Rookout token](#rookout-token)                                     | `controller.token`                  | Rookout token                   | -              |
+| [Server mode](#server-mode)                                         | `controller.serverMode`             | `PLAIN` or `TLS`  | `PLAIN` |
+| [Proxy server](#proxy-server)                                       | `controller.proxy`                  | URL                             | -              |
+| [Proxy username](#proxy-server)                                     | `controller.proxyUsername`          | URL                             | -              |
+| [Proxy password](#proxy-server)                                     | `controller.proxyPassword`          | URL                             | -              |
+| [Skip Datastore SSL verification](#skip-datastore-ssl-verification) | `controller.datastore_no_ssl_verif` | `true` or `false` | `false` |
+| [Listen on port](#listen-on-port)                                   | `controller.port`                   | Integer                         | 7488           |
 
 ### Additional Kubernetes Configuration
 
-| Configuration                               | Key                                       | Value                | Default     |
-| ---                                         | ---                                       | ---                  | ---         |
-| Token secret name                           | `controller.tokenFromSecret.name`         | String               | -           |
-| Token secret key                            | `controller.tokenFromSecret.key`          | String               | -           |
-| Proxy password secret name                  | `controller.proxyPasswordFromSecret.name` | String               | -           |
-| Proxy password secret key                   | `controller.proxyPasswordFromSecret.key`  | String               | -           |
-| K8s labels                                  | `controller.labels`                       | Key: value           | -           |
-| Pod<br>memory request                       | `controller.resources.requests.memory`    | Memory units         | 32Mi        |
-| Pod<br>CPU request                          | `controller.resources.requests.cpu`       | CPU units            | 30m         |
-| Pod<br>memory limit                         | `controller.resources.limits.memory`      | Bytes unit           | 1024Mi      |
-| Pod<br>CPU limit                            | `controller.resources.limits.cpu`         | CPU units            | 4000m       |
-| Container<br>image tag                      | `image.tag`                               | Image tag            | latest      |
-| Container<br>image pull policy              | `image.pullPolicy`                        | Pull policy          | `Always`    |
-| Container<br>image pull secret              | `image.pullSecrets`                       | Pull secrets         | -           |
-| Service account<br>name                     | `serviceAccount.name`                     | String               | -           |
-| Pod<br>annotations                          | `podAnnotations`                          | Key: value           | -           |
-| Service<br>annotations                      | `service.annotations`                     | Key: value           | -           |
+| Configuration                  | Key                                              | Value        | Default         |
+| ------------------------------ | ------------------------------------------------ | ------------ | --------------- |
+| Token secret name              | `controller.tokenFromSecret.name`         | String       | -               |
+| Token secret key               | `controller.tokenFromSecret.key`          | String       | -               |
+| Proxy password secret name     | `controller.proxyPasswordFromSecret.name` | String       | -               |
+| Proxy password secret key      | `controller.proxyPasswordFromSecret.key`  | String       | -               |
+| K8s labels                     | `controller.labels`                       | Key: value   | -               |
+| Pod<br />memory request          | `controller.resources.requests.memory`    | Memory units | 32Mi            |
+| Pod<br />CPU request             | `controller.resources.requests.cpu`       | CPU units    | 30m             |
+| Pod<br />memory limit            | `controller.resources.limits.memory`      | Bytes unit   | 1024Mi          |
+| Pod<br />CPU limit               | `controller.resources.limits.cpu`         | CPU units    | 4000m           |
+| Container<br />image tag         | `image.tag`                               | Image tag    | latest          |
+| Container<br />image pull policy | `image.pullPolicy`                        | Pull policy  | `Always` |
+| Container<br />image pull secret | `image.pullSecrets`                       | Pull secrets | -               |
+| Service account<br />name        | `serviceAccount.name`                     | String       | -               |
+| Pod<br />annotations             | `podAnnotations`                          | Key: value   | -               |
+| Service<br />annotations         | `service.annotations`                     | Key: value   | -               |
 
 ## Environment Variables
 
-Configure a Controller [docker container](etl-controller-install#docker) by passing environment variables to it.
+Configure a Controller [docker container](etl-controller-install.mdx#docker) by passing environment variables to it.
 
-
-| Configuration                                                       | Environment Variable             | Value             | Default |
-| ---                                                                 | ---                              | ---               | ---     |
-| [Rookout token](#rookout-token)                                     | `ROOKOUT_TOKEN`                  | Rookout token     | -       |
+| Configuration                                                       | Environment Variable                    | Value                           | Default        |
+| ------------------------------------------------------------------- | --------------------------------------- | ------------------------------- | -------------- |
+| [Rookout token](#rookout-token)                                     | `ROOKOUT_TOKEN`                  | Rookout token                   | -              |
 | [Server mode](#server-mode)                                         | `ROOKOUT_CONTROLLER_SERVER_MODE` | `PLAIN` or `TLS`  | `PLAIN` |
-| [Proxy server](#proxy-server)                                       | `ROOKOUT_PROXY`                  | URL               | -       |
-| [Proxy username](#proxy-server)                                     | `ROOKOUT_PROXY_USERNAME`         | String            | -       |
-| [Proxy password](#proxy-server)                                     | `ROOKOUT_PROXY_PASSWORD`         | String            | -       |
+| [Proxy server](#proxy-server)                                       | `ROOKOUT_PROXY`                  | URL                             | -              |
+| [Proxy username](#proxy-server)                                     | `ROOKOUT_PROXY_USERNAME`         | String                          | -              |
+| [Proxy password](#proxy-server)                                     | `ROOKOUT_PROXY_PASSWORD`         | String                          | -              |
 | [Send data to Rookout](#send-data-to-rookout)                       | `ROOKOUT_SEND_DATA`              | `true` or `false` | `true`  |
 | [Skip Datastore SSL verification](#skip-datastore-ssl-verification) | `ROOKOUT_DOP_NO_SSL_VERIFY`      | `true` or `false` | `false` |
-
+| Limit CPU cores                                                     | `ROOKOUT_CONTROLLER_MAX_CPU`     | Integer                         | 1              |
+| Limit memory                                                        | `ROOKOUT_CONTROLLER_MAX_MEMORY`  | Integer (MB)                    | 512            |
 
 ## Configuration Details
 
@@ -81,13 +80,15 @@ We recommend using `PLAIN` mode if possible, as it is the most straightforward. 
 
 If you can't provide a TLS termination proxy / load balancer, and the connection isn't secure, set the server mode to `TLS` and configure the following:
 
-* For Docker deployments, place a certificate and a private key in `/var/controller-tls-secrets/tls.crt` and `/var/controller-tls-secrets/tls.key` respectively. You can create volumes for the certificate and key and map them to these locations.
+-   For Docker deployments, place a certificate and a private key in `/var/controller-tls-secrets/tls.crt` and `/var/controller-tls-secrets/tls.key` respectively. You can create volumes for the certificate and key and map them to these locations.
 
-* For K8s deployments, create the following secret & configmap in your k8s cluster instead:
+-   For K8s deployments, create the following secret & configmap in your k8s cluster instead:
 
 ```bash
+
 kubectl create configmap rookout-tls-cert --from-file=tls.crt=<path to cert file>
 kubectl create secret generic rookout-tls-key --from-file=tls.key=<path to key file>
+
 ```
 
 ### Proxy Server

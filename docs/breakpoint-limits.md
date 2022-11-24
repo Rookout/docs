@@ -2,16 +2,15 @@
 id: breakpoint-limits
 title: Breakpoint Limits
 ---
-
 ## Collection level
 
 Collection level is set to minimize the performance impact of collecting variables in a frame that has complex objects, huge strings and infinite reference loops.
 Setting Collection level will ensure that only variables at the top of the variable tree will be fetched.
 
-
 To ensure that a specific variable is collected despite being deep in the variable tree, use the Collect Variable functionality.
 
 Default limits for each variable:
+
 | Variable type                | Python | Node.js | Java | DotNet |
 | ---------------------------- | ------ | ------- | ---- | ------ |
 | **String or Buffer size**    | 512B   | 512B    | 512B | 512B   |
@@ -19,17 +18,17 @@ Default limits for each variable:
 | **Object level**             | 3      | 3       | 4    | 3      |
 | **Collection level**         | 2      | 2       | 2    | 2      |
 
-
 When you want to collect a variable that is out of the Collection limit, you can:
-1. Right-click the variable and select "collect variable".
-2. Go to breakpoint editor and add the variable in the Collection section.
+
+1.  Right-click the variable and select "collect variable".
+2.  Go to breakpoint editor and add the variable in the Collection section.
 
 When Collection level has reached the limit, you expect to see the following messages: 
 `Collection level exceeded (right click to collect)`
 
 ## Rate limiting
 
-Rookout measures the time it takes for each breakpoint to run, and disallows additional runs if the total time taken by breakpoints exceeds the quota for a certain time window. By default, breakpoints are alotted 150ms of runtime over the last twenty seconds (20000ms).
+Rookout measures the time it takes for each breakpoint to run, and disallows additional runs if the total time taken by breakpoints exceeds the quota for a certain time window.
 
 ## Maximum execution time limit
 

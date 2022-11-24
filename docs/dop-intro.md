@@ -3,12 +3,11 @@ id: dop-intro
 title: Data On-Premise
 sidebar_label: Introduction
 ---
+* * *
 
----
+_Please note that the Data On-Premise feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the Data On-Premise feature for your organization._
 
-*Please note that the Data On-Premise feature is only available on the Enterprise plan. [Contact us](https://www.rookout.com/company/contact) to enable the Data On-Premise feature for your organization.*
-
----
+* * *
 
 ## Introduction
 
@@ -38,7 +37,7 @@ The diagram below demonstrates the data flow:
 
 ![ETL Controller Diagram](/img/screenshots/datastore_diagram.png)
 
-For details about the connection of the SDK and the ETL Controller, see [this section](etl-controller-intro#connection).
+For details about the connection of the SDK and the ETL Controller, see [this section](etl-controller-intro.md#connection).
 
 When data is received, the ETL Controller connects to the Datastore over HTTPS to store the data. When using Rookout, if configured right, the user's web browser connects directly to the Datastore over WebSocket (securely) to fetch the stored data.
 
@@ -49,4 +48,4 @@ Find the Rookout Datastore usage license here:
 
 ## Next Steps
 
-To deploy the datastore to your environment, follow the instructions [here](dop-install.md).
+To deploy the datastore to your environment, follow the instructions [here](dop-install.mdx).

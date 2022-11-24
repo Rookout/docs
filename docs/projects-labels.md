@@ -3,7 +3,6 @@ id: projects-labels
 title: Labels
 sidebar_label: Labels
 ---
-
 Labels are key/value pairs that are attached to running application instances.
 
 Labels can be used to organize and select groups of application instances.
@@ -16,14 +15,21 @@ In this example organization, there are three environments - development, stagin
 When installing the Rookout SDK, you may provide the service name and environment name as labels.  
 For example, service #3 in Production may be configured using the following:
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Python-->
+DOCUSAURUS_CODE_TABS
+
+Python
+
 ```python
+
 rook.start(token='[Your Rookout Token]',
            labels={"service":"service#3","env":"dev"})
+
 ```
-<!--Node-->
+
+Node
+
 ```javascript
+
 rook.start({
     token: '[Your Rookout Token]', 
     labels:
@@ -33,39 +39,52 @@ rook.start({
         }
 
 });
+
 ```
-<!--JVM-->
+
+JVM
+
 ```bash
+
 # Export your labels as an environment variable
 export ROOKOUT_LABELS=service:service3,env:dev
+
 ```
-<!--.NET-->
+
+.NET
+
 ```cs
+
 Rook.RookOptions options = new Rook.RookOptions() 
     {
         token = "[Your Rookout Token]",
         labels = new Dictionary<string, string> { { "service", "service#3" }, { "env", "dev" } }
     };
 Rook.API.Start(options);
+
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
-<div class="rookout-org-info"></div>
+
+END_DOCUSAURUS_CODE_TABS
+
+<div className="rookout-org-info" />
 
 Altenatively, labels can be added as environment variables in Python and Node as well:
 
 ```bash
+
 export ROOKOUT_LABELS='service:service3,env:dev'
+
 ```
 
-
 ## Examples
+
 ### Debug all instances of specific service
 
 When creating your Rookout Project, use the following filter to debug all instances of service #3 (in Production, Staging and Dev).
 
-1. Add the following filter: `service:service#3` 
+1.  Add the following filter: `service:service#3` 
 
-2. Import the source code for service #3.
+2.  Import the source code for service #3.
 
 <img src="/img/screenshots/tag_n2.png" />
 
@@ -73,9 +92,9 @@ When creating your Rookout Project, use the following filter to debug all instan
 
 When creating your Rookout Project, use the following filter to debug only instances running in Production.
 
-1. Add the following filter: `env:production` 
+1.  Add the following filter: `env:production` 
 
-2. Import the source code of the relevant service.
+2.  Import the source code of the relevant service.
 
 <img src="/img/screenshots/tag_n3.png" />
 
@@ -83,13 +102,8 @@ When creating your Rookout Project, use the following filter to debug only insta
 
 To refine the filter, you may use the following filter to debug only the instance of service #3 running in Staging.
 
-1. Add the following filters: `env:staging` `service:service#3`
+1.  Add the following filters: `env:staging` `service:service#3`
 
-2. Import the source code for service #3.
+2.  Import the source code for service #3.
 
 <img src="/img/screenshots/tag_n4.png" />
-
-
-
-
-

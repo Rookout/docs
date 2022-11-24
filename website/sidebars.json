@@ -10,6 +10,7 @@
       "node-container-tutorial",
       "python-container-tutorial",
       "dotnet-container-tutorial",
+      "ruby-container-tutorial",
       "go-container-tutorial"
     ],
     "SDK Setup": [

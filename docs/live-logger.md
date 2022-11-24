@@ -2,7 +2,6 @@
 id: live-logger
 title: Live Logger
 ---
-
 Rookout Live Logger gives you full control of your logging verbosity.
 
 ## Log Verbosity

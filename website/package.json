@@ -1,34 +1,57 @@
 {
   "scripts": {
     "examples": "docusaurus-examples",
-    "start": "DEPLOY_TARGET=docs docusaurus-start",
-    "start-dci": "DEPLOY_TARGET=dci-docs docusaurus-start",
-    "build": "DEPLOY_TARGET=docs docusaurus-build",
-    "build-dci": "DEPLOY_TARGET=dci-docs docusaurus-build",
-    "clean-build": "rm -rf build",
-    "fetch-swagger-ui": "curl -LJO https://github.com/swagger-api/swagger-ui/archive/v3.25.0.tar.gz && tar xzf swagger-ui-3.25.0.tar.gz && mv swagger-ui-3.25.0/dist/* build/docs/api && sed -i 's+https://petstore.swagger.io/v2/swagger.json+https://app.rookout.com/api/v1/rookout.yaml+' build/docs/api/index.html && rm -rf swagger-ui-3.25.0.tar.gz swagger-ui-3.25.0",
-    "publish-gh-pages": "docusaurus-publish",
+    "start": "docusaurus start",
+    "serve": "docusaurus serve",
+    "start-dci": "DEPLOY_TARGET=dci-docs docusaurus start",
+    "prebuild": "yarn run clean-build",
+    "build": "docusaurus build",
+    "build-dci": "DEPLOY_TARGET=dci-docs docusaurus build",
+    "clean-build": "docusaurus clear && rm -rf build",
+    "prefetch-swagger-ui": "curl -LJO https://github.com/swagger-api/swagger-ui/archive/v3.25.0.tar.gz && tar xzf swagger-ui-3.25.0.tar.gz",
+    "fetch-swagger-ui": "mv swagger-ui-3.25.0/dist/* build/docs/api && node build_utils/fix_swagger_url.js",
+    "postfetch-swagger-ui": "rm -rf swagger-ui-3.25.0.tar.gz swagger-ui-3.25.0 && cp -R ./build/docs/api ./build",
+    "publish-gh-pages": "docusaurus publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version",
     "lint": "./node_modules/.bin/eslint core pages",
+    "firebase": "firebase",
+    "prefirebase": "yarn test",
     "deploy-firebase-dci": "firebase deploy --only hosting:rookout-dci-docs",
     "generate-examples": "node build_utils/deployment_examples_generator.js",
     "generate-sdk-digests": "node build_utils/sdk_digests_generator.js",
-    "publish-release-notes": "node build_utils/publish_release_notes.js"
+    "publish-release-notes": "node build_utils/publish_release_notes.js",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "docusaurus": "docusaurus",
+    "test": "jest"
   },
   "devDependencies": {
-    "docusaurus": "1.11.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "firebase-tools": "^6.0.0"
+    "firebase-tools": "^6.0.0",
+    "jest": "^29.0.2"
   },
   "dependencies": {
+    "@cmfcmf/docusaurus-search-local": "^0.11.0",
+    "@docusaurus/core": "2.0.1",
+    "@docusaurus/preset-classic": "2.0.1",
     "axios": "^0.21.3",
+    "clsx": "^1.1.1",
+    "docusaurus-lunr-search": "^2.2.0",
     "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "remarkable-embed": "^0.4.1"
+  },
+  "resolutions": {
+    "trim": "0.0.3",
+    "@docusaurus/core/loader-utils": "3.2.0",
+    "got": "12.1.0"
+
   }
 }

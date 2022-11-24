@@ -3,7 +3,6 @@ id: breakpoints
 title: Breakpoints Introduction
 sidebar_label: Introduction
 ---
-
 Rookout Breakpoints are “non-breaking breakpoints” that let the Rookout SDK deployed in your app know what data it needs to fetch, where to fetch it from, and what to do with it.  
 
 ## Setting Breakpoints
@@ -26,7 +25,8 @@ The next time the code you have set the breakpoint on is invoked, Rookout collec
 You can set limits on individual breakpoints to limit the amount of data to be collected. When limits are reached, the breakpoint should be disabled automatically. Once disabled, it should not collect additional data. You can re-enable the breakpoint by right-clicking on it and selecting Enable.
 
 The limits can be set based on:
-- Time (e.g., 1 Hour, 24 hours, a week)
-- Hit count (the number of times the breakpoint gets triggered)
 
-<iframe width="560" height="315" src="https://youtube.com/embed/nQGP8GUpWXY" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+-   Time (e.g., 1 Hour, 24 hours, a week)
+-   Hit count (the number of times the breakpoint gets triggered)
+
+<iframe width={560} height={315} src="https://youtube.com/embed/nQGP8GUpWXY" frameBorder="0" allow="autoplay; encrypted-media;" allowFullScreen={true} />

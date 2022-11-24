@@ -2,6 +2,9 @@
 if (document.getElementById) {
   document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-3"></script>'); // Docs
   document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104510371-4"></script>'); // Unified
+  document.write('<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-csharp.min.js"></script>'); // Unified
+
+
 }
 
 
@@ -10,8 +13,10 @@ $(function () {
   changeLogoLink();
   loadRookoutToken(); // Also loads Google Analytics after we know if we are logged in
   //enableTabs();
-  //setTimeout(loadTabsForOS, 1000);
+  setTimeout(loadTabsForOS, 1000);
   setTimeout(fixDocusaurusTabsOnLoad, 1500);
+  setTimeout(addKeyCombo, 200);
+
 });
 
 function enableTabs() {
@@ -156,9 +161,9 @@ function loadRookoutToken() {
 function setRookoutTokenInPage(data, noOrg = false) {
   const body = $('body');
   let error = false;
-
+  noOrg = true
   if (noOrg) {
-    $('.rookout-org-info').html('Create a Rookout organization to see your token here.')
+    $('.rookout-org-info').html('Log in to app.rookout.com to see your organization token.')
     return
   }
 
@@ -228,4 +233,35 @@ function fixDocusaurusTabsOnLoad() {
     target.addClass('active');
     $(`#${target.attr('data-tab')}`).addClass('active');
   });
+}
+
+
+  // add event listener on CMD + K
+  document.onkeydown = function (e) {
+    if((e.altKey || e.metaKey)  &&  e.code === 'KeyK') {
+      const search = document.querySelector('.aa-DetachedSearchButton');
+      if(search) {
+        search.click()
+      }
+    }
+}
+
+// add key combo divs to the search input
+function addKeyCombo() {
+    const searchInput = document.querySelector('.aa-DetachedSearchButton')
+  if (searchInput) {
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('key-code-wrapper')
+    const key1 = document.createElement('span')
+    key1.classList.add('keycode-icon')
+
+    const isMac =  navigator.userAgent.includes('Mac OS')
+    key1.innerText = isMac ?  '⌘' : 'Alt'
+
+    const key2 = document.createElement('span')
+    key2.classList.add('keycode-icon')
+    key2.innerText = 'K'
+    wrapper.append(key1, key2)
+    searchInput.append(wrapper)
+  }
 }
