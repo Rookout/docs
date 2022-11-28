@@ -5,10 +5,13 @@ sidebar_label: Ruby Container
 ---
 This short tutorial will walk you through the perfect Rookout deployment for containerized Ruby applications in three quick steps.
 
+import Tokener from '../website/pages/token'
+import CodeBlock from '@theme/CodeBlock';
+
 ### Get Your Application
 
 First things first, choose an application.
-If you don't have one readily available, use our [sample application](https://github.com/Rookout/ruby-tutorial-2022).  
+If you don't have one readily available, use our [sample application](https://github.com/Rookout/ruby-tutorial-2022).
 
 Start by:
 
@@ -36,12 +39,13 @@ Load and start the package to connect to your Rookout account (if you haven't si
 
 The best place to do that is at the beginning of your application's main file (in our case - `application.rb`):
 
-```ruby
+<CodeBlock language="ruby">
+    {
+        `require "rookout"
+::Rookout.start token: "${Tokener()}", labels: {env: "dev"}`
+    }
+</CodeBlock>
 
-require "rookout"
-::Rookout.start token: "[Your Rookout Token]", labels: {env: "dev"}
-
-```
 
 <div className="rookout-org-info" />
 

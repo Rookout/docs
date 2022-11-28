@@ -44,7 +44,7 @@ Start the SDK within your application by adding the following to your _main_ met
 `using Rook;
 Rook.RookOptions options = new Rook.RookOptions()
 {
-    token = "[Your Rookout Token]",
+    token = "${Tokener()}",
     labels = new Dictionary<string, string> { { "env", "dev" } }
 };
 Rook.API.Start(options);
