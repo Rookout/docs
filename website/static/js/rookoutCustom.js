@@ -173,6 +173,7 @@ function setRookoutTokenInPage(data, noOrg = false) {
     let current_user = data['current_user'] || null;
 
     if (token) {
+      sessionStorage?.setItem("token", token);
     	$("code:contains('[Your Rookout Token]')").addClass('_lr-hide'); // hide token from LogRocket
       body.html(body.html().replace(/\[Your Rookout Token\]/g, token));
       $('.rookout-org-info').html(`Showing token for <b>${org_name}</b>. Keep your token private.`);
@@ -191,6 +192,8 @@ function setRookoutTokenInPage(data, noOrg = false) {
   }
 
   if (error) {
+    sessionStorage?.removeItem("token");
+
     $('.rookout-org-info').html('Log in to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token');
     initGA(null);
   }
