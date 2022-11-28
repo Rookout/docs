@@ -5,10 +5,13 @@ sidebar_label: ".NET Container"
 ---
 This short tutorial will walk you through the perfect Rookout deployment for containerized .NET applications in four quick steps.
 
+import Tokener from '../website/pages/token'
+import CodeBlock from '@theme/CodeBlock';
+
 ### Get Your Application
 
 First things first, choose an application.
-If you don't have one readily available, use our [sample application](https://github.com/Rookout/dotnet-tutorial-2022).  
+If you don't have one readily available, use our [sample application](https://github.com/Rookout/dotnet-tutorial-2022).
 
 Start by:
 
@@ -21,7 +24,7 @@ cd dotnet-tutorial-2022
 
 ### 1. Add the NuGet Package
 
-Rookout for .NET is a simple NuGet Package.  
+Rookout for .NET is a simple NuGet Package.
 Go ahead and add it as a dependency:
 
 ```bash
@@ -36,19 +39,19 @@ Load and start the package to connect to your Rookout account (if you haven't si
 
 Start the SDK within your application by adding the following to your _main_ method or your application's entry point. In our case, Program.cs:
 
-```cs
-
-using Rook;
+<CodeBlock language="cs">
+    {
+`using Rook;
 Rook.RookOptions options = new Rook.RookOptions()
 {
     token = "[Your Rookout Token]",
     labels = new Dictionary<string, string> { { "env", "dev" } }
 };
 Rook.API.Start(options);
-
-// ...
-
-```
+        // ...
+`
+    }
+</CodeBlock>
 
 <div className="rookout-org-info" />
 
