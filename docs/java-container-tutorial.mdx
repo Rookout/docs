@@ -5,10 +5,13 @@ sidebar_label: Java Container
 ---
 This short tutorial will walk you through the perfect Rookout deployment for containerized Java applications in three quick steps.
 
+import Tokener from '../website/pages/token'
+import CodeBlock from '@theme/CodeBlock';
+
 ### Get Your Application
 
 First things first, choose an application.
-If you don't have one readily available, use our [sample application](https://github.com/Rookout/java-tutorial-2022).  
+If you don't have one readily available, use our [sample application](https://github.com/Rookout/java-tutorial-2022).
 
 Start by:
 
@@ -21,7 +24,7 @@ cd java-tutorial-2022
 
 ### 1. Add the Java Agent
 
-Rookout for Java (and any other JVM-based language) is a simple Java Agent.  
+Rookout for Java (and any other JVM-based language) is a simple Java Agent.
 Deploy it by downloading the JAR to the image and instructing the JVM to load it.
 
 Open the `Dockerfile` and add the following two lines just above the `ENTRYPOINT` command:
@@ -39,17 +42,21 @@ _Note:_ in [multi-stage](https://docs.docker.com/develop/develop-images/multista
 
 Configure the Java Agent to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
 
-To keep things simple, set the Rookout token as an environment variable.  
-While you are at it, set up another variable to identify your application instance as a dev environment.   
+To keep things simple, set the Rookout token as an environment variable.
+While you are at it, set up another variable to identify your application instance as a dev environment.
 
 Add these two lines below the lines you have already added:
 
-```shell
 
-ENV ROOKOUT_TOKEN [Your Rookout Token]
+<CodeBlock language="bash">
+    {
+        `
+ENV ROOKOUT_TOKEN ${Tokener()}
 ENV ROOKOUT_LABELS "env:dev"
+        `
+    }
+</CodeBlock>
 
-```
 
 <div className="rookout-org-info" />
 
@@ -80,7 +87,7 @@ Edit (or add) your `.Dockerignore` file and adapt the traditional `.git` exclude
 
 Add a final `COPY` command to the `Dockerfile`.
 
-```shell 
+```shell
 
 COPY .git /.git
 
