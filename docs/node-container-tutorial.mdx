@@ -5,10 +5,13 @@ sidebar_label: Node.JS Container
 ---
 This short tutorial will walk you through the perfect Rookout deployment for containerized NodeJS applications in four quick steps.
 
+import Tokener from '../website/pages/token'
+import CodeBlock from '@theme/CodeBlock';
+
 ### Get Your Application
 
 First things first, choose an application.
-If you don't have one readily available, use our [sample application](https://github.com/Rookout/node-tutorial-2022).  
+If you don't have one readily available, use our [sample application](https://github.com/Rookout/node-tutorial-2022).
 
 Start by:
 
@@ -21,7 +24,7 @@ cd node-tutorial-2022
 
 ### 1. Add the npm Package
 
-Rookout for NodeJS is a simple npm Package.  
+Rookout for NodeJS is a simple npm Package.
 Go ahead and add it as a dependency:
 
 ```bash
@@ -38,17 +41,20 @@ The start function returns a promise - wait for it to debug the application init
 
 Edit your main file - in our case `index.js`:
 
-```javascript
-
+<CodeBlock language="javascript">
+    {
+        `
 const rookout = require('rookout')
-rookout.start({ 
-    token: '[Your Rookout Token]',
+rookout.start({
+    token: '${Tokener()}',
     labels: {
         env: 'dev'
     }
 }).then(/*Start your application here*/)
+        `
+    }
+</CodeBlock>
 
-```
 
 <div className="rookout-org-info" />
 
@@ -78,7 +84,7 @@ Instructions to configure Webpack, TypeScript, and CoffeeScript may be found [he
 
 Rookout offers the smoothest debugging experience by displaying up-to-date source code for each server.
 
-Set this up for containerized applications by adding a handful of [files](https://www.rookout.com/blog/embedding-source-code-version-information-in-docker-images/) from your `.git` folder to the container image.  
+Set this up for containerized applications by adding a handful of [files](https://www.rookout.com/blog/embedding-source-code-version-information-in-docker-images/) from your `.git` folder to the container image.
 
 Edit (or add) your `.Dockerignore` file and adapt the traditional `.git` exclude:
 
