@@ -12,22 +12,30 @@ In this example organization, there are three environments - development, stagin
 
 ### Setting up your Rookout deployment
 
-When installing the Rookout SDK, you may provide the service name and environment name as labels.  
+When installing the Rookout SDK, you may provide the service name and environment name as labels.
 For example, service #3 in Production may be configured using the following:
 
-DOCUSAURUS_CODE_TABS
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Python
+<Tabs
+    defaultValue="python"
+    values={[
+        {label: 'Python', value: 'python'},
+        {label: 'Node', value: 'node'},
+        {label: 'JVM', value: 'jvm'},
+        {label: '.NET', value: 'dotnet'},
+    ]}>
 
+<TabItem value="python">
 ```python
 
 rook.start(token='[Your Rookout Token]',
            labels={"service":"service#3","env":"dev"})
 
 ```
-
-Node
-
+</TabItem>
+<TabItem value="node">
 ```javascript
 
 rook.start({
@@ -41,8 +49,8 @@ rook.start({
 });
 
 ```
-
-JVM
+</TabItem>
+<TabItem value="jvm">
 
 ```bash
 
@@ -50,8 +58,8 @@ JVM
 export ROOKOUT_LABELS=service:service3,env:dev
 
 ```
-
-.NET
+</TabItem>
+<TabItem value="dotnet">
 
 ```cs
 
@@ -63,10 +71,11 @@ Rook.RookOptions options = new Rook.RookOptions()
 Rook.API.Start(options);
 
 ```
-
-END_DOCUSAURUS_CODE_TABS
+</TabItem>
+</Tabs>
 
 <div className="rookout-org-info" />
+
 
 Altenatively, labels can be added as environment variables in Python and Node as well:
 

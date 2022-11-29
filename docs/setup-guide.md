@@ -59,7 +59,7 @@ Every SDK deployment requires some configuration. Set configuration parameters u
 
 **ROOKOUT_TOKEN**: The Rookout token is unique to your Rookout organization. Any SDK instance deployed with a Rookout token can connect to its corresponding Rookout organization. You can find your token by clicking on the settings icon in the Rookout app.
 
-**ROOKOUT_LABELS**: Labels are a way for you to tag the services/applications where Rookout is deployed. The labels are customizable `` pairs that you can use for environment, applications, or any other labeling you like. For more details on labels, see [this page](projects-labels.md).
+**ROOKOUT_LABELS**: Labels are a way for you to tag the services/applications where Rookout is deployed. The labels are customizable `` pairs that you can use for environment, applications, or any other labeling you like. For more details on labels, see [this page](projects-labels.mdx).
 
 The following parameters are used so that Rookout automatically fetches your source code when debugging:
 
