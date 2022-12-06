@@ -14,16 +14,16 @@ To start your debugging or logging session, you will need to select one or more 
 Filters can be chosen either directly from the table by clicking on the appropriate row/column in the table or from the drop down menu by choosing from the following categories:
 
 **Labels**: <br/>
-Labels are _name:value_ pairs which you can tag instances with when you deploy Rookout. It is a best practice to label environments using the 'env' name, for example 'env:prod'. To read more about labels, see the [labels](https://docs.rookout.com/docs/projects-labels/) page.
+Labels are _name:value_ pairs which you can tag instances with when you deploy Rookout. It is a best practice to label environments using the 'env' name, for example 'env:prod'. Make sure to avoid using the automatically generated lables below when defining your set of lables to avoid conflicts. To read more about labels, see the [labels](https://docs.rookout.com/docs/projects-labels/) page.
 
 **Repository**: <br/>
 Choose instances according to their source code repositories. You will need to ensure you have confirugred automatic source code fetching as desribed on the [source code fetching](https://docs.rookout.com/docs/source-repos/) page.
 
 **Hosts**: <br/>
-This filter allows you to select an instances by IP address or hostname.
+This filter allows you to select an instances by IP address or hostname. Label appears as <code>hostname</code>.
 
 **Revisions**: <br/>
-This filter allows you to select an instance based on a source code commit revision hash.
+This filter allows you to select an instance based on a source code commit revision hash. Label appears as <code><sdk_language>_version</code>.
 
 **Process**: <br/>
 This filter allows you to select an instance based on a process name.
