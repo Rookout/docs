@@ -59,10 +59,46 @@ Configuration is where you can get fancy. You have got additional options up you
 
 ### 3. Build the Application
 
-Make sure you install additional dependencies [if necessary](go-setup#dependencies).
+Make sure you have the CGO build dependencies:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="debian"
+    values={[
+        {label: 'Debian', value: 'debian'},
+        {label: 'Alpine', value: 'alpine'},
+        {label: 'Photon', value: 'photon'},
+    ]}>
+
+<TabItem value="debian">
+
+```bash
+
+apt update && apt install -y libffi-dev zlib1g-dev libedit-dev libc++-11-dev libc++abi-11-dev
+
+```
+</TabItem>
+<TabItem value="alpine">
+
+```bash
+
+apk add —-no-cache gcc musl-dev zlib-static build-base
+
+```
+</TabItem>
+<TabItem value="photon">
+
+```bash
+
+tdnf install -y git gcc glibc-devel binutils  zlib-devel openssl-devel linux-api-headers
+
+```
+</TabItem>
+</Tabs>
+
+Add the following flags to your build command:
 
 <Tabs
 defaultValue="general"
