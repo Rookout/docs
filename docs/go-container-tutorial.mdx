@@ -19,7 +19,7 @@ cd go-tutorial-2022
 
 ### 1. Add the GoSDK Package
 
-Start out by adding The Rookout package:
+Add The Rookout package:
 
 ```bash
 
@@ -29,7 +29,7 @@ go get -d github.com/Rookout/GoSDK
 
 ### 2. Start Rookout
 
-Load and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
+Import and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
 
 The best place to do that is at the beginning of your main function (in our case - `main.go`):
 
@@ -52,22 +52,14 @@ func main() {
 
 <div class="rookout-org-info"></div>
 
-It's always best to run `tidy` after adding a new dependency:
-
-```bash
-
-go mod tidy
-
-```
-
-Make sure you install additional dependencies [if necessary](go-setup#dependencies).
-
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 1. Move options from environment variables to secret or configuration managers.
 2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
 3. Dig deeper into other options available right [here](go-setup#start).
 
 ### 3. Build the Application
+
+Make sure you install additional dependencies [if necessary](go-setup#dependencies).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
