@@ -1,0 +1,170 @@
+---
+id: go-container-tutorial
+title: "Deploy Rookout on a Go container"
+sidebar_label: Go Container
+---
+
+This short tutorial will walk you through the perfect Rookout deployment for containerized Go applications in four quick steps.
+
+### Get Your Application
+
+First things first, choose an application.
+If you don't have one readily available, use our [sample application](https://github.com/Rookout/go-tutorial-2022).  
+
+Start by:
+```bash
+git clone https://github.com/Rookout/go-tutorial-2022
+cd go-tutorial-2022
+```
+
+### 1. Add the GoSDK Package
+
+Add The Rookout package:
+
+```bash
+
+go get -d github.com/Rookout/GoSDK
+
+```
+
+### 2. Start Rookout
+
+Import and start the package to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
+
+The best place to do that is at the beginning of your main function (in our case - `main.go`):
+
+```go
+
+import (
+	// ...
+	rookout "github.com/Rookout/GoSDK"
+	// ...
+)
+
+func main() {
+    rookout.Start(rookout.RookOptions{
+		Token: "[Your Rookout Token]",
+		Labels: map[string]string{"env": "dev"},
+	})
+    // ...
+}
+```
+
+<div class="rookout-org-info"></div>
+
+Configuration is where you can get fancy. You have got additional options up your sleeve:
+1. Move options from environment variables to secret or configuration managers.
+2. If you are using a [Rookout Controller](etl-controller-intro), set up the remote host and port configuration.
+3. Dig deeper into other options available right [here](go-setup#start).
+
+### 3. Build the Application
+
+Make sure you have the CGO build dependencies:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="debian"
+    values={[
+        {label: 'Debian', value: 'debian'},
+        {label: 'Alpine', value: 'alpine'},
+        {label: 'Photon', value: 'photon'},
+    ]}>
+
+<TabItem value="debian">
+
+```bash
+
+apt update && apt install -y libffi-dev zlib1g-dev libedit-dev libc++-11-dev libc++abi-11-dev
+
+```
+</TabItem>
+<TabItem value="alpine">
+
+```bash
+
+apk add —-no-cache gcc musl-dev zlib-static build-base
+
+```
+</TabItem>
+<TabItem value="photon">
+
+```bash
+
+tdnf install -y git gcc glibc-devel binutils  zlib-devel openssl-devel linux-api-headers
+
+```
+</TabItem>
+</Tabs>
+
+Add the following flags to your build command:
+
+<Tabs
+defaultValue="general"
+values={[
+{label: 'General', value: 'general'},
+{label: 'Alpine', value: 'alpine'},
+]}>
+
+<TabItem value="general">
+
+```bash
+
+go build -gcflags="all=-dwarflocationlists=true"
+
+```
+</TabItem>
+<TabItem value="alpine">
+
+```bash
+
+go build -gcflags="all=-dwarflocationlists=true" -tags=alpine
+
+```
+</TabItem>
+</Tabs>
+
+### 4. Embed Source Information
+
+Rookout offers the smoothest debugging experience by fetching up-to-date source code for each server.
+
+Set this up for containerized applications by adding a handful of [files](https://www.rookout.com/blog/embedding-source-code-version-information-in-docker-images/) from your `.git` folder to the container image.
+
+Edit (or add) your `.dockerignore` file and adapt the traditional `.git` exclude:
+```ignore
+# Keep ignoring .git
+.git
+# Allow specific files with !
+!.git/HEAD
+!.git/config
+!.git/refs
+```
+
+Add a final `COPY` command to the `Dockerfile`.
+```docker
+COPY .git /.git
+```
+
+*Note:* in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds like ours, make this change in the **final** stage.
+
+### Test
+
+**One second!** if you are not using our demo app, please commit and push your changes to a new branch.
+
+Build and run your Docker image:
+```
+docker build . -t rookout-go-todo
+docker run -it -p 8080:8080 rookout-go-todo
+```
+
+As your Go application spins up, search for this output at the top:
+<img src="/img/screenshots/go_success.png" />
+
+Interact with your application at `http://localhost:8080` and use Rookout to debug it on the fly!
+
+### Questions?
+
+1. Check out this reference [implementation](https://github.com/Rookout/go-tutorial-2022/compare/configure-rookout).
+2. Dig into the full Go SDK [docs](go-setup).
+3. Reach out to us via chat or [email](mailto:support@rookout.com).
