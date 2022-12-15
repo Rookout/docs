@@ -1,0 +1,161 @@
+---
+id: go-setup
+title: Go SDK
+sidebar_label: Go
+---
+
+import SupportEmail from '../website/src/pages/supportemail.js'
+
+This page dives into the nitty-gritty details on installing Rookout under various configurations. If you encounter difficulties with deploying Rookout, this is the place to look.
+
+## Setup
+
+### Get the package
+
+Run the following inside your app’s directory to add the Rookout SDK to the `go.mod` file: 
+
+```bash
+
+go get -d github.com/Rookout/GoSDK
+
+```
+
+### Start Rookout within your application
+
+Go to the file containing your `main` function and import Rookout:
+
+```go
+
+import (
+    rookout "github.com/Rookout/GoSDK"
+)
+
+```
+
+Then, in your `main` function, as early as possible, call `rookout.Start`:
+
+```go 
+rookout.Start(rookout.RookOptions{token=[Your Rookout Token], labels=map[string]string{"env": "dev"}})
+
+```
+<div className="rookout-org-info" />
+
+### Build the application
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="general"
+    values={[
+        {label: 'General', value: 'general'},
+        {label: 'Alpine', value: 'alpine'},
+    ]}>
+    
+<TabItem value="general">    
+
+```bash 
+
+go build -gcflags="all=-dwarflocationlists=true"
+
+```
+</TabItem>
+<TabItem value="alpine">    
+
+```bash 
+
+go build -gcflags="all=-dwarflocationlists=true" -tags=alpine
+
+```
+</TabItem>
+</Tabs>
+
+## SDK Configuration 
+
+### Start
+
+```go 
+
+Start(labels)
+```
+The `Start` method is used to initialize the SDK and it accepts the following variables:
+
+| Environment Variable                        | Default Value | Description                                                                                                            |
+| ------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization                                                                                |
+| `ROOKOUT_LABELS`                            | {}            | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables        |
+| `ROOKOUT_COMMIT`                            | None          | String that indicates your git commit or a branch name                                                                 |
+| `ROOKOUT_REMOTE_ORIGIN`                     | None          | String that indicates your git remote origin                                                                           |
+| `ROOKOUT_CONTROLLER_HOST`                   | None          | If you are using a Rookout ETL Controller, this is the hostname for it                                                 |
+| `ROOKOUT_CONTROLLER_PORT`                   | None          | If you are using a Rookout ETL Controller, this is the port for it                                                     |
+| `ROOKOUT_PROXY`                             | None          | URL to proxy server                                                                                                    |
+| `ROOKOUT_DEBUG`                             | False         | Set to `True` to increase log level to debug                                                                           |
+| `ROOKOUT_SOURCES`                           | None          | Source information (see below)                                                                                         |
+| `ROOKOUT_QUIET`                             | False         | Set to `True` to stop informative log messages from being written to the standard output and error                     |
+
+## Supported Versions 
+
+Rookout supports Go version 1.15 to 1.19 on Mac and Linux (Debian, Alpine, Photon, etc) operating systems.
+
+## Dependencies
+
+Depending on your OS, you may need to install additional dependencies:
+<Tabs
+    defaultValue="debian"
+    values={[
+        {label: 'Debian', value: 'debian'},
+        {label: 'Alpine', value: 'alpine'},
+        {label: 'Photon', value: 'photon'},
+    ]}>
+    
+<TabItem value="debian">    
+
+```bash 
+
+apt update && apt install -y libffi-dev zlib1g-dev libedit-dev libc++-11-dev libc++abi-11-dev
+
+```
+</TabItem>
+<TabItem value="alpine">    
+
+```bash 
+
+apk add —-no-cache gcc musl-dev zlib-static build-base
+
+```
+</TabItem>
+<TabItem value="photon">    
+
+```bash
+
+tdnf install -y git gcc glibc-devel binutils  zlib-devel openssl-devel linux-api-headers
+
+```
+</TabItem>
+</Tabs>
+
+## CGO
+
+Rookout requires CGO which is enabled by default.
+
+To verify your configuration you can run:
+
+```bash
+
+echo ${CGO_ENABLED} && go env | grep CGO_ENABLED
+
+```
+
+## Linker flags
+Rookout requires the Go binary to include a symbol table. 
+
+Please avoid setting the `-w` and `-s` [ldflags](https://pkg.go.dev/cmd/link), as doing so causes the application to omit these tables. 
+
+## Alpine OS 
+
+Please make sure to add `-tags=alpine` to your `go build` command when running on Alpine.
+
+Forgetting to do so will result in `error: ld returned 1 exit status`.
+
+## Cross compiling
+Cross compiling Go applications can get tricky, feel free to reach out to us with any questions :) 

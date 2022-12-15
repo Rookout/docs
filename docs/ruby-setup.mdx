@@ -74,7 +74,7 @@ The `start` method is used to initialize the SDK in the background and accepts t
 
 | Argument                           | Environment Variable                               | Default Value | Description                                                                                                            |
 | ---------------------------------- | -------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `token`                     | `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller                |
+| `token`                     | `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization.                                                                               |
 | `labels`                    | `ROOKOUT_LABELS`                            | {}            | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `git_commit`                | `ROOKOUT_COMMIT`                            | None          | String that indicates your git commit or a branch name                                                                 |
 | `git_origin`                | `ROOKOUT_REMOTE_ORIGIN`                     | None          | String that indicates your git remote origin                                                                           |
@@ -84,6 +84,7 @@ The `start` method is used to initialize the SDK in the background and accepts t
 | `proxy`                     | `ROOKOUT_PROXY`                             | None          | URL to proxy server (WIP)                                                                                              |
 | `debug`                     | `ROOKOUT_DEBUG`                             | False         | Set to `True` to increase log level to debug                                                                    |
 | `throw_errors`              | None                                               | False         | Set to `True` to throw an exception if `start` fails (error message will not be printed in console)      |
+| `quiet`                     | `ROOKOUT_QUIET`                             | False         | Set to `True` to stop informative log messages from being written to the standard output and error                     |
 
 ### flush
 

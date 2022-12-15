@@ -68,15 +68,29 @@ import TabItem from '@theme/TabItem';
 
 #### Debugging OSGi apps
 
-To use Rookout in an OSGi application, the Rookout package must be whitelisted (delegated) to the OSGi container.
+To use Rookout in an OSGi application such as JBoss or Wildfly, delegate the Rookout package in the OSGi configuration:
 
-This is done by setting the following JVM options
+<Tabs
+    defaultValue="env"
+    values={[
+        {label: 'Environment Variable', value: 'env'},
+        {label: 'Command Line', value: 'cl'},
+    ]}>
+<TabItem value="env">
+
+```bash
+        export JAVA_TOOL_OPTIONS="-Dorg.osgi.framework.bootdelegation=com.rookout.* -javaagent:$(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token]"
+```
+</TabItem>
+<TabItem value='cl'>
 
 ```bash
 
-org.osgi.framework.bootdelegation=com.rookout.*
+     java -Dorg.osgi.framework.bootdelegation=com.rookout.* -javaagent:$(pwd)/rook.jar MyClass -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_LABELS=env:dev
 
 ```
+</TabItem>
+</Tabs>
 
 This is done where all other JVM options are set (via -D flags, JVM_OPTS, etc.).
 
@@ -86,7 +100,7 @@ Configuration is performed using OS Environment Variables or Java System Propert
 
 | Environment Variable                               | Default Value | Description                                                                                                            |
 | -------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization. Should be left empty if you are using a Rookout ETL Controller                |
+| `ROOKOUT_TOKEN`                             | None          | The Rookout token for your organization.                                                                               |
 | `ROOKOUT_LABELS`                            | {}            | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables |
 | `ROOKOUT_COMMIT`                            | None          | String that indicates your git commit or a branch name                                                                 |
 | `ROOKOUT_REMOTE_ORIGIN`                     | None          | String that indicates your git remote origin                                                                           |
@@ -96,6 +110,7 @@ Configuration is performed using OS Environment Variables or Java System Propert
 | `ROOKOUT_DEBUG`                             | False         | Set to `True` to increase log level to debug                                                                    |
 | `ROOKOUT_SOURCES`                           | None          | Source information (see below)                                                                                         |
 | `ROOKOUT_LIVE_LOGGER`                       | False         | Set to `True` to enable Rookout Live Logger                                                                     |
+| `ROOKOUT_QUIET`                             | False         | Set to `True` to stop informative log messages from being written to the standard output and error              |
 
 ## Test connectivity
 

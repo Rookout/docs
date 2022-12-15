@@ -99,7 +99,7 @@ The following table includes all configuration options. Pass them to the `rookou
 
 | Parameter             | Environment Variable             | Default Value | Description                                                                                                                    |
 | --------------------- | -------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `token`        | `ROOKOUT_TOKEN`           | None          | The Rookout token for your organization. May be left empty if you are using a Rookout ETL Controller                           |
+| `token`        | `ROOKOUT_TOKEN`           | None          | The Rookout token for your organization.                                                                                |
 | `labels`       | `ROOKOUT_LABELS`          | {}            | A dictionary of key:value labels for your application instances. Use `k:v,k:v` format for environment variables         |
 | `git_commit`   | `ROOKOUT_COMMIT`          | None          | String that indicates your git commit or a branch name                                                                         |
 | `git_origin`   | `ROOKOUT_REMOTE_ORIGIN`   | None          | String that indicates your git remote origin                                                                                   |
@@ -110,6 +110,7 @@ The following table includes all configuration options. Pass them to the `rookou
 | `throw_errors` | ---                              | False         | Set to `True` to reject the promsie when `start` fails                                                           |
 | `sources`      | `ROOKOUT_SOURCES`         | None          | Sources information (see [info below](#multiple-sources)). Replaces `ROOKOUT_COMMIT` and `ROOKOUT_REMOTE_ORIGIN` |
 | `live_logger`  | `ROOKOUT_LIVE_LOGGER`     | False         | Set to `True` to enable Rookout [Live Logger](live-logger.md)                                                           |
+| `quiet`        | `ROOKOUT_QUIET`           | False         | Set to `True` to stop informative log messages from being written to the standard output and error                      |
 
 ## Code manipulation
 
@@ -117,10 +118,14 @@ The following table includes all configuration options. Pass them to the `rookou
 
 If your application's code is being transpiled or bundled, you must include the source maps, either in-line or as separate files.
 
--   [**Webpack**](https://webpack.js.org/) - use either the `inline-source-map` or `source-map` values for the `devtool` option in the webpack config file ([reference](https://webpack.js.org/configuration/devtool)).
+-   [**Webpack**](https://webpack.js.org/) - use either the `inline-source-map` or `source-map` values for the `devtool` option in the Webpack config file ([reference](https://webpack.js.org/configuration/devtool)).
 -   [**Babel**](https://babeljs.io/) - use either the `"inline"`, `"both"` or `true` values for the `sourceMaps` option in the Babel config file ([reference](https://babeljs.io/docs/en/options#sourcemaps)).
 -   [**TypeScript**](https://www.typescriptlang.org/) - add either `"inlineSourceMap": true` or `"sourceMap": true` as well as `"inlineSources": true` in the TypeScript config file ([reference](https://www.typescriptlang.org/tsconfig#inlineSourceMap)).
 -   [**CoffeeScript**](https://coffeescript.org/) - pass either the `-M` (inline) or `-m` flags to the `coffee` CLI tool ([reference](https://coffeescript.org/#usage)).
+
+**Note:** When using both Webpack and TypeScript together, please do as follows:
+
+-   **Webpack + TypeScript** - add `"sourceMap": true` as well as `"inlineSources": true` in the TypeScript config file and use either the `inline-source-map` or `source-map` values for the `devtool` option in the Webpack config file.
 
 ### Bundling tools
 
@@ -197,9 +202,9 @@ Rookout supports the following NodeJS versions:
 | Release | Versions            |
 | ------- | ------------------- |
 | **12**  | 12.5.0 --&gt; 12.22.12 |
-| **14**  | 14.0.0 --&gt; 14.20.0  |
-| **16**  | 16.0.0 --&gt; 16.17.0  |
-| **18**  | 18.0.0 --&gt; 18.9.0   |
+| **14**  | 14.0.0 --&gt; 14.21.1  |
+| **16**  | 16.0.0 --&gt; 16.18.1  |
+| **18**  | 18.0.0 --&gt; 18.12.1  |
 
 We strongly recommend using one of the supported NodeJS (LTS) versions, however there is limited support for the following versions:
 

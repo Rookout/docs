@@ -11,6 +11,7 @@
       "python-container-tutorial",
       "dotnet-container-tutorial",
       "ruby-container-tutorial",
+      "go-container-tutorial",
       "node-serverless-tutorial"
     ],
     "SDK Setup": [
