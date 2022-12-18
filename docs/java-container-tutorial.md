@@ -35,7 +35,7 @@ ENV JAVA_TOOL_OPTIONS "-javaagent:/app/rook.jar"
 
 _Note:_ in [multi-stage](https://docs.docker.com/develop/develop-images/multistage-build/) builds (like ours), make all your changes on the **final** stage.
 
-### 2. Start Rookout
+### 2. Configure Rookout
 
 Configure the Java Agent to connect to your Rookout account (if you haven't signed up, do that [here](https://app.rookout.com/#mode=signUp)).
 
