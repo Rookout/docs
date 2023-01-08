@@ -35,8 +35,10 @@ import (
 Then, in your `main` function, as early as possible, call `rookout.Start`:
 
 ```go 
-rookout.Start(rookout.RookOptions{token=[Your Rookout Token], labels=map[string]string{"env": "dev"}})
-
+rookout.Start(rookout.RookOptions{
+		Token: "[Your Rookout Token]",
+		Labels: map[string]string{"env": "dev"},
+	})
 ```
 <div className="rookout-org-info" />
 
