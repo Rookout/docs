@@ -1,7 +1,7 @@
 ---
-id: hybrid-deployments-intro
-title: Hybrid Deployments Introduction
-sidebar_label: Introduction
+id: hybrid-deployments
+title: Hybrid Deployments
+sidebar_label: Hybrid Deployments
 ---
 
 ## Introduction
@@ -33,28 +33,18 @@ import TabItem from '@theme/TabItem';
     defaultValue="env"
     values={[
         {label: 'Environment Variable', value: 'env'},
-        {label: 'Python', value: 'python'},
         {label: '.NET', value: 'dotnet'},
-        {label: 'Ruby', value: 'ruby'},
         {label: 'Node', value: 'node'},
         {label: 'Go', value: 'go'},
+        {label: 'Python', value: 'python'},
+        {label: 'Ruby', value: 'ruby'},
     ]}>
     <TabItem value="env">
 
         ```bash
 
-        export ROOKOUT_CONTROLLER_HOST=""
-        export ROOKOUT_CONTROLLER_PORT=""
-
-        ```
-    </TabItem>
-    <TabItem value='python'>
-
-        ```python
-
-        start(token=None,
-            host=None,
-            port=None)
+        export ROOKOUT_CONTROLLER_HOST="wss://controller.host.com"
+        export ROOKOUT_CONTROLLER_PORT=9999
 
         ```
     </TabItem>
@@ -65,16 +55,16 @@ import TabItem from '@theme/TabItem';
 
         ```
     </TabItem>
-    <TabItem value='ruby'>
-
-        ```bash
-
-
-        ```
-    </TabItem>
     <TabItem value='node'>
 
-        ```bash
+        ```javascript
+
+        rookout.start({
+            token: '[Your Rookout Token]',
+            host: 'wss://controller.host.com',
+            port: 9999
+
+        });
 
 
         ```
@@ -84,14 +74,35 @@ import TabItem from '@theme/TabItem';
         ```golang
 
         rookout.Start(rookout.RookOptions{
-            Token: "[Your Rookout Token]",
-            Host: "",
-            Port: "",
+        Token: "[Your Rookout Token]",
+        Host: "wss://controller.host.com",
+        Port: 9999,
 
-        })
+    })
+        ```
+    </TabItem>
+    <TabItem value='python'>
+
+        ```python
+
+        start(token=None,
+            host='wss://controller.host.com',
+            port=9999)
+
+        ```
+    </TabItem>
+    <TabItem value='ruby'>
+
+        ```ruby
+
+        ::Rookout.start token: '[Your Rookout Token]', host: 'wss://controller.host.com', port: 9999
+
+
         ```
     </TabItem>
 </Tabs>
+
+<div className="rookout-org-info" />
 
 Otherwise, agents will connect to the Rookout cloud, but every breakpoint will result in the following error message:
 
