@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
     defaultValue="env"
     values={[
-        {label: 'Environment Variable', value: 'env'},
+        {label: 'Environment Variable / JVM', value: 'env'},
         {label: '.NET', value: 'dotnet'},
         {label: 'Node', value: 'node'},
         {label: 'Go', value: 'go'},
@@ -41,49 +41,77 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="env">
 
-        ```bash
+        ```shell
 
-        export ROOKOUT_CONTROLLER_HOST="wss://controller.host.com"
+        export ROOKOUT_CONTROLLER_HOST="wss://your-controller-host"
 
         ```
     </TabItem>
     <TabItem value='dotnet'>
 
-        ```bash
+        ```cs
 
+        using Rook;
+        Rook.RookOptions options = new Rook.RookOptions()
+        {
+            token = "[Your Rookout Token]",
+            labels = new Dictionary<string, string> { { "env", "dev" } },
+            host = "wss://your-controller-host"
+        };
+        Rook.API.Start(options);
+
+        // ...
 
         ```
     </TabItem>
     <TabItem value='node'>
 
-        ```javascript
+    ```javascript
 
+    const rookout = require('rookout')
         rookout.start({
             token: '[Your Rookout Token]',
-            host: 'wss://controller.host.com',
+            labels: {
+                env: 'dev'
+            },
+            host: "wss://your-controller-host"
+        }).then(/*Start your application here*/)
 
-        });
+    ```
 
-
-        ```
     </TabItem>
     <TabItem value='go'>
 
-        ```golang
+        ```go
 
-        rookout.Start(rookout.RookOptions{
-        Token: "[Your Rookout Token]",
-        Host: "wss://controller.host.com",
+        import (
+            // ...
+            rookout "github.com/Rookout/GoSDK"
+            // ...
+        )
 
-    })
+        func main() {
+            rookout.Start(rookout.RookOptions{
+            Token: "[Your Rookout Token]",
+            Labels: map[string]string{"env": "dev"},
+            Host: "wss://your-controller-host",
+        })
+            // ...
+        }
+
         ```
+
     </TabItem>
     <TabItem value='python'>
 
         ```python
 
-        start(token=None,
-            host='wss://controller.host.com')
+        import rook
+        rook.start(
+            token="[Your Rookout Token]",
+            labels={"env": "dev"},
+            host="wss://your-controller-host"
+        )
 
         ```
     </TabItem>
@@ -91,8 +119,8 @@ import TabItem from '@theme/TabItem';
 
         ```ruby
 
-        ::Rookout.start token: '[Your Rookout Token]', host: 'wss://controller.host.com'
-
+        require "rookout"
+        ::Rookout.start token: "[Your Rookout Token]", labels: {env: "dev"}, host: "wss://your-controller-host"
 
         ```
     </TabItem>
