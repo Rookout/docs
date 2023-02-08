@@ -6,9 +6,9 @@ sidebar_label: Hybrid Deployments
 
 ## Introduction
 
-Rookout's hybrid SaaS architecture empowers customers to keep all application data within their premise by separating the control plane from the data plane.
+Rookout's hybrid SaaS architecture empowers customers to keep application data within their premise by separating the control plane from the data plane.
 
-Keeping the control plane connected to the Rookout cloud retains all the benefits of SaaS: ease of use, ease of maintenance, live updates, etc.
+Keeping the control plane connected to the Rookout cloud retains the benefits of SaaS: ease of use, ease of maintenance, live updates, etc.
 Keeping the data plane on-premise simplifies data governance concerns and is useful for a variety of security and compliance considerations.
 
 ## Architecture
@@ -125,9 +125,7 @@ import TabItem from '@theme/TabItem';
 
 <div className="rookout-org-info" />
 
-Otherwise, agents will connect to the Rookout cloud, but every breakpoint will result in the following error message:
-
-[//]: # (todo add the error message / a screen shot after improving the error's copy)
+If you forget to set the Rookout controller host you will be unable to set a breakpoint, and you'll see the following error: "Agent attempted connection to SaaS."
 
 ### Targets
 
