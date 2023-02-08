@@ -222,7 +222,10 @@ Rookout provides an easy to use wrapper that works for most common serverless ru
 
 from rook.serverless import rookout_serverless
 
-@rookout_serverless()
+@rookout_serverless(
+    token="[Your Rookout Token]",
+    labels={"env": "dev"}
+)
 def lambda_handler(event, context):
   return "Hello world"
 
