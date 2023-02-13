@@ -25,20 +25,29 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-    defaultValue="env"
+    defaultValue="java"
     values={[
-        {label: 'Environment Variable / JVM', value: 'env'},
+        {label: 'Java', value: 'java'},
         {label: '.NET', value: 'dotnet'},
         {label: 'Node', value: 'node'},
         {label: 'Go', value: 'go'},
         {label: 'Python', value: 'python'},
         {label: 'Ruby', value: 'ruby'},
-    ]}>
+        {label: 'Environment Variable', value: 'env'}
+        ]}>
 <TabItem value="env">
 
 ```shell
 
 export ROOKOUT_CONTROLLER_HOST="wss://your-controller-host"
+
+```
+</TabItem>
+<TabItem value="java">
+
+```java
+
+export JAVA_TOOL_OPTIONS="-javaagent:$(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_CONTROLLER_HOST="wss://your-controller-host"
 
 ```
 </TabItem>
