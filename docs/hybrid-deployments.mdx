@@ -35,14 +35,6 @@ import TabItem from '@theme/TabItem';
         {label: 'Ruby', value: 'ruby'},
         {label: 'Environment Variable', value: 'env'}
         ]}>
-<TabItem value="env">
-
-```shell
-
-export ROOKOUT_CONTROLLER_HOST="wss://your-controller-host"
-
-```
-</TabItem>
 <TabItem value="java">
 
 ```java
@@ -127,6 +119,14 @@ require "rookout"
 ::Rookout.start token: "[Your Rookout Token]", labels: {env: "dev"}, host: "wss://your-controller-host"
 
 ```
+</TabItem>
+<TabItem value="env">
+
+    ```shell
+
+    export ROOKOUT_CONTROLLER_HOST="wss://your-controller-host"
+
+    ```
 </TabItem>
 </Tabs>
 
