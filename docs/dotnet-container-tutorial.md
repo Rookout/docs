@@ -63,7 +63,7 @@ Configuration is where you can get fancy. You have got additional options up you
 For the best and most reliable debugging experience, add a couple of settings to your `.csproj` file(s):
 
 1.  Set the debug information format to `portable`.
-2.  Embed sources in the PDB file for verificaiton.
+2.  Embed sources in the PDB file for verification.
 
 ```xml
 
