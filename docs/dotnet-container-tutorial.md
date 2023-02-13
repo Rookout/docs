@@ -55,7 +55,7 @@ Rook.API.Start(options);
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 
 1.  Move options to secret or configuration managers.
-2.  If you are using [Rookout's hybrid architecture](hybrid-deployments.mdx), set up the controller host.
+2.  If you are using [Rookout's hybrid architecture](hybrid-deployments.mdx), set up the controller's host configuration.
 3.  Dig deeper into other options available right [here](dotnet-setup.mdx#sdk-api).
 
 ### 3. Configure Build Settings
