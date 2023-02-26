@@ -1,0 +1,148 @@
+---
+id: hybrid-deployments
+title: Hybrid Deployments
+sidebar_label: Introduction
+---
+
+Rookout's hybrid SaaS architecture empowers customers to keep application data within their premise by separating the control plane from the data plane.
+
+Keeping the control plane connected to the Rookout cloud retains the benefits of SaaS: ease of use, ease of maintenance, live updates, etc.
+Keeping the data plane on-premise simplifies data governance concerns and is useful for a variety of security and compliance considerations.
+
+## Architecture
+
+Rookout hybrid architecture relies on two containers to process, store, and access application data:
+- The controller acts as a proxy, optimizing network traffic and offloading processing from the monitored applications.
+- The datastore is an in-memory cache making the data available for end users over a secure web endpoint.
+
+![Hybrid Architecture](/img/diagrams/hybrid-architecture.png)
+
+### Agents
+
+When using the hybrid architecture, configure your agents to connect to the relevant controllers:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="java"
+    values={[
+        {label: 'Java', value: 'java'},
+        {label: '.NET', value: 'dotnet'},
+        {label: 'Node', value: 'node'},
+        {label: 'Go', value: 'go'},
+        {label: 'Python', value: 'python'},
+        {label: 'Ruby', value: 'ruby'},
+        {label: 'Environment Variable', value: 'env'}
+        ]}>
+<TabItem value="java">
+
+```java
+
+export JAVA_TOOL_OPTIONS="-javaagent:$(pwd)/rook.jar -DROOKOUT_TOKEN=[Your Rookout Token] -DROOKOUT_CONTROLLER_HOST="wss://your-controller-host"
+
+```
+</TabItem>
+<TabItem value='dotnet'>
+
+```cs
+
+using Rook;
+Rook.RookOptions options = new Rook.RookOptions()
+{
+    token = "[Your Rookout Token]",
+    labels = new Dictionary<string, string> { { "env", "dev" } },
+    host = "wss://your-controller-host"
+};
+Rook.API.Start(options);
+
+// ...
+
+```
+</TabItem>
+<TabItem value='node'>
+
+```javascript
+
+const rookout = require('rookout')
+    rookout.start({
+        token: '[Your Rookout Token]',
+        labels: {
+            env: 'dev'
+        },
+        host: "wss://your-controller-host"
+    }).then(/*Start your application here*/)
+
+```
+
+</TabItem>
+<TabItem value='go'>
+
+```go
+
+import (
+    // ...
+    rookout "github.com/Rookout/GoSDK"
+    // ...
+)
+
+func main() {
+    rookout.Start(rookout.RookOptions{
+    Token: "[Your Rookout Token]",
+    Labels: map[string]string{"env": "dev"},
+    Host: "wss://your-controller-host",
+})
+    // ...
+}
+
+```
+
+</TabItem>
+<TabItem value='python'>
+
+```python
+
+import rook
+rook.start(
+    token="[Your Rookout Token]",
+    labels={"env": "dev"},
+    host="wss://your-controller-host"
+)
+
+```
+</TabItem>
+<TabItem value='ruby'>
+
+```ruby
+
+require "rookout"
+::Rookout.start token: "[Your Rookout Token]", labels: {env: "dev"}, host: "wss://your-controller-host"
+
+```
+</TabItem>
+<TabItem value="env">
+
+```shell
+
+export ROOKOUT_CONTROLLER_HOST="wss://your-controller-host"
+
+```
+</TabItem>
+</Tabs>
+
+<div className="rookout-org-info" />
+
+If you forget to set the Rookout controller host you will be unable to set breakpoints. You'll see the following error: "Agent attempted connection to SaaS."
+
+### Targets
+
+In the hybrid architecture processing and transmitting data to external targets is carried out by the controller.
+
+## Deployment
+
+Deploy using common infrastructure as code providers:
+
+- Helm [chart](https://github.com/Rookout/helm-charts/tree/master/charts/rookout-hybrid) for Kubernetes.
+- Terraform [module](https://registry.terraform.io/modules/Rookout/rookout-deployment/aws/latest) for AWS.
+- Terraform [module](https://registry.terraform.io/modules/Rookout/rookout-deployment/azure/latest) for Azure.
+- CloudFormation [module](https://github.com/Rookout/cloudformation-quick-deployment) for AWS.

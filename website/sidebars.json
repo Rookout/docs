@@ -38,15 +38,8 @@
     "Organizations":[
       "organizations"
     ],
-    "ETL Controller":[
-      "etl-controller-intro",
-      "etl-controller-install",
-      "etl-controller-config"
-    ],
-    "Data On-Premise":[
-      "dop-intro",
-      "dop-install",
-      "dop-config"
+    "Hybrid Deployments": [
+      "hybrid-deployments"
     ],
     "Advanced": [
       "live-logger",

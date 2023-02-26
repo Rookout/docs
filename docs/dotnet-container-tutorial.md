@@ -55,7 +55,7 @@ Rook.API.Start(options);
 Configuration is where you can get fancy. You have got additional options up your sleeve:
 
 1.  Move options to secret or configuration managers.
-2.  If you are using a [Rookout Controller](etl-controller-intro.md), set up the remote host and port configuration.
+2.  If you are using [Rookout's hybrid architecture](hybrid-deployments.mdx), set up the controller's host configuration.
 3.  Dig deeper into other options available right [here](dotnet-setup.mdx#sdk-api).
 
 ### 3. Configure Build Settings
@@ -63,7 +63,7 @@ Configuration is where you can get fancy. You have got additional options up you
 For the best and most reliable debugging experience, add a couple of settings to your `.csproj` file(s):
 
 1.  Set the debug information format to `portable`.
-2.  Embed sources in the PDB file for verificaiton.
+2.  Embed sources in the PDB file for verification.
 
 ```xml
 

@@ -127,10 +127,10 @@ Rookout gets the source information from the .git folder if both of the followin
 
 ## Supported Python versions
 
-| Implementation | Versions                           |
-| -------------- | ---------------------------------- |
-| **CPython**    | 2.7, 3.5, 3.6, 3.7, 3.8, 3.9, 3.10 |
-| **PyPy**       | 6.0.0                              |
+| Implementation | Versions                                 |
+| -------------- | ---------------------------------------- |
+| **CPython**    | 2.7, 3.5, 3.6, 3.7, 3.8, 3.9, 3.10, 3.11 |
+| **PyPy**       | 6.0.0                                    |
 
 Rookout was tested on `pip` versions 9+.
 
@@ -220,9 +220,12 @@ Rookout provides an easy to use wrapper that works for most common serverless ru
 
 ```python
 
-from rook.serverless import serverless_rook
+from rook.serverless import rookout_serverless
 
-@serverless_rook
+@rookout_serverless(
+    token="[Your Rookout Token]",
+    labels={"env": "dev"}
+)
 def lambda_handler(event, context):
   return "Hello world"
 
@@ -245,7 +248,7 @@ docker run -v `pwd`:`pwd` -w `pwd` -i -t lambci/lambda:build-python2.7 pip insta
 
 ```
 
-For more information check out this blog post: https:
+For more information check out this [blog post](https://www.rookout.com/blog/3-min-hack-for-locally-building-a-native-extension/).
 
 ## Configuration for special use cases
 

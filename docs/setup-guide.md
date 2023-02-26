@@ -34,7 +34,7 @@ https:
 
 ### Rookout Data On-Prem (Optional)
 
-To learn more about Rookout's data on-prem offering, visit [this page](dop-intro.md) or [contact us](https://rookout.com/contact).
+To learn more about Rookout's data on-prem offering, visit [this page](hybrid-deployments.mdx) or [contact us](https://rookout.com/contact).
 
 ## Deploying the Rookout SDK
 
