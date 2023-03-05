@@ -161,10 +161,9 @@ function loadRookoutToken() {
 function setRookoutTokenInPage(data, noOrg = false) {
   const body = $('body');
   let error = false;
-  noOrg = true
   if (noOrg) {
     $('.rookout-org-info').html('Log in to app.rookout.com to see your organization token.')
-    return
+    return;
   }
 
   if (data) {
