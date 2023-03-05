@@ -116,45 +116,24 @@ function loadRookoutToken() {
         email
         isSuperUser
       }
-
-    }
-  }`, ({ data }) => {
-    if (!data) {
-      setRookoutTokenInPage(null);
-      return;
-    }
-    const info = data.currentUserInfo.info;
-    if (info.isSuperUser) {
-      setRookoutTokenInPage(null);
-    } else {
-    gqlRequest( `  {
-    currentUserInfo {
       orgs {
         id
         name
         isAdmin
         token
+        isOrganicOrgMember
       }
-
     }
   }`, ({ data }) => {
-      let orgInfo = {};
-        const orgs = data.currentUserInfo.orgs.filter(org => org.name !== 'Sandbox');
-        if (orgs.length === 0) {
-          setRookoutTokenInPage(null, true);
-          return;
-        }
-        orgInfo = { org_name: orgs[0].name, token: orgs[0].token };
-        setRookoutTokenInPage({ current_user: info, ...orgInfo });
-  })
-      .fail( err => {
-        setRookoutTokenInPage(null);
-      })
+    const orgInfo = data.currentUserInfo.orgs.find(org => org.name !== 'Sandbox' && org.isOrganicOrgMember);
+    if (!orgInfo) {
+      setRookoutTokenInPage(null, true);
+      return;
     }
-  })
-  .fail( err => {
-    setRookoutTokenInPage(null);
-  });
+    setRookoutTokenInPage({ current_user: data.currentUserInfo, ...orgInfo });
+  }).fail((err) => {
+        setRookoutTokenInPage(null);
+      });
 }
 
 
@@ -167,9 +146,9 @@ function setRookoutTokenInPage(data, noOrg = false) {
   }
 
   if (data) {
-    const token = data['token'];
-    const org_name = data['org_name'] || 'unknown';
-    let current_user = data['current_user'] || null;
+    const token = data.token;
+    const org_name = data.name || 'unknown';
+    let current_user = data.current_user || null;
 
     if (token) {
     	$("code:contains('[Your Rookout Token]')").addClass('_lr-hide'); // hide token from LogRocket
