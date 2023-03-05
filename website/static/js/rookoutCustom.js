@@ -73,8 +73,6 @@ function loadRookoutToken() {
       return;
     }
 
-    window.addEventListener('popstate', function (event) { alert('Yo') });
-
     const orgInfo = data.currentUserInfo.orgs.find(org => org.name !== 'Sandbox' && org.isOrganicOrgMember);
     if (!orgInfo) {
       setNoOrgMessage();
