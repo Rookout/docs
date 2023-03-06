@@ -92,9 +92,10 @@ module.exports={
     "https://buttons.github.io/buttons.js",
     "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",
     "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js",
-    "/js/rookoutCustom.js",
-
-
+    { src: "/js/rookoutCustom.js", defer: true },
+    /* Global site tag (gtag.js) - Google Analytics */
+    { src: 'https://www.googletagmanager.com/gtag/js?id=UA-104510371-3', async: true }, // Docs
+    { src: 'https://www.googletagmanager.com/gtag/js?id=UA-104510371-4', async: true }, // Unified
   ],
   stylesheets: [
     "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
@@ -124,6 +125,9 @@ module.exports={
   ],
 
   themeConfig: {
+    prism: {
+      additionalLanguages: ['docker'],
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
@@ -145,5 +149,5 @@ module.exports={
   },
   // eslint-disable-next-line no-undef
   customFields: markdownVariables,
-  onBrokenMarkdownLinks: 'throw'
-}
+  onBrokenMarkdownLinks: 'throw',
+};
