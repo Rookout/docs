@@ -96,7 +96,6 @@ module.exports={
     /* Global site tag (gtag.js) - Google Analytics */
     { src: 'https://www.googletagmanager.com/gtag/js?id=UA-104510371-3', async: true }, // Docs
     { src: 'https://www.googletagmanager.com/gtag/js?id=UA-104510371-4', async: true }, // Unified
-    { src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-csharp.min.js', defer: true }, // Unified
   ],
   stylesheets: [
     "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
