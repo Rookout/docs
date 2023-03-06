@@ -126,6 +126,9 @@ module.exports={
   ],
 
   themeConfig: {
+    prism: {
+      additionalLanguages: ['docker'],
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
