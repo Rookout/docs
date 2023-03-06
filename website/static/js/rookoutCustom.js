@@ -71,59 +71,51 @@ function loadRookoutToken() {
       return;
     }
 
+    if (data.currentUserInfo.info) {
+      const { fullname: name, email } = data.currentUserInfo.info;
+      initLogrocket(name, email);
+      initGA(email);
+    }
+
     const orgInfo = data.currentUserInfo.orgs.find(org => org.name !== 'Sandbox' && org.isOrganicOrgMember);
     if (!orgInfo) {
       setNoOrgMessage();
       return;
     }
-    setRookoutTokenInPage({ current_user: data.currentUserInfo.info, ...orgInfo });
+    replaceTokenPlaceholders(orgInfo.token, orgInfo.name);
   }).fail((err) => {
-        setRookoutTokenInPage(null);
-      });
+    setLoginRequiredText();
+    initGA(null);
+  });
 }
 
 
 const setNoOrgMessage = () => {
   $('.rookout-org-info').html('Log in to app.rookout.com to see your organization token.')
-}
+};
 
+const replaceTokenPlaceholders = (token, orgName) => {
+  $("code:contains('[Your Rookout Token]')").each(function () {
+    const elem = $(this);
+    elem.addClass('_lr-hide'); // hide token from LogRocket
+    elem.html(elem.html().replace(/\[Your Rookout Token]/g, token));
+  });
+  $('.rookout-org-info').html(`Showing token for <b>${orgName}</b>. Keep your token private.`);
+};
 
-function setRookoutTokenInPage(data) {
-  let error = false;
-
-  if (data) {
-    const token = data.token;
-    const org_name = data.name || 'unknown';
-    let current_user = data.current_user || null;
-
-    if (token) {
-      $("code:contains('[Your Rookout Token]')").each(function () {
-        const elem = $(this);
-        elem.addClass('_lr-hide'); // hide token from LogRocket
-        elem.html(elem.html().replace(/\[Your Rookout Token]/g, token));
-      })
-      $('.rookout-org-info').html(`Showing token for <b>${org_name}</b>. Keep your token private.`);
-      if (current_user) {
-        if (window.LogRocket) {
-          window.LogRocket.identify(current_user.email, {
-            name: current_user.name,
-            email: current_user.email,
-          });
-        }
-        initGA(current_user.email);
-      }
-    } else {
-      error = true;
-    }
-  } else {
-    error = true;
+const initLogrocket = (userName, userEmail) => {
+  if (!window.LogRocket) {
+    return;
   }
+    window.LogRocket.identify(userEmail, {
+      name: userName,
+      email: userEmail,
+    });
+};
 
-  if (error) {
-    $('.rookout-org-info').html('Log in to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token');
-    initGA(null);
-  }
-}
+const setLoginRequiredText = () => {
+  $('.rookout-org-info').html('Log in to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token');
+};
 
 // TODO: FIX
 function loadTabsForOS() {
@@ -133,7 +125,7 @@ function loadTabsForOS() {
       'default': '1',
       'linux': '1',
       'osx': '1',
-      'windows': '2'
+      'windows': '2',
     };
 
     const lang = $(e.target).data('lang');
