@@ -4,7 +4,7 @@ $(function () {
   loadRookoutToken(); // Also loads Google Analytics after we know if we are logged in
   setTimeout(loadTabsForOS, 1000);
   setTimeout(fixDocusaurusTabsOnLoad, 1500);
-  setTimeout(addKeyCombo, 200);
+  setTimeout(addKeyCombo, 1000);
 });
 
 function changeLogoLink() {
