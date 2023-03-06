@@ -50,6 +50,49 @@ function gqlRequest(query, callback) {
   }, callback)
 }
 
+
+
+
+const setNoOrgMessage = () => {
+  $('.rookout-org-info').html('Log in to app.rookout.com to see your organization token.')
+};
+
+const replaceTokenPlaceholders = (token, orgName) => {
+  $("code:contains('[Your Rookout Token]')").each(function () {
+    const elem = $(this);
+    elem.addClass('_lr-hide'); // hide token from LogRocket
+    elem.html(elem.html().replace(/\[Your Rookout Token]/g, token));
+  });
+  $('.rookout-org-info').html(`Showing token for <b>${orgName}</b>. Keep your token private.`);
+};
+
+const initLogrocket = (userName, userEmail) => {
+  if (!window.LogRocket) {
+    return;
+  }
+    window.LogRocket.identify(userEmail, {
+      name: userName,
+      email: userEmail,
+    });
+};
+
+const setLoginRequiredText = () => {
+  $('.rookout-org-info').html('Log in to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token');
+};
+
+const replacePlaceholderOnUrlChange = (token, orgName) => {
+  let currentUrl = window.location.href;
+  setInterval(() => {
+    const newUrl = window.location.href;
+    if (newUrl === currentUrl) {
+      return;
+    }
+
+    replaceTokenPlaceholders(token, orgName);
+    currentUrl = newUrl;
+  }, 2500);
+};
+
 function loadRookoutToken() {
   gqlRequest(`  {
     currentUserInfo {
@@ -83,39 +126,13 @@ function loadRookoutToken() {
       return;
     }
     replaceTokenPlaceholders(orgInfo.token, orgInfo.name);
+    replacePlaceholderOnUrlChange(orgInfo.token, orgInfo.name);
   }).fail((err) => {
     setLoginRequiredText();
     initGA(null);
   });
 }
 
-
-const setNoOrgMessage = () => {
-  $('.rookout-org-info').html('Log in to app.rookout.com to see your organization token.')
-};
-
-const replaceTokenPlaceholders = (token, orgName) => {
-  $("code:contains('[Your Rookout Token]')").each(function () {
-    const elem = $(this);
-    elem.addClass('_lr-hide'); // hide token from LogRocket
-    elem.html(elem.html().replace(/\[Your Rookout Token]/g, token));
-  });
-  $('.rookout-org-info').html(`Showing token for <b>${orgName}</b>. Keep your token private.`);
-};
-
-const initLogrocket = (userName, userEmail) => {
-  if (!window.LogRocket) {
-    return;
-  }
-    window.LogRocket.identify(userEmail, {
-      name: userName,
-      email: userEmail,
-    });
-};
-
-const setLoginRequiredText = () => {
-  $('.rookout-org-info').html('Log in to <a href="https://app.rookout.com" target="_blank">app.rookout.com</a> to see your organization token');
-};
 
 // TODO: FIX
 function loadTabsForOS() {
