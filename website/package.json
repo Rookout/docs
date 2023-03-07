@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^0.11.0",
-    "@docusaurus/core": "2.0.1",
-    "@docusaurus/preset-classic": "2.0.1",
+    "@docusaurus/core": "2.3.1",
+    "@docusaurus/preset-classic": "2.3.1",
     "axios": "^0.21.3",
     "clsx": "^1.1.1",
     "docusaurus-lunr-search": "^2.2.0",
@@ -52,6 +52,5 @@
     "trim": "0.0.3",
     "@docusaurus/core/loader-utils": "3.2.0",
     "got": "12.1.0"
-
   }
 }
