@@ -15,7 +15,7 @@ function changeLogoLink() {
 }
 
 function filterOutTokenUrl(requestOrResponse) {
-  return requestOrResponse.url === ROOKOUT_TOKEN_URL ? null : requestOrResponse;
+  return requestOrResponse.url === ROOKOUT_TOKEN_URL ? { ...requestOrResponse, body: null } : requestOrResponse;
 }
 
 function initLogRocket() {
