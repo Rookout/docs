@@ -23,7 +23,7 @@ const projectTargets = {
 };
 
 
-markdownVariables = {
+const markdownVariables = {
   supportEmail: projectTargets[deployTarget].supportEmail,
   supportType: projectTargets[deployTarget].supportType,
   fonts: {
@@ -100,10 +100,9 @@ module.exports={
   stylesheets: [
     "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
   ],
-  favicon: "https://cdn.rookout.com/static/rookout/rookout_favicon.svg",
+  favicon: "https://app.rookout.com/static/rookout/rookout_favicon.svg",
 
   onBrokenLinks: "log",
-  onBrokenMarkdownLinks: "log",
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -147,7 +146,6 @@ module.exports={
       copyright: `Copyright © ${new Date().getFullYear()}  Rookout`,
     },
   },
-  // eslint-disable-next-line no-undef
   customFields: markdownVariables,
   onBrokenMarkdownLinks: 'throw',
 };
