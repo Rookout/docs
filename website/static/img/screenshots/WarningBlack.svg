@@ -1,10 +1,1 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="1.5" y="1.5" width="13" height="13" rx="6.5" stroke="#9962FF"/>
-<mask id="mask0_1068_961" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="1" width="14" height="14">
-<rect x="1.5" y="1.5" width="13" height="13" rx="6.5" fill="white" stroke="white"/>
-</mask>
-<g mask="url(#mask0_1068_961)">
-<rect x="7" y="4" width="2" height="5" rx="1" fill="#9962FF"/>
-<circle cx="8" cy="11" r="1" fill="#9962FF"/>
-</g>
-</svg>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="13" height="13" rx="6.5" stroke="#9962FF"/><mask id="a" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="1" width="14" height="14"><rect x="1.5" y="1.5" width="13" height="13" rx="6.5" fill="#fff" stroke="#fff"/></mask><g mask="url(#a)" fill="#9962FF"><rect x="7" y="4" width="2" height="5" rx="1"/><circle cx="8" cy="11" r="1"/></g></svg>
