@@ -6,7 +6,7 @@ Rookout Organizations are a way to group all of your applications and developers
 
 When you first sign up for Rookout you’ll be prompted to provide a name for your organization. Most teams will choose to use their company name, team name, business unit, or a combination of those things to provide a unique organization name.
 
-By clicking on the **Account Settings** button on the left hand menu you can access your organization settings.
+By clicking on the **Settings** button on the left hand menu and then clicking the **Edit Users** button, you can access your user configuration screen.
 
 <img src="/img/screenshots/rookout_organizations.png" />
 
