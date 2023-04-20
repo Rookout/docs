@@ -232,17 +232,3 @@ Cold start time may increase by up to 500ms when using Rookout. If cold-start ti
 
 
 <div className="rookout-org-info" />
-
-## Debugging Node Modules
-
-By default, Rookout ignores your project's dependencies in the `node_modules` folder.
-
-If the project you wish to debug is installed as a node module, create a file in the project's repository root folder, called `.rookout`, with the following content:
-
-```
-
-#package
-
-```
-
-**Note:** Rookout does not map the most common NPM packages for performance reasons and does not allow setting breakpoints inside such packages.
