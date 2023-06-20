@@ -28,7 +28,7 @@ Open the `Dockerfile` and add the following two lines just above the `ENTRYPOINT
 
 ```docker
 
-RUN curl -L "https://search.maven.org/remote_content?g=com.rookout&a=rook&v=LATEST" -o /app/rook.jar
+RUN curl -L "https://get.rookout.com/rook.jar" -o /app/rook.jar
 ENV JAVA_TOOL_OPTIONS "-javaagent:/app/rook.jar"
 
 ```
