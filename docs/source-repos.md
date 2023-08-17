@@ -41,7 +41,7 @@ As an example, the environment variables could be set as follows:
 `export ROOKOUT_REMOTE_ORIGIN=https://github.com/Rookout/tutorial-python`\\
 `export ROOKOUT_COMMIT=3793853884cae77cc082961aa64cdb0ab93a0e35`
 
-Note that we are setting the commit to a specific revision or branch name that should match the revision of your code deployed in the environment you are debugging. Organizations often automate setting these parameters using their CI/CD process upon each deployment.
+Note that we are setting the commit to a specific revision that should match the revision of your code deployed in the environment you are debugging. Organizations often automate setting these parameters using their CI/CD process upon each deployment.
 
 When these environment variables are set, in the Application Instances screen, you should see the Source origin and Revision fields set with the values you set:
 
