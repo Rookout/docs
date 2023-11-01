@@ -3,7 +3,7 @@ id: built-in-variables
 title: Built-in Variables
 sidebar_label: Built-in Variables
 ---
-When setting breakpoint conditions or breakpoint logs, you can use Rookout's built-in variables as well as your local variables.
+When setting breakpoint conditions or breakpoint logs, you can use Rookout's built in variables as well as your local variables.
 
 The built-in variables are divided into classes and their attributes. For example, the variable which represents the ID of the SDK instance the message came from, is the attribute `id` of the `rook` class. To use that variable, we write `rook.id`.
 
