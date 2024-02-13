@@ -40,7 +40,7 @@
     "@cmfcmf/docusaurus-search-local": "^0.11.0",
     "@docusaurus/core": "2.3.1",
     "@docusaurus/preset-classic": "2.3.1",
-    "axios": "^0.21.3",
+    "axios": "^1.6.0",
     "clsx": "^1.1.1",
     "docusaurus-lunr-search": "^2.2.0",
     "lodash": "^4.17.21",
