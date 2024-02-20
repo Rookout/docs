@@ -153,6 +153,19 @@ While other “debug types” such as `full` and `pdbonly` may work (but are not
 
 For further reading: https://devblogs.microsoft.com/devops/understanding-symbol-files-and-visual-studios-symbol-settings/
 
+### PublishAOT Setting
+
+The <PublishAot> setting controls Ahead-of-Time (AOT) compilation for your application. To ensure compatibility with Rookout, set <PublishAot> to false in your project’s configuration
+
+In your project’s settings, set the “PublishAot” to `false` like so:
+
+```xml
+
+<PublishAot>false</PublishAot>
+
+```
+
+
 ### Optimizations
 
 Disabling compiler optimizations `<Optimize>false</Optimize>` will further improve the debugging experience at a small cost to the application performance.
