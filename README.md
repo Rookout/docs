@@ -16,7 +16,7 @@ navigate.
 
 ## Dependency
 
- * `node > 16.14`
+ * `node > 18`
 
 ## Running locally
 Run `npm build` and `npm start` in `website` to start a local copy.
