@@ -315,6 +315,10 @@ article h2 {
     display: none !important
   }
 
+  .aa-Autocomplete{
+    display: none;
+  }
+
   .navbar__brand {
     position: relative;
     top: -10px;
