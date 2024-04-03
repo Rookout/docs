@@ -14,7 +14,7 @@ function loadSdkDigests() {
 function setDigestInfoForLang(lang) {
     const digestData = JSON.parse(fs.readFileSync(path.join(process.cwd(), "build_utils", "sdk_digests", `digests-${lang}.json`)));
 
-    const divLangStringToReplace = `<div id="${lang}-digests"></div>`;
+    const divLangStringToReplace = `<div id="${lang}-digests"></div>\n`;
 
 
     let startTable =    '<table>\n' +
@@ -27,10 +27,10 @@ function setDigestInfoForLang(lang) {
         startTable +=     '<th>AWS Lambda Layer ARN</th>\n';
     }
     startTable +=       '</tr>\n' +
-        '</thead>' +
-        '<tbody>';
+        '</thead>\n' +
+        '<tbody>\n';
 
-    const endTable =    '</tbody></table>';
+    const endTable =    '</tbody>\n</table>';
 
     let ordered = {};
     Object.keys(digestData).sort(function(a, b) {
@@ -42,33 +42,32 @@ function setDigestInfoForLang(lang) {
 
     let digestsRows = "";
     for (let version in ordered) {
-        digestsRows += "<tr>";
+        digestsRows += "<tr>\n";
         if (lang === 'python') {
-            digestsRows += `<td><a href="https://pypi.org/project/rook/${version}" target="_blank">${version}</a></td>`;
+            digestsRows += `<td><a href="https://pypi.org/project/rook/${version}" target="_blank">${version}</a></td>\n`;
         } else if (lang === 'node') {
-            digestsRows += `<td><a href="https://www.npmjs.com/package/rookout/v/${version}" target="_blank">${version}</a></td>`;
-
+            digestsRows += `<td><a href="https://www.npmjs.com/package/rookout/v/${version}" target="_blank">${version}</a></td>\n`;
         } else if (lang === 'java') {
-            digestsRows += `<td><a href="https://mvnrepository.com/artifact/com.rookout/rook/${version}" target="_blank">${version}</a></td>`;
+            digestsRows += `<td><a href="https://mvnrepository.com/artifact/com.rookout/rook/${version}" target="_blank">${version}</a></td>\n`;
         } else if (lang === 'dotnet') {
-            digestsRows += `<td><a href="https://www.nuget.org/packages/Rookout/${version}" target="_blank">${version}</a></td>`;
+            digestsRows += `<td><a href="https://www.nuget.org/packages/Rookout/${version}" target="_blank">${version}</a></td>\n`;
         } else if (lang === 'agent') {
-            digestsRows += `<td>${version}</td>`;
+            digestsRows += `<td>${version}</td>\n`;
         }
-        digestsRows += `<td>SHA1</td>`;
-        digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>`;
+        digestsRows += `<td>SHA1</td>\n`;
+        digestsRows += `<td>${digestData[version]['digests']['sha1']}</td>\n`;
         if (lang !== 'agent') {
             let arn = digestData[version]['digests']['arn'] || 'N/A';
-            arn = arn.replace(/</gi, '&lt;')
-            arn = arn.replace(/>/gi, '&gt;')
-            digestsRows += `<td>${arn}</td>`;
+            arn = arn.replace(/</gi, '&lt;\n')
+            arn = arn.replace(/>/gi, '&gt;\n')
+            digestsRows += `<td>${arn}</td>\n`;
         }
-        digestsRows += `</tr>`;
+        digestsRows += `</tr>\n`;
     }
 
     const fullTable = startTable + digestsRows + endTable;
     let baseMd = fs.readFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.mdx"), {"encoding": "utf-8"});
-    baseMd = baseMd.replace(divLangStringToReplace, `<div id="${lang}-digests">${fullTable}</div>`);
+    baseMd = baseMd.replace(divLangStringToReplace, `<div id="${lang}-digests">${fullTable}</div>\n`);
     fs.writeFileSync(path.join(process.cwd(), "build_utils", "sdk-digests-base.mdx"), baseMd);
 }
 
