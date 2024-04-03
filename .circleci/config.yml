@@ -51,7 +51,7 @@ jobs:
   deploy-website:
     working_directory: ~/docs
     docker:
-      - image: cimg/node:16.17.0
+      - image: cimg/node:18.19.1
     environment:
         GOOGLE_APPLICATION_CREDENTIALS: "/home/circleci/docs/gcp-key.json"
     steps:
@@ -79,7 +79,7 @@ jobs:
   release-notes:
     working_directory: ~/docs
     docker:
-      - image: cimg/node:16.17.0
+      - image: cimg/node:18.19.1
     steps:
       - checkout
       - add_ssh_keys
