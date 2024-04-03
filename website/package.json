@@ -28,29 +28,31 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@docusaurus/tsconfig": "^3.2.0",
+    "@types/react": "^18.2.29",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "firebase-tools": "^6.0.0",
-    "jest": "^29.0.2"
+    "jest": "^29.0.2",
+    "typescript": "~5.2.2"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^0.11.0",
-    "@docusaurus/core": "2.3.1",
-    "@docusaurus/preset-classic": "2.3.1",
-    "axios": "^0.21.3",
+    "@docusaurus/core": "^3.2.0",
+    "@docusaurus/preset-classic": "^3.2.0",
+    "axios": "^1.6.8",
     "clsx": "^1.1.1",
     "docusaurus-lunr-search": "^2.2.0",
     "lodash": "^4.17.21",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "prism-react-renderer": "^2.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "remarkable-embed": "^0.4.1"
   },
   "resolutions": {
-    "trim": "0.0.3",
-    "@docusaurus/core/loader-utils": "3.2.0",
-    "got": "12.1.0"
+    "trim": "0.0.3"
   }
 }

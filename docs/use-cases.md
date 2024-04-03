@@ -60,7 +60,8 @@ sidebar_label: Use Cases
               <h2>Dev Collaboration and Handoffs</h2>
               With Rookout devs see each others’ work side by side, and avoid stepping on their teammates’ toes. It allows teams to run separate yet sharable views on top of the software. As a result, Rookout has become a single source of truth; a goto place for devs to see reality as it is and collaborate on it, thus solving the classic "it works on my machine" saga.
               <br /><br />
-              Rookout can be used by devs, SREs and Support Engineers, who can all share views and create better handoff flows.            </div>
+              Rookout can be used by devs, SREs and Support Engineers, who can all share views and create better handoff flows.
+            </div>
         </div>
         <div className="use-cases-item">
             <div className="use-cases-icon">

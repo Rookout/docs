@@ -156,7 +156,9 @@ article h2 {
 }
 
 
-
+.aa-Autocomplete{
+  min-width: 190px;
+}
 
 /*Navlist*/
 
@@ -182,7 +184,7 @@ article h2 {
 .key-code-wrapper {
   display: flex;
   gap: 5px;
-  margin-left: 20px;
+  margin-left: 25px;
   opacity: 0;
   animation-delay: .4s;
 
@@ -311,6 +313,10 @@ article h2 {
   }
   div[class^='searchBox'] {
     display: none !important
+  }
+
+  .aa-Autocomplete{
+    display: none;
   }
 
   .navbar__brand {
