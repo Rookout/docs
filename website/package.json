@@ -53,6 +53,7 @@
     "remarkable-embed": "^0.4.1"
   },
   "resolutions": {
-    "trim": "0.0.3"
+    "trim": "0.0.3",
+    "webpack-dev-server": "5.2.1"
   }
 }
